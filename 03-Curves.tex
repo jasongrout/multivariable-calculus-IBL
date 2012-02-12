@@ -1,0 +1,315 @@
+
+\noindent 
+This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
+\begin{enumerate}
+
+\item Be able to describe, graph, give equations of, and find foci for conic sections (parabolas, ellipses, hyperbolas). 
+\item Model motion in the plane using parametric equations. In particular, describe conic sections using parametric equations. 
+\item Find derivatives and tangent lines for parametric equations. Explain how to find velocity, speed, and acceleration from parametric equations.
+\item Use integrals to find the lengths of parametric curves.
+
+\end{enumerate}
+You'll have a chance to teach your examples to your peers prior to the exam.
+
+
+\section{Conic Sections}
+Before we jump fully into $\mathbb{R}^3$, we need some good examples of planar curves (curves in $\mathbb{R}^2$) that we'll extend to object in 3D.  These examples are conic sections. We call them conic sections because you can obtain each one by intersecting a cone and a plane (I'll show you in class how to do this).  Here's a definition.
+
+\begin{definition}
+Consider two identical, infinitely tall, right circular cones placed
+vertex to vertex so that they share the same axis of symmetry.  A conic
+section is the intersection of this three dimensional surface with any plane that does
+not pass through the vertex where the two cones meet.
+\end{definition}
+
+These intersections are called circles (when the plane is perpendicular to the axis of symmetry),
+parabolas (when the plane is parallel to one side of one cone), hyperbolas (when the plane
+is parallel to the axis of symmetry), and ellipses (when the plane does not meet any of the
+three previous criteria). 
+
+The definition above provides a geometric description of how to obtain a conic section from cone.  We'll not introduce an alternate definition based on distances between points and lines, or between points and points.  Let's start with one you are familiar with.
+
+\begin{definition}
+Consider the point $P=(a,b)$ and a positive number $r.$ A circle 
+circle with center $(a,b)$ and radius $r$ is
+the set of all points $Q=(x,y)$ in the plane so that the segment $PQ$ has length $r$. 
+\end{definition}
+
+Using the distance formula, this means that every circle can be written in the form $(x-a)^2+(y-b)^2=r^2$. 
+
+\begin{problem} 
+The equation $4x^2+4y^2+6x-8y-1=0$ represents a circle (though initially it does not look like it). Use the method of completing the square to rewrite the equation in the form
+$(x-a)^2 + (y-b)^2 = r^2$ (hence telling you the center and radius). Then generalize
+your work to find the center and radius of any circle written in the form $x^2+y^2+Dx+Ey+F=0$.
+\end{problem}
+
+\subsection{Parabolas}
+Before proceeding to parabolas, we need to define the distance between a point and a line.
+
+\begin{definition}
+Let $P$ be a point and $L$ be a line.  Define the distance between $P$ and $L$ (written
+$d(P,L)$) to be the length of the shortest line segment that has one end on $L$ and the other end on $P$. Note: This segment will always be perpendicular to $L$.
+\end{definition}
+
+\begin{definition}
+Given a point $P$ (called the focus) and a line $L$ (called the directrix) which does not pass through $P$, we define a parabola as the set of all points $Q$ in the plane so that the distance from $P$ to $Q$ equals the distance from $Q$ to $L$. 
+The vertex is the point on the parabola that is closest to the directrix.
+\end{definition}
+
+\begin{problem}  \marginpar{See page 658.}
+Consider the line $L:y=-p$, the point $P=(0,p)$, and another point $Q=(x,y)$.  Use the distance formula to show that an equation of a parabola with directrix $L$ and focus $P$ is $x^2=4py$.
+Then use your work to explain why an equation of a parabola with directrix $x=-p$ and focus $(p,0)$ is $y^2=4px$. 
+\end{problem}
+
+Ask me about the reflective properties of parabolas in class, if I have not told you already.  They are used in satellite dishes, long range telescopes, solar ovens, and more.  The following problem provides the basis to these reflective properties and is optional.  If you wish to present it, let me know. I'll have you type it up prior to presenting in class.
+
+\begin{problem}[Optional]
+Consider the parabola $x^2=4py$ with directrix $y=-p$ and focus $(0,p)$. Let $Q=(a,b)$ be some point on the parabola. Let $T$ be the tangent line to $L$ at point $Q$. Show that the angle between $PQ$ and $T$ is the same as the angle between the line $x=a$ and $T$. This shows that a vertical ray coming down towards the parabola will reflect of the wall of a parabola and head straight towards the vertex.    
+\end{problem}
+
+The next two problems will help you use the basic equations of a parabola, together with shifting and reflecting, to study all parabolas whose axis of symmetry is parallel to either the $x$ or $y$ axis. 
+
+\begin{problem} \marginpar{See 11.6: 9-14}
+Once the directrix and focus is known, you can give an equation of a parabola. For each of the following, give an equation of the parabola with the stated directrix and focus.
+\begin{enumerate}
+\item The focus is $(0,3)$ and the directrix is $y=-3$.
+\item The focus is $(0,3)$ and the directrix is $y=1$.
+\item The focus is $(2,-5)$ and the directrix is $y=3$.
+\item The focus is $(1,2)$ and the directrix is $x=3$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}  \marginpar{See 11.6: 9-14}
+Each equation below represents a parabola.  Find the focus, directrix, and vertex of each parabola, and then provide a rough sketch.
+\begin{enumerate}
+\item $y=x^2$
+\item $(y-2)^2=4(x-1)$
+\item $y=-8x^2+3$
+\item $y=x^2-4x+5$
+\end{enumerate}
+\end{problem}
+
+\subsection{Ellipses}
+
+\begin{definition}
+Given two points $F_1$ and $F_2$ (called foci) and a fixed distance $d$, we define an ellipse as the set of all points $Q$ in the plane so that the sum of the distances $F_1Q$  and $F_2Q$ equals the fixed distance $d$. The center of the ellipse is the midpoint of the segment $F_1F_2$. The two foci define a line.  Each of the two points on the ellipse that intersect this line is called a vertex. The major axis is the segment between the two vertexes. The minor axis is the largest segment perpendicular to the major axis that fits inside the ellipse.
+\end{definition}
+
+We can derive an equation of an ellipse in a manner very similar to how we obtained an equation of a parabola.  The following problem will walk you through this.  We will not have time to present this problem in class. However, if you would like to complete the problem and write up your solution on the wiki, you can obtain presentation points for doing so.  Let me know if you are interested. 
+
+\begin{problem}[Optional]
+Consider the ellipse produced by the fixed distance $d$ and the foci $F_1=(c,0)$ and $F_2=(-c,0)$. Let $(a,0)$ and $(-a,0)$ be the vertexes of the ellipse.
+\begin{enumerate}
+\item Show that $d=2a$ by considering the distances from $F_1$ and $F_2$ to the point $Q=(a,0)$.
+\item Let $Q=(0,b)$ be a point on the ellipse.  Show that $b^2+c^2=a^2$ by considering the distance between $Q$ and each focus.
+\item Let $Q=(x,y)$. By considering the distances between $Q$ and the foci, show that an equation of the ellipse is $$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1.$$
+\item Suppose the foci are along the $y$-axis (at $(0,\pm c)$) and the fixed distance $d$ is now $d=2b$, with vertexes $(0,\pm b)$. Let $(a,0)$ be a point on the $x$ axis that intersect the ellipse.  Show that we still have $$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,$$ but now we instead have $a^2+c^2=b^2$.
+\end{enumerate}
+\end{problem}
+
+You'll want to use the results of the previous problem to complete the problems below. The key equation above is $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$. The foci will be on the $x$-axis if $a>b$, and will be on the $y$-axis if $b>a$. The second part of the problem above shows that the distance from the center of the ellipse to the vertex is equal to the hypotenuse of a right triangle whose legs go from the center to a focus, and from the center to an end point of the minor axis. 
+
+The next two problems will help you use the basic equations of an ellipse, together with shifting and reflecting, to study all ellipses whose major axis is parallel to either the $x$- or $y$-axis. 
+
+\begin{problem}  \marginpar{See 11.6: 17-24}
+For each ellipse below, graph the ellipse and give the coordinates of the foci and vertexes. \begin{enumerate}
+\item $\ds 16x^2+25y^2=400$ [Hint: divide by 400.]
+\item $\ds \frac{(x-1)^2}{5}+\frac{(y-2)^2}{9}=1$
+\item $x^2+2x+2y^2-8y=9$
+\end{enumerate}
+\end{problem}
+
+\begin{problem} \marginpar{See 11.6: 25-26}
+Given an equation of each ellipse described below, and provide a rough sketch.
+\begin{enumerate}
+\item The foci are at $(2\pm 3,1)$ and vertices at $(2\pm 5, 1)$.
+\item The foci are at $(-1,3\pm 2)$ and vertices at $(-1, 3\pm 5)$.
+\end{enumerate}
+\end{problem}
+
+Ask me about the reflective properties of an ellipse in class, if I have not told you already. The following problem provides the basis to these reflective properties and is optional.  If you wish to present it, let me know. I'll have you type it up prior to presenting in class.
+
+\begin{problem}[Optional]
+Consider the ellipse $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ with foci $F_1=(c,0)$ and $F_2=(-c,0)$. 
+Let $Q=(x,y)$ be some point on the ellipse. 
+Let $T$ be the tangent line to the ellipse at point $Q$. 
+Show that the angle between $F_1Q$ and $T$ is the same as the angle between $F_2Q$ and $T$. This shows that a ray from $F_1$ to $Q$ will reflect off the wall of the ellipse at $Q$ and head straight towards the other focus $F_2$.
+\end{problem}
+
+
+\subsection{Hyperbolas}
+
+\begin{definition}
+Given two points $F_1$ and $F_2$ (called foci) and a fixed number $d$, we define a hyperbola as the set of all points $Q$ in the plane so that the difference of the distances $F_1Q$  and $F_2Q$ equals the fixed number $d$ or $-d$. The center of the hyperbola is the midpoint of the segment $F_1F_2$. The two foci define a line.  Each of the two points on the hyperbola that intersect this line is called a vertex.
+\end{definition}
+
+We can derive an equation of a hyperbola in a manner very similar to how we obtained an equation of an ellipse. The following problem will walk you through this.  We will not have time to present this problem in class.
+
+\begin{problem}[Optional]
+Consider the hyperbola produced by the fixed number $d$ and the foci $F_1=(c,0)$ and $F_2=(-c,0)$. Let $(a,0)$ and $(-a,0)$ be the vertexes of the hyperbola.
+\begin{enumerate}
+\item Show that $d=2a$ by considering the difference of the distances from $F_1$ and $F_2$ to the vertex $(a,0)$.
+\item Let $Q=(x,y)$ be a point on the hyperbola. By considering the difference of the distances between $Q$ and the foci, show that an equation of the hyperbola is $\frac{x^2}{a^2}-\frac{y^2}{c^2-a^2}=1,$ or if we let $c^2-a^2=b^2$, then the equation is 
+$$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1.$$
+\item Suppose the foci are along the $y$-axis (at $(0,\pm c)$) and the number $d$ is now $d=2b$, with vertexes $(0,\pm b)$. Let $a^2=c^2-b^2$. Show that an equation of the hyperbola is $$\frac{y^2}{b^2}-\frac{x^2}{a^2}=1.$$
+\end{enumerate}
+\end{problem}
+
+You'll want to use the results of the previous problem to complete the problems below.
+
+\begin{problem} \marginpar{See 11.6: 27-34}
+Consider the hyperbola $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1.$ Construct a box centered at the origin with corners at $(a, \pm b)$ and $(-a,\pm b)$.  Draw lines through the diagonals of this box. Rewrite the equation of the hyperbola by solving for $y$ and then factoring to show that as $x$ gets large, the hyperbola gets really close to the lines $y=\pm \frac{b}{a}x$. [Hint:  rewrite so that you obtain $y=\pm\frac{b}{a}x\sqrt{\text{something}}$]. These two lines are often called oblique asymptotes. 
+
+Now apply what you have just done to sketch the hyperbola $\frac{x^2}{25}-\frac{y^2}{9}=1$ and give the location of the foci. 
+\end{problem}
+
+The next two problems will help you use the basic equations of a hyperbola, together with shifting and reflecting, to study all ellipses whose major axis is parallel to either the $x$- or $y$-axis. 
+
+\begin{problem} \marginpar{See 11.6: 27-34}
+For each hyperbola below, graph the hyperbola (include the box and asymptotes) and give the coordinates of the foci and vertexes. 
+\begin{enumerate}
+\item $\ds 16x^2-25y^2=400$ [Hint: divide by 400.]
+\item $\ds \frac{(x-1)^2}{5}-\frac{(y-2)^2}{9}=1$
+\item $x^2+2x-2y^2+8y=9$
+\end{enumerate}
+\end{problem}
+
+\begin{problem} \marginpar{See 11.6: 35-38}
+Given an equation of each hyperbola described below, and provide a rough sketch.
+\begin{enumerate}
+\item The vertexes are at $(2\pm 3,1)$ and foci at $(2\pm 5, 1)$.
+\item The vertexes are at $(-1,3\pm 2)$ and foci at $(-1, 3\pm 5)$.
+\end{enumerate}
+\end{problem}
+
+Ask me about the reflective properties of a hyperbola in class, if I have not told you already. In particular, we can discuss lasers and long range telescopes. The following problem provides the basis to these reflective properties and is optional.  If you wish to present it, let me know. I'll have you type it up prior to presenting in class.
+
+\begin{problem}[Optional]
+Consider the hyperbola $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$ with foci $F_1=(c,0)$ and $F_2=(-c,0)$. 
+Let $Q=(x,y)$ be some point on the ellipse. 
+Let $T$ be the tangent line to the hyperbola at point $Q$. 
+Show that the angle between $F_1Q$ and $T$ is the same as the angle between $F_2Q$ and $T$. This shows that if you begin a ray from a point in the plane and head towards $F_1$ (where the wall of the hyperbola lies between the start point and $F_1$), then when the ray hits the wall at $Q$, it will reflect off the wall and head straight towards the other focus $F_2$.
+\end{problem}
+
+%Do I want a problem that has them decide which is which, or is it enough to make them do that below?  I'm going with below.
+
+\section{Parametric Equations}
+In middle school, you learned to write an equation of a line as $y=mx+b$.  In the vector unit, we learned to write this in vector form as $(x,y)=(1,m)t+(0,b)$. The equation to the left is called a vector equation.  It is equivalent to writing the two equations $x=1t+0,y=mt+b$, which we will call parametric equations of the line. We were able to quickly develop equations of lines in space, by just adding a third equation for $z$.
+
+Parametric equations provide us with a way of specifying the location $(x,y,z)$ of an object by giving an equation for each coordinate.  We will use these equations to model motion in the plane and in space.  In this section we'll focus mostly on planar curves.
+
+\begin{definition}
+If each of $f$ and $g$ are continuous functions, then the curve in the plane defined by $x=f(t),y=g(t)$ is called a parametric curve, and the equations $x=f(t),y=g(t)$ are called parametric equations for the curve. You can generalize this definition to 3D and beyond by just adding more variables.
+\end{definition}
+
+\begin{problem} \marginpar{See 11.1: 1-18. This is the same for all the problems below.}
+By plotting points, construct graphs of the parametric curves given below (just make a $t,x,y$ table, and then plot the $(x,y)$ coordinates).  Place an arrow on your graph to show the direction of motion.
+\begin{enumerate}
+\item $x=\cos t, y=\sin t$, for $0\leq t\leq 2\pi$.
+\item $x=\sin t, y=\cos t$, for $0\leq t\leq 2\pi$.
+\item $x=\cos t, y=\sin t, z=t$, for $0\leq t\leq 4\pi$.
+\end{enumerate} 
+\end{problem}
+
+\begin{problem}
+Plot the path traced out by the parametric curve $x=1+2\cos t, y=3+5\sin t$.  Then use the trig identity $\cos^2t+\sin^2t=1$ to give a Cartesian equation of the curve (an equation that only involves $x$ and $y$). What are the foci of the resulting object (it's a conic section).
+\end{problem}
+
+\begin{problem}\label{line equation to refer to}
+Find parametric equations for a line that passes through the points $(0,1,2)$ and $(3,-2,4)$. What we did in the previous chapter should help here.  
+\end{problem}
+
+\begin{problem}
+Plot the path traced out by the parametric curve $\vec r(t)= (t^2+1, 2t-3).$ Give a Cartesian equation of the curve (eliminate the parameter $t$), and then find the focus of the resulting curve.
+\end{problem}
+
+\begin{problem}
+Consider the parametric curve given by $x=\tan t, y=\sec t$. Plot the curve for $-\pi/2<t<\pi/2$. Give a Cartesian equation of the curve (a trig identity will help).  Then find the foci of the resulting conic section. [Hint: this problem will probably be easier to draw if you first find the Cartesian equation, and then plot the curve.]
+\end{problem}
+
+\subsection{Derivatives and Tangent lines}
+We're now ready to discuss calculus on parametric curves. The derivative of a vector valued function is defined using the same definition as first semester calculus.
+
+\begin{definition}
+If $\vec r(t)$ is a vector equation of a curve (or in parametric form just $x=f(t), y=g(t)$), then we define the derivative to be $$\frac{d\vec r}{dt}=\ds\lim_{h\to 0}\frac{\vec r(t+h)-\vec r(t)}{h}.$$
+\end{definition}
+The subtraction above requires vector subtraction.  The following problem will provide a simple way to take derivatives which we will use all semester long.
+
+\begin{problem} \marginpar{See page 728.}
+Show that if $\vec r(t) = (f(t),g(t))$, then the derivative is just $\frac{d\vec r}{dt} = (f'(t),g'(t))$.  In other words, you can take the derivative by just differentiating each component separately.  
+\end{problem}
+
+
+\begin{problem}  \marginpar{See 13.1:5-8 and 13.1:19-20}
+Consider the parametric curve given by $\vec r(t)=( 3\cos t, 3\sin t )$. 
+\begin{enumerate}
+\item Compute $\frac{d\vec r}{dt}$ and $\frac{d^2\vec r}{dt^2}$. 
+\item Construct a graph of the curve given by $\vec r$.  
+\item On your graph, draw the vectors $\frac{d\vec r}{dt}\left(\frac{\pi}{4}\right)$ and $\frac{d^2\vec r}{dt^2}\left(\frac{\pi}{4}\right)$ with their tail placed on the curve at $\vec r\left(\frac{\pi}{4}\right)$. These vectors represent the velocity and acceleration vectors.
+\item Give a vector equation of the tangent line to this curve at $t=\frac{\pi}{4}$. 
+\end{enumerate}
+\end{problem}
+
+If an object moves along a path $\vec r(t)$, we can find the velocity and acceleration by just computing the first and second derivatives. The velocity is $\frac{d\vec r}{dt}$, and the acceleration is $\frac{d^2\vec r}{dt^2}$. Speed is a scalar, not a vector. The speed of an object is just the length of the velocity vector.
+
+\begin{problem}
+Consider the curve $\vec r(t) = (2t+3, 4(2t-1)^2)$.
+\begin{enumerate}
+\item Construct a graph of $\vec r$ for $0\leq t\leq 2$. 
+\item If this curve represented the path of a horse running through a pasture, find the velocity of the horse at any time $t$, and then specifically at $t=1$. What is the horse's speed at $t=1$?
+\item Find a vector equation of the tangent line to $\vec r$ at $t=1$.  Include this on your graph.
+\item Show that the slope of the line is $\ds \frac{dy}{dx}\big|_{x=5} = \frac{\frac{dy}{dt}\big|_{t=1}}{\frac{dx}{dt}\big|_{t=1}}$.
+\end{enumerate} 
+\end{problem}
+
+The previous problem introduced the following key theorem.  Its proof is just the chain rule.
+\begin{theorem}
+If $\vec r(t) = (x(t),y(t))$ is a parametric curve, then the slope $dy/dx$ of the curve can be found using the formula 
+$$\ds\frac{dy}{dx} = \frac{dy}{dt}\frac{dt}{dx} = \frac{dy/dt}{dx/dt}.$$
+The second derivative is then $\ds\frac{d^2y}{dx^2} = \frac{d(y'(x))}{dx} = \frac{d(dy/dx)}{dx}=\frac{d(dy/dx)/dt}{dx/dt}$.
+\end{theorem}
+An easy way to remember this theorem is to find $\frac{dy}{dx}$, just find the derivative of $y$ with respect to $t$, and then divide by $dx/dt$. This will allow you to connect derivatives of vector valued functions to slopes and derivatives back in first semester calculus.
+
+\begin{problem} \marginpar{See 11.2:1-14.}
+Consider the parametric curve given by $\vec r(t) = (t^2,t^3)$. 
+\begin{enumerate}
+\item Compute $y'$ and $y''$ at $t=2$ using the theorem above.
+\item Eliminate the parameter $t$ (get a Cartesian equation for the curve). Then find $y'$ and $y''$ at $t=2$ using first semester calculus.
+\end{enumerate}
+\end{problem}
+
+\subsection{Arc Length} 
+If an object moves at a constant speed, then the distance travelled is 
+$$\text{distance} = \text{speed}\times\text{time}.$$
+This requires that the speed be constant.  What if the speed is not constant? Over a really small time interval $dt$, the speed is almost constant, so we can still use the idea above. The following problem will help you develop the key formula for arc length.
+
+\begin{problem}[Derivation of the arc length formula] 
+Suppose an object moves along the path given by $\vec r(t)=(x(t),y(t))$ for $a\leq t\leq b$. 
+\begin{enumerate}
+\item Show that the object's speed at any time $t$ is 
+$\ds\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}$.
+\item If you move over a really small time interval, say of length $dt$, then the speed is almost constant.  Give a formula for the small distance $ds$ you have travelled through a small time $dt$, provided you are moving at the speed given above. 
+\item  Explain why the length of the path given by $\vec r$ is \marginpar{This is the arc length formula.}
+$$s=\int ds=\int_a^b \left|\frac{d\vec r}{dt}\right| dt=\int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt.$$
+\item \marginpar{See page 639.} Draw a small curve.  Pick two points close together.  Construct a straight line segment between them (call this $ds$).  Then draw a right triangle that shows the change in $x$ and change in $y$ (written $dx$ and $dy$).  Use the Pythagorean theorem to show that $ds=\sqrt{dx^2+dy^2}=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt$.  
+%\item If the curve is in space (so $\vec r(t)=(x(t),y(t),z(t))$ is the path), then what is the arc length of the curve? 
+\end{enumerate}
+\end{problem}
+
+\begin{problem} \marginpar{See 11.2: 25-30.}
+Find the length of the curve  $\ds \vec r(t) = \left(t^3,\frac{3t^2}{2}\right)$ for $t\in[1,3]$. The notation $t\in[1,3]$ means $1\leq t\leq 3$. 
+\end{problem}
+
+\begin{problem}
+Set up an integral formula which would give the length of the following curves. Sketch the curve. Do not worry about integrating them.  \marginpar{The reason I don't want you to actually compute the integrals is that they will get ugly really fast. Try doing one in Wolfram Alpha and see what the computer gives. }
+\begin{enumerate}
+\item The parabola $\vec p(t) = (t,t^2)$ for $t\in[0,3]$.
+\item The ellipse $\vec e(t) = (4\cos t,5\sin t)$ for $t\in[0,2\pi]$.
+\item The hyperbola $\vec h(t) = (\tan t,\sec t)$ for $t\in[-\pi/ 4,\pi/4]$.
+\end{enumerate}
+\end{problem}
+To actually compute the integrals above and find the lengths, we would use a numerical technique to approximate the integral (something akin to adding up the areas of lots and lots of rectangles as you did in first semester calculus).
+
+
+
+
