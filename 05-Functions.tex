@@ -20,14 +20,19 @@ As we introduce each type of function, we'll introduce it in the context of a so
 % After introducing each type of surface, we'll end this chapter with an assortment of functions to practice graphing.
 
 \begin{problem}\label{pebble problem}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=f\%28t\%29\%3D64-16t^2}{Wolfram Alpha}. Follow the links to Wolfram Alpha in all the problems below to see how to get the computer to graph the function.}%
+\marginpar{See 
+\href{http://aleph.sagemath.org/?z=eJwrsS1LLNJQL1HXtOYqyMkv0TAz0TU00yqJM9JR0CjRMdAx0tQEAL5TCVo}{Sage}
+or 
+\href{http://wolfr.am/xoc07E}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=f%28t%29%3D64-16t^2
+Follow the links to Sage or Wolfram Alpha in all the problems below to see how to get the computer to graph the function.}
 A pebble falls from a 64 ft tall building.  Its height (in ft) above the ground $t$ seconds after it drops is given by the function $y=f(t)=64-16t^2$. What are $n$ and $m$ when we write this function in the form  $f:{\mathbb{R}}^n\to {\mathbb{R}}^m$? Construct a graph of this function.  How many dimensions do you need to graph this function?
 \hrule\end{problem}
 
 \subsection{Parametric Curves and Surfaces}
 
 \begin{problem}\label{parametric curve in plane example}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=parametric+plot+\%282+cos+t\%2C+3+sin+t\%29}{Wolfram Alpha}. There's a lot more practice of this idea in 11.1. Chapter 3 of the problem set was devoted to this idea. You'll also find mor practice in 13.1: 1-8.}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJwrsS1LLNJQL1HX5CpILErMTS0pykyOL8jJL9GINtJKzi_WKNHUUTDWKs7MA7JidRQ0SnQMdIy0CjI1NQFWdRJT}{Sage} or \href{http://wolfr.am/wAkR8l}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=parametric+plot+%282+cos+t,+3+sin+t%29
+ There's a lot more practice of this idea in 11.1. Chapter 3 of the problem set was devoted to this idea. You'll also find more practice in 13.1: 1-8.}%
 A horse runs around an elliptical track. Its position at time $t$ is given by the function $\vec r(t)=(2\cos t, 3\sin t).$ We could alternatively write this as $x=2\cos t, y=3\sin t$. 
  \begin{enumerate}
   \item What are $n$ and $m$ when we write this function in the form  $\vec r:{\mathbb{R}}^n\to {\mathbb{R}}^m$?
@@ -43,7 +48,8 @@ Notice in the problem above that we placed a vector symbol above the function na
 \end{remark}
 
 \begin{problem}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=parametric+plot+\%283t\%2C+64-16t^2\%29}{Wolfram Alpha}. The text has more practice in 13.1: 1-8.}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJwNxksKgCAUBdB5q3Dmh2eQfWZuJXmIgpAodtt_Dg6crKC92g1IXIfdLoPb6aXz4JowSgz9aVCZhAJZt540aRL89hQRBqM0L_lDq7NR6h-iAhhm}{Sage} or \href{http://wolfr.am/ynm3kD}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=parametric+plot+%283t,+64-16t^2%29
+ The text has more practice in 13.1: 1-8.}%
 Consider the pebble from problem \ref{pebble problem}. The pebble's height was given by $y=64-16t^2$.  The pebble also has some horizontal velocity (it's moving at 3 ft/s to the right).  If we let the origin be the base of the 64 ft building, then the position of the pebble at time $t$ is given by $\vec r(t) = (3t, 64-16t^2)$.
  \begin{enumerate}
   \item What are $n$ and $m$ when we write this function in the form  $\vec r:{\mathbb{R}}^n\to {\mathbb{R}}^m$?
@@ -57,7 +63,7 @@ In the next problem, we keep the input as just a single number $t$, but the outp
 
 \begin{problem}%
 \label{space curve example}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%282+cos+t\%2C+2+sin+t\%2C+t\%29+for+t+from+0+to+4+pi}{Wolfram Alpha}. 
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL0yjRtNUw0krOLwaydBSMtIoz88CsEk2ugsSixNzUkqLM5PiCnPwSjTQdBY0SHQMdBROtgkxNTQAYOxGO}{Sage} or \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%282+cos+t\%2C+2+sin+t\%2C+t\%29+for+t+from+0+to+4+pi}{Wolfram Alpha}. 
 The text has more practice in 13.1: 9-14.}%
  A jet begins spiraling upwards to gain height. The position of the jet after $t$ seconds is modeled by the equation 
 $\vec r(t)=(2\cos t, 2\sin t, t).$ We could alternatively write this as $x=2\cos t, y=2\sin t, z=t$. 
@@ -85,7 +91,7 @@ In all the problems above, you should have noticed that in order to draw a funct
 We now increase the number of inputs from 1 to 2.  This will allow us to graph many space curves at the same time.
 
 \begin{problem} \label{parametric surface example}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%28a+cos+t\%2C+a+sin+t\%2C+t\%29+for+t+from+0+to+4+pi+and+a+from+2+to+4}{Wolfram Alpha}.}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL0yjRUUjUtNVI1ErOL9Yo0QTytIoz88CsEk2ugsSixNzUkqLM5PiCnPwSjTQdBaAOAx0FE62CTKASjUQdBSMgT1OTCwBCiRSf}{Sage} or \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%28a+cos+t\%2C+a+sin+t\%2C+t\%29+for+t+from+0+to+4+pi+and+a+from+2+to+4}{Wolfram Alpha}.}%
  The jet from the problem above is actually accompanied by several jets flying side by side. As all the jets fly, they leave smoke trail behind them (it's an air show). The smoke from one jet spreads outwards to mix with the neighboring jet, so that it looks like the jets are leaving a rather wide sheet of smoke behind them as they fly. The position of two of the many other jets is given by $\vec r_3(t)=(3\cos t, 3\sin t, t)$ and $\vec r_4(t)=(4\cos t,4\sin t,t)$.  A function which represents the smoke stream is $\vec r(a,t)=(a\cos t, a\sin t, t)$ for $0\leq t\leq 4\pi$ and $2\leq a\leq 4$.
  \begin{enumerate}
   \item What are $n$ and $m$ when we write the function $\vec r(a,t)=(a\cos t, a\sin t, t)$ in the form  $\vec r:{\mathbb{R}}^n\to {\mathbb{R}}^m$?
@@ -98,7 +104,8 @@ We now increase the number of inputs from 1 to 2.  This will allow us to graph m
 The function above is called a parametric surface.  Parametric surfaces are formed by joining together many parametric space curves. Most of 3D computer animation is done using parametric surfaces. Woody's entire body in {\it Toy Story} is a collection of parametric surfaces. Car companies create computer models of vehicles using parametric surfaces, and then use those parametric surfaces to study collisions. Often the mathematics behind these models is hidden in the software program, but parametric surfaces are at the heart of just about every 3D computer model.
 
 \begin{problem}\label{second parametric surface example}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%28u+cos+v\%2C+u+sin+v\%2C+u^2\%29}{Wolfram Alpha}.}% 
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL0yjVUSjTtNUo1UrOL9Yo09RRKNUqzsyDsOKMNLkKEosSc1NLijKT4wty8ks00nQUQHoMdBRMgEo0ynQMdIy0CjI1NQFPyxVa}{Sage} or \href{http://wolfr.am/A90cfW}{Wolfram Alpha}.% http://www.wolframalpha.com/input/?i=parametric+plot+3d+%28u+cos+v,+u+sin+v,+u^2%29
+}%
  Consider the parametric surface $\vec r(u,v)=(u\cos v, u\sin v, u^2)$ for $0\leq u\leq 3$ and $0\leq v\leq 2 \pi$.
  Construct a graph of this function. To do so, let $u$ equal a constant (such as 1, 2, 3) and then graph the resulting space curve.  Then let $v$ equal a constant (such as 0, $\pi/2$, etc.) and graph the resulting space curve until you can visualize the surface. [Hint: Think satellite dish.] 
 \hrule\end{problem}
@@ -109,7 +116,8 @@ The function above is called a parametric surface.  Parametric surfaces are form
 In this section we'll focus on functions of the form $f:\mathbb{R}^2\to\mathbb{R}^1$ and $f:\mathbb{R}^3\to\mathbb{R}^1$; we'll keep the output as a real number. In the next problem, you should notice that the input is a vector $(x,y)$ and the output is a number $z$. There are two ways to graph functions of this type.  The next two problems show you how. 
 
 \begin{problem}\label{surface graph for a function of two variables}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=plot+3d+9-x^2-y^2}{Wolfram Alpha}.
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL06jQqdS0tdStiDPSrYwz4irIyS8xTtFI01EAyuga6xhrAlmVEJYmADAVC84}{Sage} or 
+\href{http://wolfr.am/wny0IF}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=plot+3d+9-x^2-y^2
 }%
  A computer chip has been disconnected from electricity and sitting in cold storage for quite some time.  The chip is connected to power, and a few moments later the temperature (in Celcius) at various points $(x,y)$ on the chip is measured. From these measurements, statistics is used to create a temperature function $z=f(x,y)$ to model the temperature at any point on the chip. Suppose that this chip's temperature function is given by the equation $z=f(x,y)=9-x^2-y^2$. We'll be creating a 3D model of this function in this problem, so you'll want to place all your graphs on the same $x,y,z$ axes.
 \begin{enumerate}
@@ -123,7 +131,9 @@ In this section we'll focus on functions of the form $f:\mathbb{R}^2\to\mathbb{R
 \hrule\end{problem}
 
 \begin{problem}\label{cake level curves plot}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=plot+3d+9-x^2-y^2}{Wolfram Alpha}.}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL06jQqdS0tdStiDPSrYwz4irIyS8xTtFI01EAyuga6xhrAlmVEJYmADAVC84}{Sage} or 
+\href{http://wolfr.am/wny0IF}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=plot+3d+9-x^2-y^2
+}%
  We'll be using the same function $z=f(x,y)=9-x^2-y^2$ as the previous problem.  However, this time we'll construct a graph of the function by only studying places where the temperature is constant.  We'll create a graph in 2D of the surface (similar to a topographical map). 
  \begin{enumerate}
   \item%
@@ -140,7 +150,10 @@ Which points in the plane have zero temperature? Just let $z=0$ in $z=9-x^2-y^2$
 \end{definition}
 
 \begin{problem}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=plot+3d+x-y^2}{Wolfram Alpha}. More practice is in 14.1: 37-48.}%
+
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL06jQqdS0rdCtjDPiKsjJLzFO0UjTUQCK6hrrGGsCWZUQliYAA3IK2A}{Sage} or 
+\href{http://wolfr.am/wBOk1b}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=plot+3d+x-y^2
+More practice is in 14.1: 37-48.}%
  Consider the function $f(x,y)=x-y^2$.
 \begin{enumerate}
  \item Construct a 3D surface plot of $f$. [So just graph in 3D the curves given by $x=0$ and $y=0$ and then try setting $x$ or $y$ equal to some other constants (like $x=1$, $x=2$, etc. or $y=1$, $y=2$).]
@@ -155,13 +168,7 @@ Notice that when we graphed the previous two functions (of the form $z=f(x,y)$) 
 The next function is of the form $w=f(x,y,z)$, so it has 3 inputs and 1 output.  We could write $f:\mathbb{R}^3\to\mathbb{R}^1$. We would need 4 dimensions to graph this function, but graphing in 4D is not an easy task.  Instead, we'll reduce the dimension and create plots in 3D to describe the level surfaces of the function.
 
 \begin{problem}%
-\marginpar{Wolfram Alpha currently does not support drawing level surfaces.  You can use 
-\begin{itemize}
- \item Mathematica (see Brainhoney for details),
- \item \href{http://www.sagenb.org/home/pub/4203}{SAGE at sagemath.org}, or 
- \item \href{http://demonstrations.wolfram.com/LevelSurfacesAndQuadraticSurfaces/}{Wolfram Demonstrations}.
-\end{itemize}
-Just follow the links above.
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJwrSyzSUK_QqdSpUtfkCtEAszRtDQ0MdCvijHQrgbgqzogrM7cgJzM5syS-ICe_xDhFA67Q1tJSRwHIUdA11lEw1gSyK8FsMLMKytRUAADtWRrw}{Sage}.  Wolfram Alpha currently does not support drawing level surfaces.  You could also use Mathematica or \href{http://demonstrations.wolfram.com/LevelSurfacesAndQuadraticSurfaces/}{Wolfram Demonstrations}.
 
 You can access more problems on drawing level surfaces in 12.6:1-44 or 14.1:53-60.}%
  Suppose that an explosion occurs at the origin $(0,0,0)$. Heat from the explosion starts to radiate outwards.  Suppose that a few moments after the explosion, the temperature at any point in space is given by $w=T(x,y,z)=100-x^2-y^2-z^2.$ 
@@ -175,7 +182,8 @@ You can access more problems on drawing level surfaces in 12.6:1-44 or 14.1:53-6
 \hrule\end{problem}
 
 \begin{problem}
- Consider the function $w=f(x,y,z)=x^2+z^2$. This is a function of $y$, but notice that putting in $y$ does not change the function. 
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJwrSyzSUK_QqdSpUtfkStMAszRtK-KMtKvijLgycwtyMpMzS-ILcvJLjFM04ApsTXQUgGwFXWMdBWNNILsSzAYzq6BMTQUAEvYY4A}{Sage}.}
+Consider the function $w=f(x,y,z)=x^2+z^2$. This is a function of $y$, but notice that putting in $y$ does not change the function. 
  \begin{enumerate}
   \item Draw a graph of the level surface $w=4$. [When $y=0$ you can draw one curve.  When $y=1$, you should draw the same curve.  When $y=2$, again you draw the same curve.]
   \item Graph the surface $9=x^2+z^2$ (so the level surface $w=9$).
@@ -185,7 +193,7 @@ You can access more problems on drawing level surfaces in 12.6:1-44 or 14.1:53-6
 
 Most of our examples of function of the form $w=f(x,y,z)$ can be drawn by using our knowledge about conic sections. We know how to graph ellipses and hyperbolas if there are only two variables. So the key idea is to set one of the variables equal to a constant and then graph the resulting curve.  Repeat this with a few variables and a few constants, and you'll know what the surface is. Sometimes when you set a specific variable equal to a constant, you'll get an ellipse. If this occurs, try setting that variable equal to other constants, as ellipses are generally the easiest curves to draw.
 
-\begin{problem}\marginpar{Remember you can find more practice in 12.6:1-44, or 14.1: 53-64.}%
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJwrSyzSUK_QqdSpUtfkStMAszRtK-KMdCvjjLSr4oy4MnMLcjKTM0viC3LyS4xTNOCKbA11FIBsBV1jHQVjTSC7EswGM6ugTE0FAIXAGhM}{Sage}.  Remember you can find more practice in 12.6:1-44, or 14.1: 53-64.}%
  Consider the function $w=f(x,y,z)=x^2-y^2+z^2$. (We'll have a few people present this problem.)
  \begin{enumerate}
   \item Draw a graph of the level surface $w=1$. [You need to graph $1=x^2-y^2+z^2$. Let $x=0$ and draw the resulting curve. Then let $y=0$ and draw the resulting curve. Let either $x$ or $y$ equal some more constants (whichever gave you an ellipse), and then draw the resulting ellipses.]  
@@ -225,10 +233,13 @@ x&=\rho\sin\phi\cos\theta\\y&=\rho\sin\phi\sin\theta\\z&=\rho\cos\phi.
   Graphing this transformation requires $3+3=6$ dimensions. In this problem we'll construct parts of this graph by graphing various surfaces. We did something similar for the polar coordinate transformation in problem \ref{polar coordinate transformation graph}. 
 \begin{enumerate}
  \item% 
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%282+sin+phi+cos+theta\%2C+2+sin+phi+sin+theta\%2C+2+cos+phi\%29}{Wolfram Alpha}.}%
+   \marginpar{See \href{http://aleph.sagemath.org/?z=eJxVjsEKhDAMRO9-xeCpKTmId__C-1JEaEBtaPP_bLMirLe8ecOQNdRcGJqFYXm3RFjgWWxyhR5T3EoLt2K8hB__wosuaNAql2FcfWiZCdJGxkODpprO3apsHz2KhUcw7jnGxJijiie_zzp3oi_jZjWn}{Sage} or 
+\href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%282+sin+phi+cos+theta\%2C+2+sin+phi+sin+theta\%2C+2+cos+phi\%29}{Wolfram Alpha}.}%
 Let $\rho=2$ and graph the resulting surface.  What do you get if $\rho = 3$?
  \item % 
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%28rho+sin+\%28pi\%2F4\%29+cos+theta\%2C+rho+sin+\%28pi\%2F4\%29+sin+theta\%2C+rho+cos+\%28pi\%2F4\%29\%29+}{Wolfram Alpha}.}%
+\marginpar{See 
+\href{http://aleph.sagemath.org/?z=eJxVjrEKwzAMRPd8xZHJMioNTdf8RfZiQsCCNha2_p9WyeJuuveOQ2uouTA0C8PybomwwFlscoQfpriVFi7F-BN-9MKLLmjQKodhXD0uKvcnQdrI6MCgqabPblW2l76Lhc4xrl3GxHhEFSfnn7eZMRN9AfBbOD8}{Sage} or 
+\href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%28rho+sin+\%28pi\%2F4\%29+cos+theta\%2C+rho+sin+\%28pi\%2F4\%29+sin+theta\%2C+rho+cos+\%28pi\%2F4\%29\%29+}{Wolfram Alpha}.}%
 Let $\phi=\pi/4$ and graph the resulting surface.  What do you get if $\phi=\pi/2$?
  \item Let $\theta=\pi/4$ and graph the resulting surface.  What do you get if $\theta=\pi/2$?
 \end{enumerate}
@@ -238,7 +249,10 @@ Let $\phi=\pi/4$ and graph the resulting surface.  What do you get if $\phi=\pi/
 We now focus on vector fields.
 
 \begin{problem}%
-\marginpar{See \href{http://www.wolframalpha.com/input/?i=plot+a+vector+field&f1={2x\%2By\%2Cx\%2B2y}&x=10&y=8&f=VectorPlot.vectorfunction_{2x\%2By\%2Cx\%2B2y}&f2=x&f=VectorPlot.vectorplotvariable1_x&f3=-10&f=VectorPlot.vectorplotlowerrange1_-10&f4=10&f=VectorPlot.vectorplotupperrange1_10&f5=y&f=VectorPlot.vectorplotvariable2_y&f6=-10&f=VectorPlot.vectorplotlowerrange2_-10&f7=10&f=VectorPlot.vectorplotupperrange2_10}{Wolfram Alpha} for a generic tool to graph any vector field in the plane. The computer will shrink the largest vector down in size so it does not overlap any of the others, and then reduce the size of all the vectors accordingly. See 16.2: 39-44 for more practice.}%
+\marginpar{See 
+\href{http://aleph.sagemath.org/?z=eJxz06jQqdRUsFXQMNKq0K7UqdA20qrU5CrIyS-JL0tNLskvik_LTM1J0XDTUQAq1TU00DE00ASyK2FsTQCKaxIN}{Sage} or
+\href{http://wolfr.am/y4gIgX}{Wolfram Alpha}. % http://www.wolframalpha.com/input/?i=plot+a+vector+field&f1={2x%2By%2Cx%2B2y}&x=6&y=7&f=VectorPlot.vectorfunction_{2x%2By%2Cx%2B2y}&f2=x&f=VectorPlot.vectorplotvariable1_x&f3=-10&f=VectorPlot.vectorplotlowerrange1_-10&f4=10&f=VectorPlot.vectorplotupperrange1_10&f5=y&f=VectorPlot.vectorplotvariable2_y&f6=-10&f=VectorPlot.vectorplotlowerrange2_-10&f7=10&f=VectorPlot.vectorplotupperrange2_10
+The computer will shrink the largest vector down in size so it does not overlap any of the others, and then reduce the size of all the vectors accordingly. See 16.2: 39-44 for more practice.}%
  Consider the vector field $\vec F(x,y)=(2x+y,x+2y)$.  In this problem, you will construct a graph of this vector field by hand.
 \begin{enumerate}
  \item Compute $\vec F(1,0)$. Then draw the vector $F(1,0)$ with its base at $(1,0)$.
@@ -247,18 +261,20 @@ We now focus on vector fields.
 \end{enumerate}
 \hrule\end{problem}
 
-\begin{problem}[Spin field]\marginpar{Here's another link to the vector field plotter in \href{http://www.wolframalpha.com/input/?i=plot+a+vector+field}{Wolfram Alpha}. See 16.2: 39-44 for more practice.}%
+\begin{problem}[Spin field]\marginpar{Use the links above to see the computer plot this.  See 16.2: 39-44 for more practice.}%
  Consider the vector field $\vec F(x,y)=(-y,x)$. Construct a graph of this vector field. Remember, the key to plotting a vector field is ``at the point $(x,y)$, draw the vector $\vec F(x,y)$ with its base at $(x,y)$.''  Plot at least 8 vectors (a few in each quadrant), so we can see what this field is doing.
 \hrule\end{problem}
+
+\href{http://aleph.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs}{Sage} can also help us visualize 3d vector fields, like $\vec F(x,y,z)=(y,z,x)$.
 
 \section{Constructing Functions}
 We now know how to draw a vector field provided someone tells us the equation. How do we obtain an equation of a vector field? The following problem will help you develop the gravitational vector field.
 
 \begin{problem}[Radial fields]
+\marginpar{Use \href{http://aleph.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs}{Sage} to plot your vector fields.  See 16.2: 39-44 for more practice.}%
+Do the following:
 \begin{enumerate}
- \item% 
-\marginpar{See 16.2: 39-44 for more practice.}%
-Let $P=(x,y,z)$ be a point in space.  At the point $P$, let $\vec F(x,y,z)$ be the vector which points from $P$ to the origin.  Give a formula for $\vec F(x,y,z)$.
+ \item Let $P=(x,y,z)$ be a point in space.  At the point $P$, let $\vec F(x,y,z)$ be the vector which points from $P$ to the origin.  Give a formula for $\vec F(x,y,z)$.
  \item Give an equation of the vector field where at each point $P$ in the plane, the vector $\vec F_2(P)$ is a unit vector that points towards the origin.
  \item Give an equation of the vector field where at each point $P$ in the plane, the vector $\vec F_3(P)$ is a vector of length 7 that points towards the origin.
  \item Give an equation of the vector field where at each point $P$ in the plane, the vector $\vec G(P)$ points towards the origin, and has a magnitude equal to $1/d^2$ where $d$ is the distance to the origin.
@@ -267,6 +283,9 @@ Let $P=(x,y,z)$ be a point in space.  At the point $P$, let $\vec F(x,y,z)$ be t
 
 If someone gives us parametric equations for a curve in the plane, we know how to draw the curve.  How do we obtain parametric equations of a given curve? In problem \ref{parametric curve in plane example}, we were given the parametric equation for the path of a horse, namely $x=2\cos t, y=3 \sin t$ or $\vec r(t)=(2\cos t,3\sin t)$. From those equations, we drew the path of the horse, and could have written a Cartesian equation for the path. How do we work this in reverse, namely if we had only been given the ellipse $\ds\frac{x^2}{4}+\frac{y^2}{9}=1$, could we have obtained parametric equations $\vec r(t)=(x(t),y(t))$ for the curve?
 \begin{problem}
+\marginpar{Use \href{http://aleph.sagemath.org/?z=eJwrsS1LLNJQL1HX5CpILErMTS0pykyOL8jJL9GINtJKzi_WKNHUUTDWKs7MA7JidRQ0SnQMdIy0CjI1NQFWdRJT}{Sage} or \href{http://wolfr.am/wAkR8l}{Wolfram Alpha} %http://www.wolframalpha.com/input/?i=parametric+plot+%282+cos+t,+3+sin+t%29
+to visualize your parametrizations.
+}%
  Find a parametrization for each of the following curves in the plane. 
  You can write your parametrization in the vector form $\vec r(t)=(?,?)$, or in the parametric form $x=?,\ y=?$. 
  With each parametrization, include bounds for $t$.
@@ -282,7 +301,7 @@ If someone gives us parametric equations for a curve in the plane, we know how t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\note{Idea.  They did this above already when drawing spherical coordinates.  They already practiced removing a variable.  I somehow need to make that connect to this part. How to do it, I'm not sure. Think about it, and try something different next time.}
+\note{Idea.  They did the problem below already when drawing spherical coordinates.  They already practiced removing a variable.  I somehow need to make that connect to this part. How to do it, I'm not sure. Think about it, and try something different next time.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -292,11 +311,13 @@ This requires that we write an equation for $x$, $y$, and $z$ in terms of two in
 In vector form, we need a function $\vec r:\mathbb{R}^2\to\mathbb{R}^3$. 
 We can often use a coordinate transformation $\vec T:\mathbb{R}^3\to\mathbb{R}^3$ to obtain a parametrization of a surface. 
 The next three problems show how to do this.   
-\begin{problem}%
-\marginpar{See 16.5: 1-16 for more practice.}%
+\begin{problem}\label{3d parametric plot}
+\marginpar{Use \href{http://aleph.sagemath.org/?z=eJwL0ajQqdSp0lSwVYCyuAqKMvNKFJRCNKpsK7QrNRUyi5V0FGA8roLEosTc1JKizOT4gpz8Eg2YhA5Iv66xjjGIVQlhaQIALhka5w}{Sage} or
+\href{http://wolfr.am/zk2KTu}{Wolfram Alpha} %http://www.wolframalpha.com/input/?i=parametric+plot+3d+%28x%2Cy%2Cx%2By%29
+to plot your parametrization.  See 16.5: 1-16 for more practice.}
  Consider the surface $z=9-x^2-y^2$ plotted in problem \ref{surface graph for a function of two variables}.
 \begin{enumerate}
- \item \marginpar{Use \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot your parametrization. Just remember the command ``parametric plot 3d.''}%
+ \item 
 Using the rectangular coordinate transformation $\vec T(x,y,z)=(x,y,z)$, give a parametrization $\vec r_1:\mathbb{R}^2\to\mathbb{R}^3$ of the surface.  
 [Hint: Use the surface equation to eliminate the input variable $z$ in $T$.]
  \item What bounds must you place on $x$ and $y$ to obtain the portion of the surface above the plane $z=0$?
@@ -305,10 +326,10 @@ Using the rectangular coordinate transformation $\vec T(x,y,z)=(x,y,z)$, give a 
 
 \hrule\end{problem}
 \begin{problem}%
-\marginpar{See 16.5: 1-16 for more practice.}%
+\marginpar{Use \href{http://aleph.sagemath.org}{Sage} or \href{http://wolframalpha.com}{Wolfram Alpha} to plot your parametrization with your bounds (see \ref{3d parametric plot} for examples).  See 16.5: 1-16 for more practice.}%
  Again consider the surface $z=9-x^2-y^2$.
 \begin{enumerate}
- \item \marginpar{Use \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot your parametrization.}%
+ \item
 Using cylindrical coordinates ($\vec T(r,\theta,z) = (r\cos \theta, r\sin\theta, z)$), obtain a parametrization $\vec r_2(r,\theta)$ of the surface using the input variables $r$ and $\theta$.  
  \item What bounds must you place on $r$ and $\theta$ to obtain the portion of the surface above the plane $z=0$?
 \end{enumerate}
@@ -322,12 +343,10 @@ Recall the spherical coordinate transformation
 $$\vec T(\rho,\phi,\theta) = (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos \phi).$$ 
 This is a function of the form $\vec T:\mathbb{R}^3\to\mathbb{R}^3$.  If we hold one of the three inputs constant, then we have a function of the form $\vec r:\mathbb{R}^2\to\mathbb{R}^3$, which is a parametric surface.
 \begin{enumerate}
- \item \marginpar{Use \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot your parametrization. Just remember the command ``parametric plot 3d.''}%
+ \item \marginpar{Use \href{http://aleph.sagemath.org}{Sage} or \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot each parametrization  (see \ref{3d parametric plot} for examples).}%
 Give a parametrization of the sphere of radius 2, using $\phi$ and $\theta$ as your input variables. 
  \item What bounds should you place on $\phi$ and $\theta$ if you want to hit each point on the sphere exactly once?
- \item% 
-\marginpar{Use \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot your parametrization with the bounds you chose.}%
-What bounds should you place on $\phi$ and $\theta$ if you only want the portion of the sphere above the plane $z=1$?
+ \item What bounds should you place on $\phi$ and $\theta$ if you only want the portion of the sphere above the plane $z=1$?
 \end{enumerate}
 \hrule\end{problem}
 
@@ -335,9 +354,14 @@ Sometimes you'll have to invent your own coordinate system when constructing par
 \begin{problem}
 Find parametric equations for the surface $x^2+z^2=9$. [Hint: read the paragraph above.]  
 \begin{enumerate}
- \item\marginpar{Use \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot each parametrization with your bounds. Just remember the command ``parametric plot 3d.''}%
+ \item\marginpar{Use \href{http://aleph.sagemath.org}{Sage} or \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot each parametrization  (see \ref{3d parametric plot} for examples).}%
  What bounds should you use to obtain the portion of the surface between $y=-2$ and $y=3$?
  \item What bounds should you use to obtain the portion of the surface above $z=0$?
  \item What bounds should you use to obtain the portion of the surface with $x\geq 0$ and $y\in[2,5]$?
 \end{enumerate}
 \hrule\end{problem}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "215-problems"
+%%% End: 
