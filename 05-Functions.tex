@@ -151,7 +151,7 @@ Which points in the plane have zero temperature? Just let $z=0$ in $z=9-x^2-y^2$
 
 \begin{problem}%
 
-\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL06jQqdS0rdCtjDPiKsjJLzFO0UjTUQCK6hrrGGsCWZUQliYAA3IK2A}{Sage} or 
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL06jQqdS0rdCtjDPiKs7IL9coyMkvMU7RSNNRAErpGusYawJZlRCWpiZETXJ-Xkl-aVE8SC12lToKybmJBbbqWakl6kB2fk5-UVJikW1IUWmqTk5iUmpOMZitqQkAhh0mmg}{Sage} or 
 \href{http://wolfr.am/wBOk1b}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=plot+3d+x-y^2
 \bmw{More practice is in 14.1: 37-48.}}%
  Consider the function $f(x,y)=x-y^2$.
@@ -180,6 +180,8 @@ The next function is of the form $w=f(x,y,z)$, so it has 3 inputs and 1 output. 
  \item As you move outwards, away from the origin, what happens to your temperature?
 \end{enumerate}
 \hrule\end{problem}
+
+\note{Talk about graphing functions with 4 or more variables.  Show the class \href{http://www.osirix-viewer.com/}{OsiriX} as an example of graphing a 4d function (where opacity is the density of material.  Also, practice sliding a plane through a 3d object to get an idea of what the contour plots are telling us.}
 
 \begin{problem}
 \marginpar{See \href{http://aleph.sagemath.org/?z=eJwrSyzSUK_QqdSpUtfkStMAszRtK-KMtKvijLgycwtyMpMzS-ILcvJLjFM04ApsTXQUgGwFXWMdBWNNILsSzAYzq6BMTQUAEvYY4A}{Sage}.}
@@ -261,11 +263,14 @@ The computer will shrink the largest vector down in size so it does not overlap 
 \end{enumerate}
 \hrule\end{problem}
 
+
 \begin{problem}[Spin field]\marginpar{Use the links above to see the computer plot this.  \bmw{See 16.2: 39-44 for more practice.}}%
  Consider the vector field $\vec F(x,y)=(-y,x)$. Construct a graph of this vector field. Remember, the key to plotting a vector field is ``at the point $(x,y)$, draw the vector $\vec F(x,y)$ with its base at $(x,y)$.''  Plot at least 8 vectors (a few in each quadrant), so we can see what this field is doing.
 \hrule\end{problem}
 
-\href{http://aleph.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs}{Sage} can also help us visualize 3d vector fields, like $\vec F(x,y,z)=(y,z,x)$.
+\note{Talk about vector field visualization, mention line integral convolutions and streamline plots.  Show Sage or mathematica doing these sorts of plots.}
+
+\href{http://aleph.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs}{Sage} can also help us visualize 3d vector fields, like $\vec F(x,y,z)=(y,z,x)$. \note{use 3d glasses and Sage/JMol's ability to render for 3d glasses to \emph{really} see this vector field!}
 
 \section{Constructing Functions}
 We now know how to draw a vector field provided someone tells us the equation. How do we obtain an equation of a vector field? The following problem will help you develop the gravitational vector field.
