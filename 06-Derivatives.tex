@@ -39,7 +39,7 @@ We'll find that throughout this unit, the key difference between first semester 
 
 
 You learned to work with limits in first semester calculus without needing the formal definitions above. The following problem has you review some of what you did in first semester calculus.
-\begin{problem}\marginpar{See 14.2: 1-30 for more practice.}%
+\begin{problem}\marginpar{\bens{See 14.2: 1-30 for more practice.}}%
  Compute each of the following limits, or state why the limit does not exist. Do these problems without using L'Hopital's rule, as there is not a good substitute for L'Hopital's rule in higher dimensions. \note{check this.}
 \begin{enumerate}
  \item $\ds\lim_{x\to 3}\frac{x^2-9}{x-3}$
@@ -65,7 +65,7 @@ $$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ y=0\end{array}$}
  \item Another approach to the origin is to travel along the $y$-axis (so let $x=0$). Compute the limit along this approach, namely 
 $\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ x=0\end{array}$}}\frac{x^2-y^2}{x^2-y^2}$.
  \item Another approach is to travel along the line $y=x$.  What is the limit at $(0,0)$ along this approach?
- \item Does this function have a limit at $(0,0)$? Explain. \marginpar{See 14.2: 41-50 for more practice.}%
+ \item Does this function have a limit at $(0,0)$? Explain. \marginpar{\bens{See 14.2: 41-50 for more practice.}}%
 \end{enumerate}
 \hrule\end{problem}
 
@@ -75,7 +75,7 @@ The theorem from first semester calculus generalizes as follows.
 \end{quote}
 There's a fundamental problem with using this theorem to determine if a limit exists. Once the domain is 2 dimensional or higher, there are infinitely many ways to approach a point. There is no longer just a left and right side. So you can prove a limit exists, provided you can check infinitely many cases. That's the problem; checking infinitely many cases takes a really long time.  The theorem can be used to show that a limit does not exists.  All you have to do is find two approaches with different limits.
 
-\begin{problem}\marginpar{See 14.2: 41-50 for more practice.}%
+\begin{problem}\marginpar{\bens{See 14.2: 41-50 for more practice.}}%
  Consider the function $\ds f(x,y) = \frac{xy}{x^2+y^2}$.  Does this function have a limit at $(0,0)$?  Examine the function at $(0,0)$ by considering multiple approaches (feel free to use the same ones as above). 
 \hrule\end{problem}
 
@@ -104,7 +104,7 @@ to mean the partial of $f$ with resepect to $x$.
  The partial of $f$ with respect to $y$, written $\ds \frac{\partial f}{\partial y}=f_y$, is the regular derivative of $f$, provided we hold all input variables constant except $y$. A similar definition holds for partials with respect to any variable.
 \end{dfn}
 
-\begin{problem}\marginpar{See 14.3: 1-40 for more practice. I strongly suggest you practice a lot of this type of problem until you can compute partial derivatives with ease.}%
+\begin{problem}\marginpar{\bens{See 14.3: 1-40 for more practice.} I strongly suggest you practice a lot of this type of problem until you can compute partial derivatives with ease.}%
  Find the indicated partial derivatives.
 \begin{enumerate}
  \item For $f(x,y)=x^2+2xy+3y^2$ find $\ds\frac{\partial f}{\partial x}$ and $f_y$.
@@ -146,7 +146,7 @@ The next problem will help you visualize what a partial derivative means in the 
 \hrule\end{problem}
 
 Once we have partial derivatives, we have tangent lines to a surface. This means we can find tangent planes as well.
-\begin{problem} \label{cake plane introduction}\marginpar{See 14.6: 9-12 for more practice.}%
+\begin{problem} \label{cake plane introduction}\marginpar{\bens{See 14.6: 9-12 for more practice.}}%
  Consider the function $f(x,y)=9-x^2-y^2$ at the point $(2,1)$. From the previous problem, we know that increasing $x$ by 1 unit when $y$ does not change will cause $z$ to increase by about $f_x$ units. In terms of vectors, we have $(\Delta x, \Delta y, \Delta z) = (1,0,f_x)$ is a tangent vector to the surface. 
 \begin{enumerate}
  \item At the point $(2,1)$ find a tangent vector to the surface in the $x$ direction (so compute $f_x(2,1)$ and put it in the vector $(1,0,f_x)$). Then give a vector equation of the tangent line to $f$ in the $x$ direction.
@@ -157,7 +157,7 @@ Then give a vector equation of the tangent line to $f$ in the $y$ direction.
 \hrule\end{problem}
 
 This problem will show you how parametrizations can simplify the process of finding tangent vectors.
-\begin{problem}\marginpar{See 16.5: 27-30 for more practice.}%
+\begin{problem}\marginpar{\bens{See 16.5: 27-30 for more practice.}}%
  Again, consider the function $f(x,y)=9-x^2-y^2$ at the point $(2,1)$. A parametrization of this surface is $\vec r(x,y) = (x,y,9-x^2-y^2)$. We'll use the parametrization to find an equation for the tangent plane.
 \begin{enumerate}
  \item Compute $\ds\frac{\partial \vec r}{\partial x}(2,1)$. Then give a vector equation of the tangent line to $f$ in the $x$ direction.
@@ -166,15 +166,15 @@ This problem will show you how parametrizations can simplify the process of find
 \end{enumerate}
 \hrule\end{problem}
 
-\begin{problem}\marginpar{See 14.6: 9-12 for more practice.}%
+\begin{problem}\marginpar{\bens{See 14.6: 9-12 for more practice.}}%
  Let $f(x,y)=x^2+4xy+y^2$.  Give two vector equations of tangent lines to the surface at $(3,-1)$. Then give an equation of the tangent plane.
 \hrule\end{problem}
 
-\begin{problem}\marginpar{See 16.5: 27-30 for more practice.}%
+\begin{problem}\marginpar{\bens{See 16.5: 27-30 for more practice.}}%
  Consider the cone parametrized by $\vec r(u,v)=(u\cos v, u\sin v,u)$.  Give vector equations of two tangent lines to the surface at $(2,\pi/2)$. Then give an equation of the tangent plane.
 \hrule\end{problem}
 
-\begin{problem}\label{general tangent plane with partials}\marginpar{Page 811 has the answer, but written in a slightly different form than you will get. In addition, they arrive at the solution in a completely different way. }%%
+\begin{problem}\label{general tangent plane with partials}\marginpar{\bens{Page 811 has the answer, but written in a slightly different form than you will get. In addition, they arrive at the solution in a completely different way.} }%%
  Recall that an equation of the tangent line to $y=f(x)$ at $x=c$ is $y-f(c)=f'(c)(x-c)$. Let $z=f(x,y)$ be a function whose partial derivatives exist. Give two vectors tangent to the surface at $(x,y)=(a,b)$.  Then given an equation of the tangent plane to the surface at $(a,b)$.  What is a normal vector to the surface?
 \hrule\end{problem}
 
@@ -345,7 +345,7 @@ $$D(\vec f\circ \vec g)(\vec x) = D\vec f(\vec g(\vec x))\cdot D\vec g(\vec x).$
 \end{theorem}
 This is the exact same as the chain rule in first semester calculus.  The only difference is that now we have vectors above every variable and function, and we replaced the one-by-one matrices $f'$ and $g'$ with potentially larger matrices $Df$ and $Dg$. If everything is written in vector notation, the chain rule in all dimensions is the same as the chain rule in one dimension.
 
-\begin{problem}\marginpar{See 14.4: 1-6 for more practice.}%
+\begin{problem}\marginpar{\bens{See 14.4: 1-6 for more practice.}}%
  Suppose $f(x,y) = x^2+xy$ and $x=2t+3$ and $y=3t^2+4$.
  \begin{enumerate}
   \item Rewrite the parametric equations $x=2t+3$ and $y=3t^2+4$ in vector form, so we can apply the chain rule. This means you need to create a function $\vec r(t) = (x,y)$.
@@ -356,7 +356,7 @@ This is the exact same as the chain rule in first semester calculus.  The only d
  \end{enumerate}
 \hrule\end{problem}
 
-\begin{problem}\marginpar{See 14.4: 7-12 for more practice.}%
+\begin{problem}\marginpar{\bens{See 14.4: 7-12 for more practice.}}%
  Suppose $f(x,y,z) = x+2y+3z^2$ and $x=u+v$, $y=2u-3v$, and $z=uv$.  This means that changing $u$ and $v$ should cause $f$ to change. Our goal is to find $\partial f/\partial u$ and $\partial f/\partial v$. Try doing this problem without using the steps below, as you are just repeating the steps above.
  \begin{enumerate}
   \item Rewrite the parametric equations for $x,y,$ and $z$ in vector form $\vec r(u,v)=(x,y,z)$. If you were to graph $\vec r$, what kind of graph would you make?
@@ -377,7 +377,7 @@ This is the exact same as the chain rule in first semester calculus.  The only d
 \hrule\end{problem}
 
 
-\begin{problem}\marginpar{See 14.4: 13-24 for more practice. However, don't use a ``branch diagram,'' rather use matrix multiplication. The branch diagram is just a way to express matrix multiplication without having to introduce matrices.}%
+\begin{problem}\marginpar{\bens{See 14.4: 13-24 for more practice.}  Don't use the ``branch diagram'' in the book---use matrix multiplication instead. The branch diagram is just a way to express matrix multiplication without having to introduce matrices.}%
  Suppose $w=f(x,y,z)$ and $x,y,z$ are all function of one variable $t$ (so $x=g(t), y=h(t), z=k(t)$).  
  Find a general formula for $dw/dt$ that involves partials of $f$ and derivatives of $x$, $y$, and $z$. Try doing this problem without using the steps below, as you are just repeat the steps above.
 \begin{enumerate}
@@ -394,7 +394,7 @@ This is the exact same as the chain rule in first semester calculus.  The only d
 
 You've now got the key ideas needed to use the chain rule in all dimensions. You'll find this shows up everywhere in upper level math, physics, and engineering courses. The following problem will show you how you can use the general chain rule to get an extremely quick way to perform implicit differentiation from first semester calculus.
 
-\begin{problem}\marginpar{See 14.4: 25-32 to practice using the formula you developed.  To practice the idea developed in this problem, show that if $w=F(x,y,z)$ is held constant at $w=c$ and we assume that $z=f(x,y)$ depends on $x$ and $y$, then $\frac{\partial z}{\partial x} = -\frac{F_x}{F_z}$ and $\frac{\partial z}{\partial y} = -\frac{F_y}{F_z}$. This is done on page 798 at the bottom. }%
+\begin{problem}\marginpar{\bens{See 14.4: 25-32 to practice using the formula you developed.}  To practice the idea developed in this problem, show that if $w=F(x,y,z)$ is held constant at $w=c$ and we assume that $z=f(x,y)$ depends on $x$ and $y$, then $\frac{\partial z}{\partial x} = -\frac{F_x}{F_z}$ and $\frac{\partial z}{\partial y} = -\frac{F_y}{F_z}$. \bens{This is done on page 798 at the bottom. }}%
  Suppose $z=f(x,y)$.  If $z$ is held constant, this produces a level curve. As an example, if $f(x,y) = x^2+3xy-y^3$ then $5=x^2+3xy-y^3$ is a level curve. Our goal in this problem is to find $dy/dx$ in terms of partial derivatives of $f$.
 \begin{enumerate}
  \item Suppose $x=x$ and $y=y(x)$, so $y$ is a function of $x$.  We can write this in parametric form as $\vec r(x) = (x,y(x))$. We now have $z=f(x,y)$ and $\vec r(x)=(x,y(x))$.  Compute both $Df(x,y)$ and $D\vec r(x)$. 
