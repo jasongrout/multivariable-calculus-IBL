@@ -81,11 +81,24 @@ Once you have finished the problems in the section and feel comfortable with the
 
 % Abbreviations
 
-\newcommand{\ii}{\ensuremath{\mathbf{i}}}
-\newcommand{\jj}{\ensuremath{\mathbf{j}}}
-\newcommand{\kk}{\ensuremath{\mathbf{k}}}
+\newcommand{\ii}{\ensuremath{\vec \imath}}
+\newcommand{\jj}{\ensuremath{\vec \jmath}}
+\newcommand{\kk}{\ensuremath{\vec k}}
 \newcommand{\vv}{\ensuremath{\mathbf{v}}}
 \newcommand{\colvec}[1]{\ensuremath{\begin{bmatrix}#1\end{bmatrix}}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\trace}{tr}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\curl}{curl}
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+% \vp is "vector prime" and corrects spacing when doing something like
+% $\vec r'$ (which has the vector and prime almost touching).
+% Instead, do something like $\vec r\vp$
+\newcommand{\vp}{\ensuremath{^{\,\prime}}}
+
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: t
