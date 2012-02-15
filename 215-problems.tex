@@ -74,12 +74,13 @@ Once you have finished the problems in the section and feel comfortable with the
 \newtheorem{observation}[theorem]{Observation}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
-\newtheorem{problem}[theorem]{Problem}
 \newtheorem{prb}[theorem]{Problem}
 \newtheorem{question}[theorem]{Question}
 \newtheorem*{prep-problems}{Preparation Problems}
 
-
+%\newtheorem{problem}[theorem]{Problem}
+\newtheorem{problemnum}{Problem}
+\newenvironment{problem}[1][]{\begin{problemnum}\hangindent=2em \leftskip=-2em }{\end{problemnum}\hrule\bigskip}
 % Abbreviations
 
 \newcommand{\ii}{\ensuremath{\vec \imath}}
