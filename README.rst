@@ -1,4 +1,4 @@
-An Inquery-Based Learning approach to Multivariable Calculus
+An Inquiry-Based Learning approach to Multivariable Calculus
 ============================================================
 
 This set of notes follows an inquiry-based learning approach to multivariable calculus by Ben Woodruff.
