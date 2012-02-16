@@ -66,6 +66,12 @@ Once you have finished the problems in the section and feel comfortable with the
 { }% space after heading
 {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}% head spec
 
+\newtheoremstyle{problem}%
+{}{}% standard spacing before and after
+{}% Body style
+{}{\bfseries}{}% Heading indent, font, and punctuation
+{1em}% space after heading
+{\fbox{\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}}% head spec
 
 \theoremstyle{box}
 \newtheorem{definition}[theorem]{Definition}
@@ -79,10 +85,11 @@ Once you have finished the problems in the section and feel comfortable with the
 \newtheorem*{prep-problems}{Preparation Problems}
 
 %\newtheorem{problem}[theorem]{Problem}
-\newtheorem{problemnum}{Problem}
-\newenvironment{problem}[1][]{\begin{problemnum}\hangindent=2em \leftskip=-2em }{\end{problemnum}\hrule\bigskip}
-% Abbreviations
+\theoremstyle{problem}
+\newtheorem{problemnum}[theorem]{Problem}
+\newenvironment{problem}[1][]{\begin{problemnum}[#1]}{\end{problemnum}\hrule\bigskip}
 
+% Abbreviations
 \newcommand{\ii}{\ensuremath{\vec \imath}}
 \newcommand{\jj}{\ensuremath{\vec \jmath}}
 \newcommand{\kk}{\ensuremath{\vec k}}
