@@ -1,3 +1,6 @@
+\note{Having them come up with how to generalize differential notation to higher dimensions, and then use differential notation as well, was too much. Perhaps I need one more problem right shortly after 6.22.  In 6.22, the students are taking differential notation and from it writing a matrix (it's how they discover the derivative).  What I need is to have the students write differential notation in terms of a matrix.  Perhaps this would be best after 6.24.  We're already finished with derivatives, so I'll put a note to myself to polish this up next semester.}
+
+
 %There's a link in this file to dropbox.  Rather than have to hunt for it later, here it is.
 \newcommand{\derivativehomeworklink}[1]{\href{http://db.tt/cSeKG8XO}{#1}}%
 %
@@ -5,10 +8,10 @@
 \noindent 
 This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
 \begin{enumerate}
-\item Find limits, and determine where functions of several variables are continuous.
-\item Compute partial derivatives.  Use them to find tangent lines and tangent planes.
-\item Be able to find the derivative of a function (as a matrix), and use it to find tangent planes.
-\item Find derivatives of composite functions, using the chain rule (matrix multiplication). In addition, find derivatives when constraints are in a problem.
+\item Find limits, and be able to explain when a function does not have a limit by considering different approaches.
+\item Compute partial derivatives. Explain how to obtain the total derivative from the partial derivatives (using a matrix).
+\item Find equations of tangent lines and tangent planes to surfaces. We'll do this three ways.
+\item Find derivatives of composite functions, using the chain rule (matrix multiplication).
 \end{enumerate}
 You'll have a chance to teach your examples to your peers prior to the exam.
 
@@ -45,7 +48,7 @@ You learned to work with limits in first semester calculus without needing the f
  \item $\ds\lim_{x\to 3}\frac{x^2-9}{x-3}$
  \item $\ds\lim_{(x,y)\to (2,1)} 9-x^2-y^2$
  \item $\ds\lim_{(x,y)\to (4,4)} \frac{x-y}{x^2-y^2}$
- \item $\ds\lim_{x\to 0}\frac{x}{|x|}$
+ \item $\ds\lim_{x\to 0}\frac{x}{|x|}$ [Hint: graph the function.]
 \end{enumerate}
 \end{problem}
 
@@ -61,9 +64,9 @@ Our goal is to determine if the function has a limit at $(0,0)$.
 \begin{enumerate}
  \item In the $xy$-plane, how many ways are there to approach the point $(0,0)$? Give a few examples.
  \item One approach to the origin is to travel along the $x$-axis (so $y=0$). Using this approach, compute the limit 
-$$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ y=0\end{array}$}}\frac{x^2-y^2}{x^2-y^2} = \lim_{x\to 0} \frac{x^2-0^2}{x^2-0^2}.$$
+$$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ y=0\end{array}$}}\frac{x^2-y^2}{x^2+y^2} = \lim_{x\to 0} \frac{x^2-0^2}{x^2-0^2}.$$
  \item Another approach to the origin is to travel along the $y$-axis (so let $x=0$). Compute the limit along this approach, namely 
-$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ x=0\end{array}$}}\frac{x^2-y^2}{x^2-y^2}$.
+$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ x=0\end{array}$}}\frac{x^2-y^2}{x^2+y^2}$.
  \item Another approach is to travel along the line $y=x$.  What is the limit at $(0,0)$ along this approach?
  \item Does this function have a limit at $(0,0)$? Explain. \marginpar{\bmw{See 14.2: 41-50 for more practice.}}%
 \end{enumerate}
@@ -121,7 +124,7 @@ The shorthand notation $f_{xy}$ is obviously the easiest to write, but in upper 
 \begin{problem}
 Consider the function $f(x,y)=3xy^3+e^{x^2}.$
 \begin{enumerate}
- \item Compute the second partials $\ds \frac{\partial^2 f}{ \partial x^2}$, $\ds\frac{\partial^2 f}{\partial y \partial x}$, $\ds\frac{\partial^2 f}{\partial y^2}$, and $\ds\frac{\partial^2 f}{\partial x \partial }$.
+ \item Compute the second partials $\ds \frac{\partial^2 f}{ \partial x^2}$, $\ds\frac{\partial^2 f}{\partial y \partial x}$, $\ds\frac{\partial^2 f}{\partial y^2}$, and $\ds\frac{\partial^2 f}{\partial x \partial y}$.
  \item For $f(x,y)=x^2+2xy+y^3$, compute both $f_{xy}$ and $f_{yx}$.  
  \item Make a conjecture about a relationship between $f_{xy}$ and $f_{yx}$.
  \item Use your conjecture to quickly compute $f_{xy}$ if $$f(x,y)=\tan^{1}(\cos(x))\cdot (x^{49}+x)^{1000}+3xy.$$ 
@@ -263,7 +266,13 @@ Read the remark above. Then give an equation of the tangent plane to $f(x,y)=9-x
  \item Find $Df(x,y)$ and then $Df(2,1)$. You should have a matrix.
  \item Find the point $(2,1,f(2,1))$ on the graph of the surface.
  \item If $(x,y,z)$ is any point on the tangent plane, find the change $(dx,dy,dz)$ from $(2,1, f(2,1))$ to $(x,y,z)$ (subtract vectors).
- \item Use differential notation to write a matrix equation of the tangent plane. Then perform the matrix multiplication.
+ \item We'll use differential notation to finish this problem. We want to generalize $dy=f'dx$ (a change in outputs equals the derivative times a change in inputs), so we will use the notation $d\vec y = D\vec fd\vec x$. Recall the following. 
+\begin{itemize} 
+\item  The inputs to $z=f(x,y)$ are $x$ and $y$ (so the input vector is $\vec x=(x,y)$).  The output is $z$ (so the output vector is $\vec y= (z)$). 
+\item The change in inputs is $(dx,dy)$.  The change in outputs is $(dz)$. 
+\item The differential notation $d\vec y=D\vec f\ dx$ becomes $\begin{bmatrix}dz\end{bmatrix}=Df\begin{bmatrix}dx \\ dy\end{bmatrix}$. A change in the output $z$ equals the derivative times a change in the inputs $x$ and $y$.
+\end{itemize}
+Now use the differential notation $\begin{bmatrix}dz\end{bmatrix}=Df\begin{bmatrix}dx \\ dy\end{bmatrix}$ to write a matrix equation of the tangent plane (use $Df$ from part 1). Then perform the matrix multiplication. Compare with problem \ref{cake plane introduction}.
 \end{enumerate}
 \end{problem}
 
