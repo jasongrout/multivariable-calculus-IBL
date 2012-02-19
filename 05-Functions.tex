@@ -24,16 +24,18 @@ Our goal is to understand uses for each type of function, and be able to constru
 \href{http://aleph.sagemath.org/?z=eJwrsS1LLNJQL1HXtOYqyMkv0TAz0TU00yqJM9JR0CjRMdAx0tQEAL5TCVo}{Sage}
 or 
 \href{http://wolfr.am/xoc07E}{Wolfram Alpha}. %http://www.wolframalpha.com/input/?i=f%28t%29%3D64-16t^2
-Follow the links to Sage or Wolfram Alpha in all the problems below to see how to get the computer to graph the function.}
+Follow the links to Sage or Wolfram Alpha in all the problems below to see how to get the computer to graph the function.}%
 A pebble falls from a 64 ft tall building.  Its height (in ft) above the ground $t$ seconds after it drops is given by the function $y=f(t)=64-16t^2$. What are $n$ and $m$ when we write this function in the form  $f\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$? Construct a graph of this function.  How many dimensions do you need to graph this function?
 \end{problem}
 
 \section{Parametric Curves: $\vec f\colon \RR \to \RR^m$}
 
 \begin{problem}\label{parametric curve in plane example}%
-\marginpar{See \href{http://aleph.sagemath.org/?z=eJwrsS1LLNJQL1HX5CpILErMTS0pykyOL8jJL9GINtJKzi_WKNHUUTDWKs7MA7JidRQ0SnQMdIy0CjI1NQFWdRJT}{Sage} or \href{http://wolfr.am/wAkR8l}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=parametric+plot+%282+cos+t,+3+sin+t%29
- \bmw{There's a lot more practice of this idea in 11.1. Chapter 3 of the problem set was devoted to this idea. You'll also find more practice in 13.1: 1-8.}}%
-A horse runs around an elliptical track. Its position at time $t$ is given by the function $\vec r(t)=(2\cos t, 3\sin t).$ We could alternatively write this as $x=2\cos t, y=3\sin t$. 
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJwrsS1LLNJQL1HX5CpILErMTS0pykyOL8jJL9GINtJKzi_WKNHUUTDWKs7MA7JidRQ0SnQMdIy0CjI1NQFWdRJT}{Sage} or \href{http://wolfr.am/wAkR8l}{Wolfram Alpha}. %http://www.wolframalpha.com/input/?i=parametric+plot+%282+cos+t,+3+sin+t%29
+See also Chapter 3 of this problem set.
+ \bmw{There's a lot more practice of this idea in 11.1. You'll also find more practice in 13.1: 1-8.}}%
+\larsonfive{\marginpar{See also Larson 10.2.  You can also find more practice in 12.1 and 12.3}}%
+A horse runs around an elliptical track. Its position at time $t$ is given by the  function $\vec r(t)=(2\cos t, 3\sin t).$ We could alternatively write this as $x=2\cos t, y=3\sin t$. 
  \begin{enumerate}
   \item What are $n$ and $m$ when we write this function in the form  $\vec r\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$?
   \item Construct a graph of this function. 
@@ -46,8 +48,9 @@ A horse runs around an elliptical track. Its position at time $t$ is given by th
 Notice in the problem above that we placed a vector symbol above the function name, as in $\vec r\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$.  When the target space (codomain) is 2-dimensional or larger, we place a vector above the function name to remind us that the output is more than just a number.
 
 \begin{problem}%
-\marginpar{See \href{http://aleph.sagemath.org/?z=eJwNxksKgCAUBdB5q3Dmh2eQfWZuJXmIgpAodtt_Dg6crKC92g1IXIfdLoPb6aXz4JowSgz9aVCZhAJZt540aRL89hQRBqM0L_lDq7NR6h-iAhhm}{Sage} or \href{http://wolfr.am/ynm3kD}{Wolfram Alpha}.%http://www.wolframalpha.com/input/?i=parametric+plot+%283t,+64-16t^2%29
- \bmw{The text has more practice in 13.1: 1-8.}}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJwNxksKgCAUBdB5q3Dmh2eQfWZuJXmIgpAodtt_Dg6crKC92g1IXIfdLoPb6aXz4JowSgz9aVCZhAJZt540aRL89hQRBqM0L_lDq7NR6h-iAhhm}{Sage} or \href{http://wolfr.am/ynm3kD}{Wolfram Alpha}. %http://www.wolframalpha.com/input/?i=parametric+plot+%283t,+64-16t^2%29
+ \bmw{The text has more practice in 13.1: 1-8.}
+\larsonfive{See also Larson 12.3}}%
 Consider the pebble from problem \ref{pebble problem}. The pebble's height was given by $y=64-16t^2$.  The pebble also has some horizontal velocity (it's moving at 3 ft/s to the right).  If we let the origin be the base of the 64 ft building, then the position of the pebble at time $t$ is given by $\vec r(t) = (3t, 64-16t^2)$.
  \begin{enumerate}
   \item What are $n$ and $m$ when we write this function in the form  $\vec r\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$?
@@ -63,7 +66,8 @@ In the next problem, we keep the input as just a single number $t$, but the outp
 \begin{problem}%
 \label{space curve example}%
 \marginpar{See \href{http://aleph.sagemath.org/?z=eJxL0yjRtNUw0krOLwaydBSMtIoz88CsEk2ugsSixNzUkqLM5PiCnPwSjTQdBY0SHQMdBROtgkxNTQAYOxGO}{Sage} or \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%282+cos+t\%2C+2+sin+t\%2C+t\%29+for+t+from+0+to+4+pi}{Wolfram Alpha}. 
-\bmw{The text has more practice in 13.1: 9-14.}}%
+  \bmw{The text has more practice in 13.1: 9-14.}%
+\larsonfive{More practice is in Larson 12.1:9--12, 21--24, 27--32.}}%
  A jet begins spiraling upwards to gain height. The position of the jet after $t$ seconds is modeled by the equation 
 $\vec r(t)=(2\cos t, 2\sin t, t).$ We could alternatively write this as $x=2\cos t,\, y=2\sin t,\, z=t$. 
 \begin{enumerate}
@@ -77,8 +81,8 @@ $\vec r(t)=(2\cos t, 2\sin t, t).$ We could alternatively write this as $x=2\cos
 In all the problems above, you should have noticed that in order to draw a function (provided you include arrows for direction, or use an animation to represent ``time''), you can determine how many dimensions you need to graph a function by just summing the dimensions of the domain and codomain. This is true in general.
 
 \begin{problem}\marginpar{See Section~\ref{derivatives and tangent lines} and Definition~\ref{definition velocity acceleration}.}%
-\marginpar{\bmw{The text has more practice in 13.1: 19-22.}}
- Use the same set up as problem \ref{space curve example}, namely $\vec r(t)=(2\cos t, 2\sin t, t).$  You'll need a graph of this function to complete this problem.
+\marginpar{\bmw{The text has more practice in 13.1: 19-22.}\larsonfive{More practice in Larson 12.2:23--30.}}%
+ Use the same set up as problem \ref{space curve example}, namely $$\vec r(t)=(2\cos t, 2\sin t, t).$$  You'll need a graph of this function to complete this problem.
  \begin{enumerate}
   \item Find the first and second derivative of $\vec r(t)$. 
   \item Compute the velocity and acceleration vectors at $t=\pi/2$. Place these vectors on your graph with their tails at the point corresponding to $t=\pi/2$.
@@ -91,7 +95,8 @@ In all the problems above, you should have noticed that in order to draw a funct
 We now increase the number of inputs from 1 to 2.  This will allow us to graph many space curves at the same time.
 
 \begin{problem} \label{parametric surface example}%
-\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL0yjRUUjUtNVI1ErOL9Yo0QTytIoz88CsEk2ugsSixNzUkqLM5PiCnPwSjTQdBaAOAx0FE62CTKASjUQdBSMgT1OTCwBCiRSf}{Sage} or \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%28a+cos+t\%2C+a+sin+t\%2C+t\%29+for+t+from+0+to+4+pi+and+a+from+2+to+4}{Wolfram Alpha}.}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxL0yjRUUjUtNVI1ErOL9Yo0QTytIoz88CsEk2ugsSixNzUkqLM5PiCnPwSjTQdBaAOAx0FE62CTKASjUQdBSMgT1OTCwBCiRSf}{Sage} or \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%28a+cos+t\%2C+a+sin+t\%2C+t\%29+for+t+from+0+to+4+pi+and+a+from+2+to+4}{Wolfram Alpha}.
+\larsonfive{More practice in Larson 15.5:1--6.}}%
  The jet from the problem above is actually accompanied by several jets flying side by side. As all the jets fly, they leave smoke trail behind them (it's an air show). The smoke from one jet spreads outwards to mix with the neighboring jet, so that it looks like the jets are leaving a rather wide sheet of smoke behind them as they fly. The position of two of the many other jets is given by $\vec r_3(t)=(3\cos t, 3\sin t, t)$ and $\vec r_4(t)=(4\cos t,4\sin t,t)$.  A function which represents the smoke stream is $\vec r(a,t)=(a\cos t, a\sin t, t)$ for $0\leq t\leq 4\pi$ and $2\leq a\leq 4$.
  \begin{enumerate}
   \item What are $n$ and $m$ when we write the function $\vec r(a,t)=(a\cos t, a\sin t, t)$ in the form  $\vec r\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$?
@@ -228,7 +233,10 @@ Notice that in all cases, the dimension of the input and output are the same. Th
 
 \begin{problem}%
 \marginpar{Recall that $\rho$ is the angle down from the $z$ axis, and theta is the angle counterclockwise from the $x$-axis in the $xy$-plane. Review problem \ref{derive spherical coordinates} if you need a refresher.}%
- Consider the spherical coordinates transformation $$\vec T(\rho,\phi,\theta)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$ which could also be written as 
+ Consider the spherical coordinates transformation 
+\bmw{$$\vec T(\rho,\phi,\theta)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$ }
+\larsonfive{$$\vec T(\rho,\theta,\phi)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$ }
+which could also be written as 
 \begin{align*}
 x&=\rho\sin\phi\cos\theta\\y&=\rho\sin\phi\sin\theta\\z&=\rho\cos\phi. 
 \end{align*}
