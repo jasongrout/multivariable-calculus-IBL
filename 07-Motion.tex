@@ -1,0 +1,374 @@
+
+\noindent 
+This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
+\begin{enumerate}
+ \item Develop formulas for the velocity and position of a projectile, if we neglect air resistance and consider only acceleration due to gravity. Show how to find the range, maximum height, and flight time of the projectile.
+ \item Develop the $TNB$ frame for describing motion. Make sure you can explain why $\vec T$, $\vec N$, and $\vec B$ are all orthogonal unit vectors, and be able to perform the computations to find these three vectors.
+ \item Explain the concepts of curvature $\kappa$, radius of curvature $\rho$, center of curvature, and torsion $\tau$. Make sure you can describe geometrically what theses quantities mean.
+ \item Find the tangential and normal components of acceleration. Show how to obtain the formulas $a_T=\frac{d}{dt}|\vec v|$ and $a_N=\kappa |\vec v|^2=\frac{|\vec v|^2}{\rho}$, and explain what these equations physically imply.
+\end{enumerate}
+You'll have a chance to teach your examples to your peers prior to the exam.
+
+I have created a YouTube playlist to go along with this section. There are 11 videos, each 4-6 minutes long.
+\begin{itemize}
+ \item \href{http://www.youtube.com/playlist?list=PL30EE81142B1ED1F0&feature=plcp}{YouTube playlist for 07 - Motion and The TNB Frame}.
+ \item \href{http://db.tt/FmEGk9p5}{PDF copy of the finished product} (so you can follow along on paper).
+\end{itemize}
+
+\section{Projectile Motion}
+
+ Suppose a projective is fired from a cannon with an initial speed $v_0$. The projectile leaves the cannon at an angle of $\alpha$ above the $x$-axis, and we'll use the $y$-axis to keep track of the height of the projectile.  All the motion in this problem occurs with a plane, and we'll use $x$ and $y$ to represent motion in that plane. Our goal is to find the velocity $\vec v(t)$ and position $\vec r(t)$  of the projectile at any time $t$. 
+
+We need some assumptions prior to solving. 
+\begin{itemize}
+ \item Assume the only force acting on the object is the force due to gravity. We will neglect air resistance. 
+ \item The force due to gravity is the mass of the projectile multiplied by the acceleration of gravity. The mass of the object will not be important in our work here, though in future classes you may study how mass affects energy computations. 
+ \item The projectile is shot over a small enough range that we can assume gravity only pulls the object straight down.
+ \item Most branches of science use the letter $g$ to represent the magnitude of the vertical component of acceleration, so we can write the acceleration of the projectile as 
+$$\vec a(t) = (0,-g) = 0{\bf i}-g{\bf j}.$$ 
+ \item Our text uses the approximations $g\approx 9.8$ m/s$^2$ or $g\approx32$ ft/s$^2$. 
+\end{itemize}
+
+To solve the next problem, you need to remember that acceleration is the derivative of velocity, and that velocity is the derivative of position.  These facts hold true for vector-valued functions as well. Integration will help.
+
+\begin{problem}
+Suppose a projectile is fired from the point $(x_0,y_0)$ with an initial velocity $\vec v(0)=(v_{x_0},v_{y_0})$, and that gravity is the only force acting on the object. So the acceleration due to gravity is $\vec a(t) = (0,-g)$.
+\begin{enumerate}
+ \item Show that the velocity at any time $t$ is $\vec v(t) = (v_{x_0},-gt+v_{y_0})$.
+ \item Show that the position at any time $t$ is $\vec r(t) = (v_{x_0}t+x_0,-\frac{1}{2}gt^2+v_{y_0}t+y_0)$. 
+ \item Give parametric equations $x=x(t)$ and $y=y(t)$ that give the horizontal and vertical position of the projectile at time $t$. [If you're asking, ``Didn't I already do this?'' then you are essentially correct.  Just make sure you can explain what $x$ and $y$ are.] 
+ \item Give a Cartesian (rectangular) equation of the projectile's path (so eliminate $t$).  What would the graph of this equation give you if you graphed it in the plane.
+\end{enumerate}
+\hrule\end{problem}
+
+\begin{problem}\label{projectile formulas from origin}
+Use the results from the results from the previous problem. (So you can work on this problem, even if you couldn't finish the previous).
+\begin{enumerate}
+ \item If the initial speed of the object is $v_0$, with a firing angle of $\alpha$ above the horizontal, rewrite $v_{x_0}$ and $v_{y_0}$ in terms of $v_0$ and $\theta$. [What's the difference between speed and velocity?]
+ \item Rewrite your equations for $\vec v(t)$ and $\vec r(t)$ above, so that they are in terms of $v_0$ and $\alpha$ instead of $v_{x_0}$ and $v_{y_0}$.
+ \item Give equations for $x$ and $y$ if the object is fired from the origin. 
+\end{enumerate}
+\hrule\end{problem}
+ 
+We make the following definitions for a projectile that starts at $(0,0)$ and hits the ground at $(R,0)$.
+\begin{itemize}
+ \item The range is the horizontal distance $R$ traveled by the projectile.  
+ \item The flight time is how long the projectile is in the air. It is the time $t$ at which $\vec r(t)=(R,0)$.
+ \item The maximum height is the largest $y$ value obtained by the projectile. 
+\end{itemize}
+
+
+\begin{problem}
+ Answer the following questions. Assume that the projectile was fired from the origin.
+\begin{enumerate}
+ \item What should the velocity vector equal when the object has reached the maximum height?
+ \item How long does it take to reach maximum height? What is the flight time?
+ \item Show that the maximum height is $\ds y_{\max}=\frac{v_{y_0}^2}{2g}=\frac{v_0^2\sin^2\alpha}{2g}$.
+ \item Show that the range is $\ds R=\frac{2v_{x_0}v_{y_0}}{g}=\frac{v_0^2\sin2\alpha}{g}$. \marginpar{You'll need a trig identity.}
+\end{enumerate}
+\hrule\end{problem}
+
+
+This problem comes from your text. (See section 13.2.)  Try it without reading the text.  It's a fun application of the ideas above.
+\begin{problem}\marginpar{This problem was created around the opening ceremony of the Barcelona Spain Olympics.  Antonio Rebollo was the archer, but he didn't try to hit the flame at the peak of the flight. You can \href{http://www.youtube.com/watch?v=b5gZeT4TVds}{watch a YouTube video} of the opening ceremony by following the link.}%  
+ An archer stands at ground level and shoots an arrow at an object which is 90 feet away in the horizontal direction and 74 ft above ground. The arrow leaves the bow at about 6 ft above ground level (not the origin). 
+ The archer wants the arrow to hit the target at the peak of its parabolic path. 
+ For the purposes of this problem, Let $g = 32 \text{ft}/\text{s}^2$. 
+ What initial speed $v_0$ and firing angle $\theta$ are needed to achieve this result? 
+ [Hint: This is much easier to solve if you first find $v_{x_0}$ and $v_{y_0}$, the horizontal and vertical components of the velocity. You may want to move the origin as well, so that you can use the formulas from above.]
+\hrule\end{problem}
+
+\section{Arc Length and the Unit Tangent Vector}
+
+ In the next problem, you'll develop a formula for the arc length of a space curve (one input, 3 outputs).  We've essentially already done this in chapters 3 and 4, but let's revisit the derivation once more.
+\begin{problem}
+A space ship travels through the galaxy. Let $\vec r(t) = (x,y,z)$ 
+\marginpar{Technically, we should write $\vec r(t) = (x(t),y(t),z(t))$. However, we already know that $x$, $y$, and $z$ depend on $t$, hence we'll just leave the dependence on $t$ off.}%
+be the position of the space ship at time $t$, with the earth at the origin $(0,0,0)$. 
+\begin{itemize}
+ \item What are the velocity and speed of the space ship at time $t$? You answers should involve some derivatives (such as $\frac{dx}{dt}$.
+ \item If the space ship travels for a really small time $dt$, then the speed is about constant. Since distance is speed times time, about how much distance (we'll call it $ds$) will the space ship travel in this short amount of time?
+ \item As the ship travels from time $t=a$ to time $t=b$, explain why the distance traveled (the arc length of the path followed) is $$s=\int_a^b |\vec r '(t)|\ dt = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2+\left(\frac{dz}{dt}\right)^2}\ dt .$$
+\end{itemize}
+
+\hrule\end{problem}
+
+In all our work that follows, we want to consider space curves that have nice smooth paths.  What does this mean?  We want to be able to compute tangent vectors at any point, so we will require that a parametrization $\vec r$ be differentiable.  We also don't want any cusps in our path (places where the direction of motion changes instantaneously). If the speed of an object ever reaches zero, then the object could stop moving, change direction, and then start moving instantly. We don't want this to happen, so we'll assume that the velocity is never zero.
+\begin{definition}
+ Let $\vec r(t)=(x,y,z)$ be a parametrization of a space curve $C$. We say that $\vec r$ is smooth if $\vec r$ is differentiable, and the derivative is never the zero vector. Under these conditions, we'll say that $C$ is a smooth curve. 
+\end{definition}
+
+\begin{problem}
+ Consider the helical space curve $\vec r(t)=(\cos t, \sin t, t)$. Find the length of this space curve for $t\in[0,2\pi]$.  Then find the length of the space curve from $t=0$ to time $t=t$ (so after $t$ seconds, what is the distance $s(t)$ traveled?). What is the derivative $\ds\frac{ds}{dt}$?
+\hrule\end{problem}
+
+\begin{problem}\label{fundamental theorem of calculus as it applies to arc length parameter}\marginpar{You can remember $\ds\frac{ds}{dt} = \left|\frac {d\vec r}{dt} \right|$ as follows. We use the differential $ds$ to represents a change in distance, and $dt$ represents a change in time. So the speed of an object is the change in distance $ds$ over the change in time $dt$. }%
+ Let $\vec r(t)=(x,y,z)$ be a parametrization of a smooth space curve. Let $\ds s(t)=\int_0^t \left|\frac {d\vec r}{d\tau}(\tau) \right|\ d\tau$.  Explain why $\ds\frac{ds}{dt}(t) = \left|\frac {d\vec r}{dt}(t) \right|$, the speed. [Hint: look up the fundamental theorem of calculus.] Then explain why $s(t)$ is an increasing function.
+\hrule\end{problem}
+
+The quantity $\ds s(t)=\int_0^t \left|\frac {d\vec r}{d\tau}(\tau) \right|\ d\tau$ is called the arc length parameter.  It tells you how far you have traveled after $t$ seconds.  The fact that $s(t)$ is always an increase function if the curve is smooth allows us to talk about taking derivatives with respect to the length traveled $s$ instead of with respect to time $t$.  The next problem illustrates how this is done.
+
+\begin{problem}
+ Consider again the helical space curve $\vec r(t)=(\cos t, \sin t, t)$.  We already have shown that $s(t) = t\sqrt{2}$. Solve for $t$ in terms of $s$ (so find the inverse of $s(t)$). You will now have a function of the form $t=t(s)$.  Find the derivative (using the matrix chain rule) of $(\vec r\circ t)(s)$. In other words, what is $\ds\frac{d\vec r}{ds}$? How are $\ds\frac{d\vec r}{ds}$  and $\ds\frac{d\vec r}{dt}$ related?  What does the speed have to do with anything?
+\hrule\end{problem}
+
+\begin{problem}
+In the previous problem, you computed $\ds\frac{d\vec r}{ds}$ for a helix. If you replace the helix with any other curve, the chain rule (applied exactly as above) shows that $\ds\frac{d\vec r}{ds} = \frac{d\vec r}{dt}\frac{dt}{ds}.$
+Explain why $$\ds\frac{d\vec r}{ds} =\ds\frac{d\vec r/dt}{ds/dt} = \frac{d\vec r/dt}{|d\vec r/dt|}.$$
+What is the magnitude of $\ds\frac{d\vec r}{ds}$? 
+[Hint: Look at problem \ref{fundamental theorem of calculus as it applies to arc length parameter}.] 
+\hrule\end{problem}
+
+
+\begin{definition}[Unit Tangent Vector]
+ If $\vec r(t)$ is a parametrization of a space curve, then we define the unit tangent vector $\vec T(t)$ to be 
+$$\vec T = \ds\frac{d\vec r}{ds}=\ds\frac{d\vec r/dt}{ds/dt} = \frac{d\vec r/dt}{|d \vec r/dt|}.$$
+\end{definition}
+
+\begin{problem}
+ Suppose an object moves along the space curve $\vec r(t)=(a\cos t,a\sin t,b t)$. Find the velocity and speed of the object. What is $\frac{d\vec r}{ds}$, the derivative of $\vec r$ with respect to arc length?  State the unit tangent vector $\vec T(t)$.
+\hrule\end{problem}
+
+\section{The TNB Frame}
+The unit tangent vector $\vec T$ provides us with a unit vector in the direction of motion. If we are moving along a straight line, then knowing $\vec T$ is sufficient to understanding the motion.  However, if we veer off the straight line, then we would like to know in which direction we are turning (accelerating).  This direction, called the normal direction, tells us the direction of acceleration. When you study dynamics (forces acting on moving objects), you'll find that knowing the tangent and normal directions are crucial. In our class, we only have time to develop equations for $\vec T$ and $\vec N$, as well as practice on a few examples. 
+
+In order to find $\vec N$, we first need to develop a crucial fact.  This fact states that if a vector valued function has constant length, then the function is orthogonal to its derivative. Here's an example. 
+
+\begin{problem}
+ Consider  $\vec r_1(t)=(\cos t, \sin t, 0)$ and $\vec r_2(t)=(\cos t, \sin t, t)$. 
+\begin{enumerate}
+ \item Show that $\vec r_1$ and $\dfrac{d\vec r_1}{dt}$ are orthogonal. Find $|\vec r_1|$.
+ \item Show that $\vec r_2$ and $\dfrac{d\vec r_2}{dt}$ are not orthogonal. Find $|\vec r_2|$.
+ \item Is the length of $\dfrac{d\vec r_2}{dt}$ constant? Are $\dfrac{d\vec r_2}{dt}$ and $\dfrac{d^2\vec r_2}{dt^2}$ orthogonal? 
+\end{enumerate}
+\hrule\end{problem}
+
+\begin{theorem}\label{vector valued functions of constant length}
+ If a vector valued function $\vec r(t)$ has constant length, then the vector $\vec r$ and its derivative $\ds\frac{d\vec r}{dt}$ are orthogonal for all $t$. 
+\end{theorem}
+
+\begin{problem}[Proof of Theorem \ref{vector valued functions of constant length}]
+ Prove the theorem above. Here are some hints.
+\begin{itemize}
+ \item We know that $\vec r(t)$ has constant length. This means $|\vec r|=c$ for some constant $c$. 
+ \item You need to get from a magnitude to the dot product. Look in your text for a way to relate magnitude to the dot product.
+ \item Once you have things in terms of the dot product, take a derivative. The product rule applies to the dot product, so make sure you apply the product rule.
+\end{itemize}
+\hrule\end{problem}
+
+
+\begin{problem}\label{T and N are orthogonal}
+ Let $\vec r$ be a smooth parametrization of a curve.  Explain why $\vec T$ is orthogonal to $\dfrac{d\vec T}{dt}$. Explain why $\vec T$ is orthogonal to $\dfrac{d\vec T}{ds}$. Give a unit vector that is orthogonal to $T$.
+\hrule\end{problem}
+
+\begin{definition}[Principle Unit Normal Vector]
+ If $\vec r$ is a parametrization of a space curve with unit tangent vector $\vec T$, then we define the principle unit normal vector $\vec N(t)$ to be the vector
+ $$\vec N = \ds\frac{d\vec T/dt}{|d\vec T/dt|},$$
+ provided of course that $|d\vec T/dt|\neq 0$. 
+ From problem \ref{T and N are orthogonal} we know that $\vec T$ and $\vec N$ are orthogonal.
+\end{definition}
+
+\begin{definition}[Binormal Vector]
+ If $\vec r$ is a parametrization of a space curve with unit tangent vector $\vec T$ and principle unit normal vector $\vec N$, then we define the binormal vector $\vec B$ to be the cross product
+$$\vec B = \vec T\times \vec N.$$
+\end{definition}
+
+\begin{problem}
+Answer the following questions (this will test your knowledge of the dot and cross products).
+\begin{enumerate}
+ \item What is $\vec T\cdot \vec N$? Explain. Then compute $\vec T\cdot \vec B$ and $\vec N\cdot \vec B$.
+ \item We know $\vec T$ and $\vec N$ are both unit vectors. Explain why $\vec B$ a unit vector. 
+ \item We defined $\vec B=\vec T\times \vec N$. Compute $\vec B\times \vec T$ and $\vec N\times B$.
+\end{enumerate}
+\hrule\end{problem}
+
+\begin{problem} \label{helix example of T N and B}
+Consider the helix $\vec r(t) = (3\cos t,3\sin t, 4t)$.  Find the unit tangent vector $\vec T$, principle unit normal vector $\vec N$, and the binormal vector $\vec B$.  
+\hrule\end{problem}
+
+We've been working with helices in all the problems up to now because the velocity vectors have constant speed.  Once the speed of the velocity vector is no longer constant, things get a lot messier. Ask me in class to show you what happens with the computations when you consider something like $r(t)=(t,t^2,t^3)$. Things get ugly really fast. 
+
+Luckily, when you are dealing with motion in a plane, there is a simplification.  It is directly related to finding the slope of line that is perpendicular to a given line.  You may recall that if a line has slope $m$, then the slope of a perpendicular line is $\frac{-1}{m}=\frac{1}{-m}$.  Whether you put the negative on the top or bottom doesn't matter with finding a slope, but it will matter when you are working with vectors.  
+
+\begin{problem}
+ Consider the curve $r(t)=(t,t^2)$, which is just a curve in the $xy$-plane. You could extend this to 3 dimensions by adding a 0 as the third component.  
+\begin{enumerate}
+ \item Compute $\vec T(t)$.  What is $\vec T(1)$?
+ \item Draw the curve for $t\in[-2,2]$.  At $t=1$, plot $\vec T$ and $\vec N$. Then, using the right hand rule, explain why you know $\vec B(t)$ for all $t$ without doing any computations.
+ \item Since you know $\vec T(t)$ and $\vec B(t)$, find $\vec N(t)$ by using an appropriate cross product.
+ \item Try finding $\vec N(t)$ directly by taking derivatives (I said try, don't finish).  What makes this so difficult?
+\end{enumerate}
+\hrule\end{problem}
+
+\begin{problem}
+ Consider the curve $\vec r(t)=(t^2,t)$ (very similar to the previous problem).
+\begin{enumerate}
+ \item Find $\vec T(t)$, $\vec B(t)$, and $\vec N(t)$ in the same way as the previous problem. Make sure you draw the curve to determine what $\vec B(t)$ is.
+ \item If $(a,b)$ is a vector in the plane, give two vectors in the plane that are orthogonal to $(a,b)$.
+ \item If you know $\frac{d\vec r}{dt}=(a,b)$, what are the only two options for $\vec N$?  How do you determine which is correct?
+\end{enumerate}
+\hrule\end{problem}
+
+\begin{problem}
+ Consider the curve $y=\sin x$, parametrized by $r(t)=(t,\sin t)$. 
+\begin{enumerate}
+ \item Compute $\vec T(t)$. For which $t$ does $B(t)=(0,0,1)$? How about $(0,0,-1)$?
+ \item What are $\vec T(\pi/2)$ and $\vec N(\pi/2)$?
+ \item What are $\vec T(\pi/4)$ and $\vec N(\pi/4)$? What are $\vec T(-\pi/4)$ and $\vec N(-\pi/4)$?
+ \item What are $\vec T(0)$ and $\vec N(0)$?
+\end{enumerate}
+\hrule\end{problem}
+
+
+
+
+You've now developed the TNB frame for describing motion. Engineers will see this again when they study dynamics. Mathematicians who study differential geometry will use these ideas as well. Any time you want to analyze the forces acting on a moving object, the TNB frame may save the day.
+
+ 
+\section{Curvature and Torsion}
+
+We already know that $\vec T=\dfrac{d\vec r}{ds}$ has length 1. This means that if we move along the curve $\vec r$ using $s$ as our parameter (not $t$), then we move along the curve at a constant speed of 1. The fact that we are moving at speed 1 means that we can study the properties of the curve without having to worry about our speed. We would like to know how sharp a corner is (which we'll call the curvature). To determine how sharp a corner is, we must forget about speed for a bit. If we encounter a really tight corner (so a rapid change in direction over a very short distance) we would expect $\dfrac{d\vec T}{ds}$ to be a fairly long vector. A small change in $s$ results in a large change in $T$. However, if we were to move along this tight corner at a really slow speed, we would expect $\frac{d\vec T}{dt}$ to be a really small vector. A small change in $t$ would not produce much change in $T$. 
+
+\begin{problem}
+Suppose we are traveling along the space curve $\vec r$ with unit tangent vector $\vec T$. 
+\begin{enumerate}
+ \item If we are moving along a straight line, then what is $\dfrac{d\vec T}{ds}$?
+ \item If we veer slightly off a straight line, should $\dfrac{d\vec T}{ds}$ be large or small?
+ \item If we veer slightly off a straight line, and are moving extremely slow, should $\dfrac{d\vec T}{dt}$ be large or small?
+ \item If we veer slightly off a straight line, and are moving extremely fast, should $\dfrac{d\vec T}{dt}$ be large or small?
+ \item If we know $\dfrac{d\vec T}{ds}$ has length $\frac{1}{2}$, and our speed is $50$, how long is $\dfrac{d\vec T}{dt}$?
+\end{enumerate}
+\end{problem}
+
+We will often be computing derivatives with respect to $s$, instead of $t$, because we want to determine physical properties about the curve. When we compute $\dfrac{d\vec T}{ds}$, we'll learn how quickly the curve veers away from $\vec T$.  
+When we compute $\dfrac{d\vec N}{ds}$, we will find how rapidly $\vec N$ rotates away from the plane containing $T$ and $N$ (motion and acceleration). 
+When we compute $\dfrac{d\vec B}{ds}$, we will find how rapidly $\vec B$ rotates.  We'll show that both $\dfrac{d\vec N}{ds}$ and $\dfrac{d\vec B}{ds}$ cause a rotation of $\vec N$ and $\vec B$ about the tangent vector $\vec T$. This magnitude of this rotation, as $\vec B$ wraps around $\vec T$ counterclockwise, is called the torsion. Let's formally define curvature and torsion.
+
+\begin{definition}[Curvature and Torsion]
+ Let $\vec r(t)$ be a parametrization of a smooth curve $C$ with unit tangent vector $\vec T(t)$.  The curvature vector, written $\vec \kappa(t)$, is the derivative of $\vec T$ with respect to arc length, which means 
+ $$\vec \kappa(t)=\dfrac{d\vec T}{ds}=\dfrac{d\vec T/dt}{ds/dt}=\dfrac{d\vec T/dt}{|d\vec r/dt|}.$$ 
+ The length of the curvature vector is the curvature, written $\kappa = |\vec\kappa|$. Notice that $\kappa$ is a number.
+
+ The derivative of $\vec B$ with respect to $s$ tells us how rapidly the plane containing $\vec T$ and $\vec N$ rotates. We'll define the torsion vector to be 
+ $$\vec \tau = \dfrac{d\vec B}{ds} = \dfrac{d\vec B/dt}{ds/dt}=\dfrac{d\vec B/dt}{|d\vec r/dt|}.$$ 
+ The torsion $\tau$, up to a sign, is the length of this vector. We say there is positive torsion if $\vec \tau$ causes a counterclockwise rotation about $\vec T$, which occurs precisely when $\vec tau$ and $\vec N$ point in opposite directions. We can summarize this is $$\tau=\left|\dfrac{d\vec B}{ds}\right|\quad \text{or}\quad \tau=-\left|\dfrac{d\vec B}{ds}\right|,$$ where you choose ``$+$'' if $\vec N$ and $\vec \tau$ point in opposite directions. 
+\end{definition}
+
+
+\begin{problem}
+ Consider the helix $r(t)=(3\cos t, 3\sin t, 4t)$. In problem \ref{helix example of T N and B} we found $\vec T$, $\vec N$, and $\vec B$. Compute both $\vec \kappa=\dfrac{d\vec T}{ds}$ and $\vec \tau=\dfrac{d\vec B}{ds}$, and then give $\kappa$ and $\tau$.
+\end{problem}
+
+\begin{problem}
+ Consider the helix $r(t)=(4\sin t, 4\cos t, 3t)$. Use a computer to find $\vec T$, $\vec N$, $\vec B$, $\vec \kappa$, and $\vec \tau$. Use your answers to then give $\kappa$ and $\tau$. (When you present on the board, just write down the 5 vectors, and then explain how you obtained $\kappa$ and $\tau$.)
+\end{problem}
+
+In both examples above, you should have noticed that $\vec \tau$ was either parallel to $\vec N$ or anti-parallel to $\vec N$.  We'll now show this is always the case.
+
+\begin{problem}
+ Suppose a curve $\vec r(t)$ has the frame $\vec T(t)$, $\vec N(t)$, and $\vec B(t)$. Prove that $\dfrac{d\vec B}{ds}$ is either parallel to $\vec N$, or points opposite $\vec N$. Here are some steps.
+ \begin{itemize}
+  \item Why is $\dfrac{d\vec B}{ds}$ orthogonal to $\vec B$? [An earlier theorem will help.]
+  \item We know $\vec B=\vec T\times \vec N$. So compute the derivative of both sides using the product rule. Make sure to preserve the order of the vectors, as swapping the order on the cross product does change the vector.  
+  \item Simplify your cross product (explain why $\frac{d\vec T}{ds}\times \vec N$ cancels out). Then explain why $\dfrac{d\vec B}{ds}$ is orthogonal to $\vec T$. (It's also orthogonal to $\dfrac{d\vec N}{ds}$, but that's not needed).
+  \item We now know $\dfrac{d\vec B}{ds}$ is orthogonal to both $\vec B$ and $\vec T$, so it must be orthogonal to the plane containing $\vec T$ and $\vec B$. Use this fact to complete the proof.
+ \end{itemize}
+\end{problem}
+
+
+When the curvature is nonzero, the curve bends away from the direction of motion.  We could use a circle to approximate how great this bend is. A small change in direction would require a large circle.  A large change in direction would require a small circle. 
+What we want is to find a circle that best approximates the curve (kind of like a Taylor polynomial, only now we'll use a circle.) At time $t$, we want the circle to meet the curve $\vec r$ tangentially, and we want the curvature of the circle to match the curvature of the curve.  The next problem shows you the relationship between the radius $\rho$ of this circle and the curvature $\kappa$ of the curve.
+
+\begin{problem}
+ Consider the curve $\vec r(t)=(a\cos t, a\sin t)$.
+ \begin{enumerate}
+  \item Draw the curve, and state the radius $\rho$ of the best approximating circle.
+  \item Find the curvature $\vec \kappa$.
+  \item What relationship exists between $\rho$ and $\kappa$?  If the radius $\rho$ were to increase, what would happen to $\kappa$?
+ \end{enumerate}
+
+\end{problem}
+
+
+\begin{definition}[Circle and Center of Curvature]
+When the curvature $\kappa$ of a smooth curve is nonzero, we'll define the radius of curvature, written $\rho$, to be the reciprocal $\rho = \dfrac{1}{\kappa}$. The center of curvature is the center of this circle.
+\end{definition}
+
+\begin{problem}
+ Consider the curve $\vec r(t)=(t,\sin 3 t)$. Find the radius of curvature $t=\pi/6$. Draw the curve, and draw the circle of curvature at $t=\pi/6$. Then find the center of curvature at $t=\pi/6$. Without doing any more computations, what are the radius and center of curvature at $t=pi/2$?  How about at $t=\pi/3$? (You will have shown why the center is at $\vec r + \rho \vec N$.)
+\end{problem}
+
+\begin{problem}
+ Consider the helix $\vec r(t)=(t,\sin t,\cos t)$. Find the radius of curvature $t=\pi/2$. Draw the curve, and draw the circle of curvature at $t=\pi/2$. Then find the center of curvature at $t=\pi/2$. Guess the center of curvature at $t=\pi$?
+\end{problem}
+
+Here's two final problem related to curvature.  They provide a really easy way to compute the curvature of a function of the form $y=f(x)$, and of any curve in the plane. Coming up with the formulas is not necessarily easy, but using them is fairly quick.  
+\begin{problem}
+ The function $y=f(x)$ can be parametrized using $\vec r(x) = (x,f(x))$.  Use this parametrization to show that the curvature is $$\kappa(x) = \frac{|f''(x)|}{(1+(f')^2)^{3/2}}.$$
+\end{problem}
+\begin{problem}[Optional]
+ Suppose a smooth curve is parametrized by $\vec r(t) = (x(t),y(t))$.  Use this parametrization to show that the curvature is $$\kappa(t) = \frac{|x'y''-y'x''|}{((x')^2+(y')^2)^{3/2}}.$$ If $x=t$, then note that this gives the previous formula.
+\end{problem}
+
+
+When a civil engineering team builds a road, they have to pay attention to the curvature of the road.  If the curvature of the road is too large, accidents will happen and the civil engineering team will be liable. How do they make sure the curvature never gets to large?  They use the circle of curvature. When they want to cause a road to turn, they'll find the center of curvature, send a surveyor out to the center, and then have the surveyor make sure that the road follows the circle of curvature for a short distance. They actually pace out the circle of curvature and then build the road along this circle for a hundred feet or so.  Then, they recompute the radius of curvature (if they need the direction to change again), and pace out another circle.  In this way, they can guarantee that the curvature never gets large. In the next section we'll see how curvature is directly related to normal acceleration (which is what causes semis to tip, and vehicles to slide off icy roads.)
+
+\section{Tangential and Normal Components of Acceleration}
+
+In this section, we'll show that you write the acceleration of an object moving along a curve $\vec r(t)$ with velocity $\vec v(t)$ as the sum
+$$\vec a(t) = a_T\vec T+a_N\vec N=\frac{d}{dt}|\vec v(t)| \vec T + \kappa |\vec v|^2 \vec N.$$
+The scalars $a_T=\dfrac{d}{dt}|\vec v(t)|$ and $a_N=\kappa |\vec v|^2$ 
+\marginpar{Engineers often use the equivalent formula $a_N = \frac{|\vec v|^2}{\rho}$, as $\rho$ is a physical distance that they can measure.} 
+are called the tangential and normal components of acceleration.  All we are doing is writing the vector $\vec a(t)$ as the sum of a vector parallel to $\vec T$ and a vector orthogonal to $\vec T$. Before we decompose the acceleration into its tangential and normal components, let's look at two examples to see what these facts physically represent.
+
+\begin{problem}
+ Consider the path of an object in projectile motion that has been fired from the origin. Draw a typical path followed by a projectile.  The acceleration $\vec a(t)=(0,-g)$ acts straight down for any time $t$.  
+\begin{itemize}
+ \item Pick a point on your path before the max height occurs. At that point, draw both $\vec T$, $\vec a$, and the projection of $\vec a$ onto $\vec T$.  Is $a_T$ positive or negative? 
+ \item At the point you chose above, is the speed of the projectile increasing or decreasing as it climbs higher? Explain physically why $a_T = \frac{d}{dt}|\vec v(t)|$.
+ \item Now pick a point after the projectile passes the peak.  Then repeat the last two parts at this point.
+\end{itemize}
+\end{problem}
+
+\begin{problem}
+ Imagine that you are riding as a passenger on a road and encounter a series of switchbacks (so the road starts to zigzag up the mountain). Right before each bend in the road, you see a yellow sign that tells you a U-turn is coming up, and that you should reduce your speed from 45 mi/hr to 15 mi/hr.  Assume the largest curvature along the turn is $\kappa$. Recall that $a_N=\kappa |\vec v|^2$. The engineers of the road designed the road so that if you are moving at 15 mi/hr, then the normal acceleration will be at most $A$. 
+\begin{enumerate}
+ \item Suppose that your driver (Ben) ignores the suggestion to slow down to 15 mi/hr.  He keeps going 45 mi/hr through the turn. Had he slowed down, the max acceleration would be $A$.  You're traveling 3 times faster than suggested.  What will your maximum normal acceleration be? [It's more than $3A$.]
+ \item You yell at Ben to slow down (you don't want to die). So Ben decides to only slow to 30 mi/hr. He figures this means you'll only feel twice as much acceleration.  Explain why this line of reasoning is flawed.
+ \item Ben gets frustrated by the fact that he has to slow down. He complains about the engineers who designed the road, and says, ``they should have just built a larger corner so I could keep going 45.''  How much larger should the radius of the circle be so that you can travel 45 mi/hr instead of 15 mi/hr, and still feel the same acceleration $A$?
+ \item Which will cause the normal acceleration to decrease more, halving your speed or halving the curvature (doubling the radius)?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ We defined the principle unit normal vector as $\vec N = \dfrac{d\vec T/dt}{|d\vec T/dt|}$.  Explain why we can write $\vec N = \dfrac{d\vec T/ds}{|d\vec T/ds|}$ as well. Then use this fact to explain why $\ds\vec N=\frac{d\vec T/dt}{\kappa|\vec v|}$, which means we can write $\ds\kappa|\vec v|\vec N=\frac{d\vec T}{dt}$.  
+\end{problem}
+
+
+\begin{problem}
+ Prove that $\ds \vec a(t) = a_T\vec T+a_N\vec N=\frac{d}{dt}|\vec v(t)| \vec T + \kappa |\vec v|^2 \vec N.$ Here's some hints.
+\begin{itemize}
+ \item Rewrite the velocity $\vec v$ as a magnitude $|\vec v|$ times a direction $\vec T$.  
+ \item We know that $\vec a(t) = \frac{d}{dt}\vec v(t)$ (acceleration is the derivative of velocity). Take the derivative of $\vec v = |\vec v|\vec T$ by using the product rule (on the scalar product $|\vec v|\vec T$).
+ \item You should encounter the quantity $d\vec T/dt$ somewhere in your product.  Use the previous problem to complete your proof.
+\end{itemize}
+\end{problem}
+
+To help you organize the information above, here's a table that includes all the vectors and scalars we have discussed.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Unit Tangent Vector & $\vec T$ & $\ds\frac{d\vec r}{ds} = \frac{d\vec r/dt}{ds/dt} = \frac{\vec r^\prime(t)}{|\vec r^\prime(t)|}$\\\hline
+Curvature Vector & $\vec \kappa $& $\ds\frac{d\vec T}{ds} =\frac{d\vec T/dt}{ds/dt} = \frac{d\vec T/dt}{|\vec v|} = \frac{\vec T^\prime(t)}{|\vec r^\prime(t)|} $\\\hline
+Curvature (not a vector, but a scalar)& $ \kappa $&$\ds \left|\frac{d\vec T}{ds}\right| =\left|\frac{d\vec T/dt}{ds/dt}\right| = \frac{\left|d\vec T/dt\right|}{|\vec v|}= \frac{|\vec T^\prime(t)|}{|\vec r^\prime(t)|}  $ \\\hline
+Principal unit normal vector & $ \vec N$& $\ds \frac{d\vec T/dt}{|d\vec T/dt|} =  \frac{\vec T^\prime(t)}{|\vec T^\prime(t)|}=\frac{1}{\kappa}\frac{d\vec T}{ds} = \frac{1}{\kappa |\vec v|}\frac{d\vec T}{dt}$\\\hline
+Binormal vector & $ \vec B$& $ \vec T\times\vec N$\\\hline
+Radius of curvature & $ \rho$ & $1/\kappa$\\\hline
+Center of curvature at $t$&  & $\vec r(t)+\rho(t)\vec N(t)$ \\\hline
+Torsion & $ \tau $ & $\ds \pm\left|\frac{d\vec B}{ds}\right|$ (pick the sign) or $\ds-\frac{d\vec B}{ds}\cdot \vec N $\\\hline
+Tangential Component of acceleration & $ a_T$ & $\ds \vec a \cdot \vec T = \frac{d}{dt}|\vec v|$\\\hline
+Normal Component of acceleration & $ a_N$ & $\ds \vec a \cdot \vec N = \kappa \left(\frac{ds}{dt}\right)^2 = \kappa |\vec v|^2$\\\hline
+\end{tabular}
+\end{center}
+
