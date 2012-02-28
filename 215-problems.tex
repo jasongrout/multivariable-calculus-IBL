@@ -49,7 +49,13 @@ Once you have finished the problems in the section and feel comfortable with the
 
 \newcommand{\bmw}[1]{}
 \newcommand{\marginparbmw}[1]{}
+
+% Notes for Larson, 5th edition
 \newcommand{\larsonfive}[1]{#1}
+
+% Instructor-specific material (answers, helps, etc.)
+\newcommand{\instructor}[1]{#1}
+
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -87,7 +93,7 @@ Once you have finished the problems in the section and feel comfortable with the
 %\newtheorem{problem}[theorem]{Problem}
 \theoremstyle{problem}
 \newtheorem{problemnum}[theorem]{Problem}
-\newenvironment{problem}[1][]{\begin{problemnum}[#1]}{\end{problemnum}\hrule\bigskip}
+\newenvironment{problem}[1][]{\begin{problemnum}[#1]}{\end{problemnum}\nopagebreak\hrule\bigskip}
 
 % Abbreviations
 \newcommand{\ii}{\ensuremath{\vec \imath}}
