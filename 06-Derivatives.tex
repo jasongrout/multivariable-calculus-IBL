@@ -51,15 +51,11 @@ You learned to work with limits in first-semester calculus without needing the f
 \end{enumerate}
 \end{problem}
 
-Some techniques (like plugging in numbers and factoring) give us immediate techniques for handling multivariable functions.
-\begin{problem} Do the following limits
+Some of the techniques you used in single-variable calculus give us immediate techniques for handling multivariable functions.
+\begin{problem} Do the following limits:
   \begin{enumerate}
-  \item $\ds\lim_{(x,y)\to (2,1)} 9-x^2-y^2$ [Hint: just as in
-    first-semester calculus, try plugging the numbers in if you
-    have a polynomial.]
-  \item $\ds\lim_{(x,y)\to (4,4)} \frac{x-y}{x^2-y^2}$ [Hint: just as
-    in first-semester calculus, try factoring and canceling if you
-    have a 0/0 form.]
+  \item $\ds\lim_{(x,y)\to (2,1)} 9-x^2-y^2$
+  \item $\ds\lim_{(x,y)\to (4,4)} \frac{x-y}{x^2-y^2}$
   \end{enumerate}
 \end{problem}
 
@@ -128,8 +124,8 @@ to mean the partial of $f$ with resepect to $x$.
 \begin{enumerate}
  \item For $f(x,y)=x^2+2xy+3y^2$ find $\ds\frac{\partial f}{\partial x}$ and $f_y$.
  \item For $f(x,y,z)=x^2y^3z^4$, find $f_x$, $\ds\frac{\partial f}{\partial y}$ and $D_z f$.
- \item For $\vec r(u,v) = (u,v,v\cos(uv))$, find $\ds\frac{\partial \vec r}{\partial u}$ and $\ds\frac{\partial \vec r}{\partial v}$. [Hint: the result of each partial derivative will be a vector.]
- \item For $\vec F(x,y) = (-y,xe^{3y})$, find $\ds\frac{\partial \vec F}{\partial x}$ and $\ds\frac{\partial \vec F}{\partial y}$.  [Hint: the result of each partial derivative will be a vector.]
+ \item For $\vec r(u,v) = (u,v,v\cos(uv))$, find $\ds\frac{\partial \vec r}{\partial u}$ and $\ds\frac{\partial \vec r}{\partial v}$.
+ \item For $\vec F(x,y) = (-y,xe^{3y})$, find $\ds\frac{\partial \vec F}{\partial x}$ and $\ds\frac{\partial \vec F}{\partial y}$.
 \end{enumerate}
 \end{problem}
 
@@ -161,7 +157,7 @@ The next problem will help you visualize what a partial derivative means in the 
  \item Increasing $x$ by 1 unit when $y$ does not change will cause $z$ to increase by about \blank{1cm} units.
  \item Increasing $y$ by 1 unit when $x$ does not change will cause $z$ to increase by about \blank{1cm} units.
 \end{itemize}
-\item In the previous part, we said that $z$ increased by \emph{about} a certain amount.  Why did we not say that $z$ increases by \emph{exactly} that amount? [Hint: the amount we were calculating in the previous part had to do with how much $z$ changed on a tangent line.]
+\item In the previous part, we said that $z$ increased by \emph{about} a certain amount.  Why did we not say that $z$ increases by \emph{exactly} that amount?
 \end{enumerate}
 \end{problem}
 
@@ -170,12 +166,10 @@ Once we have partial derivatives, we can calculate tangent lines to a surface. T
   \marginpar{\bmw{See 14.6: 9-12 for more practice.}\larsonfive{See Larson 13.7:17--30 for more practice.}}%
  Consider the function $f(x,y)=9-x^2-y^2$ at the point $(2,1)$. From the previous problem, we know that increasing $x$ by 1 unit when $y$ does not change will cause $z$ to increase by about $f_x$ units. In terms of vectors, we have $(\Delta x, \Delta y, \Delta z) = (1,0,f_x)$ is a tangent vector to the surface. 
 \begin{enumerate}
- \item At the point $(2,1)$ find a tangent vector to the surface in the $x$ direction (so compute $f_x(2,1)$ and put it in the vector $(1,0,f_x)$). Then give a vector equation of the tangent line to $f$ in the $x$ direction.
- \item At the point $(2,1)$ find a tangent vector to the surface in the $y$ direction. 
+ \item At the point $(2,1)$, find a tangent vector to the surface in the $x$ direction (so compute $f_x(2,1)$ and put it in the vector $(1,0,f_x)$). Then give a vector equation of the tangent line to $f$ in the $x$ direction.
+ \item At the point $(2,1)$, find a tangent vector to the surface in the $y$ direction. 
 Then give a vector equation of the tangent line to $f$ in the $y$ direction.
- \item\marginpar{See Larson 13.7:5--16 for more practice.}%
- Find a vector that is orthogonal to both of the vectors above.  This vector is a normal vector to the surface.
- \item Give an equation of the tangent plane to $f$ at $(2,1)$. [Hint: you need to find the plane containing the two tangent vectors you just found---see problem \ref{plane equation 2 lines}.  Another way to think about it is to find the plane with the normal vector from the previous part going through the point $(2,1,4)$---see problem \ref{plane equation normal point}.]
+ \item Give an equation of the tangent plane to $f$ at $(2,1)$. [Hint: we've found equations of planes before---see problems \ref{plane equation 2 lines} and \ref{plane equation normal point}.]
 \end{enumerate}
 \end{problem}
 
@@ -201,13 +195,12 @@ The next problem helps you generalize what you did above to construct the genera
 Let $z=f(x,y)$ be a function whose partial derivatives exist.
 \begin{enumerate}
 \item Give two vectors tangent to the surface at $(x,y)=(a,b)$.
-\item Give a normal vector to the surface at $(a,b)$.  [Hint: remember, this is orthogonal to both vectors you just found.]
+\item Give a normal vector to the surface at $(a,b)$.
 \item Give an equation of the tangent plane to the surface at $(a,b)$.
 \end{enumerate}
 \end{problem}
 
-
-The next problem generalizes the tangent plane and normal vector calculations above to work for any parametric surface $\vec r(u,v)$.
+The next problem generalizes the tangent plane and normal vector calculations above to work for a parametric surface $\vec r(u,v)$.\note{Should this problem and the previous problem be swapped?  Think about it...}
 \begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kM1uwjAQhO95ihUgxQ4uhbSVevG5954rVZZjwMLY1voH0aevEwhEFerJu9buN7ODJLFMOUmNdIFkyiA1QdtLRSsfudEhEiQt8_q5pbSq5ttkZdTOgrAdeKdtrDwfXuIjA-mMQ16j6moGQf8o3q4Lacm9QHFUEbX89sYVKIOivmavRYvkUkDbeF0a54XU8czXq7deD2TCrMJDBMl88DVBTfXjXsuDVSHwFwpzuAw_BiXejj6uNq6gHSplyyl_WGW-95aVjA5DhYnjqtPbLSmxYR6bfLl8kEhjiCxEgZH3Yd2h7zfBszLGnerJZr5twv-rDoXdqbpPzRth1aNTU3N3sszNFD5mWFJ42rANZVesT-jNgN3HoyGzT9WBDrDI_KvfXDD46EMa_kouixmtwt6diKe_OvC8aA}{Sage}.}%
 \marginpar{\bmw{See 16.5: 27-30 for more practice.}\larsonfive{See Larson 15.5:35--38 for more practice.}}%
  Consider the cone parametrized by $\vec r(u,v)=(u\cos v, u\sin v,u)$.
@@ -255,12 +248,12 @@ where $dx$ and $dy$ are independent variables which represent small changes in $
   \begin{enumerate}
   \item If $f(x,y)=9-x^2-y^2$, then $df = f_xdx+f_ydy=\blank{1in}\,dx+\blank{1in}\,dy$.  If we are on the surface at the point $(x,y,z)=(2,1,4)$, then the differential is $df=\blank{1cm}\,dx+\blank{1cm}\,dy$ (just plug $x=2$ and $y=1$ into the partial derivatives).  If we move along the surface to $(x,y)=(2.1,1.1)$, then our change in $x$ is $\Delta x=\blank{1cm}$, our change in $y$ is $\Delta y=\blank{1cm}$, and the differential $df$ at $(x,y)=(2,1)$ estimates our change in height $\Delta f$ to be about $\Delta f\approx \blank{1cm}$ (just plug in $\Delta x$ for $dx$ and $\Delta y$ for $dy$ to get a single number).
   \item   If $f(x,y,z)=xy^2+yz^2$, then $$df = \blank{1in}\,dx+\blank{1in}\,dy+\blank{1in}\,dz.$$  If we are at the input vector $(x,y,z)=(1,-2,3)$, then the differential is $df = \blank{1cm}\,dx+\blank{1cm}\,dy+\blank{1cm}\,dz$.  If we move to $(x,y,z)=(0.9, -2.2, 2.8)$, then the change in $x$ is $\Delta x=\blank{1cm}$, the change in $y$ is $\Delta y=\blank{1cm}$, and the change in $z$ is $\Delta z=\blank{1cm}$.  The differential $df$ at $(x,y,z)=(1,-2,3)$ helps us estimate the change in $f$ to be about $\Delta f\approx \blank{1cm}$. [Hint: plug in our numeric $x$, $y$, $z$, $\Delta x$, $\Delta y$, and $\Delta z$.]
-  \item When a function has multiple outputs, we view the differential as an multiple-row and 1-column matrix, where each row has the partial derivative of one of the outputs.  If $\vec r(t)=(3t^2, 2/t)$, then $$d\vec r = \begin{bmatrix}(3t^2)' \\ (2/t)'\end{bmatrix} dt=\begin{bmatrix}\blank{1in}\\\blank{1in}\end{bmatrix}dt.$$
+  \item When a function has multiple outputs, we view the differential as a multiple-row and 1-column matrix, where each row has the partial derivative of one of the outputs.  If $\vec r(t)=(3t^2, 2/t)$, then $$d\vec r = \begin{bmatrix}(3t^2)' \\ (2/t)'\end{bmatrix} dt=\begin{bmatrix}\blank{1in}\\\blank{1in}\end{bmatrix}dt.$$
 If we are at $t=2$, then our differential becomes $d\vec r = \begin{bmatrix}\blank{1cm}\\\blank{1cm}\end{bmatrix}$.  If we move to $t=2.1$, then the change in $t$ is $\Delta t=\blank{1cm}$ and the change in $\vec r$, as estimated by the differential $d\vec r$ at $t=2$, is approximately $\Delta \vec r\approx \begin{bmatrix}\blank{1cm}\\\blank{1cm}\end{bmatrix}$.
 \item If $\vec r(u,\theta)=(u\cos(\theta), u\sin(\theta), u^2)$, then 
-$$d\vec r = \begin{bmatrix}\blank{1in}\\\blank{1in}\end{bmatrix}du +  \begin{bmatrix}\blank{1in}\\\blank{1in}\end{bmatrix}d\theta.$$
-If we are at $(u,\theta)=(2,\pi/3)$, then the differential is $$d\vec r = \begin{bmatrix}\blank{1cm}\\\blank{1cm}\end{bmatrix}du +  \begin{bmatrix}\blank{1cm}\\\blank{1cm}\end{bmatrix}d\theta.$$
-If we move to $(u,\theta)=(1.9, \pi/2)$, then the change in $u$ is $\Delta u=\blank{1in}$, the change in $\theta$ is $\Delta \theta=\blank{1in}$, and the change in $\vec r$, as estimated by the differential $d\vec r$ at $(u,\theta)=(2,\pi/3)$, is approximately $\Delta \vec r\approx \begin{bmatrix}\blank{1cm}\\\blank{1cm}\end{bmatrix}$.
+$$d\vec r = \begin{bmatrix}\blank{1in}\\\blank{1in}\\\blank{1in}\end{bmatrix}du +  \begin{bmatrix}\blank{1in}\\\blank{1in}\\\blank{1in}\end{bmatrix}d\theta.$$
+If we are at $(u,\theta)=(2,\pi/3)$, then the differential is $$d\vec r = \begin{bmatrix}\blank{1cm}\\\blank{1cm}\\\blank{1cm}\end{bmatrix}du +  \begin{bmatrix}\blank{1cm}\\\blank{1cm}\\\blank{1cm}\end{bmatrix}d\theta.$$
+If we move to $(u,\theta)=(1.9, \pi/2)$, then the change in $u$ is $\Delta u=\blank{1cm}$, the change in $\theta$ is $\Delta \theta=\blank{1cm}$, and the change in $\vec r$, as estimated by the differential $d\vec r$ at $(u,\theta)=(2,\pi/3)$, is approximately $\Delta \vec r\approx \begin{bmatrix}\blank{1cm}\\\blank{1cm}\\\blank{1cm}\end{bmatrix}$.
   \end{enumerate}
 
 \end{problem}
@@ -274,9 +267,9 @@ $$df=f_xdx+f_ydy=M\begin{bmatrix}dx\\dy\end{bmatrix}.$$
  \item  Let $f(x,y,z)=w$. Find a matrix $M$ so that 
 $$df=f_xdx+f_ydy+f_zdz=M\begin{bmatrix}dx\\dy\\dz\end{bmatrix}.$$
  \item  Let $\vec r(t)=(x,y)$. We will think of $\vec r_t=\begin{bmatrix}x_t\\y_t\end{bmatrix}$ as a column vector (a single-column matrix).  Find a matrix $M$ so that 
-$$d\vec r=\vec r_t dt=\begin{bmatrix}x_t\\y_t\end{bmatrix}dt=\begin{bmatrix}x_tdt\\y_tdt\end{bmatrix}=Mdt.$$
+$$d\vec r=\vec r_t dt=Mdt.$$
  \item  Let $\vec r(u,v)=(x,y,z)$. We will think of $\dfrac{\partial \vec r}{\partial u}=\begin{bmatrix}x_u\\y_u\\z_u\end{bmatrix}$ and $\dfrac{\partial \vec r}{\partial v}=\begin{bmatrix}x_v\\y_v\\z_v\end{bmatrix}$ as column vectors (single-column matrices).  Find a matrix $M$ so that 
-$$d\vec r=\frac{\partial \vec r}{\partial u}du+\frac{\partial \vec r}{\partial v}dv=\begin{bmatrix}x_u\\y_u\\z_u\end{bmatrix}du+\begin{bmatrix}x_v\\y_v\\z_v\end{bmatrix}dv=\begin{bmatrix}x_udu+ x_vdv\\y_udu +y_vdv\\z_udu+z_vdv\end{bmatrix}=M\begin{bmatrix}du\\dv\end{bmatrix}.$$
+$$d\vec r=\frac{\partial \vec r}{\partial u}du+\frac{\partial \vec r}{\partial v}dv=M\begin{bmatrix}du\\dv\end{bmatrix}.$$
 \end{enumerate}
 \end{problem}
 
@@ -322,13 +315,13 @@ Read the remark above. Then give an equation of the tangent plane to $f(x,y)=9-x
  \item Find $Df(x,y)$ and then $Df(2,1)$. You should have two matrices.
  \item Find the point $(2,1,f(2,1))$ on the graph of the surface.
  \item If $(x,y,z)$ is any point on the tangent plane, find the change from $(2,1, f(2,1))$ to $(x,y,z)$ (subtract vectors).  This change is $(dx,dy,dz)$.
- \item We'll use differential notation to finish this problem. We want to generalize $dy=f'dx$ (a change in outputs equals the derivative times a change in inputs), so we will use the notation $d\vec y = D\vec fd\vec x$. Recall the following. 
+ \item We'll use differential notation to finish this problem. We want to generalize $dy=f'dx$ (a change in outputs equals the derivative times a change in inputs), so we will use the notation $d\vec y = D\vec fd\vec x$. Recall the following:
 \begin{itemize} 
-\item  The inputs to $z=f(x,y)$ are $x$ and $y$ (so the input vector is $\vec x=(x,y)$).  The output is $z$ (so the output vector is $\vec y= (z)$). 
+\item  The inputs to $z=f(x,y)$ are $x$ and $y$, so the input vector is $\vec x=(x,y)$.  The output is $z$, so the output vector is $\vec y= (z)$.
 \item The change in inputs is $(dx,dy)$.  The change in outputs is $(dz)$. 
-\item The differential notation $d\vec y=D\vec f\ d\vec x$ becomes $\begin{bmatrix}dz\end{bmatrix}=Df\begin{bmatrix}dx \\ dy\end{bmatrix}$. A change in the output $z$ equals the derivative times a change in the inputs $x$ and $y$.
+\item The differential notation $d\vec y=D\vec f\ d\vec x$ then, in this case, becomes $\begin{bmatrix}dz\end{bmatrix}=Df\begin{bmatrix}dx \\ dy\end{bmatrix}$. This means a very small change in the output $z$ equals the derivative times very small changes in the inputs $x$ and $y$.
 \end{itemize}
-Now use the differential notation $\begin{bmatrix}dz\end{bmatrix}=Df\begin{bmatrix}dx \\ dy\end{bmatrix}$ to write a matrix equation of the tangent plane (use $Df(2,1)$ from part 1 and $dx$, $dy$, and $dz$ from part 2). Then perform the matrix multiplication to get $z-f(2,1)=\blank{2in}$. Compare with problem \ref{cake plane introduction}.
+Now use the differential notation $\begin{bmatrix}dz\end{bmatrix}=Df\begin{bmatrix}dx \\ dy\end{bmatrix}$ to write a matrix equation of the tangent plane (use $Df(2,1)$ from part 1 and $dx$, $dy$, and $dz$ from part 2). Then perform the matrix multiplication to get an equation of the tangent plane. Compare your answer with problem \ref{cake plane introduction}.
 \end{enumerate}
 \end{problem}
 
@@ -414,25 +407,25 @@ This is exactly the same as the chain rule in first-semester calculus.  The only
  Suppose $f(x,y) = x^2+xy$ and $x=2t+3$ and $y=3t^2+4$.
  \begin{enumerate}
   \item Rewrite the parametric equations $x=2t+3$ and $y=3t^2+4$ in vector form, so we can apply the chain rule. This means you need to create a function $\vec r(t) = (\blank{1in}, \blank{1in})$.
-  \item Compute the derivatives $Df(x,y)$ and $Dr(t)$. 
-  \item The chain rule states that $D(f\circ \vec r)(t) = Df(\vec r(t))D\vec r(t)$. What is the difference between $Df(x,y)$ and $Df(r(t))$. [Hint: see problem \ref{chain rule review problem}.]
-  \item Use the chain rule to compute $D(f\circ r)(t)$. What is $df/dt$?
+  \item Compute the derivatives $Df(x,y)$ and $D\vec r(t)$. 
+  \item The chain rule states that $D(f\circ \vec r)(t) = Df(\vec r(t))D\vec r(t)$. What is the difference between $Df(x,y)$ and $Df(\vec r(t))$. [Hint: see problem \ref{chain rule review problem}.]
+  \item Use the chain rule to compute $D(f\circ \vec r)(t)$. What is $df/dt$?
   \item Now, without any matrix multiplication, replace $x$ and $y$ in $f=x^2+xy$ with what they are in terms of $t$, and then use first-semester calculus to find $df/dt$.
  \end{enumerate}
 \end{problem}
 
 \begin{problem}\marginpar{\bmw{See 14.4: 7-12 for more practice.}\larsonfive{See Larson 13.5:7--10 for more practice (remember to use matrix multiplication, not the formulas from the book).}}%
- Suppose $f(x,y,z) = x+2y+3z^2$ and $x=u+v$, $y=2u-3v$, and $z=uv$.  This means that changing $u$ and $v$ should cause $f$ to change. Our goal is to find $\partial f/\partial u$ and $\partial f/\partial v$. Try doing this problem without looking at the steps below, but instead try to mimic the steps in the previous problems on your own. 
+ Suppose $f(x,y,z) = x+2y+3z^2$ and $x=u+v$, $y=2u-3v$, and $z=uv$.  This means that changing $u$ and $v$ should cause $f$ to change. Our goal is to find $\partial f/\partial u$ and $\partial f/\partial v$. Try doing this problem without looking at the steps below, but instead try to follow the patterns in the previous problem on your own. 
  \begin{enumerate}
   \item Rewrite the parametric equations for $x,y,$ and $z$ in vector form $\vec r(u,v)=(x,y,z)$. If you were to graph $\vec r$, what kind of graph would you make?
-  \item Compute $Df(x,y,z)$ and $Dr(u,v)$.  
-  \item Use the chain rule (matrix multiplication) to find $D(f\circ r)(u,v)$.  Notice that since this composite function has 2 inputs, namely $u$ and $v$, we should expect to get two columns when we are done.
+  \item Compute $Df(x,y,z)$ and $D\vec r(u,v)$.  
+  \item Use the chain rule (matrix multiplication) to find $D(f\circ \vec r)(u,v)$.  Notice that since this composite function has 2 inputs, namely $u$ and $v$, we should expect to get two columns when we are done.
   \item What are $\partial f/\partial u$ and $\partial f/\partial v$? [Hint: remember, each input variable gets a column.]
  \end{enumerate}
 \end{problem}
 
 \begin{problem}
- Suppose $\vec F(s,t) = (2s+t,3s-4t,t)$ and $s=3pq$ and $t=2p+q^2$.  This means that changing $p$ and $q$ should cause $\vec F$ to change. Our goal is to find $\partial \vec F/\partial p$ and $\partial \vec F/\partial q$. Note that since $\vec F$ is a vector-valued function, the two partial derivatives should be vectors. Try doing this problem without looking at the steps below, but instead try to mimic the steps in the previous problems on your own. 
+ Suppose $\vec F(s,t) = (2s+t,3s-4t,t)$ and $s=3pq$ and $t=2p+q^2$.  This means that changing $p$ and $q$ should cause $\vec F$ to change. Our goal is to find $\partial \vec F/\partial p$ and $\partial \vec F/\partial q$. Note that since $\vec F$ is a vector-valued function, the two partial derivatives should be vectors. Try doing this problem without looking at the steps below, but instead try to follow the patterns in the previous problems on your own. 
  \begin{enumerate}
   \item\label{item:3} Rewrite the parametric equations for $s$ and $t$ in vector form.
   \item Compute $D\vec F(s,t)$ and the derivative of your vector function from part~\ref{item:3}.
@@ -442,7 +435,7 @@ This is exactly the same as the chain rule in first-semester calculus.  The only
 \end{problem}
 
 \begin{problem}
- Suppose $\vec F(u,v) = (3u-v,u+2v,3v)$,  $\vec G(x,y,z)=(x^2+z, 4y-x)$, and $\vec r(t) = (t^3, 2t+1, 1-t)$.  We want to examine $\vec F(\vec G(\vec r(t))$.  This means that $\vec F\circ \vec G\circ \vec r$ is a function from $\RR^n\to\RR^m$ for what $n$ and $m$?  Similar to first-semester calculus, since we have two functions nested inside of each other, we'll just need to apply the chain rule twice.  Our goal is to find $d\vec F/dt$.  Try to do this problem without looking at the steps below.
+ \note{Maybe move this problem down after a few of the general problems that emphasize the concepts above.}Suppose $\vec F(u,v) = (3u-v,u+2v,3v)$,  $\vec G(x,y,z)=(x^2+z, 4y-x)$, and $\vec r(t) = (t^3, 2t+1, 1-t)$.  We want to examine $\vec F(\vec G(\vec r(t))$.  This means that $\vec F\circ \vec G\circ \vec r$ is a function from $\RR^n\to\RR^m$ for what $n$ and $m$?  Similar to first-semester calculus, since we have two functions nested inside of each other, we'll just need to apply the chain rule twice.  Our goal is to find $d\vec F/dt$.  Try to do this problem without looking at the steps below.
  \begin{enumerate}
   \item Compute $D\vec F(u,v)$, $D\vec G(x,y,z)$, and $D\vec r(t)$.
   \item Use the chain rule (matrix multiplication) to find the derivative of $\vec F$ with respect to $t$.  What size of matrix should we expect for the derivative?
@@ -453,7 +446,7 @@ This is exactly the same as the chain rule in first-semester calculus.  The only
 
 \begin{problem}\marginpar{\bmw{See 14.4: 13-24 for more practice.  Don't use the ``branch diagram'' in the book---use matrix multiplication instead. The branch diagram is just a way to express matrix multiplication without having to introduce matrices.}\larsonfive{See Larson 13.5:7--10 for more practice.}}%
  Suppose $w=f(x,y,z)$ and $x,y,z$ are all function of one variable $t$ (so $x=g(t), y=h(t), z=k(t)$).  
- Find a general formula for $dw/dt$ that involves partials of $f$ and derivatives of $x$, $y$, and $z$. Try doing this problem without looking at the steps below, but instead try to mimic the steps in the previous problems.
+ Find a general formula for $dw/dt$ that involves partials of $f$ and derivatives of $x$, $y$, and $z$. Try doing this problem without looking at the steps below, but instead try to follow the patterns in the previous problems.
 \begin{enumerate}
  \item Rewrite the parametric equations for $x$, $y$, and $z$ in vector form $\vec r(t) = (x,y,z)$.
  \item Compute $Dw(x,y,z)$ and $D\vec r(t)$. 
@@ -463,7 +456,7 @@ This is exactly the same as the chain rule in first-semester calculus.  The only
 
 
 \begin{problem}\larsonfive{\marginpar{See Larson 13.5:19--26 for more practice.}}%
- Suppose $z=f(s,t)$ and $s$ and $t$ are function of $u$, $v$ and $w$.  Use the chain rule to give a general formula for $\partial s/\partial u$, $\partial s/\partial v$, and $\partial s/\partial w$. 
+ Suppose $z=f(s,t)$ and $s$ and $t$ are functions of $u$, $v$ and $w$.  Use the chain rule to give a general formula for $\partial z/\partial u$, $\partial z/\partial v$, and $\partial z/\partial w$. 
 \end{problem}
 
 You've now got the key ideas needed to use the chain rule in all dimensions. You'll find this shows up many places in upper-level math, physics, and engineering courses. The following problem will show you how you can use the general chain rule to get an extremely quick way to perform implicit differentiation from first-semester calculus.
