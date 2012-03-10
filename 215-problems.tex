@@ -33,6 +33,8 @@ Once you have finished the problems in the section and feel comfortable with the
 \let\oldmarginpar\marginpar
 \renewcommand\marginpar[1]{\-\oldmarginpar{\raggedright\footnotesize #1}}
 %\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]{\raggedright\footnotesize #1}}
+\newcommand{\marginparbmw}[1]{\marginpar{#1}}
+
 
 \renewcommand{\thefootnote}{\roman{footnote}}
 \newcommand{\note}[1]{\footnote{#1}\marginpar{\fbox{\textbf{\thefootnote}}}}
@@ -65,6 +67,7 @@ Once you have finished the problems in the section and feel comfortable with the
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 
+
 \newtheoremstyle{box}%
 {}{}% standard spacing before and after
 {}% Body style
@@ -94,6 +97,7 @@ Once you have finished the problems in the section and feel comfortable with the
 \theoremstyle{problem}
 \newtheorem{problemnum}[theorem]{Problem}
 \newenvironment{problem}[1][]{\begin{problemnum}[#1]}{\end{problemnum}\nopagebreak\hrule\bigskip}
+
 
 % Abbreviations
 \newcommand{\ii}{\ensuremath{\vec \imath}}
@@ -196,65 +200,24 @@ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisc
 
 
 \chapter{Line Integrals}
+\input{08-Line-Integrals}
+\wrapup
+
+
 \chapter{Optimization}
+\input{09-Optimization}
+\wrapup
 
-\chapter{Double Integrals}
-\chapter{Surface Integrals}
-\chapter{Triple Integrals}
-
-
-
-
-
-
-
-
-
-
-
-%\appendix
-%
-%\chapter{The First Appendix}
-%
-%The \verb"\appendix" command should be used only once. Subsequent appendices can
-%be created using the Chapter command.
-%
-%\chapter{The Second Appendix}
-%
-%Some text for the second Appendix.
-%
-%This text is a sample for a short bibliography. You can cite a book by making use of
-%the command \verb"\cite{KarelRektorys}": \cite{KarelRektorys}. Papers can be cited
-%similarly: \cite{Bertoti97}. If you want multiple citations to appear in a single set
-%of square brackets you must type all of the citation keys inside a single citation,
-%separating each with a comma. Here is an example: \cite{Bertoti97, Szeidl2001,
-%Carlson67}.
-%
-%\begin{thebibliography}{9}
-%\bibitem {KarelRektorys}Rektorys, K., \textit{Variational methods in Mathematics,
-%Science and Engineering}, D. Reidel Publishing Company,
-%Dordrecht-Hollanf/Boston-U.S.A., 2th edition, 1975
-%
-%\bibitem {Bertoti97} \textsc{Bert\'{o}ti, E.}:\ \textit{On mixed variational formulation
-%of linear elasticity using nonsymmetric stresses and displacements}, International
-%Journal for Numerical Methods in Engineering., \textbf{42}, (1997), 561-578.
-%
-%\bibitem {Szeidl2001} \textsc{Szeidl, G.}:\ \textit{Boundary integral equations for
-%plane problems in terms of stress functions of order one}, Journal of Computational and
-%Applied Mechanics, \textbf{2}(2), (2001), 237-261.
-%
-%\bibitem {Carlson67}  \textsc{Carlson D. E.}:\ \textit{On G\"{u}nther's stress functions
-%for couple stresses}, Quart. Appl. Math., \textbf{25}, (1967), 139-146.
-%\end{thebibliography}
-%
-%\backmatter
-%
-%\chapter{Afterword}
-%
-%The back matter often includes one or more of an index, an afterword,
-%acknowledgements, a bibliography, a colophon, or any other similar item. In
-%the back matter, chapters do not produce a chapter number, but they are
-%entered in the table of contents. If you are not using anything in the back
-%matter, you can delete the back matter TeX field and everything that follows it.
 \end{document}
 
+\chapter{Double Integrals}
+\input{10-Double-Integrals}
+\wrapup
+
+\chapter{Surface Integrals}
+\input{11-Surface-Integrals}
+\wrapup
+
+\chapter{Triple Integrals}
+\input{12-Triple-Integrals}
+\wrapup

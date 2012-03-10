@@ -134,7 +134,7 @@ to mean the partial of $f$ with resepect to $x$.
 Since a partial derivative is a function, you can take partial derivatives of that function as well.  If you want to first compute a partial with respect to $x$, and then with respect to $y$, you would write $$f_{xy}=\ds\frac{\partial}{\partial y}\frac{\partial}{\partial x}f = \frac{\partial}{\partial y}\frac{\partial f}{\partial x} = \frac{\partial^2 f}{\partial y \partial x}.$$
 The shorthand notation $f_{xy}$ is easiest to write, but in upper-level courses, we will use subscripts to mean other things. At that point, we'll use the fractional partial notation to avoid confusion.
 
-\begin{problem}\larsonfive{\marginpar{See Larson 13.3:71--80 for more practice.}}%
+\begin{problem}\label{second partials agree}\larsonfive{\marginpar{See Larson 13.3:71--80 for more practice.}}%
 Consider the function $f(x,y)=3xy^3+e^{x^2}.$
 \begin{enumerate}
  \item Compute the second partials $\ds \frac{\partial^2 f}{ \partial x^2}$, $\ds\frac{\partial^2 f}{\partial y \partial x}$, $\ds\frac{\partial^2 f}{\partial y^2}$, and $\ds\frac{\partial^2 f}{\partial x \partial y}$.
@@ -353,7 +353,7 @@ Some people remember the theorem above as ``the derivative of a composition is t
 
 We now generalize to higher dimensions. If I want to write $\vec f(\vec g(\vec x))$, then $\vec x$ must be a vector in the domain of $g$.  After computing $\vec g(\vec x)$, we must get a vector that is in the domain of $f$. 
 
-\begin{problem}
+\begin{problem}\label{horse track chain rule introduction}
  Consider $f(x,y)=9-x^2-y^2$ and $\vec r(t)=(2\cos t, 3\sin t)$. For this problem, imagine the following scenario.  A horse is running around outside in the cold. The horse's position at time $t$ is given by the elliptical path $\vec r(t)$. The temperature of the air at any point $(x,y)$ is given by $T=f(x,y)$.  
 \begin{enumerate}
  \item\label{item:1} At time $t=0$, what is the horse's position $\vec r(0)$, and what is the temperature $f(\vec r(0))$ at that position? Find the temperatures at $t=\pi/2$, $t=\pi$, and $t=3\pi/2$ as well. 

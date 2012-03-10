@@ -1,0 +1,625 @@
+
+\noindent 
+This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
+\begin{enumerate}
+\item Describe how to integrate a function along a curve. Use line integrals to find the area of a sheet of metal with height $z=f(x,y)$ above a curve $\vec r(t)=\left(x,\right)$ and the average value of a function along a curve.
+\item Find the following geometric properties of a curve: centroid, mass, center of mass, inertia, and radii of gyration.
+\item Compute the work (flow, circulation) and flux of a vector field along and across piecewise smooth curves.
+\item Determine if a field is a gradient field (hence conservative), and use the fundamental theorem of line integrals to simplify work calculations.
+\end{enumerate}
+You'll have a chance to teach your examples to your peers prior to the exam.
+
+\section{Surface Area and Average Value}
+
+In this section we generalize integrals along the $x$-axis to integrals along any curve. We'll approach everything from the point of view of area, though the applications are much more far reaching. The first problem is a review problem from first-semester calculus.  The second problem generalizes the idea to integrals along a curve (which we call a line integral). The third problem has you generalize your results.
+
+This first problem appears to be really long, but it is just a step-by-step review of how you did integrals in first-semester calculus (each step is quite short).
+\begin{problem}
+ Consider the region in the $xy$ plane that is below the function $f(x)=x^2+1$ and above the interval $[-1,2]$.  Think of this region as a metal plate that has been laid flat on the ground.
+\begin{enumerate}
+ \item Draw the curve over the bounds given. 
+ \item Now partition the interval $[-1,2]$ into 6 equally spaced parts. On your graph, draw 6 rectangles  to approximate the area under $f$.  Use the right endpoint of each interval to determine the height of each rectangle. \marginpar{You could have used the left endpoint point, or the midpoint, or any other point on the curve. I chose the right endpoint to just make sure we all had the same answers.}
+ \item The width of each rectangle we call $\Delta x$. What is $\Delta x$ in this example?
+ \item Recall from first semester calculus that we typically name the $x$-coordinates of the ends of our rectangles using the notation $x_0$, $x_1$, $x_2$, $\ldots$. In this example, we have 
+$$
+x_0=-1, 
+x_1=-\frac{1}{2}, 
+x_2=0, 
+x_3=\frac{1}{2}, 
+x_4=1, 
+x_5=\frac{3}{2}, 
+x_6=2.
+$$
+The area of the first rectangle is $\Delta A_1=f(x_1)\Delta x$. The area of the second rectangle is $\Delta A_2= f(x_2)\Delta x$. 
+
+If we drew more many more rectangles, each of width $\Delta x=dx$, and we used point $x$ to find the height of our rectangle, what would the area $dA$ equal?
+
+\item The total combined area of the 6 rectangles you drew above is the sum
+$$
+f(x_1)\Delta x+
+f(x_2)\Delta x+
+f(x_3)\Delta x+
+f(x_4)\Delta x+
+f(x_5)\Delta x+
+f(x_6)\Delta x.
+$$
+Write this sum using sigma notation. 
+\item What integral gives the area under $f$ over the interval $[-1,2]$? Be prepared to share with the class how you can modify your sigma notation from the previous part to obtain the integral you gave here. (What happens to $\Sigma$ and $\Delta x$?)
+\item Find the area (surface area) of the metal sheet.
+\end{enumerate}
+
+\end{problem}
+
+I've tried to write the problem to be a replica of what you did in first semester calculus.  The only difference is that you are now integrating over a curve, not over in interval. 
+
+\note{Change the function f to one they are more familiar with.  Perhaps use an ellipse (2\sin t, 3 \cos t) and f=9-x^2-y^2. Then you can put a reference to the horse problem.}%
+\begin{problem}%
+\marginpar{\href{http://www.youtube.com/watch?v=sYsMcqtXBrc&list=PL04DF68E73B7ECD54&index=1&feature=plpp_video}{Watch a YouTube video.}}%
+ Consider the region in space that is below the function 
+$f(x,y)=(x+2)(y+2)$ and above the curve $C$ parametrized by 
+$\vec r(t)=(t,t^2)$ for $t\in[-1,2]$.  Think of this region as a metal plate that has been stood up with its base on $C$ where the height above each spot is given by $z=f(x,y)$. A graph of the sheet is to the right.
+\marginpar{{\newcommand{\myheight}{2in}
+\includegraphics[width=\marginparwidth]{line-integrals-support/sheet-1}
+
+This picture represents a sheet of metal with its base on the curve $\vec r(t)=(t,t^2)$ in the $xy$ plane, where the height above each point is given by $f(x,y)=(x+2)(y+2)$.
+}}
+\begin{enumerate}
+ \item Draw the curve $C$ in the $xy$-plane.
+ \item Now partition the curve you just drew into 6 parts, using equal spaced time intervals to create your partition. Draw a straight line between the spots on the curve given by $\vec r(-1)$, $\vec r(-1/2)$, $\vec r(0)$, etc.  You should have 6 straight lines connecting points on a parabola.
+ \item The length of each segment you drew is called $\Delta s$ (an approximation to arc length). If we drew lots of tiny segments, we would use $\Delta s=ds$ to represent this length.  What general formula do we use for $ds$? [Remember, ``A little bit of distance is speed times a little bit of time.''] Compute $ds$ in this particular example.
+ \item We'll call the $t$-coordinates of our partition $t_0$, $t_1$, $t_2$, $\ldots$. In this example, we have 
+$$
+t_0=-1, 
+t_1=-\frac{1}{2}, 
+t_2=0, 
+t_3=\frac{1}{2}, 
+t_4=1, 
+t_5=\frac{3}{2}, 
+t_6=2.
+$$
+We need the surface area of the sheet. Above each little straight segment of length $\Delta s$ on the curve, we could approximate the area using just the right endpoint, i.e. using $f(\vec r(t))$. 
+The area of the first rectangle is \marginpar{We'll use $\sigma$ to stand for surface area.} 
+$\Delta \sigma_2=f(\vec r(t_1))\Delta s_2$. The area of the second rectangle is $\Delta \sigma_2=f(\vec r(t_2))\Delta s_2$. 
+
+If we drew more many more rectangles, each of width $\Delta s=ds$, and we used the time point $t$ to find the height of our rectangle, what would the area $d\sigma$ equal?
+
+ \item The total surface area of the sheet would approximately be the sum
+$$
+f(\vec r(t_1))\Delta s_1+
+f(\vec r(t_2))\Delta s_2+
+f(\vec r(t_3))\Delta s_3+\cdots+
+f(\vec r(t_6))\Delta s_6
+$$
+Write this sum using sigma notation. 
+\item What integral gives the area under $f$ over the curve $C$? Be prepared to share with the class how you can modify your sigma notation from the previous part to obtain the integral you gave here. (What happens to $\Sigma$ and $\Delta s$?)
+\item Find the area (surface area) of the metal sheet. (Use a calculator. Don't worry about doing this integral by hand.)
+\end{enumerate}
+\end{problem}
+
+Your results from the problem above suggest the following definition.
+\begin{definition}[Line Integral]\marginpar{The line integral is also called the path integral, contour integral, or curve integral.}%
+ Let $f$ be a function and $C$ be a piecewise smooth curve given by the parametrization $\vec r(t)$ for $t\in[a,b]$. We require that the composition $f(\vec r(t))$ be continuous for all $t\in [a,b]$. Then we define the line integral
+of $f$ over $C$ to be the integral 
+$$\int_C f ds = \int_a^b f(r(t))\left|\frac{d\vec r}{dt}\right|dt.$$
+\end{definition}
+
+Notice that this definition suggests the following four steps.
+\begin{enumerate}
+ \item Start by getting a parametrization $\vec r$ of the curve $C$. 
+ \item Find the speed by computing $\dfrac{d\vec r}{dt}$ and then $\left|\dfrac{d\vec r}{dt}\right|$.
+ \item Multiply $f$ by the speed, and replace each $x$, $y$, $z$ with what it equals in terms of $t$.
+ \item Integrate the product from the previous step.
+\end{enumerate}
+Those 4 steps are the key to computing any line integral.  The next few problems just ask you to do this.
+
+
+\begin{problem}\marginparbmw{See 16.1: 9-32.  Some problems give you a parametrization, some expect you to come up with one on your own.}%
+ Let $f(x,y,z)=x^2+y^2-2z$ and let $C$ be two coils of the helix $\vec r(t)=(3\cos t, 3\sin t, 4t)$, starting at $t=0$. Remember that the parameterization means $x=3\cos t$, $y=3\sin t$, and $z=4t$.  Compute  $\int_Cf ds$. [You will have to find the end bound yourself.]
+\end{problem}
+
+\begin{problem}\marginparbmw{To practice matching parameterizations to curves, try 16.1:1-8.  For practice with line integrals, practice}%
+ Consider the function $f(x,y)=3xy+2$. Let $C$ be a circle of radius 4 centered at the origin.  Compute $\int_C fds$.  [You'll have to come up with your own parameterization.]
+\end{problem}
+
+
+\begin{problem}\marginpar{If you've forgotten how to parametrize line segments, see \ref{first line between two points}.}%
+ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight line segment from $(1,0,0)$ to $(0,4,5)$. Compute $\int_C f ds$. 
+\end{problem}
+
+\note{Have the start point be (1,-1).  Make the function be $f(x,y)=x^2+y^2-25$, so the answer is clearly negative. Have them draw the function in part 1.}
+\begin{problem}\marginpar{See \ref{parameterizing plane curves} if you forgot how to parametrize plane curves.}
+ Let $f(x,y,z)=x+y^2$. Let $C$ be the portion of the parabola $y^2=x$ between $(1,1)$ and $(4,2)$. We want to compute $\int_C fds$.  
+\begin{enumerate}
+ \item Without computing the line integral $\int_C fds$, determine if the integral should be positive or negative. Explain why this is so by looking at the values of $f(x,y)$ at points along the curve $C$.  Is $f(x,y)$ positive, negative, or zero, at points along $C$?
+ \item Parametrize the curve and set up the integral.
+ \item Use technology to compute $\int_C fds$. State the answer. Don't compute this by hand.
+\end{enumerate}
+\end{problem}
+
+%average value
+The next problem reviews the concept of average value from first semester calculus.
+
+\begin{problem}
+ Suppose the price of a stock is 10 dollars for 1 day.  Then the price of the stock jumps to 20 dollar for 2 days.  Our goal is to determine the average price of the stock over the 3 day period. 
+\begin{enumerate}
+ \item Find the average price of the stock using any method you would like. A weighted average would be great, or something else.
+ \item Let $f(t) = \begin{cases}10 &0<t<1\\20&1<t<3\end{cases}$, the price of the stock for the 3 day period. Draw the function $f$, and find the area under $f$ above $[0,3]$.
+ \item Find a single constant $h$ so that the areas under both $h$ and $f$, above the interval $[0,3]$, are the exact same areas.  The area under $h$ is just the area of a rectangle, so length times width will help. 
+ \item The area of a rectangle is length times height.  We know the area under $h$ is $\int_a^b hdt = h \int_a^bdt$. Give a physical meaning of the integral $\int_a^b dt$.  
+ \item We found a constant $h$ so that the area under $h$ matched the area under $f$. In other words, we solved the equation $$\int_a^b h dx = \int_a^b f dx$$ for $h$.  Solve for $h$ symbolically, without doing any of the integrals. This quantity was called the average value of $f$ over $[a,b]$, and was crucial to proving the fundamental theorem of calculus.
+\end{enumerate}
+\end{problem}
+
+Make sure to ask me in class about the ``ant farm'' approach to average value.
+
+\begin{problem}\label{Average Value intro}%
+\marginpar{\href{http://www.youtube.com/watch?v=t7T0MzfgV0Q&list=PL04DF68E73B7ECD54&index=5&feature=plpp_video}{Watch a YouTube video.}}%
+ Suppose the curve $C$ has the parametrization $\vec r(t) = (2\cos t, 3\sin t)$.  Let $f$ be the function $f(x,y)=9-x^2-y^2$.    \begin{enumerate}
+  \item Draw the surface $f$ in 3D.  Add to your drawing the curve $C$ in the $xy$ plane. Then draw the sheet whose area is given by the integral $\int_C f ds$. 
+  \item What's the maximum height and minimum height of the sheet? [Hint: these maxes and mins occur when you are over the $x$ and $y$ axes. We did this in problem \ref{horse track chain rule introduction}.]
+  \item We would like to find a constant height $h$ so that the area under $f$, above $C$, matches the area under $h$, above $C$. What integral gives us the area under $h$, above $C$?  What integral equation must we solve to find this constant $h$?
+  \item \marginparbmw{Please read 
+\href{https://www.lds.org/scriptures/ot/isa/40.4?lang=eng\#3}{Isaiah 40:4} and
+\href{https://www.lds.org/scriptures/nt/luke/3.5?lang=eng\#4}{Luke 3:5}. These scriptures should help you remember how to find average value.
+}%
+Solve for $h$ above. This constant $h$ is called the average value of $f$ along $C$, and often written as $\bar f$. You should obtain $$h=\bar f = \frac{\int_C f ds}{\int_C ds}.$$
+  \item Use a computer to evaluate the integrals $\int_C f ds$ and $\int_C ds$, and then give an approximation to the average value of $f$ along $C$. How should this value relate to the maximums and minimums found in part 2.
+ \end{enumerate}
+\end{problem}
+
+\begin{problem}
+ The temperature $T(x,y,z)$ at points on a wire helix $C$ given by $\vec r(t) = (\sin t, 2t, \cos t)$ is known to be $T(x,y,z)=x^2+y+z^2$. What are the temperatures at $t=0$, $t=\pi/2$, $t=\pi$, $t=3\pi/2$ and $t=2\pi$.  You should notice the temperature is constantly changing.  Make a guess as to what the average temperature is (share with the class why you made the guess you made - it's OK if you're wrong). Then compute the average temperature of the wire.
+\end{problem}
+
+\section{Physical Properties}
+
+\subsection{Centroids}%
+\marginpar{\href{http://www.youtube.com/watch?v=t7T0MzfgV0Q&list=PL04DF68E73B7ECD54&index=5&feature=plpp_video}{Watch a YouTube video.}}%
+\begin{problem}[Centroid]\label{centroid of curve}
+ Let $f$ be function, and $C$ a curve with parameterization $\vec r(t)$ (where $f(\vec r(t))$ is continuous).  We've already developed a formula for the average value of $f$ along $C$ (see problem \ref{Average Value intro}.) The centroid of an object is the geometric center, or average $x$, $y$, and $z$ value, of the object.  Notice the word ``average.''  Explain why 
+$$
+\bar x = \frac{\int_C x ds}{\int_C  ds},\quad
+\bar y = \frac{\int_C y ds}{\int_C  ds},\quad 
+\text{and}\quad
+\bar z = \frac{\int_C z ds}{\int_C  ds}.  \quad\text{(Centroid)}
+$$
+Notice that the denominator in each case is just the arc length $s=\int_C ds$. 
+For those of you already familiar with center of mass, the centroid of an object is the center of mass, provided the density of the material is constant. More on this later.
+\end{problem}
+
+
+\begin{problem}\label{semicircle centroid}
+ Let $C$ be the semicircular arc $r(t)=(a\cos t, a\sin t)$ for $t\in[0,\pi]$. Without doing any computations, make an educated guess for the centroid $(\bar x, \bar y)$ of this arc.  Then compute the integrals given in problem \ref{centroid of curve} to find the actual centroid. Share with the class your guess, even if it was incorrect. 
+\end{problem}
+
+\subsection{Mass and Center of Mass}
+ We already have developed formulas for the centroid of an object.  Suppose now that the object is made out of a composite material, and the density of the object depends where you are at in the object. You could look at this scenario as if we had a wire $C$ where one end was aluminum, and the other end was copper. In the middle, the wire slowly transitions from being all aluminum to all copper (because one contact end needs to be copper, and the other aluminum).  Such composite materials are engineered all the time (though probably not exactly as described here, because it's too easy to splice a wire and then just connect a wire and copper end).  
+
+ In future mechanical engineering courses, you would learn how to determine the density $\delta$ (mass per unit length) at each point on such a composite wire.  As copper has a higher density than aluminum, the center of mass of such a composite wire should be different than the centroid. The center of mass will move towards the heavier end. We need to develop formulas for the mass of wire, and the center of mass of a wire.
+
+\begin{problem}[Mass]\label{mass of curve}%
+\marginpar{\href{http://www.youtube.com/watch?v=mz-Udq5TeS4&list=PL04DF68E73B7ECD54&index=6&feature=plpp_video}{Watch a YouTube video.}}%
+ Suppose a wire $C$ has the parameterization $r(t)$ for $t\in[a,b]$.  Suppose the wire's density at a point $(x,y,z)$ on the wire is known to be $\delta(x,y,z)$ (a function you'll learn how to obtain in a future class). For the purposes of our class, we'll just assume we know what $\delta(x,y,z)$ is.   
+ \begin{enumerate}
+  \item Density is generally a mass per unit volume.  However, when talking about a wire, it's simpler to let density be the mass per unit length.  
+
+  Consider a small portion of the curve of length $ds$.  Explain why a small bit of mass is $dm=\delta ds$.
+  \item Explain why the mass of an object is $$m=\int_C dm = \int_C \delta ds = \int_a^b \delta \left|\frac{d\vec r}{dt}\right|dt.$$
+ \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+ A wire lies along the straight line from $(0,2,0)$ to $(1,1,3)$.  The wire's density (mass per unit length) has been engineered to be $\delta(x,y,z)=x+y+z$.  Find the mass of the wire. Is the wire heavier at $(0,2,0)$, or at $(1,1,3)$? [You'll need to parameterize the line as your first step.]
+\end{problem}
+
+
+
+\begin{problem}
+ Suppose two object lie at the points $P=(a,b,c)$ and $Q=(d,e,f)$. Our goal in this problem is to understand the difference between the centroid and the center of mass.
+\begin{enumerate}
+ \item If both points weigh the exact same, then find the centroid of the two points (the average $x$, $y$, and $z$ value).
+ \item If the mass of point $P$ is $2$ kg, and the mass of point $Q$ is 3 kg, will the center of mass be closer to $P$ or $Q$? Give a physical reason for your answer before doing any computations.  Then find the center of mass $(\bar x, \bar y, \bar z)$ of the two points. [Hint: you should get $\bar x= \frac{2a+3d}{2+3}$.] 
+\end{enumerate}
+
+\end{problem}
+
+
+\begin{problem}
+ This problem reinforces what you just did with two points in the previous problem. However, it now involves two people on a seesaw. \marginpar{See \href{http://en.wikipedia.org/wiki/Seesaw}{Wikipedia} for a seesaw picture.}%
+Ignore the mass of the seesaw in your work below, as it's a space age seesaw that has been designed out of extremely light, yet very strong, material. 
+\begin{enumerate}
+ \item 
+ My daughter and her friend are sitting on a seesaw.  Both girls have the same mass of 30 kg. My wife stands about 1 m behind my daughter. We'll measure distance in this problem from my wife's perspective.  We can think of my daughter as a point mass located at $(1\text{m},0)$ whose mass is $30$ kg. Suppose her friend is located at $(5\text{m},0)$. Suppose the kids are sitting just right so that the seesaw is perfectly balanced.  That means the the center of mass of the girls is precisely at the pivot point of the seesaw. Find the distance from my wife to the pivot point, by finding center of mass of the two girls. 
+ \item My daughter's friend has to leave, so I plan to take her place on the seesaw. My mass is 100 kg. Her friend was sitting at the point $(5,0)$. I would like to sit at the point $(a,0)$ so that seesaw is perfectly balanced. Without doing any computations, is $a>5$ or $a<5$? Explain.
+ \item Find the center of mass of the two points $(1,0)$ and $(a,0)$ whose masses are $30$ and $50$, respectively (units are meters and kilograms). Then tell me the point $(a,0)$ where I should sit so that the seesaw is perfectly balanced. Then my daughter and I can have some fun.
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}[Center of mass]\label{center of mass of curve}%
+\marginpar{\href{http://www.youtube.com/watch?v=mz-Udq5TeS4&list=PL04DF68E73B7ECD54&index=6&feature=plpp_video}{Watch a YouTube video.}}%
+We now develop formulas for the center of mass of a wire whose density $\delta$ is known. These will be generalizations of the formulas we obtained for the centroid in problem \ref{centroid of curve}. For quick reference, these formulas are 
+$$
+\bar x = \frac{\int_C x ds}{\int_C  ds},\quad
+\bar y = \frac{\int_C y ds}{\int_C  ds},\quad 
+\text{and}\quad
+\bar z = \frac{\int_C z ds}{\int_C  ds}.  \quad\text{(Centroid)}
+$$
+We'll show that the formulas for center of mass are  \marginpar{The quantity $\int_C x dm$ is sometimes called the first moment of mass about the $yz$-plane (so $x=0$). Notationally, some people write $M_{yz} =\int_C x ds$. Similarly, we could write $M_{xz}=\int_C y dm$ and $M_{xy}=\int_C zdm$.  With this notation, we could write the center of mass formulas as 
+$$(\bar x,\bar y,\bar z) 
+= 
+\left(
+\frac{M_{yz}}{m},
+\frac{M_{xz}}{m},
+\frac{M_{xy}}{m}
+\right)
+.
+$$ }%
+$$
+\bar x = \frac{\int_C x dm}{\int_C  dm},\quad
+\bar y = \frac{\int_C y dm}{\int_C  dm},\quad 
+\text{and}\quad
+\bar z = \frac{\int_C z dm}{\int_C  dm},  \quad\text{(Center of mass)}
+$$
+where $dm=\delta ds$. Notice that the denominator in each case is just the mass $m=\int_C dm$.
+Let's start by looking at a 3 point mass system, and then generalize the results to any wire. 
+\begin{enumerate}
+ \item Suppose that we have three points $(x_1,y_1)$, $(x_2,y_2)$, and $(x_3,y_3)$. Find the centroid of these three points. Write your solution using summation notation (for the denominator, replace 3 with $3=1+1+1=\sum_{i=1}^3 1$). [Hint: your formula should be very similar to the integral formula above.]
+ \item Suppose the masses of the three points are $m_1$, $m_2$, and  $m_3$. Find the center of mass of these three points. Write your solution using summation notation.
+ \item Suppose now that we have a wire located along a curve $C$, and the density of the wire is known to be $\delta$ (which could vary along the curve). Imagine cutting the wire into a thousand (or more) tiny chunks.  Each chunk would be located at some point $(x_i,y_i)$. Explain why the mass of each little chunk is $dm_i\approx\delta ds_i$. 
+ \item Use summation notation to give a formula for the center of mass of the thousands of point $(x_i,y_i,z_i)$, each with mass $dm_i.$ [This should almost be an exact copy of the second part.] 
+ Then explain why the center of mass formulas given above are correct.
+\end{enumerate}
+ 
+\end{problem}
+
+\begin{problem}
+Suppose a wire, whose density is $\delta(x,y)=x^2+y$, lies along a semicircle of radius $7$, parametrized by $\vec r(t) = (7\cos t, 7\sin t)$ for $t\in[0,\pi]$. (The 7 is here so you can replace it with $a$ after you finish the problem).
+\begin{itemize}
+ \item Where is the wire heavier, at $(7,0)$ or at $(0,7)$?
+ \item In problem \ref{semicircle centroid}, we showed that the centroid of the wire is $(\bar x, \bar y) = \left(0,\frac{2(7)}{\pi})\right)$.  We now seek the center of mass. Will $\bar x$ change?  Will $\bar y$ change?  How will each change? Explain?
+ \item Set up the integrals needed to find the center of mass. Then use software to compute the integrals.
+ \item Change the radius from 7 to 13, and use software to compute the integrals again.  Generalize what you see to give a formula for the center of mass if the radius of the circle is $a$.
+\end{itemize}
+\end{problem}
+
+
+We'll often use the notation $(\bar x, \bar y,\bar z)$ to talk about both the centroid and the center of mass. If no density is given in a problem, then $(\bar x, \bar y,\bar z)$ is the centroid. If a density is provided, then $(\bar x, \bar y,\bar z)$ refers to the center of mass. If the density is constant, it doesn't matter. That's what the next problem shows.
+
+\begin{problem}
+ Suppose a wire lies along the smooth curve $C$. Your explanation in each case below should use the formula from problem \ref{center of mass of curve}. With each part, just start with the formulas for center of mass, and then simplify it to obtain the centroid formulas.
+\begin{enumerate}
+ \item If the density of the wire is $\delta =1$, explain why the center of mass is the centroid. 
+ \item If the density of the wire is $\delta =7$, explain why the center of mass is the centroid.
+ \item If the density of the wire is constant, so $\delta =c$ for some constant $c$, explain why the center of mass is the centroid.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{center of mass alternate approach}
+ The quantity $M_{yz}=\int_C x dm$ is often called the first moment of mass about the $yz$-plane (the plane $x=0$).
+ One way to view the center of mass is to ask yourself the following question.
+\begin{quote}
+ The mass $m$ of a curve $C$ is known. If you could place all the mass at one single spot, called $(\bar x,\bar y, \bar z)$, what should $\bar x$ be so that the moments of mass don't change. 
+\end{quote}
+We want the moments $\int_C \bar xdm$ and $\int_C x dm$ to be exactly the same.
+Use this idea to solve for $\bar x$ in the equation $$\int_C \bar xdm = \int_C x dm.$$ 
+Then similarly obtain $\bar y$ and $\bar z$. [Hint: the number $\bar x$ is a constant, whereas $x$ is not. Does $\int 2fdx = 2\int fdx$?]
+\end{problem}
+
+
+%\begin{problem}[Optional - Parallel Axis Theorem]
+% This is currently a place holder for the parallel axis theorem. You'll use it extensively in future courses.  We may or may not have time for it. We'll probably come back to this when we get to double integrals.
+%\end{problem}
+
+\subsection{Inertia and Radii of Gyration}
+
+Some of you may have already had a physics class, in which you learned that the kinetic energy of an object with mass $m$ moving at speed $v$ is $$KE = \frac{1}{2}mv^2.$$
+One of the main reasons we are studying mass, center of mass, centroids, etc., is so that we can understand energy. The transfer of energy (for example from kinetic to electrical and then back from electrical to kinetic) is one of the most important ideas in modern innovations. Our goal in this unit it to help us understand rotational kinetic energy. We'll show that the kinetic energy of an object that is rotating about a line $L$, and has an angular velocity of $\omega$ radians per second about the line, is precisely $$KE = \frac{1}{2}I \omega^2,$$
+where $I$ is the (second) moment of inertia. The moment of inertial can be obtained by integrating $I=\int_C (d)^2 dm$ where $d$ is the radius of rotation about $L$, i.e. the distance from a point $(x,y,z)$ to the axis of rotation $L$. If the line $L$ is one of the coordinate axes, then we obtain the key formulas 
+$$
+I_x = \int_C (y^2+z^2)dm,\quad
+I_y = \int_C (x^2+z^2)dm,\quad
+I_z = \int_C (x^2+y^2)dm
+.$$
+If you have never worked with kinetic energy before, you may skip the next problem and then just practice using these formulas.
+
+\begin{problem}%
+\marginpar{\href{http://www.youtube.com/watch?v=Zyqk9SWlTyQ&list=PL04DF68E73B7ECD54&index=7&feature=plpp_video}{Watch a YouTube video.}}%
+ Suppose that an object, whose mass is $m$, is attached to a negligible mass string. The object is rotated about a point, where the angular velocity is $\omega$ radians per second. The length of the string (distance from the point to the center of rotation) is $d$.
+ \begin{enumerate}
+  \item  Using the fact that kinetic energy is $KE=\frac{1}{2}mv^2$. Explain why the kinetic energy of this object in rotational motion is $KE = \frac{1}{2}(d^2m)\omega^2$.  The quantity $I=d^2m$ is called the moment of inertia. This problem only applies if you have a single point. [Hint: show that $v=d\omega$.]
+  \item Suppose the point $P=(x,y,z)$, which has mass $m$, is attached to a negligible mass string. The point is rotated about the $x$-axis with angular velocity $\omega$. Find the kinetic energy, using the results from the previous problem.
+  \item We can think of a curve as thousands of points $(x,y,z)$, each with mass $dm=\delta ds$. As we rotate an entire curve about the $x$-axis with angular velocity $\omega$, each little piece contributes small amount of kinetic energy, which we'll call $dKE$.  Explain why $dKE = \frac{1}{2}(y^2+z^2) \omega^2 dm$.
+  \item Explain why the kinetic energy of the curve (when rotated about the $x$ axis) equals 
+$$KE= \frac{1}{2}\left(\int_C (y^2+z^2)dm\right)\omega^2=\frac{1}{2}I_x\omega^2.$$
+  \item If we rotated about the $y$-axis instead, how does this formula change?
+ \end{enumerate}
+\end{problem}
+
+\begin{problem}
+ A wire follows the helix $\vec r(t) = (3\cos t, 4t, 3\sin t)$ for $t\in[0,4\pi]$. The density is $\delta(x,y,z) = x^2+y+2z^2$. 
+\begin{enumerate}
+ \item Set up formulas to compute $I_x$, $I_y$, and $I_z$. Use software to compute the integrals. In your presentation, show us the set up you used, and then just give us the numerical solutions. 
+ \item Which is larger, $I_x$ or $I_z$? Can you explain why without having done any integrals?
+ \item If the wire had constant density and followed the helix $\vec r(t) = (2\cos t, 4t, 3\sin t)$ instead, which would be bigger, $I_x$ or $I_z$?  Feel free to use software to check your guess. 
+\end{enumerate}
+\end{problem}
+
+
+ In problem \ref{center of mass alternate approach}, we showed how to find the center of mass by replacing the variable distance $x$ in $\int_C x dm$ with the constant distance $\bar x$, and then solving for $\bar x$ in the equation $\int_C \bar xdm = \int_C x dm$. The idea is simple; if all the mass were located at one spot, what would that spot have to be for the moment of mass to be the same.  The radii of gyration are obtained in the exact same manner.  They can be thought of as a rotational center of mass.
+\begin{problem}[Radii of Gyration]%
+\marginpar{\href{http://www.youtube.com/watch?v=dsVtOw09StM&list=PL04DF68E73B7ECD54&index=8&feature=plpp_video}{Watch a YouTube video.}}%
+Suppose a wire lies on the curve $C$ and has density $\delta$. The inertia about a line $L$ we know is $I_x=\int_C d^2 dm$, where $d$ is the radius of rotation (distance to the line $L$).  What constant radius $R$ should we replace the variable radius $d$ with so that $\int_C d^2 dm = \int_C R^2 dm$.  Explain how to obtain the radii of gyration about the $x$, $y$, and $z$ axes given by 
+$$
+R_x = \sqrt{\frac{\int_C (y^2+z^2)dm}{\int_C dm}},\quad
+R_y = \sqrt{\frac{\int_C (x^2+z^2)dm}{\int_C dm}},
+\text{ and }
+R_z = \sqrt{\frac{\int_C (x^2+y^2)dm}{\int_C dm}}.
+$$
+\end{problem}
+
+\begin{problem}
+Consider the curve $y=4-x^2$ for $x\in[-1,2]$, with $\delta (x,y) = y$.  Set up integral formulas which would give (1) the $x$ coordinate $\bar x$ of the centroid, (2) the $y$ coordinate $\bar y$ of the center of mass, (3) the moment of inertia $I_x$ about the $x$-axis, and (4) the radius of gyration $R_y$ about the $y$ axis. Use software to compute the integrals.
+\end{problem}
+
+\begin{problem}
+ Consider a straight wire which lies on the line segment between $(-2,1,0)$ and $(0,-1,2)$. The density of the wire is known to be $\delta(x,y,z) = x+y+z+2$. Set up integral formulas which would give (1) the $x$ coordinate $\bar x$ of the centroid, (2) the $z$ coordinate $\bar z$ of the center of mass, (3) the moment of inertia $I_y$ about the $y$-axis, and (4) the radius of gyration $R_x$ about the $x$-axis. Compute the integrals.
+\end{problem}
+
+
+
+
+\section{Work, Flow, Circulation, and Flux}
+
+We now turn our attention to work and flux.  As an object moves through a vector fields, energy transfer occurs.  When an object falls from high place, potential energy is transfered to kinetic energy. The gravitational vector field is the field which does work. Prior to problem \ref{first work problem} on page \pageref{first work problem}, we made the following statements. 
+\begin{quote}If a force $F$ acts through a displacement $d$, then the most basic definition of work is $W=Fd$, the product of the force and the displacement.  This basic definition has a few assumptions.
+\begin{itemize}
+\item The force $F$ must act in the same direction as the displacement.
+\item The force $F$ must be constant throughout the  displacement.
+\item The displacement must be in a straight line.
+\end{itemize}
+\end{quote}
+We used the dot product to remove the first assumption, and we showed in problem \ref{first work problem} that the work is simply the dot product $$W=\vec F\cdot \vec r,$$
+where $\vec F$ is a force acting through a displacement $\vec r$. We now remove the other two assumptions, so that we can deal with variable forces acting on objects moving through curves.
+
+\begin{problem}[Work]
+\marginpar{\href{http://www.youtube.com/watch?v=9TGZIIpEaHw&list=PL04DF68E73B7ECD54&index=2&feature=plpp_video}{Watch a YouTube video}.}%
+ Let $\vec F(x,y)=(M,N)$ be a vector field, where $M$ and $N$ are functions of $x$ and $y$.   Let $C$ be a curve parametrized by $\vec r(t)=(x,y)$, where $x$ and $y$ are functions of $t$ and $t\in[a,b]$. 
+\begin{enumerate}
+ \item Draw a random curve on your paper.  Cut the curve $\vec r(t)$ into lots of little segments. Each little segment has a length, which we call $ds$. If your segments are really small, then $\vec F$ is almost constant on this segment.  Explain why the work done by $\vec F$ along this tiny segment is approximately $$d(\text{Work}) = \vec F\cdot (\vec T ds).$$
+ \item Explain why the work done by $\vec F$ along $C$ is 
+$$
+W=\int_C \vec F\cdot \vec T ds 
+= \int_a^b\vec F\cdot \frac{d\vec r}{dt}dt 
+= \int_a^b M\frac{dx}{dt}+N\frac{dy}{dt} dt.
+$$
+ \item If you are familiar with the units of energy, complete the following. What are the units of $\vec F$,  $\vec T$, $ds$, and $d\text{Work}$.
+\end{enumerate}
+\end{problem}
+
+
+
+The work done by a vector field may show up in any of the following ways: \marginpar{When working with a vector field in space, we often use the notation $\vec F(x,y,z) = (M,N,P)$, and so we would write work as $\int_C Mdx+Ndy+Pdz$.}
+\begin{align*}
+W
+&=\int_C \vec F\cdot \vec T \ ds\\
+&=\int_C \vec F\cdot \frac{d\vec r}{ds}\ ds \\
+&= \int_C\vec F\cdot d\vec r \\
+&=\int_a^b \vec F\cdot \frac{d\vec r}{dt}\ dt \\
+&= \int_C Mdx+Ndy \\
+&= \int_a^b \left( M\frac{dx}{dt}+N\frac{dy}{dt}\right) dt. 
+\end{align*}
+Notice that only two integrals above have the bounds $a$ and $b$.  These two integrals are the actual formula used to compute the integral. The others are just symbolic was to remember the integral.
+
+\begin{definition}[Flow and Circulation]
+If the vector field $\vec F$ represents the velocity field of a fluid, such as airflow along a wing (so units are m/s), then the work integral is often called flow.  If the start and stop point for the curve are the same, then we'll call the the work integral circulation. In this case, we'll often add a circle to the integral, as in $\ds\oint_C \vec F\cdot d\vec r$, to emphasize that the integral is along a closed curve.  In most cases, we'll be computing circulation along curves in the counterclockwise direction.
+\end{definition}
+
+\begin{definition}[Simple Closed Curve]
+ If $C$ is a smooth curve, and the start and end points of $C$ are the same, we call $C$ a closed curve.  If the closed curve does not intersect itself, we call the curve a simple closed curve.
+\end{definition}
+
+
+\begin{problem}
+ Let $\vec F(x,y)=(M,N)$ be a vector field.  Let $C$ be a simple closed curve parametrized by $\vec r(t)=(x,y)$. 
+\begin{enumerate}
+ \item Draw a simple closed curve to represent $\vec r$.  We know that the circulation (work) along $C$ is given by the integral $\int_C (M,N)\cdot (dx,dy)$.  Pick a spot on your curve, and draw a tangent vector  to represent $(dx,dy)$ so that you traverse the curve using a counterclockwise orientation.
+ \item Based of our computations in the line integral chapter, we know that both $(-dy,dx)$ and $(dy,-dx)$ are normal vectors to the curve.  Which vector should we use if we want the normal vector that points towards the outside of the curve? Explain. 
+\end{enumerate}
+\end{problem}
+
+\begin{definition}[Flux]
+\marginpar{\href{http://www.youtube.com/watch?v=5DNdI72XEYY&list=PL04DF68E73B7ECD54&index=4&feature=plpp_video}{Watch a YouTube video}.}%
+ Let $\vec F(x,y)=(M,N)$ be a vector field.  Let $C$ be a simple closed curve parametrized by $\vec r(t)=(x,y)$, and oriented in the counterclockwise direction. 
+ We know the circulation of $\vec F$ along $C$ (the flow of $\vec F$ along $C$) is the integral $\oint_C \vec F\cdot \vec T\ ds = \oint_C\vec (M,N)\cdot(dx,dy)$. The outward flux of $\vec F$ across $C$ is the line integral
+$$\text{Flux}=\Phi = \oint_C \vec F\cdot \vec n\ ds = \oint_C\vec (M,N)\cdot(dy,-dx) = \oint_C Mdy-Ndx.$$
+The flux of $\vec F$ measures the flow of $\vec F$ across $C$, instead of along $C$.
+The vector $\vec n ds = (dy,-dx)$ is only correct if the curve is oriented in the counterclockwise direction.
+\end{definition}
+
+
+
+\begin{problem}
+\marginpar{If you haven't yet, please watch the YouTube videos for 
+\href{http://www.youtube.com/watch?v=9TGZIIpEaHw&list=PL04DF68E73B7ECD54&index=2&feature=plpp_video}{work} and 
+\href{http://www.youtube.com/watch?v=5DNdI72XEYY&list=PL04DF68E73B7ECD54&index=4&feature=plpp_video}{flux}.}%
+ Consider the rotational field $\vec F=(-y,x)$ and the circle $C$ or radius 5 parametrized by $\vec r(t)=(5\cos t, 5\sin t)$ for $t\in[0,2\pi]$.  
+\begin{enumerate}
+ \item Draw the curve $C$ and vector field $\vec F$ on the same axes.
+ \item Compute the circulation (work) of $\vec F$ along $C$.
+ \item Compute the outward flux of $\vec F$ along $C$.
+ \item Can you explain why one of these integrals must be zero, and the other must be positive? We'll answer this in class if you are unable.
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+ Consider the radial field $\vec F=(2x,2y)$ and curve $C$ parametrized by $\vec r(t)=(3\cos t, 3\sin t)$ for $t\in[0,2\pi]$.  
+\begin{enumerate}
+ \item Draw the curve $C$ and vector field $\vec F$ on the same axes.
+ \item Compute the circulation (work) of $\vec F$ along $C$.
+ \item Compute the outward flux of $\vec F$ along $C$.
+ \item Can you explain why one of these integrals must be zero, and the other must be positive? We'll answer this in class if you are unable.
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+\marginpar{\href{http://www.youtube.com/watch?v=6WcN36FbeWc&list=PL04DF68E73B7ECD54&index=3&feature=plpp_video}{Watch a YouTube video}.}%
+Find the counterclockwise circulation (work) done by $\vec F=(-y,x+y)$ along the curve $C$ that is the triangle with vertexes  $(2,0)$, $(0,2)$, and $(0,0)$.  You'll need to parametrize 3 line segments. 
+\end{problem}
+
+\begin{problem}
+ Consider the vector field $\vec F=(2x-y,x)$. Let $C$ be the curve that starts at $(-2,0)$, follows a straight line to $(1,3)$, and then back to $(-2,0)$ along the parabola $y=4-x^2$.  Find the outward flux of $\vec F$ across $C$. There are two curves to parametrize. Make sure you traverse along the curves in the correct direction.
+\end{problem}
+
+\section{The Fundamental Theorem of Line Integrals}
+
+\begin{definition}[Gradients and Potentials]
+\marginpar{\href{http://www.youtube.com/watch?v=8Tk2pEIOnwg&list=PL04DF68E73B7ECD54&index=9&feature=plpp_video}{Watch a YouTube Video}.}%
+ Let $\vec F$ be a vector field.  A potential for the vector field is a function $f$ whose derivative equals $\vec F$. So if $Df=\vec F$, then we say that $\vec f$ is a potential for $\vec F$. When we want to emphasize that the derivative of $f$ is a vector field, we call $Df$ the gradient of $f$ and write $Df = \vec \nabla f$.
+\marginpar{The symbol $\vec \nabla f$ is read ``the gradient of $f$'' or ``del f.''}
+ If $\vec F$ has a potential, then we say that $\vec F$ is a gradient field. 
+\end{definition}
+
+We'll quickly see that if a vector field has a potential, then the work done by the vector field is the difference in the potential.  If you've ever dealt with kinetic and potential energy, then you hopefully recall that the change in potential energy is precisely the difference in potential energy.  This is the reason we use the word ``potential.''
+
+\begin{problem}
+\marginpar{\href{http://www.youtube.com/watch?v=8Tk2pEIOnwg&list=PL04DF68E73B7ECD54&index=9&feature=plpp_video}{Watch a YouTube Video}.}%
+Let's practice finding gradients and potentials.
+\begin{enumerate}
+ \item  Let $f(x,y) = x^2+3xy+2y^2$. Find the gradient of $f$, i.e. find $Df(x,y)$. Then compute $D^2f(x,y)$ (you should get a square matrix). What are $f_{xy}$ and $f_{yx}$?
+ \item Consider the vector field $\vec F(x,y)=(2x+y,x+4y)$. Find the derivative of $\vec F(x,y)$ (it should be a square matrix). Then find a function $f(x,y)$ whose gradient is $\vec F$ (i.e. $Df=\vec F$). What are $f_{xy}$ and $f_{yx}$?
+ \item \marginpar{See problem \ref{second partials agree}.}%
+Consider the vector field $\vec F(x,y)=(2x+y,3x+4y)$.  Find the derivative of $\vec F$.  Why is there no function $f(x,y)$ so that $Df(x,y)=\vec F(x,y)$? [Hint: what would $f_{xy}$ and $f_{yx}$ have to equal?] 
+\end{enumerate}
+\end{problem}
+
+Based on your observations in the previous problem, we have the following key theorem.
+
+\begin{theorem}
+ Let $\vec F$ be a vector field that is everywhere continuously differentiable. Then $\vec F$ has a potential if and only if the derivative $D\vec F$ is a symmetric matrix. We say that a matrix is symmetric if interchanging the rows and columns results in the same matrix (so if you replace row 1 with column 1, and row 2 with column 2, etc., then you obtain the same matrix).  
+\end{theorem}
+
+\begin{problem}
+\marginpar{If you haven't yet, please watch this \href{http://www.youtube.com/watch?v=8Tk2pEIOnwg&list=PL04DF68E73B7ECD54&index=9&feature=plpp_video}{YouTube video}.}%
+For each of the following vector fields, find a potential, or explain why none exists.
+\begin{enumerate}
+ \item $\vec F(x,y)=(2x-y, 3x+2y)$
+ \item $\vec F(x,y)=(2x+4y, 4x+3y)$
+ \item $\vec F(x,y)=(2x+4xy, 2x^2+y)$
+ \item $\vec F(x,y,z)=(x+2y+3z,2x+3y+4z,2x+3y+4z)$
+ \item $\vec F(x,y,z)=(x+2y+3z,2x+3y+4z,3x+4y+5z)$
+ \item $\vec F(x,y,z)=(x+yz,xz+z,xy+y)$
+ \item $\ds \vec F(x,y) = \left(\frac{x}{1+x^2}+\arctan (y),\frac{x}{1+y^2}\right)$
+\end{enumerate}
+\end{problem}
+
+
+If a vector field has a potential, then there is an extremely simple way to compute work. To see this, we must first review the fundamental theorem of calculus. The second half of the fundamental theorem of calculus states,
+\begin{quote}
+ If $f$ is continuous on $[a,b]$ and $F$ is an antiderivative of $f$, then $F(b)-F(a) = \int_a^b f(x) dx$.
+\end{quote}
+If we replace $f$ with $f'$, then an antiderivative of $f'$ is $f$, and we can write,
+\begin{quote}
+ If $f$ is continuously differentiable on $[a,b]$, then $f(b)-f(a)=\int_a^b f'(x) dx$.
+\end{quote}
+This last version is the version we now generalize.
+
+\begin{theorem}[The Fundamental Theorem of Line Integrals]
+\marginpar{\href{http://www.youtube.com/watch?v=5ZsCN6NN3yg&list=PL04DF68E73B7ECD54&index=11&feature=plpp_video}{Watch a YouTube video}.}%
+ Suppose $f$ is a continuously differentiable function, defined along some open region containing the smooth curve $C$. Let $\vec r(t)$ be a parametrization of the curve $C$ for $t\in[a,b]$. Then we have
+$$f(\vec r(b))-f(\vec r(a))=\int_a^b Df(\vec r(t))D\vec r(t)\ dt.$$
+\end{theorem}
+Notice that if $\vec F$ is a vector field, and has a potential $f$, which means $\vec F = Df$, then we could rephrase this theorem as follows. 
+\begin{quote}
+ Suppose $\vec F$ is a a vector field that is continuous along some open region containing the curve $C$. Suppose $\vec F$ has a potential $f$. Let $A$ and $B$ be the start and end points of the smooth curve $C$.  Then the work done by $\vec F$ along $C$ depends only on the start and end points, and is precisely
+$$f(B)-f(A)=\int_C \vec F\cdot d\vec r = \int_C Mdx+Ndy.$$
+ The word done by $\vec F$ is the difference in potential.
+\end{quote}
+If you are familiar with kinetic energy, then you should notice a key idea here.  Work is a transfer of energy. As an object falls, energy is transferred from potential energy to kinetic energy.  The total kinetic energy at the end of a fall is precisely equal to the difference between the potential energy at the top of the fall and the potential energy at the bottom of the fall (neglecting air resistance). So work (the transfer of energy) is exactly the difference in potential energy.  
+
+\begin{problem}[Proof of Fundamental Theorem]\marginpar{The proof of the fundamental theorem of line integrals is quite short. All you need is the fundamental theorem of calculus, together with the chain rule from the derivatives unit.}
+ Suppose $f(x,y)$ is continuously differentiable, and suppose that $\vec r(t)$ for $t\in[a,b]$ is a parametrization of a smooth curve $C$. Prove that $f(\vec r(b))-f(\vec r(a)) = \int_a^b Df(\vec r(t))D\vec r(t)\ dt$. [Let $g(t) = f(\vec r(t))$. Why does $g(b)-g(a) = \int_a^b g'(t)dt$? Use the chain rule (matrix form) to compute $g'(t)$. Then just substitute things back in.]  
+\end{problem}
+
+\begin{problem}
+\marginpar{\href{http://www.youtube.com/watch?v=5ZsCN6NN3yg&list=PL04DF68E73B7ECD54&index=11&feature=plpp_video}{Watch a YouTube video}.}%
+For each vector field and curve below, find the work done by $\vec F$ along $C$. In other words, compute the integral $\int_C Mdx+Ndy$ or $\int_C Mdx+Ndy+Pdz$. 
+\begin{enumerate}
+ \item Let $\vec F(x,y) = (2x+y,x+4y)$ and $C$ be the parabolic path $y=9-x^2$ for $x$ from $-3$ to $2$. 
+ \item Let $\vec F(x,y,z) = (2x+yz,2z+xz,2y+xy)$ and $C$ be the straight segment from $(2,-5,0)$ to $(1,2,3)$. 
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Let $C_1$ be the curve which starts at $(1,0,0)$ and follows a helical path $(\cos t, \sin t, t)$ to  $(1,0,2\pi)$. Let $C_2$ be the curve which starts at $(1,0 2\pi)$ and follows a straight line path to $(2,4,3)$. Let $C_3$ be any smooth curve that starts at $(2,3,4)$ and ends at $(0,1,2)$.  Suppose $\vec F = (x,z,y)$. 
+ \begin{itemize}
+  \item Find the work done by $\vec F$ along each path $C_1$, $C_2$, $C_3$.
+  \item Find the work done by $\vec F$ along the path $C$ which follows $C_1$, then $C_2$, then $C_3$.  
+  \item If $C$ is any path that can be broken up into finitely many smooth sub-paths, and $C$ starts at $(1,0,0)$ and ends at $(0,1,2)$, what is the work done by $\vec F$ along $C$?
+ \end{itemize}
+\end{problem}
+
+\begin{definition}
+ We say that a vector field is conservative if the integral $\int_C F\cdot d\vec r$ does not depend on the path $C$. We say that a curve $C$ is piecewise smooth if it can be broken up into finitely many smooth curves.
+\end{definition}
+ If a vector field is everywhere continuously differentiable, then the last problem shows that conservative vector fields and gradient fields are exactly the same.
+
+\begin{problem}
+ The gravitational vector field is directly related to the radial field $\ds\vec F = \frac{\left(-x,-y,-z\right)}{(x^2+y^2+z^2)^{3/2}}$. Find a potential for $\vec F$, and then compute the work done by an object that moves from $(1,2,-2)$ to $(0,-3,4)$ along ANY path that avoids the origin. [While $\vec F$ is not continuously differentiable everywhere (it's not at the origin), we can still use the fundamental theorem of line integrals if we stay away from the origin. This shows that $\vec F$ is a conservative vector field, provided we dodge the origin.]
+\end{problem}
+
+\begin{problem}
+ Suppose $\vec F$ is a gradient field.  Let $C$ be a piecewise smooth closed curve. What is $\int_C \vec F\cdot d\vec r$? Explain.
+\end{problem}
+
+
+
+\begin{table}
+ \begin{center}
+\begin{tabular}{|c|c|}
+ \hline
+ Surface Area& 
+     $\sigma = \int_C d\sigma=\int_C f ds = \int_a^b f \left|\frac{d\vec r}{dt}\right|dt$\\
+ \hline
+ Average Value& 
+     $\bar f = \frac{\int f ds}{\int ds}$\\
+ \hline
+ Mass& 
+     $m=\int_C dm = \int_C \delta ds $\\
+ \hline
+ Centroid& 
+     $\left(\bar x,\bar y,\bar z\right) =\left(\frac{\int x ds}{\int_C ds},\frac{\int y ds}{\int_C ds},\frac{\int z ds}{\int_C ds}\right)$\\
+ \hline
+ Center of Mass & 
+     $\left(\bar x,\bar y,\bar z\right) =\left(\frac{\int x dm}{\int_C dm},\frac{\int y dm}{\int_C dm},\frac{\int z dm}{\int_C dm}\right)$\\
+ \hline
+ First moment of mass & 
+     $M_{yz}=\int x dm$, $M_{xz} = \int x dm$, $M_{xy}=\int x dm$\\
+ \hline
+ (Second) Moment of Inertia & 
+     $I_x = \int (y^2+z^2) dm$, $I_y = \int (x^2+z^2) dm$, $I_z = \int (x^2+y^2) dm$ \\
+ \hline
+ Radius of Gyration &
+     $R = \sqrt{I/m}$\\
+ \hline
+ Work, Flow, Circulation &
+     $W=\int_C d\text{Work} = \int_C (\vec F\cdot \vec T) ds = \int_C \vec F\cdot d\vec r = \int_C Mdx+Ndy$\\
+ \hline
+ Flux & 
+     $\text{Flux} = \int_C d\text{Flux} = \int_C \vec F\cdot \vec n ds = \oint_C Mdy-Ndx$\\
+ \hline
+ Fund. Thm. Calculus & 
+     $f(b)-f(a)=\int df = \int \frac{df}{dx}dx = \int_a^b f^\prime(x)dx$\\
+ \hline
+ Fund. Thm of Line Int. &
+    $f(B)-f(A)=\int_C df = \int_C \frac{df}{ds}ds = \int_a^b \frac{df/dt}{ds/dt}ds = \int_a^b \vec \nabla f \cdot \frac{d\vec r}{dt}dt = \int_C \vec F \cdot d \vec r$\\
+\hline
+\end{tabular}
+\caption{Here's a summary of the ideas in this unit.\label{line integral summary}}
+\end{center}
+\end{table}
+
