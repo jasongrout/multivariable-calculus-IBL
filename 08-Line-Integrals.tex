@@ -13,6 +13,7 @@ You'll have a chance to teach your examples to your peers prior to the exam.
 
 In this section we generalize integrals along the $x$-axis to integrals along any curve. We'll approach everything from the point of view of area, though the applications are much more far reaching. The first problem is a review problem from first-semester calculus.  The second problem generalizes the idea to integrals along a curve (which we call a line integral). The third problem has you generalize your results.
 
+
 This first problem appears to be really long, but it is just a step-by-step review of how you did integrals in first-semester calculus (each step is quite short).
 \begin{problem}
  Consider the region in the $xy$ plane that is below the function $f(x)=x^2+1$ and above the interval $[-1,2]$.  Think of this region as a metal plate that has been laid flat on the ground.
@@ -52,7 +53,7 @@ Write this sum using sigma notation.
 
 I've tried to write the problem to be a replica of what you did in first semester calculus.  The only difference is that you are now integrating over a curve, not over in interval. 
 
-\note{Change the function f to one they are more familiar with.  Perhaps use an ellipse (2\sin t, 3 \cos t) and f=9-x^2-y^2. Then you can put a reference to the horse problem.}%
+\note{Change the function f to one they are more familiar with.  Perhaps use an ellipse $(2\sin t, 3 \cos t)$ and $f=9-x^2-y^2$. Then you can put a reference to the horse problem if they don't remember how to graph. It also means I can remove the graphic.  The students were able to reproduce this graphic on their own in a later problem in this section on average value.}%
 \begin{problem}%
 \marginpar{\href{http://www.youtube.com/watch?v=sYsMcqtXBrc&list=PL04DF68E73B7ECD54&index=1&feature=plpp_video}{Watch a YouTube video.}}%
  Consider the region in space that is below the function 
@@ -78,7 +79,7 @@ t_5=\frac{3}{2},
 t_6=2.
 $$
 We need the surface area of the sheet. Above each little straight segment of length $\Delta s$ on the curve, we could approximate the area using just the right endpoint, i.e. using $f(\vec r(t))$. 
-The area of the first rectangle is \marginpar{We'll use $\sigma$ to stand for surface area.} 
+The area of the first rectangle is \marginpar{We'll use $\sigma$ (read 'sigma') to stand for surface area.} 
 $\Delta \sigma_2=f(\vec r(t_1))\Delta s_2$. The area of the second rectangle is $\Delta \sigma_2=f(\vec r(t_2))\Delta s_2$. 
 
 If we drew more many more rectangles, each of width $\Delta s=ds$, and we used the time point $t$ to find the height of our rectangle, what would the area $d\sigma$ equal?
@@ -112,7 +113,7 @@ Notice that this definition suggests the following four steps.
 \end{enumerate}
 Those 4 steps are the key to computing any line integral.  The next few problems just ask you to do this.
 
-
+\note{My students were lazy and did not take the time to compute all the integrals. Some integrals I say compute, which means do the integral by hand.  Some I say to use technology on. The ones they do by hand help reinforce basic integration techniques. I need to remember to make a comment to them to compute all the integrals.  When they computed the integrals in class, we could talk about what the number meant.}
 \begin{problem}\marginparbmw{See 16.1: 9-32.  Some problems give you a parametrization, some expect you to come up with one on your own.}%
  Let $f(x,y,z)=x^2+y^2-2z$ and let $C$ be two coils of the helix $\vec r(t)=(3\cos t, 3\sin t, 4t)$, starting at $t=0$. Remember that the parameterization means $x=3\cos t$, $y=3\sin t$, and $z=4t$.  Compute  $\int_Cf ds$. [You will have to find the end bound yourself.]
 \end{problem}
@@ -150,7 +151,7 @@ The next problem reviews the concept of average value from first semester calcul
 \end{enumerate}
 \end{problem}
 
-Make sure to ask me in class about the ``ant farm'' approach to average value.
+Make sure to ask me in class about the ``ant farm'' approach to average value. \note{I talk about ants building a mound. Then after removing the ants, so none get hurt, you shake their tank.  The average value is the height of the dirt. The mountains filled in the valleys.}
 
 \begin{problem}\label{Average Value intro}%
 \marginpar{\href{http://www.youtube.com/watch?v=t7T0MzfgV0Q&list=PL04DF68E73B7ECD54&index=5&feature=plpp_video}{Watch a YouTube video.}}%
@@ -170,7 +171,7 @@ Solve for $h$ above. This constant $h$ is called the average value of $f$ along 
 \begin{problem}
  The temperature $T(x,y,z)$ at points on a wire helix $C$ given by $\vec r(t) = (\sin t, 2t, \cos t)$ is known to be $T(x,y,z)=x^2+y+z^2$. What are the temperatures at $t=0$, $t=\pi/2$, $t=\pi$, $t=3\pi/2$ and $t=2\pi$.  You should notice the temperature is constantly changing.  Make a guess as to what the average temperature is (share with the class why you made the guess you made - it's OK if you're wrong). Then compute the average temperature of the wire.
 \end{problem}
-
+\note{I like to take this time to emphasize that they should have noticed a linear growth rate, and then I show them how I would have guessed the answer.}
 \section{Physical Properties}
 
 \subsection{Centroids}%
@@ -214,14 +215,14 @@ For those of you already familiar with center of mass, the centroid of an object
 \end{problem}
 
 
-
+\note{Change the points to $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$. It helps prepare them for summation notation. I found many students struggled with setting up a really simple sum.  In class, after they present this one, I would suggest actually taking time to show them how to write the problem in summation notation with 2 points.  It will prepare them for the proof of center of mass coming up.}
 \begin{problem}
  Suppose two object lie at the points $P=(a,b,c)$ and $Q=(d,e,f)$. Our goal in this problem is to understand the difference between the centroid and the center of mass.
 \begin{enumerate}
  \item If both points weigh the exact same, then find the centroid of the two points (the average $x$, $y$, and $z$ value).
  \item If the mass of point $P$ is $2$ kg, and the mass of point $Q$ is 3 kg, will the center of mass be closer to $P$ or $Q$? Give a physical reason for your answer before doing any computations.  Then find the center of mass $(\bar x, \bar y, \bar z)$ of the two points. [Hint: you should get $\bar x= \frac{2a+3d}{2+3}$.] 
 \end{enumerate}
-
+\note{After a student presents, this is a great time to show another way to do the problem.  I like to emphasize thinking about 2 points of the same mass at the first spot, and 3 points of the same mass at the second spot.  This suggests averaging 5 things.  Alternately, I suggest the approach $\frac{2}{5}P+\frac{3}{5}Q$, suggesting a weighted average.  Both are great. The students will come with one of these, or perhaps some other.  Then I add more in.}
 \end{problem}
 
 
@@ -231,8 +232,9 @@ Ignore the mass of the seesaw in your work below, as it's a space age seesaw tha
 \begin{enumerate}
  \item 
  My daughter and her friend are sitting on a seesaw.  Both girls have the same mass of 30 kg. My wife stands about 1 m behind my daughter. We'll measure distance in this problem from my wife's perspective.  We can think of my daughter as a point mass located at $(1\text{m},0)$ whose mass is $30$ kg. Suppose her friend is located at $(5\text{m},0)$. Suppose the kids are sitting just right so that the seesaw is perfectly balanced.  That means the the center of mass of the girls is precisely at the pivot point of the seesaw. Find the distance from my wife to the pivot point, by finding center of mass of the two girls. 
- \item My daughter's friend has to leave, so I plan to take her place on the seesaw. My mass is 100 kg. Her friend was sitting at the point $(5,0)$. I would like to sit at the point $(a,0)$ so that seesaw is perfectly balanced. Without doing any computations, is $a>5$ or $a<5$? Explain.
- \item Find the center of mass of the two points $(1,0)$ and $(a,0)$ whose masses are $30$ and $50$, respectively (units are meters and kilograms). Then tell me the point $(a,0)$ where I should sit so that the seesaw is perfectly balanced. Then my daughter and I can have some fun.
+ \item My daughter's friend has to leave, so I plan to take her place on the seesaw. My mass is 100 kg. Her friend was sitting at the point $(5,0)$. I would like to sit at the point $(a,0)$ so that the seesaw is perfectly balanced. Without doing any computations, is $a>5$ or $a<5$? Explain.
+ \item Suppose I sit at the spot $(x,0)$ (perhaps causing my daughter or I to have a highly unbalance ride). Find the center of mass of the two points $(1,0)$ and $(x,0)$ whose masses are $30$ and $100$, respectively (units are meters and kilograms). 
+ \item What should $x$ equal so that I'm sitting at the point $(a,0)$ where the seesaw is perfectly balanced. 
 \end{enumerate}
 \end{problem}
 
@@ -268,7 +270,7 @@ Let's start by looking at a 3 point mass system, and then generalize the results
 \begin{enumerate}
  \item Suppose that we have three points $(x_1,y_1)$, $(x_2,y_2)$, and $(x_3,y_3)$. Find the centroid of these three points. Write your solution using summation notation (for the denominator, replace 3 with $3=1+1+1=\sum_{i=1}^3 1$). [Hint: your formula should be very similar to the integral formula above.]
  \item Suppose the masses of the three points are $m_1$, $m_2$, and  $m_3$. Find the center of mass of these three points. Write your solution using summation notation.
- \item Suppose now that we have a wire located along a curve $C$, and the density of the wire is known to be $\delta$ (which could vary along the curve). Imagine cutting the wire into a thousand (or more) tiny chunks.  Each chunk would be located at some point $(x_i,y_i)$. Explain why the mass of each little chunk is $dm_i\approx\delta ds_i$. 
+ \item Suppose now that we have a wire located along a curve $C$, and the density of the wire is known to be $\delta$ (which could vary along the curve). Imagine cutting the wire into a thousand (or more) tiny chunks.  Each chunk would be centered at some point $(x_i,y_i)$. Explain why the mass of each little chunk is $dm_i\approx\delta ds_i$. 
  \item Use summation notation to give a formula for the center of mass of the thousands of point $(x_i,y_i,z_i)$, each with mass $dm_i.$ [This should almost be an exact copy of the second part.] 
  Then explain why the center of mass formulas given above are correct.
 \end{enumerate}
@@ -277,14 +279,14 @@ Let's start by looking at a 3 point mass system, and then generalize the results
 
 \begin{problem}
 Suppose a wire, whose density is $\delta(x,y)=x^2+y$, lies along a semicircle of radius $7$, parametrized by $\vec r(t) = (7\cos t, 7\sin t)$ for $t\in[0,\pi]$. (The 7 is here so you can replace it with $a$ after you finish the problem).
-\begin{itemize}
+\begin{enumerate}
  \item Where is the wire heavier, at $(7,0)$ or at $(0,7)$?
  \item In problem \ref{semicircle centroid}, we showed that the centroid of the wire is $(\bar x, \bar y) = \left(0,\frac{2(7)}{\pi})\right)$.  We now seek the center of mass. Will $\bar x$ change?  Will $\bar y$ change?  How will each change? Explain?
- \item Set up the integrals needed to find the center of mass. Then use software to compute the integrals.
+ \item Set up the integrals needed to find the center of mass. Then use software to compute the integrals. You'll need an exact answer, not a numerical approximation.
  \item Change the radius from 7 to 13, and use software to compute the integrals again.  Generalize what you see to give a formula for the center of mass if the radius of the circle is $a$.
-\end{itemize}
+\end{enumerate}
 \end{problem}
-
+\note{I purposefully put this problem in to show students how to generalize a formula from prime numbers to any number.  I mention how I use primes (5, 7, 11, 13) when I'm looking for a pattern.  I want to help them develop this skill a little. I've got a hidden motive.}
 
 We'll often use the notation $(\bar x, \bar y,\bar z)$ to talk about both the centroid and the center of mass. If no density is given in a problem, then $(\bar x, \bar y,\bar z)$ is the centroid. If a density is provided, then $(\bar x, \bar y,\bar z)$ refers to the center of mass. If the density is constant, it doesn't matter. That's what the next problem shows.
 
@@ -297,6 +299,7 @@ We'll often use the notation $(\bar x, \bar y,\bar z)$ to talk about both the ce
 \end{enumerate}
 \end{problem}
 
+\note{I don't have enough here to help them see why we use $xm$ for moments.  It really has to do with levers.  I'm not sure I want to add more.  The engineers pound this to death in all their future classes.  This problem is actually just EXTRA, but it connects the idea with average value, to center of mass, to radius of gyration.  I like to use this problem as a ``hint, this is how you do the radius of gyration problem coming up, and it's the exact same as what we did with the ant farm approach.}
 \begin{problem}\label{center of mass alternate approach}
  The quantity $M_{yz}=\int_C x dm$ is often called the first moment of mass about the $yz$-plane (the plane $x=0$).
  One way to view the center of mass is to ask yourself the following question.
@@ -314,6 +317,8 @@ Then similarly obtain $\bar y$ and $\bar z$. [Hint: the number $\bar x$ is a con
 %\end{problem}
 
 \subsection{Inertia and Radii of Gyration}
+
+\note{I used the variable $d$ to stand for radius of rotation.  I DO NOT use $r$ because too many students replace it with the polar coordinate $r$, especially when we get to double integrals.  I tried $d$, but now students were thinking it was a differential.  I need a different variable.  I've used $(rad)^2$ before, and it works, it's just awkward.  Jason, if you have a good idea, email me.  I would like to discuss this. We could use $(\text{dist})^2$ or $(\text{radius of rotation})^2$. Maybe the last is the best.  However, I would really like to write $I=\int ?^2 dm$ without it taking up half a board.  A variable would be good.  Capital $R$ doesn't work. }
 
 Some of you may have already had a physics class, in which you learned that the kinetic energy of an object with mass $m$ moving at speed $v$ is $$KE = \frac{1}{2}mv^2.$$
 One of the main reasons we are studying mass, center of mass, centroids, etc., is so that we can understand energy. The transfer of energy (for example from kinetic to electrical and then back from electrical to kinetic) is one of the most important ideas in modern innovations. Our goal in this unit it to help us understand rotational kinetic energy. We'll show that the kinetic energy of an object that is rotating about a line $L$, and has an angular velocity of $\omega$ radians per second about the line, is precisely $$KE = \frac{1}{2}I \omega^2,$$
@@ -338,6 +343,8 @@ $$KE= \frac{1}{2}\left(\int_C (y^2+z^2)dm\right)\omega^2=\frac{1}{2}I_x\omega^2.
  \end{enumerate}
 \end{problem}
 
+\note{Perhaps more applications would be good here.  This semester one student asked if this had to do with figure skating.  OF course.  I spun around in a circle with my arms out, and then quickly brought them in. I also like to pick up a table/desk, and show them how easy it is to rotate the object if I use an axis near the center.  Then I try to grab the edge of the desk and rotate it, it doesn't work.  The only real thing I want them to master is that the inertia gets really large (grows quadratically) with distance to an axis.  So I do something memorable to help them remember that.  We just did the normal acceleration problem in the motion unit, so I try to connect it to that.}
+
 \begin{problem}
  A wire follows the helix $\vec r(t) = (3\cos t, 4t, 3\sin t)$ for $t\in[0,4\pi]$. The density is $\delta(x,y,z) = x^2+y+2z^2$. 
 \begin{enumerate}
@@ -345,6 +352,7 @@ $$KE= \frac{1}{2}\left(\int_C (y^2+z^2)dm\right)\omega^2=\frac{1}{2}I_x\omega^2.
  \item Which is larger, $I_x$ or $I_z$? Can you explain why without having done any integrals?
  \item If the wire had constant density and followed the helix $\vec r(t) = (2\cos t, 4t, 3\sin t)$ instead, which would be bigger, $I_x$ or $I_z$?  Feel free to use software to check your guess. 
 \end{enumerate}
+\note{The idea here is that since the density is greater on $z$, it makes $I_x$ larger (as $I_x$ depends on the $z$ values).  It's harder to rotate the heavier spots.  This problem would most likely go better if I started with density $\delta(x,y,z) = x^2+y+z^2$ and had them compute the integrals, showing that $I_x$ and $I_z$ are equal. Then change the density to $\delta(x,y,z) = x^2+y+2z^2$.  Then change the curve as in the third problem. The 3rd part tries to help them see that if the helix is elliptical, then remember that increasing $z$ doesn't affect $I_z$, rather it affects $I_y$ and $I_z$. A large $x$ value affects the inertia about the other axes.}
 \end{problem}
 
 
@@ -426,7 +434,7 @@ If the vector field $\vec F$ represents the velocity field of a fluid, such as a
  Let $\vec F(x,y)=(M,N)$ be a vector field.  Let $C$ be a simple closed curve parametrized by $\vec r(t)=(x,y)$. 
 \begin{enumerate}
  \item Draw a simple closed curve to represent $\vec r$.  We know that the circulation (work) along $C$ is given by the integral $\int_C (M,N)\cdot (dx,dy)$.  Pick a spot on your curve, and draw a tangent vector  to represent $(dx,dy)$ so that you traverse the curve using a counterclockwise orientation.
- \item Based of our computations in the line integral chapter, we know that both $(-dy,dx)$ and $(dy,-dx)$ are normal vectors to the curve.  Which vector should we use if we want the normal vector that points towards the outside of the curve? Explain. 
+ \item Based of our computations in the line integral chapter, we know that both $(-dy,dx)$ and $(dy,-dx)$ are normal vectors to the curve.  Which vector should we use if we want the normal vector that points towards the outside of the curve? Explain. [Hint: try crossing $(dx,dy,0)$ with $(0,0,1)$ or $(0,0,-1)$ in some order.]
 \end{enumerate}
 \end{problem}
 
@@ -466,14 +474,20 @@ The vector $\vec n ds = (dy,-dx)$ is only correct if the curve is oriented in th
 
 \end{problem}
 
+\note{The next two problems have integer solutions on purpose.  I want the end computations to be easy. After each integral, make sure you show them the vector field and help them see why parts are positive, and why parts are negative.}
+
 \begin{problem}
 \marginpar{\href{http://www.youtube.com/watch?v=6WcN36FbeWc&list=PL04DF68E73B7ECD54&index=3&feature=plpp_video}{Watch a YouTube video}.}%
 Find the counterclockwise circulation (work) done by $\vec F=(-y,x+y)$ along the curve $C$ that is the triangle with vertexes  $(2,0)$, $(0,2)$, and $(0,0)$.  You'll need to parametrize 3 line segments. 
+\note{I show the vector field to them in class. We then visually see why one integral is zero, one is positive, and one is negative.  It's obvious with a picture from a projector.  If you don't have a projector, you may want to have the graph the curve and the vector field.  Perhaps that should be added anyway.}
 \end{problem}
 
 \begin{problem}
  Consider the vector field $\vec F=(2x-y,x)$. Let $C$ be the curve that starts at $(-2,0)$, follows a straight line to $(1,3)$, and then back to $(-2,0)$ along the parabola $y=4-x^2$.  Find the outward flux of $\vec F$ across $C$. There are two curves to parametrize. Make sure you traverse along the curves in the correct direction.
+\note{Again, we'll discuss why some are positive, and some are negative. I want to emphasize flow in, and flow out. One is clearly positive, the other clearly negative.  The overall sum is positive. It should be obvious with a picture. }
 \end{problem}
+
+\note{Next time, I may keep the vector field for the last two problems to be exactly the same.  If you use  $\vec F=(-y,x+y)$ for both, you get a fractional answer for the flux problem, but then the students can see that a vector field can have both work and flux. Nope, never mind.  Next time I teach, I'll have them compute work for the first, and then as a class we'll just eyeball if flux is negative, positive, or zero.  Then we'll do the second, and after finishing it we'll eyeball if work is positive, zero, or negative. That way they see MORE vector fields.}
 
 \section{The Fundamental Theorem of Line Integrals}
 
@@ -547,7 +561,7 @@ If you are familiar with kinetic energy, then you should notice a key idea here.
 
 \begin{problem}
 \marginpar{\href{http://www.youtube.com/watch?v=5ZsCN6NN3yg&list=PL04DF68E73B7ECD54&index=11&feature=plpp_video}{Watch a YouTube video}.}%
-For each vector field and curve below, find the work done by $\vec F$ along $C$. In other words, compute the integral $\int_C Mdx+Ndy$ or $\int_C Mdx+Ndy+Pdz$. 
+For each vector field and curve below, find the work done by $\vec F$ along $C$. In other words, compute the integral $\int_C Mdx+Ndy$ or $\int_C Mdx+Ndy+Pdz$. [Hint: if you parametrize the curve, then you've done the problem the HARD way. You don't need any parameterizations.]
 \begin{enumerate}
  \item Let $\vec F(x,y) = (2x+y,x+4y)$ and $C$ be the parabolic path $y=9-x^2$ for $x$ from $-3$ to $2$. 
  \item Let $\vec F(x,y,z) = (2x+yz,2z+xz,2y+xy)$ and $C$ be the straight segment from $(2,-5,0)$ to $(1,2,3)$. 
@@ -555,9 +569,9 @@ For each vector field and curve below, find the work done by $\vec F$ along $C$.
 \end{problem}
 
 \begin{problem}
- Let $C_1$ be the curve which starts at $(1,0,0)$ and follows a helical path $(\cos t, \sin t, t)$ to  $(1,0,2\pi)$. Let $C_2$ be the curve which starts at $(1,0 2\pi)$ and follows a straight line path to $(2,4,3)$. Let $C_3$ be any smooth curve that starts at $(2,3,4)$ and ends at $(0,1,2)$.  Suppose $\vec F = (x,z,y)$. 
+ Let $C_1$ be the curve which starts at $(1,0,0)$ and follows a helical path $(\cos t, \sin t, t)$ to  $(1,0,2\pi)$. Let $C_2$ be the curve which starts at $(1,0 2\pi)$ and follows a straight line path to $(2,4,3)$. Let $C_3$ be any smooth curve that starts at $(2,3,4)$ and ends at $(0,1,2)$.  Suppose $\vec F = (x,z,y)$.
  \begin{itemize}
-  \item Find the work done by $\vec F$ along each path $C_1$, $C_2$, $C_3$.
+  \item Find the work done by $\vec F$ along each path $C_1$, $C_2$, $C_3$. \marginpar{If you are parameterizing the curves, you're doing this the really hard way.}
   \item Find the work done by $\vec F$ along the path $C$ which follows $C_1$, then $C_2$, then $C_3$.  
   \item If $C$ is any path that can be broken up into finitely many smooth sub-paths, and $C$ starts at $(1,0,0)$ and ends at $(0,1,2)$, what is the work done by $\vec F$ along $C$?
  \end{itemize}
