@@ -1,0 +1,346 @@
+
+\noindent 
+This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
+\begin{enumerate}
+\item Explain the properties of the gradient, its relation to level curves and level surfaces, and how it can be used to find directional derivatives.
+\item Find equations of tangent planes using the gradient and level surfaces. Use the derivative (tangent planes) to approximate functions, and use this in real world application problems.
+\item Explain the second derivative test in terms of eigenvalues. Use the second derivative test to optimize functions of several variables.
+\item Use Lagrange multipliers to optimize a function subject to constraints. %Explain why Lagrange multipliers works by considering the gradients of the function and the constraint at a maximum.
+\end{enumerate}
+You'll have a chance to teach your examples to your peers prior to the exam.
+
+
+
+\section{The Gradient}
+
+Recall from the previous unit that the derivative $Df$ of a function $f:\mathbb{R}^n\to\mathbb{R}$ (one output dimension) is called the gradient of $f$, and written $\vec \nabla f$, when we want to emphasize that the derivative is a vector field.  
+
+\begin{problem}
+ Consider the functions 
+$f(x,y)=9-x^2-y^2$, 
+$g(x,y)=2x-y$, and 
+$h(x,y)=\sin x\cos y$. 
+ \marginparbmw{You'll want a computer to help you construct the graphs, particularly $h$. Please use the Mathematica introduction in Brainhoney. You could use Wolfram Alpha (use the links in the function chapter if you forgot how to graph).}
+\begin{enumerate}
+ \item Compute $\vec \nabla f(x,y)$.  Then draw both $\vec \nabla f$ and several level curves of $f$ on the same axes.
+ \item Compute $\vec \nabla g(x,y)$.  Then draw both $\vec \nabla g$ and several level curves of $g$ on the same axes.
+ \item Compute $\vec \nabla h(x,y)$.  Then draw both $\vec \nabla h$ and several level curves of $h$ on the same axes. 
+ \item What relationships do you see between the gradient and level curves? 
+\end{enumerate}
+When you present in class, be prepared to provide rough sketches of the level curves and gradients of each function.
+\end{problem}
+The next few problems will focus on explaining why the relationships you saw are always true.
+
+\begin{problem}
+ Suppose $\vec r(t)$ is a level curve of $f(x,y)$.  
+\begin{enumerate}
+ \item Suppose you know that at $t=0$, the value of $f$ at $\vec r(0)$ is 7.  What is the value of $f$ at $\vec r(1)$? [What does it mean to be on a level curve?]
+ \item As you move along the level curve $\vec r$, how much does $f$ change?  Use this to tell the class what $\ds\frac{df}{dt}$ must equal.
+ \item At points along the level curve $\vec r$, we have the composite function $f(\vec r(t))$.  Compute the derivative $\ds\frac{df}{dt}$ using the chain rule.
+ \item Use your work from the previous parts to explain why the gradient always meets the level curve at a 90$^\circ$ angle.  We say that the gradient is normal to level curves (it is orthogonal to the tangent vector of the curve).
+\end{enumerate}
+\end{problem}
+
+In the derivatives chapter, we extended differential notation from $dy=f' dx$ to $d\vec y = D\vec f d\vec x$. The key idea is that a small change in the output variables is approximated by the product of the derivative and a small change in the input variables. As a quick refresher, if  we have the function $z=f(x,y)$, then differential notation states that $$dz = \begin{bmatrix}f_x&f_y\end{bmatrix} \begin{bmatrix}dx\\dy\end{bmatrix}.$$ 
+
+\begin{problem}
+Suppose the temperature at a point in the plane is given by the function {$T(x,y)=x^2-xy-y^2$} degrees Fahrenheit. A particle is at $(2,3)$.  
+\begin{enumerate}
+ \item Use differentials to estimate the change in temperature if the particle moves 1 unit in the direction of $\left(3,4\right)$.
+ \item What is the actual change in temperature if the particle moves 1 unit in the direction of $\left(3,4\right)$?
+ \item Use differentials to estimate the change in temperature if the particle moves about .2 unit in the direction of $\left(3,4\right)$.
+\end{enumerate}
+\end{problem}
+
+We can actually define partial derivatives solely in terms of differential notation. We can also define derivatives in any direction in terms of differential notation.
+
+\begin{problem}
+Suppose that $z=f(x,y)$ is a differentiable function (so the derivative is the matrix $\begin{bmatrix}f_x&f_y\end{bmatrix}$).  Remember to use differential notation in this problem.
+\begin{enumerate}
+ \item If $(dx,dy)=(1,0)$, which means we've moved one unit in the $x$ direction while holding $y$ constant, what is $dz$?
+ \item If $(dx,dy)=(0,1)$, which means we've moved one unit in the $y$ direction while holding $x$ constant, what is $dz$?
+ \item Consider the direction $\vec A=(3,4)$.  Find a unit vector in the direction of $\vec u$.  If we move one unit in the direction of $\vec A$, what is $dz$? [It's O.K. to leave you answer as a dot product.]    
+\end{enumerate}
+ 
+\end{problem}
+
+\begin{definition}
+The directional derivative of $f$ in the direction of the unit vector $\vec u$ at a point $P$ is defined to be
+$$D_{\vec u} f(P) = Df(P) \vec u = \vec \nabla f \cdot \vec u.$$
+You dot the gradient of $f$ with the direction vector $\vec u$.
+The partial derivative of $f$ with respect to $x$ is precisely the directional derivative of $f$ in the $(1,0)$ direction.  Similarly,  
+the partial derivative of $f$ with respect to $y$ is precisely the directional derivative of $f$ in the $(0,1)$ direction. 
+This definition extends to higher dimensions.
+\end{definition}
+
+Note that in the definition above, we require the vector $\vec u$ to be a unit vector.  So if you are asked to find a directional derivative in some direction, make sure you start by finding a unit vector in that direction. We want to deal with units vectors because when we say something has a slope of $m$ units, we want to say ``The function rises $m$ units if we run $1$ unit.''  
+
+\begin{problem}
+ Consider the function $f(x,y) = 9-x^2-y^2$.
+ \begin{enumerate}
+  \item Draw several level curves of $f$. 
+  \item At the point $(2,1)$, place a dot on your graph. Then draw a unit vector based at $(2,1)$ that points in the direction $(3,4)$. If you were to move in the direction of $(3,4)$, starting from the point $(2,1)$, would the value of $f$ increase or decrease?
+  \item Find the slope of $f$ at $(2,1)$ in the direction of $(3,4)$ by finding the directional derivative. This should agree with your previous answer.
+  \item If you stand at $(-2,3)$ and move in the direction $(1,-1)$, will $f$ increase or decrease?  Find the directional derivative of $f$ in the direction $(1,-1)$ at the point $(-2,3)$.
+ \end{enumerate}
+\end{problem}
+
+\begin{problem}
+Recall that the directional derivative of $\vec f$ in the direction $\vec u$ is the dot product $\vec \nabla f\cdot \vec u$. In this problem, you'll explain why the gradient points in the direction of greatest increase.
+\begin{enumerate}
+ \item What is the angle between the two vectors $\vec \nabla f$ and $\vec u$? [Hint: we learned a formula for the angle between two vectors back in the vectors chapter.]
+ \item Why is the directional derivative of $\vec f$ the largest when $\vec u$ points in the exact same direction as $\vec \nabla f$? [Hint: how large does the cosine function get?]
+ \item When $\vec u$ points in the same direction as $\vec \nabla f$, show that $D_{\vec u}f = |\vec \nabla f|$. In other words, explain why the length of the gradient is precisely the slope of $f$ in the direction of greatest increase (the slope in the steepest direction).
+ \item Which direction points in the direction of greatest decrease?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Suppose you are looking at a topographical map (see \href{http://en.wikipedia.org/wiki/Topographic_map}{Wikipedia} for an example).  On this topographical map, each contour line represents 100 ft in elevation. You notice in one section of the map that the contour lines are really close together, and they start to form circles around a spot on the graph. You notice in another section of the map that the contour lines are spaced quite far apart. Let $f(x,y)$ be the elevation of the land, so that the topographical map is just a contour plot of $f$.  
+\begin{enumerate}
+ \item Where is the slope of the terrain larger, in the section with closely packed contour lines, or the section with contour lines that are spread out. In which section will the gradient be a longer vector?
+ \item At the very top of a mountain, or the very bottom of a valley, will the gradient be a long vector or a small vector? How do you locate a peak in a topographical map?
+% \item If a contour line intersects itself, what does that mean? I'll do this one in class.
+ \item \marginparbmw{If you're stuck, look at a contour plot of $f(x,y) = (x+1)^3-3(x+1)^2-y^2+2$ in   
+\href{http://www.wolframalpha.com/input/?i=contourplot+\%28x+\%2B+1\%29^3+-+3*\%28x+\%2B+1\%29^2+-+y^2+\%2B+2+for+x+from+-2+to+2+and+y+from+-2+to+2}{Wolfram Alpha}. Then make your own example.}%
+Create you own topographical map to illustrate the ideas above. Just make sure your map has a section with some contours that are closely packed together, and some that are far apart, as well as a contour that intersects itself. Then on your topographical map, please add a few gradient vectors, where you emphasize which ones are long, and which ones are short. Show us how to find a peak, as well as what the gradient vector would be at the peak.  
+\end{enumerate}
+\end{problem}
+
+Let's summarize our results in a theorem
+\begin{theorem}
+ Let $f$ be a continuously differentiable function, with $\vec r$ a level curve of the function.
+\begin{itemize}
+ \item The gradient is always normal to level curves, meaning $\vec \nabla f\cdot \dfrac{d\vec r}{dt}=0$.
+ \item The gradients points in the direction of greatest increase.
+ \item The directional derivative of $f$ in the direction of the gradient is the length of the gradient.
+ \item At a maximum or minimum, the gradient is the zero vector. 
+\end{itemize}
+\end{theorem}
+
+\begin{problem}
+The volume of a cylindrical can is $V(r,h)=\pi r^2 h$. Any manufacturing process has imperfections, and so building a cylindrical can with designed dimensions $(r,h)$ will result in a can with dimensions $(r+dr,h+dh)$. This problem will help you learn how to determine how an error in either variable will affect the volume.
+\begin{enumerate}
+ \item Compute both $DV$ (the derivative of $V$) and $dV$ (the differential of $V$).
+ \item If the can is tall and slender (like a soda can), will an error in $r$ or $h$ cause a larger change in the volume? 
+ \item If the can is short and wide (like a tuna can), will an error in $r$ or $h$ cause a larger change in the volume? 
+
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Consider the function $f(x,y)=x^2+y^2$.  Consider the level curve $C$ given by $f(x,y)=25$. Our goal is to find an equation of the tangent line to $C$ at $P=(3,-4)$.
+ \begin{enumerate}
+  \item Draw $C$.
+  \item Compute $\nabla f$. Add to your graph the vector $\nabla f(P)$, with its base at $P$. 
+  \item We know the point $P=(3,-4)$ is on the tangent line. Let $Q=(x,y)$ be any other point point on the tangent line.  What is the component form of the vector $\vec {PQ}$?
+  \item Why are  $\nabla f(P)$ and $\vec{PQ}$ orthogonal? Use this fact to write an equation of the tangent line.
+  \item What is a normal vector to the line?
+ \end{enumerate}
+
+\end{problem}
+
+
+\begin{problem}
+ Consider the function $f(x,y,z)=x^2+y^2+z^2$.  Consider the level surface $S$ given by $f(x,y,z)=9$. Our goal is to find an equation of the tangent plane to $S$ at $P=(1,2,-2)$.
+ \begin{enumerate}
+  \item Draw $S$.
+  \item Compute $\nabla f$. Add to your graph the vector $\nabla f(P)$, with its base at $P$. 
+  \item We know the point $P=(1,2,-2)$ is on the tangent plane. Let $Q=(x,y,z)$ be any other point point on the tangent plane.  What is the component form of the vector $\vec {PQ}$?
+  \item Why are  $\nabla f(P)$ and $\vec{PQ}$ orthogonal? Use this fact to write an equation of the tangent plane.
+  \item What is a normal vector to the plane?
+ \end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Find an equation of the tangent plane to the hyperboloid of one sheet $1=x^2-y^2+z^2$ at the point $(-3,3,1)$. Also give an equation of the normal line (the line that sticks straight up out of the surface).  FYI, the normal line is used in computer graphics to know how to shade an object.  
+\end{problem}
+
+\begin{problem}
+ The two surfaces $x^2+y^2+z^2=14$ and $3x+4y-z=-1$ intersect in a curve $C$. Draw both surfaces, and show us the curve $C$. Then, at the point $(2,-1,3)$, find an equation of the tangent line to this curve. [Hint: once you know a normal vector to each surface, how can you find a direction vector for the line of intersection? There should be a lot of orthogonal vectors in this problem.]
+\end{problem}
+
+\begin{problem}
+Consider an electrical circuit with two parallel resistors, each having resistance {$R_1$} and {$R_2$}. The total resistance $R$ in this circuit is given by  $$\frac{1}{R} = \frac{1}{R_1}+\frac{1}{R_2}.$$
+\begin{enumerate}
+  \item Show that $DR = \begin{bmatrix}\frac{R^2}{R_1^2} & \frac{R^2}{R_2^2} \end{bmatrix}$. Then compute is $dR$.
+  \item When you purchase a resistor, it comes with a stated resistance.  However, manufacturing defects always occur, and the stated resistance on each resistor is not the actual resistance.  This is where differentials come in handy. 
+  If {$ R_1 $} changes from an expected 10 ohms to an actual 9.9 ohms, and {$ R_2 $} changes from 20 to 20.2, would you expect a positive or negative change in the total resistance {$R$}? Use differentials to make your claim, and then back it up by computing the total resistance using (10,20) and then using $(9.9,20.2)$.
+  \item Suppose both $R_1$ and $R_2$ have the same resistance, and each have a tolerance of $dR$.  Using differentials, what would you expect as the maximum possible error for the total resistance.  You should show that running resistors in parallel reduces the error. (For those of you familiar with electrical systems, running resistors in series causes the errors to add.)
+\end{enumerate}
+\end{problem}
+
+\section{The Second Derivative Test}
+We start with two review problems from first-semester calculus.
+\begin{problem}
+ Let $f(x) = x^3-3x^2$.  Find the critical values of $f$ by solving $f'(x)=0$.  Determine if each critical value leads to a local maximum or local minimum by computing the second derivative. State the local maxima/minima of $f$. Sketch the function using the information you discovered.  
+\end{problem}
+
+% \begin{problem}
+%  Consider the functions $f(x)=x^3$, $g(x)=x^4$, and $h(x)=-x^6$.  
+%  \begin{enumerate}
+%   \item Show that $x=0$ is the only critical value for $f$, $g$, and $h$.
+%   \item What is the value of the second derivative at $x=0$ for each function?
+%   \item Draw all 3 functions and determine for each if $x=0$ is the location of a local maximum, local minimum, or neither.
+%   \item What conclusions can you draw if the second derivative of a function at a critical point is zero?
+%  \end{enumerate}
+% \end{problem}
+
+We now generalize the second derivative test to all dimensions. We've already seen that the second derivative of a function such as $z=f(x,y)$ is a square matrix. The second derivative test relied on understanding if a function was concave up or concave down. We need a way to examine the concavity of $f$ as we approach a point $(x,y)$ from any of the infinitely many directions. Such a method exists, and leads to an eigenvalue/eigenvector problem. I'm assuming that most of you have never heard the word ``eigenvalue.'' We could spend an entire semester just studying eigenvectors. We'd need a few weeks to discover what they are from a problem based approach.  Instead, here is an example of how to find eigenvalues and eigenvectors.
+
+\begin{definition}
+ Let $A$ be a square matrix, so in 2D we have $A=\begin{pmatrix} a&b\\c&d \end{pmatrix}$. The identity matrix $I$ is a square matrix with 1's on the diagonal and zeros everywhere else, so in 2D we have $I = \begin{pmatrix} 1&0\\0&1 \end{pmatrix}$. The eigenvalues of $A$ are the solutions $\lambda$ to the equation $|A-\lambda I|=0$. Remember that $|A|$ means, ``Compute the determinant of $A$.'' So in 2D, we need to find the value $\lambda$ so that 
+ $$\left|\begin{pmatrix} a&b\\c&d\end{pmatrix}-\lambda  \begin{pmatrix} 1&0\\0&1 \end{pmatrix} \right|=\begin{vmatrix} a-\lambda &b\\c&d-\lambda \end{vmatrix}=0.$$
+ This definition extends to any square matrix.  In 3D, the eigenvalues are the solutions to the equation
+ $$\left|\begin{pmatrix} a&b&c\\d&e&f\\g&h&i\end{pmatrix}-\lambda 
+\begin{pmatrix} 1&0&0\\0&1&0\\0&0&1\end{pmatrix} \right| = 
+           \begin{vmatrix} a-\lambda&b&c\\d&e-\lambda&f\\g&h&i-\lambda\end{vmatrix}=0.$$
+ An eigenvector of $A$ corresponding to $\lambda$ is a nonzero vector $\vec x$ such that $A\vec x=\lambda x$. 
+\end{definition}
+
+As you continue taking more upper level science courses (in physics, engineering, mathematics, chemistry, and more) you'll soon see that eigenvalues and eigenvectors play a huge role.  You'll start to see them in most of your classes. For now, we'll use them without proof to use the second derivative test. In class, make sure you ask me to show you pictures with each problem we do, so you can start to see how eigenvalues and eigenvectors appear in surfaces.
+
+\begin{theorem}[The Second Derivative Test]\note{I would like to put a reference to Ken Kutler's book from Provo for a proof.  I would really like to have more references period in the book, so if you want to make a bibtex file, and you ever feel like adding a reference, feel free.}
+Let $f(x,y)$ be a function so that all the second partial derivatives exist and are continuous. The second derivative of $f$, written $D^2f$ and sometimes called the Hessian of $f$, is a square matrix. \note{Because the second derivative is always symmetric (why is it?), in a linear algebra course you could prove that the eigenvalues of $D^2f$ must always be real numbers.}Let $\lambda_1$ be the largest eigenvalue of $D^2f$, and $\lambda_2$ be the smallest eigenvalue. Then $\lambda_1$ is the largest possible second derivative obtained in any direction. Similarly, the smallest possible second derivative obtained in any direction is $\lambda_2$. The eigenvectors give the directions in which these extreme second derivatives are obtained.  The second derivative test states the following.
+\begin{quote}
+Suppose $(a,b)$ is a critical point of $f$, meaning $Df(a,b) = \begin{bmatrix}0&0\end{bmatrix}$.  
+\begin{itemize}
+ \item If all the eigenvalues of $D^2f(a,b)$ are positive, then in every direction the function is concave upwards at $(a,b)$ which means the function has a local minimum at $(a,b)$. 
+ \item If all the eigenvalues of $D^2f(a,b)$ are negative, then in every direction the function is concave downwards at $(a,b)$. This means the function has a local minimum at $(a,b)$. 
+ \item If the smallest eigenvalue of $D^2f(a,b)$ is negative, and the largest eigenvalue of $D^2f(a,b)$ is positive, then  in one direction the function is concave upwards, and in another the function is concave downwards. The point $(a,b)$ is called a saddle point of $f$.
+ \item If the largest or smallest eigenvalue of $f$ equals 0, then the second derivative tests yields no information. 
+\end{itemize}
+ 
+\end{quote}
+  
+ 
+\end{theorem}
+
+
+\begin{example}
+ Consider the function $f(x,y)=x^2-2x+xy+y^2$.  The first and second derivatives are $$Df(x,y)=\begin{bmatrix}2x-2+y,x+2y\end{bmatrix}
+\quad\text{and}\quad 
+ D^2f = \begin{bmatrix}2&1 \\1&2\end{bmatrix}.$$ 
+The first derivative is zero (the zero matrix) when both $2x-2+y=0$ and $x+2y=0$. We need to solve the system of equations $2x+y=2$ and $x+2y=0$. Double the second equation, and then subtract it from the first to obtain $0x-3y=2$, or $y=-2/3$.  The second equation says that $x=-2y$, or that $x=4/3$.  So the only critical point is $(4/3,-2/3)$.
+ 
+\marginpar{In this example, the second derivative is constant, so the point $(4/3,-2/3)$ did not change the matrix. In general, the point will affect your matrix. The following graph of $f$ shows the eigenvectors (in red) in which the largest and smallest second derivatives occur.   
+\includegraphics[width=\marginparwidth]{2nd-der-test}}
+We find the eigenvalues of $D^2 f(4/3,-2/3)$ by solving the equation 
+$$\begin{vmatrix}2-\lambda&1 \\1&2-\lambda\end{vmatrix} = (2-\lambda)(2-\lambda)-1=0.$$ 
+ Expanding the left hand side gives us {$4-4\lambda + \lambda^2 -1 = 0$}. Simplifying and factoring gives us $\lambda^2-4\lambda +3 = (\lambda-3)(\lambda -1) = 0$. This means the eigenvalues are $\lambda = 1$ and $\lambda=3$. Since both numbers are positive, the function is concave upwards in every direction.  The critical point $(4/3,-2/3)$ corresponds to a local minimum of the function. The local minimum is the output $f(4/3,-2/3) = (4/3)^2-2(4/3)+(4/3)(-2/3)+(-2/3)^2$.
+
+A graph of $f$ is provided on the right. 
+The red vector $(1,1)$ points in the direction in which the second derivative is the largest value 3. 
+The red vector $(-1,1)$ points in the direction in which the second derivative is the smallest value 1.
+These vectors are called eigenvectors, and you can learn much more about them, in particular how to find them, in a linear algebra course. For this course, we just need to be able to find eigenvalues.
+\end{example}
+ 
+\begin{problem}
+Consider the function $f(x,y)=x^2+4xy+y^2$.  
+\begin{enumerate}
+ \item Find the critical points of $f$ by finding when $Df(x,y)$ is the zero matrix.
+ \item Find the eigenvalues of $D^2f$ at any critical points.
+ \item Label each critical point as a local maximum, local minimum, or saddle point, and state the value of $f$ at the critical point.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the function $f(x,y)=x^3-3x+y^2-4y$.  
+\begin{enumerate}
+ \item Find the critical points of $f$ by finding when $Df(x,y)$ is the zero matrix.
+ \item Find the eigenvalues of $D^2f$ at any critical points.
+ \item Label each critical point as a local maximum, local minimum, or saddle point, and state the value of $f$ at the critical point.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the function $f(x,y)=x^3 + 3xy +y^3$.  
+\begin{enumerate}
+ \item Find the critical points of $f$ by finding when $Df(x,y)$ is the zero matrix.
+ \item Find the eigenvalues of $D^2f$ at any critical points.
+ \item Label each critical point as a local maximum, local minimum, or saddle point, and state the value of $f$ at the critical point.
+\end{enumerate}
+\end{problem}
+
+You now have the tools needed to find optimal solutions to problems in any dimension. Here's a silly problem that demonstrates how we can use what we've just learned.
+
+\begin{problem}\label{optimize box in cake}
+For my daughter's birthday, she has asked for a Barbie princess cake. I purchased a metal pan that's roughly in the shape of a paraboloid $z=f(x,y)=9-x^2-y^2$ for $z\geq 0$. To surprise her, I want to hide a present inside the cake. The present is a bunch of small candy that can pretty much fill a box of any size.  I'd like to know how large (biggest volume) of a rectangular box I can fit under the cake, so that when we start cutting the cake, she'll find her surprise present. The box will start at $z=0$ and the corners of the box (located at $(x,\pm y)$ and $(-x,\pm y)$) will touch the surface of the cake $z=9-x^2-y^2$.  
+\begin{enumerate}
+ \item What is the function $V(x,y)$ that we are trying to maximize?
+ \item If you find all the critical points of $V$, you'll discover there are 9.  However, only one of these critical points makes sense in the context of this problem. Find that critical point.
+ \item Use the second derivative test to prove that the critical point yields a maximum volume.
+ \item What are the dimensions of the box? What's the volume of the box?
+\end{enumerate}
+ The only thing left for me is to now determine how much candy I should buy to fill the box. I'll take care of that.
+\end{problem}
+ 
+\note{When was in Provo, I remember teaching a business calc course.  In the text, I recall reading about an aerospace company (maybe Boeing) that tried to build an ``optimal'' wing.  They set up their equations, found derivatives, and build the wing that the critical point suggested they should build.  Turns out they build the ``worst'' wing instead of the ``best.''  This was just a classic case of why you should ALWAYS check if the critical points lead to maxes or mins.  I can't put this in the text until I find the reference.  I want to add it to the text someday.}
+
+In this problem, we'll derive the version of the second derivative test that is found in most multivariate calculus texts.  The test given below only works for functions of the form $f:\mathbb{R}^2\to\mathbb{R}$.  The eigenvalue test you have been practicing will work with a function of the form  $f:\mathbb{R}^n\to\mathbb{R}$, for any natural number $n$. 
+\begin{problem}[Optional]
+ Suppose that $f(x,y)$ has a critical point at $(a,b)$. 
+\begin{enumerate}
+ \item Find a general formula for the eigenvalues of $D^2f(a,b)$. Your answer will be in terms of the second partials of $f$.
+ \item Let $D=f_{xx}f_{yy}-f_{xy}^2$. 
+\begin{itemize}
+ \item If $D<0$, explain why $f$ has a saddle point at $(a,b)$.
+ \item If $D=0$, explain why the second derivative test fails.
+ \item If $D>0$, explain why $f$ has either a maximum or minimum at $(a,b)$.
+ \item If $D>0$, give a rule for determining if $f$ has a local max or local min at $(a,b)$. Explain.
+\end{itemize}
+ \item The only critical point of $f(x,y) = x^2+3xy+2y^2$ is at $(0,0)$.  Does this point correspond to a local maximum, local minimum, or saddle point? Give the eigenvalues (which should come instantly out of part 1). Find $D$, from part 2, to answer the question.
+\end{enumerate}
+
+\end{problem}
+
+
+\section{Lagrange Multipliers}
+The last problem was an example of an optimization problem where we wish to optimize a function (the volume of a box) subject to a constraint (the box has to fit inside a cake).  If you are economics student, this section may be the key reason why you were asked to multivariate calculus.  In the business world, we often want to optimize something (profit, revenue, cost, utility, etc.) subject to some constraint (a limited budget, a demand curve, warehouse space, employee hours, etc.). An aerospace engineer will build the best wing that can withstand given forces. Everywhere in the engineering world, we often seek to create the ``best'' thing possible, subject to some outside constraints.  Lagrange discovered an extremely useful method for answering this question, and today we call it ``Lagrange Multipliers.''
+
+Rather than introduce Cobb-Douglass production functions (from economics) or sheer-stress calculations (from engineering), we'll work with simple examples that illustrate the key points.  Sometimes silly examples carry the message across just as well.
+
+\begin{problem}
+ Suppose an ant walks around the circle $g(x,y)=x^2+y^2=1$.  As the ant walks around the circle, the temperature is $f(x,y) = x^2+y+4$.  Our goal is to find the maximum and minimum temperatures reached by the ant as it walks around the circle. We want to optimize $f(x,y)$ subject to the constraint $g(x,y)=1$. 
+ \begin{enumerate}
+  \item Draw the circle in the plane (notice that the constraint is a level curve of $g$).  Then, on the same set of axes, draw several level curves of $f$. The level curves $f=3, 4, 5, 6$ are a good start. Then add more (maybe at each 1/4th). If you make a careful, accurate graph, it will help a lot below.
+  \item Based solely on your graph, where does the minimum temperature occur?  What is the minimum temperature.
+  \item If the ant is at the point $(0,1)$, and it moves left, will the temperature rise or fall?  What if the ant moves right? 
+  \item On your graph, place a dot(s) where you believe the ant reaches a maximum temperature (it may occur at more than one spot). Explain why you believe this is the spot where the maximum temperature occurs. What about the level curves tells you that these spots should be a maximum.
+  \item Draw the gradient of $f$ at the places where the minimum and maximum temperatures occur. Also draw the gradient of $g$ at these spots.  How are the gradients of $f$ and $g$ related at these spots?
+ \end{enumerate}
+\end{problem}
+
+\begin{theorem}[Lagrange Multipliers]
+Suppose $f$ and $g$ are continuously differentiable functions. Suppose that we want to find the maximum and minimum values of $f$ subject to the constraint $g(x,y)=c$ (where $c$ is some constant).  Then if a maximum or minimum occurs, it must occur at a spot where the gradient of $f$ and the gradient of $g$ point in the same, or opposite, directions. So the gradient of $g$ must be a multiple of the gradient of $f$. So, to find the maximum and minimum values (if they exist) we just solve the equation 
+$$\vec \nabla f = \lambda \vec \nabla g,$$ where $\lambda$ is the proportionality constant. The maximum and minimum values will be among the solutions of this equation. 
+\end{theorem}
+
+\begin{problem}
+ Suppose an ant walks around the circle $x^2+y^2=1$.  As the ant walks around the circle, the temperature is $T(x,y) = x^2+y+4$.  Our goal is to find the maximum and minimum temperatures $T$ reached by the ant as it walks around the circle. 
+ \begin{enumerate}
+  \item What is the function $f(x,y)$ we with to optimize? What is the constraint $g(x,y)$?
+  \item Why do you know the ant must have reached both a maximum and minimum temperature?
+  \item Find the gradient of $f$ and the gradient of $g$.  Then solve the equation $\vec \nabla f = \lambda \vec \nabla g.$ You should obtain 4 ordered pairs $(x,y)$.
+  \item At each ordered pair, find the temperature.  What is the max temperature obtained, what is the minimum temperature obtained.
+ \end{enumerate}
+[If you only got 2 points in part 3, it's probably because you divided both sides of equation by a variable (like $x$ or $y$).  Beware, you can only divide by a variable if you know the variable is not zero.]
+\end{problem}
+
+\begin{problem}
+ Find a point $(a,b)$ on the curve $xy^2=54$ that is closest to the origin.  [What function $f$ are you trying to optimize? What function $g=c$ is the constraint? Note that trying to minimize distance is the same as trying to minimize the square of the distance. This last comment should greatly simplify a lot of your computations.]
+\end{problem}
+
+\begin{problem}
+ Find the dimensions of the rectangular box with maximum volume that can be inscribed inside the ellipsoid $$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1.$$
+[What is the function $f$ you wish to optimize? What is the constraint $g=c$?]
+\end{problem}
+
+\begin{problem}
+Repeat problem \ref{optimize box in cake}, but this time use Lagrange multipliers.
+Find the dimensions of the rectangular box of maximum volume that fits underneath the surface $z=f(x,y)=9-x^2-y^2$ for $z\geq 0$.
+\end{problem}
+
+\note{This would be an appropriate place to put Taylor series in high dimensions, if your school wants the students to see those ideas.  You can introduce it all using matrix derivatives.  You could then actually prove the second derivative test, as well as define positive definite matrices.}
+
+
