@@ -44,11 +44,11 @@ The next few problems will focus on explaining why the relationships you saw are
 In the derivatives chapter, we extended differential notation from $dy=f' dx$ to $d\vec y = D\vec f d\vec x$. The key idea is that a small change in the output variables is approximated by the product of the derivative and a small change in the input variables. As a quick refresher, if  we have the function $z=f(x,y)$, then differential notation states that $$dz = \begin{bmatrix}f_x&f_y\end{bmatrix} \begin{bmatrix}dx\\dy\end{bmatrix}.$$ 
 
 \begin{problem}
-Suppose the temperature at a point in the plane is given by the function {$T(x,y)=x^2-xy-y^2$} degrees Fahrenheit. A particle is at $(2,3)$.  
+Suppose the temperature at a point in the plane is given by the function {$T(x,y)=x^2-xy-y^2$} degrees Fahrenheit. A particle is at $P=(2,3)$.  
 \begin{enumerate}
- \item Use differentials to estimate the change in temperature if the particle moves 1 unit in the direction of $\left(3,4\right)$.
- \item What is the actual change in temperature if the particle moves 1 unit in the direction of $\left(3,4\right)$?
- \item Use differentials to estimate the change in temperature if the particle moves about .2 unit in the direction of $\left(3,4\right)$.
+ \item Use differentials to estimate the change in temperature if the particle moves 1 unit in the direction of $\vec u=\left(3,4\right)$.
+ \item What is the actual change in temperature if the particle moves 1 unit in the direction of $\vec u=\left(3,4\right)$?
+ \item Use differentials to estimate the change in temperature if the particle moves about .2 units in the direction of $\vec u=\left(3,4\right)$.
 \end{enumerate}
 \end{problem}
 
@@ -59,7 +59,7 @@ Suppose that $z=f(x,y)$ is a differentiable function (so the derivative is the m
 \begin{enumerate}
  \item If $(dx,dy)=(1,0)$, which means we've moved one unit in the $x$ direction while holding $y$ constant, what is $dz$?
  \item If $(dx,dy)=(0,1)$, which means we've moved one unit in the $y$ direction while holding $x$ constant, what is $dz$?
- \item Consider the direction $\vec A=(3,4)$.  Find a unit vector in the direction of $\vec u$.  If we move one unit in the direction of $\vec A$, what is $dz$? [It's O.K. to leave you answer as a dot product.]    
+ \item Consider the direction $\vec u=(3,4)$.  Find a unit vector in the direction of $\vec u$.  If we move one unit in the direction of $\vec u$, what is $dz$? [It's O.K. to leave you answer as a dot product.]    
 \end{enumerate}
  
 \end{problem}
@@ -79,9 +79,9 @@ Note that in the definition above, we require the vector $\vec u$ to be a unit v
  Consider the function $f(x,y) = 9-x^2-y^2$.
  \begin{enumerate}
   \item Draw several level curves of $f$. 
-  \item At the point $(2,1)$, place a dot on your graph. Then draw a unit vector based at $(2,1)$ that points in the direction $(3,4)$. If you were to move in the direction of $(3,4)$, starting from the point $(2,1)$, would the value of $f$ increase or decrease?
-  \item Find the slope of $f$ at $(2,1)$ in the direction of $(3,4)$ by finding the directional derivative. This should agree with your previous answer.
-  \item If you stand at $(-2,3)$ and move in the direction $(1,-1)$, will $f$ increase or decrease?  Find the directional derivative of $f$ in the direction $(1,-1)$ at the point $(-2,3)$.
+  \item At the point $P=(2,1)$, place a dot on your graph. Then draw a unit vector based at $P$ that points in the direction $\vec u=(3,4)$ [not to the point $(3,4)$, but in the direction $\vec u=(3,4)$]. If you were to move in the direction $(3,4)$, starting from the point $(2,1)$, would the value of $f$ increase or decrease?
+  \item Find the slope of $f$ at $P=(2,1)$ in the direction $\vec u=(3,4)$ by finding the directional derivative. This should agree with your previous answer.
+  \item If you stand at $Q=(-2,3)$ and move in the direction $\vec v= (1,-1)$, will $f$ increase or decrease?  Find the directional derivative of $f$ in the direction $\vec v=(1,-1)$ at the point $Q=(-2,3)$.
  \end{enumerate}
 \end{problem}
 
