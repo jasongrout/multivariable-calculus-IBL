@@ -2,7 +2,7 @@
 \noindent 
 This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
 \begin{enumerate}
-\item Describe how to integrate a function along a curve. Use line integrals to find the area of a sheet of metal with height $z=f(x,y)$ above a curve $\vec r(t)=\left(x,\right)$ and the average value of a function along a curve.
+\item Describe how to integrate a function along a curve. Use line integrals to find the area of a sheet of metal with height $z=f(x,y)$ above a curve $\vec r(t)=\left(x,y\right)$ and the average value of a function along a curve.
 \item Find the following geometric properties of a curve: centroid, mass, center of mass, inertia, and radii of gyration.
 \item Compute the work (flow, circulation) and flux of a vector field along and across piecewise smooth curves.
 \item Determine if a field is a gradient field (hence conservative), and use the fundamental theorem of line integrals to simplify work calculations.
@@ -11,31 +11,29 @@ You'll have a chance to teach your examples to your peers prior to the exam.
 
 \section{Surface Area and Average Value}
 
-In this section we generalize integrals along the $x$-axis to integrals along any curve. We'll approach everything from the point of view of area, though the applications are much more far reaching. The first problem is a review problem from first-semester calculus.  The second problem generalizes the idea to integrals along a curve (which we call a line integral). The third problem has you generalize your results.
+In this section we generalize integrals along the $x$-axis to integrals along any curve. We'll approach everything from the point of view of area, though the applications are much more extensive. The first problem is a review problem from first-semester calculus.  The second problem generalizes the idea to integrals along a curve (which we call a line integral). The third problem has you generalize your results.
 
 
 This first problem appears to be really long, but it is just a step-by-step review of how you did integrals in first-semester calculus (each step is quite short).
 \begin{problem}
- Consider the region in the $xy$ plane that is below the function $f(x)=x^2+1$ and above the interval $[-1,2]$.  Think of this region as a metal plate that has been laid flat on the ground.
+ Consider the region in the $xy$ plane that is below the function $f(x)=x^2+1$ and above the $x$-axis between $x=-1$ and $x=2$.  Think of this region as a metal plate that has been laid flat on the ground.
 \begin{enumerate}
- \item Draw the curve over the bounds given. 
+ \item Draw the curve over the bounds given and shade the region in question. 
  \item Now partition the interval $[-1,2]$ into 6 equally spaced parts. On your graph, draw 6 rectangles  to approximate the area under $f$.  Use the right endpoint of each interval to determine the height of each rectangle. \marginpar{You could have used the left endpoint point, or the midpoint, or any other point on the curve. I chose the right endpoint to just make sure we all had the same answers.}
  \item The width of each rectangle we call $\Delta x$. What is $\Delta x$ in this example?
  \item Recall from first semester calculus that we typically name the $x$-coordinates of the ends of our rectangles using the notation $x_0$, $x_1$, $x_2$, $\ldots$. In this example, we have 
 $$
-x_0=-1, 
-x_1=-\frac{1}{2}, 
-x_2=0, 
-x_3=\frac{1}{2}, 
-x_4=1, 
-x_5=\frac{3}{2}, 
+x_0=-1,\, 
+x_1=-\frac{1}{2}, \, 
+x_2=0, \, 
+x_3=\frac{1}{2}, \, 
+x_4=1, \, 
+x_5=\frac{3}{2}, \, 
 x_6=2.
 $$
 The area of the first rectangle is $\Delta A_1=f(x_1)\Delta x$. The area of the second rectangle is $\Delta A_2= f(x_2)\Delta x$. 
 
-If we drew more many more rectangles, each of width $\Delta x=dx$, and we used point $x$ to find the height of our rectangle, what would the area $dA$ equal?
-
-\item The total combined area of the 6 rectangles you drew above is the sum
+The total combined area of the 6 rectangles you drew above is the sum
 $$
 f(x_1)\Delta x+
 f(x_2)\Delta x+
@@ -44,7 +42,10 @@ f(x_4)\Delta x+
 f(x_5)\Delta x+
 f(x_6)\Delta x.
 $$
-Write this sum using sigma notation. 
+Write this sum using sigma notation (i.e., using a $\sum$). 
+
+\item If we drew $n$ rectangles, each of width $\Delta x=dx$, and we used the points $x_1,x_2,\ldots,x_n$ to find the heights of the rectangles (one for each rectangle), what would the area $dA$ equal?
+
 \item What integral gives the area under $f$ over the interval $[-1,2]$? Be prepared to share with the class how you can modify your sigma notation from the previous part to obtain the integral you gave here. (What happens to $\Sigma$ and $\Delta x$?)
 \item Find the area (surface area) of the metal sheet.
 \end{enumerate}
@@ -58,27 +59,22 @@ I've tried to write the problem to be a replica of what you did in first semeste
 \marginpar{\href{http://www.youtube.com/watch?v=sYsMcqtXBrc&list=PL04DF68E73B7ECD54&index=1&feature=plpp_video}{Watch a YouTube video.}}%
  Consider the region in space that is below the function 
 $f(x,y)=(x+2)(y+2)$ and above the curve $C$ parametrized by 
-$\vec r(t)=(t,t^2)$ for $t\in[-1,2]$.  Think of this region as a metal plate that has been stood up with its base on $C$ where the height above each spot is given by $z=f(x,y)$. A graph of the sheet is to the right.
-%\marginpar{{\newcommand{\myheight}{2in}
-%\includegraphics[width=\marginparwidth]{line-integrals-support/sheet-1}
-%
-%This picture represents a sheet of metal with its base on the curve $\vec r(t)=(t,t^2)$ in the $xy$ plane, where the height above each point is given by $f(x,y)=(x+2)(y+2)$.
-%}}
+$\vec r(t)=(t,t^2)$ for $t\in[-1,2]$.  Think of this region as a metal plate that has been stood up with its base on $C$ where the height above each spot is given by $z=f(x,y)$.
 \begin{enumerate}
  \item Draw the curve $C$ in the $xy$-plane.
  \item Now partition the curve you just drew into 6 parts, using equal spaced time intervals to create your partition. Draw a straight line between the spots on the curve given by $\vec r(-1)$, $\vec r(-1/2)$, $\vec r(0)$, etc.  You should have 6 straight lines connecting points on a parabola.
- \item The length of each segment you drew is called $\Delta s$ (an approximation to arc length). If we drew lots of tiny segments, we would use $\Delta s=ds$ to represent this length.  What general formula do we use for $ds$? [Remember, ``A little bit of distance is speed times a little bit of time.''] Compute $ds$ in this particular example.
+ \item The length of each segment you drew is called $\Delta s$ (an approximation to arc length). If we drew lots of tiny segments, we would use $\Delta s=ds$ to represent this length.  What general formula do we use for $ds$? [Remember, ``A little bit of distance is speed times a little bit of time.'' (see Section \ref{arc length})] Compute $ds$ in this particular example.
  \item We'll call the $t$-coordinates of our partition $t_0$, $t_1$, $t_2$, $\ldots$. In this example, we have 
 $$
-t_0=-1, 
-t_1=-\frac{1}{2}, 
-t_2=0, 
-t_3=\frac{1}{2}, 
-t_4=1, 
-t_5=\frac{3}{2}, 
+t_0=-1, \,
+t_1=-\frac{1}{2},  \,
+t_2=0,  \,
+t_3=\frac{1}{2},  \,
+t_4=1,  \,
+t_5=\frac{3}{2},  \,
 t_6=2.
 $$
-We need the surface area of the sheet. Above each little straight segment of length $\Delta s$ on the curve, we could approximate the area using just the right endpoint, i.e. using $f(\vec r(t))$. 
+We need the surface area of the sheet. Above each little straight segment of length $\Delta s$ approximating the curve, we could approximate the area using just the right endpoint, i.e. using $f(\vec r(t))$. 
 The area of the first rectangle is \marginpar{We'll use $\sigma$ (read 'sigma') to stand for surface area.} 
 $\Delta \sigma_2=f(\vec r(t_1))\Delta s_2$. The area of the second rectangle is $\Delta \sigma_2=f(\vec r(t_2))\Delta s_2$. 
 
@@ -93,7 +89,7 @@ f(\vec r(t_6))\Delta s_6
 $$
 Write this sum using sigma notation. 
 \item What integral gives the area under $f$ over the curve $C$? Be prepared to share with the class how you can modify your sigma notation from the previous part to obtain the integral you gave here. (What happens to $\Sigma$ and $\Delta s$?)
-\item Find the area (surface area) of the metal sheet. (Use a calculator. Don't worry about doing this integral by hand.)
+\item Find the area (surface area) of the metal sheet. [Use technology to do this integral.]
 \end{enumerate}
 \end{problem}
 
