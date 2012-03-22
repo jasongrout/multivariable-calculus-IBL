@@ -1,6 +1,21 @@
 
 \documentclass[letterpaper,oneside]{book}%
 
+\newif\ifinstructor
+%% uncomment one of the following, depending if you want to include the
+%% instructor notes or not
+\instructortrue
+\instructorfalse
+
+
+\newif\ifnotes
+%% uncomment one of the following, depending if you want to include the
+%% instructor notes or not
+\notestrue
+\notesfalse
+
+
+
 \usepackage[left=1in,right=2.75in,top=1in,bottom=1in]{geometry}
 \marginparwidth 1.75in
 
@@ -37,11 +52,6 @@ Once you have finished the problems in the section and feel comfortable with the
 %\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]{\raggedright\footnotesize #1}}
 
 
-\renewcommand{\thefootnote}{\roman{footnote}}
-\newcommand{\note}[1]{\footnote{#1}\marginpar{\fbox{\textbf{\thefootnote}}}}
-%%%%%%%To make all notes ignored, uncomment the following command.
-%\renewcommand{\note}[1]{}
-
 %\usepackage[12hr]{datetime}
 %\newdateformat{draftdate}{%
 %\shortdayofweekname{\THEDAY}{\THEMONTH}{\THEYEAR}, %
@@ -57,8 +67,18 @@ Once you have finished the problems in the section and feel comfortable with the
 \newcommand{\larsonfive}[1]{#1}
 
 % Instructor-specific material (answers, helps, etc.)
-\newcommand{\instructor}[1]{\marginpar{\textbf{Instructor: }#1}}
-%\renewcommand{\instructor}[1]{}
+\ifinstructor
+  \newcommand{\instructor}[1]{\marginpar{\textbf{Instructor: }#1}}
+\else
+  \newcommand{\instructor}[1]{}
+\fi
+
+\ifnotes
+\renewcommand{\thefootnote}{\roman{footnote}}
+\newcommand{\note}[1]{\footnote{#1}\marginpar{\fbox{\textbf{\thefootnote}}}}
+\else
+\newcommand{\note}[1]{}
+\fi
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[chapter]
