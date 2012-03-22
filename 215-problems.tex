@@ -38,7 +38,7 @@ Once you have finished the problems in the section and feel comfortable with the
 \renewcommand{\thefootnote}{\roman{footnote}}
 \newcommand{\note}[1]{\footnote{#1}\marginpar{\fbox{\textbf{\thefootnote}}}}
 %%%%%%%To make all notes ignored, uncomment the following command.
-\renewcommand{\note}[1]{}
+%\renewcommand{\note}[1]{}
 
 %\usepackage[12hr]{datetime}
 %\newdateformat{draftdate}{%
@@ -49,13 +49,13 @@ Once you have finished the problems in the section and feel comfortable with the
 %\AddToShipoutPicture{\put(10,10){\small Draft: \today\ at \currenttime }}%--- version: \MakeUppercase{\svnInfoRevision}}}
 
 \newcommand{\bmw}[1]{}
-\newcommand{\marginparbmw}[1]{}
+\newcommand{\marginparbmw}[1]{\bmw{\marginpar{#1}}}
 
 % Notes for Larson, 5th edition
 \newcommand{\larsonfive}[1]{#1}
 
 % Instructor-specific material (answers, helps, etc.)
-\newcommand{\instructor}[1]{#1}
+\newcommand{\instructor}[1]{\marginpar{\textbf{Instructor: }#1}}
 %\renewcommand{\instructor}[1]{}
 
 \theoremstyle{plain}
