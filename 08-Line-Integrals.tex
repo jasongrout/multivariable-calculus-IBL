@@ -141,7 +141,8 @@ Now we'll practice estimating a line integral and using these steps to do the li
  % \end{problem}
 
 
-\begin{problem}\marginpar{See \ref{parameterizing plane curves} if you forgot how to parametrize plane curves.}
+\begin{problem}\marginpar{See \ref{parameterizing plane curves} if you forgot how to parametrize plane curves.}%
+\larsonfive{\marginpar{See Larson 15.2: 1--20, 63--70.  Some problems give you a parameterization, some expect you to come up with one on your own.}}%
  Let $f(x,y)=x^2+y^2-25$. Let $C$ be the portion of the parabola $y^2=x$ between $(1,-1)$ and $(4,2)$. We want to compute $\int_C fds$.  
 \begin{enumerate}
 \item Draw the curve $C$ and the function $f(x,y)$ on the same 3D $xyz$ axes.
@@ -156,27 +157,33 @@ Now we'll practice estimating a line integral and using these steps to do the li
 The concept of averaging values together has many applications.  In first-semester calculus, we saw how to generalize the concept of averaging numbers together to get an average value of a function.  We'll review both of these concepts, and then generalize the concept of average value to calculate many physical properties of real-world objects.
 
 \begin{problem}\label{average value methods}
-\instructor{I emphasize here the general patterns of $\frac{\sum\text{value*weight}}{\sum \text{weight}}$ and $\sum \text{value*(percentage of stuff)}$.}
-  Suppose a class takes a test and there are three scores of 70, five scores of 85, one score of 90, and two scores of 95.  We will calculate the class average three different ways to emphasize three ways of thinking about the average score.
+\instructor{Throughout the section, I point out how each formula is a variation on one of the patterns below.}
+  Suppose a class takes a test and there are three scores of 70, five scores of 85, one score of 90, and two scores of 95.  We will calculate the average class score, $\bar s$, four different ways to emphasize four ways of thinking about the averages.  We are emphasizing the pattern of the calculations in this problem, rather than the final answer, so it is important to write out each calculation completely in the form $\bar s = \blank{1cm}$ before calculating the number $\bar s$.
   \begin{enumerate}
-  \item Compute the average by adding 11 numbers together and dividing by the number of scores.   Write down the whole computation before doing any arithmetic.
-  \item Compute the numerator of the fraction in the previous part by multiplying each score by how many times it occurs, rather than adding it in the sum that many times.  Write down the whole computation before doing any arithmetic.
-  \item Compute the average by splitting up the fraction in the previous part into the sum of four numbers.  This is called a ``weighted average'' because we are multiplying each score value by a weight.
+  \item \marginpar{$\bar s=\frac{\sum \text{values}}{\text{number of values}}$}%
+ Compute the average by adding 11 numbers together and dividing by the number of scores.   Write down the whole computation before doing any arithmetic.
+  \item \marginpar{$\bar s=\frac{\sum (\text{value}\cdot\text{weight})}{\sum \text{weight}}$}%
+Compute the numerator of the fraction in the previous part by multiplying each score by how many times it occurs, rather than adding it in the sum that many times.  Again, write down the calculation for $\bar s$ before doing any arithmetic.
+  \item \marginpar{$\bar s=\sum (\text{value}\cdot\text{(\% of stuff)})$}%
+Compute $\bar s$ by splitting up the fraction in the previous part into the sum of four numbers.  This is called a ``weighted average'' because we are multiplying each score value by a weight.
+  \item \marginpar{$\text{(number of values)}\bar s = \sum \text{values}$\\ $(\sum \text{weight})\bar s = \sum (\text{value}\cdot\text{weight})$}%
+Another way of thinking about the average $\bar s$ is that $\bar s$ is the number so that if all 11 scores were $\bar s$, you'd have the same sum.  Write this way of thinking about these computations by taking the formulas for $\bar s$ in the first two parts and multiplying both sides by the denominator.
   \end{enumerate}
 \end{problem}
 
+In the next problem, we generalize the above ways of thinking about averages from a discrete situation to a continuous situation.  You did this in first-semester calculus when you did average value using integrals.
+
 \begin{problem}
- Suppose the price of a stock is 10 dollars for one day.  Then the price of the stock jumps to 20 dollars for two days.  Our goal is to determine the average price of the stock over the three days.
+ Suppose the price of a stock is \$10 for one day.  Then the price of the stock jumps to \$20 for two days.  Our goal is to determine the average price of the stock over the three days.
 \begin{enumerate}
- \item Find the average price of the stock using the three methods from the previous problem.
- \item Let $f(t) = \begin{cases}10 &0<t<1\\20&1<t<3\end{cases}$, the price of the stock for the three day period. Draw the function $f$, and find the area under $f$ where $t\in[0,3]$.
- \item Find a single constant $h$ so that the areas under both $h$ and $f$, above the interval $[0,3]$, are the same numbers.  The area under $h$ is just the area of a rectangle, so length times width will help.
- \item The area of a rectangle is length times height.  We know the area under $h$ is $\int_a^b hdt = h \int_a^bdt$ (why?). What is a physical meaning of the integral $\int_a^b dt$?
- \item We found a constant $h$ so that the area under $h$ matched the area under $f$. In other words, we solved the equation below for $h$: 
-$$\int_a^b h dx = \int_a^b f dx$$
-  Solve for $h$ symbolically, without doing any of the integrals. This quantity was called the average value of $f$ over $[a,b]$, and was crucial to proving the Fundamental Theorem of Calculus from first-semester calculus.
-\item \instructor{I also write $h=\int_a^b f \frac{dx}{\int_a^b dx}$ to emphasize the weighted average approach}%
- The formula for $h$ in the previous part resembles one of the ways of calculating averages from Problem~\ref{average value methods}.  Which one?
+ \item Find the average price of the stock using all of the methods from Problem~\ref{average value methods}.
+ \item Let $f(t) = \begin{cases}10 &0<t<1\\20&1<t<3\end{cases}$, the price of the stock for the three-day period. Draw the function $f$, and find the area under $f$ where $t\in[0,3]$.
+ \item Find a single constant $\bar f$ so that the areas under both $\bar f$ and $f$, above the interval $[0,3]$, are the same numbers.  [Hint: The area under $\bar f$ is just the area of a rectangle.]
+ \item We found a constant $\bar f$ so that the area under $\bar f$ matched the area under $f$. In other words, we solved the equation below for $\bar f$: 
+$$\int_a^b \bar f dx = \int_a^b f dx$$
+  Solve for $\bar f$ symbolically, without doing any of the integrals. This quantity was called the average value of $f$ over $[a,b]$, and was crucial to proving the Fundamental Theorem of Calculus from first-semester calculus.
+\item \instructor{I also write $\bar f=\int_a^b f \frac{dx}{\int_a^b dx}$ to emphasize the weighted average approach}%
+ The formula for $\bar f$ in the previous part resembles at least one of the ways of calculating averages from Problem~\ref{average value methods}.  Which ones and why?
 \end{enumerate}
 \end{problem}
 
@@ -188,14 +195,15 @@ Make sure to ask me in class about the ``ant farm'' approach to average value.
  Let the curve $C$ have the parametrization $\vec r(t) = (2\cos t, 3\sin t)$.  Let $f$ be the function $f(x,y)=9-x^2-y^2$.    \begin{enumerate}
   \item Draw the surface $f$ in 3D.  Add to your drawing the curve $C$ in the $xy$ plane. Then draw the sheet whose area is given by the integral $\int_C f ds$. 
   \item What's the maximum height and minimum height of the sheet? [Hint: these maxes and mins occur when you are over the $x$ and $y$ axes. We did this in problem \ref{horse track chain rule introduction}.]
-  \item We would like to find a constant height $h$ so that the area under $f$, above $C$, matches the area under $h$, above $C$. What integral gives us the area under $h$, above $C$?  What integral equation must we solve to find this constant $h$?
+  \item We would like to find a constant height $\bar f$, a number, so that the area under $f$, above $C$, is the same as area under $\bar f$, above $C$. What integral gives us the area under $\bar f$, above $C$?  What integral equation must we solve to find this constant $\bar f$?
   \item \marginparbmw{Please read 
 \href{https://www.lds.org/scriptures/ot/isa/40.4?lang=eng\#3}{Isaiah 40:4} and
 \href{https://www.lds.org/scriptures/nt/luke/3.5?lang=eng\#4}{Luke 3:5}. These scriptures should help you remember how to find average value.
 }%
 \instructor{Again, I emphasize how this relates to the ways of computing averages from Problem~\ref{average value methods}.}
-Solve for $h$ above. This constant $h$ is called the average value of $f$ along $C$, and often written as $\bar f$. You should obtain 
-$$h=\bar f = \frac{\int_C f ds}{\int_C ds}.$$
+Solve for $\bar f$ above. This constant $\bar f$ is called the average value of $f$ along $C$. You should obtain 
+$$\bar f = \frac{\int_C f ds}{\int_C ds}.$$
+Connect this formula with the ways of thinking about averages from Problem~\ref{average value methods}.
 
   \item Use a computer to evaluate the integrals $\int_C f ds$ and $\int_C ds$, and then give an approximation to the average value of $f$ along $C$. How should this value relate to the maximum and minimum found above?
  \end{enumerate}
@@ -206,12 +214,18 @@ $$h=\bar f = \frac{\int_C f ds}{\int_C ds}.$$
 \end{problem}
 \section{Physical Properties}
 
-A number of physical properties of real-world objects can be calculated using the concepts of averages and line integrals.  We explore some of these in this section.
+A number of physical properties of real-world objects can be calculated using the concepts of averages and line integrals.  We explore some of these in this section.  Additionally, many of these concepts and calculations are used in statistics.
 
 \subsection{Centroids}%
-\marginpar{\href{http://www.youtube.com/watch?v=t7T0MzfgV0Q&list=PL04DF68E73B7ECD54&index=5&feature=plpp_video}{Watch a YouTube video.}}%
-\begin{problem}[Centroid]\label{centroid of curve}
- Let $f$ be function and $C$ be a curve with parameterization $\vec r(t)$ (where $f(\vec r(t))$ is continuous).  We've already developed a formula for the average value of $f$ along $C$ (see problem \ref{Average Value intro}). The centroid of an object is the geometric center, or average $x$, $y$, and $z$ values, of the object.  Notice the word ``average.''  Explain why these average values are \marginpar{$(\bar x, \bar y, \bar z)$ is the centroid, the geometric center of the object.}
+
+\begin{definition}[Centroid]
+  Let $C$ be a curve. If we look at all of the $x$-coordinates of the points on $C$, the ``center'' $x$-coordinate, $\bar x$, is the average of all these $x$-coordinates.  Likewise, we can talk about the averages of all of the $y$ coordinates or $z$ coordinates of points on the function ($\bar y$ or $\bar z$, respectively).  The \emph{centroid} of an object is the geometric center $(\bar x, \bar y, \bar z)$, the point with coordinates that are the average $x$, $y$, and $z$ coordinates.
+\end{definition}
+
+\begin{problem}[Centroid]\label{centroid of curve}\marginpar{\href{http://www.youtube.com/watch?v=t7T0MzfgV0Q&list=PL04DF68E73B7ECD54&index=5&feature=plpp_video}{Watch a YouTube video.}}%
+  Notice the word ``average'' in the definition of the centroid. Explain why the coordinates of the centroid are the formulas below. [Hint:  If we have a curve $C$ with parametrization $\vec r(t)$ and function $f$ so that $f(\vec r(t))$ is continuous, then we've developed in Problem~\ref{Average Value intro} a formula for the average value of $f$ along $C$.  What function $f(x,y,z)$ gives the $x$-coordinate of a point?]
+
+\marginpar{Formulas for the centroid.}
 $$
 \bar x = \frac{\int_C x ds}{\int_C  ds},\quad
 \bar y = \frac{\int_C y ds}{\int_C  ds},\quad 
@@ -227,35 +241,40 @@ Notice that the denominator in each case is just the arc length $s=\int_C ds$.
 \end{problem}
 
 \subsection{Mass and Center of Mass}
-The density of a wire is the mass per unit length.  The center of mass of an object is the point where the object balances.\note{What's a better way to describe intuitively what the center of mass is?  If we replace the object with a point mass at the center of mass, calculations are simpler, for example.}  If an object has the same density throughout it, then the centriod (the geometric center) is also the center of mass of the object.
-
-Suppose now that an object is made out of a composite material, and the density of the object is different at different places in the object. For example, we might have a wire $C$ where one end is aluminum and the other end is copper. In the middle, the wire slowly transitions from being all aluminum to all copper. As copper has a higher density than aluminum, the center of mass of such a composite wire should be different than the centroid. The center of mass will be closer to the denser copper end. In this section, we'll develop formulas for the mass and center of mass of such a wire. Such composite materials are engineered all the time (though probably not our example wire).  \bmw{In future mechanical engineering courses, you would learn how to determine the density $\delta$ (mass per unit length) at each point on such a composite wire.}
+Density is generally a mass per unit volume.  However, when talking about a curve or wire, as in this chapter, it's simpler to let density be the mass per unit length.  Sometimes an object is made out of a composite material, and the density of the object is different at different places in the object. For example, we might have a straight wire where one end is aluminum and the other end is copper. In the middle, the wire slowly transitions from being all aluminum to all copper.  The centroid is the midpoint of the wire.  However, since copper has a higher density than aluminum, the balance point (the center of mass) would not be at the midpoint of the wire, but would be closer to the denser and heavier copper end.  In this section, we'll develop formulas for the mass and center of mass of such a wire. Such composite materials are engineered all the time (though probably not our example wire).  \bmw{In future mechanical engineering courses, you would learn how to determine the density $\delta$ (mass per unit length) at each point on such a composite wire.}
 
 \begin{problem}[Mass]\label{mass of curve}%
 \marginpar{\href{http://www.youtube.com/watch?v=mz-Udq5TeS4&list=PL04DF68E73B7ECD54&index=6&feature=plpp_video}{Watch a YouTube video.}}%
- Suppose a wire $C$ has the parameterization $r(t)$ for $t\in[a,b]$.  Suppose the wire's density at a point $(x,y,z)$ on the wire is known to be $\delta(x,y,z)$. \bmw{You'll learn to calculate this function in a future class. For the purposes of our class, we'll just assume we know what $\delta(x,y,z)$ is.}
+ Suppose a wire $C$ has the parameterization $\vec r(t)$ for $t\in[a,b]$.  Suppose the wire's density at a point $(x,y,z)$ on the wire is given by the function $\delta(x,y,z)$. \bmw{You'll learn to calculate this function in a future class. For the purposes of our class, we'll just assume we know what $\delta(x,y,z)$ is.}
  \begin{enumerate}
-  \item Density is generally a mass per unit volume.  However, when talking about a wire, it's simpler to let density be the mass per unit length.  
-
-  Consider a small portion of the curve of length $ds$.  Explain why a small bit of mass is $dm=\delta ds$.
-  \item Explain why the mass of an object is given by the formulas below (explain why each equals sign is true):
-$$m=\int_C dm = \int_C \delta ds = \int_a^b \delta \left|\frac{d\vec r}{dt}\right|dt.$$
+  \item Consider a small portion of the curve at $t=t_0$ of length $ds$.  Explain why the mass of the small portion of the curve is $dm=\delta(\vec r(t_0)) ds$.
+  \item Explain why the mass $m$ of an object is given by the formulas below (explain why each equals sign is true):
+$$m=\int_C dm = \int_C \delta ds = \int_a^b \delta(\vec r(t)) \left|\frac{d\vec r}{dt}\right|dt.$$
  \end{enumerate}
 \end{problem}
 
-First we'll practice finding the mass of a wire.
-
 \begin{problem}\instructor{I found many students struggled with setting up a really simple sum.  In class, after they present this one, I would suggest actually taking time to show them how to write the problem in summation notation with 2 points.  It will prepare them for the proof of center of mass coming up.}%
- A wire lies along the straight line from $(0,2,0)$ to $(1,1,3)$.  The wire's density (mass per unit length) has been engineered to be $\delta(x,y,z)=x+y+z$. Is the wire heavier at $(0,2,0)$, or at $(1,1,3)$? What is the mass of the wire?  [You'll need to parameterize the line as your first step.]
+\larsonfive{\marginpar{See Larson 15.2:23--26 for more practice.}}%
+ A wire lies along the straight segment from $(0,2,0)$ to $(1,1,3)$.  The wire's density (mass per unit length) at a point $(x,y,z)$ is $\delta(x,y,z)=x+y+z$. 
+ \begin{enumerate}
+ \item Is the wire heavier at $(0,2,0)$ or at $(1,1,3)$?
+ \item  What is the total mass of the wire?  [You'll need to parameterize the line as your first step---see Problem~\ref{first line between two points} if you need a refresher.]
+ \end{enumerate}
 \end{problem}
 
-The next problem helps us reason about the center of mass of a collection of objects.  This is important, for example, in astronomy when you want to calculate how two bodies orbit each other.
+\instructor{Here I introduce the center of mass of an object, talk about moments, and talk about how the center of mass formula is also an averaging of the coordinates, where the weight is the amount of mass at a particular coordinate value (i.e., $xdm$).}
+
+\marginpar{\href{http://en.wikipedia.org/wiki/Center_of_mass}{Wikipedia} has some interesting applications of center of mass.}%
+The center of mass of an object is the point where the object balances.  In order to calculate the $x$-coordinate of the center of mass, we average the $x$-coordinates, but we weight each $x$-coordinate with its mass.  Similarly, we can calculate the $y$ and $z$ coordinates of the center of mass.
+
+The next problem helps us reason about the center of mass of a collection of objects.  Calculating the center of mass of a collection of objects is important, for example, in astronomy when you want to calculate how two bodies orbit each other.
 
 \begin{problem}\instructor{After a student presents, this is a great time to connect the averages back to Problem~\ref{average value methods}.  I point out that we can think about the object as 2 points of the same mass at $P_1$ and 3 points of the same mass at $P_2$.  This suggests averaging 5 things with method 1.  Alternately, I suggest the approach $\frac{2}{5}P_1+\frac{3}{5}P_2$, suggesting a weighted average.}%
  Suppose two objects are positioned at the points $P_1=(x_1,y_1,z_1)$ and $P_2=(x_2,y_2,z_2)$.
  Our goal in this problem is to understand the difference between the centroid and the center of mass.
 \begin{enumerate}
- \item If both objects have the same mass, then find the centroid of the two points (the average $x$, $y$, and $z$ values).
+\item Find the centroid of two objects.
+ \item Suppose both objects have the same mass of 2 kg.  Find the center of mass by averaging the $x$, $y$, and $z$ coordinages, weighted by how much mass is at each coordinate.
  \item If the mass of the object at point $P_1$ is 2 kg, and the mass of the object at point $P_2$ is 3 kg, will the center of mass be closer to $P_1$ or $P_2$? Give a physical reason for your answer before doing any computations.  Then find the center of mass $(\bar x, \bar y, \bar z)$ of the two points. [Hint: you should get $\bar x= \frac{2x_1+3x_2}{2+3}$.] 
 \end{enumerate}
 \end{problem}
@@ -323,7 +342,7 @@ Suppose a wire with density $\delta(x,y)=x^2+y$ lies along the curve $C$ which i
 \end{enumerate}
 \end{problem}
 
-We'll often use the notation $(\bar x, \bar y,\bar z)$ to talk about both the centroid and the center of mass. If no density is given in a problem, then $(\bar x, \bar y,\bar z)$ is the centroid. If a density is provided, then $(\bar x, \bar y,\bar z)$ refers to the center of mass. If the density is constant, it doesn't matter. That's what the next problem shows.
+We'll often use the notation $(\bar x, \bar y,\bar z)$ to talk about both the centroid and the center of mass. If no density is given in a problem, then $(\bar x, \bar y,\bar z)$ is the centroid. If a density is provided, then $(\bar x, \bar y,\bar z)$ refers to the center of mass. If the density is constant, it doesn't matter (the centroid and center of mass are the same). That's what the next problem shows.
 
 \begin{problem}
  Suppose a wire lies along the smooth curve $C$. Your explanation in each case below should use the formula from problem \ref{center of mass of curve}. With each part, just start with the formulas for center of mass, and then simplify it to obtain the centroid formulas.
