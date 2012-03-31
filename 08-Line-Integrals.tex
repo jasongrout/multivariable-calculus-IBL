@@ -64,6 +64,7 @@ The next problem should mimic the steps in the previous problem.  The only diffe
 
 \begin{problem}%
 \marginpar{\href{http://www.youtube.com/watch?v=sYsMcqtXBrc&list=PL04DF68E73B7ECD54&index=1&feature=plpp_video}{Watch a YouTube video.}}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJx1j8EOgyAQRO98hTeBroniqQe-pFFjECupFQJro39ftPXQxN5mknk7sz1dYGXymi21yNZaEE-RSSq4siEqSEoezBQVI-jb6a4lRchBcGcY8UU0c4xv0C2vINlFUcHMe8o3Ezk1-5durENjpyA7o5AqO1ovU6-7FHAw6jHpEGT5zQbpWt8-NXqjGjdapHtRHtd8NgDnP0fZ5RQoGPzJkzBojSc1B0Dn-GRxjA-XPf8GnQ5jSA}{Sage} for a picture of this sheet.}%
  Consider the surface in space that is below the function 
 $f(x,y)=9-x^2-y^2$ and above the curve $C$ parametrized by 
 $\vec r(t)=(2\cos t, 3\sin t)$ for $t\in[0,2\pi]$.  Think of this region as a metal plate that has been stood up with its base on $C$ where the height above each spot is given by $z=f(x,y)$.
@@ -436,8 +437,6 @@ Consider the curve $y=4-x^2$ for $x\in[-1,2]$, with $\delta (x,y) = y$.  Set up 
 \end{problem}
 
 
-\begin{comment}
-
 \section{Work, Flow, Circulation, and Flux}
 
 We now turn our attention to work and flux.  As an object moves through a vector fields, energy transfer occurs.  When an object falls from high place, potential energy is transfered to kinetic energy. The gravitational vector field is the field which does work. Prior to problem \ref{first work problem} on page \pageref{first work problem}, we made the following statements. 
@@ -449,13 +448,14 @@ We now turn our attention to work and flux.  As an object moves through a vector
 \end{itemize}
 \end{quote}
 We used the dot product to remove the first assumption, and we showed in problem \ref{first work problem} that the work is simply the dot product $$W=\vec F\cdot \vec r,$$
-where $\vec F$ is a force acting through a displacement $\vec r$. We now remove the other two assumptions, so that we can deal with variable forces acting on objects moving through curves.
+where $\vec F$ is a force acting through a displacement $\vec r$. We now remove the other two assumptions so that we can deal with variable forces acting on objects moving through curves.  We will use the unit tangent vector $\vec T$ to a curve $\vec r$ that was introduced in Definition~\ref{def unit tangent vector}.  Recall that 
+$$\vec T = \ds\frac{d\vec r}{ds}=\ds\frac{d\vec r/dt}{ds/dt} = \frac{d\vec r/dt}{|d \vec r/dt|}.$$
 
 \begin{problem}[Work]
 \marginpar{\href{http://www.youtube.com/watch?v=9TGZIIpEaHw&list=PL04DF68E73B7ECD54&index=2&feature=plpp_video}{Watch a YouTube video}.}%
  Let $\vec F(x,y)=(M,N)$ be a vector field, where $M$ and $N$ are functions of $x$ and $y$.   Let $C$ be a curve parametrized by $\vec r(t)=(x,y)$, where $x$ and $y$ are functions of $t$ and $t\in[a,b]$. 
 \begin{enumerate}
- \item Draw a random curve on your paper.  Cut the curve $\vec r(t)$ into lots of little segments. Each little segment has a length, which we call $ds$. If your segments are really small, then $\vec F$ is almost constant on this segment.  Explain why the work done by $\vec F$ along this tiny segment is approximately \note{Explain $\vec T$ and put a link to its definition in chapter 7}
+ \item Draw a random curve on your paper.  Cut the curve $\vec r(t)$ into lots of little segments. Each little segment has a length, which we call $ds$. If your segments are really small, then $\vec F$ is almost constant on this segment.  Explain why the work done by $\vec F$ along this tiny segment is approximately 
 $$d(\text{Work}) = \vec F\cdot (\vec T ds).$$
  \item Explain why the work done by $\vec F$ along $C$ is 
 $$
@@ -469,7 +469,7 @@ $$
 
 
 
-The work done by a vector field may show up in any of the following ways: \marginpar{When working with a vector field in space, we often use the notation $\vec F(x,y,z) = (M,N,P)$, and so we would write work as $\int_C Mdx+Ndy+Pdz$.}
+The work done by a vector field may show up in any of the following ways: \marginpar{When working with a vector field in space, we often use the notation $\vec F(x,y,z) = (M,N,P)$, so we often write work as $\int_C Mdx+Ndy+Pdz$.}
 \begin{align*}
 W
 &=\int_C \vec F\cdot \vec T \ ds\\
@@ -479,10 +479,10 @@ W
 &= \int_C Mdx+Ndy \\
 &= \int_a^b \left( M\frac{dx}{dt}+N\frac{dy}{dt}\right) dt. 
 \end{align*}
-Notice that only two integrals above have the bounds $a$ and $b$.  These two integrals are the actual formula used to compute the integral. The others are just symbolic was to remember the integral.
+Notice that only two integrals above have the bounds $a$ and $b$.  These two integrals are the actual formula used to compute the integral. The others are just symbolic ways to remember the integral.
 
 \begin{definition}[Flow and Circulation]
-If the vector field $\vec F$ represents the velocity field of a fluid, such as airflow along a wing (so units are m/s), then the work integral is often called flow.  If the start and stop point for the curve are the same, then we'll call the the work integral circulation. In this case, we'll often add a circle to the integral, as in $\ds\oint_C \vec F\cdot d\vec r$, to emphasize that the integral is along a closed curve.  In most cases, we'll be computing circulation along curves in the counterclockwise direction.
+If the vector field $\vec F$ represents the velocity field of a fluid, such as airflow along a wing (so units are m/s), then the work integral is often called flow.  If the start and stop point for the curve are the same, then we'll call the the work integral circulation. In this case, we'll often add a circle to the integral, as in $\ds\oint_C \vec F\cdot d\vec r$, to emphasize that the integral is along a closed curve.  In most cases, we'll be computing circulation along curves in the counterclockwise direction.  If we want to emphasize the direction we are going along a closed curve, we'll use an arrow on the small circle on the integral sign.
 \end{definition}
 
 \begin{definition}[Simple Closed Curve]
@@ -491,9 +491,9 @@ If the vector field $\vec F$ represents the velocity field of a fluid, such as a
 
 
 \begin{problem}
- Let $\vec F(x,y)=(M,N)$ be a vector field.  Let $C$ be a simple closed curve parametrized by $\vec r(t)=(x,y)$. 
+ Let $\vec F(x,y)=(M,N)$ be a vector field.  Let $C$ be a simple closed curve parametrized by $\vec r(t)=(x(t),y(t))$. 
 \begin{enumerate}
- \item Draw a simple closed curve to represent $\vec r$.  We know that the circulation (work) along $C$ is given by the integral $\int_C (M,N)\cdot (dx,dy)$.  Pick a spot on your curve, and draw a tangent vector  to represent $(dx,dy)$ so that you traverse the curve using a counterclockwise orientation.
+ \item Draw a simple closed curve to represent $\vec r$ (just draw any simple closed curve you like).  We know that the circulation (work) along $C$ is given by the integral $\int_C (M,N)\cdot (dx,dy)$.  Pick a spot on your curve, and draw a tangent vector  to represent $(dx,dy)$ so that you traverse the curve using a counterclockwise orientation.
  \item Based of our computations in the line integral chapter, we know that both $(-dy,dx)$ and $(dy,-dx)$ are normal vectors to the curve.  Which vector should we use if we want the normal vector that points towards the outside of the curve? Explain. [Hint: try crossing $(dx,dy,0)$ with $(0,0,1)$ or $(0,0,-1)$ in some order.]
 \end{enumerate}
 \end{problem}
@@ -513,7 +513,7 @@ The vector $\vec n ds = (dy,-dx)$ is only correct if the curve is oriented in th
 \marginpar{If you haven't yet, please watch the YouTube videos for 
 \href{http://www.youtube.com/watch?v=9TGZIIpEaHw&list=PL04DF68E73B7ECD54&index=2&feature=plpp_video}{work} and 
 \href{http://www.youtube.com/watch?v=5DNdI72XEYY&list=PL04DF68E73B7ECD54&index=4&feature=plpp_video}{flux}.}%
- Consider the rotational field $\vec F=(-y,x)$ and the circle $C$ or radius 5 parametrized by $\vec r(t)=(5\cos t, 5\sin t)$ for $t\in[0,2\pi]$.  
+ Consider the rotational field $\vec F=(-y,x)$ and the circle $C$ of radius 5 parametrized by $\vec r(t)=(5\cos t, 5\sin t)$ for $t\in[0,2\pi]$.  
 \begin{enumerate}
  \item Draw the curve $C$ and vector field $\vec F$ on the same axes.
  \item Compute the circulation (work) of $\vec F$ along $C$.
@@ -539,7 +539,7 @@ The vector $\vec n ds = (dy,-dx)$ is only correct if the curve is oriented in th
 \begin{problem}
 \marginpar{\href{http://www.youtube.com/watch?v=6WcN36FbeWc&list=PL04DF68E73B7ECD54&index=3&feature=plpp_video}{Watch a YouTube video}.}%
 Find the counterclockwise circulation (work) done by $\vec F=(-y,x+y)$ along the curve $C$ that is the triangle with vertexes  $(2,0)$, $(0,2)$, and $(0,0)$.  You'll need to parametrize 3 line segments. 
-\note{I show the vector field to them in class. We then visually see why one integral is zero, one is positive, and one is negative.  It's obvious with a picture from a projector.  If you don't have a projector, you may want to have the graph the curve and the vector field.  Perhaps that should be added anyway.}
+\note{I show the vector field to them in class. We then visually see why one integral is zero, one is positive, and one is negative.  It's obvious with a picture from a projector.  If you don't have a projector, you may want to have them graph the curve and the vector field.  Perhaps that should be added anyway.}
 \end{problem}
 
 \begin{problem}
@@ -696,9 +696,6 @@ For each vector field and curve below, find the work done by $\vec F$ along $C$.
 \caption{Here's a summary of the ideas in this unit.\label{line integral summary}}
 \end{center}
 \end{table}
-
-\end{comment}
-
 
 %%% Local Variables: 
 %%% mode: latex
