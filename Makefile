@@ -8,5 +8,5 @@ update:
 	wget -O 07-Motion.tex http://dl.dropbox.com/u/56826378/Link%20to%2007-Motion.tex
 	wget -O 08-Line-Integrals.tex http://dl.dropbox.com/u/56826378/Link%20to%2008-Line-Integrals.tex
 	wget -O 09-Optimization.tex http://dl.dropbox.com/u/56826378/Link%20to%2009-Optimization.tex
+	wget -O 10-Double-Integrals http://dl.dropbox.com/u/56826378/Link%20to%2010-Double-Integrals.tex
 	wget -O 215-problems.tex http://dl.dropbox.com/u/56826378/Link%20to%20215-problems.tex
-
