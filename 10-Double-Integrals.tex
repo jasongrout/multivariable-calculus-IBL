@@ -1,0 +1,331 @@
+
+\noindent 
+This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
+\begin{enumerate}
+\item Explain how to setup and compute a double integral. Show how to interchange the bounds of integration.
+\item For planar regions, find area, mass, centroids, center of mass, moments of inertia, and radii of gyration.
+\item Explain how to change coordinate systems in integration, in particular to polar coordinates. Explain what the Jacobian is, and show how to use it.
+\item Explain how to use Green's theorem to compute flow along and flux across a curve.
+\end{enumerate}
+You'll have a chance to teach your examples to your peers prior to the exam.
+
+\section{Double Integrals and Applications}
+
+We'll introduce double integrals by introducing iterated integrals first. The next two problems as you to find the volume of the solid region in space that is under the surface $f(x,y) = 9-x^2-y^2$, above the $xy$-plane, with $x\geq 0$. 
+
+\begin{problem}
+Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
+\begin{enumerate}
+ \item Draw the solid $D$. 
+ \item The plane $y=0$ intersects the solid in the half parabola $z=9-x^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_y(0)= \int_0^3 9-(x)^2-(0)^2 \ dx$. 
+ Similarly, the plane $y=1$ intersects the solid in the half parabola $z=9-x^2-1^2$. Sketch this parabola in your 3D drawing. Then find a value $c$ so that the area under this parabola is given by the formula $A_y(1)=\int_0^{c} 9-(x)^2-(1)^2 \ dx$.
+ \item The plane $y=2$ intersects the solid in half a parabola (draw this parabola). Find the value $c$ so that the area under this parabola is $A_y(2)=\int_0^c 9-(x)^2-(2)^2 \ dx$.
+ \item \marginpar{You should obtain an inequality $a\leq y_0\leq b$ where $a$ and $b$ are constants. If the upper bound $c$ has a square root in it, then you're on the right track.}
+For which $y$-values $y_0$ does the plane $y=y_0$ intersect the paraboloid? For each of these values, what should $c$ equal so that $A_{y=y_0} = \int_0^c 9-x^2-y_0^2 dx$ gives the area under the half parabola obtained when the plane $y=y_0$ intersects the surface. 
+ \item Imagine now that you cut the surface into 6 pieces, using the plane $y=y_0$ for each $y_0$ in $\{-3,-2,-1,0, 2, 2,3\}$. Let $y_0=-3$, $y_1=-2$, $\ldots$, $y_{6}=3$. The change in $y$ between each point is $dy=1$. 
+ In the plane $y=y_i$, we know the area under the surface is $A_y(y_i) = \int_0^{c_i} 9-x^2-y_i^2 dx$ (where you found $c_i$ in the last part).  If we multiply this area by the thickness $dy=1$, we obtain the volume of a solid (think $dV = (A_y)dy$).  Draw this solid in your picture for $y_i = 0$. Use summation notation to write a sum to approximate the volume under $f$.
+\item Explain why the volume of $D$ equals $\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy$.
+%\item Use a computer to first compute the inside integral (you should have $y$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
+\end{enumerate}
+\end{problem}
+The integral above is called an iterated integral, because to compute the integral you first compute the inside integral, and then you compute the outside integral (you iteratively integrate). Often the parenthesis are not written, because we know that the inside integral should be performed first without writing the parenthesis. We could have written the longer version $$\ds\int_{y=-3}^{y=3} \left(\int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy$$ if we wanted to emphasize which variables go with each bound.  However, this is generally not done since the inside integral clearly has bounds that are $x$-values, while  the outside integral clearly has bounds that are $y$-values.  
+
+The next problem has you repeat what was done above, but this time you intersect the surface with planes $x=x_0$. 
+
+\begin{problem}
+Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
+\begin{enumerate}
+ \item Draw the solid $D$. 
+ \item The plane $x=0$ intersects the solid in a parabola $z=9-y^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_{x=0} = \int_{-3}^3 9-(0)^2-(y)^2 \ dy$. 
+ Similarly, the plane $x=1$ intersects the solid in half a parabola $z=9-x^2-1^2$. Sketch this parabola in your 3D drawing. Find a values $c$ and $d$ so that the area under this parabola is given by the formula $A_x(1)=\int_c^{d} 9-(1)^2-(y)^2 \ dy$.
+ \item The plane $x=2$ intersects the solid in half a parabola (draw this parabola). Find the values $c$ and $d$ so that the area under this parabola is $A_x(2)=\int_c^d 9-(2)^2-(y)^2 \ dx$.
+ \item \marginpar{You should obtain an inequality $a\leq x\leq b$ where $a$ and $b$ are constants. For $c\leq y\leq d$, you should have functions of $x$ for both $c$ and $d$. If both involve square roots, you're on the right track.}
+For which $x$-values $x_0$ does the plane $x=x_0$ intersect the paraboloid. For each of these values, what should $c$ and $d$ equal so that $A_x(x_0) = \int_c^d 9-x_0^2-y^2 dy$ gives the area under the half parabola obtained when the plane $x=x_0$ intersects the surface. 
+ \item Imagine now that you cut the surface into 6 pieces, using the plane $x=x_0$ for each $x_0$ in $\{0,0.5,1,1.5,2, 2.5,3\}$. Let $x_0=0$, $x_1=0.5$, $\ldots$, $x_{6}=3$. The change in $x$ between each point is $dx=0.5$. 
+ In the plane $x=x_i$, we know the area under the surface is $A_x(x_i) = \int_{c_i}^{d_i} 9-(x_i)^2-y^2 dy$ (where you found $c_i$  and $d_i$ in the last part).  If we multiply this area by the thickness $dx=0.5$, we obtain the volume of a solid (think $dV=(A_x)dx$).  Draw this solid in your picture for $x_i = 1$. 
+\item Explain why the volume of $D$ equals $\ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx$.
+%\item Use a computer to first compute the inside integral (you should have $x$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
+\end{enumerate}
+\end{problem}
+
+The first two problems show that the volume of $D$ can be given by 
+$$V=\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy = \ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx.$$
+We have two completely different iterated integrals that result in the exact same volume. In both integrals, the bounds describe a semicircular region in the plane, we'll call $R$. The region $R$ is fully described by using the inequalities $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$ from the first integral, or using the inequalities $0\leq x\leq 3$ and $-\sqrt{9-x^2}\leq y\leq \sqrt{9-x^2}$ from the second integral. 
+
+\begin{problem}
+ Consider the region $R$ in the $x$-plane that is below the line $y=x+2$, above the line $y=2$, and left of the line $x=5$. We can describe this region by saying for each $x$ with $0\leq x\leq 5$, we want $y$ to satisfy $2\leq y\leq x+2$. In set builder notation, we write
+$$R=\{(x,y)\ | \ 0\leq x\leq 5, 2\leq y\leq x+2\}.$$
+\begin{enumerate}
+ \item Describe the region $R$ by saying for each $y$ with $c\leq y\leq d$, we want $x$ to satisfy $a(y)\leq x\leq b(y)$. In other words, find constants $c$ and $d$, and functions $a(y)$ and $b(y)$, so that for each $y$ between $c$ and $d$, the $x$ values must be between the functions $a(y)$ and $b(y)$.
+ \item Write your last answer in the set builder notation
+$$R=\{(x,y)\ | \ c\leq y\leq d, a(y)\leq x\leq b(y)\}.$$
+ \item Set up two different iterated integrals that would find the volume under some function $f(x,y)$, above the region $R$. 
+\end{enumerate}
+\end{problem}
+
+\note{I have not formally defined a definite integral.  I will probably do that next semester, when I have more time.  Right now, I'll lecture that bit in class.  It will get added at some point.}
+
+Let $R$ be some region in the plane.  If we let $dA=dxdy=dydx$, then we can write a little bit of volume as $dV=fdA=fdxdy=fdydx.$ Adding up little bits of volume gives us the double integral 
+$$V = \int\int_R fdA,$$
+which equals either iterated integral we've been setting up above. 
+
+\begin{problem}
+For each region $R$ below, draw the region and give a set of inequalities of the form $a\leq x\leq b, c(x)\leq y\leq d(x)$ or $c<y<d, a(y)\leq x\leq b(y)$. 
+\begin{enumerate}
+ \item The region $R$ is above the line $x+y=1$ and inside the circle $x^2+y^2=1$.
+ \item The region $R$ is below the line $y=8$, above the curve $y=x^2$, and to the right of the $y$-axis.
+ \item The region $R$ bounded by $2x+y=3$, $y=x$, and $x=0$. 
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the iterated integral $\ds \int_0^3\int_x^3 e^{y^2}dydx$. Write the bounds as two inequalities.  Then swap the order of integration by reversing the order of your inequalities.  Compute the new integral by hand (you'll need a $u$-substitution).
+\end{problem}
+
+\begin{problem}
+Consider the region $R$ in the plane that is trapped between the curves $y=2x$ and $y=x^2$.  We would like to compute $\int\int_R x dA$ over this region $R$.  Set up both iterated integrals. Then compute one of them.
+\end{problem}
+
+
+
+
+In the line integral chapter, we introduce the ideas of average value, centroid, center of mass, moment of inertia, and radius of gyration.  We now extend those ideas to regions in the plane, in exactly the same way.  For example, the average value formula in the line integral section was $\bar f = \dfrac{\int_C fdx}{\int_C ds}$. For double integrals, we just change $ds$ to $dA$, and add an integral.  This gives the formula $\bar f = \dfrac{\int\int_R fdA}{\int\int_R dA}.$ The same substitution works on all the integrals from before.  We now have $dm = \delta dA$ instead of $dm=\delta ds$. We obtained arc length by computing $s=\int_C ds$ (add up little bits of arc length).  We can compute area by using $A=\int\int_R dA$ (add up little bits of area). 
+
+\begin{problem}
+Consider the rectangular region $R$ in the $xy$-plane described by $\{(x,y)\ |\ 2\leq x\leq 11, 3\leq y\leq 7\}$.
+\begin{enumerate}
+ \item Set up an integral formula which would give $\bar y$ for the centroid of $R$.  Then evaluate the integral.
+ \item State $\bar x$ from geometric reasoning.
+ \item Set up an integral to give the moment of inertia about the $y$-axis if $\delta=5$. Note that $z=0$ in the $xy$-plane.
+ \item Set up an integral to give the $R_x$ if the density is $\delta(x,y)=xy^2$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Consider the region in the plane that is bounded by the curves $x=y^2-3$ and $x=y-1$.  A metal plate occupies this region in space, and its temperature function on the plate is give by the function $T(x,y)=2x+y$.  Find the average temperature of the metal plate.
+\end{problem}
+
+\begin{problem}\label{centroid trick}
+Consider the region $R$ that is the circular disc which is inside the circle $(x-2)^2+(y+1)^2=9$. The centroid is clearly $(2,-1)$, and the area is $A=\pi(3)^2=9\pi$.  We can use these fact to simplify many integrals that require integrating over the region $R$.  
+\begin{enumerate}
+ \item Compute $\int\int_R 3dA = 3\int\int_RdA$.  [How can area help you?]
+ \item Explain why $\int\int_R x dA = \bar x A$ for any region $R$, and then compute $\int\int_R x dA$ for the circular disc. [You don't need to set up any integrals at all.]
+ \item Compute the integral $\int\int_R 5x+2y dA$ by using centroid and area facts.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the region in the $xy$-plane that is formed from two rectangular regions.  The first region satisfies $x\in[-2,2]$ and $y\in[0,7]$.  The second region satisfies $x\in[-5,5]$ and $y\in[7,10]$.  Find the centroid of this region (and of any T-beam like this).
+[Suggestion: work with variables from the start. For the first region, let $x\in[-a,a]$ with $y\in[0,c]$.  For the second region, let $x\in[-b,b]$ with $y\in[c,d]$. Solve the problem first with variables, and then plug in the numbers. You may need to split your integrals up into two integrals, as $\int\int_R ydA = \int\int_{R_1}ydA +\int\int_{R_2}ydA$.]
+\end{problem}
+
+
+\begin{problem}
+Let $R$ be the region in the plane with $a\leq x\leq b$ and $g(x)\leq y\leq f(x)$.  Let $A$ be the area of $R$.
+\marginpar{When you use double integrals to find centroids, the formulas for the centroid are the same for both $\bar x$ and $\bar y$. In other courses, you may see the formulas on the left, because the ideas will be presented without requiring knowledge of double integrals. Integrating the inside integral from the double integral formula gives the single variable formulas.}
+\begin{enumerate}
+ \item Set up an iterated integral to compute the area of $R$.  Then compute the inside integral. You should obtain a familiar formula from first-semester calculus.
+ \item 
+Set up an iterated integral formula to compute $\bar x$ for the centroid. By computing the inside integral, show why $\ds\bar x = \frac{1}{A}\int_a^b x (f-g)dx$.
+ \item If the density depends only on $x$, so $\delta = \delta (x)$, set up an iterated integral formula to compute $\bar y$ for the center of mass. Explain why $$\ds\bar y = \frac{1}{A}\int_a^b  \frac{1}{2}(f^2-g^2)\delta(x)dx.$$
+\end{enumerate}
+\end{problem}
+
+
+\section{Switching Coordinates - The Jacobian}
+
+We now want to explore how to perform $u$-substitution in high dimensions. Let's start with a review from first semester calculus.
+
+\begin{problem}
+Consider the integral $\ds\int_{-1}^4 e^{-3x} dx$.  
+\begin{enumerate}
+ \item Let $u=-3x$.  Solve for $x$ and then compute $dx$.
+ \item Explain why $\ds\int_{-1}^4 e^{-3x} dx=\int_{3}^{-12}e^u \left(-\frac{1}{3}\right)du$.  
+ \item Explain why $\ds\int_{-1}^4 e^{-3x} dx=\int_{-12}^{3}e^u \left|-\frac{1}{3}\right| du$.
+ \item If the $u$-values are between $-3$ and $2$, what would the $x$-values be between? How does the  length of the $u$ interval $[-3,2]$ relate to the length of the corresponding $x$ interval?
+\end{enumerate}
+\end{problem}
+
+In the problem above, we used a change of coordinates $u=-3x$, or $x=-1/3 u$.  By taking derivatives, we found that $dx=-\frac{1}{3}du$. The negative means that the orientation of the interval was reversed. The fraction $\frac13$ tells us that lengths $dx$ using $x$ coordinates will be $1/3$rd as long as lengths $du$ using $u$ coordinates. When we write $dx = \frac{dx}{du}du$, the number $\frac{dx}{du}$ is called the Jacobian of $x$ with respect to $u$. The Jacobian tells us how lengths are altered when we change coordinate systems. We now generalize this to polar coordinates. Before we're done with this section, we'll generalize the Jacobian to any change of coordinates.
+
+\begin{theorem}
+ If we use the polar coordinate transformation $x=r\cos\theta, y=r\sin\theta$, then we can switch from $(x,y)$ coordinates to $(r,\theta)$ coordinates if we use $dxdy=|r|drd\theta$.  The number $|r|$ is called the Jacobian of $x$ and $y$ with respect to $r$ and $\theta$. If we require all bounds for $r$ to be nonnegative, we can ignore the absolute value.  If $R_{xy}$ is a region in the $xy$ plane that corresponds to the region $R_{r\theta}$ in the $r\theta$ plane (where $r>0$), then we can write $$\int\int_{R_{xy}} f(x,y) dxdy = \int\int_{R_{r\theta}} f(r\cos\theta,r\sin\theta) r\ drd\theta.$$ 
+\end{theorem}
+We'll prove later why the Jacobian is $|r|$.  For now, we need some practice using this idea. We start by describing regions using inequalities on $r$ and $\theta$.  Ask me in class to give you an informal picture approach that explains why 
+$dxdy=rdrd\theta$.  
+
+% Some day I would like to have them draw this picture themselves, but for now I'll do it. They are getting tired (it's near the end of the semester).  I'll just give this one to them.
+% \begin{problem}
+% Polar coordinate picture idea. Introduce visually why $r$ should be the Jacobian.
+% \end{problem}
+
+
+\begin{problem}
+For each region $R$ below, draw the region in the $xy$-plane. Then give a set of inequalities of the form $a\leq r\leq b, \alpha(r)\leq \theta \leq \beta(r)$ or $\alpha<\theta<\beta, a(\theta)\leq r\leq b(\theta)$. For example, if the region is the inside of the circle $x^2+y^2=9$, then we could write $0\leq \theta\leq 2\pi$, $0\leq r\leq 3$. 
+\begin{enumerate}
+ \item The region $R$ is the quarter circle in the first quadrant inside the circle $x^2+y^2=25$.
+ \item The region $R$ is below $y=\sqrt{9-x^2}$, above $y=x$, and to the right of $x=0$.  
+ \item The region $R$ is the triangular region below $y=\sqrt 3 x$, above the $x$-axis, and to the left of $x=1$. 
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the opening problem for this unit.  We want to find the volume under $f(x,y)=9-x^2-y^2$ where $x\geq0$ and $z\geq 0$.  We obtained the integral formula 
+$$\int\int_R f dA = \ds\int_{y=-3}^{y=3} \int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx dy.$$
+\begin{enumerate}
+ \item Write bounds for the region $R$ by giving bounds for $r$ and $\theta$.
+ \item Rewrite the double integral as an iterated integral with bounds for $r$ and $\theta$. Don't forget to multiply by the Jacobian (as $dxdy=rdrd\theta$). 
+%Your integral should look something like 
+%$$\int\int_R f dA = \ds\int_{\theta=?}^{\theta=?} \int_{r=?}^{r=?} (9-x^2-y^2) r\ dr\right) d\theta.$$
+ \item Compute the integral in the previous part by hand. [Suggestion: you'll want to simplify $9-x^2-y^2$ to $9-r^2$ before integrating.]
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Find centroid of a semicircle of radius $a$ ($y\geq 0$). Actually compute any integrals.  After doing this, just set up the integral formulas you would use to find $R_y$, the radius of gyration about the $y$-axis, if the density is $\delta(x,y)=x^2+y^2$.\note{This is a great place to comment in class about the ability to do the integrals separately.} 
+\end{problem}
+
+\begin{problem}
+Compute the integral $\ds \int_{0}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{2}{(1+x^2+y^2)^2}dydx$. [Hint: try switching coordinate systems.]
+\end{problem}
+
+
+
+% \begin{problem}
+% Optional problem - the problem about integrating $e^{-x^2}$ from 0 to infinity.  Make it optional, and then give them some hints.  I'll work on this next semester. I want to prepare them for the normal distribution. Any student who want to tackle this problem should be asked if they want to become a math major. :)
+% \end{problem}
+
+
+We're now ready to define the Jacobian of any transformation.
+\begin{definition}
+ Suppose $\vec T(u,v)=(x(u,v),y(u,v))$ is a differentiable coordinate transformation. To find the Jacobian of this transformation, we first find the derivative of $\vec T$.  This is a square matrix, so it has a determinant, which should give us information about area. As the determinant may be positive or negative, we then take the absolute value to obtain the Jacobian.  So the Jacobian of the transformation $\vec T$ is the absolute value of the determinant of the derivative. \marginpar{For a tongue twister, say ``the absolute value of the determinant of the derivative'' ten times really fast.}
+ Notationally we write 
+$$J(u,v) = \frac{\partial (x,y)}{\partial (u,v)} = |\det(D\vec T(u,v))|.$$
+\end{definition}
+
+\begin{problem}
+ Find the Jacobian of the polar coordinate transformation $x=r\cos\theta$ and $y=r\sin\theta$ (so $\vec T(r,\theta)=(r\cos\theta,r\sin\theta)$.
+\end{problem}
+
+\begin{problem}
+Consider the transformation $u=x+2y$ and $v=2x-y$.  
+\begin{enumerate}
+ \item Solve for $x$ and $y$ in terms of $u$ and $v$. Then compute the Jacobian $\frac{\partial (x,y)}{\partial (u,v)}$.
+ \item We were give $u$ and $v$ in terms of $x$ and $y$, so we could have directly computed $\frac{\partial (u,v)}{\partial (x,y)}$. Do so now.
+ \item Make a conjecture about the relationship between $\frac{\partial (x,y)}{\partial (u,v)}$ and $\frac{\partial (u,v)}{\partial (x,y)}$. 
+\end{enumerate}
+\note{There are a lot of different uses of the word Jacobian. It sometimes includes the absolute value, sometimes does not. Sometimes you stop at the derivative, sometimes you take the determinant.  Which one is correct?  I'm going with the one that includes the absolute values as well.  That way I can say $r$ is the Jacobian for polar, and for spherical we have $\rho^2\phi$ (not $-\rho^2\phi$.  If we want to address this in general, it should be in an appendix, with maybe a marginpar or footnote.}
+\end{problem}
+
+\begin{theorem}
+ Suppose that $f$ is integrable over a region $R_{xy}$ in the $xy$ plane. Suppose that $\vec T(u,v)=(x(u,v),y(u,v))$ is a coordinate transformation that has the Jacobian $\ds \frac{\partial (x,y)}{\partial (u,v)} $. Suppose the region $R_{uv}$ in the $uv$-plane corresponds to the region $R_{xy}$ in the $xy$-plane. Provided the Jacobian is nonzero except possibly on regions with zero area, we can then write  
+$$\int\int_{R_{xy}} f(x,y) dxdy = \int\int_{R_{uv}} f(x(u,v),y(u,v)) \frac{\partial (x,y)}{\partial (u,v)} dudv.$$
+ We can remember this in differential form as 
+$$dxdy = \frac{\partial (x,y)}{\partial (u,v)} dudv.$$
+\end{theorem}
+
+Let's use this to rapidly find the area inside of an ellipse.
+
+\begin{problem}
+ Consider the region $R$ inside the ellipse $\left(\dfrac{x}{a}\right)^2+\left(\dfrac{y}{b}\right)^2=1$.  We'll consider the change of coordinates given by $u=(x/a)$ and $v=(y/b)$.
+\begin{enumerate}
+ \item Draw the region $R$ in the $xy$-plane.  After substituting $u=x/a$ and $v=y/b$, draw the region $R_{uv}$ in the $uv$-plane.  You should have circle.  What is the area of this circle in the $uv$-plane?
+ \item Solve for $x$ and $y$, and then compute the Jacobian  $\dfrac{\partial (x,y)}{\partial (u,v)}$. Show how to get the same result from directly computing $\dfrac{\partial (u,v)}{\partial (x,y)}$.
+ \item We know the area in the $xy$-plane of the ellipse is $\int\int_{R_{xy}} dxdy$. Use the previous theorem to switch to an integral over the region $R_{uv}$.  Then evaluate this integral by using facts about area. [Hint: you don't actually have to set up any bounds, rather just reduce this to an area integral over the region $R_{uv}$.] 
+\end{enumerate}
+
+\end{problem}
+
+
+\begin{problem}
+Let $R$ be the region in the plane bounded by the curves $x+2y=1$, $x+2y=4$, $2x-y=0$, and $2x-y=8$.  We want to compute the integral $\int\int_R xdxdy$. Draw the region $R$ in the $xy$-plane. Use the change of coordinates $u=x+2y$ and $v=2x-y$ to evaluate this integral. Make sure you provide a sketch of the region $R_{uv}$ in the $uv$-plane (it should be a rectangle).  
+[Hints: what are the bounds for $u$ and $v$?  You'll want to solve for $x$ and $y$ in terms of $u$ and $v$, and then you'll need a Jacobian.]
+\end{problem}
+
+
+\begin{problem}\marginpar{This is problem 7 in section 15.8.}
+ Use the transformation $u=3x+2y$ and $v=x+4y$ to evaluate the integral $$\int\int_R (3x^2+14xy+8y^2)dxdy$$ for the region $R$ that is bounded by the lines $y=-(3/2)x+1$, $y=-(3/2)x+3$, $y=-(1/4)x$, and  $y=(-1/4)x+1$.
+\end{problem}
+
+\section{Green's Theorem}
+Now that we have double integrals, it's time to make some of our circulation and flux problems from the line integral section get extremely simple. We'll start by defining the circulation density and flux density for a vector field $\vec F(x,y)=\left<M,N\right>$ in the plane.
+
+\begin{definition}[Circulation Density and Flux Density (Divergence)]\label{definition of flux density in 2D}
+Let $\vec F(x,y)=\left<M,N\right>$ be a continuously differentiable vector field. 
+  At the point $(x,y)$ in the plane, create a circle $C_a$ of radius $a$ centered at $(x,y)$, where the area inside of $C_a$ is $A_a=\pi a^2$. The quotient $\ds \frac{1}{A_a}\oint_{C_a} \vec F \cdot \vec T ds$ is a circulation per area.  The quotient $\ds \frac{1}{A_a}\oint_{C_a} \vec F \cdot \vec n ds$ is a flux per area.
+\begin{itemize}
+ \item \marginpar{We will not prove that the partial derivative expressions $N_x-M_y$ and $M_x+N_y$ are actually equal to the limits given here. That is best left to an advanced course.}%
+The circulation density of $\vec F$ at $(x,y)$ we define to be 
+$$\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}=N_x-M_y = \lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} \vec F \cdot  d\vec r = 
+\lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} Mdx+Ndy.$$ 
+ \item The divergence, or flux density, of $\vec F$ at $(x,y)$ we define to be 
+$$\frac{\partial M}{\partial x}+\frac{\partial N}{\partial y}=M_x+N_y=\lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} \vec F \cdot \vec n ds = 
+\lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} Mdy-Ndx.$$
+\end{itemize}
+\end{definition}
+
+In the definitions above, we could have replaced the circle $C_a$ with a square of side lengths $a$ centered at $(x,y)$ with interior area $A_a$. Alternately, we could have chosen any collection of curves $C_a$ which ``shrink nicely'' to $(x,y)$ and have area $A_a$ inside. Regardless of which curves you chose, it can be shown that 
+$$N_x-M_y=\lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} \vec F \cdot \vec T ds \quad \text{ and } \quad M_x+N_y=\lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} \vec F \cdot \vec n ds.$$
+
+To understand what the circulation and flux density mean in a physical sense, think of $\vec F$ as the velocity field of some gas.  
+\begin{itemize}
+ \item The circulation density tells us the rate at which the vector field $\vec F$ causes objects to rotate around points.  If circulation density is positive, then particles near $(x,y)$ would tend to circulate around the point in a counterclockwise direction. The larger the circulation density, the faster the rotation. The velocity field of a gas could have some regions where the gas is swirling clockwise, and some regions where the gas is swirling counterclockwise.
+ \item The divergence, or flux density, tells us the rate at which the vector field causes object to either flee from $(x,y)$ or come towards $(x,y)$. For the velocity field of a gas, the gas is expanding at points where the divergence is positive, and contracting at points where the divergence is negative. 
+\end{itemize}
+
+
+We are now ready to state Green's Theorem.  Ask me in class to give an informal proof as to why this theorem is valid.
+\note{I draw a curve.  I then cut the interior up into little rectangular pieces, and ask them to consider the sum of the flux along every single little rectangular piece inside.  I show them how the circulation (or flux) along any interior edge is computed twice but with opposite signs.  This means that the integrals along every interior edge vanish.  We then have the circulation along the entire edge equal to the sum of a bunch of tiny circulations. Multipy and divide by the area inside each rectangle. Taking a limit as the size of the rectangles shrinks to zero gives us a double integral of the circulation per area. This is Green's theorem}
+\begin{theorem}[Green's Theorem]
+ Let $\vec F(x,y)=(M,N)$ be a continuously differentiable vector field, which is defined on an open region in the plane that contains a simple closed curve $C$ and the region $R$ inside the curve $C$.  Then we can compute the counterclockwise circulation of $\vec F$ along $C$, and the outward flux of $\vec F$ across $C$ by using the double integrals
+$$ \oint_{C} \vec F \cdot \vec T ds=\int\int_R N_x-M_y dA 
+\quad \text{ and } \quad 
+\oint_{C} \vec F \cdot \vec n ds=\int\int_R M_x+N_y dA.$$
+\end{theorem}
+
+Let's now use this theorem to rapidly find circulation (work) and flux.
+
+
+\begin{problem}\marginpar{See 16.4 for more practice.  Try doing a bunch of these, as they get really fast.}
+ Consider the vector field $\vec F=(2x+3y,4x+5y)$. Start by computing $N_x-M_y$ and $M_x+N_y$. 
+ If $C$ is the boundary of the rectangle $2\leq x\leq 7$ and $0\leq y\leq 3$, find both the circulation and flux of $\vec F$ along $C$. You should be able to reduce the integrals to facts about area. [If you tried doing this without Green's theorem, you would have to parametrize 4 line segments, compute 4 integrals, and then sum the results.]
+\end{problem}
+
+\begin{problem}
+ Consider the vector field $\vec F=(x^2+y^2,3x+5y)$. Start by computing $N_x-M_y$ and $M_x+N_y$. 
+ If $C$ is the circle $(x-3)^2+(y+1)^2=4$ (oriented counterclockwise), then find both the circulation and flux of $\vec F$ along $C$. You should be able to reduce the integrals to facts about the area and centroid.
+\end{problem}
+
+\begin{problem}
+Repeat the previous problem, but change the curve $C$ to the boundary of the triangular region $R$ with vertexes at $(0,0)$, $(3,0)$, and $(3,6)$.  You can complete this problem without having to set up the bounds on any integrals, if you reduce the integrals to facts about area and centroids. You are welcome to look up the centroid of a triangular region without computing it.
+\end{problem}
+
+
+Let's finish by looking at some examples to see why the limit definition of circulation and flux density are equal to the partial derivative expressions $N_x-M_y$ and $M_x+N_y$. 
+
+\note{The next two problems didn't go very well in class.  There were a lot of questions about what they were showing.  It might be that they should be put above the Green's Theorem problems, or they just might be poor problems. I'll try again next semester}
+\begin{problem}
+Consider the rotational vector field $\vec F = \left<-y,x\right>$. Consider the point $(x,y)=(0,0)$.  Let $C_a$ be a circle of radius $a$ centered at $(0,0)$.  
+\begin{enumerate}
+\item Find the circulation of $\vec F$ along $C_a$. Don't use Green's theorem.  
+\item Compute $\lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} Mdx+Ndy$.
+\item Compute $N_x-M_y$. Does it match the previous limit?
+\item As this vector field only causes rotation, the flux across any curve is zero.  Without doing any computations, what should $M_x+N_y$ equal? Explain.  Then actually compute $M_x+N_y$.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the radial vector field $\vec F = \left<2x,2y\right>$. Consider the point $(x,y)=(0,0)$.  Let $C_a$ be a circle of radius $a$ centered at $(0,0)$.  
+\begin{enumerate}
+\item Find the outward flux of $\vec F$ across $C_a$. Don't use Green's theorem.
+\item Compute $\lim_{a\to 0} \frac{1}{A_a}\oint_{C_a} Mdy-Ndx$.
+\item Compute $M_x+N_y$. Does it match the previous limit?
+\item \marginpar{If a field causes no circulation, then we call the field an irrotational vector field.}%
+As this vector field is purely radial, the circulation along any curve is zero.  Without doing any computations, what should $N_x-M_y$ equal? Explain.  Then actually compute $N_x-M_y$.
+\end{enumerate}
+\end{problem}
+
