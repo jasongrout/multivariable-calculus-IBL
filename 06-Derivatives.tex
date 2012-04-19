@@ -214,7 +214,7 @@ The next problem generalizes the tangent plane and normal vector calculations ab
 \end{problem}
 
 
-\section{The Derivative}
+\section{The Derivative}\label{sec:derivative}
 \begin{remark}
  In problem \ref{cake introduction}, we learned the following for  $z=f(x,y)$.
 \begin{itemize}
@@ -246,7 +246,8 @@ or in short-hand notation $df=f_xdx+f_ydy$,
 where $dx$ and $dy$ are independent variables which represent small changes in $x$ and $y$.
 \end{definition}
 
-\begin{problem} Let's apply the problem and definition above.  Fill in the blanks
+\begin{problem}\label{estimating change with differentials}
+ Let's apply the problem and definition above.  Fill in the blanks
   \begin{enumerate}
   \item If $f(x,y)=9-x^2-y^2$, then $df = f_xdx+f_ydy=\blank{1in}\,dx+\blank{1in}\,dy$.  If we are on the surface at the point $(x,y,z)=(2,1,4)$, then the differential is $df=\blank{1cm}\,dx+\blank{1cm}\,dy$ (just plug $x=2$ and $y=1$ into the partial derivatives).  If we move along the surface to $(x,y)=(2.1,1.1)$, then our change in $x$ is $\Delta x=\blank{1cm}$, our change in $y$ is $\Delta y=\blank{1cm}$, and the differential $df$ at $(x,y)=(2,1)$ estimates our change in height $\Delta f$ to be about $\Delta f\approx \blank{1cm}$ (just plug in $\Delta x$ for $dx$ and $\Delta y$ for $dy$ to get a single number).
   \item   If $f(x,y,z)=xy^2+yz^2$, then $$df = \blank{1in}\,dx+\blank{1in}\,dy+\blank{1in}\,dz.$$  If we are at the input vector $(x,y,z)=(1,-2,3)$, then the differential is $df = \blank{1cm}\,dx+\blank{1cm}\,dy+\blank{1cm}\,dz$.  If we move to $(x,y,z)=(0.9, -2.2, 2.8)$, then the change in $x$ is $\Delta x=\blank{1cm}$, the change in $y$ is $\Delta y=\blank{1cm}$, and the change in $z$ is $\Delta z=\blank{1cm}$.  The differential $df$ at $(x,y,z)=(1,-2,3)$ helps us estimate the change in $f$ to be about $\Delta f\approx \blank{1cm}$. [Hint: plug in our numeric $x$, $y$, $z$, $\Delta x$, $\Delta y$, and $\Delta z$.]
@@ -399,7 +400,7 @@ The previous three problems all focused on exactly the same concept.  The first 
  If $z=f(x,y)$ is a function of $x$ and $y$, and both $x$ and $y$ are functions of $t$, so in vector form we can write $\vec r(t)=(x(t),y(t))$, then find how quickly $f$ changes as you change $t$. In other words, what is the derivative of $f$ with respect to $t$. Notationally, we seek $\ds \frac{df}{dt}$ which formally is written $\ds \frac{d}{dt}[f(x(t),y(t))]$ or $\ds \frac{d}{dt} [f(\vec r(t))].$
 \end{quote}
 The second problem above gave us an example of the multivariable chain rule.
-\begin{theorem}[The Chain Rule]
+\begin{theorem}[The Chain Rule]\label{chain rule def}
  Let $\vec x$ be a vector and $\vec f$ and $\vec g$ be functions so that the composition $\vec f(\vec g(\vec x))$ makes sense (the output of $g$ can be used as an input to $f$). Suppose $\vec f$ is differentiable at $\vec g(\vec x)$ and $\vec g$ is differentiable at $\vec x$. The derivative of $\vec f\circ \vec g$ at $\vec x$ is 
 $$D(\vec f\circ \vec g)(\vec x) = D\vec f(\vec g(\vec x))\cdot D\vec g(\vec x).$$
 \end{theorem}
