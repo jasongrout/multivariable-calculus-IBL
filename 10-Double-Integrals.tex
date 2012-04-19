@@ -13,7 +13,7 @@ You'll have a chance to teach your examples to your peers prior to the exam.
 
 We'll introduce double integrals by introducing iterated integrals first. The next two problems as you to find the volume of the solid region in space that is under the surface $f(x,y) = 9-x^2-y^2$, above the $xy$-plane, with $x\geq 0$. 
 
-\begin{problem}
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjN0xJbDKgi-pGmQZUiwR7I7dBvj6mpca0aobWx5Z59y5X5IgmdC3jZdICYuuMOCIEyvXm8NZDJdcjJecsciZTteVsd6VtVYelOkMlcnYdJ25J2isVNqPZZYW-993krYtrSR5azxpVdnO-KIGIK6Mg8XLkLjT_f44CwoyjIEww4LhOkdh9UuO88GQ858kLHp6UD0fXQDZvseyQ-COKIoFPAXB6Uj7HxZK4e6D_FoLw2wGDlvQAD79BkaKjHOVa5TXpt8acZ83OMLn6nWofiNuGr2k3rKy-Goo1rHu41eRp2n-FviuNXd4jP2HkEXfK9SeNw}{Sage}.}%
 Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
 \begin{enumerate}
  \item Draw the solid $D$. 
@@ -22,17 +22,18 @@ Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2
  \item The plane $y=2$ intersects the solid in half a parabola (draw this parabola). Find the value $c$ so that the area under this parabola is $A_y(2)=\int_0^c 9-(x)^2-(2)^2 \ dx$.
  \item \marginpar{You should obtain an inequality $a\leq y_0\leq b$ where $a$ and $b$ are constants. If the upper bound $c$ has a square root in it, then you're on the right track.}
 For which $y$-values $y_0$ does the plane $y=y_0$ intersect the paraboloid? For each of these values, what should $c$ equal so that $A_{y=y_0} = \int_0^c 9-x^2-y_0^2 dx$ gives the area under the half parabola obtained when the plane $y=y_0$ intersects the surface. 
- \item Imagine now that you cut the surface into 6 pieces, using the plane $y=y_0$ for each $y_0$ in $\{-3,-2,-1,0, 2, 2,3\}$. Let $y_0=-3$, $y_1=-2$, $\ldots$, $y_{6}=3$. The change in $y$ between each point is $dy=1$. 
+ \item Imagine now that you cut the surface into 6 pieces, using the plane $y=y_0$ for each $y_0$ in $\{-3,-2,-1,0, 1, 2,3\}$. Let $y_0=-3$, $y_1=-2$, $\ldots$, $y_{6}=3$. The change in $y$ between each point is $dy=1$. 
  In the plane $y=y_i$, we know the area under the surface is $A_y(y_i) = \int_0^{c_i} 9-x^2-y_i^2 dx$ (where you found $c_i$ in the last part).  If we multiply this area by the thickness $dy=1$, we obtain the volume of a solid (think $dV = (A_y)dy$).  Draw this solid in your picture for $y_i = 0$. Use summation notation to write a sum to approximate the volume under $f$.
 \item Explain why the volume of $D$ equals $\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy$.
 %\item Use a computer to first compute the inside integral (you should have $y$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
 \end{enumerate}
 \end{problem}
-The integral above is called an iterated integral, because to compute the integral you first compute the inside integral, and then you compute the outside integral (you iteratively integrate). Often the parenthesis are not written, because we know that the inside integral should be performed first without writing the parenthesis. We could have written the longer version $$\ds\int_{y=-3}^{y=3} \left(\int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy$$ if we wanted to emphasize which variables go with each bound.  However, this is generally not done since the inside integral clearly has bounds that are $x$-values, while  the outside integral clearly has bounds that are $y$-values.  
+The integral above is called an iterated integral because you first compute the inside integral and then you compute the outside integral (you iteratively integrate). Often the parenthesis are not written because we know that the inside integral should be performed first without writing the parenthesis. We could also explicitly emphasize which variables go with each bound:
+$$\ds\int_{y=-3}^{y=3} \left(\int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy.$$   
 
 The next problem has you repeat what was done above, but this time you intersect the surface with planes $x=x_0$. 
 
-\begin{problem}
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjJ2BElAWWfAlVYOQgWKJYHfsNsDX17xaRKtu_JJ1zp37WRAEI9qmsgVSwLwaehxwZNmyc7iG_S0Jh1vCmGdUK8tcaWuyUgoLQrWKsmCo2lY9AlS6ENIOWRyl2983KnST6YKKe2VJily3yqYlAHGhDMxehsSN7LbLNSQnQx8IY0wZLu8Yavmc4LQw5PwnCfOedqrT0QUQb3PMMzjugGE6g0cnOB9p_8NcKdy8k11qYRhPwH4N6sDn30BPkDImN5WwUnVrI-bjDkd4DXKufom4WuRk2Z2_YzO_VuRLX3b-S4zRBaMIk-jy6oSmUQ_Yz_FHAuZ9Aa-ooss}{Sage}.}%
 Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
 \begin{enumerate}
  \item Draw the solid $D$. 
@@ -50,10 +51,10 @@ For which $x$-values $x_0$ does the plane $x=x_0$ intersect the paraboloid. For 
 
 The first two problems show that the volume of $D$ can be given by 
 $$V=\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy = \ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx.$$
-We have two completely different iterated integrals that result in the exact same volume. In both integrals, the bounds describe a semicircular region in the plane, we'll call $R$. The region $R$ is fully described by using the inequalities $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$ from the first integral, or using the inequalities $0\leq x\leq 3$ and $-\sqrt{9-x^2}\leq y\leq \sqrt{9-x^2}$ from the second integral. 
+We have two completely different iterated integrals that result in the exact same volume. In both integrals, the bounds on $x$ and $y$ describe a semicircular region $R$ in the $xy$ plane. The region $R$ is fully described by using the inequalities $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$ from the first integral, or using the inequalities $0\leq x\leq 3$ and $-\sqrt{9-x^2}\leq y\leq \sqrt{9-x^2}$ from the second integral.
 
 \begin{problem}
- Consider the region $R$ in the $x$-plane that is below the line $y=x+2$, above the line $y=2$, and left of the line $x=5$. We can describe this region by saying for each $x$ with $0\leq x\leq 5$, we want $y$ to satisfy $2\leq y\leq x+2$. In set builder notation, we write
+ Consider the region $R$ in the $xy$-plane that is below the line $y=x+2$, above the line $y=2$, and left of the line $x=5$. We can describe this region by saying for each $x$ with $0\leq x\leq 5$, we want $y$ to satisfy $2\leq y\leq x+2$. In set builder notation, we write
 $$R=\{(x,y)\ | \ 0\leq x\leq 5, 2\leq y\leq x+2\}.$$
 \begin{enumerate}
  \item Describe the region $R$ by saying for each $y$ with $c\leq y\leq d$, we want $x$ to satisfy $a(y)\leq x\leq b(y)$. In other words, find constants $c$ and $d$, and functions $a(y)$ and $b(y)$, so that for each $y$ between $c$ and $d$, the $x$ values must be between the functions $a(y)$ and $b(y)$.
@@ -66,7 +67,7 @@ $$R=\{(x,y)\ | \ c\leq y\leq d, a(y)\leq x\leq b(y)\}.$$
 \note{I have not formally defined a definite integral.  I will probably do that next semester, when I have more time.  Right now, I'll lecture that bit in class.  It will get added at some point.}
 
 Let $R$ be some region in the plane.  If we let $dA=dxdy=dydx$, then we can write a little bit of volume as $dV=fdA=fdxdy=fdydx.$ Adding up little bits of volume gives us the double integral 
-$$V = \int\int_R fdA,$$
+$$V = \iint_R fdA,$$
 which equals either iterated integral we've been setting up above. 
 
 \begin{problem}
@@ -84,13 +85,13 @@ Consider the iterated integral $\ds \int_0^3\int_x^3 e^{y^2}dydx$. Write the bou
 \end{problem}
 
 \begin{problem}
-Consider the region $R$ in the plane that is trapped between the curves $y=2x$ and $y=x^2$.  We would like to compute $\int\int_R x dA$ over this region $R$.  Set up both iterated integrals. Then compute one of them.
+Consider the region $R$ in the plane that is trapped between the curves $y=2x$ and $y=x^2$.  We would like to compute $\iint_R x dA$ over this region $R$.  Set up both iterated integrals. Then compute one of them.
 \end{problem}
 
 
 
 
-In the line integral chapter, we introduce the ideas of average value, centroid, center of mass, moment of inertia, and radius of gyration.  We now extend those ideas to regions in the plane, in exactly the same way.  For example, the average value formula in the line integral section was $\bar f = \dfrac{\int_C fdx}{\int_C ds}$. For double integrals, we just change $ds$ to $dA$, and add an integral.  This gives the formula $\bar f = \dfrac{\int\int_R fdA}{\int\int_R dA}.$ The same substitution works on all the integrals from before.  We now have $dm = \delta dA$ instead of $dm=\delta ds$. We obtained arc length by computing $s=\int_C ds$ (add up little bits of arc length).  We can compute area by using $A=\int\int_R dA$ (add up little bits of area). 
+In the line integral chapter, we introduce the ideas of average value, centroid, center of mass, moment of inertia, and radius of gyration.  We now extend those ideas to regions in the plane, in exactly the same way.  For example, the average value formula in the line integral section was $\bar f = \dfrac{\int_C fdx}{\int_C ds}$. For double integrals, we just change $ds$ to $dA$, and add an integral.  This gives the formula $\bar f = \dfrac{\iint_R fdA}{\iint_R dA}.$ The same substitution works on all the integrals from before.  We now have $dm = \delta dA$ instead of $dm=\delta ds$. We obtained arc length by computing $s=\int_C ds$ (add up little bits of arc length).  We can compute area by using $A=\iint_R dA$ (add up little bits of area). 
 
 \begin{problem}
 Consider the rectangular region $R$ in the $xy$-plane described by $\{(x,y)\ |\ 2\leq x\leq 11, 3\leq y\leq 7\}$.
@@ -109,15 +110,15 @@ Consider the rectangular region $R$ in the $xy$-plane described by $\{(x,y)\ |\ 
 \begin{problem}\label{centroid trick}
 Consider the region $R$ that is the circular disc which is inside the circle $(x-2)^2+(y+1)^2=9$. The centroid is clearly $(2,-1)$, and the area is $A=\pi(3)^2=9\pi$.  We can use these fact to simplify many integrals that require integrating over the region $R$.  
 \begin{enumerate}
- \item Compute $\int\int_R 3dA = 3\int\int_RdA$.  [How can area help you?]
- \item Explain why $\int\int_R x dA = \bar x A$ for any region $R$, and then compute $\int\int_R x dA$ for the circular disc. [You don't need to set up any integrals at all.]
- \item Compute the integral $\int\int_R 5x+2y dA$ by using centroid and area facts.
+ \item Compute $\iint_R 3dA = 3\iint_RdA$.  [How can area help you?]
+ \item Explain why $\iint_R x dA = \bar x A$ for any region $R$, and then compute $\iint_R x dA$ for the circular disc. [You don't need to set up any integrals at all.]
+ \item Compute the integral $\iint_R 5x+2y dA$ by using centroid and area facts.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
 Consider the region in the $xy$-plane that is formed from two rectangular regions.  The first region satisfies $x\in[-2,2]$ and $y\in[0,7]$.  The second region satisfies $x\in[-5,5]$ and $y\in[7,10]$.  Find the centroid of this region (and of any T-beam like this).
-[Suggestion: work with variables from the start. For the first region, let $x\in[-a,a]$ with $y\in[0,c]$.  For the second region, let $x\in[-b,b]$ with $y\in[c,d]$. Solve the problem first with variables, and then plug in the numbers. You may need to split your integrals up into two integrals, as $\int\int_R ydA = \int\int_{R_1}ydA +\int\int_{R_2}ydA$.]
+[Suggestion: work with variables from the start. For the first region, let $x\in[-a,a]$ with $y\in[0,c]$.  For the second region, let $x\in[-b,b]$ with $y\in[c,d]$. Solve the problem first with variables, and then plug in the numbers. You may need to split your integrals up into two integrals, as $\iint_R ydA = \iint_{R_1}ydA +\iint_{R_2}ydA$.]
 \end{problem}
 
 
@@ -150,7 +151,7 @@ Consider the integral $\ds\int_{-1}^4 e^{-3x} dx$.
 In the problem above, we used a change of coordinates $u=-3x$, or $x=-1/3 u$.  By taking derivatives, we found that $dx=-\frac{1}{3}du$. The negative means that the orientation of the interval was reversed. The fraction $\frac13$ tells us that lengths $dx$ using $x$ coordinates will be $1/3$rd as long as lengths $du$ using $u$ coordinates. When we write $dx = \frac{dx}{du}du$, the number $\frac{dx}{du}$ is called the Jacobian of $x$ with respect to $u$. The Jacobian tells us how lengths are altered when we change coordinate systems. We now generalize this to polar coordinates. Before we're done with this section, we'll generalize the Jacobian to any change of coordinates.
 
 \begin{theorem}
- If we use the polar coordinate transformation $x=r\cos\theta, y=r\sin\theta$, then we can switch from $(x,y)$ coordinates to $(r,\theta)$ coordinates if we use $dxdy=|r|drd\theta$.  The number $|r|$ is called the Jacobian of $x$ and $y$ with respect to $r$ and $\theta$. If we require all bounds for $r$ to be nonnegative, we can ignore the absolute value.  If $R_{xy}$ is a region in the $xy$ plane that corresponds to the region $R_{r\theta}$ in the $r\theta$ plane (where $r>0$), then we can write $$\int\int_{R_{xy}} f(x,y) dxdy = \int\int_{R_{r\theta}} f(r\cos\theta,r\sin\theta) r\ drd\theta.$$ 
+ If we use the polar coordinate transformation $x=r\cos\theta, y=r\sin\theta$, then we can switch from $(x,y)$ coordinates to $(r,\theta)$ coordinates if we use $dxdy=|r|drd\theta$.  The number $|r|$ is called the Jacobian of $x$ and $y$ with respect to $r$ and $\theta$. If we require all bounds for $r$ to be nonnegative, we can ignore the absolute value.  If $R_{xy}$ is a region in the $xy$ plane that corresponds to the region $R_{r\theta}$ in the $r\theta$ plane (where $r>0$), then we can write $$\iint_{R_{xy}} f(x,y) dxdy = \iint_{R_{r\theta}} f(r\cos\theta,r\sin\theta) r\ drd\theta.$$ 
 \end{theorem}
 We'll prove later why the Jacobian is $|r|$.  For now, we need some practice using this idea. We start by describing regions using inequalities on $r$ and $\theta$.  Ask me in class to give you an informal picture approach that explains why 
 $dxdy=rdrd\theta$.  
@@ -173,19 +174,19 @@ For each region $R$ below, draw the region in the $xy$-plane. Then give a set of
 
 \begin{problem}
 Consider the opening problem for this unit.  We want to find the volume under $f(x,y)=9-x^2-y^2$ where $x\geq0$ and $z\geq 0$.  We obtained the integral formula 
-$$\int\int_R f dA = \ds\int_{y=-3}^{y=3} \int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx dy.$$
+$$\iint_R f dA = \ds\int_{y=-3}^{y=3} \int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx dy.$$
 \begin{enumerate}
  \item Write bounds for the region $R$ by giving bounds for $r$ and $\theta$.
  \item Rewrite the double integral as an iterated integral with bounds for $r$ and $\theta$. Don't forget to multiply by the Jacobian (as $dxdy=rdrd\theta$). 
 %Your integral should look something like 
-%$$\int\int_R f dA = \ds\int_{\theta=?}^{\theta=?} \int_{r=?}^{r=?} (9-x^2-y^2) r\ dr\right) d\theta.$$
+%$$\iint_R f dA = \ds\int_{\theta=?}^{\theta=?} \int_{r=?}^{r=?} (9-x^2-y^2) r\ dr\right) d\theta.$$
  \item Compute the integral in the previous part by hand. [Suggestion: you'll want to simplify $9-x^2-y^2$ to $9-r^2$ before integrating.]
 \end{enumerate}
 \end{problem}
 
 
 \begin{problem}
-Find centroid of a semicircle of radius $a$ ($y\geq 0$). Actually compute any integrals.  After doing this, just set up the integral formulas you would use to find $R_y$, the radius of gyration about the $y$-axis, if the density is $\delta(x,y)=x^2+y^2$.\note{This is a great place to comment in class about the ability to do the integrals separately.} 
+Find centroid of a semicircle of radius $a$ ($y\geq 0$). Actually compute any integrals.  \bmw{After doing this, just set up the integral formulas you would use to find $R_y$, the radius of gyration about the $y$-axis, if the density is $\delta(x,y)=x^2+y^2$.}\note{This is a great place to comment in class about the ability to do the integrals separately.} 
 \end{problem}
 
 \begin{problem}
@@ -194,10 +195,10 @@ Compute the integral $\ds \int_{0}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{
 
 
 
-% \begin{problem}
-% Optional problem - the problem about integrating $e^{-x^2}$ from 0 to infinity.  Make it optional, and then give them some hints.  I'll work on this next semester. I want to prepare them for the normal distribution. Any student who want to tackle this problem should be asked if they want to become a math major. :)
-% \end{problem}
-
+\note{ \begin{problem}
+ Optional problem - the problem about integrating $e^{-x^2}$ from 0 to infinity.  Make it optional, and then give them some hints.  I'll work on this next semester. I want to prepare them for the normal distribution. Any student who want to tackle this problem should be asked if they want to become a math major. :)
+ \end{problem}
+}
 
 We're now ready to define the Jacobian of any transformation.
 \begin{definition}
@@ -217,12 +218,12 @@ Consider the transformation $u=x+2y$ and $v=2x-y$.
  \item We were give $u$ and $v$ in terms of $x$ and $y$, so we could have directly computed $\frac{\partial (u,v)}{\partial (x,y)}$. Do so now.
  \item Make a conjecture about the relationship between $\frac{\partial (x,y)}{\partial (u,v)}$ and $\frac{\partial (u,v)}{\partial (x,y)}$. 
 \end{enumerate}
-\note{There are a lot of different uses of the word Jacobian. It sometimes includes the absolute value, sometimes does not. Sometimes you stop at the derivative, sometimes you take the determinant.  Which one is correct?  I'm going with the one that includes the absolute values as well.  That way I can say $r$ is the Jacobian for polar, and for spherical we have $\rho^2\phi$ (not $-\rho^2\phi$.  If we want to address this in general, it should be in an appendix, with maybe a marginpar or footnote.}
+\note{There are a lot of different uses of the word Jacobian. It sometimes includes the absolute value, sometimes does not. Sometimes you stop at the derivative, sometimes you take the determinant.  Which one is correct?  I'm going with the one that includes the absolute values as well.  That way I can say $r$ is the Jacobian for polar, and for spherical we have $\rho^2\phi$ (not $-\rho^2\phi$).  If we want to address this in general, it should be in an appendix, with maybe a marginpar or footnote.}
 \end{problem}
 
 \begin{theorem}
  Suppose that $f$ is integrable over a region $R_{xy}$ in the $xy$ plane. Suppose that $\vec T(u,v)=(x(u,v),y(u,v))$ is a coordinate transformation that has the Jacobian $\ds \frac{\partial (x,y)}{\partial (u,v)} $. Suppose the region $R_{uv}$ in the $uv$-plane corresponds to the region $R_{xy}$ in the $xy$-plane. Provided the Jacobian is nonzero except possibly on regions with zero area, we can then write  
-$$\int\int_{R_{xy}} f(x,y) dxdy = \int\int_{R_{uv}} f(x(u,v),y(u,v)) \frac{\partial (x,y)}{\partial (u,v)} dudv.$$
+$$\iint_{R_{xy}} f(x,y) dxdy = \iint_{R_{uv}} f(x(u,v),y(u,v)) \frac{\partial (x,y)}{\partial (u,v)} dudv.$$
  We can remember this in differential form as 
 $$dxdy = \frac{\partial (x,y)}{\partial (u,v)} dudv.$$
 \end{theorem}
@@ -234,20 +235,20 @@ Let's use this to rapidly find the area inside of an ellipse.
 \begin{enumerate}
  \item Draw the region $R$ in the $xy$-plane.  After substituting $u=x/a$ and $v=y/b$, draw the region $R_{uv}$ in the $uv$-plane.  You should have circle.  What is the area of this circle in the $uv$-plane?
  \item Solve for $x$ and $y$, and then compute the Jacobian  $\dfrac{\partial (x,y)}{\partial (u,v)}$. Show how to get the same result from directly computing $\dfrac{\partial (u,v)}{\partial (x,y)}$.
- \item We know the area in the $xy$-plane of the ellipse is $\int\int_{R_{xy}} dxdy$. Use the previous theorem to switch to an integral over the region $R_{uv}$.  Then evaluate this integral by using facts about area. [Hint: you don't actually have to set up any bounds, rather just reduce this to an area integral over the region $R_{uv}$.] 
+ \item We know the area in the $xy$-plane of the ellipse is $\iint_{R_{xy}} dxdy$. Use the previous theorem to switch to an integral over the region $R_{uv}$.  Then evaluate this integral by using facts about area. [Hint: you don't actually have to set up any bounds, rather just reduce this to an area integral over the region $R_{uv}$.] 
 \end{enumerate}
 
 \end{problem}
 
 
 \begin{problem}
-Let $R$ be the region in the plane bounded by the curves $x+2y=1$, $x+2y=4$, $2x-y=0$, and $2x-y=8$.  We want to compute the integral $\int\int_R xdxdy$. Draw the region $R$ in the $xy$-plane. Use the change of coordinates $u=x+2y$ and $v=2x-y$ to evaluate this integral. Make sure you provide a sketch of the region $R_{uv}$ in the $uv$-plane (it should be a rectangle).  
+Let $R$ be the region in the plane bounded by the curves $x+2y=1$, $x+2y=4$, $2x-y=0$, and $2x-y=8$.  We want to compute the integral $\iint_R xdxdy$. Draw the region $R$ in the $xy$-plane. Use the change of coordinates $u=x+2y$ and $v=2x-y$ to evaluate this integral. Make sure you provide a sketch of the region $R_{uv}$ in the $uv$-plane (it should be a rectangle).  
 [Hints: what are the bounds for $u$ and $v$?  You'll want to solve for $x$ and $y$ in terms of $u$ and $v$, and then you'll need a Jacobian.]
 \end{problem}
 
 
 \begin{problem}\marginpar{This is problem 7 in section 15.8.}
- Use the transformation $u=3x+2y$ and $v=x+4y$ to evaluate the integral $$\int\int_R (3x^2+14xy+8y^2)dxdy$$ for the region $R$ that is bounded by the lines $y=-(3/2)x+1$, $y=-(3/2)x+3$, $y=-(1/4)x$, and  $y=(-1/4)x+1$.
+ Use the transformation $u=3x+2y$ and $v=x+4y$ to evaluate the integral $$\iint_R (3x^2+14xy+8y^2)dxdy$$ for the region $R$ that is bounded by the lines $y=-(3/2)x+1$, $y=-(3/2)x+3$, $y=-(1/4)x$, and  $y=(-1/4)x+1$.
 \end{problem}
 
 \section{Green's Theorem}
@@ -281,9 +282,9 @@ We are now ready to state Green's Theorem.  Ask me in class to give an informal 
 \note{I draw a curve.  I then cut the interior up into little rectangular pieces, and ask them to consider the sum of the flux along every single little rectangular piece inside.  I show them how the circulation (or flux) along any interior edge is computed twice but with opposite signs.  This means that the integrals along every interior edge vanish.  We then have the circulation along the entire edge equal to the sum of a bunch of tiny circulations. Multipy and divide by the area inside each rectangle. Taking a limit as the size of the rectangles shrinks to zero gives us a double integral of the circulation per area. This is Green's theorem}
 \begin{theorem}[Green's Theorem]
  Let $\vec F(x,y)=(M,N)$ be a continuously differentiable vector field, which is defined on an open region in the plane that contains a simple closed curve $C$ and the region $R$ inside the curve $C$.  Then we can compute the counterclockwise circulation of $\vec F$ along $C$, and the outward flux of $\vec F$ across $C$ by using the double integrals
-$$ \oint_{C} \vec F \cdot \vec T ds=\int\int_R N_x-M_y dA 
+$$ \oint_{C} \vec F \cdot \vec T ds=\iint_R N_x-M_y dA 
 \quad \text{ and } \quad 
-\oint_{C} \vec F \cdot \vec n ds=\int\int_R M_x+N_y dA.$$
+\oint_{C} \vec F \cdot \vec n ds=\iint_R M_x+N_y dA.$$
 \end{theorem}
 
 Let's now use this theorem to rapidly find circulation (work) and flux.
@@ -329,3 +330,7 @@ As this vector field is purely radial, the circulation along any curve is zero. 
 \end{enumerate}
 \end{problem}
 
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "215-problems"
+%%% End: 

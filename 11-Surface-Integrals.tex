@@ -13,13 +13,14 @@ You'll have a chance to teach your examples to your peers prior to the exam.
 
 In first-semester calculus, we learned how to compute integrals $\int_a^b f dx$ along straight (flat) segments $[a,b]$. This semester, in the line integral unit, we learned how to change the segment to a curve, which allowed us to compute integrals $\int_C fds$ along any curve $C$, instead of just along curves (segments) on the $x$-axis. The integral $\int_a^b dx=b-a$ gives the length of the segment $[a,b]$. The integral $\int_C ds$ gives the length $s$ of the curve $C$.  
 
-In the double integral unit we learned how to compute double integrals $\int\int_R fdA$ along flat regions $R$ in the plane. We'll now learn how to change the flat region $R$ into a curved surface $S$, and then compute integrals of the form $\int\int_S fd\sigma$ along curved surfaces. The differential $d\sigma$ stands for a little bit of surface area.  We already know that $\int\int_R dA$ gives the area of $R$.  We'll define $\int\int_S d\sigma$ so that it gives the surface area of $S$.
+In the double integral unit we learned how to compute double integrals $\iint_R fdA$ along flat regions $R$ in the plane. We'll now learn how to change the flat region $R$ into a curved surface $S$, and then compute integrals of the form $\iint_S fd\sigma$ along curved surfaces. The differential $d\sigma$ stands for a little bit of surface area.  We already know that $\iint_R dA$ gives the area of $R$.  We'll define $\iint_S d\sigma$ so that it gives the surface area of $S$.
 
 
 \begin{problem}
  Consider the surface $S$ given by $z=9-x^2-y^2$ (we've seen this surface many times). A parametrization of this surface is $$\vec r(x,y) = (x,y,9-x^2-y^2).$$
 \begin{enumerate}
- \item Draw the surface $S$. Add to your surface plot the parabolas given by $\vec r(x,-0)$, $\vec r(x,1)$, and $\vec r(x,2)$, as well as the parabolas given by $\vec r(0,y)$, $\vec r(1,y)$, and $\vec r(2,y)$. You should have an upside down paraboloid, with at least 6 different parabolas drawn on the surface.  These parabolas should divide the surface up into a bunch of different patches. Our goal is to find the area of each patch, where each patch is almost like a parallelogram. 
+ \item \instructor{See \href{http://aleph.sagemath.org/?z=eJx1jkEKwjAQRfc5RXadqVMXzUohJylWYtrY0NqEJGBze1MFF4KzGD7M-7wxsFFGuW86NVvfNrlvkXnpF5fEAKZrL1SujSCBBPkTkDmfohysTqDd4oKsbovSc0VpsnpexxilQGZc4JbblQe13kd4V8-Ml_EH6VVQjzEFq6-7C0yxWCT-ldX1LsH_vC2fFz7_8P4YJ_cEfAHkUEDa}{Sage}.}%
+Draw the surface $S$. Add to your surface plot the parabolas given by $\vec r(x,0)$, $\vec r(x,1)$, and $\vec r(x,2)$, as well as the parabolas given by $\vec r(0,y)$, $\vec r(1,y)$, and $\vec r(2,y)$. You should have an upside down paraboloid, with at least 6 different parabolas drawn on the surface.  These parabolas should divide the surface up into a bunch of different patches. Our goal is to find the area of each patch, where each patch is almost like a parallelogram. 
  \item Find $\ds \frac{\partial \vec r}{\partial x}$ and $\ds\frac{\partial \vec r}{\partial y}$. At the point $(2,1)$, draw both vectors. These vectors form the edges of a parallelogram. Add that parallelogram to your picture.
  \item Show that the area of a parallelogram whose edges are the vectors $\ds\frac{\partial \vec r}{\partial x}(x,y)$ and $\ds\frac{\partial \vec r}{\partial y}$ is $\sqrt{1+4x^2+4y^2}$. [Hint: think about the cross product.]
  \item Find the area of the parallelogram whose edges are the vectors $\ds\frac{\partial \vec r}{\partial x}dx$ and $\ds\frac{\partial \vec r}{\partial y}dy$, where $dx$ and $dy$ are to be determined.
@@ -33,9 +34,9 @@ This little bit of area approximates the area of a tiny patch on the surface.  I
  Let $S$ be a surface.  Let $\vec r(u,v)=(x,y,z)$ be a parametrization of the surface, where the bounds on $u$ and $v$ form a region $R$ in the $uv$ plane.  Then the surface area element (representing a little bit of surface) is 
 $$d\sigma =\left |\frac{\partial \vec r}{\partial u} \times \frac{\partial \vec r}{\partial v}\right| dudv = \left|\vec r_u\times\vec r_v\right|dudv.$$
 The surface integral of a continuous function $f(x,y,z)$ along the surface $S$ is 
-$$\int\int_S f(x,y,z) d\sigma = \int\int_R f(\vec r(u,v)) \left |\frac{\partial \vec r}{\partial u} \times \frac{\partial \vec r}{\partial v}\right| dudv.$$
+$$\iint_S f(x,y,z) d\sigma = \iint_R f(\vec r(u,v)) \left |\frac{\partial \vec r}{\partial u} \times \frac{\partial \vec r}{\partial v}\right| dudv.$$
 If we let $f=1$, then the surface area of $S$ is simply
-$$\sigma = \int\int_S d\sigma = \int\int_R \left |\frac{\partial \vec r}{\partial u} \times \frac{\partial \vec r}{\partial v}\right| dudv.$$
+$$\sigma = \iint_S d\sigma = \iint_R \left |\frac{\partial \vec r}{\partial u} \times \frac{\partial \vec r}{\partial v}\right| dudv.$$
 \end{definition}
 
 This definition tells us how to compute any surface integral. The steps are almost identical to the line integral steps.
@@ -51,7 +52,7 @@ This definition tells us how to compute any surface integral. The steps are almo
 \begin{enumerate}
  \item Give a set of inequalities for $x$ and $y$ that describe the region $R$ over which we need to integrate. The inequalities you give should be in a form that you can use them as the bounds of a double integral.
  \item Find $d\sigma = \left|\vec r_x\times \vec r_y\right|dxdy$.
- \item Set up the surface integral $\int\int_S d\sigma$ as an iterated double integral over $R$. 
+ \item Set up the surface integral $\iint_S d\sigma$ as an iterated double integral over $R$. 
  \item Convert the integral above to an integral in polar coordinates (don't forget the Jacobian).
 \end{enumerate}
 \end{problem}
@@ -62,7 +63,7 @@ This definition tells us how to compute any surface integral. The steps are almo
 \begin{enumerate}
  \item Give a set of inequalities for $r$ and $\theta$ that describe the region $R_{r\theta}$ over which we need to integrate. The inequalities you give should be in a form that you can use them as the bounds of a double integral.
  \item Find $d\sigma = \left|\vec r_r\times \vec r_\theta \right|drd\theta$.
- \item Set up the surface integral $\int\int_S d\sigma$ as an iterated double integral over $R_{r\theta}$. 
+ \item Set up the surface integral $\iint_S d\sigma$ as an iterated double integral over $R_{r\theta}$. 
 \end{enumerate}
 \end{problem}
 
@@ -103,7 +104,7 @@ We can compute average value, centroids, center of mass, moments of inertia, and
 
 We now want to look at the flux of a vector field across a surface $S$.  In the line integral section, we defined the outward flux of a vector field $F$ across a curve $C$ to be the line integral $\ds \int_C \vec F\cdot \vec n ds$, where $\vec n$ is a normal vector point out of region enclosed by a curve $C$. When we want to find the flux of a vector field across a surface, we must state in which direction we want to compute the flux. We then must make sure that normal vector $\vec n$ we choose to use actually points in the desired direction. The flux of a vector field $\vec F$ across a surface $S$ is the surface integral
 $$\text{Flux}=\Phi 
-= \int\int_S \vec F\cdot \vec n d\sigma 
+= \iint_S \vec F\cdot \vec n d\sigma 
 .$$
 The next problem will help us simplify the computation of $\vec nd\sigma$.
 
@@ -121,8 +122,8 @@ Make sure you explain how you know the normal vector you give is pointing downwa
 
 In the problem above, we showed that $\vec n d\sigma = \pm(\vec r_x\times\vec r_y)dxdy$ and that $\vec n d\sigma = \pm(\vec r_r\times\vec r_\theta)drd\theta$.  We no longer need to find the magnitude of the cross product, but we must determine the correct sign to put on our cross product.  This shows us that we can write flux as 
 $$\text{Flux}=\Phi 
-= \int\int_S \vec F\cdot \vec n d\sigma 
-= \int\int_{R_{uv}} \vec F\cdot (\pm \vec r_u\times \vec r_v) dudv
+= \iint_S \vec F\cdot \vec n d\sigma 
+= \iint_{R_{uv}} \vec F\cdot (\pm \vec r_u\times \vec r_v) dudv
 .$$
 
 
@@ -143,7 +144,7 @@ Find the flux of $ \vec F=(x+y,y,z) $ outward across the surface of the cube in 
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 Surface&$\vec r(u,v)$ & $\vec n$ & $\vec F(\vec r(u,v))$ & $\vec F\cdot \vec n$  & Flux\\\hline
-Back $x=0$&$ \left<0,y,z\right>$   & $ \left<-1,0,0\right>$ & $\vec F(0,y,z) = \left<y,y,z\right>$ & $-y$&  $\int\int_{\text Back} -y d\sigma = -\bar y \sigma=-(\frac{3}{2})(15)$\\\hline
+Back $x=0$&$ \left<0,y,z\right>$   & $ \left<-1,0,0\right>$ & $\vec F(0,y,z) = \left<y,y,z\right>$ & $-y$&  $\iint_{\text Back} -y d\sigma = -\bar y \sigma=-(\frac{3}{2})(15)$\\\hline
 Front $x=2$& $ \left<2,y,z\right>$ &  & $\vec F(2,y,z) = \left<2+y,y,z\right>$ &  & \\\hline
 Left $y=0$&     & &  & &  $0$ (Why?)\\\hline
 Right $y=3$&   $ \left<x,3,z\right>$      & $ \left<0,1,0\right>$  & $\vec F(x,3,z) = \left<x+3,3,z\right>$ & 3 & 30 (Why?) \\\hline
@@ -154,15 +155,15 @@ Top $z=3$&    & &  & & \\\hline
 You should be able to complete each integral by considering centroids and surface area of each of the 6 different flat surfaces. Show that the total flux is 90. 
 \end{problem}
 
-In the double integral chapter, we learned a way to greatly simplify flux computations when working with simple closed curves.  Green's theorem stated that $\int_C \vec F\cdot \vec n\ ds = \int\int_R M_x+N_y dA$.  The divergence of $\vec F$ is the quantity $\text{div}(\vec F) = M_x+N_y$.  This generalizes to higher dimensions, and is called the divergence theorem. The next problem illustrates how.  We'll study this more in the triple integral unit.
+In the double integral chapter, we learned a way to greatly simplify flux computations when working with simple closed curves.  Green's theorem stated that $\int_C \vec F\cdot \vec n\ ds = \iint_R M_x+N_y dA$.  The divergence of $\vec F$ is the quantity $\text{div}(\vec F) = M_x+N_y$.  This generalizes to higher dimensions, and is called the divergence theorem. The next problem illustrates how.  We'll study this more in the triple integral unit.
 
 \begin{problem}
  Consider the exact same vector field and box as the previous problem.  So  we have the vector field $\vec F=(x+y,y,z) $  and $S$ is the surface of the cube in the first quadrant bounded by {$ x=2,y=3,z=5 $}.
 \begin{enumerate}
  \item Compute the divergence of $\vec F$, which is $\text{div}(\vec F) = M_x+N_y+P_z$.
  \item The divergence theorem states that if $S$ is a closed surface (has an inside and an outside), and the inside of the surface is the solid domain $D$, then the flux of $\vec F$ outward across $S$ equals the triple integral
-$$\int\int_S\vec F\cdot \vec n\ d\sigma = \int\int\int_D \text{div}(\vec F)dV.$$
- Use the divergence theorem to compute the flux of $\vec F$ across $S$. [Hint: Just as the area is found by adding up little bits of area, which is what we mean by $A=\int\int_R dA$, the volume is found by adding up little bits of volume.] 
+$$\iint_S\vec F\cdot \vec n\ d\sigma = \iint\int_D \text{div}(\vec F)dV.$$
+ Use the divergence theorem to compute the flux of $\vec F$ across $S$. [Hint: Just as the area is found by adding up little bits of area, which is what we mean by $A=\iint_R dA$, the volume is found by adding up little bits of volume.] 
 \end{enumerate}
 \end{problem}
 
@@ -180,11 +181,13 @@ Repeat the previous problem, but this time don't use the formula from problem \r
 \end{problem}
 
 
+\note{A sizeable amount of text for Stokes' Theorem is commented out in the source.}
+
+\begin{comment}
 
 \section{Circulation Density and Stokes' Theorem}
 
 When we finish the triple integral unit, I will make the next set of problems appear. It is more important that we get to triple integrals.
-\note{
 As a final application of surface integrals, we now generalize the circulation version of Green's theorem to surfaces.  To start, we need to define the circulation density of a vector field in a specific direction. The direction in which the circulation density is the greatest gives us a physical vector called the curl of the vector vector field.  The proofs the facts below are left to an advanced course in mathematics. 
 
 \begin{definition}
@@ -227,11 +230,11 @@ Find the curl of each vector field. \marginpar{See \href{http://mathinsight.org/
 \end{problem}
 
 We are now prepared to explain Stokes' Theorem.  Let's start by showing how Green's theorem extends to 3D.
-A vector field in the plane $\vec F = \left(M,N\right)$ can be extended to 3D by writing $\vec F = \left(M,N,0\right)$.  The curl is $\text{curl}\vec F = \left<0,0,N_x-M_y\right>$.  A normal vector to a surface $S$ in the $xy$ plane is $\vec n = \left<0,0,1\right>$. We can then write Green's theorem as $$\oint_C\vec F\cdot d\vec r = \oint_C Mdx+Ndy = \int\int_S \text{curl}\cdot \vec n d\sigma = \int\int_R \left(N_x-M_y\right) dA, $$ where $C$ is a simple closed curve in the plane and $S=R$ is the planar region that is inside $C$. 
+A vector field in the plane $\vec F = \left(M,N\right)$ can be extended to 3D by writing $\vec F = \left(M,N,0\right)$.  The curl is $\text{curl}\vec F = \left<0,0,N_x-M_y\right>$.  A normal vector to a surface $S$ in the $xy$ plane is $\vec n = \left<0,0,1\right>$. We can then write Green's theorem as $$\oint_C\vec F\cdot d\vec r = \oint_C Mdx+Ndy = \iint_S \text{curl}\cdot \vec n d\sigma = \iint_R \left(N_x-M_y\right) dA, $$ where $C$ is a simple closed curve in the plane and $S=R$ is the planar region that is inside $C$. 
 
 \begin{theorem}[Stokes' Theorem]
 Suppose $\vec F(x,y,z) = (M,N,P)$.  Suppose that $S$ is a surface in the plane, whose boundary is the simple closed curve $C$. Suppose that $\vec n$ is a continuous unit normal vector to $S$ along the entire surface, where the orientation of $\vec n$ matches the orientation of $C$ according to the right hand rule (meaning that if you curl your right hand around $\vec n$ with your thumb pointing along $\vec n$, then your fingers will follow the orientation of $\vec C$). Then Stokes' theorem states that 
-$$\int_C\vec F\cdot d\vec r = \int\int_S \text{curl}\cdot \vec n d\sigma .$$
+$$\int_C\vec F\cdot d\vec r = \iint_S \text{curl}\cdot \vec n d\sigma .$$
 \end{theorem}
 
 
@@ -240,7 +243,7 @@ $$\int_C\vec F\cdot d\vec r = \int\int_S \text{curl}\cdot \vec n d\sigma .$$
 \begin{enumerate}
  \item Compute the curl of $\vec F$, and state the unit normal vector $\vec n$ to $S$ that is oriented compatibly with $C$.
  \item Give a parametrization $\vec r(t)$ of the curve $C$. 
- \item Verify Stokes' theorem by computing both sides of the equation $$\int_C\vec F\cdot d\vec r = \int\int_S \text{curl}\cdot \vec n d\sigma.$$
+ \item Verify Stokes' theorem by computing both sides of the equation $$\int_C\vec F\cdot d\vec r = \iint_S \text{curl}\cdot \vec n d\sigma.$$
  The left side will require you to set up and evaluate a line integral.  The right side will require you to evaluate a surface integral (though you should be able to reduce this integral to a known quantity).
 \end{enumerate}
   
@@ -273,6 +276,9 @@ Being creative in your choice of surface can sometimes make a problem trivial.
  Let $\vec F(x,y,z)=(M,N,P)$ be a continuously differentiable vector field. Suppose that $\vec F$ has a potential (so that $D\vec F$ is symmetric).  Compute the derivative of $F$ as a square matrix. Explain which partial derivatives must be equal. Use this information to find the curl of $\vec F$ if $\vec F$ has a potential. According to Stokes' Theorem, what is the circulation of $\vec F$ along any closed path, provided $\vec F$ has a potential?
 \end{problem}
 
+\end{comment}
 
-}
-
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "215-problems"
+%%% End: 
