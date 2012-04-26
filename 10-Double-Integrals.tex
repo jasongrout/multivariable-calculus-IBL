@@ -38,7 +38,7 @@ Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2
 \begin{enumerate}
  \item Draw the solid $D$. 
  \item The plane $x=0$ intersects the solid in a parabola $z=9-y^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_{x=0} = \int_{-3}^3 9-(0)^2-(y)^2 \ dy$. 
- Similarly, the plane $x=1$ intersects the solid in half a parabola $z=9-x^2-1^2$. Sketch this parabola in your 3D drawing. Find a values $c$ and $d$ so that the area under this parabola is given by the formula $A_x(1)=\int_c^{d} 9-(1)^2-(y)^2 \ dy$.
+ Similarly, the plane $x=1$ intersects the solid in half a parabola $z=9-1^2-y^2$. Sketch this parabola in your 3D drawing. Find a values $c$ and $d$ so that the area under this parabola is given by the formula $A_x(1)=\int_c^{d} 9-(1)^2-(y)^2 \ dy$.
  \item The plane $x=2$ intersects the solid in half a parabola (draw this parabola). Find the values $c$ and $d$ so that the area under this parabola is $A_x(2)=\int_c^d 9-(2)^2-(y)^2 \ dx$.
  \item \marginpar{You should obtain an inequality $a\leq x\leq b$ where $a$ and $b$ are constants. For $c\leq y\leq d$, you should have functions of $x$ for both $c$ and $d$. If both involve square roots, you're on the right track.}
 For which $x$-values $x_0$ does the plane $x=x_0$ intersect the paraboloid. For each of these values, what should $c$ and $d$ equal so that $A_x(x_0) = \int_c^d 9-x_0^2-y^2 dy$ gives the area under the half parabola obtained when the plane $x=x_0$ intersects the surface. 
@@ -134,7 +134,7 @@ Set up an iterated integral formula to compute $\bar x$ for the centroid. By com
 \end{problem}
 
 
-\section{Switching Coordinates - The Jacobian}
+\section{Switching Coordinates: The Jacobian}
 
 We now want to explore how to perform $u$-substitution in high dimensions. Let's start with a review from first semester calculus.
 
@@ -172,7 +172,9 @@ For each region $R$ below, draw the region in the $xy$-plane. Then give a set of
 \end{problem}
 
 
-\begin{problem}
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?q=60eb3051-6680-4031-afba-893277d1ec90}{Sage.}
+%http://aleph.sagemath.org/?z=eJytVsuSozYU3fMVKo-7ELbM0F3TSdVk6Eq2WSazc3lcMgi3EhkRISmQr89FAgyO3e5U4oXR45577hssVTg0yIZR8AFVUlCFMilVzkuqWR3ghrRRis0qkzW2ETGrmpewiH5A2OwVLY-MWP8EsW0Sx9_tSPd4WlWc1JpVacU_Pj7tAKD3J16miVvQJu0kAiD9k3GVI9bQUyVY8GFg_Pa0sd-egNCuO2543iLdPMfxM7D65y0i_cqz30tW1-mnoP7DUMX2gpVH_ZrGyXMQFEqeUE2PLGaNjgta6z2zVCB-qqTSyB0UQlLtJQtTZlpKUQ8CFVWaUxH8yEvNFM10kLMCaTCyxk3Ky8ro_UE24B0S9MBEumgWRLcVS3_9JSIBGn7tRLYdZdursmZfMZWxUqe14DlTOCGPJAF3SA_7UshSQz6FVGmoWB6-mC8fu7OXBUFgHzVCp_H3U532X-k8CMPCF3tPaZ-0iWtDGgcHDRIckrOYm3KJshcoO6Ciz4HDgWJio7Rxm9Zv2sCb0GUzRVAZA3m0xlAe424zvYpWY3ADb8sZbmdwO4XbEW5ncGMrISGk5oS3UCn0xLTi2b47xJiDlQRhS1zdEle0cDBJG6ENq_fO6TrdhiYkoQ13pODHmv_F0u0zgbpHhVSII14O4d5FE-71DXJDeEdurpO7_F5nn_DZq3xXqFwUr9Gp48EzQrlBwcGJS6xuBUvDTUjOzTuu7pF1VARdi-yZDCqbJO8nq3RqGbS9wluv3vnTu52b8RI7oo0jjVazYUOSQdyO4gl5A3AZVCnaoywhkZpUep1b92_GxY70mauMgnEKuRPVK00T6MeZns7j-0qOirES3gwO-tW3k5vPvtmMhY44T0a46YvD37eX9-38vrHmH3gbdjI9_vK-nd837RtN1c9jDEZ2FT5sW7e9125oXvENkLbv7jdv1q1-G-2yZmaX297rxJs9N3C-GQbju28aCn8UkctozILxzu64b4MdJ8DUbdvbcGcIvdeM32gmD5yWKT3U-Guc86LAUZwzjaMoruFtLXjR7gsjBPYA3fFDmuGj5dF_sczbMU4ed_4dwMDojIEobvAqi0jb_fucZF1OoJ_WepVbd6K7E697N8ev31SQ206H-U868ONGR2DI-v_Rc0vJmPF-KA1K78ygAeZm0CVmGDmd4Ks-CbxY9oPnoV4uHrCAz9IG-yP4TeR-7hP_GS2dqJccyqEHTOR_6oLQovpEhUCKHbksOw-XTbtElaAlQ7xGtKqUbPgJdIkWPSTxpyPS_MRqpF8Z6qYBkoVbZ1IpVleyhE_n40Rfd7c0tte5eDgbdH6FRHGJJ7bFmh4EjOetn9bEB2y3i_4G6ObLfg%3D%3D
+}%
 Consider the opening problem for this unit.  We want to find the volume under $f(x,y)=9-x^2-y^2$ where $x\geq0$ and $z\geq 0$.  We obtained the integral formula 
 $$\iint_R f dA = \ds\int_{y=-3}^{y=3} \int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx dy.$$
 \begin{enumerate}
@@ -195,8 +197,9 @@ Compute the integral $\ds \int_{0}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{
 
 
 
-\note{ \begin{problem}
- Optional problem - the problem about integrating $e^{-x^2}$ from 0 to infinity.  Make it optional, and then give them some hints.  I'll work on this next semester. I want to prepare them for the normal distribution. Any student who want to tackle this problem should be asked if they want to become a math major. :)
+\note{ Optional problem: 
+\begin{problem}
+The problem about integrating $e^{-x^2}$ from 0 to infinity.  Make it optional, and then give them some hints.  I'll work on this next semester. I want to prepare them for the normal distribution. Any student who want to tackle this problem should be asked if they want to become a math major. :)
  \end{problem}
 }
 
@@ -247,7 +250,7 @@ Let $R$ be the region in the plane bounded by the curves $x+2y=1$, $x+2y=4$, $2x
 \end{problem}
 
 
-\begin{problem}\marginpar{This is problem 7 in section 15.8.}
+\begin{problem}\bmw{\marginpar{This is problem 7 in section 15.8.}}
  Use the transformation $u=3x+2y$ and $v=x+4y$ to evaluate the integral $$\iint_R (3x^2+14xy+8y^2)dxdy$$ for the region $R$ that is bounded by the lines $y=-(3/2)x+1$, $y=-(3/2)x+3$, $y=-(1/4)x$, and  $y=(-1/4)x+1$.
 \end{problem}
 
