@@ -138,12 +138,6 @@ Once you have finished the problems in the section and feel comfortable with the
 % Instead, do something like $\vec r\vp$
 \newcommand{\vp}{\ensuremath{^{\,\prime}}}
 
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: t
-%%% End: 
-
 %The purpose of this code is to allow me to put lines in matrices so that I can create augmented matrices.
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -161,8 +155,11 @@ Once you have finished the problems in the section and feel comfortable with the
 
 %------------------------------------------------------------------------------------------------------------
 
-\usepackage{hyperref}
-
+\usepackage{color}
+\usepackage[breaklinks]{hyperref}
+\hypersetup{
+  pdfborder= 0 0 2,
+}
 
 \begin{document}
 \frontmatter
@@ -231,13 +228,13 @@ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisc
 \input{10-Double-Integrals}
 \wrapup
 
-\begin{comment}
 \chapter{Surface Integrals}
 \input{11-Surface-Integrals}
 \wrapup
 
 \chapter{Triple Integrals}
 \input{12-Triple-Integrals}
-\end{comment
 \wrapup
+\begin{comment}
+\end{comment}
 \end{document}

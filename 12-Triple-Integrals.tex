@@ -16,7 +16,7 @@ You'll have a chance to teach your examples to your peers prior to the exam.
 Consider the iterated integral $$\ds \int_{-3}^3 \int_0^{\sqrt{9-y^2}}\int_0^{9-x^2-y^2} dzdxdy.$$ This is an integral of the form $\iiint_D dV$, which means along some solid region $D$ in the plane, we are adding up little bits of volume. This integral should give the volume of some solid region in space.  Sketch the region $D$ in space.  Compute the inside integral, and compare this to the first problem in the double integral unit.  Then evaluate the remaining integrals (though you might want to change coordinate systems before doing so).
 \end{problem}
 
-When working with double integrals, there were 2 different ways to set up the bounds for our integrals, as $dA=dxdy=dydx$.  When working with triple integrals, there are 6 different ways to set up the bounds for our integrals, as $$dV=dxdydz = dxdzdy = dydxdz=dydzdx=dzdxdy=dzdydx.$$ 
+When working with double integrals, there were two different ways to set up the bounds for our integrals, as $dA=dxdy=dydx$.  When working with triple integrals, there are six different ways to set up the bounds for our integrals, as $$dV=dxdydz = dxdzdy = dydxdz=dydzdx=dzdxdy=dzdydx.$$ 
 
 \begin{problem}
 Consider again the iterated integral $$\ds \int_{-3}^3 \int_0^{\sqrt{9-y^2}}\int_0^{9-x^2-y^2} dzdxdy.$$ Write the 5 other iterated integrals that are equal to this integral, by switching the order of the bounds. [Hint: one of the integrals you need is $\int_0^9\int_0^{\sqrt{9-z}}\int_{-\sqrt{9-x^2-z}}^{\sqrt{9-x^2-z}} dydxdz$.]
@@ -53,16 +53,16 @@ We can find average value, centroids, centers of mass, moments of inertia, and r
  \begin{enumerate}
   \item An equation of an ellipse that passes through $(a,0)$ and $(0,b)$ is $\ds\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$.  An equation of a line through these same two points is $\ds\frac{x}{a}+\frac{y}{b}=1$.  An equation of an ellipsoid through the three points $(a,0,0)$, $(0,b,0)$, and $(0,0,c)$ is $\ds\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$. Guess an equation of the plane through these same three points, and then verify that your guess is correct by plugging the 3 points into your equation. This will provide you with an extremely fast way to get an equation of a plane.
   \item Set up an iterated integral that would give the volume of $D$.
-  \item If the density is $\delta(x,y,z) = 3x+2yz$, set up iterated integrals that would give the mass $m$ and moment of inertia $I_y$ about the $y$-axis.
+  \item If the density is $\delta(x,y,z) = 3x+2yz$, set up iterated integrals that would give the mass $m$\bmw{ and moment of inertia $I_y$ about the $y$-axis}.
  \end{enumerate}
 \end{problem}
 
 
 
 
-\section{Changing Coordinate Systems - The Jacobian}
+\section{Changing Coordinate Systems: The Jacobian}
 
-Just as we did with polar coordinates in 2, we can compute a Jacobian for any change of coordinates in 3D.  We will focus on cylindrical and spherical coordinate systems. Remember that the Jacobian of a transformation is found by first taking the derivative of the transformation, then finding the determinant, and finally computing the absolute value. 
+Just as we did with polar coordinates in two dimensions, we can compute a Jacobian for any change of coordinates in three dimensions.  We will focus on cylindrical and spherical coordinate systems. Remember that the Jacobian of a transformation is found by first taking the derivative of the transformation, then finding the determinant, and finally computing the absolute value.
 
 \begin{problem}
  The cylindrical change of coordinates is 
@@ -80,20 +80,20 @@ x=\rho\sin\phi\cos\theta,y&=\rho\sin\phi\sin\theta, z=\rho\cos\phi, \quad \text{
 
 The previous problem shows us that we can write
 $$dV=dxdydz = rdrd\theta dz = \rho^2\sin\phi d\rho d\phi d\theta,$$
-provided we require $r\geq0$ and $0\leq phi\leq \pi$. 
+provided we require $r\geq0$ and $0\leq \phi\leq \pi$. 
 Cylindrical coordinates are extremely useful for problems which involve cylinders, paraboloids, and cones. 
 Problems which involve cones and spheres often have simple integrals in spherical coordinates.
 
-\begin{problem}
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJytjkEOgjAQRfecojvaMBKsYIxhOEpNFaNNgDZItO3pRaguSExcuJo_8_Jf5i57Gltw4GMW9eeL0h02sj3WkkzXPfElWsETJziRXU18hdkcBP-Q0OSLaqAV5lMjrCWut5FB1ZpGndRwMI0eNjUNFEcK1MKqgIIBde_gIYOcQXhxHqCNHA0Os3THIpN8d-Z_U_qXLnh_lfKFNb1d9YOyJ0VbdCM}{Sage}.}%
  The double cone $z^2=x^2+y^2$ has two halves.  Each half is called a nappe. Set up an integral in the coordinate system of your choice that would give the volume of the region that is between the $xy$ plane and the upper nappe of the double cone $z^2=x^2+y^2$, and between the cylinders $x^2+y^2=4$ and $x^2+y^2=16$.  Then evaluate the integral.
 \end{problem}
 
 \begin{problem}
- Set up an integral in the coordinate system of your choice that would give the volume of the solid ball that is inside the sphere $a^2=x^2+y^2+z^2$. Compute the integral to give a formula for the volume of a sphere of radius $a$.  Then set up (don't evaluate) an iterated integral that would give the moment of inertia $I_x$ about the $x$-axis, if the density is a constant, so $\delta =c$. 
+ Set up an integral in the coordinate system of your choice that would give the volume of the solid ball that is inside the sphere $a^2=x^2+y^2+z^2$. Compute the integral to give a formula for the volume of a sphere of radius $a$.  \bmw{Then set up (don't evaluate) an iterated integral that would give the moment of inertia $I_x$ about the $x$-axis, if the density is a constant, so $\delta =c$.}
 \end{problem}
 
 
-\begin{problem}
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJxty00OgyAQQOF9L-IQB6PSnxUnMWqImpTEBgqTFji900V35m3e5vuYAFXCjKUSF6_ty-92sTT73ZFaoWgd34EgTX2dp14gJJQKFU_-T8EWr4J1fcbvkq1ke0675oaPH27i033BRL8tNAdD1umhQ24UB9CiL84}{Sage}.}%
 Find the volume of the solid domain $D$ in space which is above the cone $z=\sqrt{x^2+y^2}$ and below the paraboloid $z=6-x^2-y^2$. Use cylindrical coordinates to set up and then evaluate your integral.  You'll need to find where the surface intersect, as their intersection will help you determine the appropriate bounds.
 \end{problem}
 
