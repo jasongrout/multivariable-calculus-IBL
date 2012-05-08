@@ -3,7 +3,7 @@ This unit covers the following ideas. In preparation for the quiz and exam, make
 \item Compute the differential $dy$ of a function and use it to approximate the change in a function. 
 \item Explain how to perform matrix multiplication and compute determinants of square matrices.
 \item Illustrate how to solve systems of linear equations, including how to express a solution parametrically (in terms of $t$) when there are infinitely solutions.
-\item Extend the idea of differentials to approximate functions using parabolas, cubics, and polynomials of any degree (in other words, using Taylor polynomials).
+\item Extend the idea of differentials to approximate functions using parabolas, cubics, and polynomials of any degree.
 \end{enumerate}
 You'll have a chance to teach your examples to your peers prior to the exam.
 
@@ -34,8 +34,7 @@ Then use a computer algebra system, such as \href{http://http://www.wolframalpha
 
 
 \subsection{Derivatives}
-In first semester calculus, one of the things you focused on was learning to compute derivatives. You'll need to know the derivatives of all the basic functions (found on the end cover of almost every calculus textbook). Being able to compute derivatives accurately and rapidly will help make learning calculus in high dimensions much easier (as every derivative will involve multiple derivatives).
-
+In first semester calculus, one of the things you focused on was learning to compute derivatives. You'll need to know the derivatives of basic functions (found on the end cover of almost every calculus textbook). Computing derivatives accurately and rapidly will make learning calculus in high dimensions easier.
 The following rules are crucial.
 \begin{itemize}
 \item Power rule {$(x^n)' = nx^{n-1}$}
@@ -66,7 +65,7 @@ Each derivative rule from the front cover of your calculus text is also an integ
 (1) {$u$}-substitution,
 (2) integration-by-parts, and
 (3) integration by using software. 
-There are many other integration techniques, but we will not focus on them. If you are trying to compute an integral to get a number while on the job, then software will almost always be the tool you use.  As we develop new ideas in this and future classes (in engineering, physics, statistics, and of course math), history has shown that $u$-substitution and integrations-by-parts show up so frequently that knowing when and how to apply them is crucial.
+There are many other integration techniques, but we will not focus on them. If you are trying to compute an integral to get a number while on the job, then software will almost always be the tool you use.  As we develop new ideas in this and future classes (in engineering, physics, statistics, math), you'll find that $u$-substitution and integrations-by-parts show up so frequently that knowing when and how to apply them becomes crucial.
 
 \begin{problem}
 \marginpar{\bmw{For practice with $u$-substitution, see section 5.5 and 5.6.  \\ For practice with integration by parts, see section 8.1.}}
@@ -88,12 +87,12 @@ Compute $\ds \int x^2 e^{3x} dx$.
 
 
 \section{Differentials}
-The derivative of a function gives us the slope of a tangent line to that function. We can use this tangent line to estimate how much the output ($y$ values) will change if we change the input ($x$-value). If we rewrite the notation $\ds\frac{dy}{dx}=f'$ in the form $dy=f' dx$, then we can read this as "A small change in $y$ ($dy$) equals the derivative ($f'$) times a small change in $x$ ($dx$). 
+The derivative of a function gives us the slope of a tangent line to that function. We can use this tangent line to estimate how much the output ($y$ values) will change if we change the input ($x$-value). If we rewrite the notation $\ds\frac{dy}{dx}=f'$ in the form $dy=f' dx$, then we can read this as ``A small change in $y$ (called $dy$) equals the derivative ($f'$) times a small change in $x$ (called $dx$).'' 
 
 \begin{definition}
 We call $dx$ the differential of $x$.  If $f$ is a function of $x$, then the differential of $f$ is $df = f'(x) dx$. Since we often write $y=f(x)$, we'll interchangeably use $dy$ and $df$ to represent the differential of $f$. 
 
-We will often refer to the differential notation $dy=f'dx$ as "a change in the output $y$ equals the derivative times a change in the input $x$. 
+We will often refer to the differential notation $dy=f'dx$ as ``a change in the output $y$ equals the derivative times a change in the input $x$.'' 
 \end{definition}
 
 \begin{problem}\marginpar{\bmw{See 3.10:19-38.}}
@@ -108,20 +107,20 @@ This problem will help you see how the notion of differentials is used to develo
 Consider the function $y=f(x) = x^2$. This problem has multiple steps, but each is fairly short.
 \begin{enumerate}
 \item Find the differential of $y$ with respect to $x$.  
-\item Find an equation of the tangent line to $f(x)$ at $x=3$. 
-\item Draw a graph of $f(x)$. On your graph include a graph of the tangent line found in the previous step. 
-\item Place a dot at the point $(3,9)$ and label it on your graph. Place a dot on the tangent line that is to the right of $(3,9)$ and label that point $(x,y)$. 
-\item Using the two points $(3,9)$ and $(x,y)$, compute the slope of the line connecting these two points. What is the rise (i.e, the change in $y$ or $dy$)? What is the run (i.e, the change in $x$ or $dx$)?  
-\item We already know the slope of the tangent line from the derivative. Use this knowledge together with your computation from the previous step to obtain an equation of the tangent line to $f(x)$ at $x=3$. 
+\item Give an equation of the tangent line to $f(x)$ at $x=3$. Use any method you want.  The remaining parts to this problem just ask you give an equation of the tangent line using differentials.
+\item Draw a graph of $f(x)$ and the tangent line on the same axes.
+\item Place a dot at the point $(3,9)$ and label it on your graph. Pick a point on the tangent line, place a dot on that point in your graph, and label the point $(x,y)$. 
+\item Using the two points $(3,9)$ and $(x,y)$, compute the slope of the line connecting these two points. Your answer should involve $x$ and $y$. What is the rise (i.e, the change in $y$ or $dy$)? What is the run (i.e, the change in $x$ or $dx$)?  
+\item We already know the slope of the tangent line is the derivative $f'(3)=6$. We also know the slop from the previous part. These two must be equal. Use this fact to give an equation of the tangent line to $f(x)$ at $x=3$. 
 \end{enumerate}
 \end{problem}
  
 \begin{problem} \marginpar{\bmw{See 3.11:45-62.}} \label{diff-sphere}
-The manufacturer of a spherical storage tank needs to create a tank with a radius of 3 m. Recall that the volume of a sphere is $V(r) = \frac{4}{3}\pi r^3$. No manufacturing process is perfect, so the resulting sphere will have a radius of 3 m, plus or minus some small amount $dr$. The actual radius will be $3+dr$. Find the differential $dV$.  Then use differential to estimate the change in the volume of the sphere if the actual radius is 3.02 m instead of the planned 3 m.    
+The manufacturer of a spherical storage tank needs to create a tank with a radius of 3 m. Recall that the volume of a sphere is $V(r) = \frac{4}{3}\pi r^3$. No manufacturing process is perfect, so the resulting sphere will have a radius of 3 m, plus or minus some small amount $dr$. The actual radius will be $3+dr$. Find the differential $dV$.  Then use differentials to estimate the change in the volume of the sphere if the actual radius is 3.02 m instead of the planned 3 m.    
 \end{problem}
  
 \begin{problem}
-A forest ranger needs to estimate the height of a tree.  The ranger stands 50 feet from the base of tree and measures the angle of elevation to the top of the tree to be about 60$\deg$. If this angle of 60$\deg$ is correct, then what is the height of the tree? If the ranger's angle measurement could be off by as much as $5 \deg$, then how much could his estimate of the height be off? Use differentials to give an answer.
+A forest ranger needs to estimate the height of a tree.  The ranger stands 50 feet from the base of tree and measures the angle of elevation to the top of the tree to be about 60$^\circ$. If this angle of 60$^\circ$ is correct, then what is the height of the tree? If the ranger's angle measurement could be off by as much as $5^\circ$, then how much could his estimate of the height be off? Use differentials to give an answer.
 \end{problem}
 
 
@@ -152,6 +151,20 @@ Compute the following matrix products.
 \item
 $\begin{bmatrix}1 &2\\3&4\end{bmatrix}\begin{bmatrix}5&0\\6&1\end{bmatrix}$
 \end{itemize} \end{problem}
+
+
+\begin{problem} Compute the product
+$\begin{bmatrix}
+3 & 2& 1\\
+0 & 1& -4
+\end{bmatrix}
+\begin{bmatrix}
+-1&3 &0 \\
+ 2&-1 &0\\
+ 0&1 &2
+\end{bmatrix}$.
+\end{problem}
+
 
 \subsection{Determinants}
 
@@ -237,7 +250,7 @@ $B = \begin{bmatrix} \cl{0\\2\\0}&\cl{1\\0\\0}&\cl{0\\0\\3}\end{bmatrix}$, then 
 
 \begin{problem}
 \marginpar{For additional practice, make up your own systems of equations. Use Wolfram Alpha to check your work.}
-Solve the following linear system of equations.
+Solve the following linear systems of equations.
 \begin{itemize}
 \item $\begin{cases}x+y&=3\\2x-y&=4\end{cases}$
 \item $\begin{cases}-x + 4y&=8\\3x - 12y&=2\end{cases}$
@@ -266,55 +279,76 @@ The key idea needed to approximate functions is illustrated by the next problem.
 \begin{problem} 
 Let $f(x)=e^x$. You should find that your work on each step can be reused to do the next step.
 \begin{itemize}
-\item Find a first degree polynomial $P_1(x)=a+bx$ so that $P(0)=f(0)$ and $P'(0)=f'(0)$. In other words, give me a line that passes through the same point and has the same slope as $f(x)=e^x$ does at $x=0$. Set up a system of equations and then find the unknowns $a$ and $b$. The next two are very similar.
-\item Find a second degree polynomial $P_2(x)=a+bx+cx^2$ so that $P(0)=f(0)$, $P'(0)=f'(0)$, and $P''(0)=f''(0)$. In other words, give me a parabola that passes through the same point, has the same slope, and has the same concavity as $f(x)=e^x$ does at $x=0$. 
-\item Find a third degree polynomial $P_3(x)=a+bx+cx^2+dx^3$ so that $P(0)=f(0)$, $P'(0)=f'(0)$, $P''(0)=f''(0)$, and $P'''(0)=f'''(0)$. In other words, give me a cubic that passes through the same point, has the same slope, and has the same concavity as $f(x)=e^x$ does at $x=0$. 
+\item Find a first degree polynomial $P_1(x)=a+bx$ so that $P_1(0)=f(0)$ and $P'_1(0)=f'(0)$. In other words, give me a line that passes through the same point and has the same slope as $f(x)=e^x$ does at $x=0$. Set up a system of equations and then find the unknowns $a$ and $b$. The next two are very similar.
+\item Find a second degree polynomial $P_2(x)=a+bx+cx^2$ so that $P_2(0)=f(0)$, $P'_2(0)=f'(0)$, and $P''_2(0)=f''(0)$. In other words, give me a parabola that passes through the same point, has the same slope, and has the same concavity as $f(x)=e^x$ does at $x=0$. 
+\item Find a third degree polynomial $P_3(x)=a+bx+cx^2+dx^3$ so that $P_3(0)=f(0)$, $P'_3(0)=f'(0)$, $P''_3(0)=f''(0)$, and $P'''_3(0)=f'''(0)$. In other words, give me a cubic that passes through the same point, has the same slope, the same concavity, and the same third derivative as $f(x)=e^x$ does at $x=0$. 
 \item Now compute $e^{.1}$ with a calculator.  Then compute $P_1(.1)$, $P_2(.1)$, and $P_3(.1)$. How accurate are the line, parabola, and cubic in approximating $e^{.1}$?
 \end{itemize}
 \end{problem} 
 
-The previous problem showed you how to create what we call a Taylor polynomial expanded about $c=0$. You showed that the third degree Taylor polynomial expanded about $c=0$ is \marginpar{The factorial function $n!$ for a natural number $n$ is defined  as the product of all the integers upto and including $n$, namely $n!=1\cdot 2\cdot 3 \cdots n$. We define $0!=1$.}
-$$P_3(x) = f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\frac{f''(0)}{3!}x^3. $$  
-A similar computation shows that the $n$th degree Taylor polynomial expanded about $c=0$ is
-$$P_n(x) = f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\cdots +\frac{f^{(n)}(0)}{n!}x^n = \sum_{k=0}^n \frac{f^{(k)}(0)}{k!}x^k, $$
-where $f^{(k)}$ is the $k$th derivative. To expand about $c=a$, the polynomial is 
-$$P_n(x) = f(a)+\frac{f'(a)}{1!}(x-a)+\cdots +\frac{f^{(n)}(a)}{n!}(x-a)^n = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k. $$ 
-All you do is evaluate each derivative at $a$ instead of $0$, and then replace $x$ with $(x-a)$ to shift everything right $a$. 
+\begin{problem} \label{Taylor at 1}
+Let $f(x)=e^x$.
+\begin{itemize}
+\item Find a second degree polynomial $T(x)=a+bx+cx^2$ so that $T(1)=f(1)$, $T'(1)=f'(1)$, and $T''(1)=f''(1)$. In other words, give me a parabola that passes through the same point, has the same slope, and the same concavity as $f(x)=e^x$ does at $x=1$. 
+\item Find a second degree polynomial written in the form $S(x)=a+b(x-1)+c(x-1)^2$ so that $S(1)=f(1)$, $S'(1)=f'(1)$, and $S''(1)=f''(1)$. In other words, give me a cubic that passes through the same point, has the same slope, and the same concavity as $f(x)=e^x$ does at $x=1$. 
+\item Find a third degree polynomial written in the form $P(x)=a+b(x-1)+c(x-1)^2+d(x-1)^3$ so that $P(1)=f(1)$, $P'(1)=f'(1)$, $P''(1)=f''(1)$, and $P'''(1)=f'''(1)$. In other words, give me a cubic that passes through the same point, has the same slope, the same concavity, and the same third derivative as $f(x)=e^x$ does at $x=1$. 
+\end{itemize}
+\end{problem} 
 
-\begin{problem}
-Let $f(x)=\sqrt{x}$.  Compute the degree 3 Taylor polynomial $P_3(x)$ of $f(x)$ expanded about $c=1$. Then compute $\sqrt{1.2}$ and $P_3(1.2)$.  What is the difference $P_3(1.2)-f(1.2)$? 
-You will have found a small change in $y$ (remember we called this $dy$) when the change in $x$ is .2 (so $dx=.2$ since 1.2 is only .2 units away from where we centered out polynomial at $c=1$).
+
+The previous 2 problems showed you how to create what we call a Taylor polynomial expanded about $c=0$ and $c=1$. The third  degree Taylor polynomial expanded about $c=0$ is in general given by \marginpar{The factorial function $n!$ for a natural number $n$ is defined  as the product of all the integers upto and including $n$, namely $n!=1\cdot 2\cdot 3 \cdots n$. We define $0!=1$.}
+$$P_3(x) = f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\frac{f'''(0)}{3!}x^3. $$  
+To expand about $c=a$ (we used $c=1$ in the problem \ref{Taylor at 1}), the polynomial is 
+$$P_3(x) = f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f^{''}(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3,$$
+where we use $f^{(3)}$ to represent taking 3 derivatives. 
+All you do is evaluate each derivative at $a$ instead of $0$, and then replace $x$ with $(x-a)$ to shift everything right $a$. If we wanted a fourth degree polynomial, we would evaluate the 4th derivative at $a$, divide by $4!$, multiply by $(x-a)^4$, and then add this product to the 3rd degree polynomial. 
+
+\begin{problem}\marginpar{See section 5.2, problems 1-24 for a review of sigma notation.}%
+ Use summation notation to rewrite the degree 3 Taylor polynomial of $f(x)$ expanded about $c=0$. Then use sigma notation to rewrite the Taylor polynomial of $f(x)$ expanded about $c=a$. Then make a guess as to the formula for the 20th degree Taylor polynomial expaned about $c=a$. What would the $n$th degree Taylor polynomial formula be?
 \end{problem}
 
-The problem above introduced the final idea. We will let $dx=x-c$ (a small change in $x$). Since the polynomial should be close to the function, a small change in $y$ is $dy=P_n(x)-f(c)$. We can write the Taylor polynomial notation above in the form  
-$$P_n(x) - f(c)=dy=\frac{f'(c)}{1!}dx+\frac{f''(c)}{2!}dx^2+\cdots +\frac{f^{(n)}(c)}{n!}dx^n. $$
-If we want to estimate the change in $y$ using a first order approximation, this gives us the differential notation
-$$dy = f'(c)dx.$$
-A second order approximation is
-$$dy = f'(c)dx + \frac{f''(c)}{2!}dx^2.$$
-A third order approximation is
-$$dy = f'(c)dx + \frac{f''(c)}{2!}dx^2+  \frac{f'''(c)}{3!}dx^3.$$
-
-\begin{example}
-This example refers back to problem \ref{diff-sphere}. We want a spherical tank of radius 3m. Let's use a first, second, and third order approximation to estimate how much the volume will increase if the radius is 3.02m instead of 3m.  
-
-We start with $V=4/3 \pi r^3, V'=4\pi r^2, V''=8\pi r,$ and $V'''=8\pi$. Evaluate each of these at $c=3$ to get $V(3)=36\pi, V'(3)=36\pi, V''(3)=24\pi,$ and $V'''(3)=8\pi$. Note that $dx=.02$ as $3.02-3=.02$.
-\begin{enumerate}
-\item A first order approximation is $$dy=V'(3)dx = 36\pi\cdot .02 = .72\pi.$$
-\item A second order approximation is $$dy=V'(3)dx+V''(3)/2!\ dx^2  = 36\pi\cdot .02 +24\pi/2 (.02)^2 =(.7248)\pi.$$
-\item A third order approximation is $$dy=V'(3)dx+V''(3)/2!\ dx^2 +V'''(3)/3!\ dx^3  = 36\pi\cdot .02 +24\pi/2 (.02)^2+8\pi/6\ dx^3  =(.724810\bar6)\pi.$$
-\end{enumerate}
-As a side note, the volume of a sphere involves a cubic function. This means that if we try to approximate the volume with a cubic, we should get an exact approximation.  Use a calculator to check that $$V(3.02)-V(3) = \frac 43 \pi (3.02)^3 - \frac 43 \pi (3)^3 =  (.724810\bar6)\pi.$$ This is precisely what we obtained using our third degree approximation.
-\end{example}
-
-We'll end this section with a problem to practice what we did above.
-
 \begin{problem}
-Suppose you are constructing a cube whose side length should be $s=2$ units. The manufacturing process is not exact, but instead creates a cube with side lengths $s=2+ds$ units. (You should assume that all sides are still the same, so any error on one side is replicated on all.  We have to assume this for now, but before the semester ends we'll be able to do this with high dimensional calculus.) 
-
-Suppose that the machine creates a cube with side length $2.3$ units instead of 2 units.  Note that the volume of the cube is $V=s^3$.  Use a first, second, and third order approximation to estimate the increase in volume caused by the .3 increase in side length.  Then compute the actual increase in volume $V(2.3)-V(2)$.   
+ Find the 11th degree Taylor polynomial for $f(x)=\sin(x)$ expanded about $c=0$. Don't worry about expanding any factorials. Evaluate the Taylor polynomial at $x=.3$.  Then compute $\sin (.3)$ with a calculator. How close is the Taylor polynomial to your calculators answer?
 \end{problem}
 
+
+If we use the notation $dx=x-a$ to emphasize a change from $a$, then we can rewrite the Taylor polynomial formula in terms of differentials as
+$$P_n(x) -f(a) = \frac{f'(a)}{1!}(dx)+\cdots +\frac{f^{(n)}(a)}{n!}(dx)^n = f(a)+\sum_{k=1}^n \frac{f^{(k)}(a)}{k!}(dx)^k. $$ 
+
+\begin{problem}
+Let $f(x)=\sqrt{x}$.  Compute the degree 3 Taylor polynomial $P_3(x)$ of $f(x)$ expanded about $c=4$. Then compute $\sqrt{4.1}$ and $P_3(4.1)$.  What is the difference $P_3(4.1)-f(4.1)$? 
+You will have found a small change in $y$ (remember we called this $dy$) when the change in $x$ is .2 (so $dx=.1$ since 4.1 is only .1 units away from where we centered out polynomial at $c=4$).
+\end{problem}
+
+% The problem above introduced the final idea. We will let $dx=x-c$ (a small change in $x$). Since the polynomial should be close to the function, a small change in $y$ is $dy=P_n(x)-f(c)$. We can write the Taylor polynomial notation above in the form  
+% $$P_n(x) - f(c)=dy=\frac{f'(c)}{1!}dx+\frac{f''(c)}{2!}dx^2+\cdots +\frac{f^{(n)}(c)}{n!}dx^n. $$
+% If we want to estimate the change in $y$ using a first order approximation, this gives us the differential notation
+% $$dy = f'(c)dx.$$
+% A second order approximation is
+% $$dy = f'(c)dx + \frac{f''(c)}{2!}dx^2.$$
+% A third order approximation is
+% $$dy = f'(c)dx + \frac{f''(c)}{2!}dx^2+  \frac{f'''(c)}{3!}dx^3.$$
+% 
+% \begin{example}
+% This example refers back to problem \ref{diff-sphere}. We want a spherical tank of radius 3m. Let's use a first, second, and third order approximation to estimate how much the volume will increase if the radius is 3.02m instead of 3m.  
+% 
+% We start with $V=4/3 \pi r^3, V'=4\pi r^2, V''=8\pi r,$ and $V'''=8\pi$. Evaluate each of these at $c=3$ to get $V(3)=36\pi, V'(3)=36\pi, V''(3)=24\pi,$ and $V'''(3)=8\pi$. Note that $dx=.02$ as $3.02-3=.02$.
+% \begin{enumerate}
+% \item A first order approximation is $$dy=V'(3)dx = 36\pi\cdot .02 = .72\pi.$$
+% \item A second order approximation is $$dy=V'(3)dx+V''(3)/2!\ dx^2  = 36\pi\cdot .02 +24\pi/2 (.02)^2 =(.7248)\pi.$$
+% \item A third order approximation is $$dy=V'(3)dx+V''(3)/2!\ dx^2 +V'''(3)/3!\ dx^3  = 36\pi\cdot .02 +24\pi/2 (.02)^2+8\pi/6\ dx^3  =(.724810\bar6)\pi.$$
+% \end{enumerate}
+% As a side note, the volume of a sphere involves a cubic function. This means that if we try to approximate the volume with a cubic, we should get an exact approximation.  Use a calculator to check that $$V(3.02)-V(3) = \frac 43 \pi (3.02)^3 - \frac 43 \pi (3)^3 =  (.724810\bar6)\pi.$$ This is precisely what we obtained using our third degree approximation.
+% \end{example}
+% 
+% We'll end this section with a problem to practice what we did above.
+% 
+% \begin{problem}
+% Suppose you are constructing a cube whose side length should be $s=2$ units. The manufacturing process is not exact, but instead creates a cube with side lengths $s=2+ds$ units. (You should assume that all sides are still the same, so any error on one side is replicated on all.  We have to assume this for now, but before the semester ends we'll be able to do this with high dimensional calculus.) 
+% 
+% Suppose that the machine creates a cube with side length $2.3$ units instead of 2 units.  Note that the volume of the cube is $V=s^3$.  Use a first, second, and third order approximation to estimate the increase in volume caused by the .3 increase in side length.  Then compute the actual increase in volume $V(2.3)-V(2)$.   
+% \end{problem}
+\note{I would include this problem above in class as a demonstration.  It allows them to see what differentials do.  You can easily see how each new piece adds more to the approximation.}
 
 
 

@@ -60,11 +60,11 @@ Once you have finished the problems in the section and feel comfortable with the
 %\usepackage{eso-pic}
 %\AddToShipoutPicture{\put(10,10){\small Draft: \today\ at \currenttime }}%--- version: \MakeUppercase{\svnInfoRevision}}}
 
-\newcommand{\bmw}[1]{}
+\newcommand{\bmw}[1]{#1}
 \newcommand{\marginparbmw}[1]{\bmw{\marginpar{#1}}}
 
 % Notes for Larson, 5th edition
-\newcommand{\larsonfive}[1]{#1}
+\newcommand{\larsonfive}[1]{}
 
 % Instructor-specific material (answers, helps, etc.)
 \ifinstructor
@@ -110,13 +110,12 @@ Once you have finished the problems in the section and feel comfortable with the
 \newtheorem{observation}[theorem]{Observation}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
-\newtheorem{prb}[theorem]{Problem}
 \newtheorem{question}[theorem]{Question}
 \newtheorem*{prep-problems}{Preparation Problems}
 
 %\newtheorem{problem}[theorem]{Problem}
 \theoremstyle{problem}
-\newtheorem{problemnum}[theorem]{Problem}
+\newtheorem{problemnum}{Problem}
 \newenvironment{problem}[1][]{\begin{problemnum}[#1]}{\end{problemnum}\nopagebreak\hrule\bigskip}
 
 

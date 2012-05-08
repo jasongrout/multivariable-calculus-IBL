@@ -77,14 +77,14 @@ Consider the vectors $\vec u=(1,2)$ and $\vec v=\left<3,1\right>$.  Draw $\vec u
 
 \begin{problem}\marginpar{\bmw{See 11.1: 3,4.}}
 Consider the vector $\vec v=(2,-1)$.  Draw $\vec v$, $-\vec v$, and $3\vec v$. 
-Suppose a donkey travels along the path given by $(x,y)=\vec v t = (2t,-t)$, where $t$ represents time. Draw the path followed by the donkey. Where is the donkey at time $t=0,1,2$? Put markers on your graph to show the donkey's location. Then determine how fast the donkey is travelling.
+Suppose a donkey travels along the path given by $(x,y)=\vec v t = (2t,-t)$, where $t$ represents time. Draw the path followed by the donkey. Where is the donkey at time $t=0,1,2$? Put markers on your graph to show the donkey's location. Then determine how fast the donkey is traveling.
 \end{problem}
 
 In the previous problem you encountered $(x,y)=(2t,-t)$.  This is an example of a function where the input is $t$ and the output is a vector $(x,y)$.  For each input $t$, you get a single vector output $(x,y)$. Such a function is called a vector-valued function. Often, we'll use the variable $\vec r$ to represent the vector $(x,y)$, or $(x,y,z)$ in 3D.  So we could rewrite the position of the donkey as $\vec r(t)=(2,-1)t$. We use $\vec r$ instead of $r$ to remind us that the output is a vector.
 
 \begin{problem}\label{horse line}\marginpar{\bmw{See 12.2: 1.}}
 Suppose a horse races down a path given by the vector valued function $\vec r(t) = (1,2)t+(3,4)$.  
-Draw the path followed by the horse. Where is the horse at time $t=0,1,2$? Put markers on your graph to show the horse's location. Give a vector that tells the horse's direction. Then determine how fast the horse is travelling.
+Draw the path followed by the horse. Where is the horse at time $t=0,1,2$? Put markers on your graph to show the horse's location. Give a vector that tells the horse's direction. Then determine how fast the horse is traveling.
 \end{problem}
 
 \begin{problem}\marginpar{\bmw{See 12.2: 9,17,25,33 and surrounding.}}
@@ -163,7 +163,7 @@ Mark each statement true or false. Explain. You can assume that $\vec u,\vec v,\
 \item $\vec u\cdot (\vec v\cdot \vec w)=(\vec u\cdot\vec v)\cdot\vec w$. 
 \item $c(\vec u\cdot \vec v)=(c\vec u)\cdot \vec v=\vec u\cdot (c\vec v)$. 
 \item $\vec u+(\vec v\cdot \vec w)=(\vec u+\vec v)\cdot(\vec u+\vec w)$. 
-\item $\vec u\cdot (\vec v+ \vec w)=(\vec u+\vec v)\cdot(\vec u+\vec w)$. 
+\item $\vec u\cdot (\vec v+ \vec w)=(\vec u\cdot \vec v)+(\vec u\cdot\vec w)$. 
 \item $\vec u\cdot \vec u= |\vec u|^2$. 
 \end{enumerate}
 \end{problem}
@@ -210,8 +210,15 @@ Find the amount of work done by the force $\vec F=\left<0,-200\right>$ through t
 \begin{enumerate}
 \item Find the projection of $\vec F$ onto $\vec d$. This tells you how much force acts in the direction of the displacement. Find the magnitude of this projection.
 \item Since work equals $W=Fd$, multiply your answer above by $|\vec {d}|$.  
+\item Now compute $\vec F\cdot \vec d$. You have just shown that $W=\vec F\cdot \vec d$ when $\vec F$ and $\vec d$ are not in the same direction.
 \end{enumerate}
-Now compute $\vec F\cdot \vec d$. You have just shown that $W=\vec F\cdot \vec d$ when $\vec F$ and $\vec d$ are not in the same direction.
+\end{problem}
+
+
+
+
+\begin{problem}
+  Show that the distance from a point $Q$ to a line (with direction vector $\vec v$ passing through $P$) is $|\overrightarrow{PQ}-\proj_{\vec v}\overrightarrow {PQ}|$. Draw a diagram illustrating your reasoning.
 \end{problem}
 
 \section{The Cross Product and Planes}
@@ -275,19 +282,8 @@ Consider the two planes $x+2y+3z=4$ and $2x-y+z=0$.  These planes meet in a line
   Find the equation of the plane containing the lines $\vec r_1(t)=(1,3,0)t+(1,0,2)$ and $\vec r_2(t)=(2,0,-1)t+(2,3,2)$.
 \end{problem}
 
-\section{Projections, lines, and planes}
-
-Using the dot product, cross product, and projections, derive the
-following formulas which find distances between points, lines, and
-planes. 
-
 \begin{problem}
   Show that the distance from a point $Q$ to a plane (with normal vector {$\vec n$} and a point $P$) is given by $|\proj_{\vec n}\overrightarrow {PQ}|$. Draw a diagram illustrating your reasoning.
-\end{problem}
-
-
-\begin{problem}
-  Show that the distance from a point $Q$ to a line (with direction vector $\vec v$ passing through $P$) is $|\overrightarrow{PQ}-\proj_{\vec v}\overrightarrow {PQ}|$. Draw a diagram illustrating your reasoning.
 \end{problem}
 
 \begin{problem}
