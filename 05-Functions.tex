@@ -11,7 +11,7 @@ You'll have a chance to teach your examples to your peers prior to the exam.
 
 
 \section{Function Terminology}
-A function is a set of instructions involving two sets (called the domain and codomain).  A function assigns to each element of the domain $D$ exactly one element in the codomain $R$. We'll often refer to the codomain $R$ as the target space.  We'll write {$$f\colon D\to R$$} when we want to remind ourselves of the domain and target space.  In this class, we will study what happens when the domain and target space are subsets of {${\mathbb{R}}^n$} (Euclidean {$n$}-space).  In particular, we will study functions of the form $$f\colon {\mathbb{R}}^n\to {\mathbb{R}}^m,$$ when $m$ and $n$ are 3 or less. The value of $n$ is the dimension of the input vector (or number of inputs).  The number $m$ is the dimension of the output vector (or number of outputs).  Our goal is to understand uses for each type of function, and be able to construct graphs to represent the function.
+A function is a set of instructions involving two sets (called the domain and codomain).  A function assigns to each element of the domain $D$ exactly one element in the codomain $R$. We'll often refer to the codomain $R$ as the target space.  We'll write $$f\colon D\to R$$ when we want to remind ourselves of the domain and target space.  In this class, we will study what happens when the domain and target space are subsets of ${\mathbb{R}}^n$ (Euclidean $n$-space).  In particular, we will study functions of the form $$f\colon {\mathbb{R}}^n\to {\mathbb{R}}^m,$$ when $m$ and $n$ are 3 or less. The value of $n$ is the dimension of the input vector (or number of inputs).  The number $m$ is the dimension of the output vector (or number of outputs).  Our goal is to understand uses for each type of function, and be able to construct graphs to represent the function.
 
 We will focus most of our time this semester on two- and three-dimensional problems. However, many problems in the real world require a higher number of dimensions. When you hear the word ``dimension'', it does not always represent a physical dimension, such as length, width, or height.  If a quantity depends on 30 different measurements, then the problem involves 30 dimensions.  As a quick illustration, the formula for the distance between two points depends on 6 numbers, so distance is really a 6-dimensional problem.  As another example, if a piece of equipment has a color, temperature, age, and cost, we can think of that piece of equipment being represented by a point in four-dimensional space (where the coordinate axes represent color, temperature, age, and cost).
 
@@ -306,7 +306,7 @@ Do the following:
 If someone gives us parametric equations for a curve in the plane, we know how to draw the curve.  How do we obtain parametric equations of a given curve? In problem \ref{parametric curve in plane example}, we were given the parametric equation for the path of a horse, namely $x=2\cos t, y=3 \sin t$ or $\vec r(t)=(2\cos t,3\sin t)$. From those equations, we drew the path of the horse, and could have written a Cartesian equation for the path. How do we work this in reverse, namely if we had only been given the ellipse $\ds\frac{x^2}{4}+\frac{y^2}{9}=1$, could we have obtained parametric equations $\vec r(t)=(x(t),y(t))$ for the curve?
 \begin{problem}\label{parameterizing plane curves}
 \marginpar{Use \href{http://aleph.sagemath.org/?z=eJwrsS1LLNJQL1HX5CpILErMTS0pykyOL8jJL9GINtJKzi_WKNHUUTDWKs7MA7JidRQ0SnQMdIy0CjI1NQFWdRJT}{Sage} or \href{http://wolfr.am/wAkR8l}{Wolfram Alpha} %http://www.wolframalpha.com/input/?i=parametric+plot+%282+cos+t,+3+sin+t%29
-to visualize your parametrizations.
+to visualize your parameterizations.
 }%
  Find a parametrization for each of the following curves in the plane. 
  You can write your parametrization in the vector form $\vec r(t)=(?,?)$, or in the parametric form $x=?,\ y=?$. 
@@ -362,13 +362,12 @@ Using cylindrical coordinates, $\vec T(r,\theta,z) = (r\cos \theta, r\sin\theta,
 
 
 \begin{problem}%
-\marginpar{We did very similar things in problem \ref{graphing spherical coordinates}.}%
-\bmw{marginpar{See 16.5: 1-16 for more practice.}}%
-\larsonfive{\marginpar{See Larson 15.5:1--10}}%
+\marginpar{We did very similar things in problem \ref{graphing spherical coordinates}.
+\bmw{marginpar{See 16.5: 1-16 for more practice.}}
+\larsonfive{\marginpar{See Larson 15.5:1--10}}}%
 Recall the spherical coordinate transformation 
-\bmw{$$\vec T(\rho,\phi,\theta) = (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos \phi).$$ }
-\larsonfive{$$\vec T(\rho,\theta, \phi) = (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos \phi).$$}
-
+\bmw{$$\vec T(\rho,\phi,\theta) = (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos \phi).$$ }%
+\larsonfive{$$\vec T(\rho,\theta, \phi) = (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos \phi).$$}%
 This is a function of the form $\vec T\colon \mathbb{R}^3\to\mathbb{R}^3$.  If we hold one of the three inputs constant, then we have a function of the form $\vec r\colon \mathbb{R}^2\to\mathbb{R}^3$, which is a parametric surface.
 \begin{enumerate}
  \item \marginpar{Use \href{http://aleph.sagemath.org}{Sage} or \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot each parametrization  (see \ref{3d parametric plot} for examples).}%
