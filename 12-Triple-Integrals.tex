@@ -1,0 +1,179 @@
+
+\noindent 
+This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
+\begin{enumerate}
+\item Explain how to setup and compute triple integrals, as well as how to interchange the bounds of integration. Use these ideas to find area and volume.
+\item Explain how to change coordinate systems in integration, with an emphasis on cylindrical, and spherical coordinates. Explain what the Jacobian of a transformation is, and how to use it.
+\item Use triple integrals to find physical quantities such as center of mass, radii of gyration, etc. for solid regions.
+\item Explain how to use the Divergence theorem to compute the flux of a vector fields out of a closed surface.
+\end{enumerate}
+You'll have a chance to teach your examples to your peers prior to the exam.
+
+
+\section{Triple Integral Definition and Applications}
+
+\begin{problem}
+Consider the iterated integral $$\ds \int_{-3}^3 \int_0^{\sqrt{9-y^2}}\int_0^{9-x^2-y^2} dzdxdy.$$ This is an integral of the form $\iiint_D dV$, which means along some solid region $D$ in the plane, we are adding up little bits of volume. This integral should give the volume of some solid region in space.  Sketch the region $D$ in space.  Compute the inside integral, and compare this to the first problem in the double integral unit.  Then evaluate the remaining integrals (though you might want to change coordinate systems before doing so).
+\end{problem}
+
+When working with double integrals, there were two different ways to set up the bounds for our integrals, as $dA=dxdy=dydx$.  When working with triple integrals, there are six different ways to set up the bounds for our integrals, as $$dV=dxdydz = dxdzdy = dydxdz=dydzdx=dzdxdy=dzdydx.$$ 
+
+\begin{problem}
+Consider again the iterated integral $$\ds \int_{-3}^3 \int_0^{\sqrt{9-y^2}}\int_0^{9-x^2-y^2} dzdxdy.$$ Write the 5 other iterated integrals that are equal to this integral, by switching the order of the bounds. [Hint: one of the integrals you need is $\int_0^9\int_0^{\sqrt{9-z}}\int_{-\sqrt{9-x^2-z}}^{\sqrt{9-x^2-z}} dydxdz$.]
+\end{problem}
+
+\begin{problem}
+Consider the iterated integral $$\int_{-1}^1\int_0^{1-x^2}\int_0^{y} dzdydx.$$
+The bounds for this integral describe a region in space which satisfies the 3 inequalities $-1\leq x\leq 1$, $0\leq y\leq 1-x^2$, and $0\leq z\leq y$.
+\begin{enumerate}
+ \item Draw the solid domain $D$ in space described by the bounds of the iterated integral.
+ \item State the other 5 iterated integrals that equivalent to this one, by switching the order of the bounds.
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+ In each problem below, you'll be given enough information to determine a solid domain $D$ in space. Draw the solid $D$ and then set up an iterated integral (pick any order you want) that would give the volume of $D$.  You don't need to evaluate the integral, rather you just need to set them up.
+\begin{enumerate}
+ \item The region $D$ under the surface $z=y^2$, above the $xy$-plane, and bounded by the planes $y=-1$, $y=1$, $x=0$, and $x=4$.
+ \item The region $D$ in the first octant that is bounded by the coordinate planes, the plane $y+z=2$, and the surface $x=4-y^2$.
+ \item The pyramid $D$ in the first octant that is below the planes $\ds\frac{x}{3}+\frac{z}{2}=1$ and $\ds\frac{y}{5}+\frac{z}{2}=1$. [Hint, don't let $z$ be the inside bound.]
+ \item The region $D$ that is inside both right circular cylinders $x^2+z^2=1$ and $y^2+z^2=1$.
+\end{enumerate}
+\end{problem}
+
+We can find average value, centroids, centers of mass, moments of inertia, and radii of gyration exactly as before,  We just now need to integrate using three integrals, and replace $ds$, $dA$ or $d\sigma$, with $dV$.  
+\begin{problem}
+ Consider the triangular wedge $D$ that is in the first octant, bounded by the planes $\ds\frac{y}{7}+\frac{z}{5}=1$ and $x=12$. In the $yz$ plane, the wedge forms a triangle that passes through the points $(0,0,0)$,  $(0,7,0)$, and $(0,0,5)$.  Set up integral formulas that would give the centroid $(\bar x,\bar y, \bar z)$ of $D$.  Actually compute the integrals for $\bar y$. Then state $\bar x$ and $\bar z$ by using symmetry arguments.
+\end{problem}
+
+\begin{problem}
+ Consider the tetrahedron $D$ in the first octant that is underneath the plane that intersects the coordinate axes in the three point $(a,0,0)$, $(0,b,0)$ and $(0,0,c)$, where you can assume that $a,b,c>0$.  
+ \begin{enumerate}
+  \item An equation of an ellipse that passes through $(a,0)$ and $(0,b)$ is $\ds\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$.  An equation of a line through these same two points is $\ds\frac{x}{a}+\frac{y}{b}=1$.  An equation of an ellipsoid through the three points $(a,0,0)$, $(0,b,0)$, and $(0,0,c)$ is $\ds\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$. Guess an equation of the plane through these same three points, and then verify that your guess is correct by plugging the 3 points into your equation. This will provide you with an extremely fast way to get an equation of a plane.
+  \item Set up an iterated integral that would give the volume of $D$.
+  \item If the density is $\delta(x,y,z) = 3x+2yz$, set up iterated integrals that would give the mass $m$\bmw{ and moment of inertia $I_y$ about the $y$-axis}.
+ \end{enumerate}
+\end{problem}
+
+
+
+
+\section{Changing Coordinate Systems: The Jacobian}
+
+Just as we did with polar coordinates in two dimensions, we can compute a Jacobian for any change of coordinates in three dimensions.  We will focus on cylindrical and spherical coordinate systems. Remember that the Jacobian of a transformation is found by first taking the derivative of the transformation, then finding the determinant, and finally computing the absolute value.
+
+\begin{problem}
+ The cylindrical change of coordinates is 
+$$x=r\cos\theta,y=r\sin\theta, z=z, \text{ or in vector form } \vec C(r,\theta,z) = (r\cos\theta,r\sin\theta, z).$$  
+The spherical change of coordinates is 
+\begin{align*}
+x=\rho\sin\phi\cos\theta,y&=\rho\sin\phi\sin\theta, z=\rho\cos\phi, \quad \text{or in vector form}\\
+\vec S(\rho,\phi,\theta) &= (\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi). 
+\end{align*}
+\begin{enumerate}
+ \item Verify that the Jacobian of the cylindrical transformation is $\ds\frac{\partial(x,y,z)}{\partial(r,\theta,z)} = |r|$.  If you want to make sure you don't have to use absolute values, what must you require?
+ \item The Jacobian of the spherical transformation is $\ds\frac{\partial(x,y,z)}{\partial(\rho,\phi,\theta)} = |\rho^2\sin\phi|$.  If you want to make sure you don't have to use absolute values, what must you require?
+\end{enumerate}
+\end{problem}
+
+The previous problem shows us that we can write
+$$dV=dxdydz = rdrd\theta dz = \rho^2\sin\phi d\rho d\phi d\theta,$$
+provided we require $r\geq0$ and $0\leq \phi\leq \pi$. 
+Cylindrical coordinates are extremely useful for problems which involve cylinders, paraboloids, and cones. 
+Problems which involve cones and spheres often have simple integrals in spherical coordinates.
+
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJytjkEOgjAQRfecojvaMBKsYIxhOEpNFaNNgDZItO3pRaguSExcuJo_8_Jf5i57Gltw4GMW9eeL0h02sj3WkkzXPfElWsETJziRXU18hdkcBP-Q0OSLaqAV5lMjrCWut5FB1ZpGndRwMI0eNjUNFEcK1MKqgIIBde_gIYOcQXhxHqCNHA0Os3THIpN8d-Z_U_qXLnh_lfKFNb1d9YOyJ0VbdCM}{Sage}.}%
+ The double cone $z^2=x^2+y^2$ has two halves.  Each half is called a nappe. Set up an integral in the coordinate system of your choice that would give the volume of the region that is between the $xy$ plane and the upper nappe of the double cone $z^2=x^2+y^2$, and between the cylinders $x^2+y^2=4$ and $x^2+y^2=16$.  Then evaluate the integral.
+\end{problem}
+
+\begin{problem}
+ Set up an integral in the coordinate system of your choice that would give the volume of the solid ball that is inside the sphere $a^2=x^2+y^2+z^2$. Compute the integral to give a formula for the volume of a sphere of radius $a$.  \bmw{Then set up (don't evaluate) an iterated integral that would give the moment of inertia $I_x$ about the $x$-axis, if the density is a constant, so $\delta =c$.}
+\end{problem}
+
+
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJxty00OgyAQQOF9L-IQB6PSnxUnMWqImpTEBgqTFji900V35m3e5vuYAFXCjKUSF6_ty-92sTT73ZFaoWgd34EgTX2dp14gJJQKFU_-T8EWr4J1fcbvkq1ke0675oaPH27i033BRL8tNAdD1umhQ24UB9CiL84}{Sage}.}%
+Find the volume of the solid domain $D$ in space which is above the cone $z=\sqrt{x^2+y^2}$ and below the paraboloid $z=6-x^2-y^2$. Use cylindrical coordinates to set up and then evaluate your integral.  You'll need to find where the surface intersect, as their intersection will help you determine the appropriate bounds.
+\end{problem}
+
+\begin{problem}
+Consider the region $D$ in space that is inside both the sphere $x^2+y^2+z^2=9$ and the cylinder $x^2+y^2=4$. Start by drawing the region.
+\begin{enumerate}
+ \item Set up an iterated integral in Cartesian (rectangular) coordinates that would give the volume of $D$. 
+ \item Set up an iterated integral in cylindrical coordinates that would give the volume of $D$. 
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the region $D$ in space that is both inside the sphere $x^2+y^2+z^2=9$ and yet outside the cylinder $x^2+y^2=4$. Start by drawing the region.
+\begin{enumerate}
+ \item Set up two iterated integrals in cylindrical coordinates that would give the volume of $D$. For one integral use the order $dzdrd\theta$.  For the other, use the order $d\theta dr dz$.
+ \item Set up an iterated integral in spherical coordinates that would give the volume of $D$. 
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+The integral $\ds\int_{0}^{\pi}\int_{0}^{1}\int_{\sqrt{3}r}^{\sqrt{4-r^2}}rdzdrd\theta$ represents the volume of solid domain $D$ in space. Set up integrals in both rectangular coordinates and spherical coordinates that would give the volume of the exact same region.
+\end{problem}
+
+\begin{problem}
+The temperature at each point in space of a solid occupying the region {$D$}, which is the upper portion of the ball of radius 4 centered at the origin, is given by $T(x,y,z) = \sin(xy+z)$.  Set up an iterated integral formula that would give the average temperature.   
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The Divergence Theorem}
+
+
+In definition \ref{definition of flux density in 2D} on page \pageref{definition of flux density in 2D}, we defined the divergence, or flux density, of a vector field $\vec F$ at a point $P$ to be the flux per unit area, and then stated that $\text{div}(\vec F)=M_x+N_y$. We now extend this to 3D.
+
+In 3D, the flux of $\vec F$ across $S$, $\iint_S\vec F\cdot \vec n d\sigma$, is a measure of flow across $S$ where $\vec n$ is a continuous unit normal vector to $S$.  Flux density at $(x,y,z)$ is found by creating a sphere $S_a$ of radius $a$ centered at $(x,y,z)$ with interior volume $V_a$ and outward normal vector $\vec n$, and considering the quotient of flux per volume given by $\frac{1}{V_a}\iint_{S_a} \vec F \cdot \vec n d\sigma$. By computing $\ds \lim_{a\to 0}\frac{1}{V_a}\iint_{S_a} \vec F \cdot \vec n d\sigma$, we obtain the divergence of $\vec F$ at $(x,y,z)$, also called the flux density. In a future mathematics course, we could prove that the divergence equals
+\begin{align*}
+\text{div}\vec F(x,y,z) 
+&= \vec \nabla\cdot \vec F 
+= \left(\frac{\partial }{\partial x},\frac{\partial }{\partial y},\frac{\partial }{\partial z} \right)\cdot (M,N,P) \\
+&= \frac{\partial M}{\partial x}+\frac{\partial N}{\partial y}+\frac{\partial P}{\partial z} 
+= M_x+N_y+P_z 
+.
+\end{align*}
+
+\note{I tried problems like this during the semester in the double integral section, and they didn't go very well.  Perhaps it was placement.  It was a waste of 20 minutes in the previous section.
+\begin{problem}
+As an example, we compute the flux density at $(0,0,0)$ for the vector field $\vec F = \left<x,y,z\right>$. A sphere of radius $a$ has unit normal vector $\vec n = \frac{\left<x,y,z\right>}{|\left<x,y,z\right>|}$, so the flux is $\iint_S \left<x,y,z\right>\cdot \frac{\left<x,y,z\right>}{|\left<x,y,z\right>|}d\sigma 
+= \iint_S \sqrt{x^2+y^2+z^2}d\sigma 
+= a \iint_S d\sigma   = a4\pi a^2$, since the surface area of a sphere is $4\pi a^2$. The volume inside a sphere of radius $a$ is $\frac 43\pi a^3$. Hence $\lim_{a\to 0}\frac{3}{4\pi a^3}4\pi a^3 = 3$, which equals $\text{div}\vec F = M_x+N_y+P_z = 1+1+1=3$. 
+\end{problem}
+}
+
+\begin{theorem}[Divergence Theorem]
+Let $S$ be a closed surface whose interior is the solid domain $D$. Let $\vec n$ be an outward pointing unit normal vector to $S$. Suppose that $\vec F(x,y,z)$ is a continuously differentiable vector field on some open region that contains $D$. Then the outward flux of $\vec F$ across $S$ can be computed by adding up, along the entire solid $D$, the flux per unit volume (divergence).  Symbolically, the divergence theorem states
+$$\iint_S\vec F\cdot \vec n d\sigma =  \iiint_D \vec \nabla \cdot \vec F dV = \iiint_D \left(M_x+N_y+P_z\right) dV $$
+for $S$ a closed surface with interior $D$ and outward normal $\vec n$.
+\end{theorem}
+
+
+\begin{problem}
+Let $S$ be the surface of the wedge in the first octant bounded by the planes $x=1$ and $\ds\frac{y}{2}+\frac{z}{3}=1$. Let $\vec F$ be the vector field $\left<x+3y^2,y^2-4x,2z+xy\right>$. Use the divergence theorem to compute the outward flux of $\vec F$ across $S$. Make sure you draw the wedge (you may find centroids and volume help complete this problem rapidly).  
+\end{problem}
+
+\begin{problem}
+Consider the vector field $\vec F = \left<yz,-xz,3xz\right>$.  Let $D$ be the solid region in space inside the cylinder of radius 4, above the plane $z=0$, and below the paraboloid $z=x^2+y^2$.  The surface $S$ consists of 3 portions, so computing the flux would require a rather time consuming process of parameterizing these 3 surfaces.  Instead, use the divergence theorem to compute the outward flux of $\vec F$ across the surface $S$.
+\end{problem}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "215-problems"
+%%% End: 

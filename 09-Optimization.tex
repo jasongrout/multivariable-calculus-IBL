@@ -22,10 +22,13 @@ $g(x,y)=2x-y$, and
 $h(x,y)=\sin x\cos y$. 
  \marginparbmw{You'll want a computer to help you construct the graphs, particularly $h$. Please use the Mathematica introduction in Brainhoney. You could use Wolfram Alpha (use the links in the function chapter if you forgot how to graph).}
 \begin{enumerate}
- \item Compute $\vec \nabla f(x,y)$.  Then draw both $\vec \nabla f$ and several level curves of $f$ on the same axes.
- \item Compute $\vec \nabla g(x,y)$.  Then draw both $\vec \nabla g$ and several level curves of $g$ on the same axes.
- \item Compute $\vec \nabla h(x,y)$.  Then draw both $\vec \nabla h$ and several level curves of $h$ on the same axes. 
- \item What relationships do you see between the gradient and level curves? 
+ \item\marginpar{See \href{http://aleph.sagemath.org/?z=eJxljLEOwiAURXe-oltBHybSyeFtjV_gXIIIEYM-QqmWvxejm8vNyc3J8XyFKvAg10nJOik2-u_Dpdqs0LWtgrGElh6FlqxTpMI9NEkOMAjg9Qc-xIhHE2cH9m4S9jdXerAUKZ9NxlNenGBpi5-AfjpbKGsfXLzw0UP312vubr7Si5s5NVlnUwLhXrwBPnA2AQ}{Sage}.  You can modify these commands to help in the plots below too.}%
+ Compute $\vec \nabla f(x,y)$.  Then draw both $\vec \nabla f$ and several level curves of $f$ on the same axes.
+ \item\instructor{\href{http://aleph.sagemath.org/?z=eJxljDEOwjAMAPe-gq0OuJWgs1dewB6FNBZBAUdOCs3vKRIb20mnO4YVm6HTfh1al8nLs8qiNiepwLjJYcLJILQfcEyJzi6VgP7hMvX3UHv0kkSvTumiSzBdPtB3YF_BV1HLMaQZeJwjMxjc_V23Yiw3eYMreUusuhqFjuYDVjExog}{Sage}}%
+ Compute $\vec \nabla g(x,y)$.  Then draw both $\vec \nabla g$ and several level curves of $g$ on the same axes.
+ \item\instructor{\href{http://aleph.sagemath.org/?z=eJxlzDEOwjAMheGdU7DVAVMJdfbKCdijkMYiKNSRk0Jze4LExvaG938MGzZDJS6wmYOXAs3sMnlZqqxqc5IKjP10mnAyCO03OKZEF5dKQP90mYZHqAN6SaI3p3TVNXTnSF_AvoKvopZjSDPwOEdmMLj_U3sxlru8wZXcE6uuRqGz-QAbgzR0}{Sage}}%
+ Compute $\vec \nabla h(x,y)$.  Then draw both $\vec \nabla h$ and several level curves of $h$ on the same axes. 
+ \item What relationships do you see between the gradient vector field and level curves? 
 \end{enumerate}
 When you present in class, be prepared to provide rough sketches of the level curves and gradients of each function.
 \end{problem}
@@ -37,11 +40,11 @@ The next few problems will focus on explaining why the relationships you saw are
  \item Suppose you know that at $t=0$, the value of $f$ at $\vec r(0)$ is 7.  What is the value of $f$ at $\vec r(1)$? [What does it mean to be on a level curve?]
  \item As you move along the level curve $\vec r$, how much does $f$ change?  Use this to tell the class what $\ds\frac{df}{dt}$ must equal.
  \item At points along the level curve $\vec r$, we have the composite function $f(\vec r(t))$.  Compute the derivative $\ds\frac{df}{dt}$ using the chain rule.
- \item Use your work from the previous parts to explain why the gradient always meets the level curve at a 90$^\circ$ angle.  We say that the gradient is normal to level curves (it is orthogonal to the tangent vector of the curve).
+ \item Use your work from the previous parts to explain why the gradient always meets the level curve at a 90$^\circ$ angle.  We say that the gradient is \emph{normal} to level curves (i.e., a gradient vector is orthogonal to the tangent vector of the curve).
 \end{enumerate}
 \end{problem}
 
-In the derivatives chapter, we extended differential notation from $dy=f' dx$ to $d\vec y = D\vec f d\vec x$. The key idea is that a small change in the output variables is approximated by the product of the derivative and a small change in the input variables. As a quick refresher, if  we have the function $z=f(x,y)$, then differential notation states that $$dz = \begin{bmatrix}f_x&f_y\end{bmatrix} \begin{bmatrix}dx\\dy\end{bmatrix}.$$ 
+In Section~\ref{sec:derivative}, we extended differential notation from $dy=f' dx$ to $d\vec y = D\vec f d\vec x$. The key idea is that a small change in the output variables is approximated by the product of the derivative and a small change in the input variables. As a quick refresher, if  we have the function $z=f(x,y)$, then differential notation states that $$dz = \begin{bmatrix}f_x&f_y\end{bmatrix} \begin{bmatrix}dx\\dy\end{bmatrix}.$$ 
 
 \begin{problem}
 Suppose the temperature at a point in the plane is given by the function {$T(x,y)=x^2-xy-y^2$} degrees Fahrenheit. A particle is at $P=(2,3)$.  
@@ -59,7 +62,7 @@ Suppose that $z=f(x,y)$ is a differentiable function (so the derivative is the m
 \begin{enumerate}
  \item If $(dx,dy)=(1,0)$, which means we've moved one unit in the $x$ direction while holding $y$ constant, what is $dz$?
  \item If $(dx,dy)=(0,1)$, which means we've moved one unit in the $y$ direction while holding $x$ constant, what is $dz$?
- \item Consider the direction $\vec u=(3,4)$.  Find a unit vector in the direction of $\vec u$.  If we move one unit in the direction of $\vec u$, what is $dz$? [It's O.K. to leave you answer as a dot product.]    
+ \item Consider the direction $\vec u=(3,4)$.  Find a unit vector in the direction of $\vec u$.  If we move one unit in the direction of $\vec u$, what is $dz$? [It's all right to leave you answer as a dot product.]    
 \end{enumerate}
  
 \end{problem}
@@ -73,9 +76,9 @@ the partial derivative of $f$ with respect to $y$ is precisely the directional d
 This definition extends to higher dimensions.
 \end{definition}
 
-Note that in the definition above, we require the vector $\vec u$ to be a unit vector.  So if you are asked to find a directional derivative in some direction, make sure you start by finding a unit vector in that direction. We want to deal with units vectors because when we say something has a slope of $m$ units, we want to say ``The function rises $m$ units if we run $1$ unit.''  
+Note that in the definition above, we require the vector $\vec u$ to be a unit vector.  If you are asked to find a directional derivative in some direction, make sure you start by finding a unit vector in that direction. We want to deal with unit vectors because when we say something has a slope of $m$ units, we want to say ``The function rises $m$ units if we run $1$ unit.''  
 
-\begin{problem}
+\begin{problem}\instructor{\href{http://aleph.sagemath.org/?z=eJytzz0OgkAQBeB-T2HHbpxF-Wks5hZ2RgjCEkmQ2QwDAqcXA4UHsHvFe_nyaj3BbPBipyy2cxYrjyV1QgPnviXRNawFm0JqQM97KKklfhSMVx6cUcoL6hgio0YcXSnE-pZAejfKH9FT04n2so0wYFcFsBBXjjGCvlkcpuet-eXG0xh2xC9t4NBLwYJedsHGkPwSEdjor0bYP-mti96vQM6FNITrpw-tYFrb}{Sage}.}%
  Consider the function $f(x,y) = 9-x^2-y^2$.
  \begin{enumerate}
   \item Draw several level curves of $f$. 
@@ -98,11 +101,11 @@ Recall that the directional derivative of $\vec f$ in the direction $\vec u$ is 
 \begin{problem}
  Suppose you are looking at a topographical map (see \href{http://en.wikipedia.org/wiki/Topographic_map}{Wikipedia} for an example).  On this topographical map, each contour line represents 100 ft in elevation. You notice in one section of the map that the contour lines are really close together, and they start to form circles around a spot on the graph. You notice in another section of the map that the contour lines are spaced quite far apart. Let $f(x,y)$ be the elevation of the land, so that the topographical map is just a contour plot of $f$.  
 \begin{enumerate}
- \item Where is the slope of the terrain larger, in the section with closely packed contour lines, or the section with contour lines that are spread out. In which section will the gradient be a longer vector?
+ \item\instructor{You might discuss what it means if a contour line intersects itself.}%
+ Where is the slope of the terrain larger, in the section with closely packed contour lines, or the section with contour lines that are spread out. In which section will the gradient be a longer vector?
  \item At the very top of a mountain, or the very bottom of a valley, will the gradient be a long vector or a small vector? How do you locate a peak in a topographical map?
-% \item If a contour line intersects itself, what does that mean? I'll do this one in class.
- \item \marginparbmw{If you're stuck, look at a contour plot of $f(x,y) = (x+1)^3-3(x+1)^2-y^2+2$ in   
-\href{http://www.wolframalpha.com/input/?i=contourplot+\%28x+\%2B+1\%29^3+-+3*\%28x+\%2B+1\%29^2+-+y^2+\%2B+2+for+x+from+-2+to+2+and+y+from+-2+to+2}{Wolfram Alpha}. Then make your own example.}%
+ \item \marginpar{If you're stuck, look at a contour plot of $f(x,y) = (x+1)^3-3(x+1)^2-y^2+2$ in   
+\href{http://aleph.sagemath.org/?z=eJxL06jQqdS01ajQNtSMM9Y11oKwjHQr44y0jbiS8_NK8kuL4gty8ks00nSAinWNdIw0dRQ0KqGs5Pyc_KKkxCLbkKLSVE0AbVIWvQ}{Sage}. Then make your own example.}%
 Create you own topographical map to illustrate the ideas above. Just make sure your map has a section with some contours that are closely packed together, and some that are far apart, as well as a contour that intersects itself. Then on your topographical map, please add a few gradient vectors, where you emphasize which ones are long, and which ones are short. Show us how to find a peak, as well as what the gradient vector would be at the peak.  
 \end{enumerate}
 \end{problem}
@@ -122,8 +125,8 @@ Let's summarize our results in a theorem
 The volume of a cylindrical can is $V(r,h)=\pi r^2 h$. Any manufacturing process has imperfections, and so building a cylindrical can with designed dimensions $(r,h)$ will result in a can with dimensions $(r+dr,h+dh)$. This problem will help you learn how to determine how an error in either variable will affect the volume.
 \begin{enumerate}
  \item Compute both $DV$ (the derivative of $V$) and $dV$ (the differential of $V$).
- \item If the can is tall and slender (like a soda can), will an error in $r$ or $h$ cause a larger change in the volume? 
- \item If the can is short and wide (like a tuna can), will an error in $r$ or $h$ cause a larger change in the volume? 
+ \item If the can is tall and slender (like a soda can), which will cause a larger change in volume: an error in $r$ or an error in $h$?
+ \item If the can is short and wide (like a tuna can), which will cause a larger change in volume: an error in $r$ or an error in $h$?
 
 \end{enumerate}
 \end{problem}
@@ -160,15 +163,16 @@ The volume of a cylindrical can is $V(r,h)=\pi r^2 h$. Any manufacturing process
  The two surfaces $x^2+y^2+z^2=14$ and $3x+4y-z=-1$ intersect in a curve $C$. Draw both surfaces, and show us the curve $C$. Then, at the point $(2,-1,3)$, find an equation of the tangent line to this curve. [Hint: once you know a normal vector to each surface, how can you find a direction vector for the line of intersection? There should be a lot of orthogonal vectors in this problem.]
 \end{problem}
 
-\begin{problem}
+\begin{problem}\note{This is almost exactly like \ref{estimating change with differentials} and feels redundant.}
 Consider an electrical circuit with two parallel resistors, each having resistance {$R_1$} and {$R_2$}. The total resistance $R$ in this circuit is given by  $$\frac{1}{R} = \frac{1}{R_1}+\frac{1}{R_2}.$$
 \begin{enumerate}
-  \item Show that $DR = \begin{bmatrix}\frac{R^2}{R_1^2} & \frac{R^2}{R_2^2} \end{bmatrix}$. Then compute is $dR$.
+  \item Show that $DR = \begin{bmatrix}\frac{R^2}{R_1^2} & \frac{R^2}{R_2^2} \end{bmatrix}$. Then compute $dR$.
   \item When you purchase a resistor, it comes with a stated resistance.  However, manufacturing defects always occur, and the stated resistance on each resistor is not the actual resistance.  This is where differentials come in handy. 
   If {$ R_1 $} changes from an expected 10 ohms to an actual 9.9 ohms, and {$ R_2 $} changes from 20 to 20.2, would you expect a positive or negative change in the total resistance {$R$}? Use differentials to make your claim, and then back it up by computing the total resistance using (10,20) and then using $(9.9,20.2)$.
   \item Suppose both $R_1$ and $R_2$ have the same resistance, and each have a tolerance of $dR$.  Using differentials, what would you expect as the maximum possible error for the total resistance.  You should show that running resistors in parallel reduces the error. (For those of you familiar with electrical systems, running resistors in series causes the errors to add.)
 \end{enumerate}
 \end{problem}
+
 
 \section{The Second Derivative Test}
 We start with two review problems from first-semester calculus.
@@ -223,8 +227,11 @@ Suppose $(a,b)$ is a critical point of $f$, meaning $Df(a,b) = \begin{bmatrix}0&
  D^2f = \begin{bmatrix}2&1 \\1&2\end{bmatrix}.$$ 
 The first derivative is zero (the zero matrix) when both $2x-2+y=0$ and $x+2y=0$. We need to solve the system of equations $2x+y=2$ and $x+2y=0$. Double the second equation, and then subtract it from the first to obtain $0x-3y=2$, or $y=-2/3$.  The second equation says that $x=-2y$, or that $x=4/3$.  So the only critical point is $(4/3,-2/3)$.
  
-\marginpar{In this example, the second derivative is constant, so the point $(4/3,-2/3)$ did not change the matrix. In general, the point will affect your matrix. The following graph of $f$ shows the eigenvectors (in red) in which the largest and smallest second derivatives occur.   
-\includegraphics[width=\marginparwidth]{2nd-der-test}}
+\marginpar{In this example, the second derivative is constant, so the point $(4/3,-2/3)$ did not change the matrix. In general, the point will affect your matrix. See \href{http://aleph.sagemath.org/?q=775b0c4a-fc2c-4d39-8c30-ac5256cfb68a}{Sage} 
+%http://aleph.sagemath.org/?z=eJy1Vl1r5DYUfZ9fIQLFckbjTjLsy4Ieym4KhbaEdBcKxmsUWx6LyLJXkrP2_vpeSfZ47AbaPnQeJqOrq3PPPfeDVHggY0yHL_eH-9thP9yO-_HL_W5X8goJKXtjNbM8t9xYXBFUvTJpKD68I-9igux0OpFTHL_fIfjc3Nz4v0_c9lohhix7lhy1FSq0sKJgEnWtUNYQxMWZK0DoORyYKicDL2yrwdJBcHh_-ojOmnX1wkaoM7I1R0WvXxlE4YhZxFlRb0Iknoj_-uX3x8-f_ggMEarQ4QDIVa8KK1qVIPTZ9EzKEWCFQaZue1miZ8BFACZ9ArMzQaCMULxEUryA-SKfkw30aTXiA2s6yZM5mhMJYXjGemlR0C52FBqhRNM3PveGDf530MPjuBznsKBGaydAuwX08v9LwI5p1nDLNRLqoiLcvy3hzod8-POn3x5_fbjoh5BhZ_4eoDWOIP8o3lxMqhwmWTa3viNIqCr9W49tsToNPMKbzQ3U6Rv2KMub_8gQ2v2WDx3GjuoBqMY_nrau_xfdeVIkdFMOjVe8KG4MPXmj6XXFCp4XrWw1jZ6hhtHi7a2IojTSvIxIuM78PaRFLJ3zJnbK3EJrwLxCU8Az30DeXHlzFczVYs6nNtGigIswkjh1gEG4LKB2ovDzR317nkrYEHDtQR1mTPB4fUJtxwphR3pMTmST4uoU0GuQQzBFQ8hkOuJwaVqpDIXvV45T_lWFetJjmMCvyrV3lYDcpeDK4jgjjn5G3MPeTVReAnn6Sfc8Dl3ua0bTNPrgKICqH-ZReHSjEBEUPVw21nLy2kRZdi2IoWk4C3oMggKpObBjloaBNO63zwSJCpl0yJzh6ckPsEnH6ZhdDR44g9yOO07xCx_J08efMVCCBeAQnQVOE66PlwjLG4PnmrnPPOS5H3JX-quCYxdj8Z1kz5m9eM-V8I5JUTN15jn0_RkDmeUld_1EOChk6BYl8bu-YRBwgKfn2uLl4dxWexq2EDTWmnEiBcweNNQ0HmfNuYKSGPGd07vjguSbAWh4Fk6U76LDV7wSAOgbBerEi8buUwrN_eLNXWdDzs49cb_xN1Hamq6nlgQiy3Cm4of7LE6msYgTWBnKSFgbm0zi1dLytXH7OAfiTS_ZtjSD63gFfbK3t45ReszIGGzjxXZ3VekLopvRC45PCq8iEYQt8VvC-ll9MyGyrKl1_uuAU_321EfYr7V8y9O4UqfeO1vd-5lMWNdxVeJ0y2YtJQmVRtiJEG80EHt6F8Zch39Mpq0-Edjt_mnL17aRiXfCwbXmrOR6WiBXu_0vkdXv9w%3D%3D
+to see a graph which shows the eigenvectors in which the largest and smallest second derivatives occur.
+%\includegraphics[width=\marginparwidth]{2nd-der-test}
+}
 We find the eigenvalues of $D^2 f(4/3,-2/3)$ by solving the equation 
 $$\begin{vmatrix}2-\lambda&1 \\1&2-\lambda\end{vmatrix} = (2-\lambda)(2-\lambda)-1=0.$$ 
  Expanding the left hand side gives us {$4-4\lambda + \lambda^2 -1 = 0$}. Simplifying and factoring gives us $\lambda^2-4\lambda +3 = (\lambda-3)(\lambda -1) = 0$. This means the eigenvalues are $\lambda = 1$ and $\lambda=3$. Since both numbers are positive, the function is concave upwards in every direction.  The critical point $(4/3,-2/3)$ corresponds to a local minimum of the function. The local minimum is the output $f(4/3,-2/3) = (4/3)^2-2(4/3)+(4/3)(-2/3)+(-2/3)^2$.
@@ -294,7 +301,6 @@ In this problem, we'll derive the version of the second derivative test that is 
 
 \end{problem}
 
-
 \section{Lagrange Multipliers}
 The last problem was an example of an optimization problem where we wish to optimize a function (the volume of a box) subject to a constraint (the box has to fit inside a cake).  If you are economics student, this section may be the key reason why you were asked to multivariate calculus.  In the business world, we often want to optimize something (profit, revenue, cost, utility, etc.) subject to some constraint (a limited budget, a demand curve, warehouse space, employee hours, etc.). An aerospace engineer will build the best wing that can withstand given forces. Everywhere in the engineering world, we often seek to create the ``best'' thing possible, subject to some outside constraints.  Lagrange discovered an extremely useful method for answering this question, and today we call it ``Lagrange Multipliers.''
 
@@ -343,6 +349,7 @@ Find the dimensions of the rectangular box of maximum volume that fits underneat
 
 \note{This would be an appropriate place to put Taylor series in high dimensions, if your school wants the students to see those ideas.  You can introduce it all using matrix derivatives.  You could then actually prove the second derivative test, as well as define positive definite matrices.}
 
+\note{We finished all the problems in this unit in 4 days of time (really only 3 and a half, as the line integral unit overlapped on the first day.}
 
 %%% Local Variables: 
 %%% mode: latex

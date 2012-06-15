@@ -5,14 +5,14 @@
 %% uncomment one of the following, depending if you want to include the
 %% instructor notes or not
 \instructortrue
-\instructorfalse
+%\instructorfalse
 
 
 \newif\ifnotes
 %% uncomment one of the following, depending if you want to include the
 %% instructor notes or not
 \notestrue
-\notesfalse
+%\notesfalse
 
 
 
@@ -137,12 +137,6 @@ Once you have finished the problems in the section and feel comfortable with the
 % Instead, do something like $\vec r\vp$
 \newcommand{\vp}{\ensuremath{^{\,\prime}}}
 
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: t
-%%% End: 
-
 %The purpose of this code is to allow me to put lines in matrices so that I can create augmented matrices.
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -160,8 +154,17 @@ Once you have finished the problems in the section and feel comfortable with the
 
 %------------------------------------------------------------------------------------------------------------
 
-\usepackage{hyperref}
-
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0, 0, .6}
+\usepackage[breaklinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=darkblue,
+	anchorcolor=darkblue,
+	citecolor=darkblue,
+	pagecolor=darkblue,
+	urlcolor=darkblue,
+}
 
 \begin{document}
 \frontmatter
@@ -218,12 +221,9 @@ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisc
 \input{07-Motion}
 \wrapup
 
-
 \chapter{Line Integrals}
 \input{08-Line-Integrals}
 \wrapup
-
-\end{document}
 
 \chapter{Optimization}
 \input{09-Optimization}
@@ -240,3 +240,6 @@ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisc
 \chapter{Triple Integrals}
 \input{12-Triple-Integrals}
 \wrapup
+\begin{comment}
+\end{comment}
+\end{document}
