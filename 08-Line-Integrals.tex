@@ -70,7 +70,7 @@ $f(x,y)=9-x^2-y^2$ and above the curve $C$ parametrized by
 $\vec r(t)=(2\cos t, 3\sin t)$ for $t\in[0,2\pi]$.  Think of this region as a metal plate that has been stood up with its base on $C$ where the height above each spot is given by $z=f(x,y)$.
 \begin{enumerate}
  \item Draw the curve $C$ in the $xy$-plane. \marginpar{See Problem \ref{horse track chain rule introduction}}
- \item Now partition the curve you just drew into 6 parts, using equal spaced time intervals to create your partition. Draw a straight line between the spots on the curve given by $\vec r(-1)$, $\vec r(-1/2)$, $\vec r(0)$, etc.  You should have 6 straight lines connecting points on a parabola.
+ \item Now partition the curve you just drew into 6 parts, using equal spaced time intervals to create your partition. Draw a straight line between the spots on the curve given by $\vec r(-1)$, $\vec r(-1/2)$, $\vec r(0)$, etc.  You should have 6 straight lines connecting points on an ellipse.
  \item The length of each segment you drew is called $\Delta s$ (an approximation to arc length). If we drew lots of tiny segments, we would use $\Delta s=ds$ to represent this length.  What general formula do we use for $ds$? [Remember, ``A little bit of distance is speed times a little bit of time.'' (see Section \ref{arc length})] Compute $ds$ in this particular example.
  \item We'll call the $t$-coordinates of our partition $t_0$, $t_1$, $t_2$, $\ldots$. In this example, we have 
 $$
@@ -127,6 +127,7 @@ Integrate the product from the previous step.
 Now we'll practice estimating a line integral and using these steps to do the line integral calculation.
 \note{We commented out a few problems here to cut down on the problems in this chapter.  They were originally put here to practice (a) parametrizing curves, (b) basic integration techniques, and (c) computing line integrals.  We'll try to practice these things in the problems in the rest of the chapter, though.}
 
+\note{There are 3 problems below that I used the first semester, but not the second.  I think it went way better when I included these problems.  They are really fast (just plug in numbers and compute), but they help the students get the hand of line integrals.  I suggest including them next time. I'll probably include these in the exact same problem, just have parts a,b,c.}
  % \begin{problem}\marginparbmw{See 16.1: 9-32.  Some problems give you a parametrization, some expect you to come up with one on your own.}%
 
  %  Let $f(x,y,z)=x^2+y^2-2z$ and let $C$ be two coils of the helix $\vec r(t)=(3\cos t, 3\sin t, 4t)$, starting at $t=0$. Remember that the parameterization means $x=3\cos t$, $y=3\sin t$, and $z=4t$.  Compute  $\int_Cf ds$. [You will have to find the end bound yourself.]
@@ -238,7 +239,7 @@ Notice that the denominator in each case is just the arc length $s=\int_C ds$.
 
 
 \begin{problem}\label{semicircle centroid}
- Let $C$ be the semicircular arc $r(t)=(a\cos t, a\sin t)$ for $t\in[0,\pi]$. Without doing any computations, make an educated guess for the centroid $(\bar x, \bar y)$ of this arc.  Then compute the integrals given in problem \ref{centroid of curve} to find the actual centroid. Share with the class your guess, even if it was incorrect. 
+ Let $C$ be the semicircular arc $\vec r(t)=(a\cos t, a\sin t)$ for $t\in[0,\pi]$. Without doing any computations, make an educated guess for the centroid $(\bar x, \bar y)$ of this arc.  Then compute the integrals given in problem \ref{centroid of curve} to find the actual centroid. Share with the class your guess, even if it was incorrect. 
 \end{problem}
 
 \subsection{Mass and Center of Mass}
@@ -275,7 +276,7 @@ The next problem helps us reason about the center of mass of a collection of obj
  Our goal in this problem is to understand the difference between the centroid and the center of mass.
 \begin{enumerate}
 \item Find the centroid of two objects.
- \item Suppose both objects have the same mass of 2 kg.  Find the center of mass by averaging the $x$, $y$, and $z$ coordinages, weighted by how much mass is at each coordinate.
+ \item Suppose both objects have the same mass of 2 kg.  Find the center of mass by averaging the $x$, $y$, and $z$ coordinates, weighted by how much mass is at each coordinate.
  \item If the mass of the object at point $P_1$ is 2 kg, and the mass of the object at point $P_2$ is 3 kg, will the center of mass be closer to $P_1$ or $P_2$? Give a physical reason for your answer before doing any computations.  Then find the center of mass $(\bar x, \bar y, \bar z)$ of the two points. [Hint: you should get $\bar x= \frac{2x_1+3x_2}{2+3}$.] 
 \end{enumerate}
 \end{problem}
@@ -355,7 +356,7 @@ We'll often use the notation $(\bar x, \bar y,\bar z)$ to talk about both the ce
 \end{problem}
 
 \begin{problem}\label{center of mass alternate approach}
-\instructor{I don't have enough here to help them see why we use $xm$ for moments.  It really has to do with levers.  I'm not sure I want to add more.  The engineers pound this to death in all their future classes.  This problem is actually just EXTRA, but it connects the idea with average value, to center of mass, to radius of gyration.  I like to use this problem as a ``hint, this is how you do the radius of gyration problem coming up, and it's the exact same as what we did with the ant farm approach.}%
+\instructor{I don't have enough here to help them see why we use $xm$ for moments.  It really has to do with levers.  I'm not sure I want to add more.  The engineers pound this to death in all their future classes.  This problem is actually just EXTRA, but it connects the idea with average value, to center of mass, to radius of gyration.  I like to use this problem as a ``hint, this is how you do the radius of gyration problem coming up, and it's the exact same as what we did with the ant farm approach.''}%
  The quantity $M_{yz}=\int_C x dm$ is often called the first moment of mass about the $yz$-plane (the plane $x=0$).
  One way to view the center of mass is to ask yourself the following question.
 \begin{quote}
@@ -407,10 +408,7 @@ $$KE= \frac{1}{2}\left(\int_C (y^2+z^2)dm\right)\omega^2=\frac{1}{2}I_x\omega^2.
  \item Set up formulas to compute $I_x$, $I_y$, and $I_z$. Use software to compute the integrals. In your presentation, show us the set up you used, and then just give us the numerical solutions. 
  \item Which is larger, $I_x$ or $I_z$? Can you explain why without having done any integrals?
  \item \instructor{The idea here is that since the density is greater on $z$, it makes $I_x$ larger (as $I_x$ depends on the $z$ values).  It's harder to rotate the heavier spots.}%
-
-
-
-If the wire had constant density and followed the helix $\vec r(t) = (2\cos t, 4t, 3\sin t)$ instead, which would be bigger, $I_x$ or $I_z$?  Feel free to use software to check your guess. 
+If the wire had constant density and followed the elliptical helix $\vec r(t) = (2\cos t, 4t, 3\sin t)$ instead, which would be bigger, $I_x$ or $I_z$?  Feel free to use software to check your guess. 
 \end{enumerate}
 \note{This problem would most likely go better if I started with density $\delta(x,y,z) = x^2+y+z^2$ and had them compute the integrals, showing that $I_x$ and $I_z$ are equal. Then change the density to $\delta(x,y,z) = x^2+y+2z^2$.  Then change the curve as in the third problem. The 3rd part tries to help them see that if the helix is elliptical, then remember that increasing $z$ doesn't affect $I_z$, rather it affects $I_y$ and $I_z$. A large $x$ value affects the inertia about the other axes.}
 \end{problem}
@@ -446,7 +444,7 @@ Consider the curve $y=4-x^2$ for $x\in[-1,2]$, with $\delta (x,y) = y$.  Set up 
 
 \section{Work, Flow, Circulation, and Flux}
 
-We now turn our attention to work and flux.  As an object moves through a vector fields, energy transfer occurs.  When an object falls from high place, potential energy is transfered to kinetic energy. The gravitational vector field is the field which does work. Prior to problem \ref{first work problem} on page \pageref{first work problem}, we made the following statements. 
+We now turn our attention to work and flux.  As an object moves through a vector field, energy transfer occurs.  When an object falls from high place, potential energy is transfered to kinetic energy. The gravitational vector field is the field which does work. Prior to problem \ref{first work problem} on page \pageref{first work problem}, we made the following statements. 
 \begin{quote}If a force $F$ acts through a displacement $d$, then the most basic definition of work is $W=Fd$, the product of the force and the displacement.  This basic definition has a few assumptions.
 \begin{itemize}
 \item The force $F$ must act in the same direction as the displacement.
@@ -455,7 +453,7 @@ We now turn our attention to work and flux.  As an object moves through a vector
 \end{itemize}
 \end{quote}
 We used the dot product to remove the first assumption, and we showed in problem \ref{first work problem} that the work is simply the dot product $$W=\vec F\cdot \vec r,$$
-where $\vec F$ is a force acting through a displacement $\vec r$. We now remove the other two assumptions so that we can deal with variable forces acting on objects moving through curves.  We will use the unit tangent vector $\vec T$ to a curve $\vec r$ that was introduced in Definition~\ref{def unit tangent vector}.  Recall that 
+where $\vec F$ is a force acting through a displacement $\vec r$. We now remove the other two assumptions so that we can deal with variable forces acting on objects moving through arbitrary curves.  We will use the unit tangent vector $\vec T$ to a curve $\vec r$ that was introduced in Definition~\ref{def unit tangent vector}.  Recall that 
 $$\vec T = \ds\frac{d\vec r}{ds}=\ds\frac{d\vec r/dt}{ds/dt} = \frac{d\vec r/dt}{|d \vec r/dt|}.$$
 
 \begin{problem}[Work]
@@ -489,7 +487,7 @@ W
 Notice that only two integrals above have the bounds $a$ and $b$.  These two integrals are the actual formula used to compute the integral. The others are just symbolic ways to remember the integral.
 
 \begin{definition}[Flow and Circulation]
-If the vector field $\vec F$ represents the velocity field of a fluid, such as airflow along a wing (so units are m/s), then the work integral is often called flow.  If the start and stop point for the curve are the same, then we'll call the the work integral circulation. In this case, we'll often add a circle to the integral, as in $\ds\oint_C \vec F\cdot d\vec r$, to emphasize that the integral is along a closed curve.  In most cases, we'll be computing circulation along curves in the counterclockwise direction.  If we want to emphasize the direction we are going along a closed curve, we'll use an arrow on the small circle on the integral sign.
+If the vector field $\vec F$ represents the velocity field of a fluid, such as airflow along a wing (so units are m/s), then the work integral is often called flow.  If the start and stop point for the curve are the same, then we'll call the the work integral {\it circulation}. In this case, we'll often add a circle to the integral, as in $\ds\oint_C \vec F\cdot d\vec r$, to emphasize that the integral is along a closed curve.  In most cases, we'll be computing circulation along curves in the counterclockwise direction.  If we want to emphasize the direction we are going along a closed curve, we'll use an arrow on the small circle on the integral sign.
 \end{definition}
 
 \begin{definition}[Simple Closed Curve]
@@ -500,23 +498,26 @@ If the vector field $\vec F$ represents the velocity field of a fluid, such as a
 \begin{problem}
  Let $\vec F(x,y)=(M,N)$ be a vector field.  Let $C$ be a simple closed curve parametrized by $\vec r(t)=(x(t),y(t))$. Then $d\vec r = (dx, dy)$.
 \begin{enumerate}
- \item Draw a simple closed curve to represent $\vec r$ (just draw any simple closed curve you like).  We know that the circulation (work) along $C$ is given by the integral $\int_C (M,N)\cdot (dx,dy)$.  Pick a spot on your curve, and draw a tangent vector  to represent $(dx,dy)$ so that you traverse the curve using a counterclockwise orientation.
+ \item Draw a simple closed curve to represent $\vec r$ (just draw any simple closed curve you like).  We know that the circulation (work) along $C$ is given by the integral $\int_C (M,N)\cdot (dx,dy)$.  Pick a spot on your curve, and draw a tangent vector to represent $(dx,dy)$ so that you traverse the curve using a counterclockwise orientation.
  
  \item What is the angle between $(dx,dy)$ and $(-dy,dx)$?  What is the angle between $(dx,dy)$ and $(dy,-dx)$? [Hint: see Problems~\ref{dot angle formula} and \ref{dot angle practice}.]
 \item Which vector, $(-dy,dx)$ or $(dy,-dx)$, points towards the outside of the curve if we are going around the curve counterclockwise? Explain. [Hint: try crossing $(dx,dy,0)$ with $(0,0,1)$ or $(0,0,-1)$ in some order.]
 \end{enumerate}
 \end{problem}
 
+When we compute the work done by a vector field along a curve, we are focusing on how much of the vector field points in the direction of motion.  The integral $\oint_C \vec F \cdot \vec T ds$ measures the flow along a curve.  If we let $\vec n$ be the outward pointing normal vector to the curve, then the integral $\oint_C \vec F \cdot \vec n ds$ measures the flow outward across a curve. We'll define this outward flow as ``Flux.''
+
 \begin{definition}[Flux]
 \marginpar{\href{http://www.youtube.com/watch?v=5DNdI72XEYY&list=PL04DF68E73B7ECD54&index=4&feature=plpp_video}{Watch a YouTube video}.}%
  Let $\vec F(x,y)=(M,N)$ be a vector field.  Let $C$ be a simple closed curve parametrized by $\vec r(t)=(x,y)$, and oriented in the counterclockwise direction. 
  We know the circulation of $\vec F$ along $C$ (the flow of $\vec F$ along $C$) is the integral $\oint_C \vec F\cdot \vec T\ ds = \oint_C (M,N)\cdot(dx,dy)$. The outward flux of $\vec F$ across $C$ is the line integral
 $$\text{Flux}=\Phi = \oint_C \vec F\cdot \vec n\ ds = \oint_C (M,N)\cdot(dy,-dx) = \oint_C Mdy-Ndx.$$
-The flux of $\vec F$ measures the flow of $\vec F$ across $C$ instead of along $C$.
-The vector $\vec n ds = (dy,-dx)$ is only correct if the curve is oriented in the counterclockwise direction.
+The flux of $\vec F$ measures the outward flow of $\vec F$ across $C$ instead of along $C$.
+The vector $\vec n ds = (dy,-dx)$ is correct if the curve is oriented in the counterclockwise direction (which was shown in the previous problem).
 \end{definition}
 
-
+We're not prepared to compute both work (circulation, flow) and flux.  The next 4 problems ask you to do so. The most common way to remember these, provided the vector field is $\vec F(x,y) = (M(x,y),N(x,y))$, is 
+$$\text{Work}=\int_C M dx+N dy\quad\quad \text{Flux}=\int_C N dx-M dy.$$
 
 \begin{problem}
 \marginpar{If you haven't yet, please watch the YouTube videos for 
@@ -544,6 +545,8 @@ The vector $\vec n ds = (dy,-dx)$ is only correct if the curve is oriented in th
 
 \end{problem}
 
+From the previous two problems you might ask, ``Are there vector fields where the work and flux can both be nonzero?''  The next problems answer this in the affirmative. The previous two problems just dealt with a rotation field (where the vector field only rotates things, does not push in or out, so zero flux) and a radial field (which only pushes out, so no circulation).
+
 \begin{problem}
 \marginpar{\href{http://www.youtube.com/watch?v=6WcN36FbeWc&list=PL04DF68E73B7ECD54&index=3&feature=plpp_video}{Watch a YouTube video}.  Also, see \href{http://aleph.sagemath.org/?z=eJw9yjEKhDAQRuF-TzKDvxLTp80lgohodMMORjZBnNtvqm0-XvE8PVB21CueTvl1Sa7zHdeav_Oeomzk0ZZ-GGGHkUH6b-6uLHrkk0IwsBOChWma5oQ9iTi_SImo77R-zliKs_wDRwwhgQ}{Sage} for a picture.}%
 \instructor{Answers---\href{http://aleph.sagemath.org/?q=38b590f1-dc52-4690-975f-ccde49161dcf}{Sage}.
@@ -567,6 +570,8 @@ Again, we'll discuss why some are positive, and some are negative. I want to emp
 \item Find the flux of $\vec F$ across $C$.  There are two curves to parametrize. Make sure you traverse along the curves in the correct direction.
 \end{enumerate}
 \end{problem}
+
+\note{In both of the preceding problems, both the circulation and flux are positive.  Everything is always positive. This would give a student a false impression that work and flux are always positive.  We need to change some computations.  Make sure to look into this. It needs to change.}
 
 \section{The Fundamental Theorem of Line Integrals}
 
@@ -613,9 +618,9 @@ For each of the following vector fields, find a potential, or explain why none e
 
 If a vector field has a potential, then there is an extremely simple way to compute work. To see this, we must first review the fundamental theorem of calculus. The second half of the fundamental theorem of calculus states,
 \begin{quote}
- If $f$ is continuous on $[a,b]$ and $F$ is an antiderivative of $f$, then $F(b)-F(a) = \int_a^b f(x) dx$.
+ If $f$ is continuous on $[a,b]$ and $F$ is an anti-derivative of $f$, then $F(b)-F(a) = \int_a^b f(x) dx$.
 \end{quote}
-If we replace $f$ with $f'$, then an antiderivative of $f'$ is $f$, and we can write,
+If we replace $f$ with $f'$, then an anti-derivative of $f'$ is $f$, and we can write,
 \begin{quote}
  If $f$ is continuously differentiable on $[a,b]$, then $f(b)-f(a)=\int_a^b f'(x) dx$.
 \end{quote}
@@ -652,7 +657,7 @@ For each vector field and curve below, find the work done by $\vec F$ along $C$.
 \begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJytkM1uhCAUhfc-hTsueMmMYNOV23mJydQYpR1SK0TItPr0hVFbm5kumnQBl597zvngUg9APKHJAT5wxImWoU440sRY78pWNx78WTevvXKulDSxpe2Mry6q8WaonrXqWtnCAdOg4zkKGlYj8gILijAhl_hIgyorbT3Ub8oPuqmiA0BjHPjQ7nR_rXGAxz0KZjVFxiLBVdrpXsER8q-7FAQWKOkJ07UtzkfSmM4M5FSSQbVkI53bgy567Le6e2SCr0wFmykZ5Dzu5bJfUa3eiR-ov3oxwfzO6tVSsm-7B_YPhuFgLllnXiDPIrPns92SEzPnhzyJP-RlMe-qvX3CbWa-4G0-a3N4P9adzTtYmnwCd8u7lQ}{Sage}---$C_1$ and $C_2$ are in blue, and several possible $C_3$ are shown in red.}%
   Let $\vec F = (x,z,y)$. Let $C_1$ be the curve which starts at $(1,0,0)$ and follows a helical path $(\cos t, \sin t, t)$ to $(1,0,2\pi)$. Let $C_2$ be the curve which starts at $(1,0, 2\pi)$ and follows a straight line path to $(2,4,3)$. Let $C_3$ be any smooth curve that starts at $(2,4,3)$ and ends at $(0,1,2)$.
  \begin{itemize}
-  \item Find the work done by $\vec F$ along each path $C_1$, $C_2$, $C_3$. \marginpar{If you are parameterizing the curves, you're doing this the really hard way.}
+  \item Find the work done by $\vec F$ along each path $C_1$, $C_2$, $C_3$. \marginpar{If you are parameterizing the curves, you're doing this the really hard way. Are you using the potential of the vector field?}
   \item Find the work done by $\vec F$ along the path $C$ which follows $C_1$, then $C_2$, then $C_3$.  
   \item If $C$ is any path that can be broken up into finitely many smooth sub-paths, and $C$ starts at $(1,0,0)$ and ends at $(0,1,2)$, what is the work done by $\vec F$ along $C$?
  \end{itemize}
