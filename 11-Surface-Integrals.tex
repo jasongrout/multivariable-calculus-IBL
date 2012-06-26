@@ -169,14 +169,15 @@ $$\iint_S\vec F\cdot \vec n\ d\sigma = \iint\int_D \text{div}(\vec F)dV.$$
 
 
 \begin{problem}
-In problem \ref{sphere surface area element}, we found $\vec n d\sigma$ for a sphere of radius $a$.  
-Find the outward flux of {$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{-3/2}} $} across a sphere of radius $a$. You should get a negative number since the vector field has all arrows pointing in. [Hint: Remember that for a sphere of radius $a$ we have $a^2=x^2+y^2+z^2$.]
+In problem \ref{sphere surface area element}, we found 
+$$\vec n d\sigma = \vec r_\phi\times \vec r_\theta d\phi d\theta = a^2\sin \phi (\sin\phi\cos\theta,\sin\phi\sin\theta,\cos\phi)d\phi d\theta$$ for a sphere of radius $a$.  
+Use this to compute the outward flux of $$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{-3/2}} $$ across a sphere of radius $a$. You should get a negative number since the vector field has all arrows pointing in. [Hint: Remember that for a sphere of radius $a$ we have $a^2=x^2+y^2+z^2$. When you perform the dot product of $\vec F$ and $\vec n$, you'll save yourself a lot of time if you remember that $\vec u\cdot \vec u = |\vec u|^2$; the dot product of a vector with itself is the length squared.]
 
 \end{problem}
 
 
 \begin{problem}
-Repeat the previous problem, but this time don't use the formula from problem \ref{sphere surface area element}. In fact, you don't even need to parametrize the surface. Instead, if you are at the point $(x,y,z)$ on a sphere of radius $a$, give a formula for the outward pointing unit normal vector $\vec n$. Give this formula by only using a geometric argument.  Then find the outward flux of {$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{-3/2}} $} across a sphere of radius $a$. You should find that $\vec F\cdot \vec n$ simplifies to a constant, so that you never actually have to compute $d\sigma$. Surface area facts may help.
+Repeat the previous problem, but this time don't use the formula from problem \ref{sphere surface area element}. In fact, you don't even need to parametrize the surface. Instead, if you are at the point $(x,y,z)$ on a sphere of radius $a$, give a formula for the outward pointing unit normal vector $\vec n$. Give this formula by only using a geometric argument.  Then find the outward flux of {$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{-3/2}} $} across a sphere of radius $a$. You should find that $\vec F\cdot \vec n$ simplifies to a constant, so that you never actually have to compute $d\sigma$. Then you can use known facts about the surface area of a sphere.
 
 \end{problem}
 
