@@ -115,8 +115,8 @@ Let's summarize our results in a theorem
  Let $f$ be a continuously differentiable function, with $\vec r$ a level curve of the function.
 \begin{itemize}
  \item The gradient is always normal to level curves, meaning $\vec \nabla f\cdot \dfrac{d\vec r}{dt}=0$.
- \item The gradients points in the direction of greatest increase.
- \item The directional derivative of $f$ in the direction of the gradient is the length of the gradient.
+ \item The gradient points in the direction of greatest increase.
+ \item The directional derivative of $f$ in the direction of the gradient is the length of the gradient. Symbolically, we write $D_{\vec \nabla f}f = |\vec \nabla f|$.
  \item At a maximum or minimum, the gradient is the zero vector. 
 \end{itemize}
 \end{theorem}
@@ -127,7 +127,7 @@ The next few problems have you practice using differentials, and then obtain tan
 The volume of a cylindrical can is $V(r,h)=\pi r^2 h$. Any manufacturing process has imperfections, and so building a cylindrical can with designed dimensions $(r,h)$ will result in a can with dimensions $(r+dr,h+dh)$. This problem will help you learn how to determine how an error in either variable will affect the volume.
 \begin{enumerate}
  \item Compute both $DV$ (the derivative of $V$) and $dV$ (the differential of $V$).
- \item If the can is tall and slender (like a soda can), which will cause a larger change in volume: an error in $r$ or an error in $h$?
+ \item If the can is tall and slender (like a soda can), which will cause a larger change in volume: an error in $r$ or an error in $h$? 
  \item If the can is short and wide (like a tuna can), which will cause a larger change in volume: an error in $r$ or an error in $h$?
 
 \end{enumerate}
@@ -137,9 +137,9 @@ The volume of a cylindrical can is $V(r,h)=\pi r^2 h$. Any manufacturing process
  Consider the function $f(x,y)=x^2+y^2$.  Consider the level curve $C$ given by $f(x,y)=25$. Our goal is to find an equation of the tangent line to $C$ at $P=(3,-4)$.
  \begin{enumerate}
   \item Draw $C$.
-  \item Compute $\nabla f$. Add to your graph the vector $\nabla f(P)$, with its base at $P$. 
-  \item We know the point $P=(3,-4)$ is on the tangent line. Let $Q=(x,y)$ be any other point point on the tangent line.  What is the component form of the vector $\vec {PQ}$?
-  \item Why are  $\nabla f(P)$ and $\vec{PQ}$ orthogonal? Use this fact to write an equation of the tangent line.
+  \item Compute $\vec \nabla f$. Add to your graph the vector $\vec \nabla f(P)$, with its base at $P$. 
+  \item We know the point $P=(3,-4)$ is on the tangent line. Let $Q=(x,y)$ be any other point on the tangent line.  What is the component form of the vector $\vec {PQ}$?
+  \item Why are  $\vec \nabla f(P)$ and $\vec{PQ}$ orthogonal? Use this fact to write an equation of the tangent line.
   \item What is a normal vector to the line?
  \end{enumerate}
 
@@ -150,9 +150,9 @@ The previous problem had you give an equation of the tangent line to a level cur
  Consider the function $f(x,y,z)=x^2+y^2+z^2$.  Consider the level surface $S$ given by $f(x,y,z)=9$. Our goal is to find an equation of the tangent plane to $S$ at $P=(1,2,-2)$.
  \begin{enumerate}
   \item Draw $S$.
-  \item Compute $\nabla f$. Add to your graph the vector $\nabla f(P)$, with its base at $P$. 
-  \item We know the point $P=(1,2,-2)$ is on the tangent plane. Let $Q=(x,y,z)$ be any other point point on the tangent plane.  What is the component form of the vector $\vec {PQ}$?
-  \item Why are  $\nabla f(P)$ and $\vec{PQ}$ orthogonal? Use this fact to write an equation of the tangent plane.
+  \item Compute $\vec \nabla f$. Add to your graph the vector $\vec \nabla f(P)$, with its base at $P$. 
+  \item We know the point $P=(1,2,-2)$ is on the tangent plane. Let $Q=(x,y,z)$ be any other point on the tangent plane.  What is the component form of the vector $\vec {PQ}$?
+  \item Why are  $\vec \nabla f(P)$ and $\vec{PQ}$ orthogonal? Use this fact to write an equation of the tangent plane.
   \item What is a normal vector to the plane?
  \end{enumerate}
 \end{problem}
@@ -165,7 +165,7 @@ The previous problem had you give an equation of the tangent line to a level cur
  The two surfaces $x^2+y^2+z^2=14$ and $3x+4y-z=-1$ intersect in a curve $C$. Draw both surfaces, and show us the curve $C$. Then, at the point $(2,-1,3)$, find an equation of the tangent line to this curve. [Hint: once you know a normal vector to each surface, how can you find a direction vector for the line of intersection? There should be a lot of orthogonal vectors in this problem.]
 \end{problem}
 
-% \begin{problem}\note{This is almost exactly like \ref{estimating change with differentials} and feels redundant.}
+% \begin{problem}\note{This is almost exactly like \ref{estimating change with differentials} and feels redundant. NOTE: I added this problem because it is a pet favorite of mine.  I decided to remove it.  I may add it back next semester as an optional problem.  It's not exactly easy to see the answer, whereas it is simple to see the solution without differentials on the volume problem.}
 % Consider an electrical circuit with two parallel resistors, each having resistance {$R_1$} and {$R_2$}. The total resistance $R$ in this circuit is given by  $$\frac{1}{R} = \frac{1}{R_1}+\frac{1}{R_2}.$$
 % \begin{enumerate}
 %   \item Show that $DR = \begin{bmatrix}\frac{R^2}{R_1^2} & \frac{R^2}{R_2^2} \end{bmatrix}$. Then compute $dR$.
@@ -212,7 +212,7 @@ Let $f(x,y)$ be a function so that all the second partial derivatives exist and 
 Suppose $(a,b)$ is a critical point of $f$, meaning $Df(a,b) = \begin{bmatrix}0&0\end{bmatrix}$.  
 \begin{itemize}
  \item If all the eigenvalues of $D^2f(a,b)$ are positive, then in every direction the function is concave upwards at $(a,b)$ which means the function has a local minimum at $(a,b)$. 
- \item If all the eigenvalues of $D^2f(a,b)$ are negative, then in every direction the function is concave downwards at $(a,b)$. This means the function has a local minimum at $(a,b)$. 
+ \item If all the eigenvalues of $D^2f(a,b)$ are negative, then in every direction the function is concave downwards at $(a,b)$. This means the function has a local maximum at $(a,b)$. 
  \item If the smallest eigenvalue of $D^2f(a,b)$ is negative, and the largest eigenvalue of $D^2f(a,b)$ is positive, then  in one direction the function is concave upwards, and in another the function is concave downwards. The point $(a,b)$ is called a saddle point of $f$.
  \item If the largest or smallest eigenvalue of $f$ equals 0, then the second derivative tests yields no information. 
 \end{itemize}
@@ -320,8 +320,8 @@ Rather than introduce Cobb-Douglass production functions (from economics) or she
 \end{problem}
 
 \begin{theorem}[Lagrange Multipliers]
-Suppose $f$ and $g$ are continuously differentiable functions. Suppose that we want to find the maximum and minimum values of $f$ subject to the constraint $g(x,y)=c$ (where $c$ is some constant).  Then if a maximum or minimum occurs, it must occur at a spot where the gradient of $f$ and the gradient of $g$ point in the same, or opposite, directions. So the gradient of $g$ must be a multiple of the gradient of $f$. So, to find the maximum and minimum values (if they exist) we just solve the equation 
-$$\vec \nabla f = \lambda \vec \nabla g,$$ where $\lambda$ is the proportionality constant. The maximum and minimum values will be among the solutions of this equation. 
+Suppose $f$ and $g$ are continuously differentiable functions. Suppose that we want to find the maximum and minimum values of $f$ subject to the constraint $g(x,y)=c$ (where $c$ is some constant).  Then if a maximum or minimum occurs, it must occur at a spot where the gradient of $f$ and the gradient of $g$ point in the same, or opposite, directions. So the gradient of $g$ must be a multiple of the gradient of $f$. So, to find the maximum and minimum values (if they exist), we just solve the system of equations that result from  
+$$\vec \nabla f = \lambda \vec \nabla g,\quad \text{and}\quad g(x,y)=c$$ where $\lambda$ is the proportionality constant. The maximum and minimum values will be among the solutions of this system of equations. 
 \end{theorem}
 
 \begin{problem}
@@ -329,24 +329,26 @@ $$\vec \nabla f = \lambda \vec \nabla g,$$ where $\lambda$ is the proportionalit
  \begin{enumerate}
   \item What is the function $f(x,y)$ we wish to optimize? What is the constraint $g(x,y)$?
   \item Why do you know the ant must have reached both a maximum and minimum temperature?
-  \item Find the gradient of $f$ and the gradient of $g$.  Then solve the equation $\vec \nabla f = \lambda \vec \nabla g.$ You should obtain 4 ordered pairs $(x,y)$.
-  \item At each ordered pair, find the temperature.  What is the max temperature obtained, what is the minimum temperature obtained.
+  \item Find the gradient of $f$ and the gradient of $g$.  Then solve the system of equations that you get from the equation $\vec \nabla f = \lambda \vec \nabla g$ (together with the constraint $x^2+y^2=1$). You should obtain 4 ordered pairs $(x,y)$.
+  \item At each ordered pair, find the temperature.  What is the maximum temperature obtained? What is the minimum temperature obtained.
  \end{enumerate}
 [If you only got 2 points in part 3, it's probably because you divided both sides of equation by a variable (like $x$ or $y$).  Beware, you can only divide by a variable if you know the variable is not zero.]
 \end{problem}
 
 \begin{problem}\marginparbmw{See 14.8 for more practice.}
- Find a point $(a,b)$ on the curve $xy^2=54$ that is closest to the origin.  [What function $f$ are you trying to optimize? What function $g=c$ is the constraint? Note that trying to minimize distance is the same as trying to minimize the square of the distance. This last comment should greatly simplify a lot of your computations.]
+ Find a point $(a,b)$ on the curve $xy^2=54$ that is closest to the origin.  
+
+[What function $f$ are you trying to optimize? What function $g=c$ is the constraint? Note that trying to minimize distance is the same as trying to minimize the square of the distance (so you can minimize ($x^2+y^2$ instead of $\sqrt{x^2+y^2}$). This last comment should greatly simplify a lot of your computations.]
 \end{problem}
 
 \begin{problem}
  Find the dimensions of the rectangular box with maximum volume that can be inscribed inside the ellipsoid $$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1.$$
-[What is the function $f$ you wish to optimize? What is the constraint $g=c$?]
+[What is the function $f$ you wish to optimize? What is the constraint $g=c$? Try solving each equation for $\lambda$ so you can eliminate it from the problem.]
 \end{problem}
 
 \begin{problem}
 Repeat problem \ref{optimize box in cake}, but this time use Lagrange multipliers.
-Find the dimensions of the rectangular box of maximum volume that fits underneath the surface $z=f(x,y)=9-x^2-y^2$ for $z\geq 0$.
+Find the dimensions of the rectangular box of maximum volume that fits underneath the surface $z=f(x,y)=9-x^2-y^2$ for $z\geq 0$. [Hint: $V(x,y,z) = (2x)(2x)(z)$ and $z=9-x^2-y^2$. You'll get a system of 4 equations with 4 unknowns ($x,y,z,\lambda$).  Try solving each equation for lambda.]
 \end{problem}
 
 \note{This would be an appropriate place to put Taylor series in high dimensions, if your school wants the students to see those ideas.  You can introduce it all using matrix derivatives.  You could then actually prove the second derivative test, as well as define positive definite matrices.}

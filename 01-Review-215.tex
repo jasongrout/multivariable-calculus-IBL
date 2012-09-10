@@ -107,11 +107,10 @@ This problem will help you see how the notion of differentials is used to develo
 Consider the function $y=f(x) = x^2$. This problem has multiple steps, but each is fairly short.
 \begin{enumerate}
 \item Find the differential of $y$ with respect to $x$.  
-\item Give an equation of the tangent line to $f(x)$ at $x=3$. Use any method you want.  The remaining parts to this problem just ask you give an equation of the tangent line using differentials.
-\item Draw a graph of $f(x)$ and the tangent line on the same axes.
-\item Place a dot at the point $(3,9)$ and label it on your graph. Pick a point on the tangent line, place a dot on that point in your graph, and label the point $(x,y)$. 
-\item Using the two points $(3,9)$ and $(x,y)$, compute the slope of the line connecting these two points. Your answer should involve $x$ and $y$. What is the rise (i.e, the change in $y$ or $dy$)? What is the run (i.e, the change in $x$ or $dx$)?  
-\item We already know the slope of the tangent line is the derivative $f'(3)=6$. We also know the slop from the previous part. These two must be equal. Use this fact to give an equation of the tangent line to $f(x)$ at $x=3$. 
+\item Give an equation of the tangent line to $f(x)$ at $x=3$.
+\item Draw a graph of $f(x)$ and the tangent line on the same axes. Place a dot at the point $(3,9)$ and label it on your graph. Place another dot on the tangent line up and to the right of (3,9). Label the point $(x,y)$, as it will represent any point on the tangent line. 
+\item Using the two points $(3,9)$ and $(x,y)$, compute the slope of the line connecting these two points. Your answer should involve $x$ and $y$. What is the rise (i.e, the change in $y$ called $dy$)? What is the run (i.e, the change in $x$ called $dx$)?  
+\item We already know the slope of the tangent line is the derivative $f'(3)=6$. We also know the slope from the previous part. These two must be equal. Use this fact to give an equation of the tangent line to $f(x)$ at $x=3$. 
 \end{enumerate}
 \end{problem}
  
@@ -175,18 +174,21 @@ Determinants measure area, volume, length, and higher dimensional versions of th
 
 Associated with every square matrix is a number, called the determinant, which is related to length, area, and volume, and we use the determinant to generalize volume to higher dimensions. Determinants are only defined for square matrices.
 \begin{definition}
-The determinant of a {$2\times 2$} and {$3\times 3$} matrix is the number 
-\marginpar{We use vertical bars next to a matrix to state we want the determinant, so $\det A = |A|$. 
-Notice the negative sign on the middle term of the {$3 \times 3$} determinant. Also, notice that we had to compute three determinants of 2 by 2 matrices in order to find the determinant of a 3 by 3.} 
+The determinant of a {$2\times 2$} matrix is the number 
+\marginpar{We use vertical bars next to a matrix to state we want the determinant, so $\det A = |A|$. } 
 \begin{align*}
-\det\begin{bmatrix}a&b\\c&d\end{bmatrix} &=\begin{vmatrix}a&b\\c&d\end{vmatrix} = ad-bc\\
+\det\begin{bmatrix}a&b\\c&d\end{bmatrix} &=\begin{vmatrix}a&b\\c&d\end{vmatrix} = ad-bc.
+\end{align*}
+The determinant of a {$3\times 3$} matrix is the number 
+\marginpar{Notice the negative sign on the middle term of the {$3 \times 3$} determinant. Also, notice that we had to compute three determinants of 2 by 2 matrices in order to find the determinant of a 3 by 3.} 
+\begin{align*}
 \begin{vmatrix}a&b&c\\d&e&f\\g&h&i\end{vmatrix} &= a\det\begin{vmatrix}e&f\\h&i\end{vmatrix} -b\det\begin{vmatrix}d&f\\g&i\end{vmatrix} +c\det\begin{vmatrix}d&e\\g&h\end{vmatrix}\\
-&=a(ei-hf)-b(di-gf)+c(dh-ge)
+&=a(ei-hf)-b(di-gf)+c(dh-ge).
 \end{align*}
 \end{definition}
 
 \begin{problem}
-\marginpar{Again, for extra practice create your own square matrix (2 by 2 or 3 by 3). Use Wolfram Alpha to check your work. }
+\marginpar{For extra practice, create your own square matrix (2 by 2 or 3 by 3) and compute the determinant by hand. Then use Wolfram Alpha to check your work.  Do this until you feel comfortable taking determinants.}
 Compute 
 $\begin{vmatrix}
 1&2\\
@@ -261,12 +263,12 @@ Solve the following linear systems of equations.
 \marginpar{This 
 \href{http://www.wolframalpha.com/input/?i=Solve+x\%2B2y\%3D3+and+4x-y\%2Bz\%3D7+and+x\%3Dt}{link} 
 will show you how to specify which variable is $t$ when using Wolfram Alpha.}
-You main goal is to solve the linear system 
+Find all solutions to the linear system 
 $\begin{cases}x+y+z&=3\\2x-y&=4\end{cases}$.  
-You'll notice there are more variables than equations. This suggests there is probably not just one solution, but perhaps infinitely many.  One common way to deal with solving such a system is to let one variable equal $t$, and then solve for the other variables in terms of $t$. Do this three different ways.
+Since there are more variables than equations, this suggests there is probably not just one solution, but perhaps infinitely many.  One common way to deal with solving such a system is to let one variable equal $t$, and then solve for the other variables in terms of $t$. Do this three different ways.
 \begin{itemize}
 \item If you let $x=t$, what are $y$ and $z$.  Write your solution in the form $(x,y,z)$ where you replace $x$, $y$, and $z$ with what they are in terms of $t$.
-\item If you let $y=t$, what are $x$ and $z$.
+\item If you let $y=t$, what are $x$ and $z$ (in terms of $t$).
 \item If you let $z=t$, what are $x$ and $y$.
 \end{itemize}
 \end{problem}
@@ -286,41 +288,27 @@ Let $f(x)=e^x$. You should find that your work on each step can be reused to do 
 \end{itemize}
 \end{problem} 
 
+
+
+\begin{problem} \marginpar{The polynomial you are creating is often called a Taylor polynomial. (I'm giving you the name so that you can search online for more information if you are interested.)}
+ Now let $f(x)=\sin x$. Find a 7th degree polynomial so that the function and the polynomial have the same value and same first seven derivatives when evaluated at $x=0$. Evaluate the polynomial at $x=0.3$. How close is this value to your calculator's estimate of $\sin(0.3)$?  You may find it valuable to use the notation $$P(x) = a_0+a_1x+a_2x^2+a_3x^3 +\cdots+a_7 x^7.$$
+\end{problem}
+
+
+
+
+The previous two problems involved finding polynomial approximations to the function at $x=0$. The next problem shows how to move this to any other point, such as $x=1$. 
 \begin{problem} \label{Taylor at 1}
 Let $f(x)=e^x$.
 \begin{itemize}
-\item Find a second degree polynomial $T(x)=a+bx+cx^2$ so that $T(1)=f(1)$, $T'(1)=f'(1)$, and $T''(1)=f''(1)$. In other words, give me a parabola that passes through the same point, has the same slope, and the same concavity as $f(x)=e^x$ does at $x=1$. 
-\item Find a second degree polynomial written in the form $S(x)=a+b(x-1)+c(x-1)^2$ so that $S(1)=f(1)$, $S'(1)=f'(1)$, and $S''(1)=f''(1)$. In other words, give me a cubic that passes through the same point, has the same slope, and the same concavity as $f(x)=e^x$ does at $x=1$. 
-\item Find a third degree polynomial written in the form $P(x)=a+b(x-1)+c(x-1)^2+d(x-1)^3$ so that $P(1)=f(1)$, $P'(1)=f'(1)$, $P''(1)=f''(1)$, and $P'''(1)=f'''(1)$. In other words, give me a cubic that passes through the same point, has the same slope, the same concavity, and the same third derivative as $f(x)=e^x$ does at $x=1$. 
+\item Find a second degree polynomial $$T(x)=a+bx+cx^2$$ so that $T(1)=f(1)$, $T'(1)=f'(1)$, and $T''(1)=f''(1)$. In other words, give me a parabola that passes through the same point, has the same slope, and the same concavity as $f(x)=e^x$ does at $x=1$. 
+\item Find a second degree polynomial written in the form $$S(x)=a+b(x-1)+c(x-1)^2$$ \marginpar{Notice that we just replaced $x$ with $x-1$. This centers, or shifts, the approximation to be at $x=1$. The first part will be much simpler now when you let $x=1$.} so that $S(1)=f(1)$, $S'(1)=f'(1)$, and $S''(1)=f''(1)$. In other words, find a quadratric that passes through the same point, has the same slope, and the same concavity as $f(x)=e^x$ does at $x=1$. 
+\item Find a third degree polynomial written in the form $$P(x)=a+b(x-1)+c(x-1)^2+d(x-1)^3$$ so that $P(1)=f(1)$, $P'(1)=f'(1)$, $P''(1)=f''(1)$, and $P'''(1)=f'''(1)$. In other words, give me a cubic that passes through the same point, has the same slope, the same concavity, and the same third derivative as $f(x)=e^x$ does at $x=1$. 
 \end{itemize}
 \end{problem} 
 
 
-The previous 2 problems showed you how to create what we call a Taylor polynomial expanded about $c=0$ and $c=1$. The third  degree Taylor polynomial expanded about $c=0$ is in general given by \marginpar{The factorial function $n!$ for a natural number $n$ is defined  as the product of all the integers upto and including $n$, namely $n!=1\cdot 2\cdot 3 \cdots n$. We define $0!=1$.}
-$$P_3(x) = f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\frac{f'''(0)}{3!}x^3. $$  
-To expand about $c=a$ (we used $c=1$ in the problem \ref{Taylor at 1}), the polynomial is 
-$$P_3(x) = f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f^{''}(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3,$$
-where we use $f^{(3)}$ to represent taking 3 derivatives. 
-All you do is evaluate each derivative at $a$ instead of $0$, and then replace $x$ with $(x-a)$ to shift everything right $a$. If we wanted a fourth degree polynomial, we would evaluate the 4th derivative at $a$, divide by $4!$, multiply by $(x-a)^4$, and then add this product to the 3rd degree polynomial. 
-
-\begin{problem}\marginpar{See section 5.2, problems 1-24 for a review of sigma notation.}%
- Use summation notation to rewrite the degree 3 Taylor polynomial of $f(x)$ expanded about $c=0$. Then use sigma notation to rewrite the Taylor polynomial of $f(x)$ expanded about $c=a$. Then make a guess as to the formula for the 20th degree Taylor polynomial expaned about $c=a$. What would the $n$th degree Taylor polynomial formula be?
-\end{problem}
-
-\begin{problem}
- Find the 11th degree Taylor polynomial for $f(x)=\sin(x)$ expanded about $c=0$. Don't worry about expanding any factorials. Evaluate the Taylor polynomial at $x=.3$.  Then compute $\sin (.3)$ with a calculator. How close is the Taylor polynomial to your calculators answer?
-\end{problem}
-
-
-If we use the notation $dx=x-a$ to emphasize a change from $a$, then we can rewrite the Taylor polynomial formula in terms of differentials as
-$$P_n(x) -f(a) = \frac{f'(a)}{1!}(dx)+\cdots +\frac{f^{(n)}(a)}{n!}(dx)^n = f(a)+\sum_{k=1}^n \frac{f^{(k)}(a)}{k!}(dx)^k. $$ 
-
-\begin{problem}
-Let $f(x)=\sqrt{x}$.  Compute the degree 3 Taylor polynomial $P_3(x)$ of $f(x)$ expanded about $c=4$. Then compute $\sqrt{4.1}$ and $P_3(4.1)$.  What is the difference $P_3(4.1)-f(4.1)$? 
-You will have found a small change in $y$ (remember we called this $dy$) when the change in $x$ is .2 (so $dx=.1$ since 4.1 is only .1 units away from where we centered out polynomial at $c=4$).
-\end{problem}
-
-% The problem above introduced the final idea. We will let $dx=x-c$ (a small change in $x$). Since the polynomial should be close to the function, a small change in $y$ is $dy=P_n(x)-f(c)$. We can write the Taylor polynomial notation above in the form  
+%The problems above introduced the final idea. We will let $dx=x-c$ (a small change in $x$). Since the polynomial should be close to the function, a small change in $y$ is $dy=P_n(x)-f(c)$. We can write the Taylor polynomial notation above in the form  
 % $$P_n(x) - f(c)=dy=\frac{f'(c)}{1!}dx+\frac{f''(c)}{2!}dx^2+\cdots +\frac{f^{(n)}(c)}{n!}dx^n. $$
 % If we want to estimate the change in $y$ using a first order approximation, this gives us the differential notation
 % $$dy = f'(c)dx.$$
@@ -328,26 +316,49 @@ You will have found a small change in $y$ (remember we called this $dy$) when th
 % $$dy = f'(c)dx + \frac{f''(c)}{2!}dx^2.$$
 % A third order approximation is
 % $$dy = f'(c)dx + \frac{f''(c)}{2!}dx^2+  \frac{f'''(c)}{3!}dx^3.$$
-% 
-% \begin{example}
-% This example refers back to problem \ref{diff-sphere}. We want a spherical tank of radius 3m. Let's use a first, second, and third order approximation to estimate how much the volume will increase if the radius is 3.02m instead of 3m.  
-% 
-% We start with $V=4/3 \pi r^3, V'=4\pi r^2, V''=8\pi r,$ and $V'''=8\pi$. Evaluate each of these at $c=3$ to get $V(3)=36\pi, V'(3)=36\pi, V''(3)=24\pi,$ and $V'''(3)=8\pi$. Note that $dx=.02$ as $3.02-3=.02$.
-% \begin{enumerate}
-% \item A first order approximation is $$dy=V'(3)dx = 36\pi\cdot .02 = .72\pi.$$
-% \item A second order approximation is $$dy=V'(3)dx+V''(3)/2!\ dx^2  = 36\pi\cdot .02 +24\pi/2 (.02)^2 =(.7248)\pi.$$
-% \item A third order approximation is $$dy=V'(3)dx+V''(3)/2!\ dx^2 +V'''(3)/3!\ dx^3  = 36\pi\cdot .02 +24\pi/2 (.02)^2+8\pi/6\ dx^3  =(.724810\bar6)\pi.$$
-% \end{enumerate}
-% As a side note, the volume of a sphere involves a cubic function. This means that if we try to approximate the volume with a cubic, we should get an exact approximation.  Use a calculator to check that $$V(3.02)-V(3) = \frac 43 \pi (3.02)^3 - \frac 43 \pi (3)^3 =  (.724810\bar6)\pi.$$ This is precisely what we obtained using our third degree approximation.
-% \end{example}
-% 
-% We'll end this section with a problem to practice what we did above.
-% 
-% \begin{problem}
-% Suppose you are constructing a cube whose side length should be $s=2$ units. The manufacturing process is not exact, but instead creates a cube with side lengths $s=2+ds$ units. (You should assume that all sides are still the same, so any error on one side is replicated on all.  We have to assume this for now, but before the semester ends we'll be able to do this with high dimensional calculus.) 
-% 
-% Suppose that the machine creates a cube with side length $2.3$ units instead of 2 units.  Note that the volume of the cube is $V=s^3$.  Use a first, second, and third order approximation to estimate the increase in volume caused by the .3 increase in side length.  Then compute the actual increase in volume $V(2.3)-V(2)$.   
-% \end{problem}
+ 
+
+\begin{example}
+This example refers back to problem \ref{diff-sphere}. We wanted a spherical tank of radius 3m, but due to manufacturing error the radius was slightly off. Let's now illustrate how we can use polynomials to give a first, second, and third order approximation of the volume if the radius is 3.02m instead of 3m.  
+
+We start with $V=\frac{4}{3} \pi r^3$ and then compute the derivatives $$V'=4\pi r^2, V''=8\pi r, \text{ and } V'''=8\pi.$$ Because we are approximating the increase in volume from $r=3$ to something new, we'll create our polynomial approximations centered at $r=3$. We'll consider the polynomial 
+$$P(r)=a_0+a_1(r-3)+a_2(r-3)^2+a_3(r-3)^3,$$ 
+whose derivatives are 
+$$P'=a_1+2a_2(r-3)+3a_3(r-3)^2,
+P''=2a_2+6a_3(r-3),
+P'''=6a_3.$$
+So that the derivatives of the volume function match the derivatives of the polynomial (at $r=3$), we need to satisfy the equations in the table below.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}\hline
+ $k$ & Value of $V$ at the $k$th derivative & Value of $P$ at the the $k$th derivative & Equation \\ \hline
+ $0$ & $V(3) = \frac{4}{3}\pi (3)^3 = 36\pi$ & $P(3) = a_0$ & $a_0=36\pi$ \\ \hline
+ $1$ & $V'(3) = 4\pi (3)^2=36\pi$ & $P'(3) = a_1$ & $a_1=36\pi$ \\ \hline
+ $2$ & $V''(3) = 8\pi (3)=24\pi$ & $P''(3) = 2a_2$ & $2a_2=24\pi$ \\ \hline
+ $3$ & $V'''(3) = 8\pi$ & $P'''(3) = 6a_3$ & $6a_3=8\pi$ \\ \hline
+\end{tabular}
+\end{center}
+This tells us that the third order polynomial is 
+$$P(r)=a_0+a_1(r-3)+a_2(r-3)^2+a_3(r-3)^3
+=36\pi+36\pi(r-3)+12\pi(r-3)^2+\frac{4}{3}\pi(r-3)^3
+.$$ 
+We wanted to approximate the volume if $r=3.2$, so our change in $r$ is $dr=3.2-3=0.2$.  We can rewrite our polynomial as
+$$P(r)=36\pi+36\pi(dr)+12\pi(dr)^2+\frac{4}{3}\pi(dr)^3.$$
+We are now prepared to approximate the volume using a first, second, and third order approximation. 
+ \begin{enumerate}
+ \item A first order approximation yields $P=36\pi+ 36\pi\cdot 0.02 =36.72\pi.$ The volume increased by $0.72\pi$ m$^3$. 
+ \item A second order approximation yields $$P=36\pi+ 36\pi\cdot 0.02 +12\pi (0.02)^2 =36.7248\pi.$$
+ \item A third order approximation yields $$P=36\pi+36\pi\cdot 0.02 +12\pi (0.02)^2+\frac{4}{3}\pi(0.02)^3  =36.724810\bar6\pi.$$
+ \end{enumerate}
+With each approximation, we add on a little more volume to get closer to the actual volume of a sphere with radius $r=3.02$. The actual volume of a sphere involves a cubic function, so when we approximate the volume with a cubic, we should get an exact approximation (and $ V(3.02) = \frac 43 \pi (3.02)^3 =(36.724810\bar6)\pi$.)
+ \end{example}
+ 
+ We'll end this section with a problem to practice the example above.
+ 
+ \begin{problem}
+ Suppose you are constructing a cube whose side length should be $s=2$ units. The manufacturing process is not exact, but instead creates a cube with side lengths $s=2+ds$ units. (You should assume that all sides are still the same, so any error on one side is replicated on all.  We have to assume this for now, but before the semester ends we'll be able to do this with high dimensional calculus.) 
+ 
+ \marginpar{Ask me in class to draw a 3D graph which illustrates the volume added on by each successive approximation. As a challenge, try to construct this graph yourself first. If you have it before I put it up in class, let me know and I'll let you share what you have discovered with the class.} Suppose that the machine creates a cube with side length $2.3$ units instead of 2 units.  Note that the volume of the cube is $V=s^3$.  Use a first, second, and third order approximation to estimate the increase in volume caused by the .3 increase in side length.  Then compute the actual increase in volume $V(2.3)-V(2)$.   
+ \end{problem}
 \note{I would include this problem above in class as a demonstration.  It allows them to see what differentials do.  You can easily see how each new piece adds more to the approximation.}
 
 
