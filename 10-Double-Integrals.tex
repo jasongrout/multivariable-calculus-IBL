@@ -11,47 +11,7 @@ You'll have a chance to teach your examples to your peers prior to the exam.
 
 \section{Double Integrals and Applications}
 
-We'll introduce double integrals by introducing iterated integrals first. The next two problems as you to find the volume of the solid region in space that is under the surface $f(x,y) = 9-x^2-y^2$, above the $xy$-plane, with $x\geq 0$. 
-
-\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjN0xJbDKgi-pGmQZUiwR7I7dBvj6mpca0aobWx5Z59y5X5IgmdC3jZdICYuuMOCIEyvXm8NZDJdcjJecsciZTteVsd6VtVYelOkMlcnYdJ25J2isVNqPZZYW-993krYtrSR5azxpVdnO-KIGIK6Mg8XLkLjT_f44CwoyjIEww4LhOkdh9UuO88GQ858kLHp6UD0fXQDZvseyQ-COKIoFPAXB6Uj7HxZK4e6D_FoLw2wGDlvQAD79BkaKjHOVa5TXpt8acZ83OMLn6nWofiNuGr2k3rKy-Goo1rHu41eRp2n-FviuNXd4jP2HkEXfK9SeNw}{Sage}.}%
-Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
-\begin{enumerate}
- \item Draw the solid $D$. 
- \item The plane $y=0$ intersects the solid in the half parabola $z=9-x^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_y(0)= \int_0^3 9-(x)^2-(0)^2 \ dx$. 
- Similarly, the plane $y=1$ intersects the solid in the half parabola $z=9-x^2-1^2$. Sketch this parabola in your 3D drawing. Then find a value $c$ so that the area under this parabola is given by the formula $A_y(1)=\int_0^{c} 9-(x)^2-(1)^2 \ dx$.
- \item The plane $y=2$ intersects the solid in half a parabola (draw this parabola). Find the value $c$ so that the area under this parabola is $A_y(2)=\int_0^c 9-(x)^2-(2)^2 \ dx$.
- \item \marginpar{You should obtain an inequality $a\leq y_0\leq b$ where $a$ and $b$ are constants. If the upper bound $c$ has a square root in it, then you're on the right track.}
-For which $y$-values $y_0$ does the plane $y=y_0$ intersect the paraboloid? For each of these values, what should $c$ equal so that $A_{y=y_0} = \int_0^c 9-x^2-y_0^2 dx$ gives the area under the half parabola obtained when the plane $y=y_0$ intersects the surface. 
- \item Imagine now that you cut the surface into 6 pieces, using the plane $y=y_0$ for each $y_0$ in $\{-3,-2,-1,0, 1, 2,3\}$. Let $y_0=-3$, $y_1=-2$, $\ldots$, $y_{6}=3$. The change in $y$ between each point is $dy=1$. 
- In the plane $y=y_i$, we know the area under the surface is $A_y(y_i) = \int_0^{c_i} 9-x^2-y_i^2 dx$ (where you found $c_i$ in the last part).  If we multiply this area by the thickness $dy=1$, we obtain the volume of a solid (think $dV = (A_y)dy$).  Draw this solid in your picture for $y_i = 0$. Use summation notation to write a sum to approximate the volume under $f$.
-\item Explain why the volume of $D$ equals $\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy$.
-%\item Use a computer to first compute the inside integral (you should have $y$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
-\end{enumerate}
-\end{problem}
-The integral above is called an iterated integral because you first compute the inside integral and then you compute the outside integral (you iteratively integrate). Often the parenthesis are not written because we know that the inside integral should be performed first without writing the parenthesis. We could also explicitly emphasize which variables go with each bound:
-$$\ds\int_{y=-3}^{y=3} \left(\int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy.$$   
-
-The next problem has you repeat what was done above, but this time you intersect the surface with planes $x=x_0$. 
-
-\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjJ2BElAWWfAlVYOQgWKJYHfsNsDX17xaRKtu_JJ1zp37WRAEI9qmsgVSwLwaehxwZNmyc7iG_S0Jh1vCmGdUK8tcaWuyUgoLQrWKsmCo2lY9AlS6ENIOWRyl2983KnST6YKKe2VJily3yqYlAHGhDMxehsSN7LbLNSQnQx8IY0wZLu8Yavmc4LQw5PwnCfOedqrT0QUQb3PMMzjugGE6g0cnOB9p_8NcKdy8k11qYRhPwH4N6sDn30BPkDImN5WwUnVrI-bjDkd4DXKufom4WuRk2Z2_YzO_VuRLX3b-S4zRBaMIk-jy6oSmUQ_Yz_FHAuZ9Aa-ooss}{Sage}.}%
-Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
-\begin{enumerate}
- \item Draw the solid $D$. 
- \item The plane $x=0$ intersects the solid in a parabola $z=9-y^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_{x=0} = \int_{-3}^3 9-(0)^2-(y)^2 \ dy$. 
- Similarly, the plane $x=1$ intersects the solid in half a parabola $z=9-1^2-y^2$. Sketch this parabola in your 3D drawing. Find a values $c$ and $d$ so that the area under this parabola is given by the formula $A_x(1)=\int_c^{d} 9-(1)^2-(y)^2 \ dy$.
- \item The plane $x=2$ intersects the solid in half a parabola (draw this parabola). Find the values $c$ and $d$ so that the area under this parabola is $A_x(2)=\int_c^d 9-(2)^2-(y)^2 \ dx$.
- \item \marginpar{You should obtain an inequality $a\leq x\leq b$ where $a$ and $b$ are constants. For $c\leq y\leq d$, you should have functions of $x$ for both $c$ and $d$. If both involve square roots, you're on the right track.}
-For which $x$-values $x_0$ does the plane $x=x_0$ intersect the paraboloid. For each of these values, what should $c$ and $d$ equal so that $A_x(x_0) = \int_c^d 9-x_0^2-y^2 dy$ gives the area under the half parabola obtained when the plane $x=x_0$ intersects the surface. 
- \item Imagine now that you cut the surface into 6 pieces, using the plane $x=x_0$ for each $x_0$ in $\{0,0.5,1,1.5,2, 2.5,3\}$. Let $x_0=0$, $x_1=0.5$, $\ldots$, $x_{6}=3$. The change in $x$ between each point is $dx=0.5$. 
- In the plane $x=x_i$, we know the area under the surface is $A_x(x_i) = \int_{c_i}^{d_i} 9-(x_i)^2-y^2 dy$ (where you found $c_i$  and $d_i$ in the last part).  If we multiply this area by the thickness $dx=0.5$, we obtain the volume of a solid (think $dV=(A_x)dx$).  Draw this solid in your picture for $x_i = 1$. 
-\item Explain why the volume of $D$ equals $\ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx$.
-%\item Use a computer to first compute the inside integral (you should have $x$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
-\end{enumerate}
-\end{problem}
-
-The first two problems show that the volume of $D$ can be given by 
-$$V=\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy = \ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx.$$
-We have two completely different iterated integrals that result in the exact same volume. In both integrals, the bounds on $x$ and $y$ describe a semicircular region $R$ in the $xy$ plane. The region $R$ is fully described by using the inequalities $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$ from the first integral, or using the inequalities $0\leq x\leq 3$ and $-\sqrt{9-x^2}\leq y\leq \sqrt{9-x^2}$ from the second integral.
+Before we introduce integration, let's practice using inequalities to describe regions in the plane.  In first semester calculus, we often use the inequalities $a\leq x\leq b$ and $g(x)\leq y\leq f(x)$ to describe the region above $g$ below $f$ for $x$ between $a$ and $b$.  We trapped $x$ between two constants, and $y$ between two functions.  Sometimes we wrote $c\leq y\leq d$ where $g(y)\leq x\leq f(y)$ to describe the region to the right of $g$ and left of $f$ for $y$ between $c$ and $d$. We need to practice writing inequalities in this form, as these inequalities will provide us the bounds of integration for double integrals.  
 
 \begin{problem}
  Consider the region $R$ in the $xy$-plane that is below the line $y=x+2$, above the line $y=2$, and left of the line $x=5$. We can describe this region by saying for each $x$ with $0\leq x\leq 5$, we want $y$ to satisfy $2\leq y\leq x+2$. In set builder notation, we write
@@ -60,18 +20,12 @@ $$R=\{(x,y)\ | \ 0\leq x\leq 5, 2\leq y\leq x+2\}.$$
  \item Describe the region $R$ by saying for each $y$ with $c\leq y\leq d$, we want $x$ to satisfy $a(y)\leq x\leq b(y)$. In other words, find constants $c$ and $d$, and functions $a(y)$ and $b(y)$, so that for each $y$ between $c$ and $d$, the $x$ values must be between the functions $a(y)$ and $b(y)$.
  \item Write your last answer in the set builder notation
 $$R=\{(x,y)\ | \ c\leq y\leq d, a(y)\leq x\leq b(y)\}.$$
- \item Set up two different iterated integrals that would find the volume under some function $f(x,y)$, above the region $R$. 
+% \item Set up two different iterated integrals that would find the volume under some function $f(x,y)$, above the region $R$. 
 \end{enumerate}
 \end{problem}
 
-\note{I have not formally defined a definite integral.  I will probably do that next semester, when I have more time.  Right now, I'll lecture that bit in class.  It will get added at some point.}
-
-Let $R$ be some region in the plane.  If we let $dA=dxdy=dydx$, then we can write a little bit of volume as $dV=fdA=fdxdy=fdydx.$ Adding up little bits of volume gives us the double integral 
-$$V = \iint_R fdA,$$
-which equals either iterated integral we've been setting up above. 
-
 \begin{problem}
-For each region $R$ below, draw the region and give a set of inequalities of the form $a\leq x\leq b, c(x)\leq y\leq d(x)$ or $c<y<d, a(y)\leq x\leq b(y)$. 
+For each region $R$ below, draw the region and give a set of inequalities of the form $a\leq x\leq b, c(x)\leq y\leq d(x)$ or $c<y<d, a(y)\leq x\leq b(y)$. In class, we'll give whichever one you did not.
 \begin{enumerate}
  \item The region $R$ is above the line $x+y=1$ and inside the circle $x^2+y^2=1$.
  \item The region $R$ is below the line $y=8$, above the curve $y=x^2$, and to the right of the $y$-axis.
@@ -79,17 +33,75 @@ For each region $R$ below, draw the region and give a set of inequalities of the
 \end{enumerate}
 \end{problem}
 
+We now introduce double integrals. Just as single integrals gave us the area under a function over an interval, double integrals will give us the volume under a function, above a region in the plane.  We'll introduce double integrals by looking at cross sections of a solid.
+
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjN0xJbDKgi-pGmQZUiwR7I7dBvj6mpca0aobWx5Z59y5X5IgmdC3jZdICYuuMOCIEyvXm8NZDJdcjJecsciZTteVsd6VtVYelOkMlcnYdJ25J2isVNqPZZYW-993krYtrSR5azxpVdnO-KIGIK6Mg8XLkLjT_f44CwoyjIEww4LhOkdh9UuO88GQ858kLHp6UD0fXQDZvseyQ-COKIoFPAXB6Uj7HxZK4e6D_FoLw2wGDlvQAD79BkaKjHOVa5TXpt8acZ83OMLn6nWofiNuGr2k3rKy-Goo1rHu41eRp2n-FviuNXd4jP2HkEXfK9SeNw}{Sage}.}%
+Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
+\begin{enumerate}
+ \item Draw the solid $D$.
+
+ \item The plane $y=0$ intersects the solid, resulting in a planar region above the $xy$ plane and below the parabola $z=9-x^2$.  The plane $y=2$ intersects the solid in a region below the parabola $z=9-x^2-(2)^2$.  The plane $y=y_i$ intersects the solid in the parabola $y=9-x^2-y_i^2$ for each $y_i$ between $-3$ and $3$. When we slice the solid along the plane $y=y_i$, we obtain a cross section of the surface.  
+ Explain why the area of each of these cross sections is $\ds \int_0^{\sqrt{9-y_i^2}} (9-x^2-y_i^2) dx$.
+
+ %\item The plane $y=0$ intersects the solid in the half parabola $z=9-x^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_y(0)= \int_0^3 9-(x)^2-(0)^2 \ dx$. 
+ %Similarly, the plane $y=1$ intersects the solid in the half parabola $z=9-x^2-1^2$. Sketch this parabola in your 3D drawing. Then find a value $c$ so that the area under this parabola is given by the formula $A_y(1)=\int_0^{c} 9-(x)^2-(1)^2 \ dx$.
+ %\item The plane $y=2$ intersects the solid in half a parabola (draw this parabola). Find the value $c$ so that the area under this parabola is $A_y(2)=\int_0^c 9-(x)^2-(2)^2 \ dx$.
+ %\item \marginpar{You should obtain an inequality $a\leq y_0\leq b$ where $a$ and $b$ are constants. If the upper bound $c$ has a square root in it, then you're on the right track.}
+ %For which $y$-values $y_0$ does the plane $y=y_0$ intersect the paraboloid? For each of these values, what should $c$ equal so that $A_{y=y_0} = \int_0^c 9-x^2-y_0^2 dx$ gives the area under the half parabola obtained when the plane $y=y_0$ intersects the surface. 
+ \item Imagine now that you cut the surface into 6 pieces, using the plane $y=y_i$ for each $y_i$ in $\{-3,-2,-1,0, 1, 2,3\}$. Let $y_0=-3$, $y_1=-2$, $\ldots$, $y_{6}=3$. The change in $y$ between each point is $\Delta y=1$. 
+ In the plane $y=y_i$, we know the area under the surface is $\int_0^{\sqrt{9-y_i^2}} (9-x^2-y_i^2) dx$.  If we multiply this area by the thickness $\Delta y=1$, we obtain the volume of a solid (think $dV = (A)dy$).  Draw these solids corresponding to $y_3=0$ and $y_4=1$ in your picture. Then explain why an approximation to the volume of the entire solid $D$ is 
+$$\sum_{i=1}^6 \left(\int_0^{\sqrt{9-y_i^2}} (9-x^2-y_i^2) dx\right) \Delta y.$$
+\item Explain why the volume of $D$ equals $\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}(9-x^2-y^2) dx\right) dy$.
+%\item Use a computer to first compute the inside integral (you should have $y$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
+\end{enumerate}
+\end{problem}
+
+The integral above is called an iterated integral because you first compute the inside integral and then you compute the outside integral (you iteratively integrate). Often the parenthesis are not written because we know that the inside integral should be performed first without writing the parenthesis. We could also explicitly emphasize which variables go with each bound by writing
+$$\ds\int_{y=-3}^{y=3} \left(\int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy.$$   
 
 \begin{problem}
-Consider the iterated integral $\ds \int_0^3\int_x^3 e^{y^2}dydx$. Write the bounds as two inequalities.  Then swap the order of integration by reversing the order of your inequalities.  Compute the new integral by hand (you'll need a $u$-substitution).
+ The bounds of the integral $\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}(9-x^2-y^2) dx\right) dy$ describe a region $R$ in the plane, namely $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$.  Draw this region $R$ in the plane. Then give bounds to describe the region alternately by first stating constants which trap $x$ (so $a\leq x\leq b$) and then functions which trap $y$ (so $c(x)\leq y \leq d(x)$). Use these new bounds to write an iterated integral 
+ $$\ds\int_{x=a}^{x=b} \left(\int_{y=c(x)}^{y=d(x)}9-x^2-y^2 dx\right) dy$$   
+ that gives the exact same volume of the solid $D$ from the previous problem.
 \end{problem}
+
+Ask me in class to show you how the answer to the previous problem could have been obtained by considering cross sections of the original solid
+
+%\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjJ2BElAWWfAlVYOQgWKJYHfsNsDX17xaRKtu_JJ1zp37WRAEI9qmsgVSwLwaehxwZNmyc7iG_S0Jh1vCmGdUK8tcaWuyUgoLQrWKsmCo2lY9AlS6ENIOWRyl2983KnST6YKKe2VJily3yqYlAHGhDMxehsSN7LbLNSQnQx8IY0wZLu8Yavmc4LQw5PwnCfOedqrT0QUQb3PMMzjugGE6g0cnOB9p_8NcKdy8k11qYRhPwH4N6sDn30BPkDImN5WwUnVrI-bjDkd4DXKufom4WuRk2Z2_YzO_VuRLX3b-S4zRBaMIk-jy6oSmUQ_Yz_FHAuZ9Aa-ooss}{Sage}.}%
+%Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$. This is the same solid referred to in the previous two problems. 
+%\begin{enumerate}
+% \item Draw the solid $D$. 
+% \item The plane $x=0$ intersects the solid in a parabola $z=9-y^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_{x=0} = \int_{-3}^3 9-(0)^2-(y)^2 \ dy$. 
+% Similarly, the plane $x=1$ intersects the solid in half a parabola $z=9-1^2-y^2$. Sketch this parabola in your 3D drawing. Find a values $c$ and $d$ so that the area under this parabola is given by the formula $A_x(1)=\int_c^{d} 9-(1)^2-(y)^2 \ dy$.
+% \item The plane $x=2$ intersects the solid in half a parabola (draw this parabola). Find the values $c$ and $d$ so that the area under this parabola is $A_x(2)=\int_c^d 9-(2)^2-(y)^2 \ dx$.
+% \item \marginpar{You should obtain an inequality $a\leq x\leq b$ where $a$ and $b$ are constants. For $c\leq y\leq d$, you should have functions of $x$ for both $c$ and $d$. If both involve square roots, you're on the right track.}
+%For which $x$-values $x_0$ does the plane $x=x_0$ intersect the paraboloid. For each of these values, what should $c$ and $d$ equal so that $A_x(x_0) = \int_c^d 9-x_0^2-y^2 dy$ gives the area under the half parabola obtained when the plane $x=x_0$ intersects the surface. 
+% \item Imagine now that you cut the surface into 6 pieces, using the plane $x=x_0$ for each $x_0$ in $\{0,0.5,1,1.5,2, 2.5,3\}$. Let $x_0=0$, $x_1=0.5$, $\ldots$, $x_{6}=3$. The change in $x$ between each point is $dx=0.5$. 
+% In the plane $x=x_i$, we know the area under the surface is $A_x(x_i) = \int_{c_i}^{d_i} 9-(x_i)^2-y^2 dy$ (where you found $c_i$  and $d_i$ in the last part).  If we multiply this area by the thickness $dx=0.5$, we obtain the volume of a solid (think $dV=(A_x)dx$).  Draw this solid in your picture for $x_i = 1$. 
+%\item Explain why the volume of $D$ equals $\ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx$.
+%\item Use a computer to first compute the inside integral (you should have $x$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
+%\end{enumerate}
+%\end{problem}
+
+%The first two problems show that the volume of $D$ can be given by 
+%$$V=\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy = \ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx.$$
+%We have two completely different iterated integrals that result in the exact same volume. In both integrals, the bounds on $x$ and $y$ describe a semicircular region $R$ in the $xy$ plane. The region $R$ is fully described by using the inequalities $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$ from the first integral, or using the inequalities $0\leq x\leq 3$ and $-\sqrt{9-x^2}\leq y\leq \sqrt{9-x^2}$ from the second integral.
+
+\note{I have not formally defined a definite integral.  I will probably do that next semester, when I have more time.  Right now, I'll lecture that bit in class.  It will get added at some point, provided it is needed.}
+
+Let $R$ be some region in the plane.  If we let $dA=dxdy=dydx$, then we can write a little bit of volume as $dV=fdA=fdxdy=fdydx.$ Adding up little bits of volume gives us the double integral 
+$$V = \iint_R fdA,$$
+which equals either iterated integral we've been setting up above. 
+
+
+\begin{problem}
+Consider the iterated integral $\ds \int_0^3\int_x^3 e^{y^2}dydx$. Write the bounds as two inequalities ($0\leq x\leq 3$ and $?\leq y\leq ?$). Draw and shade the region $R$ described by these two inequalities.  Then swap the order of integration by reversing the order of your inequalities (so trap $y$ between 2 constants and $x$ between 2 functions). Finally, compute the new integral by hand (you'll need a $u$-substitution).
+\end{problem}
+
 
 \begin{problem}
 Consider the region $R$ in the plane that is trapped between the curves $y=2x$ and $y=x^2$.  We would like to compute $\iint_R x dA$ over this region $R$.  Set up both iterated integrals. Then compute one of them.
 \end{problem}
-
-
-
 
 In the line integral chapter, we introduce the ideas of average value, centroid, center of mass, moment of inertia, and radius of gyration.  We now extend those ideas to regions in the plane, in exactly the same way.  For example, the average value formula in the line integral section was $\bar f = \dfrac{\int_C fdx}{\int_C ds}$. For double integrals, we just change $ds$ to $dA$, and add an integral.  This gives the formula $\bar f = \dfrac{\iint_R fdA}{\iint_R dA}.$ The same substitution works on all the integrals from before.  We now have $dm = \delta dA$ instead of $dm=\delta ds$. We obtained arc length by computing $s=\int_C ds$ (add up little bits of arc length).  We can compute area by using $A=\iint_R dA$ (add up little bits of area). 
 
@@ -117,8 +129,8 @@ Consider the region $R$ that is the circular disc which is inside the circle $(x
 \end{problem}
 
 \begin{problem}
-Consider the region in the $xy$-plane that is formed from two rectangular regions.  The first region satisfies $x\in[-2,2]$ and $y\in[0,7]$.  The second region satisfies $x\in[-5,5]$ and $y\in[7,10]$.  Find the centroid of this region (and of any T-beam like this).
-[Suggestion: work with variables from the start. For the first region, let $x\in[-a,a]$ with $y\in[0,c]$.  For the second region, let $x\in[-b,b]$ with $y\in[c,d]$. Solve the problem first with variables, and then plug in the numbers. You may need to split your integrals up into two integrals, as $\iint_R ydA = \iint_{R_1}ydA +\iint_{R_2}ydA$.]
+Consider the region $R$ in the $xy$-plane that is formed from two rectangular regions.  The first region $R_1$ satisfies $x\in[-2,2]$ and $y\in[0,7]$.  The second region $R_2$ satisfies $x\in[-5,5]$ and $y\in[7,10]$.  Find the centroids of $R_1$, $R_2$ and then finally $R$.
+%[Suggestion: Work with variables from the start. For the first region, let $x\in[-a,a]$ with $y\in[0,c]$.  For the second region, let $x\in[-b,b]$ with $y\in[c,d]$. Solve the problem first with variables, and then plug in the numbers. You may need to split your integrals up into two integrals, as $\iint_R ydA = \iint_{R_1}ydA +\iint_{R_2}ydA$.]
 \end{problem}
 
 
@@ -151,7 +163,7 @@ Consider the integral $\ds\int_{-1}^4 e^{-3x} dx$.
 In the problem above, we used a change of coordinates $u=-3x$, or $x=-1/3 u$.  By taking derivatives, we found that $dx=-\frac{1}{3}du$. The negative means that the orientation of the interval was reversed. The fraction $\frac13$ tells us that lengths $dx$ using $x$ coordinates will be $1/3$rd as long as lengths $du$ using $u$ coordinates. When we write $dx = \frac{dx}{du}du$, the number $\frac{dx}{du}$ is called the Jacobian of $x$ with respect to $u$. The Jacobian tells us how lengths are altered when we change coordinate systems. We now generalize this to polar coordinates. Before we're done with this section, we'll generalize the Jacobian to any change of coordinates.
 
 \begin{theorem}
- If we use the polar coordinate transformation $x=r\cos\theta, y=r\sin\theta$, then we can switch from $(x,y)$ coordinates to $(r,\theta)$ coordinates if we use $$dxdy=|r|drd\theta.$$  The number $|r|$ is called the Jacobian of $x$ and $y$ with respect to $r$ and $\theta$. If we require all bounds for $r$ to be nonnegative, we can ignore the absolute value.  If $R_{xy}$ is a region in the $xy$ plane that corresponds to the region $R_{r\theta}$ in the $r\theta$ plane (where $r>0$), then we can write $$\iint_{R_{xy}} f(x,y) dxdy = \iint_{R_{r\theta}} f(r\cos\theta,r\sin\theta) r\ drd\theta.$$ 
+ If we use the polar coordinate transformation $x=r\cos\theta, y=r\sin\theta$, then we can switch from $(x,y)$ coordinates to $(r,\theta)$ coordinates if we use $$dxdy=|r|drd\theta.$$  The number $|r|$ is called the Jacobian of $x$ and $y$ with respect to $r$ and $\theta$. If we require all bounds for $r$ to be nonnegative, we can ignore the absolute value.  If $R_{xy}$ is a region in the $xy$ plane that corresponds to the region $R_{r\theta}$ in the $r\theta$ plane (where $r\geq 0$), then we can write $$\iint_{R_{xy}} f(x,y) dxdy = \iint_{R_{r\theta}} f(r\cos\theta,r\sin\theta) r\ drd\theta.$$ 
 \end{theorem}
 We'll prove later why the Jacobian is $|r|$.  For now, we need some practice using this idea. We start by describing regions using inequalities on $r$ and $\theta$.  Ask me in class to give you an informal picture approach that explains why 
 $dxdy=rdrd\theta$.  
@@ -179,7 +191,7 @@ Consider the opening problem for this unit.  We want to find the volume under $f
 $$\iint_R f dA = \ds\int_{y=-3}^{y=3} \int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx dy.$$
 \begin{enumerate}
  \item Write bounds for the region $R$ by giving bounds for $r$ and $\theta$.
- \item Rewrite the double integral as an iterated integral with bounds for $r$ and $\theta$. Don't forget to multiply by the Jacobian (as $dxdy=rdrd\theta$). 
+ \item Rewrite the double integral as an iterated integral with bounds for $r$ and $\theta$. Don't forget the Jacobian (as $dxdy=rdrd\theta$). 
 %Your integral should look something like 
 %$$\iint_R f dA = \ds\int_{\theta=?}^{\theta=?} \int_{r=?}^{r=?} (9-x^2-y^2) r\ dr\right) d\theta.$$
  \item Compute the integral in the previous part by hand. [Suggestion: you'll want to simplify $9-x^2-y^2$ to $9-r^2$ before integrating.]
@@ -188,7 +200,11 @@ $$\iint_R f dA = \ds\int_{y=-3}^{y=3} \int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx dy
 
 
 \begin{problem}
-Find centroid of a semicircle of radius $a$ ($y\geq 0$). Actually compute any integrals.  \bmw{After doing this, just set up the integral formulas you would use to find $R_y$, the radius of gyration about the $y$-axis, if the density is $\delta(x,y)=x^2+y^2$.}\note{This is a great place to comment in class about the ability to do the integrals separately.} 
+Find the centroid of a semicircular disc of radius $a$ ($y\geq 0$). Actually compute any integrals.  
+\bmw{
+
+After doing this, in class we'll set up the integral formulas needed to find $R_y$, the radius of gyration about the $y$-axis, assuming the density is $\delta(x,y)=x^2+y^2$.}
+\note{This is a great place to comment in class about the ability to do the integrals separately.} 
 \end{problem}
 
 \begin{problem}
@@ -211,7 +227,7 @@ $$J(u,v) = \frac{\partial (x,y)}{\partial (u,v)} = |\det(D\vec T(u,v))|.$$
 \end{definition}
 
 \begin{problem}
- Find the Jacobian of the polar coordinate transformation $x=r\cos\theta$ and $y=r\sin\theta$ (so $\vec T(r,\theta)=(r\cos\theta,r\sin\theta)$.
+ Find the Jacobian of the polar coordinate transformation $x=r\cos\theta$ and $y=r\sin\theta$ (so $\vec T(r,\theta)=(r\cos\theta,r\sin\theta)$).
 \end{problem}
 
 \begin{problem}
@@ -236,9 +252,9 @@ Let's use this to rapidly find the area inside of an ellipse.
 \begin{problem}
  Consider the region $R$ inside the ellipse $\left(\dfrac{x}{a}\right)^2+\left(\dfrac{y}{b}\right)^2=1$.  We'll consider the change of coordinates given by $u=(x/a)$ and $v=(y/b)$.
 \begin{enumerate}
- \item Draw the region $R$ in the $xy$-plane.  After substituting $u=x/a$ and $v=y/b$, draw the region $R_{uv}$ in the $uv$-plane.  You should have circle.  What is the area of this circle in the $uv$-plane?
+ \item Draw the region $R$ in the $xy$-plane.  After substituting $u=x/a$ and $v=y/b$, draw the region $R_{uv}$ in the $uv$-plane.  You should have a circle.  What is the area inside this circle in the $uv$-plane?
  \item Solve for $x$ and $y$, and then compute the Jacobian  $\dfrac{\partial (x,y)}{\partial (u,v)}$. Show how to get the same result from directly computing $\dfrac{\partial (u,v)}{\partial (x,y)}$.
- \item We know the area in the $xy$-plane of the ellipse is $\iint_{R_{xy}} dxdy$. Use the previous theorem to switch to an integral over the region $R_{uv}$.  Then evaluate this integral by using facts about area. [Hint: you don't actually have to set up any bounds, rather just reduce this to an area integral over the region $R_{uv}$.] 
+ \item We know the area in the $xy$-plane of the ellipse is $\iint_{R_{xy}} dxdy$. Use the previous theorem to switch to an integral over the region $R_{uv}$.  Then evaluate this integral by using facts about area so prove that the area in the $xy$ plane is $\pi a b$. [Hint: you don't actually have to set up any bounds, rather just reduce this to an area integral over the region $R_{uv}$.] 
 \end{enumerate}
 
 \end{problem}
@@ -251,7 +267,7 @@ Let $R$ be the region in the plane bounded by the curves $x+2y=1$, $x+2y=4$, $2x
 
 
 \begin{problem}\bmw{\marginpar{This is problem 7 in section 15.8.}}
- Use the transformation $u=3x+2y$ and $v=x+4y$ to evaluate the integral $$\iint_R (3x^2+14xy+8y^2)dxdy$$ for the region $R$ that is bounded by the lines $y=-(3/2)x+1$, $y=-(3/2)x+3$, $y=-(1/4)x$, and  $y=(-1/4)x+1$.
+ Use the transformation $u=3x+2y$ and $v=x+4y$ to evaluate the integral $$\iint_R (3x^2+14xy+8y^2)dxdy =\iint_R (3x+2y)(x+4y)dxdy $$ for the region $R$ that is bounded by the lines $y=-(3/2)x+1$, $y=-(3/2)x+3$, $y=-(1/4)x$, and  $y=(-1/4)x+1$.
 \end{problem}
 
 \section{Green's Theorem}
