@@ -60,11 +60,11 @@ Once you have finished the problems in the section and feel comfortable with the
 %\usepackage{eso-pic}
 %\AddToShipoutPicture{\put(10,10){\small Draft: \today\ at \currenttime }}%--- version: \MakeUppercase{\svnInfoRevision}}}
 
-\newcommand{\bmw}[1]{#1}
+\newcommand{\bmw}[1]{}
 \newcommand{\marginparbmw}[1]{\bmw{\marginpar{#1}}}
 
 % Notes for Larson, 5th edition
-\newcommand{\larsonfive}[1]{}
+\newcommand{\larsonfive}[1]{#1}
 
 % Instructor-specific material (answers, helps, etc.)
 \ifinstructor
@@ -178,7 +178,7 @@ Once you have finished the problems in the section and feel comfortable with the
 \includegraphics[height=1.3cm]{by-sa}
 \vfill
 \larsonfive{With references to \emph{Calculus, Early Transcendental
-    Functions}, 5th edition, by Larson and Edwards}}
+    Functions}, 5th~edition, by Larson and Edwards}}
 \maketitle
 \thispagestyle{empty}
 \noindent\copyright{ 2012 Ben Woodruff.  Some Rights Reserved.\\
@@ -191,7 +191,7 @@ Once you have finished the problems in the section and feel comfortable with the
 \end{center}
 or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.}
 
-\chapter*{Introduction}
+\bmw{\chapter*{Introduction}
 This course may be like no other course in mathematics you have ever taken.  We'll discuss in class some of the key differences, and eventually this section will contain a complete description of how this course works. For now, it's just a skeleton.
 
 I received the following email about 6 months after a student took the course:
@@ -212,7 +212,7 @@ and at times wrenching struggles.
 \end{quote}
 \end{quote}
 Elder Scott's words perfectly describe how we acquire mathematical truth, as well as spiritual truth. 
-
+}
 \tableofcontents
 
 \mainmatter
@@ -230,7 +230,6 @@ Elder Scott's words perfectly describe how we acquire mathematical truth, as wel
 \chapter{Curves}
 \input{03-Curves}
 \wrapup
-\end{document}
 
 \chapter{New Coordinates}
 \input{04-New-Coordinates}
