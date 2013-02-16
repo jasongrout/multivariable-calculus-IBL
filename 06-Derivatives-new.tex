@@ -1,0 +1,587 @@
+\note{Having them come up with how to generalize differential notation to higher dimensions, and then use differential notation as well, was too much. Perhaps I need one more problem right shortly after \ref{derive matrix derivative}.  In \ref{derive matrix derivative}, the students are taking differential notation and from it writing a matrix (it's how they discover the derivative).  What I need is to have the students write differential notation in terms of a matrix.  Perhaps this would be best after the next problem.  We're already finished with derivatives, so I'll put a note to myself to polish this up next semester. See my notes at the end as well.\\(From Jason) I added a pretty extensive problem having them practice differential notation.  We'll see if that helps them to get familiar with the ideas before moving to matrix multiplication.
+
+This is a completely new take on the material.  The key, have them discover the derivative as a matrix first, and then talk about partial derivatives.  They can already do it.  Just ask them to compute the derivative implicitly of something like $z=x^2y+\sin(4y)$.  Have them take derivatives with respect to $t$.  They'll kick out the right idea instantly.  Have them write it as ( ) dx/dt + () dy/dt = [ () () ] [dx dy].  Out pops the whole chapter with one fell swoop.  I'm rewriting the chapter to reflect this.
+}
+
+
+%There's a link in this file to dropbox.  Rather than have to hunt for it later, here it is.
+\newcommand{\derivativehomeworklink}[1]{\href{http://db.tt/cSeKG8XO}{#1}}%
+%
+%
+\noindent 
+This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
+\begin{enumerate}
+\item Find limits, and be able to explain when a function does not have a limit by considering different approaches.
+\item Compute partial derivatives. Explain how to obtain the total derivative from the partial derivatives (using a matrix).
+\item Find equations of tangent lines and tangent planes to surfaces. We'll do this three ways.
+\item Find derivatives of composite functions, using the chain rule (matrix multiplication).
+\end{enumerate}
+You'll have a chance to teach your examples to your peers prior to the exam.
+
+
+
+\section{Limits}
+In the previous chapter, we learned how to describe lots of different functions. In first-semester calculus, after reviewing functions, you learned how to compute limits of functions, and then used those ideas to develop the derivative of a function. The exact same process is used to develop calculus in high dimensions. One glitch that will prevent us from developing calculus this way in high dimensions is the epsilon-delta definition of a limit.  We'll review it briefly.  Those of you who want to pursue further mathematical study will spend much more time on this topic in future courses. 
+
+In first-semester calculus, you learned how to compute limits of functions. Here's the formal epsilon-delta definition of a limit. 
+\begin{definition}
+ Let $f:\R\to\R$ be a function.
+ We write $\ds \lim_{x\to c} f(x)=L$ if and only if for every $\epsilon>0$, there exists a $\delta>0$ such that $0<|x-c|<\delta$ implies $|f(x)-L|<\epsilon$.
+\end{definition}
+ We're looking at this formal definition here because we can compare it with the formal definition of limits in higher dimensions. The only difference is that we just put vector symbols above the input $x$ and the output $f(x)$.
+\begin{definition}
+ Let $\vec f:\R^n\to\R^m$ be a function.
+ We write $\ds \lim_{\vec x\to \vec c} \vec f(\vec x)=\vec L$ if and only if for every $\epsilon>0$, there exists a $\delta>0$ such that $0<|\vec x-\vec c|<\delta$ implies $|\vec f(\vec x)-\vec L|<\epsilon$.
+\end{definition}
+We'll find that throughout this course, the key difference between first-semester calculus and multivariate calculus is that we replace the input $x$ and output $y$ of functions with the vectors $\vec x$ and $\vec y$. 
+ 
+\begin{problem}
+ For the function $f(x,y)=z$, we can write $f$ in the vector notation $\vec y=\vec f(\vec x)$ if we let $\vec x=(x,y)$ and $\vec y=(z)$. Notice that $\vec x$ is a vector of inputs, and $\vec y$ is a vector of outputs. 
+ For each of the functions below, state what $\vec x$ and $\vec y$ should be so that the function can be written in the form $\vec y = \vec f (\vec x)$. \marginpar{The point to this problem is to help you learn to recognize the dimensions of the domain and codomain of the function.  If we write $\vec f:\R^n\to \R^m$, then $\vec x$ is a vector in $\R^n$ with $n$ components, and $\vec y$ is a vector in $\R^m$ with $m$ components.}  
+\begin{enumerate}
+ \item $f(x,y,z)=w$
+ \item $\vec r(t)=(x,y,z)$
+ \item $\vec r(u,v)=(x,y,z)$
+ \item $\vec F(x,y)=(M,N)$
+ \item $\vec F(\rho,\phi,\theta)=(x,y,z)$
+\end{enumerate}
+\end{problem}
+
+
+You learned to work with limits in first-semester calculus without needing the formal definitions above. Many of those techniques apply in higher dimensions. 
+The following problem has you review some of these technique, and apply them in higher dimensions.
+\begin{problem}\marginpar{\bmw{See 14.2: 1-30 for more practice.}}%
+ Do these problems without using L'Hopital's rule.
+%, as there is not a good substitute for L'Hopital's rule in higher dimensions. \note{check this.}
+\begin{enumerate}
+ \item Compute $\ds \lim_{x\to 2} x^2-3x+5$ and then $\ds\lim_{(x,y)\to (2,1)} 9-x^2-y^2$.
+ \item Compute $\ds\lim_{x\to 3}\frac{x^2-9}{x-3}$ and then $\ds\lim_{(x,y)\to (4,4)} \frac{x-y}{x^2-y^2}$.
+ \item Explain why $\ds\lim_{x\to 0}\frac{x}{|x|}$ does not exist. [Hint: graph the function.]
+\end{enumerate}
+\end{problem}
+
+
+
+In first semester calculus, we can show that a limit does or does not exist by considering what happens from the left, and comparing it to what happens on the right.  You probably used the following theorem extensively. 
+\begin{quote}
+ If $y=f(x)$ is a function defined on some open interval containing $c$, then $\ds\lim_{x\to c}f(x)$ exists if and only if  $\ds\lim_{x\to c^-}f(x) = \ds\lim_{x\to c^+}f(x)$.
+\end{quote}
+ A limit exists precisely when the limits from every direction exists, and all directional limits are equal. In first-semester calculus, this required that you check two directions (left and right). This theorem generalizes to higher dimensions, but it becomes much more difficult to apply. 
+
+\begin{example}
+ Consider the function $\ds f(x,y)=\frac{x^2-y^2}{x^2+y^2}$.
+Our goal is to determine if the function has a limit at the origin $(0,0)$. We can approach the origin along many different lines.
+
+One line through the origin is the line $y=2x$. If we stay on this line, then we can replace each $y$ with $2x$ and then compute
+$$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ y=0\end{array}$}}\frac{x^2-y^2}{x^2+y^2} 
+= \lim_{x\to 0} \frac{x^2-(2x)^2}{x^2+(2x)^2}
+= \lim_{x\to 0} \frac{-3x^2}{5x^2}
+= \lim_{x\to 0} \frac{-3}{5}
+=\frac{-3}{5}.$$
+This means that if we approach the origin along the line $y=2x$, we will have a height of $-3/5$ when we arrive at the origin.
+\end{example}
+If the function $\ds f(x,y)=\frac{x^2-y^2}{x^2+y^2}$ has a limit at the origin, the previous problem suggests that limit will be $-3/5$.
+\begin{problem}
+ Please read the previous example. Recall that we are looking for the limit of the function $\ds f(x,y)=\frac{x^2-y^2}{x^2+y^2}$ at the origin (0,0). 
+\marginpar{You may want to look at a graph in 
+\href{http://aleph.sagemath.org/?z=eJxL06jQqdS01aiIM9KtjDPS1AextEEsroKc_BLjFI00HaASXWMdY00djUoIQxMAoucONQ}{Sage}
+or \href{http://wolfr.am/ioCqzX}{Wolfram Alpha} (try using the ``contour lines'' option). %http://www.wolframalpha.com/input/?i=plot+%28x%5E2-y%5E2%29%2F%28x%5E2%2By%5E2%29
+ As you compute each limit, make sure you understand what that limit means in the graph.}
+Our goal is to determine if the function has a limit at the origin $(0,0)$.
+\begin{enumerate}
+ \item In the $xy$-plane, how many lines pass through the origin $(0,0)$? Give an equation a line other than $y=2x$ that passes through the origin.  Then compute $$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ \text{your line}\end{array}$}}\frac{x^2-y^2}{x^2+y^2}
+= \lim_{x\to 0} \frac{x^2-(?)^2}{x^2+(?)^2}=\ldots.$$
+ \item Give another equation a line that passes through the origin.  Then compute $$\ds\lim_{\text{\footnotesize $\begin{array}{c}(x,y)\to(0,0)\\ \text{your line}\end{array}$}}\frac{x^2-y^2}{x^2+y^2}.$$
+ \item Does this function have a limit at $(0,0)$? Explain. \marginpar{\bmw{See 14.2: 41-50 for more practice.}\larsonfive{See Larson 13.2:23--36 and example 4 for more practice.}}%
+\end{enumerate}
+\end{problem}
+
+
+The theorem from first-semester calculus generalizes as follows.
+\begin{quote}
+ If $\vec y=\vec f(\vec x)$ is a function defined on some open region containing $\vec c$, then $\ds\lim_{\vec x\to \vec c}\vec f(\vec x)$ exists if and only if the limit exists along every possible approach to $\vec c$ and all these limits are equal.
+\end{quote}
+There's a fundamental problem with using this theorem to check if a limit exists. Once the domain is 2-dimensional or higher, there are infinitely many ways to approach a point. There is no longer just a left and right side. To prove a limit exists, you must check infinitely many cases --- that takes a really long time.  The real power to this theorem is it allows to show that a limit does not exist.  All we have to do is find two approaches with different limits.
+
+
+
+\begin{problem}
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJyVVF1r2zAUfc-vuKQFy7PS2QndoCBY2dtgMFjfShtubLnW6lhCUlqrv37XlvOxtdtYEoKlc3TOufcKn50BfNFNBzcWn5Tj8FU5N_yMUfBZt618kBy-G6u6B1jmRTGbPaFlSc9Dks4-qc5Li6WfVbKGNauF6szOrze6Z7SDu9YL1r8L6XvW3y-zcL9MUz6D8WP8W-Sc5ymHFjeyFfNvmvSv4JyRWyrO5xyeVeUbUeQHFTTGaiyb4g2xRX9Qup5oUJBc-LvU8g0pSv9aa_laa5JKr8aHPuchF8aPi6GFHhq_bVlyDW5naywl7eoNbtoADTpAaNVWeUAPviFsKB9UPSysBOWg0wTS2aqSHZQNdg-0TU-61TayLpJ0MIv2diDQAHifLwr6y4oYMExAoHgEhAOwTyVIsvN6Z9em1Z7VPErx6SQvt2hE8kP6hI_eG7Tixu4IiMecuJx6MRa0jpWIWBFjY1_SeFQkVlYJd-pFilXOX7StpBWreLqmsnCokB3mzI9zmrp8EjwTamtaVQ6WQ_CwwH30ffLouWmxfEymohv9zE5yZpNYRLGXTqC1xGFR6ra44-M13a-XcZ1mEy2fzEYi3ebjxsA85eV8UURCzov0aJgJL3u_qti8p9t19Mkuislqj4f5r_oj4wR_me_lCZkcjBiaQ2j9W3NAG6TeBZFffOADJzbEiY-XFJpy_d9QTCYMWtxKb1UZB0J3EXnNgkB6EcDhVm1VJ449ozX24tgy36jysZPOidUf52f-qYLOyNKvLXqlxW3B6XuXzn4C8NyNiQ}{Sage}.}%
+\marginpar{\bmw{See 14.2: 41-50 for more practice.}\larsonfive{See Larson 13.2:9--36 for more practice.}}%
+ Consider the function $\ds f(x,y) = \frac{xy}{x^2+y^2}$.  Does this function have a limit at $(0,0)$?  Examine the function at $(0,0)$ by considering the limit as you approach the origin along several lines. 
+\end{problem}
+
+In all the examples above, we considered approaching a point by traveling along a line. Even if a function has a consistent limit along EVERY line, that is not enough to guarantee the function has a limit. The theorem requires EVERY approach, which includes parabolic approaches, spiraling approaches, and more. For our purposes, checking along straight lines will do.  If you are interested in seeing an example of a function $f(x,y)$ so that the limit at $(0,0)$ along every straight line $y=mx$ exists and equals 0, but the function has no limit at $(0,0)$, then please ask.  Alternately, if this interests you, try coming up with an example yourself, and then come show me when you get it. This is a fun challenge.
+
+\begin{problem*}[Challenge]
+ Give an example of a function $f(x,y)$ so that the limit at $(0,0)$ along every straight line $y=mx$ exists and equals 0.  However, show that the function has no limit at $(0,0)$ by considering an approach that is not a straight line.
+\end{problem*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The Derivative}
+
+Before we introduce derivatives, let's recall the definition of a differential.  If $y=f(x)$ is a function, then we say the differential $dy$ is the expression $dy=f'(x) dx$.  We could also write this as $dy = \frac{dy}{dx}dx$. 
+
+
+\begin{observation}
+Here's the key.   Think of differential notation $dy=f'(x)dx$ in the following way: 
+\begin{quote}
+A change in the output $y$ equals the derivative multiplied by  a change in the input $x$. To get $dy$, we just need the derivative times $dx$. 
+\end{quote}
+To get the derivative in all dimensions, we just substitute in vectors to obtain the differential notation $d\vec y = f'(\vec x) d\vec x$. The derivative is precisely the thing that tells us how to get $d\vec y$ from $d\vec x$.  We'll quickly see that $f'(\vec x)$ must be a matrix, and then we'll start calling it $Df$ instead of $f'$. 
+\end{observation}
+
+
+Let's now examine some problems you have seen before. 
+\begin{problem}\label{differential for volume of a cylinder}%
+\marginpar{\bmw{See 3.10 for more practice.}\larsonfive{See Larson ?.}}%
+ The volume of a right circular cylinder is $V(r,h)= \pi r^2 h$.  Imagine that each of $V$, $r$, and $h$ depends on $t$ (we might be collecting rain water in a can, or crushing a cylindrical concentrated juice can, etc.).  
+\begin{enumerate}
+ \item If the height remains constant, what is $dV/dt$ in terms of $dr/dt$? Times both sides by $dt$ to obtain a formula for $dV$ when $h$ is constant.
+ \item If the radius remains constant, what is $dV/dt$ in terms of $dh/dt$? What is $dV$ when $r$ is constant?
+ \item If neither the radius nor height remains constant, what is $dV/dt$ in terms of $dh/dt$? Solve for $dV$.
+ \item% 
+\marginpar{The matrix $\begin{bmatrix}2\pi rh& \pi r^2\end{bmatrix}$ is the derivative.  The columns we'll call the partial derivatives.  The partial derivatives make up the whole.}%
+Show that we can write $dV$ as the matrix product 
+$$dV = \begin{bmatrix}2\pi rh& \pi r^2\end{bmatrix}\begin{bmatrix}dr\\dh\end{bmatrix}.$$ 
+How do the columns of this matrix relate to the previous portions of the problem.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ The volume of a box is $V(x,y,z)=xyz$. Imagine that each variable depends on $t$. 
+\begin{enumerate}
+ \item If both $y$ and $z$ remain constant, what is $dV/dt$? Times both sides by $dt$ to obtain a formula for $dV$ when all bur $x$ is constant.
+ \item Repeat the last step for when $y$ is the only non constant variable, and then for when $z$ is the only non constant variable. 
+ \item What is $dV/dt$ in terms of $dx/dt$, $dy/dt$, and $dz/dt$ when all three variables are not constant.
+ \item% 
+\marginpar{The matrix $\begin{bmatrix}yz& ?&?\end{bmatrix}$ is the derivative.  The columns we'll call the partial derivatives.  The partial derivatives make up the whole.}% 
+Show that we can write $dV$ as the matrix product (fill in the blanks) 
+ $$dV = \begin{bmatrix}yz& ?&?\end{bmatrix}\begin{bmatrix}dx\\dy\\dz\end{bmatrix}.$$ 
+ How do the columns of this matrix relate to the previous portions of the problem.
+\end{enumerate}
+
+\end{problem}
+
+Part 4 in each problem above is the KEY idea, let me repeat, THE KEY IDEA, to the rest of this course. It all goes back to differentials. We can compute a small change in volume, if we know how much the radius and height have changed, or if we know how much the length, width, and height will change.  
+
+\begin{problem}
+Solve each of the following:
+\begin{enumerate}
+ \item\marginpar{Make sure you ask me in class to show you physically exactly how you can see these differential formulas.}%
+ We showed that a change in the volume of a cylinder is approximately
+ $$dV = \begin{bmatrix}2\pi rh& \pi r^2\end{bmatrix}\begin{bmatrix}dr\\dh\end{bmatrix}.$$ 
+ If we know that $r=3$ and $h=4$, and we know that $r$ could going to increase by about $.1$ and $h$ could increase by about $.2$, then by about how much will $V$ increase by? 
+ \item The volume of a box is given by $V=xyz$. We know the differential of the volume is $V=\begin{bmatrix}yz& xz & xy\end{bmatrix}\begin{bmatrix}dx\\dy\\dz\end{bmatrix}$. If the current measurements are $x=2$, $y=3$, and $z=5$, and we know that $dx=.01$, $dy=.02$, and $dz=.03$, then by about how much will the volume increase.  
+\end{enumerate}
+\end{problem}
+
+In more general terms, we can compute the change in a function $f(x,y)$ if we know how much $x$ and $y$ will change. 
+
+\begin{problem}
+ Consider the function $f(x,y) = x^2y +3x+4\sin(5y)$.  
+\begin{enumerate}
+ \item If both $x$ and $y$ depend on $t$, then use implicit differentiation to obtain a formula for $df/dt$ in terms of $dx/dt$ and $dy/dt$. This will be the last time we use implicit differentiation.
+ \item Solve for $df$, and write your answer as the matrix product (fill in the blank) 
+ $$df = \begin{bmatrix}?& x^2+20\cos(5y)\end{bmatrix}\begin{bmatrix}dx\\dy\end{bmatrix}.$$ 
+ \item If you hold $y$ constant, then what is $df/dx$? 
+ \item If you hold $x$ constant, then what is $df/dy$? 
+\end{enumerate}
+\end{problem}
+
+The previous problem is precisely the content to this chapter.  We just need to add some vocabulary to make it easier to talk about what we just did. Let's introduce the vocabulary in terms of the problem above, and then make a formal definition.
+\begin{itemize}
+ \item The derivative of $f$ in the previous problem is the matrix 
+ $$Df(x,y) = \begin{bmatrix}
+  2xy+3& 
+  x^2+20\cos(5y)
+ \end{bmatrix}.$$ 
+ Some people call this the total derivative, as it's made up of two parts, called partial derivatives. 
+ \item The first column of this matrix is just part of the whole derivative. We can get the first column by holding $y$ constant, and then differentiating with respect to $x$. This is precisely a partial derivative.  We'll write this as $\frac{\partial f}{\partial x} = 2xy+3$, or sometimes just $f_x = 2xy+3$.
+ \item The second column of the derivative is the partial of $f$ with respect to $y$. We can get the second column by holding $x$ constant, and then differentiating with respect to $x$. We'll write this as $\frac{\partial f}{\partial x} = 2xy+3$, or $f_x = 2xy+3$.
+ \item Remember, the derivative of $f$ is a matrix. The columns of the matrix are the partial derivatives with respect to the input variables. 
+\end{itemize}
+
+\begin{dfn}[Derivatives and Partial Derivatives]
+ Let $f$ be a function. 
+\begin{itemize}
+ \item The partial derivative of $f$ with respect to $x$ is the regular derivative of $f$, provided we hold every every input variable constant except $x$.  We'll use the notations
+ $$
+ \frac{\partial f}{\partial x}, 
+ \quad \frac{\partial}{\partial x}[f],
+ \quad f_x,
+ \quad \text{ and }D_x f 
+ $$
+to mean the partial of $f$ with respect to $x$.
+ \item The partial of $f$ with respect to $y$, written $\ds \frac{\partial f}{\partial y}$ or $f_y$, is the regular derivative of $f$, provided we hold every input variable constant except $y$. A similar definition holds for partial derivatives with respect to any variable.
+ \item The derivative of $f$ is a matrix. The columns of the derivative are the partial derivatives. When there's more than one input variable, we'll use $Df$ rather than $f'$ to talk about derivatives.  The order of the columns must match the order you list the variables in the function. If the function is $f(x,y)$, then the derivative is 
+ $Df(x,y) = \begin{bmatrix}\frac{\partial f}{\partial x}&\frac{\partial f}{\partial y}\end{bmatrix}.$
+ If the function is $V(x,y,z)$, then the derivative is 
+ $DV(x,y,z) = \begin{bmatrix}\frac{\partial V}{\partial x}&\frac{\partial V}{\partial y}&\frac{\partial V}{\partial z}\end{bmatrix}.$
+ 
+\end{itemize}
+\end{dfn}
+
+It's time to practice these new words on some problems.  Remember, we're doing the exact same thing as before the definitions above. Now we just have some vocabulary which makes it much easier to talk about differentiation.
+
+\begin{problem}\marginpar{\bmw{See 14.3: 1-40 for more practice.}\larsonfive{See Larson 13.3:9--40 for more practice.} I strongly suggest you practice a lot of this type of problem until you can compute partial derivatives with ease.}%
+Compute the requested partial and total derivatives.
+\begin{enumerate}
+ \item  For $f(x,y)=x^2+2xy+3y^2$, compute both $\ds\frac{\partial f}{\partial x}$ and $f_y$. The state $Df(x,y)$. 
+ \item  For $f(x,y,z)=x^2y^3z^4$, compute all three of $f_x$, $\ds\frac{\partial f}{\partial y}$, and $D_z f$. Then state $Df(x,y,z)$.
+\end{enumerate}
+Remember, the partial derivative of a function with respect to $x$ is just the regular derivative with respect to $x$, provided you hold all other variables constant. We put the partials into the columns of a matrix to obtain the (total) derivative.
+\end{problem}
+
+Please take a moment and practice computing partial and total derivatives.  Your textbook has lots of examples to help you with partial derivatives. However, the textbook leaves out the actual derivative.  This \derivativehomeworklink{handwritten file (follow the link)} has 6 problems, together with solutions, that you can use as extra practice for total derivatives. Please open the file before moving on.
+
+\begin{problem}
+Compute the requested partial and total derivatives.
+\begin{enumerate}
+ \item  Consider the parametric surface $\vec r(u,v) = (u,v,v\cos(uv))$. Compute both $\ds\frac{\partial \vec r}{\partial u}$ and $\ds\frac{\partial \vec r}{\partial v}$. The state $D\vec r(u,v)$. If you end up with a 3 by 2 matrix, you did this correctly.
+ \item  Consider the vector field $\vec F(x,y) = (-y,xe^{3y})$. Compute both $\ds\frac{\partial \vec F}{\partial x}$ and $\ds\frac{\partial \vec F}{\partial y}$. Then state $D\vec F(x,y)$. 
+\end{enumerate}
+\end{problem}
+
+As you completed the problems above, did you notice any connections between the size of the matrix and the size of the input and output vectors?  Make sure you ask in class about this.  We'll make a connection.
+
+
+We've now seen that the derivative of $z=f(x,y)$ is a matrix $Df(x,y) = \begin{bmatrix}f_x & f_y\end{bmatrix}$. This is a function itself that has inputs $x$ and $y$, and outputs $f_x$ and $f_y$. This means it has 2 inputs and 2 outputs, so it's a vector field. What does the vector field tell us about the original function?
+\begin{problem}
+ Consider the function $f(x,y)=y-x^2$. 
+\begin{enumerate}
+ \item In the $xy$ plane, please draw several level curves of $f$ (maybe $z=0$, $z=1$, $z=-4$, etc.)  Write the height on each curve (so you're making a topographical map).
+ \item Compute the derivative of $f$. (Remember this is now a vector field.)
+ \item Pick several points in the $xy$ plane that lie on the level curves you already drew.  At these points, add the vector given by the derivative.  (So at (0,0), you'll need to draw the vector (0,1).  At (1,1), you'll need to draw the vector (-2,1).) Add 8 vectors to your picture, and then share with the class any observations you make.
+\end{enumerate}
+
+\end{problem}
+We'll come back to this problem more in chapter 9 as we discuss optimization.  There are lots of connections between the derivative and level curves. 
+
+
+Let's now explain geometrically what a partial derivative is. The next two problems will help with this.
+\begin{problem}
+ Consider the change of coordinates $\vec T(r,\theta) = (r\cos theta, r\sin \theta)$.
+\begin{enumerate}
+ \item Compute the partial derivatives $\ds\frac{\partial \vec T}{\partial r}$ and $\ds\frac{\partial \vec r}{\partial \theta}$, and then state the derivative $D\vec T(r,\theta)$. If you get a 2 by 2 matrix, then you're on the right track. Each partial derivative is a vector.  (This one is in the \derivativehomeworklink{handwritten file} with extra practice.)
+ \item Consider the polar point $(r,\theta) = (4,\pi/2)$. Compute $T(4,\pi/2)$ (the Cartesian coordinate) and also compute both partial derivatives at $(4,\pi/2)$. You should get a point and two vectors.  At the point, draw both vectors.
+ \item If you were standing at the polar point $(4,\pi/2)$ and someone said, ``Hey you, keep your angle constant, but increase your radius,'' then which direction would you move?  What if someone said, ``Hey you, keep your radius constant, but increase your angle''?
+ \item Now change the polar point to $(r,\theta) = (2,3\pi/4)$.  Try, without doing  any computations, to repeat part 2 (at the point draw both partial derivatives). Explain.
+\end{enumerate}
+\end{problem}
+
+If your answers to the 2nd and 3rd part above were the same, then you're doing this correctly.  The partial derivatives, when vectors, tell us precisely about motion. The next problem reinforces this concept.
+
+\begin{problem}
+ Consider the parametric surface $\vec r(a,t) = (a\cos t, a\sin t, t)$ for $2\leq a\leq 4$ and $0\leq t\leq 4\pi$. We encountered this parametric surface in chapter 5 when we considered a smoke screen left by multiple jets.
+\begin{enumerate}
+ \item Compute the partial derivatives $\vec r_a$ and $\vec r_t$ (they are vectors), and state the total derivative. (How big is the matrix? How many inputs are there? How many outputs are there?)
+ \item \marginpar{Please see \href{http://aleph.sagemath.org/?z=eJxL0yjRUUjUtNVI1ErOL9Yo0QTytIoz88CsEk2ugsSixNzUkqLM5PiCnPwSjTQdBaAOAx0FE62CTKASjUQdBSMgT1OTCwBCiRSf}{Sage} or \href{http://www.wolframalpha.com/input/?i=parametric+plot+3D++\%28a+cos+t\%2C+a+sin+t\%2C+t\%29+for+t+from+0+to+4+pi+and+a+from+2+to+4}{Wolfram Alpha} for a plot of the surface. Click on either link.}%
+Look at a plot of the surface (use one of the links to the right). Now, suppose an object is on this surface at the point $\vec r(3,\pi) = (-3,0,\pi)$. At that point, please draw the partial derivatives $\vec r_a(3,\pi)$ and $\vec r_t(3,\pi)$.  
+ \item If you were standing at $\vec r(3,\pi)$ and someone told you, ``Hey you, hold $t$ constant and increase $a$,'' then in which direction would you move. What if f someone told you, ``Hey you, hold $a$ constant and increase $t$''?
+ \item Give vector equations for two tangent lines to the surface at $\vec r(3,\pi)$. 
+
+[Hint: You've got the point by plugging $(3,\pi)$ into $\vec r$, and you've got two different direction vectors from $D\vec r$. Once you have a point and a vector, we know (from chapter 2) how to get an equation of a line.]
+\end{enumerate}
+  
+\end{problem}
+
+In the previous problem, you should have noticed that the partial derivatives of $\vec r(a,t)$ are tangent vectors to the surface. Because we have two tangent vectors to the surface, we should be able to use them to construct a normal vector to the surface, and from that, a tangent plane. That's just cool.
+
+\begin{problem}
+ Consider again the parametric surface $\vec r(a,t) = (a\cos t, a\sin t, t)$ for $2\leq a\leq 4$ and $0\leq t\leq 4\pi$. 
+ We'd like to obtain an equation of the tangent plane to this surface at the point $\vec r(3,2\pi)$. Once you have a point on the plane, and a normal vector to the surface, we can use the concepts in chapter 2 to get an equation of the plane. Give an equation of the tangent plane.
+
+ [Hint: To get the point, what is $\vec r(3,2\pi)$? The partial derivatives at $(3,2\pi)$ give us two tangent vectors.  How do I obtain a vector orthogonal to both? Is it the scalar, dot, or cross product?]
+\end{problem}
+
+
+Since a partial derivative is a function, we can take partial derivatives of that function as well.  
+If we want to first compute a partial with respect to $x$, and then with respect to $y$, we would write one of $$f_{xy}=\ds\frac{\partial}{\partial y}\frac{\partial}{\partial x}f = \frac{\partial}{\partial y}\frac{\partial f}{\partial x} = \frac{\partial^2 f}{\partial y \partial x}.$$
+The shorthand notation $f_{xy}$ is easiest to write. In upper-level courses, we will use subscripts to mean other things. At that point, we'll have to use the fractional partial notation to avoid confusion.
+
+\begin{problem}[Mixed Partials Agree]\label{second partials agree}\larsonfive{\marginpar{See Larson 13.3:71--80 for more practice.}}%
+Complete the following:
+\begin{enumerate}
+ \item Let $f(x,y)=3xy^3+e^{x}.$
+Compute the four second partials $$\ds \frac{\partial^2 f}{ \partial x^2},\quad \ds\frac{\partial^2 f}{\partial y \partial x},\quad \ds\frac{\partial^2 f}{\partial y^2}, \quad \text{ and }\ds\frac{\partial^2 f}{\partial x \partial y}.$$
+ \item For $f(x,y)=x^2\sin(y)+y^3$, compute both $f_{xy}$ and $f_{yx}$.  
+ \item Make a conjecture about a relationship between $f_{xy}$ and $f_{yx}$. Then use your conjecture to quickly compute $f_{xy}$ if $$f(x,y)=3xy^2+\tan^{2}(\cos(x)) (x^{49}+x)^{1000}.$$ 
+\end{enumerate}
+\end{problem}
+
+
+
+\section{Tangent Planes}
+I promised earlier in this chapter that you can obtain most of the results in multivariate calculus by replacing the $x$ and $y$ in $dy=f'dx$ with $\vec x$ and $\vec y$. The last problem asked you to obtain a tangent plane to a parametric surface. You've never had to find a tangent plane to a function of the form $z=f(x,y)$.  Let's review how to do it for functions of the form $y=f(x)$, and then generalize. 
+
+\begin{problem}[Tangent Lines]
+ Consider the function $y=f(x)=x^2$.  
+\begin{enumerate}
+ \item The derivative is $f'(x) = ?$. At the point $x=3$ the derivative is $f'(3)=?$ and the output $y$ is $y=f(3)=?$.
+ \item If we move from the point $(3,f(3))$ to the point $(x,y)$ along the tangent line, then a small change in $x$ is $dx=x-3$. What is $dy$?
+ \item Differential notation states that a change in the output $dy$ equals the derivative times a change in the input $dx$, which gives us the equation $dy=f'(3)dx$. Replace $dx$, $dy$, and $f'(3)$ with what we know they equal, to obtain an equation $y-?=?(x-?)$. What does this equation represent.
+ \item Draw both $f$ and the equation from the previous part on the same axes.   
+\end{enumerate}
+\end{problem}
+
+ In first semester calculus, differential notation says $dy=f' dx$. A change in the output equals the derivative times a change in the inputs.  For the next problem, the output is $z$, and input is $(x,y)$, which means differential notation says $dz = Df \begin{bmatrix}dx\\dy\end{bmatrix}$.  
+
+\begin{problem}[Tangent Planes]\label{tangent plane 9-x^2-y^2}%
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kUtvAiEYRff8CqImA8qYkUkTu2DdfbdNbSYMKOkIBFCH_voCPprax2YyX_Jx7uUg0UgiZo_1uKF13FBgA0OUrIjMX4wBmMqD5kEZDTvdQ2uUDsAyO5jQ9kiSdL5uSYsJipcfaGzHVYisWT5gYBesnEE2EMjNYByrnOgrAr36EIw2OQLygzsKX5Y71-1FcIq_5QyU-LlMZKkMgbe0b6iwU_xdC-9Zi-EUpt1fSZTERBoZLaR4R9o6IXSqdQdL67ngUfBgnAdyZHLZK5k4GMh4HeL5ojnmvIleVqQhciwWXzHxoXOBZQdf_PUtO4phMKfqJ6TJl49XCPyfYlynt6LKQu3QafGHznitNUdjTfHiwp-jWK_SdH73oropfpKp5u5d1yljF_YDmjyLHioPZ8n5jMCn7LDMSdtsgoHfmROy-BN9Vrcb}{Sage} for a picture.}%
+\marginpar{\bmw{See 14.6: 9-12 for more practice.}\larsonfive{See Larson 13.7:17--30 for more practice.}}%
+ Consider the function $z=f(x,y)=9-x^2-y^2$. 
+\begin{enumerate}
+ \item The derivative is $Df(x,y) = \begin{bmatrix}-2x&?\end{bmatrix}$. At the point $(x,y)=(2,1)$, the derivative is $Df(2,1) = \begin{bmatrix}-4&?\end{bmatrix}$ and the output $z$ is $z=f(2,1)=?$.
+ \item If we move from the point $(2,1,f(2,1))$ to the point $(x,y,z)$ along the tangent plane, then a small change in $x$ is $dx=x-2$. What are $dy$ and $dz$?
+ \item Explain why an equation of the tangent plane is \marginpar{We'll construct a graph of $f$ and it's tangent plane in class.}
+$$
+z-4=\begin{bmatrix}-4 & -2 \end{bmatrix}\begin{bmatrix}x-2\\x-1\end{bmatrix} 
+\quad \text{or}\quad 
+z-4=-4(x-2)-2(y-1).$$ [Hint: What does differential notation tell us?]
+\end{enumerate}
+\end{problem}
+
+Look back at the previous two problems.  The first semester calculus tangent line equation, with differential notation, generalized immediately to the tangent plane equation for functions of the form $z=f(x,y)$. Let's try this on another problem. 
+We just used the differential notation $dy=f'dx$ in 2D, and generalized to $dz = Df \begin{bmatrix}dx\\dy\end{bmatrix}$. Let's repeat this on another problem.
+
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kk-PwiAQxe_9FERNCu1oWusmXjjvfa8bNaQFJVsLAdSyn36havefuycCmfm9N28QuAdPaL9d5qusz3zut8tEO4ormJcghoOQJJmKU1c7qTrEugZpJTuXaDqcWDtAtWqVoanhTQrIyndOlwVJdE51q1zVYAFBqIAVAexhXkFJACnNauk8LRZPUQHVJ3Pmdmhihh25M7LexX4cegc3nkY3gO6sb7LuIOu3jltLK4KmKNY-ZFXgA6oPVZE0urmh9obzLszwgxbKo8Uzr50yNhE9FYtGisAhifD3ix9HxtdK_FoGp6K_5rghYB0zjsbEPgXWo7jnbasu6W9KAWF8P1LQ_xhlWLfnaQxVt6zjf0TqR2MZ7ucVye8KGfZ5Ga637X_J-9Hy1nCT1Sej20H24I4tnrzwBkmLZnETM0DPMdnhIYQ5m5DEHtQFa0DM6jDmzrDwv2gIrIRFuSEf2ELG4w}{Sage}.}%
+\marginpar{\bmw{See 14.6: 9-12 for more practice.}\larsonfive{See Larson 13.7:17--30 for more practice.}}%
+ Let $f(x,y)=x^2+4xy+y^2$. Give an equation of the tangent plane at $(3,-1)$. 
+
+ [Hint: Just as in the previous problem, find $Df(x,y)$, $dx$, $dy$, and $dz$.  Then use differential notation.]
+\end{problem}
+
+Let's now return to the function $z=9-x^2-y^2$, and show how parametric surfaces can add more light to unlocking the derivative and its geometric meaning. With a parametrization, partial derivatives are vectors, instead of just numbers.  Once we have vectors, we can describe motion. This makes it easier to visualize.
+
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kUtvAiEYRff8CqImA8qYkUkTu2DdfbdNbSYMKOkIBFCH_voCPprax2YyX_Jx7uUg0UgiZo_1uKF13FBgA0OUrIjMX4wBmMqD5kEZDTvdQ2uUDsAyO5jQ9kiSdL5uSYsJipcfaGzHVYisWT5gYBesnEE2EMjNYByrnOgrAr36EIw2OQLygzsKX5Y71-1FcIq_5QyU-LlMZKkMgbe0b6iwU_xdC-9Zi-EUpt1fSZTERBoZLaR4R9o6IXSqdQdL67ngUfBgnAdyZHLZK5k4GMh4HeL5ojnmvIleVqQhciwWXzHxoXOBZQdf_PUtO4phMKfqJ6TJl49XCPyfYlynt6LKQu3QafGHznitNUdjTfHiwp-jWK_SdH73oropfpKp5u5d1yljF_YDmjyLHioPZ8n5jMCn7LDMSdtsgoHfmROy-BN9Vrcb}{Sage} for a picture.}%
+\marginpar{\bmw{See 16.5: 27-30 for more practice.}\larsonfive{See Larson 15.5:35--38 for more practice.}}%
+ Let $z=f(x,y)=9-x^2-y^2$. We'll parameterize this function by writing $x=x, y=y, z=9-x^2-y^2$, or in vector notation we'd write $$\vec r(x,y) = (x,y,f(x,y)).$$ 
+\begin{enumerate}
+ \item Compute $\ds \frac{\partial f}{\partial x}$ and $\ds \frac{\partial f}{\partial y}$. Then evaluate these partials at $(x,y)=(2,1)$. You should have $f_x=-4$. What does the number $-4$ mean? What does the number $f_y$ mean? 
+ \item Compute $\ds \frac{\partial \vec r}{\partial x}$ and $\ds \frac{\partial \vec r}{\partial y}$. Then evaluate these partials at $(x,y)=(2,1)$.  What do these vectors mean? [Hint: Draw the surface, and at the point $(2,1,4)$, draw these vectors. See the Sage plot.]
+ \item The vectors above are tangent to the surface. Use them to obtain a normal vector to the tangent plane, and then given an equation of the tangent plane. (You should compare it to your equation from problem \ref{tangent plane 9-x^2-y^2}.)
+\end{enumerate}
+\end{problem}
+
+
+The next problem generalizes the tangent plane and normal vector calculations above to work for any parametric surface $\vec r(u,v)$.
+\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kM1uwjAQhO95ihUgxQ4uhbSVevG5954rVZZjwMLY1voH0aevEwhEFerJu9buN7ODJLFMOUmNdIFkyiA1QdtLRSsfudEhEiQt8_q5pbSq5ttkZdTOgrAdeKdtrDwfXuIjA-mMQ16j6moGQf8o3q4Lacm9QHFUEbX89sYVKIOivmavRYvkUkDbeF0a54XU8czXq7deD2TCrMJDBMl88DVBTfXjXsuDVSHwFwpzuAw_BiXejj6uNq6gHSplyyl_WGW-95aVjA5DhYnjqtPbLSmxYR6bfLl8kEhjiCxEgZH3Yd2h7zfBszLGnerJZr5twv-rDoXdqbpPzRth1aNTU3N3sszNFD5mWFJ42rANZVesT-jNgN3HoyGzT9WBDrDI_KvfXDD46EMa_kouixmtwt6diKe_OvC8aA}{Sage}.}%
+\marginpar{\bmw{See 16.5: 27-30 for more practice.}\larsonfive{See Larson 15.5:35--38 for more practice.}}%
+ Consider the cone parametrized by $\vec r(u,v)=(u\cos v, u\sin v,u)$.
+ \begin{enumerate}
+ \item Give vector equations of two tangent lines to the surface at $\vec r(2,\pi/2)$ (so $u=2$ and $v=\pi/2$).
+ \item Give a normal vector to the surface at $\vec r(2,\pi/2)$.
+ \item Give an equation of the tangent plane at $\vec r(2,\pi/2)$.
+ \end{enumerate}
+\end{problem}
+
+
+We now have two different ways to compute tangent planes.  One way generalizes differential notation $dy=f'dx$ to 
+$dz = Df \begin{bmatrix}dx\\dy\end{bmatrix}$ and then uses matrix multiplication. This way will extend to tangent objects in EVERY dimension.  It's the key idea needed to work on really large problems.  The other way requires that we parametrize the surface $z=f(x,y)$ as $\vec r(x,y)=(x,y,f(x,y))$ and then use the cross product on the partial derivatives. Both give the same answer. The next problem has you give a general formula for a tangent plane.
+
+
+\begin{problem}[Tangent Plane General Formula]
+ Consider the function $z=f(x,y)$. Explain why an equation of the tangent plane to $f$ at $(x,y)=(a,b)$ is given by  
+$$z-f(a,b) = \frac{\partial f}{\partial x}(a,b) (x-a) +  \frac{\partial f}{\partial y}(a,b) (y-a).$$
+Then give an equation of the tangent plane to $f(x,y) = x^2+3xy$ at $(3,-1)$. 
+[Hint: Use either differential notation or a parametrization. Try both ways.]
+\end{problem}
+
+
+
+
+\section{The Chain Rule}
+
+We'll now see how the chain rule generalizes to all dimensions.  Just as before, we'll find that the first semester calculus rule will generalize to all dimensions, if we replace $f'$ with the matrix $Df$. 
+Let's recall the chain rule from first-semester calculus. 
+
+\begin{theorem}[The Chain Rule]
+ Let $x$ be a real number and $f$ and $g$ be functions of a single real variable. Suppose $f$ is differentiable at $g(x)$ and $g$ is differentiable at $x$. The derivative of $f\circ g$ at $x$ is 
+$$(f\circ g)'(x) = \frac{d}{dx}(f\circ g)(x) = f'(g(x))\cdot g'(x).$$
+\end{theorem}
+
+Some people remember the theorem above as ``the derivative of a composition is the derivative of the outside (evaluated at the inside) multiplied by the derivative of the inside.'' If $u=g(x)$, we sometimes write $\ds \frac{df}{dx}=\frac{df}{du}\frac{du}{dx}$. The following problem should help us master this notation.
+
+\begin{problem}\label{chain rule review problem}
+ Suppose we know that $\ds f'(x) = \frac{\sin(x)}{2x^2+3}$ and $g(x)=\sqrt{x^2+1}$. Notice we don't know $f(x)$. \marginpar{ Not knowing a function $f$ is actually quite common in real life. We can often measure how something changes (a derivative) without knowing the function itself.}
+\begin{enumerate}
+ \item State $f'(x)$ and $g'(x)$.
+ \item State $f'(g(x))$, and explain the difference between $f'(x)$ and $f'(g(x))$. 
+ \item Use the chain rule to compute $(f\circ g)'(x)$. 
+\end{enumerate}
+\end{problem}
+
+We now generalize to higher dimensions. If I want to write $\vec f(\vec g(\vec x))$, then $\vec x$ must be a vector in the domain of $g$.  After computing $\vec g(\vec x)$, we must get a vector that is in the domain of $f$.  Since the chain rule in first semester calculus states $(f(g(x))'=f'(g(x))g'(x)$, then in high dimension it should state $D(f(g(x)) = Df(g(x))Dg(x)$, the product of two matrices. 
+
+\begin{problem}
+ In problem \ref{differential for volume of a cylinder}, we showed that for a circular cylinder with volume $V=\pi r^2 h$, the derivative is 
+$$DV(r,h)=\begin{bmatrix}
+2\pi rh & \pi r^2
+\end{bmatrix}.$$  
+Suppose that the radius and height are both changing with respect to time, where $r=3t$ and $h=t^2$. We'll write this parametrically as $(r,h)(t) = (3t, t^2)$.  
+\begin{enumerate}
+ \item In $V=\pi r^2 h$, replace $r$ and $h$ with what they are in terms of $t$. Then compute $\dfrac{dV}{dt}$. 
+ \item We know 
+$DV(r,h)=\begin{bmatrix}
+2\pi rh & \pi r^2
+\end{bmatrix}.$ We can compute
+$D(r,h)(t)=
+\begin{bmatrix}
+3\\  2t
+\end{bmatrix}.$
+In first semester calculus, the chain rule was the product of derivatives. Show that this works in higher dimensions by multiplying matrices and showing $$\dfrac{dV}{dt}=DV((r,h)(t))\cdot D(r,h)(t).$$ 
+ \item To get the correct answer to the previous part, you had to replace $r$ and $h$ with what they equaled in terms of $t$.  What part of the notation $\dfrac{dV}{dt}=DV((r,h)(t))\cdot D(r,h)(t)$ tells you to replace $r$ and $h$ with what they equal in terms of $t$?
+\end{enumerate}
+
+
+
+\end{problem}
+
+
+Let's look at some physical examples involving motion and temperature, and try to connect what we know should happen to what the chain rule states.
+
+
+\begin{problem}\label{horse track chain rule introduction}
+ Consider $f(x,y)=9-x^2-y^2$ and $\vec r(t)=(2\cos t, 3\sin t)$. Imagine the following scenario.  A horse runs around outside in the cold. The horse's position at time $t$ is given parametrically by the elliptical path $\vec r(t)$. The function $T=f(x,y)$ gives the temperature of the air at any point $(x,y)$.  
+\begin{enumerate}
+ \item\label{item:1} At time $t=0$, what is the horse's position $\vec r(0)$, and what is the temperature $f(\vec r(0))$ at that position? Find the temperatures at $t=\pi/2$, $t=\pi$, and $t=3\pi/2$ as well. 
+ \item \marginpar{If you end up with an ellipse and several concentric circles, then you've done this right.}%
+In the plane, draw the path of the horse for $t\in [0,2\pi]$. Then, on the same 2D graph, include a contour plot of the temperature function $f$. Make sure you include the level curves that pass through the points in part~\ref{item:1}, and write the temperature on each level curve you draw. 
+ \item\marginpar{This idea leads to an optimization technique, Lagrange multipliers, later in the semester.}%
+ As the horse runs around, the temperature of the air around the horse is constantly changing. 
+At which $t$ does the temperature around the horse reach a maximum?  A minimum?  Explain, using your graph. 
+ \item\label{item:2} As the horse moves past the point at $t=\pi/4$, is the temperature of the surrounding air increasing or decreasing? In other words, is $\dfrac{df}{dt}$ positive or negative? Use your graph to explain.
+ \item We'll complete this part in class, but you're welcome to give it a try yourself. \instructor{See \href{http://aleph.sagemath.org/?z=eJyFj0FuwjAQRfc-RXaMk0kV2WLBwrforoLKGEdYmNgaOyK5fU3oIqCq7N5i_pv_e5hw5mrXTgfRzgfBCDJXIGoTUiGsZJ3cUIgzFlX0IcsT9FhSrUTJEeZfqELUxuVZdR9bzmKjoiZ9tZmc-b7HwLuU4W7nzVcP9UJ7rCBjh6KOrihM8IHUhuxpg_nszGWwKSn5Vtf946meRCydww1iAROGHEZ6yP4atEiOmtQnjRa9PlqfFubNaxfC1Xc92cfdaoLAVSX-A1SMc_Q}{Sage}.}%
+Draw the 3D surface plot of $f$. In the $xy$-plane of your 3D plot (so $z=0$) add the path of the horse. In class, we'll project the path of the horse up into the 3D surface. 
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Consider again $f(x,y)=9-x^2-y^2$ and $\vec r(t)=(2\cos t, 3\sin t)$, which means $x=2\cos t$ and $y=3\sin t$. 
+\begin{enumerate}
+ \item At the point $\vec r(t)$, we'd like a formula for the temperature $f(\vec r(t))$. What is the temperature of the horse at any time $t$? [In $f(x,y)$, replace $x$ and $y$ with what they are in terms of $t$.]
+ \item Compute $df/dt$ (the derivative as you did in first-semester calculus).
+ \item Construct a graph of $f(t)$ (use software to draw this if you like). From your graph, at what time values do the maxima and minima occur?
+ \item What is $df/dt$ at $t=\pi/4$?
+ \item Compare your work with the previous problem.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Consider again $f(x,y)=9-x^2-y^2$ and $\vec r(t)=(2\cos t, 3\sin t)$.
+\begin{enumerate}
+ \item Compute both $Df(x,y)$ and $D\vec r(t)$ as matrices. One should have two columns.  The other should have one column (but two rows). 
+ \item The temperature at any time $t$ we can write symbolically as $f(r(t))$.  First semester calculus suggests the derivative should be the produce $(f(\vec r(t))) ' = f'(\vec r(t))\vec r'(t)$. Write this using $D$ notation instead of prime notation.
+ \item Compute the matrix product $DfD\vec r$, and then substitute $x=2\cos t$ and $y=3\sin t$.    
+ \item What is the change in temperature with respect to time at $t=\pi/4$? Is it positive or negative? Compare with the previous problem.
+\end{enumerate}
+\end{problem}
+
+The previous three problems all focused on exactly the same concept.  The first looked at the concept graphically, showing  what it means to write $(f\circ \vec r)(t)=f(\vec r(t))$. The second reduced the problem to first-semester calculus. The third tackled the problem by considering matrix derivatives.  In all three cases, we wanted to understand the following problem.
+\begin{quote}
+ If $z=f(x,y)$ is a function of $x$ and $y$, and both $x$ and $y$ are functions of $t$ ( $\vec r(t)=(x(t),y(t))$), then how do we discover how quickly $f$ changes as we change $t$. In other words, what is the derivative of $f$ with respect to $t$. Notationally, we seek $\ds \frac{df}{dt}$ which we formally write as $\ds \frac{d}{dt}[f(x(t),y(t))]$ or $\ds \frac{d}{dt} [f(\vec r(t))].$
+\end{quote}
+To answer this problem, we use the chain rule, which is just matrix multiplication.
+\begin{theorem}[The Chain Rule]\label{chain rule def}
+ Let $\vec x$ be a vector and $\vec f$ and $\vec g$ be functions so that the composition $\vec f(\vec g(\vec x))$ makes sense (we can use the output of $g$ as an input to $f$). Suppose $\vec f$ is differentiable at $\vec g(\vec x)$ and that $\vec g$ is differentiable at $\vec x$. Then the derivative of $\vec f\circ \vec g$ at $\vec x$ is 
+$$D(\vec f\circ \vec g)(\vec x) = D\vec f(\vec g(\vec x))\cdot D\vec g(\vec x).$$
+ The derivative of a composition is equal to the derivative of the outside (evaluated at the inside), multiplied by the derivative of the inside.  
+\end{theorem}
+This is exactly the same as the chain rule in first-semester calculus.  The only difference is that now we have vectors above every variable and function, and we replaced the one-by-one matrices $f'$ and $g'$ with potentially larger matrices $Df$ and $Dg$. If we write everything in vector notation, the chain rule in all dimensions is the EXACT same as the chain rule in one dimension.
+
+\begin{problem}\marginpar{\bmw{See 14.4: 1-6 for more practice. Don't use the formulas in the chapter, rather practice using matrix multiplication.  The formulas are just a way of writing matrix multiplication without writing down the matrices, and only work for functions from $\RR^n\to\RR$.  Our matrix multiplication method works for any function from $\RR^n\to\RR^m$.}\larsonfive{See Larson 13.5:1--6 for more practice (you can check answers in the back of the book).  Don't use the formulas on pages 925--930.  Instead, use matrix multiplication.  The formulas are just a way of writing matrix multiplication without writing down the matrices, and only work for functions from $\RR^n\to\RR$.  Our matrix multiplication method works for any function from $\RR^n\to\RR^m$.}}%
+ Suppose that $f(x,y) = x^2+xy$ and that $x=2t+3$ and $y=3t^2+4$.
+ \begin{enumerate}
+  \item Rewrite the parametric equations $x=2t+3$ and $y=3t^2+4$ in vector form, so we can apply the chain rule. This means you need to create a function $\vec r(t) = (\blank{1in}, \blank{1in})$.
+  \item Compute the derivatives $Df(x,y)$ and $D\vec r(t)$, and then multiply the matrices together to obtain $\dfrac{df}{dt}$. How can you make your answer only depend on $t$ (not $x$ or $y$)?
+  \item The chain rule states that $D(f\circ \vec r)(t) = Df(\vec r(t))D\vec r(t)$. Explain why we write $Df(\vec r(t))$ instead of $Df(x,y)$.
+%  \item Now, without any matrix multiplication, replace $x$ and $y$ in $f=x^2+xy$ with what they are in terms of $t$, and then use first-semester calculus to find $df/dt$.
+% I now do this part in class with the students.
+ \end{enumerate}
+If you'd like to make sure you are correct, try the following. Replace $x$ and $y$ in $f=x^2+xy$ with what they are in terms of $t$, and then just use first-semester calculus to find $df/dt$. Is it the same?
+\end{problem}
+
+\begin{problem}\marginpar{\bmw{See 14.4: 7-12 for more practice.}\larsonfive{See Larson 13.5:7--10 for more practice (remember to use matrix multiplication, not the formulas from the book).}}%
+ Suppose $f(x,y,z) = x+2y+3z^2$ and $x=u+v$, $y=2u-3v$, and $z=uv$. Our goal is to find how much $f$ changes if we were to change $u$ (so $\partial f/\partial u$) or if we were to change $v$ (so $\partial f/\partial v$). Try doing this problem without looking at the steps below, but instead try to follow the patterns in the previous problem on your own. 
+ \begin{enumerate}
+  \item Rewrite the equations for $x,y,$ and $z$ in vector form $\vec r(u,v)=(x,y,z)$. %If you were to graph $\vec r$, what kind of graph would you make?
+  \item Compute the derivatives $Df(x,y,z)$ and $D\vec r(u,v)$, and then multiply them together. Notice that since this composite function has 2 inputs, namely $u$ and $v$, we should expect to get two columns when we are done.
+  \item What are $\partial f/\partial u$ and $\partial f/\partial v$? [Hint: remember, each input variable gets a column.]
+ \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+ Let $\vec F(s,t) = (2s+t,3s-4t,t)$ and $s=3pq$ and $t=2p+q^2$.  This means that changing $p$ and/or $q$ should cause $\vec F$ to change. Our goal is to find $\partial \vec F/\partial p$ and $\partial \vec F/\partial q$. Note that since $\vec F$ is a vector-valued function, the two partial derivatives should be vectors. Try doing this problem without looking at the steps below, but instead try to follow the patterns in the previous problems. 
+ \begin{enumerate}
+  \item\label{item:3} Rewrite the parametric equations for $s$ and $t$ in vector form.
+  \item Compute $D\vec F(s,t)$ and the derivative of your vector function from part~\ref{item:3}, and then multiply them together to find the derivative of $\vec F$ with respect to $p$ and $q$.  How many columns should we expect to have when we are done multiplying matrices?
+  \item What are $\partial \vec F/\partial p$ and $\partial \vec F/\partial q$? 
+ \end{enumerate}
+\end{problem}
+
+%\begin{problem}
+% \note{Maybe move this problem down after a few of the general problems that emphasize the concepts above.}Suppose $\vec F(u,v) = (3u-v,u+2v,3v)$,  $\vec G(x,y,z)=(x^2+z, 4y-x)$, and $\vec r(t) = (t^3, 2t+1, 1-t)$.  We want to examine $\vec F(\vec G(\vec r(t))$.  This means that $\vec F\circ \vec G\circ \vec r$ is a function from $\RR^n\to\RR^m$ for what $n$ and $m$?  Similar to first-semester calculus, since we have two functions nested inside of each other, we'll just need to apply the chain rule twice.  Our goal is to find $d\vec F/dt$.  Try to do this problem without looking at the steps below.
+% \begin{enumerate}
+%  \item Compute $D\vec F(u,v)$, $D\vec G(x,y,z)$, and $D\vec r(t)$.
+%  \item Use the chain rule (matrix multiplication) to find the derivative of $\vec F$ with respect to $t$.  What size of matrix should we expect for the derivative?
+% \end{enumerate}
+%\end{problem}
+
+
+
+\begin{problem}[General Chain Rule Formulas]\marginpar{\bmw{See 14.4: 13-24 for more practice. Practice these problems by using matrix multiplication. The examples problems in the text use a ``branch diagram,'' which is just a way to express matrix multiplication without having to introduce matrices.}\larsonfive{See Larson 13.5:7--10 for more practice.}}%
+Complete the following:
+\begin{enumerate}
+\item Suppose that $w=f(x,y,z)$ and that $x,y,z$ are all function of one variable $t$ (so $x=g(t), y=h(t), z=k(t)$).  
+ Use the chain rule with matrix multiplication to explain why 
+$$\frac{dw}{dt} 
+= \frac{\partial f}{\partial x}\frac{dg}{dt}+\frac{\partial f}{\partial y}\frac{dh}{dt}+\frac{\partial f}{\partial z}\frac{dk}{dt} 
+.$$
+which is equivalent to writing $$\frac{dw}{dt} 
+= \frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}+\frac{\partial f}{\partial z}\frac{dz}{dt} 
+.$$ [Hint: Rewrite the parametric equations for $x$, $y$, and $z$ in vector form $\vec r(t) = (x,y,z)$ and compute $Dw(x,y,z)$ and $D\vec r(t)$.]
+\item Suppose that $R=f(V,T,n,P)$, and that $V,T,n,P$ are all functions of $x$.  Give a formula (similar to the above) for $\dfrac{dR}{dx}.$  
+
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}\larsonfive{\marginpar{See Larson 13.5:19--26 for more practice.}}%
+\marginpar{\bmw{Make sure you practice problems 14.4: 13-24. Use matrix multiplication, rather than the ``branch diagram'' referenced in the text.}\larsonfive{See Larson 13.5:7--10 for more practice.}}%
+ Suppose $z=f(s,t)$ and $s$ and $t$ are functions of $u$, $v$ and $w$.  Use the chain rule to give a general formula for $\partial z/\partial u$, $\partial z/\partial v$, and $\partial z/\partial w$. 
+\end{problem}
+
+You've now got the key ideas needed to use the chain rule in all dimensions. You'll find this shows up many places in upper-level math, physics, and engineering courses. The following problem will show you how you can use the general chain rule to get an extremely quick way to perform implicit differentiation from first-semester calculus.
+
+\begin{problem}\marginpar{\bmw{See 14.4: 25-32 to practice using the formula you developed.}  To practice the idea developed in this problem, show that if $w=F(x,y,z)$ is held constant at $w=c$ and we assume that $z=f(x,y)$ depends on $x$ and $y$, then $\frac{\partial z}{\partial x} = -\frac{F_x}{F_z}$ and $\frac{\partial z}{\partial y} = -\frac{F_y}{F_z}$. \bmw{This is done on page 798 at the bottom. }}%
+\larsonfive{\marginpar{See Larson 13.5:27--30 for more practice, and see pages 929--930 for how the book derives these formulas.}}%
+ Suppose $z=f(x,y)$.  If $z$ is held constant, this produces a level curve. As an example, if $f(x,y) = x^2+3xy-y^3$ then $5=x^2+3xy-y^3$ is a level curve. Our goal in this problem is to find $dy/dx$ in terms of partial derivatives of $f$.
+\begin{enumerate}
+ \item Suppose $x=x$ and $y=y(x)$, so $y$ is a function of $x$.  We can write this in parametric form as $\vec r(x) = (x,y(x))$. We now have $z=f(x,y)$ and $\vec r(x)=(x,y(x))$.  Compute both $Df(x,y)$ and $D\vec r(x)$ symbolically.  Don't use the function $f(x,y)=x^2+3xy-y^3$ until the last step. 
+ \item\label{item:4} Use the chain rule to compute $D(f(\vec r(x)))$. What is $dz/dx$ (i.e., $df/dx$)?
+ \item Since $z$ is held constant, we know that $dz/dx=0$. Use this fact, together with part~\ref{item:4} to explain why $\ds \frac{dy}{dx} = -\frac{f_x}{f_y} = -\frac{\partial f/ \partial x}{\partial f/ \partial y}$.
+ \item For the curve $5=x^2+3xy-y^3$, use this formula to compute $dy/dx$.
+\end{enumerate}
+
+\end{problem}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "215-problems"
+%%% End: 
