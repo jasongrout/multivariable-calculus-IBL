@@ -359,8 +359,11 @@ to plot your parametrization.  \bmw{See 16.5: 1-16 for more practice.}}%
  Consider the surface $z=9-x^2-y^2$ plotted in problem \ref{surface graph for a function of two variables}.
 \begin{enumerate}
  \item 
-Using the rectangular coordinate transformation $\vec T(x,y,z)=(x,y,z)$, give a parametrization $\vec r_1\colon \mathbb{R}^2\to\mathbb{R}^3$ of the surface. 
+Using the rectangular coordinate transformation $\vec T(x,y,z)=(x,y,z)$, give a parametrization $\vec r\colon \mathbb{R}^2\to\mathbb{R}^3$ of the surface. 
+
+This is the same as saying $$x=x, y=y, z=?.$$
 [Hint: Use the surface equation to eliminate the input variable $z$ in $T$.]
+
  \item What bounds must you place on $x$ and $y$ to obtain the portion of the surface above the plane $z=0$?
  \item If $z=f(x,y)$ is any surface, give a parametrization of the surface (i.e., $x=?, y=?, z=?$ or $\vec r (?,?)=(?,?,?)$.)
 \end{enumerate}
@@ -372,7 +375,7 @@ Using the rectangular coordinate transformation $\vec T(x,y,z)=(x,y,z)$, give a 
  Again consider the surface $z=9-x^2-y^2$.
 \begin{enumerate}
  \item
-Using cylindrical coordinates, $\vec T(r,\theta,z) = (r\cos \theta, r\sin\theta, z)$, obtain a parametrization $\vec f(r,\theta)=(?,?,?)$ of the surface using the input variables $r$ and $\theta$.
+Using cylindrical coordinates, $\vec T(r,\theta,z) = (r\cos \theta, r\sin\theta, z)$, obtain a parametrization $\vec r(r,\theta)=(?,?,?)$ of the surface using the input variables $r$ and $\theta$. In other words, if we let $x=r\cos theta, y=r\sin\theta, z=z$, and writing $z=9-x^2-y^2$ in terms of $r$ and $\theta$.
  \item What bounds must you place on $r$ and $\theta$ to obtain the portion of the surface above the plane $z=0$?
 \end{enumerate}
 
@@ -388,7 +391,7 @@ Recall the spherical coordinate transformation
 \larsonfive{$$\vec T(\rho,\theta, \phi) = (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos \phi).$$}%
 This is a function of the form $\vec T\colon \mathbb{R}^3\to\mathbb{R}^3$.  If we hold one of the three inputs constant, then we have a function of the form $\vec r\colon \mathbb{R}^2\to\mathbb{R}^3$, which is a parametric surface.
 \begin{enumerate}
- \item \marginpar{Use \href{http://aleph.sagemath.org}{Sage} or \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot each parametrization  (see \ref{3d parametric plot} for examples).}%
+ \item \marginpar{Use \href{http://aleph.sagemath.org}{Sage} or \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot each parametrization (see \ref{3d parametric plot} for examples).}%
 Give a parametrization of the sphere of radius 2, using $\phi$ and $\theta$ as your input variables. 
  \item What bounds should you place on $\phi$ and $\theta$ if you want to hit each point on the sphere exactly once?
  \item What bounds should you place on $\phi$ and $\theta$ if you only want the portion of the sphere above the plane $z=1$?
@@ -406,6 +409,17 @@ Find parametric equations for the surface $x^2+z^2=9$. [Hint: read the paragraph
  \item What bounds should you use to obtain the portion of the surface with $x\geq 0$ and $y\in[2,5]$?
 \end{enumerate}
 \end{problem}
+
+\begin{problem}
+ Construct a graph of the surface $z = x^2-y^2$.  Do so in 2 ways.  (1) Construct a 3D surface plot.  (2) Construct a contour plot, which is a graph with several level curves. Which level curve passes through the point $(3,4)$? 
+ Use Wolfram Alpha to know if you're right.  Just type ``plot z=x\^2-y\^2.''
+\end{problem}
+
+\begin{problem}
+Construct a plot of the vector field $$\vec F(x,y) = (x+y, -x+1)$$ by graphing the field at many integer points around the origin (I generally like to get the 8 integer points around the origin, and then a few more).
+Then explain how to modify your graph to obtain a plot of the vector field $$\hat F(x,y) = \frac{(x+y, -x+1)}{\sqrt{(x+y)^2+(1-x)^2}}.$$ 
+\end{problem}
+
 
 %%% Local Variables: 
 %%% mode: latex

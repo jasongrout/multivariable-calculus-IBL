@@ -254,17 +254,18 @@ If $\vec r(t)$ is a vector equation of a curve (or in parametric form just $x=f(
 The subtraction above requires vector subtraction.  The following problem will provide a simple way to take derivatives which we will use all semester long.
 
 \begin{problem} \marginpar{\bmw{See page 728.}}
-Show that if $\vec r(t) = (f(t),g(t))$, then the derivative is just $\frac{d\vec r}{dt} = (f'(t),g'(t))$.  In other words, you can take the derivative by just differentiating each component separately.  
-\end{problem}
+Show that if $\vec r(t) = (f(t),g(t))$, then the derivative is just $\frac{d\vec r}{dt} = (f'(t),g'(t))$.  
 
+[The definition above says that $\frac{d\vec r}{dt}=\ds\lim_{h\to 0}\frac{\vec r(t+h)-\vec r(t)}{h}$. We were told $\vec r(t) = (f(t),g(t))$, so use this in the derivative definition.  Then try to modify the equation to obtain $\frac{d\vec r}{dt} = (f'(t),g'(t))$.]
+\end{problem}
+The previous problem shows you can take the derivative of a vector valued function by just differentiating each component separately. The next problem shows you that velocity and acceleration are still connected to the first and second derivatives. 
 
 \begin{problem}  \marginpar{\bmw{See 13.1:5-8 and 13.1:19-20}}
 Consider the parametric curve given by $\vec r(t)=( 3\cos t, 3\sin t )$. 
 \begin{enumerate}
-\item Compute $\frac{d\vec r}{dt}$ and $\frac{d^2\vec r}{dt^2}$. 
-\item Construct a graph of the curve given by $\vec r$.  
+\item Graph the curve $\vec r$, and compute $\frac{d\vec r}{dt}$ and $\frac{d^2\vec r}{dt^2}$. 
 \item On your graph, draw the vectors $\frac{d\vec r}{dt}\left(\frac{\pi}{4}\right)$ and $\frac{d^2\vec r}{dt^2}\left(\frac{\pi}{4}\right)$ with their tail placed on the curve at $\vec r\left(\frac{\pi}{4}\right)$. These vectors represent the velocity and acceleration vectors.
-\item Give a vector equation of the tangent line to this curve at $t=\frac{\pi}{4}$. 
+\item Give a vector equation of the tangent line to this curve at $t=\frac{\pi}{4}$. (You know a point and a direction vector.)
 \end{enumerate}
 \end{problem}
 
@@ -278,7 +279,15 @@ Consider the curve $\vec r(t) = (2t+3, 4(2t-1)^2)$.
 \item Construct a graph of $\vec r$ for $0\leq t\leq 2$. 
 \item If this curve represented the path of a horse running through a pasture, find the velocity of the horse at any time $t$, and then specifically at $t=1$. What is the horse's speed at $t=1$?
 \item Find a vector equation of the tangent line to $\vec r$ at $t=1$.  Include this on your graph.
-\item Show that the slope of the line is $\ds \frac{dy}{dx}\big|_{x=5} = \frac{\frac{dy}{dt}\big|_{t=1}}{\frac{dx}{dt}\big|_{t=1}}$.
+\item Show that the slope of the line is 
+$$\ds \frac{dy}{dx}\big|_{x=5} 
+= 
+\frac{
+(dy/dt)\big|_{t=1}
+}{
+(dx/dt)\big|_{t=1}
+}.$$
+[How can you turn the direction vector, which involves $(dx/dt)$ and $(dy/dt)$ into a slope $(dy/dx)$?]
 \end{enumerate} 
 \end{problem}
 %
@@ -308,8 +317,8 @@ Suppose an object moves along the path given by $\vec r(t)=(x(t),y(t))$ for $a\l
 \begin{enumerate}
 \item Show that the object's speed at any time $t$ is 
 $\ds\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}$.
-\item If you move over a really small time interval, say of length $dt$, then the speed is almost constant.  Give a formula for the small distance $ds$ you have travelled through a small time $dt$, provided you are moving at the speed given above. 
-\item  Explain why the length of the path given by $\vec r$ is \marginpar{This is the arc length formula.}
+\item If you move over a really small time interval, say of length $dt$, then the speed is almost constant. If you move at constant speed $\ds\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}$ for a time length $dt$, what's the distance $ds$ you have traveled. 
+\item  Explain why the length of the path given by $\vec r(t)$ for $a\leq t\leq b$ is  \marginpar{This is the arc length formula. Ask me in class for an alternate way to derive this formula.}
 $$s=\int ds=\int_a^b \left|\frac{d\vec r}{dt}\right| dt=\int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt.$$
 %\item \marginpar{\bmw{See page 639.}} Draw a small curve.  Pick two points close together.  Construct a straight line segment between them (call this $ds$).  Then draw a right triangle that shows the change in $x$ and change in $y$ (written $dx$ and $dy$).  Use the Pythagorean theorem to show that $ds=\sqrt{dx^2+dy^2}=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt$.  
 %\item If the curve is in space (so $\vec r(t)=(x(t),y(t),z(t))$ is the path), then what is the arc length of the curve? 
@@ -317,11 +326,11 @@ $$s=\int ds=\int_a^b \left|\frac{d\vec r}{dt}\right| dt=\int_a^b \sqrt{\left(\fr
 \end{problem}
 
 \begin{problem} \marginpar{\bmw{See 11.2: 25-30}}
-Find the length of the curve  $\ds \vec r(t) = \left(t^3,\frac{3t^2}{2}\right)$ for $t\in[1,3]$. The notation $t\in[1,3]$ means $1\leq t\leq 3$. 
+Find the length of the curve  $\ds \vec r(t) = \left(t^3,\frac{3t^2}{2}\right)$ for $t\in[1,3]$. The notation $t\in[1,3]$ means $1\leq t\leq 3$. Be prepared to show us your integration steps in class (you'll need a $u$-substitution).
 \end{problem}
 
 \begin{problem}
-Set up an integral formula which would give the length of the following curves. Sketch the curve. Do not worry about integrating them.  \marginpar{The reason I don't want you to actually compute the integrals is that they will get ugly really fast. Try doing one in Wolfram Alpha and see what the computer gives. }
+For each curve below, set up an integral formula which would give the length, and sketch the curve. Do not worry about integrating them.  \marginpar{The reason I don't want you to actually compute the integrals is that they will get ugly really fast. Try doing one in Wolfram Alpha and see what the computer gives.}
 \begin{enumerate}
 \item The parabola $\vec p(t) = (t,t^2)$ for $t\in[0,3]$.
 \item The ellipse $\vec e(t) = (4\cos t,5\sin t)$ for $t\in[0,2\pi]$.
