@@ -215,8 +215,7 @@ Most of our examples of function of the form $w=f(x,y,z)$ can be drawn by using 
  \end{enumerate}
 \end{problem}
 
-
-\subsection{Vector Fields and Transformations: $\vec f\colon \RR^n\to\RR^n$}
+\section{Vector Fields and Transformations: $\vec f\colon \RR^n\to\RR^n$}
 
 We've covered the following types of functions in the problems above.
 \begin{itemize}
@@ -227,42 +226,12 @@ We've covered the following types of functions in the problems above.
  \item $z=f(x,y)$ or $f\colon \mathbb{R}^2\to\mathbb{R}$ (functions of two variables)
  \item $z=f(x,y,z)$ or $f\colon \mathbb{R}^3\to\mathbb{R}$ (functions of three variables)
 \end{itemize}
-We will finish this section by considering vector fields and transformations. 
-\begin{itemize}
- \item $\vec F(x,y)=(M,N)$ or $f\colon \mathbb{R}^2\to\mathbb{R}^2$ (vector fields in the plane)
- \item $\vec F(x,y,z)=(M,N,P)$ or $f\colon \mathbb{R}^3\to\mathbb{R}^3$ (vector fields in space)
- \item $\vec T(u,v)=(x,y)$ or $f\colon \mathbb{R}^2\to\mathbb{R}^2$ (2D transformation)
- \item $\vec T(u,v,w)=(x,y,z)$ or $f\colon \mathbb{R}^3\to\mathbb{R}^3$ (3D transformation)
-\end{itemize}
-Notice that in all cases, the dimension of the input and output are the same. The difference between vector fields and transformations has to do with the application. We've already seen examples of transformations with polar, cylindrical, and spherical coordinates.
+This section We will consider functions from $\mathbb{R}^2$ to $\mathbb{R}^2$ and functions from $\mathbb{R}^3$ to $\mathbb{R}^3$.  Depending on the application, we may view these functions as either transformations of 2D or 3D space, or we may view them as vector fields in the plane or space.
 
-\begin{problem}\label{graphing spherical coordinates}%
-\marginpar{Recall that $\phi$ (``phi'') is the angle down from the $z$ axis, $\theta$ (``theta'') is the angle counterclockwise from the $x$-axis in the $xy$-plane, and $\rho$ (``rho'') is the distance from the origin. Review problem \ref{derive spherical coordinates} if you need a refresher.}%
-\larsonfive{\marginpar{See Larson 11.7:89--94, 111--114.}}%
- Consider the spherical coordinates transformation 
-\bmw{$$\vec T(\rho,\phi,\theta)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$ }
-\larsonfive{$$\vec T(\rho,\theta,\phi)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$ }
-which could also be written as 
-\begin{align*}
-x&=\rho\sin\phi\cos\theta\\y&=\rho\sin\phi\sin\theta\\z&=\rho\cos\phi. 
-\end{align*}
-  Graphing this transformation requires $3+3=6$ dimensions. In this problem we'll construct parts of this graph by graphing various surfaces. We did something similar for the polar coordinate transformation in problem \ref{polar coordinate transformation graph}. 
-\begin{enumerate}
- \item% 
-   \marginpar{See \href{http://aleph.sagemath.org/?z=eJxVjsEKhDAMRO9-xeCpKTmId__C-1JEaEBtaPP_bLMirLe8ecOQNdRcGJqFYXm3RFjgWWxyhR5T3EoLt2K8hB__wosuaNAql2FcfWiZCdJGxkODpprO3apsHz2KhUcw7jnGxJijiie_zzp3oi_jZjWn}{Sage} or 
-\href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%282+sin+phi+cos+theta\%2C+2+sin+phi+sin+theta\%2C+2+cos+phi\%29}{Wolfram Alpha}.}%
-Let $\rho=2$ and graph the resulting surface.  What do you get if $\rho = 3$?
- \item % 
-\marginpar{See 
-\href{http://aleph.sagemath.org/?z=eJxVjrEKwzAMRPd8xZHJMioNTdf8RfZiQsCCNha2_p9WyeJuuveOQ2uouTA0C8PybomwwFlscoQfpriVFi7F-BN-9MKLLmjQKodhXD0uKvcnQdrI6MCgqabPblW2l76Lhc4xrl3GxHhEFSfnn7eZMRN9AfBbOD8}{Sage} or 
-\href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%28rho+sin+\%28pi\%2F4\%29+cos+theta\%2C+rho+sin+\%28pi\%2F4\%29+sin+theta\%2C+rho+cos+\%28pi\%2F4\%29\%29+}{Wolfram Alpha}.}%
-Let $\phi=\pi/4$ and graph the resulting surface.  What do you get if $\phi=\pi/2$?
- \item Let $\theta=\pi/4$ and graph the resulting surface.  What do you get if $\theta=\pi/2$?
-\end{enumerate}
 
-\end{problem}
+\subsection{Vector Fields}
 
-We now focus on vector fields.
+A vector field $\vec F(x,y)=(M,N)$ is visualized by putting the vector $(M,N)$ at the point $(x,y)$, so you end up with a picture with a lot of vectors.  These are often used to visualize flows of air or liquids.  For example, see \href{http://ccom.unh.edu/vislab/projects/2d_flow_vis.html}{VisLab}, the \href{http://nowcoast.noaa.gov/}{NOAA visualizations},  \href{http://artsci.drake.edu/urness/research.html}{Tim Urness's research page}, or the \href{http://www.nsf.gov/news/special_reports/scivis/}{International Visualization Challenge}.  There are also lots of other visualizations challenges.  Figuring out how to 
 
 \begin{problem}%
 \marginpar{See 
@@ -279,14 +248,155 @@ The computer will shrink the largest vector down in size so it does not overlap 
 \end{problem}
 
 
-\begin{problem}[Spin field]\marginpar{Use the links above to see the computer plot this.  \bmw{See 16.2: 39-44 for more practice.}}%
+\begin{problem}[Spin field]\marginpar{Change the Sage code in the link above to get the computer to plot this to check your work.  \bmw{See 16.2: 39-44 for more practice.}}%
 \larsonfive{\marginpar{See Larson 15.1:1--19.}}%
  Consider the vector field $\vec F(x,y)=(-y,x)$. Construct a graph of this vector field. Remember, the key to plotting a vector field is ``at the point $(x,y)$, draw the vector $\vec F(x,y)$ with its base at $(x,y)$.''  Plot at least 8 vectors (a few in each quadrant), so we can see what this field is doing.
 \end{problem}
 
 \note{Talk about vector field visualization, mention line integral convolutions and streamline plots.  Show Sage or mathematica doing these sorts of plots.}
 
-\href{http://aleph.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs}{Sage} can also help us visualize 3d vector fields, like $\vec F(x,y,z)=(y,z,x)$. \note{use 3d glasses and Sage/JMol's ability to render for 3d glasses to \emph{really} see this vector field!}
+\marginpar{See \href{http://aleph.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs}{Sage}.} We can also visualize 3d vector fields like $\vec F(x,y,z)=(y,z,x)$. \note{use 3d glasses and Sage/JMol's ability to render for 3d glasses to \emph{really} see this vector field!}
+
+\subsection{Transformations}
+
+Coordinate transformations let us view or discuss the plane or space in a different way.  A 2d transformation $\vec T(u,v)=(x,y)$ tells us how to transform a $(u,v)$ axes into an $(x,y)$ axes---the two outputs of $\vec T$ are considered the $x$ and $y$ coordinates corresponding to the inputs $u$ and $v$.
+
+\begin{problem} \label{polar coordinate transformation graph}\marginpar{For this problem, you are just drawing many parametric curves.}%
+\marginpar{Click \href{http://artsci.drake.edu/grout/mathbox/examples/polar.html}{here} or \href{http://artsci.drake.edu/grout/mathbox/examples/polar2.html}{here} for some help visualizing this transformation.}%
+\larsonfive{\marginpar{See Larson 10.5.}}%
+Consider the coordinate transformation $$\vec T(r,\theta) = (r\cos\theta,r\sin\theta).$$  In other words, according to $\vec T$, $x=r\cos\theta$ and $y=r\sin\theta$.  This is called the \emph{polar coordinate} transformation.  We will talk more about this transformation in the next chapter.
+\begin{enumerate}
+\item Draw two 2D axes, one having horizontal axis $r$ and vertical axis $\theta$, and the other axes having horizontal axis $x$ and vertical axis $y$.  In the next few parts, we'll see how $\vec T$ will tell us how points on the $(r,\theta)$ axes transform to points on the $(x,y)$ axes.
+\item Plot the point $(r,\theta)=(1,\pi/2)$ on the $(r,\theta)$ axes.  According to $\vec T$, this point is transformed to what $(x,y)$ point?  Plot this corresponding point on the $(x,y)$ axes.
+\item\marginpar{See \href{http://aleph.sagemath.org/?z=eJwtizEKwCAMAHdfETolkqG0s79wLyJCA62GmP_TwW53B5fR2O_mhRJarGPiMgaLU_pvFNSkO2wZLZ0EMjeGxUGLlbe5Sb30GY4rM6yVYWc4ogrRBx0PIJI=&lang=sage}{Sage} to check your answer.}  Plot the line segment $r=3$ (for $\theta\in [0,2\pi]$) on the $(r,\theta)$ axes.  Plot the corresponding points on the $(x,y)$ axes by letting $r=3$ in $\vec T$ and graphing $\vec T(3,\theta)=(3\cos\theta,3\sin\theta)$ for $\theta\in[0,2\pi]$ (hint: this is just a parametric curve, like we've been plotting).
+\item\marginpar{See \href{http://aleph.sagemath.org/?z=eJxljM0KwkAMhO99iqGnZA1Y_DnuW_QuSykY0DZk8_5YXNGCt_n5ZkZyifschTN5mtZKzQk8VV0-jjtzXQL9SJ7PDK29oOlf80az6fHyBXZRZ8XLcw7X6WaPNajNBQ0SDIJTMmXGAf_s7mmbuAxyZX4Bxl853w==&lang=sage}{Sage}.  Notice that you can add two plots together to draw them both.}%
+ Plot the line segment $\theta=\pi/4$ (for $r\in[0,5]$) on the $(r,\theta)$ axes.  Plot the corresponding points on the $(x,y)$ axes by letting $\theta=\frac{\pi}{4}$ and then, on the same axes as above, add the graph of 
+$\vec T\left(r,\frac{\pi}{4}\right)=\left(r\frac{\sqrt 2}{2},r \frac{\sqrt 2}{2}\right)$ for $r\in[0,5]$.
+\item\marginpar{Use Sage to check your answer.} To the same axes as above, add the graphs of 
+$\vec T(1,\theta), \vec T(2,\theta), \vec T(4,\theta)$  for $\theta\in[0,2\pi]$ and 
+$\vec T(r,0), \vec T(r,\pi/2), \vec T(r,3\pi/4), \vec T(r,\pi)$ for $r\in[0,5]$. 
+\end{enumerate}
+\end{problem}
+
+In the previous problem, you saw how we can think of 2D transformations as mapping the points of one plane onto another.  Another way of thinking about transformations is to view them as giving additional coordinates to points on the plane, i.e., if $\vec T(u,v)=(x,y)$, then the point $(x,y)$ also can be called the point $(u,v)$ in the coordinate system associated with $\vec T$.  The next problem investigates this way of thinking about transformations.
+
+\begin{problem}\larsonfive{\marginpar{See Larson 10.4.}}%
+The transformation $\vec T(r,\theta) = (r\cos\theta,r\sin\theta)$ is called the \emph{polar coordinate} transformation.  We will use this transformation to answer the following questions.
+\begin{enumerate}
+\item $\vec T(2,\pi/6)=(a,b)$.  What is $(a,b)$?  Draw the vector $(a,b)$, starting at the origin.
+\item Show that the length of the vector $(a,b)$ is 2.  This is the ``radius'' of the point $(a,b)$.
+\item Show that the angle between the positive $x$-axis and the vector $(a,b)$ is $\pi/6$. This angle is called the azimuth angle.
+\item Show that if $\vec T(r,\theta)=(x,y)$, then the ``radius'' of the point $(x,y)$ is $r$.
+\item Show that if $\vec T(r,\theta)=(x,y)$, then the azimuth angle of the vector $(x,y)$ is $\theta$.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+  Sometimes a transformation may associate multiple coordinates with the same $(x,y)$ point on the plane.  In this problem, again use the polar coordinate transform $\vec T(r,\theta) = (r\cos\theta,r\sin\theta)$.  Find 5 different $(r,\theta)$ so that $\vec T(r,\theta)=(\sqrt{3},1)$ (each of these is a different set of polar coordinates for the same point $(x,y)=(\sqrt{3},1)$).  Make at least one of your $(r,\theta)$ coordinates have a negative $r$, and at least one have a negative $\theta$.
+\end{problem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Consider the coordinate transformation $$\vec T(a,\omega)=(a\cos\omega,a^2\sin \omega).$$
+\begin{enumerate}
+\item\marginpar{See
+    \href{http://aleph.sagemath.org/?z=eJwti7sKwCAMAHe_IjglkqHY2b9wbgkiJVAfqP9PB7vdHVxE4VbyIxRQXGoTtzHI5d3U-juZPrQusBElnAQ6LcNm02VIyWtouvvbFu7MsFeGg8G7rkQfMv4giA}{Sage}.}%
+ Let $a=3$; graph the curve $\vec T(3,\omega)=(3\cos\omega,9\sin\omega)$ for $\omega\in[0,2\pi]$.
+\item\marginpar{Use Sage to check your answer.}%
+ Let $\omega =\frac{\pi}{4}$ and then, on the same axes as above, add the graph of 
+$\vec T\left(a,\frac{\pi}{4}\right)=\left(a\frac{\sqrt 2}{2},a^2 \frac{\sqrt 2}{2}\right)$ for $a\in[0,4]$.
+\item\marginpar{Use Sage to check your answer.}To the same axes as above, add the graphs of 
+$\vec T(1,\omega), \vec T(2,\omega), \vec T(4,\omega)$  for $\omega\in[0,2\pi]$ and 
+$\vec T(a,0), \vec T(a,\pi/2), \vec T(a,-\pi/6)$ for $a\in[0,4]$. 
+\end{enumerate}
+[Hint: when you're done, you should have a bunch of parabolas and ellipses.]
+\end{problem}
+
+In 3 dimensions, the most common coordinate systems are cylindrical and spherical.  The equations for these coordinate systems are in the table below. 
+\begin{center}
+\begin{tabular}{cc}
+Cylindrical Coordinates & Spherical Coordinates\\
+\hline
+$\begin{array}{l}
+x=r\cos\theta\\
+y=r\sin\theta\\
+z=z
+\end{array}$
+&
+$\begin{array}{l}
+x=\rho\sin\phi\cos\theta\\
+y=\rho\sin\phi\sin\theta\\
+z=\rho\cos\phi
+\end{array}$
+\end{tabular}
+\end{center}
+
+\begin{problem} \marginparbmw{See page 893.}\larsonfive{\marginpar{See Larson 11.7.}}
+\marginpar{\includegraphics[width=.8in]{images/cylindricalcoords}}
+Let $P=(x,y,z)$ be a point in space. This point lies on a cylinder of radius $r$, where the cylinder has the $z$ axis as its axis of symmetry.  The height of the point is $z$ units up from the $xy$ plane. The point casts a shadow in the $xy$ plane at $Q=(x,y,0)$.  The angle between the ray $\vec{OQ}$ and the $x$-axis is $\theta$. Construct a graph in 3D of this information, and use it to develop the equations for cylindrical coordinates given above.
+\end{problem}
+
+\begin{problem} \marginparbmw{See page 897.}\larsonfive{\marginpar{See
+      Larson 11.7.}} \marginpar{\includegraphics[width=1in]{images/sphericalcoords}
+}\label{derive spherical coordinates}%
+ Let
+  $P=(x,y,z)$ be a point in space. This point lies on a sphere of
+  radius $\rho$ (``rho''), where the sphere's center is at the origin
+  $O=(0,0,0)$. The point casts a shadow in the $xy$ plane at
+  $Q=(x,y,0)$.  The angle between the ray $\vec{OQ}$ and the $x$-axis
+  is $\theta$, and is called the azimuth angle. The angle between
+  the ray $\vec{OP}$ and the $z$ axis is $\phi$ (``phi''), and is
+  called the inclination angle, polar angle, or zenith angle.  Construct
+  a graph in 3D of this information, and use it to develop the
+  equations for spherical coordinates given above.
+\end{problem}
+
+\marginpar{See the
+  \href{http://en.wikipedia.org/wiki/Spherical_coordinate_system}{Wikipedia}
+  or
+  \href{http://mathworld.wolfram.com/SphericalCoordinates.html}{MathWorld}
+  for a discussion of conventions in different disciplines.}%
+There is some disagreement between different fields about the notation
+for spherical coordinates.  In some fields (like physics), $\phi$
+represents the azimuth angle and $\theta$ represents the inclination
+angle.  In some fields, like geography, instead of the inclination angle, the
+\emph{elevation} angle is given---the angle from the $xy$-plane (lines
+of lattitude are from the elevation angle).
+Additionally, sometimes the coordinates are written in a different
+order.  You should always check the notation for spherical coordinates
+before communicating using them.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{problem}\label{graphing spherical coordinates}%
+\larsonfive{\marginpar{See Larson 11.7:89--94, 111--114.}}%
+ Consider the spherical coordinates transformation 
+\bmw{$$\vec T(\rho,\phi,\theta)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$ }
+\larsonfive{$$\vec T(\rho,\theta,\phi)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$ }
+
+  Graphing this transformation requires $3+3=6$ dimensions. In this problem we'll construct parts of this graph by graphing various surfaces. We did something similar for the polar coordinate transformation in problem \ref{polar coordinate transformation graph}. 
+\begin{enumerate}
+ \item% 
+   \marginpar{See \href{http://aleph.sagemath.org/?z=eJxVjsEKhDAMRO9-xeCpKTmId__C-1JEaEBtaPP_bLMirLe8ecOQNdRcGJqFYXm3RFjgWWxyhR5T3EoLt2K8hB__wosuaNAql2FcfWiZCdJGxkODpprO3apsHz2KhUcw7jnGxJijiie_zzp3oi_jZjWn}{Sage} or 
+\href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%282+sin+phi+cos+theta\%2C+2+sin+phi+sin+theta\%2C+2+cos+phi\%29}{Wolfram Alpha}.}%
+Let $\rho=2$ and graph the resulting surface.  What do you get if $\rho = 3$?
+ \item % 
+\marginpar{See 
+\href{http://aleph.sagemath.org/?z=eJxVjrEKwzAMRPd8xZHJMioNTdf8RfZiQsCCNha2_p9WyeJuuveOQ2uouTA0C8PybomwwFlscoQfpriVFi7F-BN-9MKLLmjQKodhXD0uKvcnQdrI6MCgqabPblW2l76Lhc4xrl3GxHhEFSfnn7eZMRN9AfBbOD8}{Sage} or 
+\href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%28rho+sin+\%28pi\%2F4\%29+cos+theta\%2C+rho+sin+\%28pi\%2F4\%29+sin+theta\%2C+rho+cos+\%28pi\%2F4\%29\%29+}{Wolfram Alpha}.}%
+Let $\phi=\pi/4$ and graph the resulting surface.  What do you get if $\phi=\pi/2$?
+ \item Let $\theta=\pi/4$ and graph the resulting surface.  What do you get if $\theta=\pi/2$?
+\end{enumerate}
+
+\end{problem}
+
+
+
+
+
 
 \section{Constructing Functions}
 We now know how to draw a vector field provided someone tells us the equation. How do we obtain an equation of a vector field? The following problem will help you develop the gravitational vector field.
@@ -375,7 +485,7 @@ This is the same as saying $$x=x, y=y, z=?.$$
  Again consider the surface $z=9-x^2-y^2$.
 \begin{enumerate}
  \item
-Using cylindrical coordinates, $\vec T(r,\theta,z) = (r\cos \theta, r\sin\theta, z)$, obtain a parametrization $\vec r(r,\theta)=(?,?,?)$ of the surface using the input variables $r$ and $\theta$. In other words, if we let $x=r\cos \theta, y=r\sin\theta, z=z$, and writing $z=9-x^2-y^2$ in terms of $r$ and $\theta$.
+Using cylindrical coordinates, $\vec T(r,\theta,z) = (r\cos \theta, r\sin\theta, z)$, obtain a parametrization $\vec r(r,\theta)=(?,?,?)$ of the surface using the input variables $r$ and $\theta$. In other words, if we let $x=r\cos \theta, y=r\sin\theta, z=z$, write $z=9-x^2-y^2$ in terms of $r$ and $\theta$.
  \item What bounds must you place on $r$ and $\theta$ to obtain the portion of the surface above the plane $z=0$?
 \end{enumerate}
 
@@ -398,7 +508,7 @@ Give a parametrization of the sphere of radius 2, using $\phi$ and $\theta$ as y
 \end{enumerate}
 \end{problem}
 
-Sometimes you'll have to invent your own coordinate system when constructing parametric equations for a surface.  If you notice that there are lots of circles parallel to one of the coordinate planes, try using a modified version of cylindrical coordinates. Instead of circles in the $xy$ plane ($x=r\cos\theta,y=r\sin\theta,z=z$), maybe you need circles in the $yz$-plane ($x=x,y=r\sin\theta,z=r\sin\theta$) or the $xz$ plane.  Just look for lots of circles, and then construct your parametrization accordingly.
+Sometimes you'll have to invent your own coordinate system when constructing parametric equations for a surface.  If you notice that there are lots of circles parallel to one of the coordinate planes, try using a modified version of cylindrical coordinates. Instead of circles in the $xy$ plane ($x=r\cos\theta,y=r\sin\theta,z=z$), maybe you need circles in the $yz$-plane ($x=x,y=r\cos\theta,z=r\sin\theta$) or the $xz$ plane.  Just look for lots of circles, and then construct your parametrization accordingly.
 \begin{problem}
 \larsonfive{\marginpar{See Larson 15.5:21--30.}}%
 Find parametric equations for the surface $x^2+z^2=9$. [Hint: read the paragraph above.]  
@@ -410,7 +520,7 @@ Find parametric equations for the surface $x^2+z^2=9$. [Hint: read the paragraph
 \end{enumerate}
 \end{problem}
 
-\begin{problem}
+\bmw{\begin{problem}
  Construct a graph of the surface $z = x^2-y^2$.  Do so in 2 ways.  (1) Construct a 3D surface plot.  (2) Construct a contour plot, which is a graph with several level curves. Which level curve passes through the point $(3,4)$? 
  Use Wolfram Alpha to know if you're right.  Just type ``plot z=x\^2-y\^2.''
 \end{problem}
@@ -418,7 +528,7 @@ Find parametric equations for the surface $x^2+z^2=9$. [Hint: read the paragraph
 \begin{problem}
 Construct a plot of the vector field $$\vec F(x,y) = (x+y, -x+1)$$ by graphing the field at many integer points around the origin (I generally like to get the 8 integer points around the origin, and then a few more).
 Then explain how to modify your graph to obtain a plot of the vector field $$\hat F(x,y) = \frac{(x+y, -x+1)}{\sqrt{(x+y)^2+(1-x)^2}}.$$ 
-\end{problem}
+\end{problem}}
 
 
 %%% Local Variables: 

@@ -53,18 +53,6 @@ So you input one thing to get out one thing, which means that we have a function
 We could write $\vec T(r,\theta) = (r\cos\theta,r\sin\theta)$, where we've used the letter $T$ as the name of the function because it is a transformation between coordinate systems. 
 To emphasize that the domain and range are both two dimensional systems, we could also write $T:\mathbb{R}^2\to\mathbb{R}^2$. In the next chapter, we'll spend more time with this notation. The following problem will show you how to graph a coordinate transformation.  When you're done, you should essentially have polar graph paper.
 
-\begin{problem} \label{polar coordinate transformation graph}\marginpar{For this problem, you are just drawing many parametric curves.  This is what we did in the previous chapter.}
-Consider the coordinate transformation $$\vec T(r,\theta) = (r\cos\theta,r\sin\theta).$$ 
-\begin{enumerate}
-\item Let $r=3$ and then graph $\vec T(3,\theta)=(3\cos\theta,3\sin\theta)$ for $\theta\in[0,2\pi]$.
-\item Let $\theta=\frac{\pi}{4}$ and then, on the same axes as above, add the graph of 
-$\vec T\left(r,\frac{\pi}{4}\right)=\left(r\frac{\sqrt 2}{2},r \frac{\sqrt 2}{2}\right)$ for $r\in[0,5]$.
-\item To the same axes as above, add the graphs of 
-$\vec T(1,\theta), \vec T(2,\theta), \vec T(4,\theta)$  for $\theta\in[0,2\pi]$ and 
-$\vec T(r,0), \vec T(r,\pi/2), \vec T(r,3\pi/4), \vec T(r,\pi)$ for $r\in[0,5]$. 
-\end{enumerate}
-\end{problem}
-
 
 \begin{problem} 
 In the plane, graph the curve $y=\sin x$ for $x\in[0,2\pi]$ (make an $x,y$ table) and then graph the curve $r=\sin\theta$ for $\theta\in[0,2\pi]$ (an $r,\theta$ table).  The graph should look very different.  If one looks like a circle, you're on the right track.  
@@ -189,74 +177,6 @@ Set up (do not evaluate) an integral formula to compute the area that lies insid
 \section{Other Coordinate Systems}
 In this chapter, we've introduced just one of many different coordinate systems that people have used over the centuries. Sometimes a problem can't be solved until the correct coordinate system is chosen. Problem \ref{polar coordinate transformation graph} showed you how to graph the coordinate transformation given by polar coordinates.  The following problem shows you how to graph in a different coordinate system.
 
-\begin{problem}
-Consider the coordinate transformation $T(a,\omega)=(a\cos\omega,a^2\sin \omega)$.
-\begin{enumerate}
-\item\marginpar{See
-    \href{http://aleph.sagemath.org/?z=eJwti7sKwCAMAHe_IjglkqHY2b9wbgkiJVAfqP9PB7vdHVxE4VbyIxRQXGoTtzHI5d3U-juZPrQusBElnAQ6LcNm02VIyWtouvvbFu7MsFeGg8G7rkQfMv4giA}{Sage}.
-  Click on the link to see how to check your answer in Sage.}%
- Let $a=3$ and then graph the curve $\vec T(3,\omega)=(3\cos\omega,9\sin\omega)$ for $\omega\in[0,2\pi]$.
-\item\marginpar{See
-    \href{http://aleph.sagemath.org/?z=eJxlzEEKg0AMBdC9pwiukmmgRd3OLVxbgkgJqBNm5v5UTGmF7vKT9zOicNqWl1BECXMq6IlBpi4U3T-ZGsu6V2hHlNgTaGkZfP5dThpN78MXXFaNSZZtqVnnp62potcZHDE8GLpgSgQ3-LeXT0fF-UD0BkVHOdw}{Sage}. Notice that you can add the two plots together to superimpose them on each other.}%
- Let $\theta=\frac{\pi}{4}$ and then, on the same axes as above, add the graph of 
-$\vec T\left(a,\frac{\pi}{4}\right)=\left(a\frac{\sqrt 2}{2},a^2 \frac{\sqrt 2}{2}\right)$ for $a\in[0,4]$.
-\item\marginpar{Use Sage to check your answer.}To the same axes as above, add the graphs of 
-$\vec T(1,\omega), \vec T(2,\omega), \vec T(4,\omega)$  for $\omega\in[0,2\pi]$ and 
-$\vec T(a,0), \vec T(a,\pi/2), \vec T(a,-\pi/6)$ for $a\in[0,4]$. 
-\end{enumerate}
-[Hint: when you're done, you should have a bunch of parabolas and ellipses.]
-\end{problem}
-
-In 3 dimensions, the most common coordinate systems are cylindrical and spherical.  The equations for these coordinate systems are in the table below. 
-\begin{center}
-\begin{tabular}{cc}
-Cylindrical Coordinates & Spherical Coordinates\\
-\hline
-$\begin{array}{l}
-x=r\cos\theta\\
-y=r\sin\theta\\
-z=z
-\end{array}$
-&
-$\begin{array}{l}
-x=\rho\sin\phi\cos\theta\\
-y=\rho\sin\phi\sin\theta\\
-z=\rho\cos\phi
-\end{array}$
-\end{tabular}
-\end{center}
-
-\begin{problem} \marginparbmw{See page 893.}\larsonfive{\marginpar{See Larson 11.7.}}
-Let $P=(x,y,z)$ be a point in space. This point lies on a cylinder of radius $r$, where the cylinder has the $z$ axis as its axis of symmetry.  The height of the point is $z$ units up from the $xy$ plane. The point casts a shadow in the $xy$ plane at $Q=(x,y,0)$.  The angle between the ray $\vec{OQ}$ and the $x$-axis is $\theta$. Construct a graph in 3D of this information, and use it to develop the equations for cylindrical coordinates given above.
-\end{problem}
-
-\begin{problem} \marginparbmw{See page 897.}\larsonfive{\marginpar{See
-      Larson 11.7.}} \label{derive spherical coordinates} Let
-  $P=(x,y,z)$ be a point in space. This point lies on a sphere of
-  radius $\rho$ (``rho''), where the sphere's center is at the origin
-  $O=(0,0,0)$. The point casts a shadow in the $xy$ plane at
-  $Q=(x,y,0)$.  The angle between the ray $\vec{OQ}$ and the $x$-axis
-  is $\theta$, and is called the azimuth angle. The angle between
-  the ray $\vec{OP}$ and the $z$ axis is $\phi$ (``phi''), and is
-  called the inclination angle, polar angle, or zenith angle.  Construct
-  a graph in 3D of this information, and use it to develop the
-  equations for spherical coordinates given above.
-\end{problem}
-
-\marginpar{See the
-  \href{http://en.wikipedia.org/wiki/Spherical_coordinate_system}{Wikipedia}
-  or
-  \href{http://mathworld.wolfram.com/SphericalCoordinates.html}{MathWorld}
-  for a discussion of conventions in different disciplines.}%
-There is some disagreement between different fields about the notation
-for spherical coordinates.  In some fields (like physics), $\phi$
-represents the azimuth angle and $\theta$ represents the inclination
-angle.  In some fields, like geography, instead of the inclination angle, the
-\emph{elevation} angle is given---the angle from the $xy$-plane (lines
-of lattitude are from the elevation angle).
-Additionally, sometimes the coordinates are written in a different
-order.  You should always check the notation for spherical coordinates
-before communicating using them.
 
 
 %%% Local Variables: 
