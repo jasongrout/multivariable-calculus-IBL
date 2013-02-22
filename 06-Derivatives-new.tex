@@ -275,7 +275,7 @@ Let's now explain geometrically what a partial derivative is. The next two probl
 \begin{problem}
  Consider the change of coordinates $\vec T(r,\theta) = (r\cos theta, r\sin \theta)$.
 \begin{enumerate}
- \item Compute the partial derivatives $\ds\frac{\partial \vec T}{\partial r}$ and $\ds\frac{\partial \vec r}{\partial \theta}$, and then state the derivative $D\vec T(r,\theta)$. If you get a 2 by 2 matrix, then you're on the right track. Each partial derivative is a vector.  (This one is in the \derivativehomeworklink{handwritten file} with extra practice.)
+ \item Compute the partial derivatives $\ds\frac{\partial \vec T}{\partial r}$ and $\ds\frac{\partial \vec T}{\partial \theta}$, and then state the derivative $D\vec T(r,\theta)$. If you get a 2 by 2 matrix, then you're on the right track. Each partial derivative is a vector.  (This one is in the \derivativehomeworklink{handwritten file} with extra practice.)
  \item Consider the polar point $(r,\theta) = (4,\pi/2)$. Compute $T(4,\pi/2)$ (the Cartesian coordinate) and also compute both partial derivatives at $(4,\pi/2)$. You should get a point and two vectors.  At the point, draw both vectors.
  \item If you were standing at the polar point $(4,\pi/2)$ and someone said, ``Hey you, keep your angle constant, but increase your radius,'' then which direction would you move?  What if someone said, ``Hey you, keep your radius constant, but increase your angle''?
  \item Now change the polar point to $(r,\theta) = (2,3\pi/4)$.  Try, without doing  any computations, to repeat part 2 (at the point draw both partial derivatives). Explain.
@@ -348,7 +348,7 @@ I promised earlier in this chapter that you can obtain most of the results in mu
  \item If we move from the point $(2,1,f(2,1))$ to the point $(x,y,z)$ along the tangent plane, then a small change in $x$ is $dx=x-2$. What are $dy$ and $dz$?
  \item Explain why an equation of the tangent plane is \marginpar{We'll construct a graph of $f$ and it's tangent plane in class.}
 $$
-z-4=\begin{bmatrix}-4 & -2 \end{bmatrix}\begin{bmatrix}x-2\\x-1\end{bmatrix} 
+z-4=\begin{bmatrix}-4 & -2 \end{bmatrix}\begin{bmatrix}x-2\\y-1\end{bmatrix} 
 \quad \text{or}\quad 
 z-4=-4(x-2)-2(y-1).$$ [Hint: What does differential notation tell us?]
 \end{enumerate}
@@ -390,7 +390,13 @@ The next problem generalizes the tangent plane and normal vector calculations ab
 
 
 We now have two different ways to compute tangent planes.  One way generalizes differential notation $dy=f'dx$ to 
-$dz = Df \begin{bmatrix}dx\\dy\end{bmatrix}$ and then uses matrix multiplication. This way will extend to tangent objects in EVERY dimension.  It's the key idea needed to work on really large problems.  The other way requires that we parametrize the surface $z=f(x,y)$ as $\vec r(x,y)=(x,y,f(x,y))$ and then use the cross product on the partial derivatives. Both give the same answer. The next problem has you give a general formula for a tangent plane.
+$dz = Df \begin{bmatrix}dx\\dy\end{bmatrix}$ and then uses matrix multiplication. This way will extend to tangent objects in EVERY dimension.  It's the key idea needed to work on really large problems.  The other way requires that we parametrize the surface $z=f(x,y)$ as $\vec r(x,y)=(x,y,f(x,y))$ and then use the cross product on the partial derivatives. Both give the same answer. The next problem has you give a general formula for a tangent plane.  To tackle this problem, you'll need to make sure you can use symbolic notation.  The review problem should help with this.
+
+\begin{review*}
+ Joe wants to to find the tangent line to $y=x^3$ at $x=2$.  He knows the derivative is $y=3x^2$, and when $x=2$ the curve passes through $8$.  So he writes an equation of the tangent line as $y-8=3x^2(x-2)$.  What's wrong?  What part of the general formula $y-f(c) = f'(c) (x-c)$ did Joe forget?  See \footnote{Joe forgot to replace $x$ with $2$ in the derivative. The equation should be $y-8=12(x-2)$.  The notation $f'(c)$ is the part he forgot.  He used $f'(x)=3x^2$ instead of $f'(2)=8$.} for an answer.
+
+\end{review*}
+
 
 
 \begin{problem}[Tangent Plane General Formula]
@@ -437,12 +443,12 @@ Suppose that the radius and height are both changing with respect to time, where
  \item We know 
 $DV(r,h)=\begin{bmatrix}
 2\pi rh & \pi r^2
-\end{bmatrix}.$ We can compute
+\end{bmatrix}$ and
 $D(r,h)(t)=
 \begin{bmatrix}
 3\\  2t
 \end{bmatrix}.$
-In first semester calculus, the chain rule was the product of derivatives. Show that this works in higher dimensions by multiplying matrices and showing $$\dfrac{dV}{dt}=DV((r,h)(t))\cdot D(r,h)(t).$$ 
+In first semester calculus, the chain rule was the product of derivatives. Multiply these matrices together to get $$\dfrac{dV}{dt}=DV((r,h)(t))\cdot D(r,h)(t).$$ Did you get the same answer as the first part? 
  \item To get the correct answer to the previous part, you had to replace $r$ and $h$ with what they equaled in terms of $t$.  What part of the notation $\dfrac{dV}{dt}=DV((r,h)(t))\cdot D(r,h)(t)$ tells you to replace $r$ and $h$ with what they equal in terms of $t$?
 \end{enumerate}
 
