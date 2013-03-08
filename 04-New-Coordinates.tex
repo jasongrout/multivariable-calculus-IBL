@@ -3,15 +3,17 @@
 This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
 \begin{enumerate}
 
-\item Be able to convert between rectangular and polar coordinates in 2D. Convert between rectangular and cylindrical or spherical in 3D.
+\item Be able to convert between rectangular and polar coordinates in 2D.
 \item Graph polar functions in the plane. Find intersections of polar equations, and illustrate that not every intersection can be obtained algebraically (you may have to graph the curves).
 \item Find derivatives and tangent lines in polar coordinates.
-\item Find area and arc length using polar equations.
 
 \end{enumerate}
 You'll have a chance to teach your examples to your peers prior to the exam.
 
 \section{Polar Coordinates}
+\larsonfive{\marginpar{See Larson section 10.4 for more reference material on the things we cover in this chapter.}}%
+In the last section, we studied various plane and space transformations.  These were viewed as either transforming the plane (stretching, shrinking, folding, etc.), or as a way of giving different labels to the same physical location.  In this chapter, we look at the polar coordinate transformation more deeply.
+
 Up to now, we most often give the location of a point (or coordiantes of a vector) by stating the $(x,y)$ coordinates.  These are called the Cartesian (or rectangular) coordinates.  Some problems are much easier to work with if we know how far a point is from the origin, together with the angle between the $x$-axis and a ray from the origin to the point.
 
 \begin{problem}\marginpar{\bmw{See 11.3:5-10.}}
@@ -41,18 +43,15 @@ $$
 The next problem provides general formulas for converting between the Cartesian (rectangular) and polar coordinate systems.
 
 \begin{problem}\label{polar coordinate equations}  \marginpar{\bmw{See page 647.}}
-Suppose that $Q$ is a point in the plane with Cartesian coordinates $(x,y)$ and polar coordinates $(r,\theta)$.  (1) Write formulas for $x$ and $y$ in terms of $r$ and $\theta$.  
-Then (2) write a formula to find the distance $r$ from $Q$ to the origin (in terms of $x$ and $y$) as well as (3) a formula to find the angle $\theta$ between the $x$-axis and a line connecting $Q$ to the origin. [Hint: A picture of a triangle will help here.]
+Suppose that $Q$ is a point in the plane with Cartesian coordinates $(x,y)$ and polar coordinates $(r,\theta)$.  
+\begin{enumerate}
+\item Write formulas for $x$ and $y$ in terms of $r$ and $\theta$: $x=?$, $y=?$
+\item Write a formula to find the distance $r$ from $Q$ to the origin (in terms of $x$ and $y$): $r=?$
+\item Write a formula to find the angle $\theta$ between the $x$-axis and a line connecting $Q$ to the origin, in terms of $x$ and $y$: $\theta = ?$. [Hint: A picture of a triangle will help here.]
+\end{enumerate}
 \end{problem}
  
-In problem \ref{polar coordinate equations}, you should have obtained the equations 
-$$x=r\cos\theta, \quad y=r\sin\theta.$$
-We can write this in vector notation as $\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}r\cos\theta\\ r\sin\theta\end{pmatrix}$.
-This is a vector equation in which you input polar coordinates $(r,\theta)$ and get out Cartesian coordinates $(x,y)$.  
-So you input one thing to get out one thing, which means that we have a function.  
-We could write $\vec T(r,\theta) = (r\cos\theta,r\sin\theta)$, where we've used the letter $T$ as the name of the function because it is a transformation between coordinate systems. 
-To emphasize that the domain and range are both two dimensional systems, we could also write $T:\mathbb{R}^2\to\mathbb{R}^2$. In the next chapter, we'll spend more time with this notation. The following problem will show you how to graph a coordinate transformation.  When you're done, you should essentially have polar graph paper.
-
+In problem \ref{polar coordinate equations}, you should have obtained the polar coordinate transformation: $T(r,\theta)=(r\cos\theta, r\sin\theta)$ (or $x=r\cos\theta$, $y=r\sin\theta$).  The following problem will show you how to graph a coordinate transformation.  When you're done, you should essentially have polar graph paper.
 
 \begin{problem} 
 In the plane, graph the curve $y=\sin x$ for $x\in[0,2\pi]$ (make an $x,y$ table) and then graph the curve $r=\sin\theta$ for $\theta\in[0,2\pi]$ (an $r,\theta$ table).  The graph should look very different.  If one looks like a circle, you're on the right track.  
@@ -79,15 +78,15 @@ Each of the following equations is written in the polar coordinate system.  Conv
 \subsection{Graphing and Intersections}
 To construct a graph of a polar curve, just create an $r,\theta$ table. Choose values for $\theta$ that will make it easy to compute any trig functions involved. Then connect the points in a smooth manner, making sure that your radius grows or shrinks appropriately as your angle increases.  
 
-\begin{problem} \marginpar{\bmw{See 11.4: 1-20.}}
+\begin{problem} \marginpar{\bmw{See 11.4: 1-20.}}\marginpar{See \href{http://sagecell.sagemath.org/?z=eJwr0ijJSC1J1FSwVTDSNtJKzi-GCnAV5OckFsUX5OSXaBTpKEBEdQx0jLQKMjU1uQD67RE_&lang=sage}{Sage}.}%
 Graph the polar curve $r=2+2\cos\theta$.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\marginpar{Use Sage to check your answer.}
 Graph the polar curve $r=2\sin 3\theta$.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\marginpar{Use Sage to check your answer.}
 Graph the polar curve $r=3\cos 2\theta$.
 \end{problem}
 
@@ -96,9 +95,9 @@ Graph the polar curve $r=3\cos 2\theta$.
 Find the points of intersection of $r=3-3\cos\theta$ and $r=3\cos\theta$. (If you don't graph the curves, you'll probably miss a few points of intersection.)
 \end{problem}
 
-\begin{problem}
-Find the points of intersection of $r=2\cos 2\theta $ and $r=\sqrt 3$. (If you don't graph the curves, you'll probably miss a few points of intersection.)
-\end{problem}
+% \begin{problem}
+% Find the points of intersection of $r=2\cos 2\theta $ and $r=\sqrt 3$. (If you don't graph the curves, you'll probably miss a few points of intersection.)
+% \end{problem}
 
 
 \subsection{Calculus with Polar Coordinates}
@@ -115,6 +114,7 @@ Consider the polar curve $r=1+2\cos \theta$. (It wouldn't hurt to provide a quic
 \end{enumerate}
 \end{problem}
 
+\note{MOVE TO LINE INTEGRALS AND DOUBLE INTEGRALS: 
 We showed in the curves section that you can find arc length for parametric curves using the formula 
 $$s=\int_a^b\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}.$$ If we replace $t$ with $\theta$, this becomes a formula for arc length in polar coordinates.  However, the formula can be simplified.
 
@@ -172,11 +172,7 @@ Set up (do not evaluate) an integral to compute the area
 \begin{problem}
 Set up (do not evaluate) an integral formula to compute the area that lies inside both $r=2-2\cos\theta$ and $r=\cos\theta$. Sketch both curves. 
 \end{problem}
-
-
-\section{Other Coordinate Systems}
-In this chapter, we've introduced just one of many different coordinate systems that people have used over the centuries. Sometimes a problem can't be solved until the correct coordinate system is chosen. Problem \ref{polar coordinate transformation graph} showed you how to graph the coordinate transformation given by polar coordinates.  The following problem shows you how to graph in a different coordinate system.
-
+}
 
 
 %%% Local Variables: 
