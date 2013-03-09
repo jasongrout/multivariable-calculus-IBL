@@ -334,7 +334,12 @@ z=\rho\cos\phi
 
 \begin{problem} \marginparbmw{See page 893.}\larsonfive{\marginpar{See Larson 11.7.}}
 \marginpar{\includegraphics[width=.8in]{images/cylindricalcoords}}
-Let $P=(x,y,z)$ be a point in space. This point lies on a cylinder of radius $r$, where the cylinder has the $z$ axis as its axis of symmetry.  The height of the point is $z$ units up from the $xy$ plane. The point casts a shadow in the $xy$ plane at $Q=(x,y,0)$.  The angle between the ray $\vec{OQ}$ and the $x$-axis is $\theta$. Construct a graph in 3D of this information, and use it to develop the equations for cylindrical coordinates given above.
+Let $P=(x,y,z)$ be a point in space. This point lies on a cylinder of radius $r$, where the cylinder has the $z$ axis as its axis of symmetry.  The height of the point is $z$ units up from the $xy$ plane. The point casts a shadow in the $xy$ plane at $Q=(x,y,0)$.  The angle between the ray $\vec{OQ}$ and the $x$-axis is $\theta$.
+\begin{enumerate}
+\item Explain why $x=r\cos\theta$, $y=r\sin\theta$, and $z=z$.
+\item What are bounds on $r$, $\theta$, and $z$ that will give all points on the surface of a cylinder of radius 1 wrapped around the $z$ axis between the $xy$ plane and $z=1$?  [Hint: the bounds on $r$ are $r=1$.]
+\item What are bounds on $r$, $\theta$, and $z$ that will give all points inside a solid cylinder of radius 2 wrapped around the $z$-axis extending from 1 unit below the $xy$ plane to 1 unit above the $xy$ plane?
+\end{enumerate}
 \end{problem}
 
 \begin{problem} \marginparbmw{See page 897.}\larsonfive{\marginpar{See
@@ -347,9 +352,14 @@ Let $P=(x,y,z)$ be a point in space. This point lies on a cylinder of radius $r$
   $Q=(x,y,0)$.  The angle between the ray $\vec{OQ}$ and the $x$-axis
   is $\theta$, and is called the azimuth angle. The angle between
   the ray $\vec{OP}$ and the $z$ axis is $\phi$ (``phi''), and is
-  called the inclination angle, polar angle, or zenith angle.  Construct
-  a graph in 3D of this information, and use it to develop the
-  equations for spherical coordinates given above.
+  called the inclination angle, polar angle, or zenith angle.
+
+  \begin{enumerate}
+  \item Explain why $x=\rho\sin\phi\cos\theta$, $y=\rho\sin\phi\sin\theta$, and $z=\rho\cos\phi$.
+  \item What are bounds for $\rho$, $\theta$, and $\phi$ that will give all the points on the surface a sphere of radius 1? [Hint: the bounds for $\rho$ are $\rho=1$.]
+  \item What are bounds on $\rho$, $\theta$, and $\phi$ that will give all the points on or above the $xy$ plane inside a solid sphere of radius 1?
+  \item What are bounds on $\rho$, $\theta$, and $\phi$ that will give all the points on the surface of a sphere of radius 2 above the plane $z=1$ and where the $y$ coordinates are positive?
+  \end{enumerate}
 \end{problem}
 
 \marginpar{See the
@@ -382,13 +392,14 @@ before communicating using them.
  \item% 
    \marginpar{See \href{http://aleph.sagemath.org/?z=eJxVjsEKhDAMRO9-xeCpKTmId__C-1JEaEBtaPP_bLMirLe8ecOQNdRcGJqFYXm3RFjgWWxyhR5T3EoLt2K8hB__wosuaNAql2FcfWiZCdJGxkODpprO3apsHz2KhUcw7jnGxJijiie_zzp3oi_jZjWn}{Sage} or 
 \href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%282+sin+phi+cos+theta\%2C+2+sin+phi+sin+theta\%2C+2+cos+phi\%29}{Wolfram Alpha}.}%
-Let $\rho=2$ and graph the resulting surface.  What do you get if $\rho = 3$?
+Graph the surface $T(2,\theta,\phi)$ (in other words, the surface $\rho=2$) where $\theta\in [0,2\pi]$, $\phi\in [0,\pi]$.
  \item % 
 \marginpar{See 
 \href{http://aleph.sagemath.org/?z=eJxVjrEKwzAMRPd8xZHJMioNTdf8RfZiQsCCNha2_p9WyeJuuveOQ2uouTA0C8PybomwwFlscoQfpriVFi7F-BN-9MKLLmjQKodhXD0uKvcnQdrI6MCgqabPblW2l76Lhc4xrl3GxHhEFSfnn7eZMRN9AfBbOD8}{Sage} or 
 \href{http://www.wolframalpha.com/input/?i=parametric+plot+3d+\%28rho+sin+\%28pi\%2F4\%29+cos+theta\%2C+rho+sin+\%28pi\%2F4\%29+sin+theta\%2C+rho+cos+\%28pi\%2F4\%29\%29+}{Wolfram Alpha}.}%
-Let $\phi=\pi/4$ and graph the resulting surface.  What do you get if $\phi=\pi/2$?
- \item Let $\theta=\pi/4$ and graph the resulting surface.  What do you get if $\theta=\pi/2$?
+Graph $T(\rho,\theta,\pi/4)$ for $\rho\geq 0$, $\theta\in [0,2\pi]$ (in other words, all points where $\phi=\pi/4$).  What happens if $\rho$ can be negative (i.e., $\rho\in\mathbb{R}$)?
+\item Graph $T(\rho, \theta, \pi/2)$ for $\rho\in\mathbb{R}$, $\theta\in [0,2\pi]$ (in other words, all points where $\phi=\pi/2$).
+ \item Graph $T(\rho,\pi/4, \phi)$ for $\rho\geq 0$, $\phi\in [0,\pi]$ (in other words, all points where $\theta=\pi/4$).
 \end{enumerate}
 
 \end{problem}
