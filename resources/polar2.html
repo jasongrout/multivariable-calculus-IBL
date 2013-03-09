@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MathBox</title>
+
+  <script type="text/javascript" src="http://use.typekit.com/nde6wmn.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script type="text/javascript" charset="utf-8" src="../vendor/domready.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../build/MathBox-bundle.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+  /**
+   * Bootstrap
+   */
+  DomReady.ready(function() {
+    ThreeBox.preload([
+      '../build/MathBox.glsl.html',
+    ], function () {
+
+	//document.getElementById('info').style.opacity = '1';
+
+	// MathBox boilerplate
+	var element = document.getElementById('mathbox');
+	var mathbox = window.mathbox = mathBox(element, {
+	//var mathbox = window.mathbox = mathBox({
+        cameraControls: true,
+            cursor:         true,
+        controlClass:   ThreeBox.OrbitControls,
+            elementResize:  false,//true,
+          fullscreen:   true,
+        screenshot:     true,
+          stats:          false,
+        scale:          1,
+      }).start();
+
+      // Set up director
+      var script = window.mathboxScript;
+	//var director = window.director = new MathBox.Director(mathbox, script);
+
+      // Arrow controls
+      // Controls for stand-alone
+      window.addEventListener('touchstart', function (e) {
+          //director.forward();
+        document.getElementById('info').style.opacity = '0';
+      });
+      window.addEventListener('keydown', function (e) {
+        //if (e.keyCode == 38 || e.keyCode == 37) director.back();
+        //else if (e.keyCode == 40 || e.keyCode == 39) director.forward();
+	  if (e.keyCode == 82) toPolarGridRTheta();
+	  else if (e.keyCode == 84) toPolarGridThetaR();
+	  else if (e.keyCode == 67) toCartesianGrid();
+	  else if (e.keyCode == 72) toHelix();
+        else {
+          return;
+        }
+
+        document.getElementById('info').style.opacity = '0';
+      });
+
+      window.polar.mathboxSetup(mathbox);
+    });
+  });
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    window.cartesian = {};
+    window.polar = {};
+
+
+
+
+  /**
+   * Setup
+   */
+  window.polar.mathboxSetup = function (mathbox) {
+
+    // Viewport camera/setup
+    mathbox
+      // Polar viewport
+      .viewport({
+        type: 'polar',
+        polar: 0,
+          range: [[0,τ], [-2,2]],
+          scale: [1,1,1],
+	  rotation: [0,τ/2,0],
+      })
+	  .camera({
+              orbit: 3.5,
+              phi: -τ/4,
+              theta: 0,
+	      lookAt: [0,0,0],
+	  })
+	  .grid({
+	      id: 'grid',
+	      n: [128, 2],
+              ticks: [6, 6],
+              tickUnit: [π, 1],
+              tickScale: [2, 10],
+              lineWidth: 2,
+              color: 0xc0c0c0,
+              zIndex: -10,
+	  })
+/*	  .surface({
+              id: 'sr',
+              n: [32, 2],
+              domain: [[0, 1], [.5, 1]],
+              expression: function (x,y,i,j) {
+		  var t = 26.5;
+		  var th = x*π/2;
+		  var r = y*1;
+		  return [th, r];
+              },
+              shaded: false,
+              opacity: 1,
+              zIndex: -5,
+	  })
+*/
+	  .surface({
+              id: 'fill',
+              n: [192, 2],
+              domain: [[0, τ], [0.001, 2]],
+              expression: function (x,y) {
+		  return [x, y, 0];
+              },
+              zIndex: -20,
+              color: 0xffffff,
+              shaded: false,
+              opacity: .8,
+	  })
+
+	  .axis({
+	      id: 'thetaaxis',
+	      n: 512,
+              lineWidth: 1,
+              line: true,
+              labels: true,
+              axis: 0,
+              ticks: 4,
+	      tickUnit: π,
+              arrow: true,
+              color: 0xc0c0c0,
+	      formatter: function(x) {
+		  var mult = x/Math.PI;
+		  if (!isNaN(mult)) {
+		      return x/Math.PI+"π";
+		  } else {
+		      return '';
+		  }
+	      }
+	  })
+/*	  .curve({
+	      n: 128,
+	      domain: [0,τ],
+	      expression: function(x, i) {
+		  return Math.cos(x);
+	      },
+	      line: true,
+	  })
+*/
+	  .axis({
+	      id: 'raxis',
+	      n: 12,
+              lineWidth: 1,
+              line: true,
+              labels: true,
+              axis: 1,
+              ticks: 5,
+              arrow: true,
+              color: 0xc0c0c0
+	  })
+
+  }
+
+  /** 
+   * Script
+   */
+  window.mathboxScript = [
+    [
+      ['animate', 'viewport', {
+          range: [[0,τ], [-2,2]],
+          scale: [1, 1, 1],
+	  rotation: [0,τ/2,τ/4],
+        polar: 1,
+      }, {
+        duration: 3000,
+      }],
+	['animate', 'camera', {
+            orbit: 7.5,
+	    lookAt: [0,-1,0],
+	    phi: τ/4,
+	}, {duration: 2000}],
+	// Move theta axis to outside of circle
+	['animate', '#thetaaxis', {
+            offset: [0, 2, 0],
+	}]
+    ],
+
+      [
+	  // add a fill to the axes
+	  ['add', 'surface', {
+              id: 'fill',
+              n: [192, 2],
+              domain: [[0, 3*τ], [0.001, 2]],
+              expression: function (x,y) {
+		  return [x, y, 0];
+              },
+              zIndex: -20,
+              color: 0xffffff,
+              shaded: false,
+              opacity: .8,
+	  }],
+	  // make the viewport show multiple revolutions
+	  ['animate', 'viewport', {
+              range: [[0,3*τ], [0, 2]],
+              scale: [1, 1, 1],
+              polar: 1,
+	      helix: 0.2,
+	      //offset: [0,τ/2,0]
+	  }, {
+              duration: 3000,
+	  }],
+	  // twist camera so we can see the multiple revolutions
+	  ['animate', 'camera', {
+              phi: τ/8,
+	  }],
+	  
+/*	  ['animate', 'axis', {
+              ticks: 50,
+	      tickScale: 2,
+	  }, {delay: 1000,duration: 3000}],
+*/
+	  // There appears to be a problem seeing the patches
+	  // through the grid fill unless opacity is 1
+	  ['set','#sr',{opacity: 1}],
+	  ['clone', '#sr', {
+	      id: 'sr2',
+	      domain: [[4,5],[0.5,1]],
+	      color: 0xff0022,
+	      zIndex: -10
+	  }],
+	  ['clone', '#sr', {
+	      id: 'sr3',
+	      domain: [[8,9],[0.5,1]],
+	      color: 0x00ff00,
+	      zIndex: -11
+	  }]
+
+      ],
+    // Show vector field
+    [
+	['animate','viewport', {helix: 0, range: [[0,τ],[0,2]]}],
+	['animate','camera',{phi:τ/4}],
+	// It would be *really* nice if we could assign "classes"
+	// to each element and select on those.
+	['set','#sr',{opacity: 0.5}],
+	['set','#sr1', {opacity:0.5}],
+	['set','#sr', {opacity:0.5}],
+    ],
+
+  ];
+
+toPolarGridRTheta = function() {
+    window.mathbox.animate('viewport', {
+        range: [[0,τ], [-2,2]],
+        scale: [1, 1, 1],
+	rotation: [0,τ/2,τ/4],
+        polar: 0,
+    }, {
+        duration: 2000,
+    })
+	.animate('camera', {
+            orbit: 4,
+	    lookAt: [0,0,0],
+	    phi: τ/4,
+	}, {duration: 2000})
+    // Move theta axis to outside of circle
+	.animate('#thetaaxis', {
+            offset: [0, 0, 0],
+	})
+
+}
+
+
+toPolarGridThetaR = function() {
+    window.mathbox.animate('viewport', {
+        range: [[0,τ], [-2,2]],
+        scale: [1, 1, 1],
+	rotation: [0,τ/2,0],
+        polar: 0,
+    }, {
+        duration: 2000,
+    })
+	.animate('camera', {
+            orbit: 4,
+	    lookAt: [0,0,0],
+	    phi: -τ/4,
+	    theta: 0,
+	    lookAt: [0,0,0]
+	}, {duration: 2000})
+    // Move theta axis to outside of circle
+	.animate('#thetaaxis', {
+            offset: [0, 0, 0],
+	})
+}
+
+
+toCartesianGrid = function() {
+    window.mathbox.animate('viewport', {
+        range: [[0,τ], [-2,2]],
+        scale: [1, 1, 1],
+	rotation: [0,τ/2,τ/4],
+        polar: 1,
+	helix: 0,
+    }, {
+        duration: 3000,
+    })
+	.animate('camera', {
+            orbit: 7.5,
+	    lookAt: [0,-1,0],
+	    phi: τ/4,
+	}, {duration: 2000})
+	.animate('#thetaaxis', {offset: [0,2,0]});
+}
+
+toHelix = function() {
+    window.mathbox.animate('viewport', {
+	polar: 1,
+	helix: 0.2,
+	rotation: [0,τ/2,τ/4],
+    }, {duration: 2000})
+	.animate('camera', {phi: τ/8,
+			    orbit: 7.5,
+			    lookAt: [0,-1,0],
+			    }, {duration: 2000})
+	.animate('#thetaaxis', {offset: [0,2,0]});
+}
+newFunction = function(t) {
+    var c = document.getElementById('newfunction').value;
+    mathbox.curve( {
+	      n: 128,
+	      domain: [0,τ],
+	      expression: function(x, i) {
+		  return eval(c);
+	      },
+	      line: true,
+    });
+    return False;
+}
+  </script>
+
+  <style type="text/css" media="screen">
+    html, body { height: 100%; }
+    body { margin: 0; padding: 0 }
+    canvas { display: block }
+    #mathbox {position: relative}
+
+    .mathbox-label {
+      font-family: 'klavika-web', sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      text-shadow:
+        3px 0px 1px rgb(255, 255, 255),
+        -3px 0px 1px rgb(255, 255, 255),
+        0px -3px 1px rgb(255, 255, 255),
+        0px 3px 1px rgb(255, 255, 255),
+        2px 2px 1px rgb(255, 255, 255),
+        -2px 2px 1px rgb(255, 255, 255),
+        2px -2px 1px rgb(255, 255, 255),
+        -2px -2px 1px rgb(255, 255, 255),
+        3px 2px 1px rgb(255, 255, 255),
+        -3px 2px 1px rgb(255, 255, 255),
+        3px -2px 1px rgb(255, 255, 255),
+        -3px -2px 1px rgb(255, 255, 255),
+        1px 3px 1px rgb(255, 255, 255),
+        -1px 3px 1px rgb(255, 255, 255),
+        1px -3px 1px rgb(255, 255, 255),
+        -1px -3px 1px rgb(255, 255, 255),
+        -1px -1px 1px rgb(255, 255, 255),
+        -1px 1px 1px rgb(255, 255, 255),
+        1px -1px 1px rgb(255, 255, 255),
+        1px 1px 1px rgb(255, 255, 255);
+    }
+
+    #info {
+      position: absolute;
+      left: 50%;
+      bottom: 50px;
+      z-index: 20;
+
+      width: 300px;
+      margin-left: -150px;
+
+      padding: 25px;
+      background: rgba(0, 0, 0, .5);
+      color: #fff;
+
+      font-family: "Lucida Grande", sans-serif;
+      font-size: 16px;
+      text-align: center;
+
+      border-radius: 3px;
+      text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+
+      opacity: 0;
+
+      -webkit-transition: opacity 300ms ease-in-out;
+      -moz-transition: opacity 300ms ease-in-out;
+      transition: opacity 300ms ease-in-out;
+    }
+
+    #info kbd {
+      background: #aaa;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, .3);
+      border-radius: 3px;
+      padding: 3px;
+      margin: 3px;
+
+      font-family: inherit;
+    }
+    .coordsys { margin-left: 1em;
+		margin-right: 1em;}
+#newfunction {margin-left: 2em;}
+  </style>
+
+</head>
+<body>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <h1>Polar Graphics Transformation</h1>
+    <p>Change the coordinate system by pressing the key or selecting the option.  When adding a function, use <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math">Javascript Math library</a> to access things like sine, cosine, etc.</p>
+  <div>
+    <input name="coordsys" class="coordsys" type="radio" value="0" onclick="toPolarGridRTheta(this);">Polar Grid: \(r,\theta\) (<em>R</em></input>)
+    <input name="coordsys" class="coordsys" type="radio" value="0" onclick="toPolarGridThetaR(this);">Polar Grid: \(\theta,r\) (<em>T</em>)</input>
+    <input name="coordsys" class="coordsys" type="radio" value="0" onclick="toCartesianGrid(this);">Cartesian (<em>C</em>)</input>
+    <input name="coordsys" class="coordsys" type="radio" value="0" onclick="toHelix(this);">Helix (<em>H</em>)</input>
+    <input id="newfunction" name="fn" type="input" onKeyDown="function() {return false;}"  value="Math.cos(x)"></input>
+    <button onclick="newFunction()">Add Function</button>
+    <div id="mathbox"></div>
+    <!--<div id="info">Use the <kbd>←</kbd><kbd>→</kbd> keys to step through.</div>-->
+    <p>We use the <a href="https://github.com/unconed/MathBox.js">MathBox</a> library for graphics.</p>
+</body>
+</html>
