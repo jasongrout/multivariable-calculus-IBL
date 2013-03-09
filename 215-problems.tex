@@ -18,6 +18,11 @@
 
 \usepackage[left=1in,right=2.75in,top=1in,bottom=1in]{geometry}
 \marginparwidth 1.75in
+\usepackage{pagenote}
+\makepagenote
+\renewcommand*{\notedivision}{\section*{\notesname}}
+\renewcommand*{\notesname}{Review answers}
+\renewcommand*{\pagenotesubhead}[2]{}
 
 \usepackage{tabls}
 \usepackage{booktabs}
@@ -253,10 +258,12 @@ Elder Scott's words perfectly describe how we acquire mathematical truth, as wel
 \chapter{Motion}
 \input{07-Motion}
 \wrapup
+\printnotes*
 
 \chapter{Line Integrals}
 \input{08-Line-Integrals}
 \wrapup
+\printnotes*
 
 \end{document}
 
