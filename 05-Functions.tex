@@ -258,6 +258,7 @@ The computer will shrink the largest vector down in size so it does not overlap 
 \marginpar{See \href{http://aleph.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs}{Sage}.} We can also visualize 3d vector fields like $\vec F(x,y,z)=(y,z,x)$. \note{use 3d glasses and Sage/JMol's ability to render for 3d glasses to \emph{really} see this vector field!}
 
 \subsection{Transformations}
+\note{Make the transformations part a new chapter, along with the polar coordinate things they should know.}
 
 Coordinate transformations let us view or discuss the plane or space in a different way.  A 2d transformation $\vec T(u,v)=(x,y)$ tells us how to transform a $(u,v)$ axes into an $(x,y)$ axes---the two outputs of $\vec T$ are considered the $x$ and $y$ coordinates corresponding to the inputs $u$ and $v$.
 
@@ -407,7 +408,7 @@ Graph $T(\rho,\theta,\pi/4)$ for $\rho\geq 0$, $\theta\in [0,2\pi]$ (in other wo
 
 
 
-
+\note{Take a good look at whether we want to just incorporate these problems into the material above...}
 
 \section{Constructing Functions}
 We now know how to draw a vector field provided someone tells us the equation. How do we obtain an equation of a vector field? The following problem will help you develop the gravitational vector field.
@@ -503,6 +504,8 @@ Using cylindrical coordinates, $\vec T(r,\theta,z) = (r\cos \theta, r\sin\theta,
 \end{problem}
 
 
+\note{probably just delete this next problem, since we did similar things above}
+
 \begin{problem}%
 \marginpar{We did very similar things in problem \ref{graphing spherical coordinates}.}%
 \bmw{\marginpar{See 16.5: 1-16 for more practice.}}%
@@ -514,7 +517,7 @@ This is a function of the form $\vec T\colon \mathbb{R}^3\to\mathbb{R}^3$.  If w
 \begin{enumerate}
  \item \marginpar{Use \href{http://aleph.sagemath.org}{Sage} or \href{http://www.wolframalpha.com/}{Wolfram Alpha} to plot each parametrization (see \ref{3d parametric plot} for examples).}%
 Give a parametrization of the sphere of radius 2, using $\phi$ and $\theta$ as your input variables. 
- \item What bounds should you place on $\phi$ and $\theta$ if you want to hit each point on the sphere exactly once?
+ \item Give a set of bounds on $\phi$ and $\theta$ that will hit every point on the sphere.
  \item What bounds should you place on $\phi$ and $\theta$ if you only want the portion of the sphere above the plane $z=1$?
 \end{enumerate}
 \end{problem}
