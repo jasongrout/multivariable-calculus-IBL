@@ -776,6 +776,70 @@ For each vector field and curve below, find the work done by $\vec F$ along $C$.
 \end{problem}
 
 
+\subsection{``Nice'' sets}
+\label{sec:nice-sets}
+
+
+
+Here we will discuss in (brief) technical detail what a ``nice'' set
+is and what goes wrong when you have a set that is not so nice.  This
+would all be explored in much more detail in an advanced calculus, real
+analysis, or algebraic topology class.
+
+
+\begin{figure}[t]
+  \centering
+ \begin{tikzpicture}[description/.style={fill=white,inner sep=2pt}]
+    \matrix (m) [matrix of math nodes, row sep=8em,
+    column sep=16em, text centered]
+    { F=\nabla f & \node{\parbox{2.5cm}{\centering $\displaystyle\int_C\vec F\cdot
+          d\vec r$ is \\ independent of path $C$}}; \\
+     \parbox{1.5cm}{\centering $M_y=N_x$\\ $M_z=P_x$\\ $N_z=P_y$}  &
+     \node{\parbox{2.5cm}{\centering $\displaystyle\oint_C \vec F\cdot d\vec r=0$ \\(closed path $C$)}};\\ };
+    \path[>=latex,->,line width=1pt]
+    (m-1-1) edge [bend left=5] (m-1-2)
+    (m-1-1) edge  node[auto] {$\vec F$ has continous partials} (m-2-1)
+    (m-1-2) edge [bend left=5] node[auto] {$D$ connected} (m-1-1)
+    (m-1-2) edge [bend left=10] (m-2-2)
+    (m-2-1) edge node[above] {$\vec F$ has continous partials} node[below] { $D$ connected and simply connected} (m-2-2)
+    (m-2-2) edge [bend left=10] (m-1-2);
+    
+\end{tikzpicture}
+  \caption{Equivalences for nice sets}
+  \label{fig:equivalences}
+\end{figure}
+
+
+Let $\vec F=\langle M,N,P\rangle$ be continuous on an open set $D$.
+In the diagram in Figure~\ref{fig:equivalences}, the arrows represent
+implications (i.e., if there is an arrow from one statement pointing
+to another, then the first statement being true implies that the
+second statement is true).  A label on the arrow means that the
+condition has to be satisfied for the implication to be hold.  The
+definitions of the terms are in the book (or you can ask me).
+
+
+
+Using terms from the book, a ``nice'' set is a set that is open,
+connected, and simply connected.  Roughly, this means that $D$ does
+not include its boundary and is a single region without any holes going
+through it.  For such a ``nice'' set, all four statements in
+Figure~\ref{fig:equivalences} are equivalent (i.e., either they are
+all true or they are all false for a given vector field $\vec F$).
+
+If the set $D$ is not connected, then path-independence does not imply
+the vector field is a gradient field.  In this case, discrepancies can
+occur between the two definitions for ``conservative vector field''.
+
+There is a homework problem that shows that the bottom arrow
+does not hold when $D$ is not simply connected.  When $D$ is not
+connected and simply  connected, we lose the nice, easy test in the
+lower left of the figure for determining exactly when a vector field
+is a gradient field.
+
+
+
+
 
 \begin{table}[h]
  \begin{center}

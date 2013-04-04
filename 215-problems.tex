@@ -5,7 +5,7 @@
 %% uncomment one of the following, depending if you want to include the
 %% instructor notes or not
 \instructortrue
-\instructorfalse
+%\instructorfalse
 
 
 \newif\ifnotes
@@ -30,6 +30,22 @@
 \usepackage{microtype}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,matrix,arrows,calc}
+\tikzset{every picture/.style={>=latex,thick}}
+\tikzset{grid lines/.style={semithick,dotted}}
+
+\usepackage{pgfplots} 
+\pgfplotsset{compat=1.3}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\tikzsetexternalprefix{figures/}
+
+%% comment out the following line to get color plots
+\pgfplotsset{colormap/blackwhite}
+
+
 
 \usepackage{comment}
 
@@ -102,6 +118,7 @@ Once you have finished the problems in the section and feel comfortable with the
 {}{\bfseries}{}% Heading indent, font, and punctuation
 {1em}% space after heading
 {\fbox{\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}}% head spec
+
 
 \theoremstyle{box}
 \newtheorem{definition}[theorem]{Definition}
