@@ -30,6 +30,7 @@
 \usepackage{microtype}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
+\usepackage{multirow}
 
 \usepackage{tikz}
 \usetikzlibrary{positioning,matrix,arrows,calc}
@@ -135,8 +136,10 @@ Once you have finished the problems in the section and feel comfortable with the
 \theoremstyle{problem}
 \newtheorem{problemnum}{Problem}[chapter]
 \newtheorem*{problemnum*}{Problem}
+\newtheorem*{reviewnum*}{Review}
 \newenvironment{problem}[1][]{\begin{problemnum}[#1]}{\end{problemnum}\nopagebreak\hrule\bigskip}
 \newenvironment{problem*}[1][]{\begin{problemnum*}[#1]}{\end{problemnum*}\nopagebreak\hrule\bigskip}
+\newenvironment{review*}[1][]{\begin{reviewnum*}[#1]}{\end{reviewnum*}\nopagebreak\hrule\bigskip}
 
 
 % Abbreviations
@@ -266,15 +269,14 @@ Elder Scott's words perfectly describe how we acquire mathematical truth, as wel
 \input{06-Derivatives-new}
 \wrapup
 
-
 \chapter{Motion}
 \input{07-Motion}
 \wrapup
 
-
 \chapter{Line Integrals}
 \input{08-Line-Integrals}
 \wrapup
+
 \end{document}
 
 
