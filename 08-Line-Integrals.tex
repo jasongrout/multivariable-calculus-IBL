@@ -1,7 +1,7 @@
-\newcommand{\sageworkurl}{http://bmw.byuimath.com/dokuwiki/doku.php?id=flux_calculator}
+\newcommand{\sageworkurl}{http://bmw.byuimath.com/dokuwiki/doku.php?id=work_calculator}
 %{http://aleph.sagemath.org/?z=eJylU0uP2jAQvvtXjMIBpxi0rPaaU6v0tHtpJQ7VFpnYAWuDHTmTkPTXd-w82K6qXoqEMPle84g76fka12Ld03dYpxA_qy-6NFbD4FoPnfRGnirdMM8xhQw4iqct_nycyd9Q4sStpZdXjd78kmicBWAn11rVjKrtXkyi1VfTaZiw0nnAi_4oZjnvxRADHz_1m0Fs-_QeFwSdLpC0pdGVYv09qb8nrb5fdLMkSa-hbXTZVmDKUDHcpEVAB1f5pkHC2TkFdeVwx4a73yAexNN_2jHlyUqZsuRe4DQ6MvzsrnU79aO0Nx313mmmDhm1n_kfD69ioJ_9a7pTDo-1d6otkKuwixRWubGKgiqDWFFdBsGVcHP-bQdAtULhlIbgAmeybWJMaXyDhFxrZ7VFAZI8QsQ7TqMLZ9UO2CEzFvXZ08y5Ooix85Sx2tNzSEJGiANFXnAaIM8SMS5OQAKycvYcDYvW08Y9oaHygLlOj3ufppmI6SQSMPHvYU5J5oMf1xvfCiIEqxmK8-WqF2pG1Xs4B2MBtb82YUI4Mj6OeCY_LzBFBZzK_auAjrPm5Q_N_h-a_aJRB6Lku1j6s-o3L2qIGrV0HgjLAmZqHA2rs-XCFMfwkvE42XlD9SYLD4_jJTnGS8JzMV0TMcy85uJuvE5_A6PQPsA=&lang=sage}
 
-\newcommand{\sagefluxurl}{http://bmw.byuimath.com/dokuwiki/doku.php?id=work_calculator}
+\newcommand{\sagefluxurl}{http://bmw.byuimath.com/dokuwiki/doku.php?id=flux_calculator}
 %{http://aleph.sagemath.org/?z=eJytUz1v2zAQ3fkrDvJg2qWNtEGyaWqhoEOytECGIjAYkbKJyqRAUrLUX9_jh-zEWWPAMM139-7d3ePALV36JVuO-J2WK7j6LH7IRmkJk-ktDNwq_tpKRyz1KyiB3q1r4_DM7tZOaTxkgsUvz33O6rjlR-mt-se9MhqAvJpeCxfyPbth39adel938aAGCTmqMRb8QV7TkIqObIoibtcju11PV9qzhJA6yNojS6NkK8h4qT6yzT27v877fZDuXJ1bCb2TTd-CakI_cOLagzdw5H8lcNgbI6Brjd-S6cI8fS4zERZZhWoaapn_sCSk_m6OXZ_bFdKqAYc0SJLkpP4pFfbP1xe2wZ-bl7SpxYP0MUcbe-TtPKnXCdyJd53S-4gai5zAtYD6wPV-vnZqr4O4qu3HEvdRBmI2laHMaiuM33XWiL72FHVEcywqhSQcWuV9i6NQHkwDIX8Lz6jceKhinSCcRF6lvdxbXCWNdVgaX1L_c8Y-UDaBkpDOYjoUOPh4E4uVBUveYVAAr61xLnZT9xZdZxEO7g6gGWTyXl5ZwfKJFaDi36BoLlLMB5u8Fc2JMYFthuIeqRiZmFHxFs7uEWgfMeaANLo5ogr4I3vKYGrkAioNXtqjC436c8i7vZylBO0YUm1T1UcxbZ7EGJPE276e8eq8BAyPPcy9k648P8x6F9xK4_Tylkj3pQyXu2SsXXyCtGL5EbJpjnMHc6Ld6j9AtGK2&lang=sage}
 
 \newcommand{\sageworkfluxurl}{http://bmw.byuimath.com/dokuwiki/doku.php?id=both_flux_and_work}
@@ -353,6 +353,16 @@ We'll tackle more work, flow, circulation, and flux problems, as we proceed thro
 
 
 \section{Area and Average Value}
+
+\note{From Jason. 
+I use a physical model.  I cut out the 
+area under a curve on a piece of paper.  We then draw the representative 
+calc 2 rectangle and label it with f(x) and dx.  Then I take the piece 
+of paper and lay the "x-axis" of the paper on a curve on the whiteboard, 
+so the area of paper is projecting out at them, and they see pretty 
+clearly, in Real Life 3D, how to think about the surface area, and why 
+the ds gives the width of the rectangle instead of dx.  Then the Sage 3d 
+graph caps it off.}
 
 In first semester calculus, we learned that the area under a function $f(x)$ above the $x$-axis is given by $A = \int_a^b f(x) dx$.  The quantity $dA= f(x) dx$ represents a small bit of area whose length is $dx$ and whose height is $f(x)$.  To get the total area, we just added up the little bits of area, which is why 
 $$A=\int dA = \int_a^b f(x) dx.$$
