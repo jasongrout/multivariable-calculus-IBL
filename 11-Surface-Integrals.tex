@@ -94,8 +94,8 @@ We can compute average value, centroids, center of mass, moments of inertia, and
 \begin{problem}
  Consider the hemisphere $x^2+y^2+z^2=a^2$ for $z\geq 0$. 
 \begin{enumerate}
- \item Set up a formula that would give $\bar z$ for the centroid of the hemisphere.
- \item Compute the two integrals in your formula. By doubling the bottom integral, you'll have also shown that the surface area of a sphere of radius $a$ is $\sigma = 4\pi a^2$.
+ \item Set up a formula that would give $\bar z$ for the centroid of the hemisphere. I suggest you use a spherical parametrization, as then the bounds are fairly simple, and we know $d\sigma = (a^2\sin\phi) d\phi d\theta$ from the previous problem.
+ \item Compute the two integrals in your formula. %By doubling the bottom integral, you'll have also shown that the surface area of a sphere of radius $a$ is $\sigma = 4\pi a^2$.
  \item Set up an integral formula for $R_z$, the radius of gyration about the $z$ axis, provided the density is constant.
 \end{enumerate}
 \end{problem}
@@ -129,7 +129,7 @@ $$\text{Flux}=\Phi
 
 
 \begin{problem}
- Consider the cone $z^2=x^2+y^2$ and vector field $\vec F = (2x+3y, x-2x, yz)$. Set up an iterated integral that would give the flux of $\vec F$ outwards (away from the $z$-axis) for the portion of the cone between $z=1$ and $z=3$. [Hint: Start by  parameterizing the cone by using a polar parametrization $$x=r\cos\theta, y=r\sin\theta, z=?.$$ You should obtain bounds for $r$ and $\theta$ that are constants.  Compute the normal vector and look at the third component to determine if it points up or down.  Then just plug everything into the formula.]
+ Consider the cone $z^2=x^2+y^2$ and vector field $\vec F = (2x+3y, x-2y, yz)$. Set up an iterated integral that would give the flux of $\vec F$ outwards (away from the $z$-axis) for the portion of the cone between $z=1$ and $z=3$. [Hint: Start by  parameterizing the cone by using a polar parametrization $$x=r\cos\theta, y=r\sin\theta, z=?.$$ You should obtain bounds for $r$ and $\theta$ that are constants.  Compute the normal vector and look at the third component to determine if it points up or down.  Then just plug everything into the formula.]
 \end{problem}
 
 
@@ -171,13 +171,13 @@ $$\iint_S\vec F\cdot \vec n\ d\sigma = \iint\int_D \text{div}(\vec F)dV.$$
 \begin{problem}
 In problem \ref{sphere surface area element}, we found 
 $$\vec n d\sigma = \vec r_\phi\times \vec r_\theta d\phi d\theta = a^2\sin \phi (\sin\phi\cos\theta,\sin\phi\sin\theta,\cos\phi)d\phi d\theta$$ for a sphere of radius $a$.  
-Use this to compute the outward flux of $$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{-3/2}} $$ across a sphere of radius $a$. You should get a negative number since the vector field has all arrows pointing in. [Hint: Remember that for a sphere of radius $a$ we have $a^2=x^2+y^2+z^2$. When you perform the dot product of $\vec F$ and $\vec n$, you'll save yourself a lot of time if you remember that $\vec u\cdot \vec u = |\vec u|^2$; the dot product of a vector with itself is the length squared.]
+Use this to compute the outward flux of $$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{3/2}} $$ across a sphere of radius $a$. You should get a negative number since the vector field has all arrows pointing in. [Hint: Remember that for a sphere of radius $a$ we have $a^2=x^2+y^2+z^2$. When you perform the dot product of $\vec F$ and $\vec n$, you'll save yourself a lot of time if you remember that $\vec u\cdot \vec u = |\vec u|^2$; the dot product of a vector with itself is the length squared.]
 
 \end{problem}
 
 
 \begin{problem}
-Repeat the previous problem, but this time don't use the formula from problem \ref{sphere surface area element}. In fact, you don't even need to parametrize the surface. Instead, if you are at the point $(x,y,z)$ on a sphere of radius $a$, give a formula for the outward pointing unit normal vector $\vec n$. Give this formula by only using a geometric argument.  Then find the outward flux of {$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{-3/2}} $} across a sphere of radius $a$. You should find that $\vec F\cdot \vec n$ simplifies to a constant, so that you never actually have to compute $d\sigma$. Then you can use known facts about the surface area of a sphere.
+Repeat the previous problem, but this time don't use the formula from problem \ref{sphere surface area element}. In fact, you don't even need to parametrize the surface. Instead, if you are at the point $(x,y,z)$ on a sphere of radius $a$, give a formula for the outward pointing unit normal vector $\vec n$. Give this formula by only using a geometric argument.  Then find the outward flux of {$\ds \vec F=\frac{\left<-x,-y,-z\right>}{(x^2+y^2+z^2)^{3/2}} $} across a sphere of radius $a$. You should find that $\vec F\cdot \vec n$ simplifies to a constant, so that you never actually have to compute $d\sigma$. Then you can use known facts about the surface area of a sphere.
 
 \end{problem}
 

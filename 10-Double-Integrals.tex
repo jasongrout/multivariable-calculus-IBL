@@ -1,3 +1,5 @@
+\newcommand{\sageDoubleIntegralCheckerURL}{http://bmw.byuimath.com/dokuwiki/doku.php?id=double_integral_calculator}
+
 
 \noindent 
 This unit covers the following ideas. In preparation for the quiz and exam, make sure you have a lesson plan containing examples that explain and illustrate the following concepts.  
@@ -9,63 +11,114 @@ This unit covers the following ideas. In preparation for the quiz and exam, make
 \end{enumerate}
 You'll have a chance to teach your examples to your peers prior to the exam.
 
-\section{Double Integrals and Applications}
+\bmw{The following homework problems line up with the topics in class. 
 
-Before we introduce integration, let's practice using inequalities to describe regions in the plane.  In first semester calculus, we often use the inequalities $a\leq x\leq b$ and $g(x)\leq y\leq f(x)$ to describe the region above $g$ below $f$ for $x$ between $a$ and $b$.  We trapped $x$ between two constants, and $y$ between two functions.  Sometimes we wrote $c\leq y\leq d$ where $g(y)\leq x\leq f(y)$ to describe the region to the right of $g$ and left of $f$ for $y$ between $c$ and $d$. We need to practice writing inequalities in this form, as these inequalities will provide us the bounds of integration for double integrals.  
+{\noindent \footnotesize 
+\begin{tabular}{|l|c|l|l|l|l|}\hline
+Topic (11th ed) &Sec &Basic Practice &Good Problems &Thy/App &Comp \\\hline
+Double Integrals & 15.1&1-16, 21-50 &17-20, 51-54, 57-66 &55-56 &67-76\\\hline
+Double Integral Applications & 15.2&1-12, 15-18, 19-40 &13, 14, 41-48, 53-56 &49-52 &  \\\hline
+Polar Coordinates & 15.3&1-22,23-32 &33-42 (do 37 and 40 for sure) & &43-46 \\\hline
+Jacobian & 15.7&1-8, 15-17 &9-10,12-14, 19-22 &18, 24 & \\\hline
+Green's Theorem & 16.4&1-20 &21-34, 39-40 &35-38 &41-44  \\\hline
+\end{tabular}
+
+}
+{\noindent \footnotesize 
+\begin{tabular}{|l|c|l|l|l|l|}\hline
+Topic {12th ed} &Sec &Basic Practice &Good Problems &Thy/App &Comp \\\hline
+Double Integrals (rect.) & 15.1&1-28&&&\\\hline
+Double Integrals & 15.2&1-24,33-46&19-32, 47-56,57-68&69-84&85-94\\\hline
+Area, Average Value & 15.3 & 1-22 & 23-25 & 26 & \\\hline
+Polar Integrals & 15.4 & 1-16 & 17-26, 27-36,41 &37-40, 42-46 & 47-50\\\hline
+Double Integral Applications & 15.6 & 1-20 & & & \\\hline
+Jacobian & 15.8&1-8, 17-19 &9-10,12-16, 21-24 &20, 26 & \\\hline
+
+Green's Theorem & 16.4&1-24 &25-38, 42 &39-41 &43-46  \\\hline
+\end{tabular}
+
+}
+}
+
+\section{Double Integrals and Applications}
+\note{
+I still am not happy with this.  I think I want to have them draw more regions from inequalities, before I have them give inequalities. They struggled with 1.  I need more like #1.  With the inclass practice I'm giving them now, they are doing great, but I still think this could be improved. I might just give them a double integral, and tell them that the bounds describe a region.  Draw the region.  This might help them put a disconnect between the integrand and the bounds. I'll examine this again next time.
+}
+
+Before we introduce integration, let's practice using inequalities to describe regions in the plane.  In first semester calculus, we often use the inequalities $a\leq x\leq b$ and $g(x)\leq y\leq f(x)$ to describe the region above $g$ below $f$ for $x$ between $a$ and $b$.  We trapped $x$ between two constants, and $y$ between two functions.  Sometimes we wrote $c\leq y\leq d$ where $g(y)\leq x\leq f(y)$ to describe the region to the right of $g$ and left of $f$ for $y$ between $c$ and $d$. We need to practice writing inequalities in this form, as these inequalities provide us the bounds of integration for double integrals.
+
 
 \begin{problem}
- Consider the region $R$ in the $xy$-plane that is below the line $y=x+2$, above the line $y=2$, and left of the line $x=5$. We can describe this region by saying for each $x$ with $0\leq x\leq 5$, we want $y$ to satisfy $2\leq y\leq x+2$. In set builder notation, we write
+ Consider the region $R$ in the $xy$-plane that is below the line $y=x+2$, above the line $y=2$, and left of the line $x=5$. We can describe this region by saying for each $x$ with $0\leq x\leq 5$, we want $y$ to satisfy $2\leq y\leq x+2$. In set builder notation, we would write
 $$R=\{(x,y)\ | \ 0\leq x\leq 5, 2\leq y\leq x+2\}.$$
+The symbols $\{$ and $\}$ are used to enclose sets, and the symbol $|$ stands for ``such that''. We read the above line as ``$R$ equals the set of $(x,y)$ such that zero is less than $x$ which is less than 5, and 2 is less than $y$ which is less than $x+2$.''
 \begin{enumerate}
  \item Describe the region $R$ by saying for each $y$ with $c\leq y\leq d$, we want $x$ to satisfy $a(y)\leq x\leq b(y)$. In other words, find constants $c$ and $d$, and functions $a(y)$ and $b(y)$, so that for each $y$ between $c$ and $d$, the $x$ values must be between the functions $a(y)$ and $b(y)$.
  \item Write your last answer in the set builder notation
 $$R=\{(x,y)\ | \ c\leq y\leq d, a(y)\leq x\leq b(y)\}.$$
 % \item Set up two different iterated integrals that would find the volume under some function $f(x,y)$, above the region $R$. 
 \end{enumerate}
+[Hint:  If your struggling, then draw the 4 curves given by $0=x$, $x= 5$, $2=y$ and $y= x+2$.  Then shade either above, below, left, or right of the line (as appropriate).]
 \end{problem}
 
 \begin{problem}
-For each region $R$ below, draw the region and give a set of inequalities of the form $a\leq x\leq b, c(x)\leq y\leq d(x)$ or $c<y<d, a(y)\leq x\leq b(y)$. In class, we'll give whichever one you did not.
+For each region $R$ below, draw the region and give a set of inequalities of the form $a\leq x\leq b, c(x)\leq y\leq d(x)$ or in the form $c<y<d, a(y)\leq x\leq b(y)$. In class, we'll give whichever one you did not. 
+\note{I like to let 3 people present this.}
 \begin{enumerate}
  \item The region $R$ is above the line $x+y=1$ and inside the circle $x^2+y^2=1$.
  \item The region $R$ is below the line $y=8$, above the curve $y=x^2$, and to the right of the $y$-axis.
- \item The region $R$ bounded by $2x+y=3$, $y=x$, and $x=0$. 
+ \item The region $R$ is bounded by $2x+y=3$, $y=x$, and $x=0$. 
 \end{enumerate}
 \end{problem}
 
-We now introduce double integrals. Just as single integrals gave us the area under a function over an interval, double integrals will give us the volume under a function, above a region in the plane.  We'll introduce double integrals by looking at cross sections of a solid.
+We're now ready to discuss double integrals. Just as single integrals gave us the area under a function over an interval, double integrals will give us the volume under a function, above a region in the plane.  We'll introduce double integrals by looking at cross sections of a solid.  You did this in first semester calculus, but you always used geometric shapes, for which we know the area, to create the cross sections.  Let's start with a review of this idea, and then jump into double integrals.
 
-\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjN0xJbDKgi-pGmQZUiwR7I7dBvj6mpca0aobWx5Z59y5X5IgmdC3jZdICYuuMOCIEyvXm8NZDJdcjJecsciZTteVsd6VtVYelOkMlcnYdJ25J2isVNqPZZYW-993krYtrSR5azxpVdnO-KIGIK6Mg8XLkLjT_f44CwoyjIEww4LhOkdh9UuO88GQ858kLHp6UD0fXQDZvseyQ-COKIoFPAXB6Uj7HxZK4e6D_FoLw2wGDlvQAD79BkaKjHOVa5TXpt8acZ83OMLn6nWofiNuGr2k3rKy-Goo1rHu41eRp2n-FviuNXd4jP2HkEXfK9SeNw}{Sage}.}%
+
+
+
+\begin{review*}
+ Consider the parabola $z=9-x^2$ for $0\leq x\leq 3$. Revolve this parabola half way around the $z$-axis, and compute the volume of the solid that is inside the paraboloid and above the $xy$-plane.  Do so by considering horizontal semicircular cross sections. See \footnote{
+The area of each cross section is the area of a semicircle, which is $A=\frac{1}{2}\pi r^2 = \frac12 \pi x^2$ as the radius is $x$. We thicken each cross section up by multiplying by $dz$, the height of each circular disc. Since the height has a $dz$, we replace $x$ with $x=\sqrt{9-z}$ in the area formula to get a little bit of volume as $dV = \frac{1}{2}\pi (\sqrt{9-z})^2 dz$.  The $z$ values range from $0$ to $9$, which means the volume of the solid is the integral 
+$$V
+=\int_0^9 \frac{1}{2}\pi (\sqrt{9-z})^2 dz
+=\frac{\pi}{2}\int_0^9  9-z dz
+=\frac{\pi}{2}  \left(9z-\frac{z^2}{2}\right)\bigg|_0^9
+=\frac{81\pi}{4}
+$$}.
+\end{review*}
+
+
+
+Let's now consider the exact same solid, but instead of cutting horizontally, let's cut the object vertically.  The first problem has you cut the solid up using slices that are parallel to the $x$-axis (so keeping $y$ constant).  The next has you repeat the problem, but this time using vertical slices that are parallel to the $y$-axis (so keeping $x$ constant).  The idea is exactly the same.  Just find the area of a slice, thicken it up (using $dx$ or $dy$), and then integrate.  
+
+
+
+\begin{problem}%\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjN0xJbDKgi-pGmQZUiwR7I7dBvj6mpca0aobWx5Z59y5X5IgmdC3jZdICYuuMOCIEyvXm8NZDJdcjJecsciZTteVsd6VtVYelOkMlcnYdJ25J2isVNqPZZYW-993krYtrSR5azxpVdnO-KIGIK6Mg8XLkLjT_f44CwoyjIEww4LhOkdh9UuO88GQ858kLHp6UD0fXQDZvseyQ-COKIoFPAXB6Uj7HxZK4e6D_FoLw2wGDlvQAD79BkaKjHOVa5TXpt8acZ83OMLn6nWofiNuGr2k3rKy-Goo1rHu41eRp2n-FviuNXd4jP2HkEXfK9SeNw}{Sage}.}%
 Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$.
 \begin{enumerate}
- \item Draw the solid $D$.
+ \item Please \href{http://bmw.byuimath.com/dokuwiki/doku.php?id=cross_sections_of_solid_by_letting_y_equal_a_constant}{click on this sage link.} In this picture, you'll see the solid $D$ drawn.  You'll also see several cross sections of the surface (half parabolas), each one obtained by letting $y$ equal a constant ($y=-2, -1,0,1,2$).  
+ \item  When $y_i=0$, the half parabola has area $\int_0^3 9-x^2dx$.  When $y_i=2$, the half parabola has area $\int_0^? 5-x^2dx$.
+When $y=y_i$, explain why the area of each of the cross sections from the first part is $$A_{y=y_i}=\ds \int_0^{\sqrt{9-y_i^2}} (9-x^2-y_i^2) dx.$$
+ \item In the first Sage picture above, we cut the solid into 6 pieces. We could cut the solid into more pieces. \href{http://bmw.byuimath.com/dokuwiki/doku.php?id=cross_sections_multiplied_by_dy}{Click on this Sage link} to see what happens if we cut the solid into 12 pieces, and then fatten up each cross section by $dy=1/2$ units, obtaining 12 tiny bits of volume $dV$. 
 
- \item The plane $y=0$ intersects the solid, resulting in a planar region above the $xy$ plane and below the parabola $z=9-x^2$.  The plane $y=2$ intersects the solid in a region below the parabola $z=9-x^2-(2)^2$.  The plane $y=y_i$ intersects the solid in the parabola $y=9-x^2-y_i^2$ for each $y_i$ between $-3$ and $3$. When we slice the solid along the plane $y=y_i$, we obtain a cross section of the surface.  
- Explain why the area of each of these cross sections is $\ds \int_0^{\sqrt{9-y_i^2}} (9-x^2-y_i^2) dx$.
-
- %\item The plane $y=0$ intersects the solid in the half parabola $z=9-x^2$. Sketch this parabola in your 3D drawing. The area under this parabola is $A_y(0)= \int_0^3 9-(x)^2-(0)^2 \ dx$. 
- %Similarly, the plane $y=1$ intersects the solid in the half parabola $z=9-x^2-1^2$. Sketch this parabola in your 3D drawing. Then find a value $c$ so that the area under this parabola is given by the formula $A_y(1)=\int_0^{c} 9-(x)^2-(1)^2 \ dx$.
- %\item The plane $y=2$ intersects the solid in half a parabola (draw this parabola). Find the value $c$ so that the area under this parabola is $A_y(2)=\int_0^c 9-(x)^2-(2)^2 \ dx$.
- %\item \marginpar{You should obtain an inequality $a\leq y_0\leq b$ where $a$ and $b$ are constants. If the upper bound $c$ has a square root in it, then you're on the right track.}
- %For which $y$-values $y_0$ does the plane $y=y_0$ intersect the paraboloid? For each of these values, what should $c$ equal so that $A_{y=y_0} = \int_0^c 9-x^2-y_0^2 dx$ gives the area under the half parabola obtained when the plane $y=y_0$ intersects the surface. 
- \item Imagine now that you cut the surface into 6 pieces, using the plane $y=y_i$ for each $y_i$ in $\{-3,-2,-1,0, 1, 2,3\}$. Let $y_0=-3$, $y_1=-2$, $\ldots$, $y_{6}=3$. The change in $y$ between each point is $\Delta y=1$. 
- In the plane $y=y_i$, we know the area under the surface is $\int_0^{\sqrt{9-y_i^2}} (9-x^2-y_i^2) dx$.  If we multiply this area by the thickness $\Delta y=1$, we obtain the volume of a solid (think $dV = (A)dy$).  Draw these solids corresponding to $y_3=0$ and $y_4=1$ in your picture. Then explain why an approximation to the volume of the entire solid $D$ is 
-$$\sum_{i=1}^6 \left(\int_0^{\sqrt{9-y_i^2}} (9-x^2-y_i^2) dx\right) \Delta y.$$
-\item Explain why the volume of $D$ equals $\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}(9-x^2-y^2) dx\right) dy$.
+Explain why the total volume of the solid $D$ equals $$\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}(9-x^2-y^2) dx\right) dy.$$
 %\item Use a computer to first compute the inside integral (you should have $y$ values left after you integrate the inside), and then compute the outside integral (which should leave you with a single number). This number is the volume of $D$. 
 \end{enumerate}
 \end{problem}
 
 The integral above is called an iterated integral because you first compute the inside integral and then you compute the outside integral (you iteratively integrate). Often the parenthesis are not written because we know that the inside integral should be performed first without writing the parenthesis. We could also explicitly emphasize which variables go with each bound by writing
 $$\ds\int_{y=-3}^{y=3} \left(\int_{x=0}^{x=\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy.$$   
+This latter approach is not commonly used, but can save a beginner from making simple errors. 
 
 \begin{problem}
- The bounds of the integral $\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}(9-x^2-y^2) dx\right) dy$ describe a region $R$ in the plane, namely $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$.  Draw this region $R$ in the plane. Then give bounds to describe the region alternately by first stating constants which trap $x$ (so $a\leq x\leq b$) and then functions which trap $y$ (so $c(x)\leq y \leq d(x)$). Use these new bounds to write an iterated integral 
- $$\ds\int_{x=a}^{x=b} \left(\int_{y=c(x)}^{y=d(x)}9-x^2-y^2 dx\right) dy$$   
+\marginpar{\href{http://bmw.byuimath.com/dokuwiki/doku.php?id=cross_sections_of_solid_by_letting_x_equal_a_constant}{Click on this Sage link} to see a picture of how you could obtain this answer by considering cross sections.} The bounds of the integral 
+$$\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}(9-x^2-y^2) dx\right) dy$$ 
+describe a region $R$ in the plane, namely $$-3\leq y\leq 3 \quad\text{and}\quad 0\leq x\leq \sqrt{9-y^2}.$$  Draw this region $R$ in the $xy$-plane. Then give bounds to describe the region alternately by first stating constants which trap $x$ (so $a\leq x\leq b$) and then functions which trap $y$ (so $c(x)\leq y \leq d(x)$). Use these new bounds to write an iterated integral 
+ $$\ds\int_{x=a}^{x=b} \left(\int_{y=c(x)}^{y=d(x)}9-x^2-y^2 dy\right) dx$$   
  that gives the exact same volume of the solid $D$ from the previous problem.
 \end{problem}
 
-Ask me in class to show you how the answer to the previous problem could have been obtained by considering cross sections of the original solid
+%Ask me in class to show you how the answer to the previous problem could have been obtained by considering cross sections of the original solid
 
 %\begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kMtugzAQRfd8BVIXjJ2BElAWWfAlVYOQgWKJYHfsNsDX17xaRKtu_JJ1zp37WRAEI9qmsgVSwLwaehxwZNmyc7iG_S0Jh1vCmGdUK8tcaWuyUgoLQrWKsmCo2lY9AlS6ENIOWRyl2983KnST6YKKe2VJily3yqYlAHGhDMxehsSN7LbLNSQnQx8IY0wZLu8Yavmc4LQw5PwnCfOedqrT0QUQb3PMMzjugGE6g0cnOB9p_8NcKdy8k11qYRhPwH4N6sDn30BPkDImN5WwUnVrI-bjDkd4DXKufom4WuRk2Z2_YzO_VuRLX3b-S4zRBaMIk-jy6oSmUQ_Yz_FHAuZ9Aa-ooss}{Sage}.}%
 %Consider the solid domain $D$ in space that is beneath the surface $f(x,y)=9-x^2-y^2$ and above the $xy$-plane, where the $x$ values satisfy $x\geq 0$.  The region is half of a parabolic solid.  Our goal in this problem is to find the volume of the solid $D$. This is the same solid referred to in the previous two problems. 
@@ -87,33 +140,207 @@ Ask me in class to show you how the answer to the previous problem could have be
 %$$V=\ds\int_{-3}^{3} \left(\int_0^{\sqrt{9-y^2}}9-x^2-y^2 dx\right) dy = \ds\int_{0}^{3} \left(\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}9-x^2-y^2 dy\right) dx.$$
 %We have two completely different iterated integrals that result in the exact same volume. In both integrals, the bounds on $x$ and $y$ describe a semicircular region $R$ in the $xy$ plane. The region $R$ is fully described by using the inequalities $-3\leq y\leq 3$ and $0\leq x\leq \sqrt{9-y^2}$ from the first integral, or using the inequalities $0\leq x\leq 3$ and $-\sqrt{9-x^2}\leq y\leq \sqrt{9-x^2}$ from the second integral.
 
-\note{I have not formally defined a definite integral.  I will probably do that next semester, when I have more time.  Right now, I'll lecture that bit in class.  It will get added at some point, provided it is needed.}
+\note{I have not formally defined a definite integral.  I will probably do that next semester, when I have more time.  Right now, I'll lecture that bit in class.  It will get added at some point, provided it is needed.  I'm not really sure I want to formally define it in the problem set.  It's never formally USED in textbooks (though formally define).  Perhaps the best spot for the formal definition is in an analysis course.}
 
-Let $R$ be some region in the plane.  If we let $dA=dxdy=dydx$, then we can write a little bit of volume as $dV=fdA=fdxdy=fdydx.$ Adding up little bits of volume gives us the double integral 
-$$V = \iint_R fdA,$$
-which equals either iterated integral we've been setting up above. 
+
+In the two problems above, we computed the volume of solid by considering cross sections of the solid.  We could also cut the solid up in both the $x$ and $y$ dimensions.  This would result in tiny rectangles in the $xy$ plane with area $dA=dxdy=dydx$, and the solid would have height $f(x,y)$ above these rectangles.  This means we would have a little bit of volume written as  
+$$dV=fdA=fdxdy=fdydx.$$ 
+Adding up these little bits of volume gives us the double integral 
+$$V = \iint_R fdA=\iint_R fdydx=\iint_R fdxdy.$$
+We can either set up the bounds with $x$ on the inside, or $y$ on the inside. We'll get the same answer.  When we set up the integral with bounds, we call it an iterated integral, and write.
+$$\ds \int_a^b \int_{c(x)}^{d(x)}f(x,y)dydx \quad \text{or} \quad
+\ds \int_c^d \int_{a(y)}^{b(y)}f(x,y)dxdxy.$$
+
+\begin{definition}[Double and Iterated Integrals]
+A double integral is written $\ds \iint_R f(x,y)dA$.  We just have to state what the region $R$ is to talk about a double integral. The formal definition of a double integrals involves slicing the region $R$ up into tiny rectangles of area $dxdy$, multiplying each rectangle by a height $f$, and then summing over all rectangles. This process is repeated as the length and width of the rectangles shrinks to zero at similar rates, with the double integral being the limit of this process. 
+
+An iterated integral is a double integral where we have actually set up 
+the bounds as either 
+$$\ds \int_a^b \int_{c(x)}^{d(x)}f(x,y)dydx \quad \text{or} \quad
+\ds \int_c^d \int_{a(y)}^{b(y)}f(x,y)dxdxy.$$
+We'll focus mostly on setting up iterated integrals in this course. 
+\end{definition}
+
+
+
+
 
 
 \begin{problem}
-Consider the iterated integral $\ds \int_0^3\int_x^3 e^{y^2}dydx$. Write the bounds as two inequalities ($0\leq x\leq 3$ and $?\leq y\leq ?$). Draw and shade the region $R$ described by these two inequalities.  Then swap the order of integration by reversing the order of your inequalities (so trap $y$ between 2 constants and $x$ between 2 functions). Finally, compute the new integral by hand (you'll need a $u$-substitution).
+Consider the region $R$ in the plane that is bounded by the line $y=x+2$ and the parabola $y=x^2-4$. Distances are measured in $cm$. 
+\begin{enumerate}
+ \item Draw the region $R$, and give bounds of the form $a\leq x\leq b$, $c(x)\leq y\leq d(x)$ to describe the region.
+ \item A metal plate occupies the region $R$. The metal plate was constructed to have a density of $\delta (x,y)=(y+4)$ g/$cm^2$.  Explain why the mass of the plate is the double integral $\ds\iint_R \delta dA$.  
+ \item \marginpar{Check your work with this \href{http://bmw.byuimath.com/dokuwiki/doku.php?id=double_integral_calculator}{Double Integral Checker written in Sage}.}
+Compute the double integral $\ds\iint_R (y+4) dA$ by setting up an iterated integral (use the bounds from part 1) and then performing each integral. Start with the inside integral, and then compute the outside integral. 
+
+Check your work with the link in the margin. You can use this Sage link to check any double integral. If you think you have the bounds right, use this Sage link to draw the region your bounds describe. If it doesn't the draw the region you thought, then your bounds are off. Trial and error is a powerful tool here.  You've got to try, and fail, and then make adjustments.  This is the key to mastering double integrals.
+\end{enumerate}
+
 \end{problem}
 
 
 \begin{problem}
-Consider the region $R$ in the plane that is trapped between the curves $y=2x$ and $y=x^2$.  We would like to compute $\iint_R x dA$ over this region $R$.  Set up both iterated integrals. Then compute one of them.
+Consider the iterated integral $\ds \int_0^3\int_x^3 e^{y^2}dydx$.
+\begin{enumerate}
+ \item Write the bounds as two inequalities ($0\leq x\leq 3$ and $?\leq y\leq ?$). Then draw and shade the region $R$ described by these two inequalities. 
+ \item Swap the order of integration from $dydx$ to $dxdy$. This forces you to describe the region using two inequalities of the form $c\leq y\leq d$ and $a(y)\leq x\leq b(y)$. This is the key.
+ \item Use your new bounds to compute the integral by hand (you'll need a $u$-substitution $u=y^2$ on the outer integral). 
+ \item Now use \href{http://bmw.byuimath.com/dokuwiki/doku.php?id=double_integral_calculator}{Sage} to check your work. Then also use Sage to compute the original the original integral $\ds \int_0^3\int_x^3 e^{y^2}dydx$, and tell us what the inner integral equals (if you see $i$, $\sqrt{\pi}$, and erf, then you did this correctly).
+\end{enumerate}
 \end{problem}
 
-In the line integral chapter, we introduce the ideas of average value, centroid, center of mass, moment of inertia, and radius of gyration.  We now extend those ideas to regions in the plane, in exactly the same way.  For example, the average value formula in the line integral section was $\bar f = \dfrac{\int_C fdx}{\int_C ds}$. For double integrals, we just change $ds$ to $dA$, and add an integral.  This gives the formula $\bar f = \dfrac{\iint_R fdA}{\iint_R dA}.$ The same substitution works on all the integrals from before.  We now have $dm = \delta dA$ instead of $dm=\delta ds$. We obtained arc length by computing $s=\int_C ds$ (add up little bits of arc length).  We can compute area by using $A=\iint_R dA$ (add up little bits of area). 
+%\end{document}
+
+\begin{problem}
+Consider the region $R$ in the plane that is trapped between the curves $x=2y$ and $x=y^2$.  We would like to compute $\iint_R (-y) dA$ over this region $R$.  Set up both iterated integrals. Then compute one of them. Explain why your answer is negative.
+\end{problem}
+
+
+
+In the line integral chapter, we introduce the ideas of average value, centroid, and center of mass.  
+We now extend those ideas to regions in the plane, in exactly the same way.  
+For example, the average value formula in the line integral section was $\bar f = \dfrac{\int_C fdx}{\int_C ds}$. 
+For double integrals, we just change $ds$ to $dA$, and add an integral.  
+\marginpar{Average value formula}
+This gives the formula $\bar f = \dfrac{\iint_R fdA}{\iint_R dA}.$ 
+The same substitution works on all the integrals from before.
+We now have $dm = \delta dA$ instead of $dm=\delta ds$, as now density is a mass per area, instead of a mass per length. 
+We obtained the arc length of a curve $C$ by computing $s=\int_C ds$, as we just add up little bits of arc length.  
+We can obtain the area of a region $R$ by computing $A=\iint_R dA$, as we just add up little bits of area.
+\marginpar{Centroid Formula}
+The centroid of a region $R$ in the plane is
+$$
+\left(\bar x = \frac{\iint_R x dA}{\iint_R dA}, 
+\bar y = \frac{\iint_R y dA}{\iint_R dA}\right)
+$$
+\marginpar{Center of Mass Formula}
+and the center of mass is 
+$$
+\left(\bar x = \frac{\iint_R x  dm}{\iint_R dm}, 
+\bar y = \frac{\iint_R y dm}{\iint_R dm}\right), \text{ where $dm=\delta dA$}.
+$$
+
+
+
+
+
+\bmw{%I talk about inertial and radii of gyration in my course.  Jason, I think you leave it out.  That's why I commented out this portion.  I decided to more this from the line integral to the double integral chapter.  Here it is. 
+
+\note{I used the variable $d$ to stand for radius of rotation.  I DO NOT use $r$ because too many students replace it with the polar coordinate $r$, especially when we get to double integrals.  I tried $d$, but now students were thinking it was a differential.  I need a different variable.  I've used $(rad)^2$ before, and it works, it's just awkward.  Jason, if you have a good idea, email me.  I would like to discuss this. We could use $(\text{dist})^2$ or $(\text{radius of rotation})^2$. Maybe the last is the best.  However, I would really like to write $I=\int ?^2 dm$ without it taking up half a board.  A variable would be good.  Capital $R$ doesn't work. }
+
+One of the main reasons we are studying mass, center of mass, centroids, etc., is so that we can understand energy. 
+The transfer of energy (for example from kinetic to electrical and then back from electrical to kinetic) is one of the most important ideas in modern innovations. 
+
+Some of you may have already had a physics class, in which you learned that the kinetic energy of an object with mass $m$ moving at speed $v$ is $$KE = \frac{1}{2}mv^2.$$ If an object has a large mass, it takes a lot of work (transfer of energy) to get the object moving. Mass is an object's resistance to straight line motion. 
+
+When something rotates, we need a handy way to compute its kinetic energy. 
+We'll show that the kinetic energy of an object that is rotating about a line $L$, and has an angular velocity of $\omega$ radians per second about the line, is precisely 
+\marginpar{Compare the two formulas $KE = \frac{1}{2}mv^2$ and $KE = \frac{1}{2}I\omega^2$.  If we replace speed with angular speed, then we replace mass with inertia.  Heavy objects are hard to push. Objects with large inertia are hard to rotate.  Just as mass is an objects resistance to being moved, inertia is an objects resistance to being rotated.  Engineers build I-beams so that a large portion of the mass is far from the axis of rotation. This causes a large inertia, which prevents I-beams from rotating.
+}  
+$$KE = \frac{1}{2}I \omega^2,$$
+where $I$ is the (second) moment of inertia. 
+If an object has a large inertia, it takes a lot of work (transfer of energy) to get the object rotating.  Inertia is like an object's  resistance to rotational motion.
+
+\begin{definition}[Moment of Inertia]
+We can obtain the moment of inertia by integrating $I=\iint_R (d)^2 dm$ where $d$ is the radius of rotation about the axis $L$ of rotation, which means that $d$  is distance from a point $(x,y,z)$ to the axis of rotation $L$. If the line $L$ is one of the coordinate axes, then we obtain the key formulas 
+$$
+I_x = \iint_R (y^2)dm,\quad
+I_y = \iint_R (x^2)dm,\quad
+I_z = \iint_R (x^2+y^2)dm
+.$$
+\end{definition}
+
+If you have never worked with kinetic energy before, you may skip the next problem and then just practice using these formulas.
+
+
+
+\begin{problem}
+\marginpar{\href{http://www.youtube.com/watch?v=Zyqk9SWlTyQ&list=PL04DF68E73B7ECD54&index=7&feature=plpp_video}{Watch a YouTube video.}}%
+\instructor{One student asked if this had to do with figure skating.  OF course.  I spun around in a circle with my arms out, and then quickly brought them in. I also like to pick up a table/desk, and show them how easy it is to rotate the object if I use an axis near the center.  Then I try to grab the edge of the desk and rotate it, it doesn't work.  The only real thing I want them to master is that the inertia gets really large (grows quadratically) with distance to an axis.  So I do something memorable to help them remember that.  We just did the normal acceleration problem in the motion unit, so I try to connect it to that.}%
+ Suppose that an object, whose mass is $m$, is attached to a string (whose mass is so small we'll ignore it). We rotate the object about a point, where the angular velocity is $\omega$ radians per second. The length of the string (distance from the point to the center of rotation) is $d$.
+ \begin{enumerate}
+ \item Explain why the speed of the object $v=\omega d$.  
+ \item We know an object's kinetic energy $KE=\frac{1}{2}mv^2$. 
+\marginpar{The quantity $I=d^2m$ is called the moment of inertia. However, this formula assumes that all the mass is located at a single point.} 
+Explain why the kinetic energy of the rotating object is $KE = \frac{1}{2}d^2m\omega^2$. 
+  \item Let's take our object, located at the point $P(x,y)$, and rotate it about the $x$-axis, still with angular velocity $\omega$. Find the kinetic energy of this point. [All you need is the distance $d$ from the point $P(x,y)$ to the $x$-axis.]
+  \item We can think of a region $R$ in the plane as thousands of points $P(x,y)$, each with mass $dm=\delta dA$. As we rotate an entire object about the $x$-axis with angular velocity $\omega$, each little piece contributes a small amount of kinetic energy. Explain why the total kinetic energy of the region $R$, when rotated about the $x$ axis at angular speed $\omega$, is
+\marginpar{The inertia about the $x$ axis is $I_x = \ds \iint_R (y^2)dm = \iint_R (y^2)\delta dA$.}
+$$KE= \frac{1}{2}\left(\iint_R (y^2)dm\right)\omega^2$$.  
+  \item How does the formula above change if we instead rotate about the $y$-axis? What if we rotate about the origin?
+\marginpar{Feel free to ask in class about how this connects to figure skating.}
+ \end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}[Centroid and Inertia of a Triangular Region]
+Consider the triangular region $R$ in the first quadrant, bounded by the line $\ds \frac{x}{5}+\frac{y}{7}=1$.  Assume that the density of the object is a constant $\delta = c$.
+ \begin{enumerate}
+  \item Draw the region $R$, and give bounds for performing double integrals over this region. Check your answer with \href{\sageDoubleIntegralCheckerURL}{Sage} (use any $f$ you want for the integrand, it doesn't matter as you just want to make sure you got the bounds right).
+  \item Set up an integral formula to compute the center of mass $\bar x$ of the region $R$.  Compute any integrals by hand to show that $\bar x = \frac{5}{3}$. \marginpar{Remember you can check your work with Sage.} Then state a guess for $\bar y$. 
+  \item Set up an integral formula to compute the moments of inertia $I_x$, $I_y$, and $I_z$.  Use technology to compute $I_x$.
+  \item 
+\marginpar{You're welcome to compare your answers with known lists, such as \href{http://en.wikipedia.org/wiki/List_of_moment_of_areas}{this list on Wikipedia}.}
+If the triangular region had its corners at $(0,0)$, $(b,0)$, and $(0,h)$, state the center of mass $\bar x$ and the moment of inertia $I_x$. You should be able to complete this part by replacing the 5's and 7's in your formula with $b$'s and $h$'s, provided you first factor any really large numbers, like $1715 = 5\cdot 343=5\cdot 7\cdot ?...$ (I'll let you finish factoring). 
+ \end{enumerate}
+
+\end{problem}
+
+
+
+
+When we found average value, we wanted a height $\bar f$ such that the area under $f$ and the area under $\bar f$ were the same.  As an equation, we wrote 
+$$\iint_R \bar f dA = \iint_R f dA,$$ 
+and then since $\bar f$ is constant, we pulled it out of the integral, and then solved for $\bar f$ to get 
+$$
+\bar f \iint_R dA = \iint_R f dA 
+\quad \text{or}\quad 
+\bar f  = \frac{\iint_R f dA }{\iint_R dA}
+.$$
+This same process gives the center of mass. We could replace the variable distance $x$ in $\int_C x dm$ with the constant distance $\bar x$, and then solve for $\bar x$ in the equation $\int_C \bar xdm = \int_C x dm$. 
+If all the mass were located at one spot, what would that spot have to be for the first moments of mass to be the same.  The radii of gyration are obtained in the exact same manner.  We'll think of a radius of gyration as a rotational center of mass.
+\begin{problem}[Radii of Gyration]%
+\marginpar{\href{http://www.youtube.com/watch?v=dsVtOw09StM&list=PL04DF68E73B7ECD54&index=8&feature=plpp_video}{Watch a YouTube video.}}%
+Suppose a planar region $R$ has density $\delta(x,y)$. The inertia about a line $L$ we know is $I_x=\iint_R d^2 \delta(x,y)dA$, where $d$ is the radius of rotation (distance to the line $L$).  
+What constant radius $R$ should we replace the variable radius $d$ with so that $\int_C R^2 dm = \int_C d^2 dm$.  Explain why the radius of rotation about the $z$-axis is $$R_z = \sqrt{\frac{\iint_R (x^2+y^2)\delta(x,y)dA}{\iint_R \delta(x,y)dA}}.$$ 
+[Hint: Remember that $R$ is constant.  Read the paragraph above.] 
+\end{problem}
+
+You only needed to show how to obtain the radius of gyration about the $z$ axis. All three radii of gyration are found using the formulas
+$$
+R_x = \sqrt{\frac{\iint_R (y^2+z^2)dm}{\iint_R dm}},\quad
+R_y = \sqrt{\frac{\iint_R (x^2+z^2)dm}{\iint_R dm}},
+\text{ and }
+R_z = \sqrt{\frac{\iint_R (x^2+y^2)dm}{\iint_R dm}}.
+$$
+where $dm=\delta(x,y) dA$.  Note that in 2 dimensions, we have $z=0$, so the formulas for $R_x$ and $R_y$ are simpler.
+
+}%ends the part that involves the radius of gyration.
+
+
+
+
+
+
+
+
+
+
 
 \begin{problem}
 Consider the rectangular region $R$ in the $xy$-plane described by $\{(x,y)\ |\ 2\leq x\leq 11, 3\leq y\leq 7\}$.
 \begin{enumerate}
  \item Set up an integral formula which would give $\bar y$ for the centroid of $R$.  Then evaluate the integral.
  \item State $\bar x$ from geometric reasoning.
- \item Set up an integral to give the moment of inertia about the $y$-axis if $\delta=5$. Note that $z=0$ in the $xy$-plane.
+\bmw{ \item Set up an integral to give the moment of inertia about the $y$-axis if $\delta=5$. Note that $z=0$ in the $xy$-plane.
  \item Set up an integral to give the $R_x$ if the density is $\delta(x,y)=xy^2$.
+}
 \end{enumerate}
 \end{problem}
+
+
 
 \begin{problem}
  Consider the region in the plane that is bounded by the curves $x=y^2-3$ and $x=y-1$.  A metal plate occupies this region in space, and its temperature function on the plate is give by the function $T(x,y)=2x+y$.  Find the average temperature of the metal plate.
@@ -128,6 +355,8 @@ Consider the region $R$ that is the circular disc which is inside the circle $(x
 \end{enumerate}
 \end{problem}
 
+
+
 \begin{problem}
 Consider the region $R$ in the $xy$-plane that is formed from two rectangular regions.  The first region $R_1$ satisfies $x\in[-2,2]$ and $y\in[0,7]$.  The second region $R_2$ satisfies $x\in[-5,5]$ and $y\in[7,10]$.  Find the centroids of $R_1$, $R_2$ and then finally $R$.
 %[Suggestion: Work with variables from the start. For the first region, let $x\in[-a,a]$ with $y\in[0,c]$.  For the second region, let $x\in[-b,b]$ with $y\in[c,d]$. Solve the problem first with variables, and then plug in the numbers. You may need to split your integrals up into two integrals, as $\iint_R ydA = \iint_{R_1}ydA +\iint_{R_2}ydA$.]
@@ -141,9 +370,46 @@ Let $R$ be the region in the plane with $a\leq x\leq b$ and $g(x)\leq y\leq f(x)
  \item Set up an iterated integral to compute the area of $R$.  Then compute the inside integral. You should obtain a familiar formula from first-semester calculus.
  \item 
 Set up an iterated integral formula to compute $\bar x$ for the centroid. By computing the inside integral, show why $\ds\bar x = \frac{1}{A}\int_a^b x (f-g)dx$.
- \item If the density depends only on $x$, so $\delta = \delta (x)$, set up an iterated integral formula to compute $\bar y$ for the center of mass. Explain why $$\ds\bar y = \frac{1}{A}\int_a^b  \frac{1}{2}(f^2-g^2)\delta(x)dx.$$
+ \item If the density depends only on $x$, so $\delta = \delta (x)$, set up an iterated integral formula to compute $\bar y$ for the center of mass. Explain why $$\ds\bar y = \frac{1}{mmahtmath}\int_a^b  \frac{1}{2}(f^2-g^2)\delta(x)dx.$$
 \end{enumerate}
 \end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Switching Coordinates: The Jacobian}
@@ -162,11 +428,29 @@ Consider the integral $\ds\int_{-1}^4 e^{-3x} dx$.
 
 In the problem above, we used a change of coordinates $u=-3x$, or $x=-1/3 u$.  By taking derivatives, we found that $dx=-\frac{1}{3}du$. The negative means that the orientation of the interval was reversed. The fraction $\frac13$ tells us that lengths $dx$ using $x$ coordinates will be $1/3$rd as long as lengths $du$ using $u$ coordinates. When we write $dx = \frac{dx}{du}du$, the number $\frac{dx}{du}$ is called the Jacobian of $x$ with respect to $u$. The Jacobian tells us how lengths are altered when we change coordinate systems. We now generalize this to polar coordinates. Before we're done with this section, we'll generalize the Jacobian to any change of coordinates.
 
-\begin{theorem}
+\begin{problem}
+ Consider the polar change of coordinates $x=r\cos\theta$ and $y=r\sin\theta$, which we could just write as $$\vec T(r,\theta)=(r\cos\theta,r\sin\theta).$$
+\begin{enumerate}
+ \item Compute the derivative $D\vec T(r,\theta)$.  You should have a 2 by 2 matrix.
+ \item We need a single number from this matrix that tells us something about area.  Determinants are connected to area.  Compute the determinant of $D\vec T(r,\theta)$ and simplify.  
+\end{enumerate}
+\end{problem}
+
+The determinant you found above is called the Jacobian of the polar coordinate transformation.  Let's summarize these results in a theorem. 
+
+
+
+\begin{theorem}\marginpar{Ask me in class to give you an informal picture approach that explains why 
+$dxdy=rdrd\theta$.  
+}%
  If we use the polar coordinate transformation $x=r\cos\theta, y=r\sin\theta$, then we can switch from $(x,y)$ coordinates to $(r,\theta)$ coordinates if we use $$dxdy=|r|drd\theta.$$  The number $|r|$ is called the Jacobian of $x$ and $y$ with respect to $r$ and $\theta$. If we require all bounds for $r$ to be nonnegative, we can ignore the absolute value.  If $R_{xy}$ is a region in the $xy$ plane that corresponds to the region $R_{r\theta}$ in the $r\theta$ plane (where $r\geq 0$), then we can write $$\iint_{R_{xy}} f(x,y) dxdy = \iint_{R_{r\theta}} f(r\cos\theta,r\sin\theta) r\ drd\theta.$$ 
 \end{theorem}
-We'll prove later why the Jacobian is $|r|$.  For now, we need some practice using this idea. We start by describing regions using inequalities on $r$ and $\theta$.  Ask me in class to give you an informal picture approach that explains why 
-$dxdy=rdrd\theta$.  
+
+We need some practice using this idea. We'll start by describing regions using inequalities on $r$ and $\theta$.  
+
+
+
+
 
 % Some day I would like to have them draw this picture themselves, but for now I'll do it. They are getting tired (it's near the end of the semester).  I'll just give this one to them.
 % \begin{problem}
@@ -208,7 +492,7 @@ After doing this, in class we'll set up the integral formulas needed to find $R_
 \end{problem}
 
 \begin{problem}
-Compute the integral $\ds \int_{0}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{2}{(1+x^2+y^2)^2}dydx$. [Hint: try switching coordinate systems.]
+Compute the integral $\ds \int_{0}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} \frac{2}{(1+x^2+y^2)^2}dydx$. [Hint: try switching coordinate systems to polar coordinates.  This will require you to first draw the region of integration, and then then obtain bounds for the region in polar coordinates.]
 \end{problem}
 
 
@@ -226,9 +510,6 @@ We're now ready to define the Jacobian of any transformation.
 $$J(u,v) = \frac{\partial (x,y)}{\partial (u,v)} = |\det(D\vec T(u,v))|.$$
 \end{definition}
 
-\begin{problem}
- Find the Jacobian of the polar coordinate transformation $x=r\cos\theta$ and $y=r\sin\theta$ (so $\vec T(r,\theta)=(r\cos\theta,r\sin\theta)$).
-\end{problem}
 
 \begin{problem}
 Consider the transformation $u=x+2y$ and $v=2x-y$.  

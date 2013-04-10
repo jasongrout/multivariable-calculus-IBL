@@ -27,7 +27,32 @@ This unit covers the following ideas. In preparation for the quiz and exam, make
 \item Compute the work (flow, circulation) and flux of a vector field along and across piecewise smooth curves.
 \item Determine if a field is a gradient field (hence conservative), and use the fundamental theorem of line integrals to simplify work calculations.
 \end{enumerate}
-You'll have a chance to teach your examples to your peers prior to the exam. Table \ref{line integral summary} contains a summary of key ideas we develop in this chapter.
+You'll have a chance to teach your examples to your peers prior to the exam. Table \ref{line integral summary} contains a summary of the key ideas for this chapter. 
+\bmw{Here are some extra homework problems which line up with the text.
+
+{\noindent %\footnotesize 
+\begin{tabular}{|l|c|l|l|l|l|}\hline
+Topic (11th ed.) &Sec &Basic Practice &Good Problems &Thy/App &Comp \\\hline
+Line integrals & 16.1&1-8, 9-22, 23-32  & & &33-36 \\\hline
+Work, Flow, Circulation, Flux & 16.2&7-16, 25-28, 37-40 &17-24, 29-30, 41-44 &45-46 &47-52   \\\hline
+Gradient Fields & 16.2&1-6 & & &   \\\hline
+Gradient Fields & 14.5&1-8 & & &   \\\hline
+Potentials & 16.3&1-12,13-24 & 25-33 & 34-38&  \\\hline 
+\end{tabular}
+
+}
+
+{\noindent %\footnotesize 
+\begin{tabular}{|l|c|l|l|l|l|}\hline
+Topic (12th ed.) &Sec &Basic Practice &Good Problems &Thy/App &Comp \\\hline
+Line integrals & 16.1&1-8, 9-26, 33-42 &27-32 & &43-46 \\\hline
+Work, Flow, Circulation, Flux & 16.2&7-12, 19-24, 31-36, 47-50 &13-18, 25-30, 37-38,  & 51-54 &55-60    \\\hline
+Gradient Fields & 16.2&1-6 & & &   \\\hline
+Gradient Fields & 14.5&1-10 & & &   \\\hline
+Potentials & 16.3&1-12,13-24 & 25-33 & 34-38&  \\\hline 
+\end{tabular}
+}
+}%end \bmw
 
 
 \begin{table}[h]
@@ -88,7 +113,7 @@ I have created a YouTube playlist to go along with this chapter. Each video is a
  \item \href{http://www.youtube.com/playlist?list=PL04DF68E73B7ECD54}{YouTube playlist for 08 - Line Integrals}.
  \item \href{http://db.tt/dAFBcMB7}{A PDF copy of the finished product} (so you can follow along on paper).
 \end{itemize}
-You'll also find the following links to Sage can help you speed up your time spent on homework. Thanks to Jason Grout at Drake university for contributing many of these. 
+You'll also find the following links to Sage can help you speed up your time spent on homework. Thanks to Dr. Jason Grout at Drake university for contributing many of these (as well as being a constant help with editing, rewriting, and giving me great feedback).  Thanks Jason. 
 \begin{itemize}
  \item \href{http://bmw.byuimath.com/dokuwiki/doku.php?id=sage_links}{Sage Links}
  \item \href{https://content.byui.edu/file/3e8d885f-db47-4e74-9e04-c3d72627c835/1/_zips/215-Tech-Introduction.zip}{Mathematica Notebook} (If you have installed Mathematica)
@@ -290,8 +315,8 @@ where $\vec F$ is a force acting through a displacement $\vec r$. The previous p
  \item Draw the curve $\vec r(t)$. Then at several points on the curve, draw the vector field $\vec F(x,y)$.  For example, at the point $(3,0)$ you should have the vector $\vec F(3,0)=(-2(0),2(3))=(0,6)$, a vector sticking straight up 6 units. Are we moving with the vector field, or against the vector field?
  \item Explain why we can state that a little bit of work done over a small displacement is $dW = \vec F\cdot d\vec r$. Why does it not matter that $\vec r$ moves in a straight line? 
  \item Explain why the work done by $\vec F$ along the circle $C$ \marginpar{We put the $C$ under the integral $\int_C$ to remind us that we are integrating along the curve $C$.  This means we need to get a parametrization of the curve $C$, and give bounds before we can integrate with respect to $t$.}is 
-$$W = \int_C\left(-2x,2y\right)\cdot d\vec r
-= \int_0^{2\pi}\left(-2(3\cos t),2(3\sin t)\right)\cdot(-3\sin t, 3\cos t)dt.$$\
+$$W = \int_C\left(-2y,2x\right)\cdot d\vec r
+= \int_0^{2\pi}\left(-2(3\sin t),2(3\cos t)\right)\cdot(-3\sin t, 3\cos t)dt.$$\
  Then integrate to show that the work done by $\vec F$ along this circle is $36\pi$.  
 \end{enumerate}
  
@@ -323,7 +348,7 @@ $$W = \int_C \vec F\cdot d\vec r= \int_C (M,N)\cdot (dx,dy) = \int_C Mdx+Ndy.$$
 \end{problem}
 
 \begin{problem}
- Again consider the vector field $\vec F(x,y) = (2x+y,-x)$. In the previous problem we considered how much work was done by $\vec F$ as an object moved along the the parabolic curve $y=4-x^2$ for $-1\leq x\leq 2$. We now want to know how much work is done to move an object along a straight line from $(-3,1)$ to $(2,0)$.    
+ Again consider the vector field $\vec F(x,y) = (2x+y,-x)$. In the previous problem we considered how much work was done by $\vec F$ as an object moved along the the parabolic curve $y=4-x^2$ for $-1\leq x\leq 2$. We now want to know how much work is done to move an object along a straight line from $(-1,3)$ to $(2,0)$.    
 \begin{enumerate}
  \item Give a parametrization $\vec r(t)$ of the straight line segment that starts at $(-1,3)$ and ends at $(2,0)$.  Make sure you give bounds for $t$. 
  \item Compute $d\vec r$ and state $dx$ and $dy$. What are $M$ and $N$ in terms of $t$?
@@ -434,9 +459,9 @@ We'll tackle more work, flow, circulation, and flux problems, as we proceed thro
 
 
 Work, flow, circulation, and flux are all examples of line integrals.  Remember that work, flow, and circulation are 
-$$W=\int_C (F\cdot T)ds =\int_C (M,N)\cdot(dx,dy) =  \int_C Mdx+Ndy,$$
+$$W=\int_C (\vec F\cdot \vec T)ds =\int_C (M,N)\cdot(dx,dy) =  \int_C Mdx+Ndy,$$
 while the formula for flux is
-$$\Phi=\int_C (F\cdot n)ds =\int_C (M,N)\cdot(dy,-dx) =  \int_C Mdy+Ndx.$$
+$$\Phi=\int_C (\vec F\cdot \vec n)ds =\int_C (M,N)\cdot(dy,-dx) =  \int_C Mdy+Ndx.$$
 Do you see how these are both the line integral of a function $f = \vec F\cdot \vec T$ or $f=\vec F\cdot \vec n$ along a curve $C$.  The function $f$ inside the integrand does not have to represent the height of a sheet. We'll use it to represent lots of things.  Let's practice two more work/flux problems, to sharpen our skills with these concepts. 
 
 
@@ -818,7 +843,7 @@ $$
 %If a vector field is everywhere continuously differentiable, then the last problem shows that conservative vector fields and gradient fields are exactly the same.
 
 \begin{problem}
- Suppose $\vec F$ is a gradient field.  Let $C$ be a piecewise smooth closed curve. What is $\int_C \vec F\cdot d\vec r$? Explain.
+ Suppose $\vec F$ is a gradient field.  Let $C$ be a piecewise smooth closed curve. Compute $\int_C \vec F\cdot d\vec r$ (you should get a number). Explain how you know your answer is correct.
 \end{problem}
 
 
