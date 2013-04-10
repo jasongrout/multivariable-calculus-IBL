@@ -442,6 +442,19 @@ Let $\vec F=(-y,x+y)$ and $C$ be the triangle with vertices $(2,0)$, $(0,2)$, an
 %http://aleph.sagemath.org/?z=eJy9VUuP2zYQvutXDJwFTO5Sm5XdAEUAAm2D-rSbFkEAHxTX4JqULUQWjRHllf59h6RjS84GucUHkZzHN988SB8VsmkneuGmPFnIo9k4iyyf3XZpL7oVT9qzLJ2JBxIcz4JMzP05nNZFaSq9frZtrRuQwFgn0rmYcQGsF2km3nGeJJjJnB3Tlt-6u5Y0TjyIjK-SN9BJ93YOjQWHqt4aKBtgXpfgTOZnBnPyy8RvKYs7_t9sxQcwCVZl42SOmcAZHf8oa2dQbVyiTQFr9kEGA_4-AfqhIEfXOIVOgDO15vJDULyBR-OmDezVVwMKirbeuNLWgOV258AWBTgL5qiqVjkyqMGH2aKqwB4NgtsR-U2LR3Mf4HzsqqzN-psZO20oYmQS2BjXYg2fPrG63RssN6q6OAw87pv2uWGdxPxhJaCnNfM1GOWR-z550BgfpS6LgqFwUaqXcnGNcKuR8n5qK1ceqr6st-BeLMTCN5Tv1rgd5bYtj4aOOwPaOjig1S1V14Mu5ThHvRxQoJlgjvux0D6agFTjmaReVG33CiNyCvqgvgL3sgH-qW2f__zr8e-w37l9de_Uc2VYHgQ5Tm6-UDpAcUTPbyYCFisxViFx9AocKNwNhIGchDEbl3lgpiOA99Z4jbtgZ_gY-DrVIdBSRh_4svElHgIvB3ZkRtXwrQzrj3yW11xq0I1XxI4MA8cuRARvRd16At1DCh9Bd4GANxl5BZ-byCTsw3YMEkRPuk8_RhRvtwoA1P-Erv6_j_98_u6qUp2dkfmktjXVflJU9iUsbTdZnW7NQR4q69bD94ctBNy-8iDFUSks-stM1xXCOzC4fKG7p-bGp4AMz-rvbtBPZzrwu5NwUKj2xtF1XnuyDF8ZI0EPxuZrbZpGzi_eZQGxBjImfyH7LZXSJ9KE6WRDQB-CljTK-Nvsdz52DuSA2ClE-8JoLmXpn1G8g_t39BDwKNjYyqKcotHTCy1TjYhRO34ZMd_HEbMtGlOfuHX7shbdXnXylfZTW_LsfRy63hv2PzLMLobNjigcBKjmQIZrVPQfIDPhA8lLNP8RHlNegP2H_w9xpCjx
 Again, we'll discuss why some are positive, and some are negative. I want to emphasize flow in, and flow out. One is clearly positive, the other clearly negative.  The overall sum is positive. It should be obvious with a picture.}%
  Consider the vector field $\vec F=(2x-y,x)$. Let $C$ be the curve that starts at $(-2,0)$, follows a straight line to $(1,3)$, and then back to $(-2,0)$ along the parabola $y=4-x^2$.  
+\note{Do some problems on arc length.  In fact, we can do polar arclength too.  See the commented problems in the source}
+\begin{comment}
+We showed in the curves section that you can find arc length for parametric curves using the formula 
+$$s=\int_a^b\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}.$$ If we replace $t$ with $\theta$, this becomes a formula for arc length in polar coordinates.  However, the formula can be simplified.
+
+\begin{problem}\marginpar{\bmw{See 11.5: 29.}}
+Recall that $x=r\cos\theta$ and $y=r\sin\theta$. Suppose that $r=f(\theta)$ for $\theta\in[\alpha,\beta]$ is a continuous function, and that $f'$ is continuous.  
+Show that the arc length formula can be simplified to 
+$$
+s=\int_{\alpha}^{\beta}\sqrt{\left(\frac{dx}{d\theta}\right)^2+\left(\frac{dy}{d\theta}\right)^2} 
+= \int_{\alpha}^{\beta}\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2} .$$
+[Hint: the product rule and Pythagorean identity will help.]
+\end{problem}
 
 \begin{enumerate}
 \item Look at a drawing of $C$ and the vector field (see margin for the Sage link).  If we go counterclockwise around $C$, for each part of $C$, guess the signs of the counterclockwise circulation and the flux (positive, negative, zero).
