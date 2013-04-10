@@ -302,13 +302,6 @@ We promised earlier in this chapter that you can obtain most of the results in m
 \marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kUtvAiEYRff8CqImA8qYkUkTu2DdfbdNbSYMKOkIBFCH_voCPprax2YyX_Jx7uUg0UgiZo_1uKF13FBgA0OUrIjMX4wBmMqD5kEZDTvdQ2uUDsAyO5jQ9kiSdL5uSYsJipcfaGzHVYisWT5gYBesnEE2EMjNYByrnOgrAr36EIw2OQLygzsKX5Y71-1FcIq_5QyU-LlMZKkMgbe0b6iwU_xdC-9Zi-EUpt1fSZTERBoZLaR4R9o6IXSqdQdL67ngUfBgnAdyZHLZK5k4GMh4HeL5ojnmvIleVqQhciwWXzHxoXOBZQdf_PUtO4phMKfqJ6TJl49XCPyfYlynt6LKQu3QafGHznitNUdjTfHiwp-jWK_SdH73oropfpKp5u5d1yljF_YDmjyLHioPZ8n5jMCn7LDMSdtsgoHfmROy-BN9Vrcb}{Sage} for a picture.}%
 \marginpar{\bmw{See 14.6: 9-12 for more practice.}\larsonfive{See Larson 13.7:17--30 for more practice.}}%
  Let $z=f(x,y)=9-x^2-y^2$. 
-\begin{review*}
- If you know that a line passes through the point $(1,2,3)$ and is parallel to the vector $(4,5,6)$, give a vector equation, and parametric equations, of the line. See \footnote{A vector equation is $\vec r(t) = (4,5,6)t+(1,2,3)$ or $\vec r(t) = (4t+1, 5t+2, 6t+3)$.  Parametric equations for this line are 
-$x=4t+1$, $y=5t+2$, and $z=6t+3$. 
-} for an answer.
-\end{review*}
-
-
 \begin{enumerate}
  \item The derivative is $Df(x,y) = \begin{bmatrix}-2x&?\end{bmatrix}$. At the point $(x,y)=(2,1)$, the derivative is $Df(2,1) = \begin{bmatrix}-4&?\end{bmatrix}$ and the output $z$ is $z=f(2,1)=?$.
  \item If we move from the point $(2,1,f(2,1))$ to the point $(x,y,z)$ along the tangent plane, then a small change in $x$ is $dx=x-2$. What are $dy$ and $dz$?
@@ -321,9 +314,6 @@ z-4=-4(x-2)-2(y-1).$$ [Hint: What does differential notation tell us?]
 \end{problem}
 
 Look back at the previous two problems.  The first semester calculus tangent line equation, with differential notation, generalized immediately to the tangent plane equation for functions of the form $z=f(x,y)$.  We just used the differential notation $dy=f'dx$ in 2D, and generalized to $dz = Df \begin{bmatrix}dx\\dy\end{bmatrix}$. Let's repeat this on another problem.
-\begin{review*}
- If you know that a plane passes through the point $(1,2,3)$ and has normal vector $(4,5,6)$, then give an equation of the plane.  See \footnote{An equation of the plane is $4(x-1)+5(y-2)+6(y-3)=0$. If $(x,y,z)$ is any point in the plane, then the vector $(x-1,y-2,z-3)$ is a vector in the plane, and hence orthogonal to $(4,5,6)$. The dot product of these two vectors should be equal to zero, which is why the plane's equation is $(4,5,6)\cdot (x-1,y-2,z-3)=0$.} for an answer.
-\end{review*}
 
 \begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJx9kk-PwiAQxe_9FERNCu1oWusmXjjvfa8bNaQFJVsLAdSyn36havefuycCmfm9N28QuAdPaL9d5qusz3zut8tEO4ormJcghoOQJJmKU1c7qTrEugZpJTuXaDqcWDtAtWqVoanhTQrIyndOlwVJdE51q1zVYAFBqIAVAexhXkFJACnNauk8LRZPUQHVJ3Pmdmhihh25M7LexX4cegc3nkY3gO6sb7LuIOu3jltLK4KmKNY-ZFXgA6oPVZE0urmh9obzLszwgxbKo8Uzr50yNhE9FYtGisAhifD3ix9HxtdK_FoGp6K_5rghYB0zjsbEPgXWo7jnbasu6W9KAWF8P1LQ_xhlWLfnaQxVt6zjf0TqR2MZ7ucVye8KGfZ5Ga637X_J-9Hy1nCT1Sej20H24I4tnrzwBkmLZnETM0DPMdnhIYQ5m5DEHtQFa0DM6jDmzrDwv2gIrIRFuSEf2ELG4w}{Sage}.}%
 \marginpar{\bmw{See 14.6: 9-12 for more practice.}\larsonfive{See Larson 13.7:17--30 for more practice.}}%
@@ -404,7 +394,15 @@ If the vectors you found in the previous problem matched up with the direction v
 \end{enumerate}
 \end{problem}
 
-If your answers to the 2nd and 3rd part above were the same, then you're doing this correctly.  The partial derivatives of parametric functions tell us about motion and tangents. The next problem reinforces this concept.
+If your answers to the 2nd and 3rd part above were the same, then you're doing this correctly.  The partial derivatives of parametric functions tell us about motion and tangents. The next problem reinforces this concept.  But first, a short review about equations of lines.
+\begin{review*}
+ If you know that a line passes through the point $(1,2,3)$ and is parallel to the vector $(4,5,6)$, give a vector equation, and parametric equations, of the line. See \footnote{A vector equation is $\vec r(t) = (4,5,6)t+(1,2,3)$ or $\vec r(t) = (4t+1, 5t+2, 6t+3)$.  Parametric equations for this line are 
+$x=4t+1$, $y=5t+2$, and $z=6t+3$. 
+} for an answer.
+\end{review*}
+
+
+
 
 \begin{problem}
  Consider the parametric surface $\vec r(a,t) = (a\cos t, a\sin t, t)$ for $2\leq a\leq 4$ and $0\leq t\leq 4\pi$. We encountered this parametric surface in chapter 5 when we considered a smoke screen left by multiple jets.
@@ -419,6 +417,11 @@ Look at a plot of the surface (use one of the links to the right). Now, suppose 
 \end{problem}
 
 In the previous problem, you should have noticed that the partial derivatives of $\vec r(a,t)$ are tangent vectors to the surface. Because we have two tangent vectors to the surface, we should be able to use them to construct a normal vector to the surface, and from that, a tangent plane. That's just cool.
+
+\begin{review*}
+ If you know that a plane passes through the point $(1,2,3)$ and has normal vector $(4,5,6)$, then give an equation of the plane.  See \footnote{An equation of the plane is $4(x-1)+5(y-2)+6(y-3)=0$. If $(x,y,z)$ is any point in the plane, then the vector $(x-1,y-2,z-3)$ is a vector in the plane, and hence orthogonal to $(4,5,6)$. The dot product of these two vectors should be equal to zero, which is why the plane's equation is $(4,5,6)\cdot (x-1,y-2,z-3)=0$.} for an answer.
+\end{review*}
+
 
 \begin{problem}
  Consider again the parametric surface $\vec r(a,t) = (a\cos t, a\sin t, t)$ for $2\leq a\leq 4$ and $0\leq t\leq 4\pi$. 
@@ -443,10 +446,7 @@ $dz = Df \begin{bmatrix}dx\\dy\end{bmatrix}$ and then uses matrix multiplication
 
 \begin{review*}
  Joe wants to to find the tangent line to $y=x^3$ at $x=2$.  He knows the derivative is $y=3x^2$, and when $x=2$ the curve passes through $8$.  So he writes an equation of the tangent line as $y-8=3x^2(x-2)$.  What's wrong?  What part of the general formula $y-f(c) = f'(c) (x-c)$ did Joe forget?  See \footnote{Joe forgot to replace $x$ with $2$ in the derivative. The equation should be $y-8=12(x-2)$.  The notation $f'(c)$ is the part he forgot.  He used $f'(x)=3x^2$ instead of $f'(2)=8$.} for an answer.
-
 \end{review*}
-
-
 
 \begin{problem}[Tangent Plane General Formula]
  Consider the function $z=f(x,y)$. Explain why an equation of the tangent plane to $f$ at $(x,y)=(a,b)$ is given by  
@@ -585,13 +585,13 @@ If you'd like to make sure you are correct, try the following. Replace $x$ and $
  \end{enumerate}
 \end{problem}
 
-%\begin{problem}
-% \note{Maybe move this problem down after a few of the general problems that emphasize the concepts above.}Suppose $\vec F(u,v) = (3u-v,u+2v,3v)$,  $\vec G(x,y,z)=(x^2+z, 4y-x)$, and $\vec r(t) = (t^3, 2t+1, 1-t)$.  We want to examine $\vec F(\vec G(\vec r(t))$.  This means that $\vec F\circ \vec G\circ \vec r$ is a function from $\RR^n\to\RR^m$ for what $n$ and $m$?  Similar to first-semester calculus, since we have two functions nested inside of each other, we'll just need to apply the chain rule twice.  Our goal is to find $d\vec F/dt$.  Try to do this problem without looking at the steps below.
-% \begin{enumerate}
-%  \item Compute $D\vec F(u,v)$, $D\vec G(x,y,z)$, and $D\vec r(t)$.
-%  \item Use the chain rule (matrix multiplication) to find the derivative of $\vec F$ with respect to $t$.  What size of matrix should we expect for the derivative?
-% \end{enumerate}
-%\end{problem}
+\begin{problem*}[Challenge]
+Suppose $\vec F(u,v) = (3u-v,u+2v,3v)$,  $\vec G(x,y,z)=(x^2+z, 4y-x)$, and $\vec r(t) = (t^3, 2t+1, 1-t)$.  We want to examine $\vec F(\vec G(\vec r(t))$.  This means that $\vec F\circ \vec G\circ \vec r$ is a function from $\RR^n\to\RR^m$ for what $n$ and $m$?  Similar to first-semester calculus, since we have two functions nested inside of each other, we'll just need to apply the chain rule twice.  Our goal is to find $d\vec F/dt$.  Try to do this problem without looking at the steps below.
+ \begin{enumerate}
+  \item Compute $D\vec F(u,v)$, $D\vec G(x,y,z)$, and $D\vec r(t)$.
+  \item Use the chain rule (matrix multiplication) to find the derivative of $\vec F$ with respect to $t$.  What size of matrix should we expect for the derivative?
+ \end{enumerate}
+\end{problem*}
 
 
 \begin{review*}
