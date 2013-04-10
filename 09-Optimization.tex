@@ -8,7 +8,31 @@ This unit covers the following ideas. In preparation for the quiz and exam, make
 \item Use Lagrange multipliers to optimize a function subject to constraints. %Explain why Lagrange multipliers works by considering the gradients of the function and the constraint at a maximum.
 \end{enumerate}
 You'll have a chance to teach your examples to your peers prior to the exam.
+\bmw{The following homework problems line up with the topics we will discuss in class.
 
+{\noindent \footnotesize 
+\begin{tabular}{|l|c|l|l|l|l|}\hline
+Topic (11th ed.) &Sec &Basic Practice &Good Problems &Thy/App &Comp \\\hline
+Directional Derivatives and the Gradient & 14.5&1-22 &23-32 &33-36 & \\\hline
+Tangent Planes and approximation & 14.6&1-22 &23-24, 47-58, 60-63 & 59& \\\hline
+2nd Derivative Test (use eigenvalues) & 14.7&1-38 &39-44, 49-52, &45-48, 53-64 &65-70 \\\hline
+Lagrange Multipliers & 14.8&1-32 &33-40 &41-44 &45-50 \\\hline
+%Taylor Polynomials & 14.10& & & & \\\hline
+\end{tabular}
+
+}
+{\noindent \footnotesize 
+\begin{tabular}{|l|c|l|l|l|l|}\hline
+Topic (12th ed.) &Sec &Basic Practice &Good Problems &Thy/App &Comp \\\hline
+Directional Derivatives and the Gradient & 14.5&1-24 &25-36 &37-40 & \\\hline
+Tangent Planes and approximation & 14.6&1-22 &23-24, 31-32, 49-62, 64-67 &63 & \\\hline
+2nd Derivative Test (use eigenvalues) & 14.7&1-38 &39-44, 49-60, &45-48, 61-68 &69-74 \\\hline
+Lagrange Multipliers & 14.8&1-32 &33-40 &41-44 &45-50 \\\hline
+%Taylor Polynomials & 14.10& & & & \\\hline
+\end{tabular}
+
+}
+}%end \bmw
 
 
 \section{The Gradient}
@@ -44,7 +68,7 @@ The next few problems will focus on explaining why the relationships you saw are
 \end{enumerate}
 \end{problem}
 
-In Section~\ref{sec:derivative}, we extended differential notation from $dy=f' dx$ to $d\vec y = D\vec f d\vec x$. The key idea is that a small change in the output variables is approximated by the product of the derivative and a small change in the input variables. As a quick refresher, if  we have the function $z=f(x,y)$, then differential notation states that $$dz = \begin{bmatrix}f_x&f_y\end{bmatrix} \begin{bmatrix}dx\\dy\end{bmatrix}.$$ 
+In the derivative chapter, we extended differential notation from $dy=f' dx$ to $d\vec y = D\vec f d\vec x$. The key idea is that a small change in the output variables is approximated by the product of the derivative and a small change in the input variables. As a quick refresher, if  we have the function $z=f(x,y)$, then differential notation states that $$dz = \begin{bmatrix}f_x&f_y\end{bmatrix} \begin{bmatrix}dx\\dy\end{bmatrix}.$$ 
 
 \begin{problem}
 Suppose the temperature at a point in the plane is given by the function {$T(x,y)=x^2-xy-y^2$} degrees Fahrenheit. A particle is at $P=(2,3)$.  
@@ -144,7 +168,10 @@ The volume of a cylindrical can is $V(r,h)=\pi r^2 h$. Any manufacturing process
   \item Why are  $\vec \nabla f(P)$ and $\vec{PQ}$ orthogonal? Use this fact to write an equation of the tangent line.
   \item What is a normal vector to the line?
  \end{enumerate}
-
+\note{This problem might be better if on part 3 we wrote, 
+``Why does the dot product $\vec \nabla f(P)\cdot\vec{PQ}$ equal zero? Compute this dot product.  Why is this an equation of the tangent line?''
+To many students are correctly giving a vector equation of the tangent line, by reversing the order of the gradient, negating one of the terms, and then using (x,y)=dir vec(t)+point.
+}
 \end{problem}
 
 The previous problem had you give an equation of the tangent line to a level curve, by using differential notation.  The next problems asks you to repeat this idea and give an equation of a tangent plane to a level surface.
