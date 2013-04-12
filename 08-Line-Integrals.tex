@@ -499,10 +499,6 @@ Ask me in class to change the vector fields above, and examine what happens with
 
 
 
-
-\end{document}
-
-
 \section{Average Value}
 
 The concept of averaging values together has many applications.  In first-semester calculus, we saw how to generalize the concept of averaging numbers together to get an average value of a function.  We'll review both of these concepts. Later, we'll generalize average value to calculate centroids and center of mass.
@@ -569,6 +565,7 @@ Use a computer to evaluate the integrals $\int_C f ds$ and $\int_C ds$, and then
 \end{problem}
 
 \section{Physical Properties}
+\note{It feels like this section has too many problems---some of them seem redundant.  I should go back through and trim down these problems, or trim down parts of problems.}%
 
 A number of physical properties of real-world objects can be calculated using the concepts of averages and line integrals.  We explore some of these in this section.  Additionally, many of these concepts and calculations are used in statistics.
 
@@ -580,7 +577,6 @@ A number of physical properties of real-world objects can be calculated using th
 
 \begin{problem}[Centroid]\label{centroid of curve}\marginpar{\href{http://www.youtube.com/watch?v=t7T0MzfgV0Q&list=PL04DF68E73B7ECD54&index=5&feature=plpp_video}{Watch a YouTube video.}}%
   Notice the word ``average'' in the definition of the centroid. Use the concept of average value to explain why the coordinates of the centroid are %the formulas below. [Hint:  If we have a curve $C$ with parametrization $\vec r(t)$ and function $f$ so that $f(\vec r(t))$ is continuous, then we've developed in Problem~\ref{Average Value intro} a formula for the average value of $f$ along $C$.  What function $f(x,y,z)$ gives the $x$-coordinate of a point?]
-\marginpar{These are the formulas for the centroid.}
 $$
 \bar x = \frac{\int_C x ds}{\int_C  ds},\quad
 \bar y = \frac{\int_C y ds}{\int_C  ds},\quad 
@@ -609,7 +605,7 @@ $$m=\int_C dm = \int_C \delta ds = \int_a^b \delta(\vec r(t)) \left|\frac{d\vec 
  \end{enumerate}
 \end{problem}
 
-\begin{problem}\instructor{I found many students struggled with setting up a really simple sum.  In class, after they present this one, I would suggest actually taking time to show them how to write the problem in summation notation with 2 points.  It will prepare them for the proof of center of mass coming up.}%
+\begin{problem}
 \larsonfive{\marginpar{See Larson 15.2:23--26 for more practice.}}%
  A wire lies along the straight segment from $(0,2,0)$ to $(1,1,3)$.  The wire's density (mass per unit length) at a point $(x,y,z)$ is $\delta(x,y,z)=x+y+z$. 
  \begin{enumerate}
@@ -630,7 +626,8 @@ The next problem helps us reason about the center of mass of a collection of obj
  Our goal in this problem is to understand the difference between the centroid and the center of mass.
 \begin{enumerate}
 \item Find the centroid of two objects.
- \item Suppose both objects have the same mass of 2 kg.  Find the center of mass.% by averaging the $x$, $y$, and $z$ coordinates, weighted by how much mass is at each coordinate.
+ \item \instructor{I found many students struggled with setting up a really simple sum.  In class, after they present this one, I would suggest actually taking time to show them how to write the problem in summation notation with 2 points.  It will prepare them for the proof of center of mass coming up.}%
+Suppose both objects have the same mass of 2 kg.  Find the center of mass.% by averaging the $x$, $y$, and $z$ coordinates, weighted by how much mass is at each coordinate.
  \item If the mass of the object at point $P_1$ is 2 kg, and the mass of the object at point $P_2$ is 5 kg, will the center of mass be closer to $P_1$ or $P_2$? Give a physical reason for your answer before doing any computations.  Then find the center of mass $(\bar x, \bar y, \bar z)$ of the two points. [Hint: You should get $\bar x= \frac{2x_1+5x_2}{2+5}$.] 
 \end{enumerate}
 \end{problem}
@@ -699,7 +696,7 @@ Suppose a wire with density $\delta(x,y)=x^2+y$ lies along the curve $C$ which i
 \begin{enumerate}
 \item Parametrize $C$ (find $\vec r(t)$ and the domain for $t$).
  \item Where is the wire heavier, at $(7,0)$ or $(0,7)$? [Compute $\delta$ at both.]
- \item In problem \ref{semicircle centroid}, we showed that the centroid of the wire is $(\bar x, \bar y) = \left(0,\frac{2(7)}{\pi})\right)$.  We now seek the center of mass. Before computing, will $\bar x$ change?  Will $\bar y$ change?  How will each change? Explain.
+ \item In problem \ref{semicircle centroid}, we showed that the centroid of the wire is $(\bar x, \bar y) = \left(0,\frac{2(7)}{\pi}\right)$.  We now seek the center of mass. Before computing, will $\bar x$ change?  Will $\bar y$ change?  How will each change? Explain.
  \item Set up the integrals needed to find the center of mass. Then use technology to compute the integrals. Give an exact answer (involving fractions), rather than a numerical approximation.
  \item Change the radius from 7 to $a$, and guess what the center of mass will be.  (This is why you need the exact answer above, not a numerical answer).
 \end{enumerate}
@@ -724,7 +721,7 @@ Suppose a wire with density $\delta(x,y)=x^2+y$ lies along the curve $C$ which i
 
 \section{The Fundamental Theorem of Line Integrals}
 
-In this final section we'll return to the concept of work. Many vector fields are actually the derivative of a function.  When this occurs, computing work along a curve is extremely easy.  All you have to know is the endpoints of the curve, and the function $f$ whose derivative gives you the vector field. This function is called a potential for a vector field.  Once we are comfortable finding potentials, we'll show that the work done by such a vector field is the difference in the potential at the end points.  This makes finding work extremely fast.
+In this final section, we'll return to the concept of work. Many vector fields are actually the derivative of a function, called the \emph{potential} function of the vector field.  In this section, we'll first discuss finding the potential of such a vector field.  Then we'll show that the work done by such a vector field is the difference in the potential at the end points.  This is much simpler than calculating a line integral.
 
 \begin{definition}[Gradients and Potentials]
 \marginpar{\href{http://www.youtube.com/watch?v=8Tk2pEIOnwg&list=PL04DF68E73B7ECD54&index=9&feature=plpp_video}{Watch a YouTube Video}.}%
@@ -739,8 +736,8 @@ We'll quickly see that if a vector field has a potential, then the work done by 
 \marginpar{\href{http://www.youtube.com/watch?v=8Tk2pEIOnwg&list=PL04DF68E73B7ECD54&index=9&feature=plpp_video}{Watch a YouTube Video}.}%
 Let's practice finding gradients and potentials.
 \begin{enumerate}
- \item  Let $f(x,y) = x^2+3xy+2y^2$. Find the gradient of $f$, i.e. find $Df(x,y)$. Then compute $D^2f(x,y)$ (you should get a square matrix). What are $f_{xy}$ and $f_{yx}$?
- \item Consider the vector field $\vec F(x,y)=(2x+y,x+4y)$. Find the derivative of $\vec F(x,y)$ (it should be a square matrix). Then find a function $f(x,y)$ whose gradient is $\vec F$ (i.e. $Df=\vec F$). What are $f_{xy}$ and $f_{yx}$?
+ \item  Let $f(x,y) = x^2+3xy+2y^2$. Find the gradient of $f$, i.e., find $Df(x,y)$. Then compute $D^2f(x,y)$ (you should get a square matrix). What are $f_{xy}$ and $f_{yx}$?
+ \item Consider the vector field $\vec F(x,y)=(2x+y,x+4y)$. Find the derivative of $\vec F(x,y)$ (it should be a square matrix). Then find a function $f(x,y)$ whose gradient is $\vec F$ (i.e., $Df=\vec F$). What are $f_{xy}$ and $f_{yx}$?
  \item \marginpar{See problem \ref{second partials agree}.}%
 Consider the vector field $\vec F(x,y)=(2x+y,3x+4y)$.  Find the derivative of $\vec F$.  Why is there no function $f(x,y)$ so that $Df(x,y)=\vec F(x,y)$? [Hint: what would $f_{xy}$ and $f_{yx}$ have to equal?] 
 \end{enumerate}
@@ -767,7 +764,7 @@ For each of the following vector fields, find a potential, or explain why none e
 \end{problem}
 
 
-If a vector field has a potential, then there is an extremely simple way to compute work. To see this, we must first review the fundamental theorem of calculus. The second half of the fundamental theorem of calculus states,
+If a vector field has a potential, then there is an extremely simple way to compute work. To see this, we must first review the fundamental theorem of calculus. The second half of the fundamental theorem of calculus states
 \begin{quote}
  If $f$ is continuous on $[a,b]$ and $F$ is an anti-derivative of $f$, then $F(b)-F(a) = \int_a^b f(x) dx$.
 \end{quote}
@@ -784,9 +781,9 @@ $$f(\vec r(b))-f(\vec r(a))=\int_a^b Df(\vec r(t))D\vec r(t)\ dt.$$
 \end{theorem}
 Notice that if $\vec F$ is a vector field, and has a potential $f$, which means $\vec F = Df$, then we could rephrase this theorem as follows. 
 \begin{quote}
- Suppose $\vec F$ is a a vector field that is continuous along some open region containing the curve $C$. Suppose $\vec F$ has a potential $f$. Let $A$ and $B$ be the start and end points of the smooth curve $C$.  Then the work done by $\vec F$ along $C$ depends only on the start and end points, and is precisely
+ Suppose $\vec F$ is a vector field that is continuous along some open region containing the curve $C$. Suppose $\vec F$ has a potential $f$. Let $A$ and $B$ be the start and end points of the smooth curve $C$.  Then the work done by $\vec F$ along $C$ depends only on the start and end points, and is precisely
 $$f(B)-f(A)=\int_C \vec F\cdot d\vec r = \int_C Mdx+Ndy.$$
- The work done by $\vec F$ is the difference in a potential.
+ The work done by $\vec F$ is the difference in a potential, $f(B)-f(A)$.
 \end{quote}
 If you are familiar with kinetic energy, then you should notice a key idea here.  Work is a transfer of energy. As an object falls, energy is transferred from potential energy to kinetic energy.  The total kinetic energy at the end of a fall is precisely equal to the difference between the potential energy at the top of the fall and the potential energy at the bottom of the fall (neglecting air resistance). So work (the transfer of energy) is exactly the difference in potential energy.  
 
@@ -803,7 +800,7 @@ For each vector field and curve below, find the work done by $\vec F$ along $C$.
  \item\marginpar{See \href{http://aleph.sagemath.org/?z=eJwVi7EKgDAMRPd-hWPSRtCIo6s_IdJBKwhFRYo0_XrT6R5372bIJFRwArbZiS3Etris2bAVBUHzxDv5L2zpfv1xhrgPO8zU6LMnRgWhdqwEhToaEF08rwALcO27aqiow4rmBwN1HWM}{Sage} for a picture.}%
  Let $\vec F(x,y,z) = (2x+yz,2z+xz,2y+xy)$ and $C$ be the straight segment from $(2,-5,0)$ to $(1,2,3)$. 
 \end{enumerate}
-[Hint: If you parametrize the curve, then you've done the problem the HARD way. You don't need any parameterizations at all. Did you find a potential, and then plug in the end points?]
+[Hint: If you parametrize the curve, then you've done the problem the HARD way. Did you try to find a potential function for the vector field?]
 \end{problem}
 
 \begin{problem}\marginpar{See \href{http://aleph.sagemath.org/?z=eJytkM1uhCAUhfc-hTsueMmMYNOV23mJydQYpR1SK0TItPr0hVFbm5kumnQBl597zvngUg9APKHJAT5wxImWoU440sRY78pWNx78WTevvXKulDSxpe2Mry6q8WaonrXqWtnCAdOg4zkKGlYj8gILijAhl_hIgyorbT3Ub8oPuqmiA0BjHPjQ7nR_rXGAxz0KZjVFxiLBVdrpXsER8q-7FAQWKOkJ07UtzkfSmM4M5FSSQbVkI53bgy567Le6e2SCr0wFmykZ5Dzu5bJfUa3eiR-ov3oxwfzO6tVSsm-7B_YPhuFgLllnXiDPIrPns92SEzPnhzyJP-RlMe-qvX3CbWa-4G0-a3N4P9adzTtYmnwCd8u7lQ}{Sage}---$C_1$ and $C_2$ are in blue, and several possible $C_3$ are shown in red.}%
@@ -817,7 +814,7 @@ For each vector field and curve below, find the work done by $\vec F$ along $C$.
 
 In the problem above, the path we took to get from one point to another did not matter. The vector field had a potential, which meant that the work done did not depend on the path traveled. 
 \begin{definition}[Conservative Vector Field]
- We say that a vector field is conservative if the integral $\int_C \vec F\cdot d\vec r$ does not depend on the path $C$. We say that a curve $C$ is piecewise smooth if it can be broken up into finitely many smooth curves.
+ We say that a vector field is \emph{conservative} if the integral $\int_C \vec F\cdot d\vec r$ does not depend on the path $C$. We say that a curve $C$ is piecewise smooth if it can be broken up into finitely many smooth curves.
 \end{definition}
  
 \begin{review*}
@@ -834,31 +831,27 @@ $$
 
 
 \begin{problem}
- The gravitational vector field is directly related to the radial field $\ds\vec F = \frac{\left(-x,-y,-z\right)}{(x^2+y^2+z^2)^{3/2}}$. Show that this vector field is conservative, by finding a potential for $\vec F$.  Then compute the work done by an object that moves from $(1,2,-2)$ to $(0,-3,4)$ along ANY path that avoids the origin. 
+ \instructor{While $\vec F$ is not continuously differentiable everywhere (it's not at the origin), we can still use the fundamental theorem of line integrals if we stay away from the origin. This shows that $\vec F$ is a conservative vector field, provided we dodge the origin.}%
+ The gravitational vector field is directly related to the radial field $\ds\vec F = \frac{\left(-x,-y,-z\right)}{(x^2+y^2+z^2)^{3/2}}$. Show that this vector field is conservative by finding a potential for $\vec F$.  Then compute the work done by an object that moves from $(1,2,-2)$ to $(0,-3,4)$ along ANY path that avoids the origin. 
 
 [See the review problem just before this if you're struggling with the integral.]
- %[While $\vec F$ is not continuously differentiable everywhere (it's not at the origin), we can still use the fundamental theorem of line integrals if we stay away from the origin. This shows that $\vec F$ is a conservative vector field, provided we dodge the origin.]
 \end{problem}
 
 %If a vector field is everywhere continuously differentiable, then the last problem shows that conservative vector fields and gradient fields are exactly the same.
 
 \begin{problem}
- Suppose $\vec F$ is a gradient field.  Let $C$ be a piecewise smooth closed curve. Compute $\int_C \vec F\cdot d\vec r$ (you should get a number). Explain how you know your answer is correct.
+ Suppose $\vec F$ is a gradient field.  Let $C$ be a piecewise smooth closed curve (closed means the starting and ending points are the same). Compute $\int_C \vec F\cdot d\vec r$ (you should get a number). Explain how you know your answer is correct.
 \end{problem}
 
 
-\subsection{``Nice'' sets}
+\subsection{``Nice'' sets (Optional)}
 \label{sec:nice-sets}
 
 
 
-Here we will discuss in (brief) technical detail what a ``nice'' set
-is and what goes wrong when you have a set that is not so nice.  This
-would all be explored in much more detail in an advanced calculus, real
-analysis, or algebraic topology class.
+The above results connecting path independence and gradient fields assume that the function is defined on a ``nice'' domain set.  Here we will discuss in (brief) technical detail what a ``nice'' set is and what goes wrong when you have a set that is not so nice.  This would all be explored in much more detail in an advanced calculus, real analysis, or algebraic topology class.
 
-
-\begin{figure}[t]
+\begin{figure}[h]
   \centering
  \begin{tikzpicture}[description/.style={fill=white,inner sep=2pt}]
     \matrix (m) [matrix of math nodes, row sep=8em,
