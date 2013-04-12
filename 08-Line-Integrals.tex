@@ -1,7 +1,7 @@
-\newcommand{\sageworkurl}%{http://bmw.byuimath.com/dokuwiki/doku.php?id=flux_calculator}
+\newcommand{\sageworkurl}%{http://bmw.byuimath.com/dokuwiki/doku.php?id=work_calculator}
 {https://sagecell.sagemath.org/?z=eJylU01vm0AQvSPxH0aYiCXZWHGUK6dU7im5tBIHx7E27GKvAixdBgL99Z0FjJP2WCSEPfPevPnshGURRjzq6R2iGMZn9U3lulIwmNZCJ6wWb4VqfM8yjCEBhvzhFl_vz-gfKHAG18KKUqHVvwVqUwH43ptpK9lMtNsNn1mr77pTMPtyYwFP6m-2721Zz4dR8v66vxn4bR9fBB2jUxkSOdeqkL7XX7T6i9bq50k1i5awCtpG5W0BOndJw4eoENBAKd4VCDgaI6EuDK59b7gEHPgdf_jfeL4nLQWza6nz3DVzflaPpqzbuSaprO6oAZ0ieJps2bXre7yWBg-1NbLNkMnRBKutriRpFBqxoJQ0gsnhw9j3NQClCZmRCuzubg9HiteM8XNtGyRPWZtKVchBUAy723zGNCozlVzT-NJEV6iOljrOZMqnqmNXygnLggVB4HScJEiKB28DhNvkqglBFKY6jtGy1tKwbRI6s--NJZtOTUOf-zj69PSloFfY1oVipahZQdI9h920DBxc6XymcUj3cRxPyazR7Snb-d7OBuEL7caIDQMOQTiS3U9n2vMJIyfQjJA9lxNGLqAg3C7McwLnicyAp4uPGn1x058Z8fwJsfmM2OyXTGjQLxmNGL7k9CT7m2c5jDmlZ2yavNBMDo_wDyPl6d73SOGkBK0RJLvoV0vrqHGg-9YVoLJl43YkpGTCiMNXI4YR8cfp1slyjdnBrS8b-77Mv75JnPUwXeBhvEC25fMJ8mEBNifzwer4D1J1UkM=&lang=sage}
 
-\newcommand{\sagefluxurl}%{http://bmw.byuimath.com/dokuwiki/doku.php?id=work_calculator}
+\newcommand{\sagefluxurl}%{http://bmw.byuimath.com/dokuwiki/doku.php?id=flux_calculator}
 {http://aleph.sagemath.org/?z=eJytUz1v2zAQ3fkrDvJg2qWNtEGyaWqhoEOytECGIjAYkbKJyqRAUrLUX9_jh-zEWWPAMM139-7d3ePALV36JVuO-J2WK7j6LH7IRmkJk-ktDNwq_tpKRyz1KyiB3q1r4_DM7tZOaTxkgsUvz33O6rjlR-mt-se9MhqAvJpeCxfyPbth39adel938aAGCTmqMRb8QV7TkIqObIoibtcju11PV9qzhJA6yNojS6NkK8h4qT6yzT27v877fZDuXJ1bCb2TTd-CakI_cOLagzdw5H8lcNgbI6Brjd-S6cI8fS4zERZZhWoaapn_sCSk_m6OXZ_bFdKqAYc0SJLkpP4pFfbP1xe2wZ-bl7SpxYP0MUcbe-TtPKnXCdyJd53S-4gai5zAtYD6wPV-vnZqr4O4qu3HEvdRBmI2laHMaiuM33XWiL72FHVEcywqhSQcWuV9i6NQHkwDIX8Lz6jceKhinSCcRF6lvdxbXCWNdVgaX1L_c8Y-UDaBkpDOYjoUOPh4E4uVBUveYVAAr61xLnZT9xZdZxEO7g6gGWTyXl5ZwfKJFaDi36BoLlLMB5u8Fc2JMYFthuIeqRiZmFHxFs7uEWgfMeaANLo5ogr4I3vKYGrkAioNXtqjC436c8i7vZylBO0YUm1T1UcxbZ7EGJPE276e8eq8BAyPPcy9k648P8x6F9xK4_Tylkj3pQyXu2SsXXyCtGL5EbJpjnMHc6Ld6j9AtGK2&lang=sage}
 
 \newcommand{\sageworkfluxurl}%{http://bmw.byuimath.com/dokuwiki/doku.php?id=both_flux_and_work}
@@ -172,7 +172,8 @@ Problems 8.1 and 8.2 have to be shrunk.  They cannot be that long. They really a
 \end{comment}
 
 \section{Area}
-\instructor{I draw and cut out the area between a curve and the axis on a sheet of paper and draw a representative rectangle on it.  We talk about the single-variable way to find area and label the rectangle.  Then I draw a curve on the whiteboard and put the $x$-axis of my sheet on the curve to show how we now are computing an area above a curve.}%
+\instructor{I draw and cut out the area between a curve and the axis on a sheet of paper and draw a representative rectangle on it.  We talk about the single-variable way to find area and label the rectangle and label it with $f(x)$ and $dx$ and $dA=f(x)dx$.  Then I draw a curve on the whiteboard and put the $x$-axis of my sheet on the curve to show how we now are computing an area above a curve.  Students see how the $dx$ becomes $ds$, and how $d\sigma=f(x,y)ds$.  Then we do the problem below and show the Sage graph.}%
+
 In first-semester calculus, we learned that the area under a function $f(x)$ above the $x$-axis is given by $A = \int_a^b f(x) dx$.  The quantity $dA= f(x) dx$ represents a small bit of area whose length is $dx$ and whose height is $f(x)$.  To get the total area, we just added up the little bits of area, which is why 
 $$A=\int dA = \int_a^b f(x) dx.$$
 
@@ -440,9 +441,6 @@ $$\text{Flux} = \Phi = \int_C(M,N)\cdot (dy,-dx) =\int_C Mdy-Ndx .$$
 \end{problem}
 
 We'll tackle more work, flow, circulation, and flux problems, as we proceed through this chapter.
-
-
-
 
 
 
