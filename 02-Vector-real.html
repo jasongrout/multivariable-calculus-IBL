@@ -1,0 +1,720 @@
+<html>
+<head>
+  <title></title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+    Macros: {
+      proj: "\\mathrm{proj}",
+      ii: "\\vec \\imath",
+      jj: "\\vec \\jmath",
+      kk: "\\vec k",
+    }
+  },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<style type="text/css">
+.marginpar {
+float:right;
+background-color: #DDDDFA;
+width: 14em;
+margin-right: -16em;
+clear:both;
+padding: .3em;}
+
+body {
+padding-right: 16em; 
+padding-left: 4em; 
+counter-reset: problem;}
+
+.bmw {
+display: none;
+}
+
+div.problem {
+border: 1px solid;
+margin-left: 1em;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 0.3em;
+}
+
+div.problem:before {
+content: "Problem " counter(problem) ". ";
+counter-increment: problem;
+font-weight: bold;
+font-size: 120%;
+ margin-right: 0.5em;
+}
+
+div.definition {
+border: 1px solid;
+margin-left: 1em;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 0.3em;
+}
+
+div.definition:before {
+content: "Definition.";
+counter-increment: problem;
+font-weight: bold;
+font-size: 120%;
+ margin-right: 0.5em;
+}
+
+.note {
+color: gray;
+border: 1px solid;
+margin: 0.2em;
+padding: 0.2em; 
+}
+.note:before {
+content: "Note: ";
+}
+
+</style>
+</head>
+
+<body>
+  <h1>Vectors and Lines</h1>
+<p>This unit covers the following ideas. In preparation
+  for the quiz and exam, make sure you have a lesson plan
+  containing examples that explain and illustrate the following
+  concepts.
+</p>
+  <ol>
+    <li>Define, draw, and explain what a vector is in 2 and 3
+    dimensions.</li>
+
+    <li>Add, subtract, multiply (scalar, dot product, cross
+    product) vectors. Be able to illustrate each operation
+    geometrically.</li>
+
+    <li>Use vector products to find angles, length, area,
+    projections, and work.</li>
+
+    <li>Use vectors to give equations of lines and planes, and be
+    able to draw lines and planes in 3D.</li>
+  </ol>
+
+  <p>Learning to work with vectors will be
+  key tool we need for our work in high dimensions. Let's start
+  with some problems related to finding distance in 3D, drawing in
+  3D, and then we'll be ready to work with vectors.</p>
+
+  <div class="problem">
+    To find the distance between two points $(x_1,y_1)$ and
+    $(x_2,y_2)$ in the plane, we create a triangle connecting the
+    two points. The base of the triangle has length $\Delta
+    x=(x_2-x_1)$ and the vertical side has length $\Delta
+    y=(y_2-y_1)$. The Pythagorean theorem gives us the distance
+    between the two points as $\sqrt{\Delta x^2+\Delta
+    y^2}=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$. Show that the distance
+    between two points $(x_1,y_1,z_1)$ and $(x_2,y_2,z_2)$ in
+    3-dimensions is $\sqrt{\Delta x^2+\Delta y^2+\Delta
+    z^2}=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$.
+  </div>
+
+  <div class="problem">
+    <span class="marginpar bmw">See 12.1:41-58.</span>
+    Find the distance between the two points $P=(2,3,-4)$ and
+    $Q=(0,-1,1)$. Then find an equation of the sphere passing
+    though point $Q$ whose center is at $P$.
+  </div>
+
+  <div class="problem">
+    <span class="marginpar bmw">See 12.1:1-40.</span>
+    For each of the following, construct a rough sketch of
+    the set of points in space (3D) satisfying:
+
+    <ol>
+      <li>$2\leq z\leq 5$</li>
+
+      <li>$x=2,y=3$</li>
+
+      <li>$x^2+y^2+z^2=25$</li>
+    </ol>
+  </div>
+
+  <div class="definition">
+    A vector is a magnitude in a certain direction. If $P$ and $Q$
+    are points, then the vector $\vec{PQ}$ is the directed line
+    segment from $P$ to $Q$. This definition holds in 1D, 2D, 3D,
+    and beyond. If $V=(v_1,v_2,v_3)$ is a point in space, then to
+    talk about the vector $\vec v$ from the origin $O$ to $V$ we'll
+    use any of the following notations: $$\vec v =
+    \vec{OV}=\left&lt;v_1,v_2,v_3\right&gt; = v_1{\bf i}+v_2{\bf
+    j}+v_3{\bf k} = (v_1,v_2,v_3) = \begin{pmatrix}
+      v_1\\ v_2\\ v_3\end{pmatrix}.$$
+    The entries of the vector are called the $x$, $y$,
+    and $z$ components of the vector.
+  </div>
+
+  <p>Note that $(v_1,v_2,v_3)$ could refer to either the point
+  $V$ or the vector $\vec v$. The context of the problem we are
+  working on will help us know if we are dealing with a point or a
+  vector.</p>
+  
+  <div class="definition">
+    Let $\mathbb{R}$ represent the set real numbers. Real numbers
+    are actually 1D vectors. Let $\mathbb{R}^2$ represent the set
+    of vectors $(x_1,x_2)$ in the plane. Let $\mathbb{R}^3$
+    represent the set of vectors $(x_1,x_2,x_3)$ in space. There's
+    no reason to stop at 3, so let $\mathbb{R}^n$ represent the set
+    of vectors $(x_1,x_2,\ldots,x_n)$ in $n$ dimensions.
+  </div>
+
+  <p>In first semester calculus and before, most of our work
+  dealt with problem in $\mathbb{R}$ and $\mathbb{R}^2$. Most of
+  our work now will involve problems in $\mathbb{R}^2$ and
+  $\mathbb{R}^3$. We've got to learn to visualize in
+  $\mathbb{R}^3$.</p>
+
+  <div class="definition">
+    The magnitude, or length, or norm of a vector $\vec v =
+    \left&lt;v_1,v_2,v_3\right&gt;$ is $|\vec v| =
+    \sqrt{v_1^2+v_2^2+v_3^2}$. It is just the distance from the
+    point $(v_1,v_2,v_3)$ to the origin. A unit vector is a vector
+    whose length is one unit. The standard unit vectors are ${\bf
+    i}=\left&lt;1,0,0\right&gt;$, ${\bf
+    j}=\left&lt;0,1,0\right&gt;$, ${\bf
+    k}=\left&lt;0,0,1\right&gt;$.
+  </div>
+
+  <p>Note that in 1D, the length of the vector
+  $\left&lt;-2\right&gt;$ is simply $|-2|=\sqrt{(-2)^2}=2$, the
+  distance to 0. Our use of the absolute value symbols is
+  appropriate, as it generalizes the concept of absolute value
+  (distance to zero) to all dimensions.</p>
+
+  <div class="definition">
+    Suppose $\vec x=\left&lt;x_1,x_2,x_3\right&gt;$ and $\vec
+    y=\left&lt;y_1,y_2,y_3\right&gt;$ are two vectors in 3D, and
+    $c$ is a real number. We define vector addition and scalar
+    multiplication as follows:
+
+    <ul>
+      <li>Vector addition: $\vec x+\vec y =
+      (x_1+y_1,x_2+y_2,x_3+y_3)$ (add component-wise).</li>
+
+      <li>Scalar multiplication: $c\vec x = (cx_1,cx_2,cx_3)$.</li>
+    </ul>
+  </div>
+
+  <div class="problem">
+    <span class="marginpar bmw">See 12.2:23-24.</span>
+    Consider the vectors $\vec u=(1,2)$ and $\vec
+    v=\left&lt;3,1\right&gt;$. Draw $\vec u$, $\vec v$, $\vec
+    u+\vec v$, and $\vec u-\vec v$ with their tail placed at the
+    origin. Then draw $\vec v$ with its tail at the head of $\vec
+    u$.
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 11.1: 3,4.</div>
+    Consider the vector $\vec v=(3,-1)$. Draw $\vec v$,
+    $-\vec v$, and $3\vec v$. Suppose a donkey travels along the
+    path given by $(x,y)=\vec v t = (3t,-t)$, where $t$ represents
+    time. Draw the path followed by the donkey. Where is the donkey
+    at time $t=0,1,2$? Put markers on your graph to show the
+    donkey's location. Then determine how fast the donkey is
+    traveling.
+  </div>
+  <p>In the previous problem you encountered $(x,y)=(3t,-t)$.
+  This is an example of a function where the input is $t$ and the
+  output is a vector $(x,y)$. For each input $t$, you get a single
+  vector output $(x,y)$. Such a function is called a
+  parametrization of the donkey's path. Because the output is a
+  vector, we call the function a vector-valued function. Often,
+  we'll use the variable $\vec r$ to represent the radial vector
+  $(x,y)$, or $(x,y,z)$ in 3D. So we could rewrite the position of
+  the donkey as $\vec r(t)=(3,-1)t$. We use $\vec r$ instead of $r$
+  to remind us that the output is a vector.</p>
+  <div class="problem" id="horse-line">
+    <div class="marginpar bmw">See 12.2: 1.</div>
+    Suppose a horse races down a path given by the
+    vector-valued function $\vec r(t) = (1,2)t+(3,4)$. (Remember
+    this is the same as writing $(x,y) = (1,2)t+(3,4)$ or similarly
+    $(x,y)=(1t+3,2t+4)$.) Where is the horse at time $t=0,1,2$? Put
+    markers on your graph to show the horse's location. Draw the
+    path followed by the horse. Give a unit vector that tells the
+    horse's direction. Then determine how fast the horse is
+    traveling.
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.2: 9,17,25,33 and surrounding.</div>
+    Consider the two points $P=(1,2,3)$ and $Q=(2,-1,0)$.
+    Write the vector $\vec {PQ}$ in component form $(a,b,c)$. Find
+    the length of vector $\vec {PQ}$. Then find a unit vector in
+    the same direction as $\vec{PQ}$. Finally, find a vector of
+    length 7 units that points in the same direction as $\vec{PQ}$.
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.5: 1-12.</div>
+    A raccoon is sitting at point $P=(0,2,3)$. It starts to
+    climb in the direction $\vec v=\left&lt;1,-1,2\right&gt;$.
+    Write a vector equation $(x,y,z)=(?,?,?)$ for the line that
+    passes through the point $P$ and is parallel to $\vec v$.
+    [Hint, study <a href="#horse-line">the horse race problem</a>, and base your work off
+    of what you saw there. It's almost identical.] Then generalize
+    your work to give an equation of the line that passes through
+    the point $P=(x_1,y_1,z_1)$ and is parallel to the vector $\vec
+    v=(v_1,v_2,v_3)$.
+  </div>
+  <p>Make sure you ask me in class to show you how to connect
+  the equation developed above to what you have been doing since
+  middle school. If you can remember $y=mx+b$, then you can quickly
+  remember the equation of a line. If I don't show you in class,
+  make sure you ask me (or feel free to come by early and ask
+  before class).</p>
+
+  <div class="problem" id="first-line-between-two-points">
+    <div class="marginpar bmw">See 12.5: 13-20.</div>
+    Let $P=(3,1)$ and
+    $Q=(-1,4)$.
+    <ul>
+      <li>Write a vector equation $\vec r(t)=(x,y)$ for (i.e, give
+      a parametrization of) the line that passes through $P$ and
+      $Q$, with $\vec r(0)=P$ and $\vec r(1)=Q$.</li>
+
+      <li>Write a vector equation for the line that passes through
+      $P$ and $Q$, with $\vec r(0)=P$ but whose speed is twice the
+      speed of the first line.</li>
+
+      <li>Write a vector equation for the line that passes through
+      $P$ and $Q$, with $\vec r(0)=P$ but whose speed is one unit
+      per second.</li>
+    </ul>
+  </div>
+
+  <h1>The Dot Product</h1>
+  <p>Now that we've learned how to add and
+  subtract vectors, stretch them by scalars, and use them to find
+  lines, it's time to introduce a way of multiplying vectors called
+  the dot product. We'll use the dot product to help us find find
+  angles. First, we need to recall the law of cosines.</p>
+
+  <div class="theorem*"> (<span class="abbrv">The Law of
+  Cosines</span>)
+    
+    <p>Consider a triangle with side lengths $a$, $b$, and $c$. Let
+    $\theta$ be the angle between the sides of length $a$ and $b$.
+    Then the law of cosines states that
+    $$c^2=a^2+b^2-2ab\cos\theta.$$ If $\theta=90^\circ$, then
+    $\cos\theta=0$ and this reduces to the Pythagorean theorem.</p>
+  </div>
+
+  <div class="definition"><span class="label">The Dot Product</span>
+    If $\vec u = (u_1,u_2,u_3)$ and $\vec v= (v_1,v_2,v_3)$ are
+    vectors in $\mathbb{R}^3$, then we define the dot product of
+    these two vectors to be $$\vec u\cdot \vec v = u_1 v_1+ u_2
+    v_2+ u_3 v_3.$$ A similar definition holds for vectors in
+    $\mathbb{R}^n$, where $\vec u\cdot \vec v = u_1 v_1+ u_2
+    v_2+\cdots+ u_n v_n.$ You just multiply corresponding
+    components together and then add. It is the same process used
+    in matrix multiplication.
+  </div>
+
+  <div class="problem" id="dot-prep">
+    <div class="marginpar bmw">
+      Page 693 has the solution if you are struggling.
+    </div>
+    If $\vec u = (u_1,u_2,u_3)$ and $\vec v= (v_1,v_2,v_3)$
+    are vectors in $\mathbb{R}^3$ (which is often written $\vec
+    u,\vec v\in\mathbb{R}^3$), then show that $$|\vec u-\vec v|^2 =
+    |\vec u|^2-2\vec u\cdot \vec v +|\vec v|^2.$$
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.3: 9-12.</div>
+    Sketch in $\mathbb{R}^2$ the vectors
+    $\left&lt;1,2\right&gt;$ and $\left&lt;3,5\right&gt;$. Use the
+    law of cosines to find the angle between the vectors.
+  </div>
+
+  <div class="problem" id="dot-angle-formula">
+    <div class="marginpar bmw">See page 693.</div>
+      Let $\vec u,\vec v\in\mathbb{R}^3$. Let $\theta$ be the
+    angle between $\vec u$ and $\vec v$.
+
+    <ol>
+      <li>Use the law of cosines to explain why $|\vec u-\vec
+      v|^2=|\vec u|^2+|\vec v|^2-2|\vec u||\vec v|\cos\theta$.</li>
+
+      <li>Use the above together with <a href="dot-prep">this problem</a> to
+      explain why $$\vec u\cdot \vec v=|\vec u||\vec
+      v|\cos\theta.$$</li>
+    </ol>
+  </div>
+
+  <div class="problem" id="dot-angle-practice">
+    <div class="marginpar bmw">See 12.3: 9-12.</div>
+    Sketch in $\mathbb{R}^3$ the vectors
+    $\left&lt;1,2,3\right&gt;$ and $\left&lt;-2,1,0\right&gt;$. Use
+    the law of cosines to find the angle between the vectors. Then
+    use the formula $\vec u\cdot \vec v=|\vec u||\vec v|\cos\theta$
+    to find the angle between them. Which was easier?
+  </div>
+
+  <div class="definition">
+    We say that the vectors $\vec u$ and $\vec v$ are orthogonal if
+    $\vec u\cdot \vec v=0$.
+  </div>
+
+  <div class="problem">
+    Find two vectors orthogonal to $(1,2)$. Then find 4 vectors
+    orthogonal to $(3,2,1)$.
+  </div>
+
+  <div class="problem" id="dot-product-facts">
+    Mark each statement true or false.
+    Explain. You can assume that $\vec u,\vec v,\vec
+    w\in\mathbb{R}^3$ and that $c\in\mathbb{R}$.
+
+    <ol>
+      <li>$\vec u\cdot \vec v=\vec v\cdot \vec u$.</li>
+
+      <li>$\vec u\cdot (\vec v\cdot \vec w)=(\vec u\cdot\vec
+      v)\cdot\vec w$.</li>
+
+      <li>$c(\vec u\cdot \vec v)=(c\vec u)\cdot \vec v=\vec u\cdot
+      (c\vec v)$.</li>
+
+      <li>$\vec u+(\vec v\cdot \vec w)=(\vec u+\vec v)\cdot(\vec
+      u+\vec w)$.</li>
+
+      <li>$\vec u\cdot (\vec v+ \vec w)=(\vec u\cdot \vec v)+(\vec
+      u\cdot\vec w)$.</li>
+
+      <li>$\vec u\cdot \vec u= |\vec u|^2$.</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See page 694.</div>
+    Show that if two nonzero vectors $\vec u$ and $\vec v$
+    are orthogonal, then the angle between them is 90$^\circ$. Then
+    show that if the angle between them is 90$^\circ$, then the
+    vectors are orthogonal.
+  </div>
+  <p>The dot product provides a really easy way to find when two
+  vectors meet at a right angle. The dot product is precisely zero
+  when this happens.</p>
+
+  <h2 id="work-section">Projections and Work</h2>
+  <p>Suppose a heavy
+  box needs to be lowered down a ramp. The box exerts a downward
+  force of 200 Newtons, which we will write in vector notation as
+  $\vec F=\left&lt;0,-200\right&gt;$. The ramp was placed so that
+  the box needs to be moved right 6 m, and down 3 m, so we need to
+  get from the origin $(0,0)$ to the point $(6,-3)$. This
+  displacement can be written as $\vec d=\left&lt;6,-3\right&gt;$.
+  The force $F$ acts straight down, which means the ramp takes some
+  of the force. Our goal is to find out how much of the 200N the
+  ramp takes, and how much force must be applied to prevent the box
+  from sliding down the ramp (neglecting friction). We are going to
+  break the force $\vec F$ into two components, one component in
+  the direction of $\vec d$, and another component orthogonal to
+  $\vec d$.</p>
+
+  <div class="problem" id="force-intro">
+    Read the preceding paragraph. We want to
+    write $\vec F$ as the sum of two vectors $\vec F = \vec w+\vec
+    n$, where $\vec w$ is parallel to $\vec d$ and $\vec n$ is
+    orthogonal to $\vec d$. Since $\vec w$ is parallel to $\vec d$,
+    we can write $\vec w=c\vec d$ for some unknown scalar $c$. This
+    means that $\vec F=c\vec d+\vec n$. Use the fact that $\vec n$
+    is orthogonal to $\vec d$ to solve for the unknown scalar $c$.
+    [Hint: dot each side of $\vec F=c\vec d+\vec n$ with $\vec d$.
+    This should turn the vectors into numbers, so you can use
+    division.]
+  </div>
+  <p>The solution to the previous problem gives us the
+  definition of a projection.</p>
+
+  <div class="definition">
+    The projection of $\vec F$ onto $\vec d$, written $\proj_{\vec
+    d}\vec F$, is defined as $$\proj_{\vec d}\vec F =
+    \left(\frac{\vec F\cdot \vec d}{\vec d\cdot \vec d}\right)\vec
+    d.$$
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.3:1-8 (part d).</div>
+    Let $\vec u=(-1,2)$ and $\vec v=(3,4)$. Draw $\vec u,$
+    $\vec v$, and $\proj_{\vec v}\vec u$. Then draw a line segment
+    from the head of $\vec u$ to the head of the projection. Now
+    let $\vec u=(-2,0)$ and keep $\vec v=(3,4)$. Draw $\vec u,$
+    $\vec v$, and $\proj_{\vec v}\vec u$. Then draw a line segment
+    from the head of $\vec u$ to the head of the projection.
+  </div>
+  <p>One final application of projections pertains to the
+  concept of work. Work is the transfer of energy. If a force $F$
+  acts through a displacement $d$, then the most basic definition
+  of work is $W=Fd$, the product of the force and the displacement.
+  This basic definition has a few assumptions.</p>
+
+  <ul>
+    <li>The force $F$ must act in the same direction as the
+    displacement.</li>
+
+    <li>The force $F$ must be constant throughout the entire
+    displacement.</li>
+
+    <li>The displacement must be in a straight line.</li>
+  </ul>
+
+  <p>Before the semester ends, we will be able to remove all 3 of
+  these assumptions. The next problem will show you how dot
+  products help us remove the first assumption. Recall the set up
+  to <a href="#force-intro">this problem</a>. We want to lower a box down a ramp
+  (which we will assume is frictionless). Gravity exerts a force of
+  $\vec F=\left&lt;0,-200\right&gt;$ N. If we apply no other forces
+  to this system, then gravity will do work on the box through a
+  displacement of $\left&lt;6,-3\right&gt;$ m. The work done by
+  gravity will transfer the potential energy of the box into
+  kinetic energy (remember that work is a transfer of energy). How
+  much energy is transferred?</p>
+
+  <div class="problem" id="first-work-problem">
+    <div class="marginpar bmw">See 12.3: 24, 41-44.</div>
+    Find the amount of work done
+    by the force $\vec F=\left&lt;0,-200\right&gt;$ through the
+    displacement $\vec d=\left&lt;6,-3\right&gt;$. Find this by
+    doing the following:
+
+    <ol>
+      <li>Find the projection of $\vec F$ onto $\vec d$. This tells
+      you how much force acts in the direction of the displacement.
+      Find the magnitude of this projection.</li>
+
+      <li>Since work equals $W=Fd$, multiply your answer above by
+      $|\vec {d}|$.</li>
+
+      <li>Now compute $\vec F\cdot \vec d$. You have just shown
+      that $W=\vec F\cdot \vec d$ when $\vec F$ and $\vec d$ are
+      not in the same direction.</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    Show that the distance from a point $Q$ to a line (with
+    direction vector $\vec v$ passing through $P$) is
+    $|\overrightarrow{PQ}-\proj_{\vec v}\overrightarrow {PQ}|$.
+    Draw a diagram illustrating your reasoning. 
+  </div>
+
+  <h1>The Cross Product and Planes</h1>
+
+  <p>The dot product gave us a
+  way of multiplying two vectors together, but the result was a
+  number, not a vectors. We now define the cross product, which
+  will allow us to multiply two vectors together to give us another
+  vector. We were able to define the dot product in all dimensions.
+  The cross product is only defined in $\mathbb{R}^3$.</p>
+
+  <div class="definition"><span class="label">The Cross Product</span>
+    <span class="marginpar">
+      This definition is not really a definition. It is actually a
+      theorem. If you use the formula given as the definition, then
+      you would need to prove the three facts. We have the tools to
+      give a complete proof of (1) and (3), but we would need a
+      course in linear algebra to prove (2). It shouldn't be too
+      much of a surprise that the cross product is related to area,
+      since it is defined in terms of determinants
+    </span>
+    
+    The cross product of two vectors $\vec u =
+    \left&lt;u_1,u_2,u_3\right&gt;$ and $\vec v =
+    \left&lt;v_1,v_2,v_3\right&gt;$ is a new vector $\vec u\times
+    \vec v$. This new vector is (1) orthogonal to both $\vec u$ and
+    $\vec v$, (2) has a length equal to the area of the
+    parallelogram whose sides are these two vectors, and (3) points
+    in the direction your thumb points as you curl the base of your
+    right hand from $\vec u$ to $\vec v$. The formula for the cross
+    product is $$\vec u\times \vec v =
+    \left&lt;u_2v_3-u_3v_2,-(u_1v_3-u_3v_1),u_1v_2-u_2v_1\right&gt;
+    = \det\begin{bmatrix}
+      \vec i &amp; \vec j&amp;\vec k\\ u_1&amp;u_2&amp;u_3\\
+      v_1&amp;v_2&amp;v_3\\
+    \end{bmatrix}.$$
+  </div>
+
+  <div class="problem">
+    <span class="marginpar bmw">See 12.4: 1-8.</span>
+    Let $\vec u=(1,-2,3)$ and $\vec v=(2,0,-1)$.
+
+    <ul>
+      <li>Compute $\vec u\times \vec v$ and $\vec v\times \vec u$.
+      How are they related?</li>
+
+      <li>Compute $\vec u \cdot (\vec u\times \vec v)$ and $\vec v
+      \cdot (\vec u\times \vec v)$. Why did you get the answer you
+      got?</li>
+
+      <li>Compute $\vec u \times (2\vec u)$. Why did you get the
+      answer you got? </li>
+
+      <li>Compute $|\vec u \times \vec v|$. Compute the area of the
+      parallelogram formed by $\vec u$ and $\vec v$ using
+      trigonometry and $|\vec u|$, $|\vec v|$, and the angle
+      $\theta$ between the two vectors. Compare your answer with
+      $|\vec u \times \vec v|$.</li>
+    </ul>
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.4: 15-18.</div>
+    Let $P=(2,0,0)$, $Q=(0,3,0)$, and $R=(0,0,4)$. Find a
+    vector that orthogonal to both $\vec {PQ}$ and $\vec {PR}$.
+    Then find the area of the triangle $PQR$. Construct a 3D graph
+    of this triangle.
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.3: 9-14.</div>
+    Consider the vectors ${\ii}=(1,0,0)$, ${2\jj}=(0,2,0)$,
+    and ${3\kk}=(0,0,3)$.
+
+    <ul>
+      <li>Compute $\ii\times {2\jj}$ and ${2\jj}\times {\ii}$.</li>
+
+      <li>Compute ${\ii}\times {3\kk}$ and ${3\kk}\times
+      {\ii}$.</li>
+
+      <li>Compute ${2\jj}\times {3\kk}$ and ${3\kk}\times
+      {2\jj}$.</li>
+    </ul>Give a geometric reason as to why some vectors above have
+    a plus sign, and some have a minus sign.
+  </div>
+  <p>We will now combine the dot product with the cross product
+  to develop an equation of a plane in 3D. Before doing so, let's
+  look at what information we need to obtain a line in 2D, and a
+  plane in 3D. To obtain a line in 2D, one way is to have 2 points.
+  The next problem introduces the new idea by showing you how to
+  find an equation of a line in 2D.</p>
+
+  <div class="problem" id="plane-equation-normal-point">
+    Suppose the point $P=(1,2)$ lies on line $L$. Suppose that the
+    angle between the line and the vector $\vec
+    n=\left&lt;3,4\right&gt;$ is 90$^\circ$ (whenever this happens we
+    say the vector $\vec n$ is normal to the line). Let $Q=(x,y)$ be
+    another point on the line $L$. Use the fact that $\vec n$ is
+    orthogonal to $\vec {PQ}$ to obtain an equation of the line $L$.
+  </div>
+
+  <div class="note">
+    Add a problem about the equation of a plane containing two
+    vectors.
+  </div>
+
+  <div class="problem" id="plane-equation-three-points">
+    <div class="marginpar bmw">See page 709.</div>
+    <div class="marginpar larsonfive">See Larson 11.5.</div>
+    Let $P=(a,b,c)$ be a point on a plane in 3D. Let $\vec
+    n=(A,B,C)$ be a normal vector to the plane (so the angle
+    between the plane and and $\vec n$ is 90$^\circ$). Let
+    $Q=(x,y,z)$ be another point on the plane. Show that an
+    equation of the plane through point $P$ with normal vector
+    $\vec n$ is $$A(x-a)+B(y-b)+C(z-c)=0.$$
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.5: 21-28.</div>
+    <div class="marginpar larsonfive">See Larson 11.5:47--58 for
+      more practice.</div>
+    Consider the three points $P=(1,0,0), Q=(2,0,-1),
+    R=(0,1,3)$. Find an equation of the plane which passes through
+    these three points. [Hint: first find a normal vector to the
+    plane.]
+  </div>
+
+  <div class="problem">
+    <div class="marginpar bmw">See 12.5: 57-60.</div>
+    <div class="marginpar larsonfive">See Larson 11.5:91--92 for more practice.</div>
+    Consider the two planes $x+2y+3z=4$ and $2x-y+z=0$.
+    These planes meet in a line. Find a vector that is parallel to
+    this line. Then find a vector equation of the line.
+  </div>
+
+  <div class="problem" id="plane-equation-2-lines">
+    <div class="marginpar larsonfive">See Larson 11.5:47--58 for more
+      practice.</div>
+    Find an equation of the plane containing the lines
+    $\vec r_1(t)=(1,3,0)t+(1,0,2)$ and $\vec
+    r_2(t)=(2,0,-1)t+(2,3,2)$.
+  </div>
+
+  <div class="problem">
+    Consider the points $P=(2,-1,0)$, $Q=(0,2,3)$, and
+    $R=(-1,2,-4)$.
+
+    <ol>
+      <li>Give an equation $(x,y,z)=(?,?,?)$ of the line through
+      $P$ and $Q$.</li>
+
+      <li>Give an equation of the line through $P$ and $R$.</li>
+
+      <li>Give an equation of the plane through $P$, $Q$, and
+      $R$.</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    Consider the points $P=(2,4,5)$, $Q=(1,5,7)$, and $R=(-1,6,8)$.
+
+    <ol>
+      <li>What is the area of the triangle $PQR$.</li>
+
+      <li>Give a normal vector to the plane through these three
+      points.</li>
+
+      <li>What is the distance from the point $A=(1,2,3)$ to the
+      plane $PQR$. [Hint: Compute the projection of $\vec {PA}$
+      onto $\vec n$. How long is it?]</li>
+    </ol>
+  </div>
+
+
+  <div class="note">Here are two problems that are good problems, but
+  something has to go...
+
+  <div class="problem">
+    Show that the distance from a point $Q$ to a plane (with normal
+    vector {$\vec n$} and a point $P$) is given by $|\proj_{\vec
+    n}\overrightarrow {PQ}|$. Draw a diagram illustrating your
+    reasoning.
+  </div>
+
+  <div class="problem">
+    Show that the distance from a line (with direction vector $\vec
+    v_1$ passing through $P_1$) to a line (with direction vector
+    $\vec v_2$ passing through $P_2$) is $|\proj_{\vec
+    v_1\times\vec v_2}\overrightarrow {P_1P_2}|$. Draw a diagram
+    illustrating your reasoning.
+  </div></div>
+  <div class="note">Here are two more problems about dot and cross
+  product, but they aren't central to the course. Maybe these could
+  be good problems for advanced students. I saw these in Larson:
+
+  <div class="problem">
+    If the statement is true, explain why. If it is false, give a
+    counterexample.
+
+    <ol>
+      <li>If $\vec u \neq 0$ and $\vec u \times \vec v = \vec u
+      \times \vec w$, then is $\vec v = \vec w$ always?</li>
+
+      <li>If $\vec u \neq 0$, $\vec u\cdot \vec v = \vec u \cdot
+      \vec w$, and $\vec u \times \vec v = \vec u \times \vec w$,
+      then is $\vec v = \vec w$ always?</li>
+    </ol>
+  </div></div>
+</body>
+</html>
