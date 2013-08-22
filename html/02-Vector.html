@@ -1,4 +1,4 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title></title>
 <script type="text/x-mathjax-config">
@@ -60,7 +60,6 @@ padding: 0.3em;
 
 div.definition:before {
 content: "Definition.";
-counter-increment: problem;
 font-weight: bold;
 font-size: 120%;
  margin-right: 0.5em;
@@ -72,8 +71,33 @@ border: 1px solid;
 margin: 0.2em;
 padding: 0.2em; 
 }
+
 .note:before {
 content: "Note: ";
+}
+
+.theorem .title:before {
+content: "(";
+}
+
+.theorem .title:after {
+content: ")";
+}
+
+div.theorem:before {
+content: "Theorem.";
+font-weight: bold;
+font-size: 120%;
+ margin-right: 0.5em;
+}
+
+div.theorem {
+border: 1px solid;
+margin-left: 1em;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 0.3em;
+
 }
 
 </style>
@@ -300,8 +324,8 @@ content: "Note: ";
   the dot product. We'll use the dot product to help us find find
   angles. First, we need to recall the law of cosines.</p>
 
-  <div class="theorem*"> (<span class="abbrv">The Law of
-  Cosines</span>)
+  <div class="theorem"> <span class="title">The Law of
+  Cosines</span>
     
     <p>Consider a triangle with side lengths $a$, $b$, and $c$. Let
     $\theta$ be the angle between the sides of length $a$ and $b$.
