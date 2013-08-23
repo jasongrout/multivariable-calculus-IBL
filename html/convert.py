@@ -27,8 +27,8 @@ def macromatch(macro, elt, eltargs=''):
 regexps = [
     (r'&', r'&amp;'),
     (r'<', r'&lt;'),
-    (r'``', r'&lquo;'),
-    (r"''", r'&rqou;'),
+    (r'``', r'&ldquo;'),
+    (r"''", r'&rdqou;'),
     (r'\\item', r'<li>'),
     (r"((?:^%.*$\n)+)", r'<div class="comment">\1</div>'),
     (r'\\href %(braceargs)s \{(?<text>[^}]*)\}'%sub, r'<a href="\g<braceargs>">\g<text></a>'),

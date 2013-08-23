@@ -17,13 +17,16 @@ padding-right: 20%;
 padding-left: 1em; 
 
 counter-reset: problem section;
-text-indent: 2em;}
+}
 
+p {
+text-indent: 2em;
+}
 body.fullwidth {
 padding-right: 1em;
 }
 
-button {
+button.margintoggle {
 width: 200px;
 height: 50px;
 }
@@ -42,7 +45,6 @@ counter-increment: problem;
 font-weight: bold;
 font-size: 120%;
 margin-right: 0.5em;
-margin-left: -1.5em; /* get rid of text-indent */
 }
 
 div.definition {
@@ -58,7 +60,6 @@ content: "Definition.";
 font-weight: bold;
 font-size: 120%;
  margin-right: 0.5em;
-margin-left: -1.5em; /* get rid of text-indent */
 }
 
 div.example {
@@ -74,7 +75,6 @@ content: "Example.";
 font-weight: bold;
 font-size: 120%;
  margin-right: 0.5em;
-margin-left: -1.5em; /* get rid of text-indent */
 }
 
 .note, .comment {
@@ -86,12 +86,10 @@ padding: 0.2em;
 
 .note:before {
 content: "Note: ";
-margin-left: -1.5em; /* get rid of text-indent */
 }
 
 .comment:before {
 content: "Comment: ";
-margin-left: -1.5em; /* get rid of text-indent */
 }
 
 .theorem .title:before {
