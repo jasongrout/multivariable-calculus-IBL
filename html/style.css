@@ -1,0 +1,105 @@
+.marginpar {
+float:right;
+background-color: #DDDDFA;
+width: 14em;
+margin-right: -16em;
+clear:both;
+padding: .3em;
+text-indent: 0;}
+
+body {
+padding-right: 16em; 
+padding-left: 4em; 
+counter-reset: problem;
+text-indent: 2em;}
+
+.bmw {
+display: none;
+}
+
+div.problem {
+border: 1px solid;
+margin-left: 1em;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 0.3em;
+}
+
+div.problem:before {
+content: "Problem " counter(problem) ". ";
+counter-increment: problem;
+font-weight: bold;
+font-size: 120%;
+ margin-right: 0.5em;
+}
+
+div.definition {
+border: 1px solid;
+margin-left: 1em;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 0.3em;
+}
+
+div.definition:before {
+content: "Definition.";
+font-weight: bold;
+font-size: 120%;
+ margin-right: 0.5em;
+}
+
+div.example {
+border: 1px solid;
+margin-left: 1em;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 0.3em;
+}
+
+div.example:before {
+content: "Example.";
+font-weight: bold;
+font-size: 120%;
+ margin-right: 0.5em;
+}
+
+.note {
+color: gray;
+border: 1px solid;
+margin: 0.2em;
+padding: 0.2em; 
+}
+
+.note:before {
+content: "Note: ";
+}
+
+.theorem .title:before {
+content: "(";
+}
+
+.theorem .title:after {
+content: ")";
+}
+
+div.theorem:before {
+content: "Theorem.";
+font-weight: bold;
+font-size: 120%;
+ margin-right: 0.5em;
+}
+
+div.theorem {
+border: 1px solid;
+margin-left: 1em;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 0.3em;
+}
+
+th {
+border-bottom: double;
+}
+li {
+text-indent: 0;
+}

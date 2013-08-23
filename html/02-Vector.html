@@ -9,98 +9,17 @@ TeX: {
       ii: "\\vec \\imath",
       jj: "\\vec \\jmath",
       kk: "\\vec k",
-    }
+      ds: "\\displaystyle",
+      cl: ["\\begin{matrix} #1 \\end{matrix}",1]
+}
   },
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 </script>
 <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<style type="text/css">
-.marginpar {
-float:right;
-background-color: #DDDDFA;
-width: 14em;
-margin-right: -16em;
-clear:both;
-padding: .3em;}
 
-body {
-padding-right: 16em; 
-padding-left: 4em; 
-counter-reset: problem;}
-
-.bmw {
-display: none;
-}
-
-div.problem {
-border: 1px solid;
-margin-left: 1em;
-margin-top: 1em;
-margin-bottom: 1em;
-padding: 0.3em;
-}
-
-div.problem:before {
-content: "Problem " counter(problem) ". ";
-counter-increment: problem;
-font-weight: bold;
-font-size: 120%;
- margin-right: 0.5em;
-}
-
-div.definition {
-border: 1px solid;
-margin-left: 1em;
-margin-top: 1em;
-margin-bottom: 1em;
-padding: 0.3em;
-}
-
-div.definition:before {
-content: "Definition.";
-font-weight: bold;
-font-size: 120%;
- margin-right: 0.5em;
-}
-
-.note {
-color: gray;
-border: 1px solid;
-margin: 0.2em;
-padding: 0.2em; 
-}
-
-.note:before {
-content: "Note: ";
-}
-
-.theorem .title:before {
-content: "(";
-}
-
-.theorem .title:after {
-content: ")";
-}
-
-div.theorem:before {
-content: "Theorem.";
-font-weight: bold;
-font-size: 120%;
- margin-right: 0.5em;
-}
-
-div.theorem {
-border: 1px solid;
-margin-left: 1em;
-margin-top: 1em;
-margin-bottom: 1em;
-padding: 0.3em;
-
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
