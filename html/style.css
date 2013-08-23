@@ -115,13 +115,13 @@ h1, h2, h1+p, h2+p, li {
 text-indent: 0;
 }
 
-/* To make sections really visible*/
+/* To make sections really visible
 section {
 border: 4px solid lightblue;
 margin: .1em;
 padding: .1em;
 }
-
+*/
 
 
 /* See the counter-reset: section; rule above in the body CSS*/
