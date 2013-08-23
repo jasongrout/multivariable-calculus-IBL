@@ -1,20 +1,31 @@
 .marginpar {
 float:right;
 background-color: #DDDDFA;
-width: 14em;
-margin-right: -16em;
+
+width: 20%;
+min-width: 6em;
+max-width: 14em;
+margin-right: -25%;
+
+
 clear:both;
 padding: .3em;
 text-indent: 0;}
 
 body {
-padding-right: 16em; 
-padding-left: 4em; 
+padding-right: 20%;
+padding-left: 1em; 
+
 counter-reset: problem section;
 text-indent: 2em;}
 
-.bmw {
-display: none;
+body.fullwidth {
+padding-right: 1em;
+}
+
+button {
+width: 200px;
+height: 50px;
 }
 
 div.problem {
