@@ -27,6 +27,9 @@ TeX: {
 </head>
 
 <body>
+<div>
+<a href="index.html">Return to Table of Contents</a>
+</div>
 <section style="counter-reset: section 2;">
   <h1>Vectors and Lines</h1>
 <p>This unit covers the following ideas. In preparation
@@ -149,7 +152,8 @@ TeX: {
       <li>Vector addition: $\vec x+\vec y =
       (x_1+y_1,x_2+y_2,x_3+y_3)$ (add component-wise).</li>
 
-      <li>Scalar multiplication: $c\vec x = (cx_1,cx_2,cx_3)$.</li>
+      <li>Scalar multiplication: $c\vec x = (cx_1,cx_2,cx_3)$
+    (multiply each component by the scalar).</li>
     </ul>
   </div>
 
@@ -207,7 +211,7 @@ TeX: {
     <div class="marginpar bmw">See 12.5: 1-12.</div>
     A raccoon is sitting at point $P=(0,2,3)$. It starts to
     climb in the direction $\vec v=\left&lt;1,-1,2\right&gt;$.
-    Write a vector equation $(x,y,z)=(?,?,?)$ for the line that
+    Write a vector equation $\vec r(t)=(?,?,?)t+(?,?,?)$ for the line that
     passes through the point $P$ and is parallel to $\vec v$.
     [Hint, study <a href="#horse-line">the horse race problem</a>, and base your work off
     of what you saw there. It's almost identical.] Then generalize
@@ -296,9 +300,10 @@ TeX: {
       <li>Use the law of cosines to explain why $|\vec u-\vec
       v|^2=|\vec u|^2+|\vec v|^2-2|\vec u||\vec v|\cos\theta$.</li>
 
-      <li>Use the above together with <a href="dot-prep">this problem</a> to
-      explain why $$\vec u\cdot \vec v=|\vec u||\vec
-      v|\cos\theta.$$</li>
+      <li>Use the previous part together with <a href="dot-prep">the
+      problem above</a> to explain why $$\vec u\cdot \vec v=|\vec
+      u||\vec v|\cos\theta.$$</li>
+
     </ol>
   </div>
 
@@ -453,13 +458,6 @@ TeX: {
     </ol>
   </div>
 
-  <div class="problem">
-    Show that the distance from a point $Q$ to a line (with
-    direction vector $\vec v$ passing through $P$) is
-    $|\overrightarrow{PQ}-\proj_{\vec v}\overrightarrow {PQ}|$.
-    Draw a diagram illustrating your reasoning. 
-  </div>
-
 </section>
   </section><section>  <h1>The Cross Product and Planes</h1>
 
@@ -607,7 +605,7 @@ TeX: {
     $R=(-1,2,-4)$.
 
     <ol>
-      <li>Give an equation $(x,y,z)=(?,?,?)$ of the line through
+      <li>Give an equation $\vec r(t)=(?,?,?)t+(?,?,?)$ of the line through
       $P$ and $Q$.</li>
 
       <li>Give an equation of the line through $P$ and $R$.</li>
@@ -633,8 +631,15 @@ TeX: {
   </div>
 
 
-  <div class="note">Here are two problems that are good problems, but
+  <div class="note">Here are several problems that are good problems, but
   something has to go...
+
+  <div class="problem">
+    Show that the distance from a point $Q$ to a line (with
+    direction vector $\vec v$ passing through $P$) is
+    $|\overrightarrow{PQ}-\proj_{\vec v}\overrightarrow {PQ}|$.
+    Draw a diagram illustrating your reasoning. 
+  </div>
 
   <div class="problem">
     Show that the distance from a point $Q$ to a plane (with normal

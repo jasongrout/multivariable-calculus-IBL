@@ -25,7 +25,9 @@ TeX: {
 <script src="customize.js"></script>
 </head>
 <body>
-
+<div>
+<a href="index.html">Return to Table of Contents</a>
+</div>
 <section style="counter-reset: section 3;">
 <h1>Curves</h1>
   This unit covers the following ideas. In preparation
@@ -417,7 +419,7 @@ TeX: {
   optional. If you wish to present it, let me know. I'll have you
   type it up prior to presenting in class.</p>
 
-  <div class="problem*" label="Optional">
+  <div class="problem-nonum" label="Optional">
     Consider the hyperbola $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$ with
     foci $F_1=(c,0)$ and $F_2=(-c,0)$. Let $Q=(x,y)$ be a point on
     the hyperbola. Let $T$ be the tangent line to the hyperbola at
@@ -428,11 +430,6 @@ TeX: {
     point and $F_1$), then when the ray hits the wall at $Q$, it
     reflects off the wall and heads straight towards the other
     focus $F_2$.
-  </div>
-
-  <div class="comment">
-    Do I want a problem that has them decide which is which, or is
-    it enough to make them do that below? I'm going with below.
   </div>
 
   </section>
@@ -626,7 +623,7 @@ TeX: {
       (t^2,t^3)$. 
 
       <ol>
-        <li>Compute $y'$ and $y'$ at $t=2$ using the
+        <li>Compute $y'$ and $y''$ at $t=2$ using the
         theorem above.</li>
 
         <li>Eliminate the parameter $t$ (get a Cartesian equation
@@ -670,11 +667,10 @@ TeX: {
           alternate way to derive this formula.
         </span>$$s=\int ds=\int_a^b \left|\frac{d\vec r}{dt}\right|
         dt=\int_a^b
-        \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt.$$
+        \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt.$$</li>
+    </ol>
 
-        <div class="comment">
-          %
-
+            <div class="comment">
           <ul>
             <li>
               <div class="marginpar bmw">See page 639.</div>
@@ -686,7 +682,6 @@ TeX: {
               (written $dx$ and $dy$). Use the Pythagorean theorem
               to show that
               $ds=\sqrt{dx^2+dy^2}=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt$.
-              %
             </li>
 
             <li>If the curve is in space (so $\vec
@@ -694,8 +689,7 @@ TeX: {
             arc length of the curve?</li>
           </ul>
         </div>
-      </li>
-    </ol>
+
   </div>
 
   <div class="problem">

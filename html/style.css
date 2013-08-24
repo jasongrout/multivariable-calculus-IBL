@@ -31,7 +31,7 @@ width: 200px;
 height: 50px;
 }
 
-div.problem {
+div.problem, div.problem-nonum{
 border: 1px solid;
 margin-left: 1em;
 margin-top: 1em;
@@ -58,7 +58,6 @@ padding: 0.3em;
 div.definition:before {
 content: "Definition.";
 font-weight: bold;
-font-size: 120%;
  margin-right: 0.5em;
 }
 
@@ -73,7 +72,6 @@ padding: 0.3em;
 div.example:before {
 content: "Example.";
 font-weight: bold;
-font-size: 120%;
  margin-right: 0.5em;
 }
 
@@ -103,9 +101,7 @@ content: ")";
 div.theorem:before {
 content: "Theorem.";
 font-weight: bold;
-font-size: 120%;
  margin-right: 0.5em;
-margin-left: -1.5em; /* get rid of text-indent */
 }
 
 div.theorem {

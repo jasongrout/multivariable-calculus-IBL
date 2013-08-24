@@ -25,6 +25,9 @@ TeX: {
 <script src="customize.js"></script>
 </head>
 <body>
+<div>
+<a href="index.html">Return to Table of Contents</a>
+</div>
 
 <section style="counter-reset: section 1;">
 <h1>Review</h1>
@@ -464,7 +467,7 @@ solve([x+y==3, 2*x-y==4], (x,y))
 
   <div class="problem">
     <div class="marginpar">This
-      <a href="http://www.wolframalpha.com/input/?i=Solve+x\%2B2y\%3D3+and+4x-y\%2Bz\%3D7+and+x\%3Dt">link</a>
+      <a href="http://www.wolframalpha.com/input/?i=Solve+x%2B2y%3D3+and+4x-y%2Bz%3D7+and+x%3Dt">link</a>
     will show you how to specify which variable is $t$ when using
     Wolfram Alpha.</div>
     Find all solutions to the linear system $\begin{cases}x+y+z&=3\\2x-y&=4\end{cases}$.  
@@ -484,12 +487,16 @@ Since there are more variables than equations, this
 
       <li>If you let $z=t$, what are $x$ and $y$.</li>
     </ul>
+    <div class="sage"><script type="text/x-sage">
+var('x,y,z,t')
+solve([x+y+z==3, 2*x-y==4,x==t], (x,y,z))
+</script></div>    
   </div>
 </section>
   <section>
   <h1>Higher Order Approximations</h1>
   <p>When you ask a calculator to
-  tell you what $e^{.1}$ means, your calculator uses an extension
+  tell you what $e^{0.1}$ means, your calculator uses an extension
   of differentials to give you an approximation. The calculator
   only uses polynomials (multiplication and addition) to give you
   an answer. This same process is used to evaluate any function
@@ -522,18 +529,17 @@ Since there are more variables than equations, this
       concavity, and the same third derivative as $f(x)=e^x$ does
       at $x=0$.</li>
 
-      <li>Now compute $e^{.1}$ with a calculator. Then compute
+      <li>Now compute $e^{0.1}$ with a calculator. Then compute
       $P_1(.1)$, $P_2(.1)$, and $P_3(.1)$. How accurate are the
       line, parabola, and cubic in approximating $e^{.1}$?</li>
     </ul>
   </div>
 
   <div class="problem">
-    <div class="marginpar">
-      The polynomial you are creating is often called a Taylor
-      polynomial. (I'm giving you the name so that you can search
-      online for more information if you are interested.)
-    </div>
+  <div class="marginpar"> The polynomial you are
+    creating is often called a <a
+     href="http://en.wikipedia.org/wiki/Taylor_polynomial">Taylor
+    polynomial</a>.</div>
 
     Now let $f(x)=\sin x$. Find a 7th degree polynomial so
     that the function and the polynomial have the same value and
