@@ -52,12 +52,15 @@ TeX: {
     able to draw lines and planes in 3D.</li>
   </ol>
 
+  <div class="marginpar larsonfive">See Larson Sections 11.1 and 11.2
+  for more information about vector operations</div>
+
   <p>Learning to work with vectors will be
   key tool we need for our work in high dimensions. Let's start
   with some problems related to finding distance in 3D, drawing in
   3D, and then we'll be ready to work with vectors.</p>
 
-  <div class="problem">
+  <div class="problem" id="distance-problem">
     To find the distance between two points $(x_1,y_1)$ and
     $(x_2,y_2)$ in the plane, we create a triangle connecting the
     two points. The base of the triangle has length $\Delta
@@ -74,25 +77,32 @@ TeX: {
     <span class="marginpar bmw">See 12.1:41-58.</span>
     Find the distance between the two points $P=(2,3,-4)$ and
     $Q=(0,-1,1)$. Then find an equation of the sphere passing
-    though point $Q$ whose center is at $P$.
+    though point $Q$ whose center is at $P$. [A sphere is the set of
+    all points equidistant from a center point; in this problem, the
+    sphere is the set of all points that are the same distance from
+    $P$ as point $Q$ is.]
   </div>
 
   <div class="problem">
     <span class="marginpar bmw">See 12.1:1-40.</span>
+    <span class="marginpar">Be careful to label your axes $x$, $y$, or
+    $z$.</span>
     For each of the following, construct a rough sketch of
     the set of points in space (3D) satisfying:
 
     <ol>
       <li>$2\leq z\leq 5$</li>
 
-      <li>$x=2,y=3$</li>
+      <li>$x=2$ and $y=3$</li>
 
       <li>$x^2+y^2+z^2=25$</li>
     </ol>
   </div>
 
   <div class="definition">
-    A vector is a magnitude in a certain direction. If $P$ and $Q$
+    <span class="marginpar">In linear algebra, you'll study more
+    general vectors.</span>
+    In our class, a vector is a magnitude in a certain direction. If $P$ and $Q$
     are points, then the vector $\vec{PQ}$ is the directed line
     segment from $P$ to $Q$. This definition holds in 1D, 2D, 3D,
     and beyond. If $V=(v_1,v_2,v_3)$ is a point in space, then to
@@ -129,14 +139,14 @@ TeX: {
     The magnitude, or length, or norm of a vector $\vec v =
     \left&lt;v_1,v_2,v_3\right&gt;$ is $|\vec v| =
     \sqrt{v_1^2+v_2^2+v_3^2}$. It is just the distance from the
-    point $(v_1,v_2,v_3)$ to the origin. A unit vector is a vector
+    origin to the point $(v_1,v_2,v_3)$. A unit vector is a vector
     whose length is one unit. The standard unit vectors are ${\bf
     i}=\left&lt;1,0,0\right&gt;$, ${\bf
     j}=\left&lt;0,1,0\right&gt;$, ${\bf
     k}=\left&lt;0,0,1\right&gt;$.
   </div>
 
-  <p>Note that in 1D, the length of the vector
+  <p>Note that in one dimension, the length of the vector
   $\left&lt;-2\right&gt;$ is simply $|-2|=\sqrt{(-2)^2}=2$, the
   distance to 0. Our use of the absolute value symbols is
   appropriate, as it generalizes the concept of absolute value
@@ -144,7 +154,7 @@ TeX: {
 
   <div class="definition">
     Suppose $\vec x=\left&lt;x_1,x_2,x_3\right&gt;$ and $\vec
-    y=\left&lt;y_1,y_2,y_3\right&gt;$ are two vectors in 3D, and
+    y=\left&lt;y_1,y_2,y_3\right&gt;$ are two vectors, and
     $c$ is a real number. We define vector addition and scalar
     multiplication as follows:
 
@@ -191,20 +201,39 @@ TeX: {
     Suppose a horse races down a path given by the
     vector-valued function $\vec r(t) = (1,2)t+(3,4)$. (Remember
     this is the same as writing $(x,y) = (1,2)t+(3,4)$ or similarly
-    $(x,y)=(1t+3,2t+4)$.) Where is the horse at time $t=0,1,2$? Put
-    markers on your graph to show the horse's location. Draw the
-    path followed by the horse. Give a unit vector that tells the
-    horse's direction. Then determine how fast the horse is
-    traveling.
+    $(x,y)=(1t+3,2t+4)$.)
+
+    <ol>
+      <li>Where is the horse at times $t=0,1,2$? Put
+        markers on your graph to show the horse's location.</li>
+      <li>Draw the
+        path followed by the horse.</li>
+      <li>Give a unit vector that tells the
+        horse's direction. </li>
+      <li>Then determine how fast the horse is
+        traveling.
+      </li>
+    </ol>
+
+    
+    
+
   </div>
 
   <div class="problem">
     <div class="marginpar bmw">See 12.2: 9,17,25,33 and surrounding.</div>
     Consider the two points $P=(1,2,3)$ and $Q=(2,-1,0)$.
-    Write the vector $\vec {PQ}$ in component form $(a,b,c)$. Find
-    the length of vector $\vec {PQ}$. Then find a unit vector in
-    the same direction as $\vec{PQ}$. Finally, find a vector of
-    length 7 units that points in the same direction as $\vec{PQ}$.
+    <ol>
+      <li>Write the vector $\vec {PQ}$ in component form
+    $(a,b,c)$.</li>
+    <li>Find
+    the length of vector $\vec {PQ}$.</li>
+    <li>Then find a unit vector in
+    the same direction as $\vec{PQ}$.</li>
+    <li>Finally, find a vector of
+    length 7 units that points in the same direction as
+    $\vec{PQ}$.</li>
+    </ol>
   </div>
 
   <div class="problem">
@@ -247,6 +276,9 @@ TeX: {
 
   <section>
   <h1>The Dot Product</h1>
+  <div class="marginpar larsonfive">See Larson section 11.3 for more
+  information about the dot product</div>
+  
   <p>Now that we've learned how to add and
   subtract vectors, stretch them by scalars, and use them to find
   lines, it's time to introduce a way of multiplying vectors called
@@ -255,7 +287,6 @@ TeX: {
 
   <div class="theorem"> <span class="title">The Law of
   Cosines</span>
-    
     <p>Consider a triangle with side lengths $a$, $b$, and $c$. Let
     $\theta$ be the angle between the sides of length $a$ and $b$.
     Then the law of cosines states that
@@ -278,10 +309,13 @@ TeX: {
     <div class="marginpar bmw">
       Page 693 has the solution if you are struggling.
     </div>
+
     If $\vec u = (u_1,u_2,u_3)$ and $\vec v= (v_1,v_2,v_3)$
     are vectors in $\mathbb{R}^3$ (which is often written $\vec
     u,\vec v\in\mathbb{R}^3$), then show that $$|\vec u-\vec v|^2 =
-    |\vec u|^2-2\vec u\cdot \vec v +|\vec v|^2.$$
+    |\vec u|^2-2\vec u\cdot \vec v +|\vec v|^2.$$ [Hint: calculate
+    both sides using the equation for magnitude and the definition of
+    the dot product and show that they are equal.]
   </div>
 
   <div class="problem">
@@ -293,6 +327,23 @@ TeX: {
 
   <div class="problem" id="dot-angle-formula">
     <div class="marginpar bmw">See page 693.</div>
+        <span class="marginpar"><svg xmlns="http://www.w3.org/2000/svg" width="119px" height="80px"
+xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+style="background-color: rgb(255, 255, 255);">
+  <defs><marker id="myMarker" viewBox="0 0 10 10" refX="1" refY="5" 
+  markerUnits="strokeWidth" orient="auto"
+  markerWidth="7" markerHeight="7">
+  <polyline points="0,0 10,5 0,10 1,5" />
+</marker></defs>
+  <g transform="translate(0,70) scale(1,-1)">
+    <line x2="60" y2="60" marker-end="url(#myMarker)"
+          stroke="black"/>
+    <line x2="100" y2="0" marker-end="url(#myMarker)"
+          stroke="black"/>
+  </g>
+</svg>
+</span>
+
       Let $\vec u,\vec v\in\mathbb{R}^3$. Let $\theta$ be the
     angle between $\vec u$ and $\vec v$.
 
@@ -300,7 +351,7 @@ TeX: {
       <li>Use the law of cosines to explain why $|\vec u-\vec
       v|^2=|\vec u|^2+|\vec v|^2-2|\vec u||\vec v|\cos\theta$.</li>
 
-      <li>Use the previous part together with <a href="dot-prep">the
+      <li>Use the previous part together with <a href="#dot-prep">the
       problem above</a> to explain why $$\vec u\cdot \vec v=|\vec
       u||\vec v|\cos\theta.$$</li>
 
@@ -322,9 +373,22 @@ TeX: {
   </div>
 
   <div class="problem">
-    Find two vectors orthogonal to $(1,2)$. Then find 4 vectors
-    orthogonal to $(3,2,1)$.
-  </div>
+    <p>Find two vectors orthogonal to $(1,2)$. Then find 4 vectors
+    orthogonal to $(3,2,1)$.</p>
+
+    Press "Evaluate" to check your answers for the second part.
+  <div class="sageminimal"><script type="application/x-sage">
+html("Enter a vector below and press 'Check' to see if it is orthogonal to $(3,2,1)$")
+@interact
+def f(v=vector(QQ,3), submit=UpdateButton("Check")):
+    dotproduct = v*vector(QQ,[3,2,1])
+    if dotproduct==0:
+        html("Good job!  Your vector is orthogonal to $(3,2,1)$")
+    else:
+        html("Try again.  The dot product of $(3,2,1)$ and your vector is %s, not zero"%dotproduct)
+</script></div>
+</div>
+
 
   <div class="problem" id="dot-product-facts">
     Mark each statement true or false.
@@ -363,6 +427,10 @@ TeX: {
 
   <section>
   <h1 id="work-section">Projections and Work</h1>
+
+  <div class="marginpar larsonfive">See the last part of Larson
+  section 11.3 for more examples</div>
+
   <p>Suppose a heavy
   box needs to be lowered down a ramp. The box exerts a downward
   force of 200 Newtons, which we will write in vector notation as
@@ -377,6 +445,40 @@ TeX: {
   break the force $\vec F$ into two components, one component in
   the direction of $\vec d$, and another component orthogonal to
   $\vec d$.</p>
+
+
+  <div>
+<svg height="250" xmlns="http://www.w3.org/2000/svg"
+    viewbox="0 0 640 480">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_1">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_3">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_4">
+   <path stroke-width="10" stroke="#0000ff" fill="#0000ff" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_5">
+   <path stroke-width="10" stroke="#0000ff" fill="#0000ff" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_2" y="285" x="196" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">F</text>
+  <line stroke="#0000ff" marker-end="url(#se_marker_end_svg_5)" id="svg_5" y2="408.999997" x2="229.000004" y1="297.999998" x1="379.999996" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke-width="5" fill="none"/>
+  <line transform="rotate(123.608 215.5 272.5)" marker-end="url(#se_marker_end_svg_1)" id="svg_1" y2="198" x2="325" y1="347" x1="106" stroke-width="5" stroke="#000000" fill="none"/>
+  <line marker-end="url(#se_marker_end_svg_3)" id="svg_3" y2="212" x2="297" y1="141" x1="216" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="none"/>
+  <line stroke="#0000ff" marker-end="url(#se_marker_end_svg_4)" id="svg_4" y2="284.000002" x2="375.000003" y1="141" x1="218" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke-width="5" fill="none"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_7" y="159" x="264" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke-width="0" stroke="#0000ff" fill="#000000">d</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_8" y="241" x="357" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke-width="0" stroke="#0000ff" fill="#0000ff">w</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_10" y="373" x="319" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke-width="0" stroke="#0000ff" fill="#0000ff">n</text>
+ </g>
+</svg>
+</div>
+
 
   <div class="problem" id="force-intro">
     Read the preceding paragraph. We want to
@@ -461,6 +563,9 @@ TeX: {
 </section>
   </section><section>  <h1>The Cross Product and Planes</h1>
 
+<div class="marginpar larsonfive">See Larson section 11.4 for more
+  information about the cross product</div>
+
   <p>The dot product gave us a
   way of multiplying two vectors together, but the result was a
   number, not a vectors. We now define the cross product, which
@@ -495,6 +600,23 @@ TeX: {
     \end{bmatrix}.$$
   </div>
 
+Practice computing the cross product by clicking "Evaluate".
+<div class="sageminimal"><script type="application/x-sage">
+%exercise
+u=random_vector(ZZ,3)
+v=random_vector(ZZ,3)
+title="Calculating cross products"
+question = "What is the cross product of $%s$ and $%s$"%tuple(map(latex,[u,v]))
+def check(answer):
+    try:
+        ans = vector(sage_eval(answer))
+        correct = u.cross_product(v)==ans
+    except:
+        return False, "Make sure you are writing the vector with parentheses and commas, like (1,2,3).  I had an error in checking your answer."
+    return correct
+hints=['','','','The answer is $%s$'%latex(u.cross_product(v))]
+</script></div>
+
   <div class="problem">
     <span class="marginpar bmw">See 12.4: 1-8.</span>
     Let $\vec u=(1,-2,3)$ and $\vec v=(2,0,-1)$.
@@ -521,7 +643,7 @@ TeX: {
   <div class="problem">
     <div class="marginpar bmw">See 12.4: 15-18.</div>
     Let $P=(2,0,0)$, $Q=(0,3,0)$, and $R=(0,0,4)$. Find a
-    vector that orthogonal to both $\vec {PQ}$ and $\vec {PR}$.
+    vector that is orthogonal to both $\vec {PQ}$ and $\vec {PR}$.
     Then find the area of the triangle $PQR$. Construct a 3D graph
     of this triangle.
   </div>
@@ -556,11 +678,6 @@ TeX: {
     say the vector $\vec n$ is normal to the line). Let $Q=(x,y)$ be
     another point on the line $L$. Use the fact that $\vec n$ is
     orthogonal to $\vec {PQ}$ to obtain an equation of the line $L$.
-  </div>
-
-  <div class="note">
-    Add a problem about the equation of a plane containing two
-    vectors.
   </div>
 
   <div class="problem" id="plane-equation-three-points">
@@ -631,9 +748,6 @@ TeX: {
   </div>
 
 
-  <div class="note">Here are several problems that are good problems, but
-  something has to go...
-
   <div class="problem">
     Show that the distance from a point $Q$ to a line (with
     direction vector $\vec v$ passing through $P$) is
@@ -643,7 +757,7 @@ TeX: {
 
   <div class="problem">
     Show that the distance from a point $Q$ to a plane (with normal
-    vector {$\vec n$} and a point $P$) is given by $|\proj_{\vec
+    vector $\vec n$ and a point $P$) is given by $|\proj_{\vec
     n}\overrightarrow {PQ}|$. Draw a diagram illustrating your
     reasoning.
   </div>
@@ -654,10 +768,7 @@ TeX: {
     $\vec v_2$ passing through $P_2$) is $|\proj_{\vec
     v_1\times\vec v_2}\overrightarrow {P_1P_2}|$. Draw a diagram
     illustrating your reasoning.
-  </div></div>
-  <div class="note">Here are two more problems about dot and cross
-  product, but they aren't central to the course. Maybe these could
-  be good problems for advanced students. I saw these in Larson:
+  </div>
 
   <div class="problem">
     If the statement is true, explain why. If it is false, give a
@@ -671,6 +782,10 @@ TeX: {
       \vec w$, and $\vec u \times \vec v = \vec u \times \vec w$,
       then is $\vec v = \vec w$ always?</li>
     </ol>
-</section>
+    </section>
+<script>sagecell={loadMathJax: false};</script>
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
+<script>sagecell.makeSagecell({"inputLocation": ".sageminimal", template: sagecell.templates.minimal});</script>
   </body>
 </html>

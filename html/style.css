@@ -48,7 +48,7 @@ margin-right: 0.5em;
 }
 
 div.definition {
-border: 1px solid;
+/*border: 1px solid;*/
 margin-left: 1em;
 margin-top: 1em;
 margin-bottom: 1em;
@@ -105,7 +105,7 @@ font-weight: bold;
 }
 
 div.theorem {
-border: 1px solid;
+/*border: 1px solid;*/
 margin-left: 1em;
 margin-top: 1em;
 margin-bottom: 1em;
