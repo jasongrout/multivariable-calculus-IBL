@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand{\sstop}{\smallskip\begin{center}STOP\end{center}\smallskip}
+\begin{document}
+\begin{center}Parametric Curves\end{center}
+
+\begin{enumerate}
+\item First we'll find some parametric equations
+\begin{enumerate}
+\item Write $x$ and $y$ as functions of $t$ to describe the curve $y=2x-3$ in the domain $-3\leq x \leq 5$.
+\item Write $x$ and $y$ as functions of $t$ to describe $y=x^2$ in the domain $-\infty\leq x\leq \infty$.
+\item Write $x$ and $y$ as functions of $t$ to describe $y=\pm \sqrt{x}$ (you might find it helpful to draw the curve first).
+\end{enumerate}
+
+\sstop
+
+\item Next we'll look at a very common parametric equation
+\begin{enumerate}
+\item What does the graph $\vec r(t)=(x,y)=(\cos t, \sin t)$, $0\leq t\leq 2\pi$ look like?  [Hint: try plotting a bunch of points]
+\item What does the graph $\vec r(t)=(x,y)=(3\cos t, 3\sin t)$, $0\leq t\leq 2\pi$ look like?  [Hint: try plotting a bunch of points]
+\item If $R$ is a constant, what does the graph $\vec r(t)=(x,y)=(R\cos t, R\sin t)$, $0\leq t\leq 2\pi$ look like?  [Hint: try plotting a bunch of points]
+\item Find a relationship between $x$ and $y$ if $x=\cos t$ and $y=\sin t$ (this is an equation with just $x$ and $y$ in it).
+\item Solve the equation you just found for $y$.  If you graphed this, it should give you the entire graph you got above.
+\item Which is simpler?  The parametric equation, or the $y=$ equation?
+\item Find a relationship between $x$ and $y$ if $x=R\cos t$ and $y=R\sin t$ (this is an equation with just $x$ and $y$ and $R$ in it).
+\end{enumerate}
+
+
+\sstop
+
+\item Now we'll look at some derivatives
+  \begin{enumerate}
+  \item If $x=\cos t$, $y=\sin t$, how fast does $x$ change with respect to $t$?  Write this as a derivative using the definition of the derivative.
+  \item If $x=\cos t$, $y=\sin t$, how fast does $y$ change with respect to $t$? Write this as a derivative using the definition of the derivative.
+\sstop
+  \item If $x=\cos t$, $y=\sin t$, how fast does $y$ change with respect to $x$?  In other words, what is $\lim_{\Delta x\to 0}(\Delta y)/(\Delta x)$?  [Hint: Use what we just did in the STOP and divide the top and bottom by $\Delta t$.]
+\sstop
+
+  \item What is the slope of the tangent line at the point $t=\pi/3$?
+  \item Check the sign of the slope of the tangent line in each quadrant of the circle.  Is it what you expect?
+  \item Above, you found an equivalent equation to this parametric function in terms of just $x$ and $y$.  Find the derivative $dy/dx$ using that equation.  Which is simpler?
+  \item Once you have the first derivative $dy/dx$, you can find the concavity by taking its derivative.  What is the second derivative of $y$ with respect to $x$?
+  \item Check the concavity in each quadrant of the circle with your second derivative.  Is it what you expect?
+  \end{enumerate}
+
+\sstop
+
+\item Now we'll generalize to the next dimension
+  \begin{enumerate}
+  \item Now suppose we have $x=\cos t$, $y=\sin t$, and $z=t$ for $0\leq t\leq2\pi$ (so we get three coordinates associated with time $t$).  Write this fact as a function $\vec r(t)$.
+  \item What does the graph of $\vec r(t)$ look like? [Hint: try plotting some points]
+  \item What is the derivative of each part $\vec r^{\thinspace\prime}(t)$?  (This is also called the velocity vector).
+  \end{enumerate}
+\item What does the graph of $\vec r(t)=(t,t^2,\sin t)$, $-2\pi\leq t\leq 2\pi$ look like?  Describe it as best as you can.  What is the velocity vector $\vec r^{\thinspace\prime}(t)$?
+
+\end{enumerate}
+\end{document}
