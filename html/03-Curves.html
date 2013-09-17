@@ -34,7 +34,16 @@ TeX: {
   containing examples that explain and illustrate the following
   concepts.
 
-  <ol>
+<ol class="jng">
+  <li>Recognize vector equations as parametric equations.</li>
+  <li>Find derivatives and tangent lines for parametric equations.
+  Explain how to find velocity, speed, and acceleration from
+  parametric equations.</li>
+  <li>Use integrals to find the lengths of parametric curves.</li>
+  </ol>
+
+
+  <ol class="bmw">
     <li>Be able to describe, graph, give equations of, and find
     foci for conic sections (parabolas, ellipses, hyperbolas).</li>
 
@@ -48,10 +57,12 @@ TeX: {
 
     <li>Use integrals to find the lengths of parametric
     curves.</li>
-  </ol>You'll have a chance to teach your examples to your peers
-  prior to the exam.
+  </ol>
 
-  <section><h1>Conic Sections</h1>
+  <p class="bmw">You'll have a chance to teach your examples to your peers
+  prior to the exam.</p>
+
+  <section class="bmw"><h1>Conic Sections</h1>
   <p>Before we jump fully into $\mathbb{R}^3$,
   we need some good examples of planar curves (curves in
   $\mathbb{R}^2$) that we'll extend to object in 3D. These examples
@@ -435,46 +446,107 @@ TeX: {
   </section>
   <section><h1>Parametric Equations</h1>
 
-  <p>In middle school, you learned to
-  write an equation of a line as $y=mx+b$. In the vector unit, we
-  learned to write this in vector form as $(x,y)=(1,m)t+(0,b)$. The
-  equation to the left is called a vector equation. It is
-  equivalent to writing the two equations $$x=1t+0,y=mt+b,$$ which
-  we will call parametric equations of the line. We were able to
-  quickly develop equations of lines in space, by just adding a
-  third equation for $z$. Parametric equations provide us with a
-  way of specifying the location $(x,y,z)$ of an object by giving
-  an equation for each coordinate. We will use these equations to
-  model motion in the plane and in space. In this section we'll
-  focus mostly on planar curves.</p>
+  <p>In the vectors unit, we learned how to write the equation of a
+  line in $\mathbb{R}^2$ as $\vec r(t)=(u_1,u_2)t+(v_1,v_2)=\vec u t +
+  \vec v$.  Since $\vec r(t)$ represented the $x$ and $y$ coordinates
+  of a point, we could also write this line as the two equations
+  $x=u_1t+v_1,\, y=u_2t+v_2$.  We call these <em>parametric
+  equations</em> for the line.</p>
 
-  <div class="definition">
-    If each of $f$ and $g$ are continuous functions, then the curve
-    in the plane defined by $x=f(t),y=g(t)$ is called a parametric
-    curve, and the equations $x=f(t),y=g(t)$ are called parametric
-    equations for the curve. You can generalize this definition to
-    3D and beyond by just adding more variables.
+
+  <div class="problem">Many times, the vector equation for a function
+  in $\mathbb{R}^2$ is simpler than the same curve expressed as $y=f(x)$.  Let's explore that in an example.
+
+    <ol>
+      <li>What does the graph of $\vec r(t)=(\cos t, \sin
+  t)$, where $0\leq t\leq 2\pi$, look like?  [Hint: try plotting a
+  bunch of points for different $t$ values.]</li>
+<li>What does the graph $\vec r(t)=(3\cos t, 3\sin t)$, $0\leq t\leq 2\pi$ look like?  [Hint: try plotting a bunch of points]</li>
+<li>If $R$ is a constant, what does the graph $\vec r(t)=(R\cos t,
+      R\sin t)$, $0\leq t\leq 2\pi$ look like?  What does $R$ tell you
+      about the graph?  [Hint: try plotting a bunch of points]</li>
+<li>Since each vector $\vec r(t)$ gives $x$ and $y$ values for a point,
+      we could write the first part above as $x=\cos t$, $y=\sin t$,
+      which we call <em>parametric equations</em> for this graph.
+      Let's use this to find an equation for the curve in the first
+      part.  First, find an equation relating $x$ and $y$ ($t$ should
+      not be in this equation).  [Hint: use
+      a trig identity.]</li>
+<li>Solve the equation you just found for $y$.  If you graphed this,
+      it should give you the same curve as you found in the first part.</li>
+<li>Which is simpler, the $y=f(x)$ equation from the last part, or the
+      $\vec r(t)$ vector equation from the first part?
+</ol>
   </div>
+
+
+Let's practice finding the vector equations for some other graphs.
+
+  <div class="problem">
+    <ol>
+<li>Write a vector equation $\vec r(t)=(?,?)$ so that the graph is the part
+    of the curve $y=2x-3$ for $-3\leq x \leq 5$. [Hint: if $\vec
+    r(t)=(t,?)$, what should the $y$ component of $\vec r(t)$ be?]
+<li>Write a vector equation $\vec r(t)=(?,?)$ so that the graph is the curve
+    $y=x^2$ for $-\infty\leq x\leq \infty$.
+<li>Write a vector equation $\vec r(t)=(?,?)$ so that the graph is the
+    curve $y=\pm \sqrt{x}$ for $0\leq x\leq 9$.  [Hint: you might find
+    it helpful to draw the curve first.]
+</ol>
+    </div>
+
+Different vector equations can describe the same curve in a graph.  It's
+    like walking to school and back on the same path.  The graph is
+    the path---just a drawing of where we walked.  The vector
+    equation, however, tells us exactly where we are at every instant,
+    so the vector equation for walking to school is different than the
+    vector equation for walking home, even if the path that we walk on
+    is the same in each case.
 
   <div class="problem">
     <div class="marginpar bmw">See 11.1: 1-18. This is the same for all
       the problems below.</div>
 
-    By plotting points, construct graphs of the three
-    parametric curves given below (just make a $t,x,y$ table, and
-    then plot the $(x,y)$ coordinates). Place an arrow on your
-    graph to show the direction of motion.
+    By plotting points, construct separate graphs of the 
+    parametric curves given below (for a bunch of $t$ values, find $x$
+    and $y$ and plot the point). Place an arrow on your
+    graph to show the direction of motion, and label the start and end
+    of the curve.
 
     <ol>
-      <li>$x=\cos t, y=\sin t$, for $0\leq t\leq 2\pi$.</li>
+      <li>$\vec r(t)=(\cos t, \sin t)$, for $0\leq t\leq 2\pi$.</li>
 
-      <li>$x=\sin t, y=\cos t$, for $0\leq t\leq 2\pi$.</li>
+      <li>$\vec r(t)=(\cos t, \sin t)$ for $0\leq t\leq 4\pi$.</li>
 
-      <li>$x=\cos t, y=\sin t, z=t$, for $0\leq t\leq 4\pi$.</li>
+      <li>$\vec r(t)=(\sin t, \cos t)$, for $0\leq t\leq 2\pi$.</li>
+
+      <li>$\vec r(t)=(\sin(2t), \cos(2t))$ for $0\leq t\leq
+      2\pi$.</li>
+
+      <li>$\vec r(t)=(\cos t, \sin t, t)$, for $0\leq t\leq
+    4\pi$. [Hint: this will be a curve in 3D, so you'll find $x,y,z$
+    coordinates for each $t$ value.]</li>
     </ol>
   </div>
 
-  <div class="problem">
+  <p>Here's how to check the answer to the first part of the previous
+  problem using Sage (without the labels and arrow).</p>
+
+  <div class="sage"><script type="application/x-sage">
+r(t)=(cos(t), sin(t))
+parametric_plot(r, (t,0,2*pi), figsize=3)
+</script></div>
+
+<div class="sage instructor"><script type="application/x-sage">
+r(t)=(cos(t), sin(t))
+p = parametric_plot(r, (t,0,2*pi))
+p += point(r(0), color='red', size=80)
+p += point(r(2*pi), color='green', size=40)
+p += plot(r(.501)-r(.5), start=r(.5))
+show(p, figsize=3)
+</script></div>
+
+  <div class="problem bmw">
     Plot the path traced out by the parametric curve $x=1+2\cos t,
     y=3+5\sin t$. Then use the trig identity $\cos^2t+\sin^2t=1$ to
     give a Cartesian equation of the curve (an equation that only
@@ -487,18 +559,18 @@ TeX: {
       What we did in the previous chapter should help here.
     </div>
 
-    Find parametric equations for a line that passes through
+    Find parametric equations $x=?,y=?,z=?$ for a line that passes through
     the points $(0,1,2)$ and $(3,-2,4)$.
   </div>
 
   <div class="problem">
     Plot the path traced out by the parametric curve $\vec r(t)=
-    (t^2+1, 2t-3).$ Give a Cartesian equation of the curve
+    (t^2+1, 2t-3).$ <span class="bmw">Give a Cartesian equation of the curve
     (eliminate the parameter $t$), and then find the focus of the
-    resulting curve.
+    resulting curve.</span>
   </div>
 
-  <div class="problem">
+  <div class="problem bmw">
     Consider the parametric curve given by $x=\tan t, y=\sec t$.
     Plot the curve for $-\pi/2&lt;t&lt;\pi/2$. Give a Cartesian
     equation of the curve (a trig identity will help). Then find
@@ -506,47 +578,77 @@ TeX: {
     will probably be easier to draw if you first find the Cartesian
     equation, and then plot the curve.]
   </div>
-
+</section>
   <section><h1 id="derivatives-and-tangent-lines">Derivatives and Tangent
   lines</h1>
 
-  <p>We're now ready to discuss calculus on parametric
-  curves. The derivative of a vector valued function is defined
-  using the same definition as first semester calculus.</p>
+<div class="marginpar larsonfive">See Larson 12.2 and 12.3</div>
+<p>The derivative from calculus 1 measures how much the output of a
+  function changes if the input changes a little bit.  Likewise, the
+  derivative of a vector-valued function $\vec r(t)$ measures how much
+  the output $\vec r(t)$ changes if the input $t$ changes a little
+  bit.  This means that if $\vec r(t)$
+  represents the position of some object at time $t$, then $d\vec
+  r/dt$ represents how fast the position is changing, or the
+  velocity.</p>
 
-  <div class="definition">
-    If $\vec r(t)$ is a vector equation of a curve (or in
-    parametric form just $x=f(t), y=g(t)$), then we define the
-    derivative to be $$\frac{d\vec r}{dt}=\ds\lim_{h\to
-    0}\frac{\vec r(t+h)-\vec r(t)}{h}.$$
-  </div>
+<p>In calculus 1, the derivative of a function $f(t)$ is defined as
+  $$\frac{df}{dt} =\ds\lim_{h\to0}\frac{f(t+h)-f(t)}{h}.$$ We extend
+  this definition to vectors by using the same definition, but we just
+  use vector functions instead of calculus 1 functions.</p>
 
-  <p>The subtraction above requires vector subtraction. The
-  following problem will provide a simple way to take derivatives
-  which we will use all semester long.</p>
+  <div class="definition"> If $\vec r(t)$ is a vector equation of a
+    curve, then we define the derivative to be $$\frac{d\vec
+    r}{dt}=\ds\lim_{h\to 0}\frac{\vec r(t+h)-\vec r(t)}{h}.$$ </div>
+
+  <div class="problem">
+    Let $\vec r(t)=(t^2-t-6, 2t-3)$ be a function representing the $(x,y)$ position of
+    an object at time $t$.  In this problem, we'll calculate and 
+    draw an approximation to $d\vec r/dt$ at $t=3$.
+    <ol>
+      <li>Draw the parametric curve $\vec r(t)$ for $2\leq t\leq
+    4$.<span class="marginpar">Check your plot of the curve with <a
+    href="http://sagecell.sagemath.org/?z=eJwr0ijRtNUoiTPSLdE101Ew0irRNdbk5SpILErMTS0pykyOL8jJL9Eo0lHQKNEx0jHR1FFIy0wvzqxKtTXRBAAdtBHn&lang=sage">Sage</a>. (Click
+    the word "Sage" to see how to do it.)</span></li>
+      <li>Draw the vectors $\vec r(3)$ and $\vec r(3.1)$.</li>
+      <li>Draw the vector $\vec r(3.1)-\vec r(3)$ between the ends of
+    $\vec r(3)$ and $\vec r(3.1)$.</li>
+      <li>Draw the vector $\frac {\vec r(3.1)-\vec r(3)}{0.1}$,
+    starting at the head of $\vec r(3)$.  This vector approximates
+    $d\vec r/dt$ ($h=0.1$ in this case).</li>
+  </ol>
+
+ </div>
+
+<p>The next problem figures out an easy way to calculate the exact derivative $d\vec
+ r/dt$.</p>
 
   <div class="problem">
     <div class="marginpar bmw">See page 728.</div>
-
+    <div class="marginpar larsonfive">See the first part of Larson 12.2</div>
     Show that if $\vec r(t) = (f(t),g(t))$, then the
-    derivative is just $\frac{d\vec r}{dt} = (f'(t),g'(t))$. [The
+    derivative is just $\frac{d\vec r}{dt} = (f'(t),g'(t))$.
+
+    <p>[Hint: The
     definition above says that $\frac{d\vec r}{dt}=\ds\lim_{h\to
     0}\frac{\vec r(t+h)-\vec r(t)}{h}$. We were told $\vec r(t) =
     (f(t),g(t))$, so use this in the derivative definition. Then
     try to modify the equation to obtain $\frac{d\vec r}{dt} =
-    (f'(t),g'(t))$.]
+    (f'(t),g'(t))$.]</p>
   </div>
 
   <p>The previous problem shows you can take the derivative of a
   vector valued function by just differentiating each component
-  separately. The next problem shows you that velocity and
+  separately. <span class="marginpar">For practice, calculate the exact derivative at $t=3$ of the
+  problem above where you approximated the derivative.  Was the
+  approximation close?</span> The next problem shows you that velocity and
   acceleration are still connected to the first and second
   derivatives.</p>
 
   <div class="problem" id="derivative-space-curve">
     <div class="marginpar bmw">See 13.1:5-8 and 13.1:19-20</div>
 
-    % Consider the parametric curve given by $\vec r(t)=(
+    Consider the parametric curve given by $\vec r(t)=(
     3\cos t, 3\sin t )$.
 
     <ol>
@@ -557,7 +659,7 @@ TeX: {
       r}{dt}\left(\frac{\pi}{4}\right)$ and $\frac{d^2\vec
       r}{dt^2}\left(\frac{\pi}{4}\right)$ with their tail placed on
       the curve at $\vec r\left(\frac{\pi}{4}\right)$. These
-      vectors represent the velocity and acceleration vectors.</li>
+      vectors represent the velocity and acceleration vectors at time $t=\pi/4$.</li>
 
       <li>Give a vector equation of the tangent line to this curve
       at $t=\frac{\pi}{4}$. (You know a point and a direction
@@ -565,8 +667,8 @@ TeX: {
     </ol>
   </div>
 
-  <div class="definition">
-    \label{definition velocity acceleration} If an object moves
+  <div class="definition" id="definition-velocity-acceleration">
+    If an object moves
     along a path $\vec r(t)$, we can find the velocity and
     acceleration by just computing the first and second
     derivatives. The velocity is $\frac{d\vec r}{dt}$, and the
@@ -597,7 +699,6 @@ TeX: {
     </ol>
   </div>
 
-  <div class="comment">
     <p>The previous problem introduced the following key theorem.
     Its proof is just the chain rule.</p>
 
@@ -616,25 +717,125 @@ TeX: {
     derivatives back in first semester calculus.</p>
 
     <div class="problem">
-      <div class="marginpar">See 11.2:1-14</div>
-
+      <div class="marginpar bmw">See 11.2:1-14</div>
+      <div class="marginpar larsonfive">See Larson 10.2, Example 2</div>
       Consider the parametric curve given by $\vec r(t) =
       (t^2,t^3)$. 
 
       <ol>
-        <li>Compute $y'$ and $y''$ at $t=2$ using the
+        <li>Compute $dy/dx$ and $\frac{d^2y}{dx^2}$ at $t=2$ using the
         theorem above.</li>
 
-        <li>Eliminate the parameter $t$ (get a Cartesian equation
+        <li class="bmw">Eliminate the parameter $t$ (get a Cartesian equation
         for the curve). Then find $y'$ and $y'$ at $t=2$
         using first semester calculus.</li>
       </ol>
     </div>
   </div>
 
+<p>  Here are some Sage examples letting you practice finding $\frac
+  {dy}{dx}$.  Click "Evaluate" and do several examples to make sure you
+  understand the concept.  When typing in expressions, make sure to
+  use a * to signify multiplication.</p>
+
+<div class="sageminimal"><script type="application/x-sage">
+%exercise
+# choose a kind of function
+from random import choice, randint
+t=var('t')
+
+def f():
+    environ={'a': randint(-10,10), 
+             'b': randint(-10,10), 
+             'c': randint(-10,10), 
+             'd': randint(-10,10), 
+             't': var('t')}
+    flist = ["a*cos(b*t)", "a*sin(b*t)", "a*e^(b*t)", "a*t^2+b*t+c", "(t+a)^b"]
+    f = sage_eval(choice(flist), environ)
+    return f
+
+dr=(0,0)
+while dr[0]==0:
+    r(t)=(f(), f())
+    dr=diff(r,t)
+dydx = dr[1]/dr[0]
+
+def close(a,true):
+    absdiff = abs(a-true)
+    if true<1e-8:
+        # if we're really close to zero, just do absolute error
+        return absdiff<1e-6
+    else:
+        # else do relative error
+        return absdiff<(1e-6)*true
+
+def functionchecker(f):
+    f(t)=sage_eval(f, {'t': var(t)})
+    for treal in [random()*20-10 for i in range(10)]:
+        ans = dydx(treal).n()
+        if not close(f(treal).n(), ans):
+            return False
+    return True
+
+title=""
+question=r"Find $\displaystyle\frac {dy}{dx}$ for $\vec r(t)=%s$"%latex(r(t))
+check=functionchecker
+hints=['','','','The answer is $%s$'%latex(dydx(t))]
+</script></div>
+
+<p>  Here are some Sage examples letting you practice finding $\frac
+  {d^2y}{dx^2}$.  Click "Evaluate" and do several examples to make sure you
+  understand the concept.  When typing in expressions, make sure to
+  use a * to signify multiplication.</p>
+
+
+<div class="sageminimal"><script type="application/x-sage">
+%exercise
+# choose a kind of function
+from random import choice, randint
+t=var('t')
+def f():
+    environ={'a': randint(-10,10), 
+             'b': randint(-10,10), 
+             'c': randint(-10,10), 
+             'd': randint(-10,10), 
+             't': var('t')}
+    flist = ["a*cos(b*t)", "a*sin(b*t)", "a*e^(b*t)", "a*t^2+b*t+c", "(t+a)^b"]
+    f = sage_eval(choice(flist), environ)
+    return f
+
+dr=(0,0)
+while dr[0]==0:
+    r(t)=(f(), f())
+    dr=diff(r,t)
+dydx = dr[1]/dr[0]
+secondder = diff(dydx,t)/dr[0]
+def close(a,true):
+    absdiff = abs(a-true)
+    if true<1e-8:
+        # if we're really close to zero, just do absolute error
+        return absdiff<1e-6
+    else:
+        # else do relative error
+        return absdiff<(1e-6)*true
+
+def functionchecker(f):
+    f(t)=sage_eval(f, {'t': var(t)})
+    for treal in [random()*20-10 for i in range(10)]:
+        ans = secondder(treal).n()
+        if not close(f(treal).n(), ans):
+            return False
+    return True
+
+title=""
+question=r"Find $\displaystyle\frac {d^2y}{dx^2}$ for $\vec r(t)=%s$"%latex(r(t))
+check=functionchecker
+hints=['','','','The answer is $%s$'%latex(dydx(t))]
+</script></div>
+
   </section>
   <section><h1 id="arc-length">Arc Length</h1>
-
+<div class="marginpar larsonfive">See the last part of Larson 10.3</div>
   <p>If an object moves at a
   constant speed, then the distance travelled is $$\text{distance}
   = \text{speed}\times\text{time}.$$ This requires that the speed
@@ -649,7 +850,7 @@ TeX: {
     r(t)=(x(t),y(t))$ for $a\leq t\leq b$.
 
     <ol>
-      <li>Show that the object's speed at any time $t$ is
+      <li>Show that the object's speed $|d\vec r/dt|$ at any time $t$ is
       $\ds\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}$.</li>
 
       <li>If you move over a really small time interval, say of
@@ -657,11 +858,11 @@ TeX: {
       at constant speed
       $\ds\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}$
       for a time length $dt$, what's the distance $ds$ you have
-      traveled.</li>
+      traveled?</li>
 
       <li>Explain why the length of the path given by $\vec r(t)$
       for $a\leq t\leq b$ is
-        <span class="marginpar">
+        <span class="marginpar bmw">
           This is the arc length formula. Ask me in class for an
           alternate way to derive this formula.
         </span>$$s=\int ds=\int_a^b \left|\frac{d\vec r}{dt}\right|
@@ -669,7 +870,7 @@ TeX: {
         \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt.$$</li>
     </ol>
 
-            <div class="comment">
+            <div class="bmw">
           <ul>
             <li>
               <div class="marginpar bmw">See page 639.</div>
@@ -693,6 +894,9 @@ TeX: {
 
   <div class="problem">
     <div class="marginpar bmw">See 11.2: 25-30</div>
+    <div class="marginpar">See <a
+    href="http://sagecell.sagemath.org/?z=eJwr0ijRtNUoiTPWUTDWKokz0jfS5OUqSCxKzE0tKcpMji_IyS_RKNJR0CjRMdQx1tQEAFIGDcY=&lang=sage">Sage</a>
+    for a plot of the curve</div>
     Find the length of the curve $\ds \vec r(t) =
     \left(t^3,\frac{3t^2}{2}\right)$ for $t\in[1,3]$. The notation
     $t\in[1,3]$ means $1\leq t\leq 3$. Be prepared to show us your
@@ -716,11 +920,11 @@ TeX: {
       <li>The ellipse $\vec e(t) = (4\cos t,5\sin t)$ for
       $t\in[0,2\pi]$.</li>
 
-      <li>The hyperbola $\vec h(t) = (\tan t,\sec t)$ for
+      <li class="bmw">The hyperbola $\vec h(t) = (\tan t,\sec t)$ for
       $t\in[-\pi/ 4,\pi/4]$.</li>
     </ol>
   </div>
-
+      
   <p>To actually compute the integrals above and find the
   lengths, we would use a numerical technique to approximate the
   integral (something akin to adding up the areas of lots and lots
