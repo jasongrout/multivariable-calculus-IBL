@@ -5,3 +5,10 @@ display: none;
 .larsonfive {
 /* display: none; */
 }
+
+.instructor {
+color: gray;
+border: 4px solid lightblue;
+
+display: none;
+}
