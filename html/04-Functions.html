@@ -47,8 +47,7 @@ TeX: {
     functions of the form $w=f(x,y,z)$, construct plots of level
     surfaces.</li>
 
-    <li>Describe uses for, and construct graphs of, vector fields
-    and transformations.</li>
+    <li>Describe uses for, and construct graphs of vector fields.</li>
 
     <li>If you are given a description of a vector field, curve, or
     surface (instead of a function or parametrization), explain how
@@ -67,9 +66,9 @@ TeX: {
   be explicit about the domain and range of $f$. </p>
 <p>In this class,
   we will study what happens when the domain and target space are
-  subsets of ${\mathbb{R}}^n$ (Euclidean $n$-space). In particular,
-  we will study functions of the form $$f\colon {\mathbb{R}}^n\to
-  {\mathbb{R}}^m,$$ when $m$ and $n$ are 3 or less. The number
+  subsets of ${\RR}^n$ (Euclidean $n$-space). In particular,
+  we will study functions of the form $$f\colon {\RR}^n\to
+  {\RR}^m,$$ when $m$ and $n$ are 3 or less. The number
   $n$ is the dimension of the input vector (or number of inputs).
   The number $m$ is the dimension of the output vector (or number
   of outputs). Our goal is to understand uses for each type of
@@ -99,8 +98,8 @@ TeX: {
       A pebble falls from a 64 ft tall building. Its height
     (in ft) above the ground $t$ seconds after it drops is given by
     the function $y=f(t)=64-16t^2$. What are $n$ and $m$ when we
-    write this function in the form $f\colon {\mathbb{R}}^n\to
-    {\mathbb{R}}^m$? Construct a graph of this function. How many
+    write this function in the form $f\colon {\RR}^n\to
+    {\RR}^m$? Construct a graph of this function. How many
     dimensions do you need to graph this function?
   </div>
         </section>
@@ -128,7 +127,7 @@ TeX: {
 
     <ol>
       <li>What are $n$ and $m$ when we write this function in the
-      form $\vec r\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$?</li>
+      form $\vec r\colon {\RR}^n\to {\RR}^m$?</li>
 
       <li>Construct a graph of this function.</li>
 
@@ -140,8 +139,8 @@ TeX: {
     </ol>
   </div>
     <p>Notice in the problem above that we placed a vector symbol
-  above the function name, as in $\vec r\colon {\mathbb{R}}^n\to
-  {\mathbb{R}}^m$. When the target space (codomain) is
+  above the function name, as in $\vec r\colon {\RR}^n\to
+  {\RR}^m$. When the target space (codomain) is
   2-dimensional or larger, we place a vector above the function
   name to remind us that the output is a vector, not just a single number.</p>
 
@@ -164,7 +163,7 @@ TeX: {
 
     <ol>
       <li>What are $n$ and $m$ when we write this function in the
-      form $\vec r\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$?</li>
+      form $\vec r\colon {\RR}^n\to {\RR}^m$?</li>
 
       <li>At what time does the pebble hit the ground (the height
       reaches zero)? Construct a graph of the pebble's path from
@@ -188,7 +187,7 @@ TeX: {
   </div>
 
   <p>In the next problem, we keep the input as just a single
-  number $t$, but the output is now a vector in $\mathbb{R}^3$.</p>
+  number $t$, but the output is now a vector in $\RR^3$.</p>
 
   <div class="problem" id="jet-intro-for-space-curves">
     <div class="marginpar">
@@ -206,7 +205,7 @@ TeX: {
 
     <ol>
       <li>What are $n$ and $m$ when we write this function in the
-      form $\vec r\colon {\mathbb{R}}^n\to {\mathbb{R}}^m$?</li>
+      form $\vec r\colon {\RR}^n\to {\RR}^m$?</li>
 
       <li>Construct a graph of this function by picking several
       values of $t$ and plotting the resulting points $(2\cos t,
@@ -248,6 +247,8 @@ TeX: {
       $t=\pi/2$.</li>
     </ol>
   </div>
+    <p>Here's an interesting <a href="http://www.wolframalpha.com/input/?i=thor+curve">parametric curve</a> drawing a cartoon character.  You can see that they can get pretty complicated.</p>
+    
 </section>
     <section><h1>Parametric Surfaces: $\vec f\colon \RR^2 \to \RR^3$</h1>
         
@@ -279,7 +280,7 @@ TeX: {
     <ol>
       <li>What are $n$ and $m$ when we write the function $\vec
       r(a,t)=(a\cos t, a\sin t, t)$ in the form $\vec r\colon
-      {\mathbb{R}}^n\to {\mathbb{R}}^m$?</li>
+      {\RR}^n\to {\RR}^m$?</li>
 
       <li>Start by graphing the position of the three jets $\vec
       r(2,t)=(2\cos t, 2\sin t, t)$, $\vec r(3,t)=(3\cos t, 3\sin
@@ -321,8 +322,8 @@ TeX: {
   \RR$</h1>
         
   <p>In this section we'll focus on functions of the form
-  $f\colon \mathbb{R}^2\to\mathbb{R}^1$ and $f\colon
-  \mathbb{R}^3\to\mathbb{R}^1$; we'll keep the output as a real
+  $f\colon \RR^2\to\RR^1$ and $f\colon
+  \RR^3\to\RR^1$; we'll keep the output as a real
   number. In the next problem, you should notice that the input is
   a vector $(x,y)$ and the output is a number $z$. There are two
   ways to graph functions of this type. The next two problems show
@@ -463,7 +464,7 @@ TeX: {
   or we could reduce the dimension by 1 and construct a 2D contour
   plot by letting the output $z$ equal various constants. The next
   function is of the form $w=f(x,y,z)$, so it has 3 inputs and 1
-  output. We could write $f\colon \mathbb{R}^3\to\mathbb{R}^1$. We
+  output. We could write $f\colon \RR^3\to\RR^1$. We
   would need 4 dimensions to graph this function, but graphing in
   4D is not an easy task. Instead, we'll reduce the dimension and
   create plots in 3D to describe the level surfaces of the
@@ -598,36 +599,11 @@ TeX: {
         <div class=""><section>
   <h1>Vector Fields: $\vec f\colon
   \RR^n\to\RR^n$</h1>
-        <p>We've covered the following types of functions
-  in the problems above.</p>
-
-  <ul>
-    <li>$y=f(x)$ or $f\colon \mathbb{R}\to\mathbb{R}$ (functions of
-    a single variable)</li>
-
-    <li>$\vec r(t)=(x,y)$ or $f\colon \mathbb{R}\to\mathbb{R}^2$
-    (parametric curves)</li>
-
-    <li>$\vec r(t)=(x,y,z)$ or $f\colon \mathbb{R}\to\mathbb{R}^3$
-    (space curves)</li>
-
-    <li>$\vec r(u,v)=(x,y,z)$ or $f\colon
-    \mathbb{R}^2\to\mathbb{R}^3$ (parametric surfaces)</li>
-
-    <li>$z=f(x,y)$ or $f\colon \mathbb{R}^2\to\mathbb{R}$
-    (functions of two variables)</li>
-
-    <li>$z=f(x,y,z)$ or $f\colon \mathbb{R}^3\to\mathbb{R}$
-    (functions of three variables)</li>
-  </ul>
-        <p>This section We will consider functions from $\mathbb{R}^2$
-  to $\mathbb{R}^2$ and functions from $\mathbb{R}^3$ to
-  $\mathbb{R}^3$. Depending on the application, we may view these
-  functions as either transformations of 2D or 3D space, or we may
-  view them as vector fields in the plane or space.</p>
-
+        <p>Now let's consider functions from $\RR^2$
+  to $\RR^2$ and functions from $\RR^3$ to
+  $\RR^3$. Depending on the application, we may view these
+  functions as either vector fields or transformations of 2d or 3d space.  We'll study vector fields in this section and transformations in the next chapter.</p>
   
-  <section><h1>Vector Fields</h1>
         <p>A vector field $\vec F(x,y)=(M,N)$ is
   visualized by putting the vector $(M,N)$ at the point $(x,y)$, so
   you end up with a picture with a lot of vectors. These are often
@@ -643,20 +619,13 @@ TeX: {
   in an asthetic and effective way is a tough challenge.</p>
 
   <div class="problem">
-    %
-
     <div class="marginpar">
       See <a href=
       "https://sagecell.sagemath.org/?z=eJxz06jQqdRUsFXQMNKq0K7UqdA20qrU5CrIyS-JL0tNLskvik_LTM1J0XDTUQAq1TU00DE00ASyK2FsTQCKaxIN">
       Sage</a> or <a href="http://wolfr.am/y4gIgX" data-uri="http://www.wolframalpha.com/input/?i=plot+a+vector+field&amp;f1={2x%2By%2Cx%2B2y}&amp;x=6&amp;y=7&amp;f=VectorPlot.vectorfunction_{2x%2By%2Cx%2B2y}&amp;f2=x&amp;f=VectorPlot.vectorplotvariable1_x&amp;f3=-10&amp;f=VectorPlot.vectorplotlowerrange1_-10&amp;f4=10&amp;f=VectorPlot.vectorplotupperrange1_10&amp;f5=y&amp;f=VectorPlot.vectorplotvariable2_y&amp;f6=-10&amp;f=VectorPlot.vectorplotlowerrange2_-10&amp;">Wolfram
       Alpha</a>. 
-      The computer will shrink the largest vector down in size so
-      it does not overlap any of the others, and then reduce the
-      size of all the vectors accordingly. <span class="bmw">See
+      The computer shrinks the vectors by the same amount so they don't overlap. <span class="bmw">See
       16.2: 39-44 for more practice.</span>
-    </div>%
-
-    <div class="marginpar">
       <span class="larsonfive">See Larson 15.1:1&ndash;19.</span>
     </div>
       
@@ -679,40 +648,84 @@ TeX: {
 
   <div class="problem" label="Spin field">
     <div class="marginpar">
-      Change the Sage code in the link above to get the computer to
-      plot this to check your work. <span class="bmw">See 16.2:
+      Change the Sage code in the link in the last problem to check your work. <span class="bmw">See 16.2:
       39-44 for more practice.</span>
-    </div>%
-
+    </div>
     <div class="marginpar">
       <span class="larsonfive">See Larson 15.1:1&ndash;19.</span>
-    </div>% Consider the vector field $\vec F(x,y)=(-y,x)$.
+    </div>
+      Consider the vector field $\vec F(x,y)=(-y,x)$.
     Construct a graph of this vector field. Remember, the key to
-    plotting a vector field is &#8220;at the point $(x,y)$, draw
-    the vector $\vec F(x,y)$ with its base at $(x,y)$.&amp;rdqou;
+    plotting a vector field is: at the point $(x,y)$, draw
+    the vector $\vec F(x,y)$ with its base at $(x,y)$.
     Plot at least 8 vectors (a few in each quadrant), so we can see
     what this field is doing.
   </div>
 
-  <div class="note">
-    Talk about vector field visualization, mention line integral
-    convolutions and streamline plots. Show Sage or mathematica
-    doing these sorts of plots.
-  </div>
+  <p>Ask me in class about other ways to visualize 2d vector fields, like streamline plots.</p>
 
-  <div class="marginpar">
-    See <a href=
-    "https://sagecell.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs">
-    Sage</a>.
-  </div>We can also visualize 3d vector fields like $\vec
-  F(x,y,z)=(y,z,x)$.
+We can also visualize 3d vector fields like $\vec
+  F(x,y,z)=(y,z,x)$ by plotting a grid of 3d vectors in $\RR^3$.  Here's an example.
+<div class="sage"><script type="application/x-sage">
+F(x,y,z) = (y,z,x)
+plot_vector_field3d(F, (x,-3,3), (y,-3,3),(z,-3,3))
+</script></div>
 
-  <div class="note">
-    use 3d glasses and Sage/JMol's ability to render for 3d glasses
-    to \emph{really} see this vector field!
+            
+  <p>How do we get the equation of a vector field from a description of what the field does?  The following problem will help you
+  develop the gravitational vector field.</p>
+
+  <div class="problem" label="Radial fields">
+    <div class="marginpar">
+      Use <a href=
+      "https://sagecell.sagemath.org/?z=eJxz06jQqdSp0lSwVdAA0joVmlwFOfkl8WWpySX5RfFpmak5KcYpGm46CkCFusY6xpo6IIUQlkYVhKEJAOGFExs">
+      Sage</a> to plot your vector fields. <span class="bmw">See
+      16.2: 39-44 for more practice.</span> <span class="larsonfive">See Larson 15.1:1&ndash;19.</span>
+
+    </div>
+     Do the following:
+
+    <ol>
+      <li>Let $P=(x,y,z)$ be a point in space. At the point $P$,
+      let $\vec F(x,y,z)$ be the vector which points from $P$ to
+      the origin. Give a formula for $\vec F(x,y,z)$.</li>
+
+      <li>Give an equation of the vector field where at each point
+      $P$ in the plane, the vector $\vec F_2(P)$ is a unit vector
+      that points towards the origin.</li>
+
+      <li>Give an equation of the vector field where at each point
+      $P$ in the plane, the vector $\vec F_3(P)$ is a vector of
+      length 7 that points towards the origin.</li>
+
+      <li>Give an equation of the vector field where at each point
+      $P$ in the plane, the vector $\vec G(P)$ points towards the
+      origin, and has a magnitude equal to $1/d^2$ where $d$ is the
+      distance to the origin.</li>
+    </ol>
   </div>
+            
+            
+            
   </section>
-  </div>
+<section><h1>Summary</h1>
+                    <p>We've covered the following types of functions
+  in the problems above.</p>
+<table>
+    <tr><th>Domain/Range</th><th>Example</th><th>Description</th></tr>
+    <tr><td>$f\colon \RR\to\RR$</td><td>$y=f(x)$</td><td>single-variable function, like in calculus 1</td></tr>
+    <tr><td>$f\colon \RR\to\RR^2$</td><td>$\vec r(t)=(x,y)$</td><td>2D parametric curves</td></tr>
+    <tr><td>$f\colon \RR\to\RR^3$</td><td>$\vec r(t)=(x,y,z)$</td><td>3D parametric curves</td></tr>
+    <tr><td>$f\colon
+    \RR^2\to\RR^3$</td><td>$\vec r(u,v)=(x,y,z)$</td><td>parametric surfaces</td></tr>
+    <tr><td>$f\colon \RR^2\to\RR$</td><td>$z=f(x,y)$</td><td>functions of two variables</td></tr>
+    <tr><td>$f\colon \RR^3\to\RR$</td><td>$w=f(x,y,z)$</td><td>functions of three variables</td></tr>
+    <tr><td>$\vec F\colon \RR^2\to\RR^2$</td><td>$\vec F(x,y)=(u,v)$</td><td>2D vector fields</td></tr>
+    <tr><td>$\vec F\colon \RR^3\to\RR^3$</td><td>$\vec F(x,y,z)=(u,v,w)$</td><td>3D vector fields</td></tr>
+    </table>            
+            </section>
+            
+            </div>
 </section>
 </body>
 </html>
