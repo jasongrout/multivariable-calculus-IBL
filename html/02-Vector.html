@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Vectors and Lines</title>
+<!-- boilerplate -->
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 TeX: {
@@ -11,25 +12,22 @@ TeX: {
       jj: "\\vec \\jmath",
       kk: "\\vec k",
       ds: "\\displaystyle",
-      cl: ["\\begin{matrix} #1 \\end{matrix}",1]
+      cl: ["\\begin{matrix} #1 \\end{matrix}",1],
+      RR: "\\mathbb{R}"
 }
   },
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 </script>
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="customize.css">
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="customize.css"/>
 <script src="customize.js"></script>
+<!-- /boilerplate -->
 </head>
 
 <body>
-<div>
-<a href="index.html">Return to Table of Contents</a>
-</div>
 <section style="counter-reset: section 2;">
   <h1>Vectors and Lines</h1>
 <p>This unit covers the following ideas. In preparation
@@ -770,7 +768,7 @@ hints=['','','','The answer is $%s$'%latex(u.cross_product(v))]
     illustrating your reasoning.
   </div>
 
-  <div class="problem">
+  <div class="problem note">
     If the statement is true, explain why. If it is false, give a
     counterexample.
 
@@ -783,9 +781,5 @@ hints=['','','','The answer is $%s$'%latex(u.cross_product(v))]
       then is $\vec v = \vec w$ always?</li>
     </ol>
     </section>
-<script>sagecell={loadMathJax: false};</script>
-  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
-<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
-<script>sagecell.makeSagecell({"inputLocation": ".sageminimal", template: sagecell.templates.minimal});</script>
   </body>
 </html>

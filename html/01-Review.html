@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Review</title>
+<!-- boilerplate -->
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 TeX: {
@@ -11,24 +12,21 @@ TeX: {
       jj: "\\vec \\jmath",
       kk: "\\vec k",
       ds: "\\displaystyle",
-      cl: ["\\begin{matrix} #1 \\end{matrix}",1]
+      cl: ["\\begin{matrix} #1 \\end{matrix}",1],
+      RR: "\\mathbb{R}"
 }
   },
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 </script>
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="customize.css">
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="customize.css"/>
 <script src="customize.js"></script>
+<!-- /boilerplate -->
 </head>
 <body>
-<div>
-<a href="index.html">Return to Table of Contents</a>
-</div>
-
 <section style="counter-reset: section 1;">
 <h1>Review</h1>
 
@@ -688,8 +686,5 @@ solve([x+y+z==3, 2*x-y==4,x==t], (x,y,z))
     It allows them to see what differentials do. You can easily see
     how each new piece adds more to the approximation.
   </div>
-<script>sagecell={loadMathJax: false};</script>
-  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
-<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
   </body>
 </html>
