@@ -29,7 +29,7 @@ TeX: {
 <body>
         <section style="counter-reset: section 5;">
         <h1>Transformation Functions</h1>
-  This unit covers the following ideas. In preparation
+<div class="hidden">  This unit covers the following ideas. In preparation
   for the quiz and exam, make sure you have a lesson plan
   containing examples that explain and illustrate the following
   concepts.
@@ -47,9 +47,7 @@ TeX: {
     coordinates.</li>
   </ol>You'll have a chance to teach your examples to your peers
   prior to the exam.
-
-        <section>
-  <h2>Transformations</h2>
+</div>
 
 Coordinate transformations let us view or discuss the plane
   or space in a different way. A 2d transformation $\vec
@@ -61,7 +59,7 @@ Coordinate transformations let us view or discuss the plane
     <div class="marginpar">
       For this problem, you are just drawing many parametric
       curves.
-    </div>%
+    </div>
 
     <div class="marginpar">
       Click <a href=
@@ -69,15 +67,15 @@ Coordinate transformations let us view or discuss the plane
       or <a href=
       "http://artsci.drake.edu/grout/mathbox/examples/polar2.html">here</a>
       for some help visualizing this transformation.
-    </div>%
+    </div>
 
     <div class="marginpar">
-      <span class="larsonfive">See Larson 10.5.</span>
+      <span class="larsonfive">See Larson 10.4.</span>
     </div>
       <p>Consider the coordinate transformation $$\vec
     T(r,\theta) = (r\cos\theta,r\sin\theta).$$ In other words,
     according to $\vec T$, $x=r\cos\theta$ and $y=r\sin\theta$.
-    This is called the \emph{polar coordinate} transformation.</p>
+    This is called the <em>polar coordinate</em> transformation.</p>
 
     <ol>
       <li>Draw two 2D axes, one having horizontal axis $r$ and
@@ -110,7 +108,7 @@ Coordinate transformations let us view or discuss the plane
           "https://sagecell.sagemath.org/?z=eJxljM0KwkAMhO99iqGnZA1Y_DnuW_QuSykY0DZk8_5YXNGCt_n5ZkZyifschTN5mtZKzQk8VV0-jjtzXQL9SJ7PDK29oOlf80az6fHyBXZRZ8XLcw7X6WaPNajNBQ0SDIJTMmXGAf_s7mmbuAxyZX4Bxl853w==&amp;lang=sage">
           Sage</a>. Notice that you can add two plots together to
           draw them both.
-        </div>% Plot the line segment $\theta=\pi/4$ (for
+        </div> Plot the line segment $\theta=\pi/4$ (for
         $r\in[0,5]$) on the $(r,\theta)$ axes. Plot the
         corresponding points on the $(x,y)$ axes by letting
         $\theta=\frac{\pi}{4}$ and then, on the same axes as above,
@@ -120,44 +118,42 @@ Coordinate transformations let us view or discuss the plane
       </li>
 
       <li>
-        <div class="marginpar">
-          Use Sage to check your answer.
-        </div>To the same axes as above, add the graphs of $\vec
-        T(1,\theta), \vec T(2,\theta), \vec T(4,\theta)$ for
-        $\theta\in[0,2\pi]$ and $\vec T(r,0), \vec T(r,\pi/2), \vec
-        T(r,3\pi/4), \vec T(r,\pi)$ for $r\in[0,5]$.
+        <span class="marginpar">Use Sage to check your answer.</span>
+        Add to the $(r,\theta)$ axes the plots of $r=1$, $r=2$, $r=3$, and $r=4$ for $\theta\in [0,2\pi]$ and the plots of $\theta=0$, $\theta=\pi/2$, $\theta=3\pi/4$, and $\theta=\pi$ for $r\in[0,5]$.  Add the corresponding plots to the $(x,y)$ axes.
       </li>
     </ol>
-  </div>In the previous problem, you saw how we can think of 2D
+  </div>
+            
+  <p>In the previous problem, you saw how we can think of 2D
   transformations as mapping the points of one plane onto another.
   Another way of thinking about transformations is to view them as
   giving additional coordinates to points on the plane, i.e., if
   $\vec T(u,v)=(x,y)$, then the point $(x,y)$ also can be called
   the point $(u,v)$ in the coordinate system associated with $\vec
   T$. The next problem investigates this way of thinking about
-  transformations.
+  transformations.</p>
 
   <div class="problem">
     <div class="marginpar">
       <span class="larsonfive">See Larson 10.4.</span>
-    </div>% The transformation $\vec T(r,\theta) =
-    (r\cos\theta,r\sin\theta)$ is called the \emph{polar
-    coordinate} transformation. We will use this transformation to
+    </div> The transformation $\vec T(r,\theta) =
+    (r\cos\theta,r\sin\theta)$ is called the <em>polar
+    coordinate</em> transformation. We will use this transformation to
     answer the following questions.
 
     <ol>
       <li>$\vec T(2,\pi/6)=(a,b)$. What is $(a,b)$? Draw the vector
-      $(a,b)$, starting at the origin.</li>
+      $(a,b)$ on the $(x,y)$ axes, starting at the origin.</li>
 
       <li>Show that the length of the vector $(a,b)$ is 2. This is
-      the &#8220;radius&amp;rdqou; of the point $(a,b)$.</li>
+      the &ldquo;radius&rdquo; of the point $(a,b)$.</li>
 
       <li>Show that the angle between the positive $x$-axis and the
       vector $(a,b)$ is $\pi/6$. This angle is called the azimuth
       angle.</li>
 
       <li>Show that if $\vec T(r,\theta)=(x,y)$, then the
-      &#8220;radius&amp;rdqou; of the point $(x,y)$ is $r$.</li>
+      &ldquo;radius&rdquo; of the point $(x,y)$ is $r$.</li>
 
       <li>Show that if $\vec T(r,\theta)=(x,y)$, then the azimuth
       angle of the vector $(x,y)$ is $\theta$.</li>
@@ -186,7 +182,7 @@ Coordinate transformations let us view or discuss the plane
           See <a href=
           "https://sagecell.sagemath.org/?z=eJwti7sKwCAMAHe_IjglkqHY2b9wbgkiJVAfqP9PB7vdHVxE4VbyIxRQXGoTtzHI5d3U-juZPrQusBElnAQ6LcNm02VIyWtouvvbFu7MsFeGg8G7rkQfMv4giA">
           Sage</a>.
-        </div>% Let $a=3$; graph the curve $\vec
+        </div> Let $a=3$; graph the curve $\vec
         T(3,\omega)=(3\cos\omega,9\sin\omega)$ for
         $\omega\in[0,2\pi]$.
       </li>
@@ -194,7 +190,7 @@ Coordinate transformations let us view or discuss the plane
       <li>
         <div class="marginpar">
           Use Sage to check your answer.
-        </div>% Let $\omega =\frac{\pi}{4}$ and then, on the same
+        </div> Let $\omega =\frac{\pi}{4}$ and then, on the same
         axes as above, add the graph of $\vec
         T\left(a,\frac{\pi}{4}\right)=\left(a\frac{\sqrt 2}{2},a^2
         \frac{\sqrt 2}{2}\right)$ for $a\in[0,4]$.
@@ -212,34 +208,27 @@ Coordinate transformations let us view or discuss the plane
     parabolas and ellipses.]
   </div>In 3 dimensions, the most common coordinate systems are
   cylindrical and spherical. The equations for these coordinate
-  systems are in the table below.
-
-  <div class="center">
-    <div class="tabular">
-      {cc} Cylindrical Coordinates &amp; Spherical Coordinates\\
-      \hline $
-
-      <div class="array">
-        {l} x=r\cos\theta\\ y=r\sin\theta\\ z=z
-      </div>$ &amp; $
-
-      <div class="array">
-        {l} x=\rho\sin\phi\cos\theta\\ y=\rho\sin\phi\sin\theta\\
-        z=\rho\cos\phi
-      </div>$
-    </div>
-  </div>
+  systems are:
+            
+        <ul>
+            <li>Cylindrical Coordinates: $x=r\cos\theta,\, y=r\sin\theta,\, z=z$
+            </li>
+            
+<li>Spherical Coordinates: $x=\rho\sin\phi\cos\theta,\, y=\rho\sin\phi\sin\theta,\,
+        z=\rho\cos\phi$
+            </li></ul>
 
   <div class="problem">
-    \marginparbmw{See page 893.}
 
     <div class="marginpar">
+        <span class="bmw">\marginparbmw{See page 893.}</span>
       <span class="larsonfive">See Larson 11.7.</span>
     </div>
-
     <div class="marginpar">
-      \includegraphics[width=.8in]{images/cylindricalcoords}
-    </div>Let $P=(x,y,z)$ be a point in space. This point lies on a
+      <img src="images/cylindricalcoords.svg" width="150px"/>
+    </div>
+
+    Let $P=(x,y,z)$ be a point in space. This point lies on a
     cylinder of radius $r$, where the cylinder has the $z$ axis as
     its axis of symmetry. The height of the point is $z$ units up
     from the $xy$ plane. The point casts a shadow in the $xy$ plane
@@ -263,22 +252,23 @@ Coordinate transformations let us view or discuss the plane
   </div>
 
   <div class="problem">
-    \marginparbmw{See page 897.}
+      <div class="bmw">\marginparbmw{See page 897.}</div>
 
     <div class="marginpar">
       <span class="larsonfive">See Larson 11.7.</span>
     </div>
-
     <div class="marginpar">
-      \includegraphics[width=1in]{images/sphericalcoords}
-    </div>\label{derive spherical coordinates}% Let $P=(x,y,z)$ be
+      <img src="images/sphericalcoords.svg" width="150px"/>
+    </div>
+
+    Let $P=(x,y,z)$ be
     a point in space. This point lies on a sphere of radius $\rho$
-    (&#8220;rho&amp;rdqou;), where the sphere's center is at the
+    (&ldquo;rho&rdquo;), where the sphere's center is at the
     origin $O=(0,0,0)$. The point casts a shadow in the $xy$ plane
     at $Q=(x,y,0)$. The angle between the ray $\vec{OQ}$ and the
     $x$-axis is $\theta$, and is called the azimuth angle. The
     angle between the ray $\vec{OP}$ and the $z$ axis is $\phi$
-    (&#8220;phi&amp;rdqou;), and is called the inclination angle,
+    ("phi"), and is called the inclination angle,
     polar angle, or zenith angle.
 
     <ol>
@@ -306,24 +296,24 @@ Coordinate transformations let us view or discuss the plane
     or <a href=
     "http://mathworld.wolfram.com/SphericalCoordinates.html">MathWorld</a>
     for a discussion of conventions in different disciplines.
-  </div>% There is some disagreement between different fields about
+  </div> 
+            
+<p>There is some disagreement between different fields about
   the notation for spherical coordinates. In some fields (like
   physics), $\phi$ represents the azimuth angle and $\theta$
   represents the inclination angle. In some fields, like geography,
-  instead of the inclination angle, the \emph{elevation} angle is
-  given&mdash;the angle from the $xy$-plane (lines of lattitude are
+  instead of the inclination angle, the <em>elevation</em> angle is
+  given&mdash;the angle from the $xy$-plane (for example, lines of lattitude are
   from the elevation angle). Additionally, sometimes the
   coordinates are written in a different order. You should always
   check the notation for spherical coordinates before communicating
-  using them.
+  using them.</p>
 
-  <div class="problem">
-    \label{graphing spherical coordinates}%
-
+  <div class="problem" id="graphing-spherical-coordinates">
     <div class="marginpar">
       <span class="larsonfive">See Larson 11.7:89&ndash;94,
       111&ndash;114.</span>
-    </div>% Consider the spherical coordinates transformation
+    </div>Consider the spherical coordinates transformation
     <span class="bmw">$$\vec
     T(\rho,\phi,\theta)=(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi),$$</span>
     <span class="larsonfive">$$\vec
@@ -331,32 +321,28 @@ Coordinate transformations let us view or discuss the plane
     Graphing this transformation requires $3+3=6$ dimensions. In
     this problem we'll construct parts of this graph by graphing
     various surfaces. We did something similar for the polar
-    coordinate transformation in problem <a href=
-    "#polar-coordinate-transformation-graph">TODO</a>.
-
+    coordinate transformation already in <a href=
+    "#polar-coordinate-transformation-graph">this problem</a>.
     <ol>
-      <li>%
-
+      <li>
         <div class="marginpar">
           See <a href=
           "https://sagecell.sagemath.org/?z=eJxVjsEKhDAMRO9-xeCpKTmId__C-1JEaEBtaPP_bLMirLe8ecOQNdRcGJqFYXm3RFjgWWxyhR5T3EoLt2K8hB__wosuaNAql2FcfWiZCdJGxkODpprO3apsHz2KhUcw7jnGxJijiie_zzp3oi_jZjWn">
           Sage</a> or <a href=
           "http://www.wolframalpha.com/input/?i=parametric+plot+3d+/%282+sin+phi+cos+theta/%2C+2+sin+phi+sin+theta/%2C+2+cos+phi/%29">
           Wolfram Alpha</a>.
-        </div>% Graph the surface $T(2,\theta,\phi)$ (in other
+        </div> Graph the surface $T(2,\theta,\phi)$ (in other
         words, the surface $\rho=2$) where $\theta\in [0,2\pi]$,
         $\phi\in [0,\pi]$.
       </li>
-
-      <li>%
-
+      <li>
         <div class="marginpar">
           See <a href=
           "https://sagecell.sagemath.org/?z=eJxVjrEKwzAMRPd8xZHJMioNTdf8RfZiQsCCNha2_p9WyeJuuveOQ2uouTA0C8PybomwwFlscoQfpriVFi7F-BN-9MKLLmjQKodhXD0uKvcnQdrI6MCgqabPblW2l76Lhc4xrl3GxHhEFSfnn7eZMRN9AfBbOD8">
           Sage</a> or <a href=
           "http://www.wolframalpha.com/input/?i=parametric+plot+3d+/%28rho+sin+/%28pi/%2F4/%29+cos+theta/%2C+rho+sin+/%28pi/%2F4/%29+sin+theta/%2C+rho+cos+/%28pi/%2F4/%29/%29+">
           Wolfram Alpha</a>.
-        </div>% Graph $T(\rho,\theta,\pi/4)$ for $\rho\geq 0$,
+        </div> Graph $T(\rho,\theta,\pi/4)$ for $\rho\geq 0$,
         $\theta\in [0,2\pi]$ (in other words, all points where
         $\phi=\pi/4$). What happens if $\rho$ can be negative
         (i.e., $\rho\in\mathbb{R}$)?
@@ -372,13 +358,9 @@ Coordinate transformations let us view or discuss the plane
     </ol>
   </div>
 
-  <div class="note">
-    Take a good look at whether we want to just incorporate these
-    problems into the material above...
-  </div>
 </section><section>
-  <h1>Constructing Functions</h1>
-If someone gives us parametric equations for a curve in the
+  <h1>Using Transformations</h1>
+<p>In many of the problems above, we were If someone gives us parametric equations for a curve in the
   plane, we know how to draw the curve. How do we obtain parametric
   equations of a given curve? In problem <a href=
   "#parametric-curve-in-plane-example">TODO</a>, we were
@@ -388,7 +370,7 @@ If someone gives us parametric equations for a curve in the
   written a Cartesian equation for the path. How do we work this in
   reverse, namely if we had only been given the ellipse
   $\ds\frac{x^2}{4}+\frac{y^2}{9}=1$, could we have obtained
-  parametric equations $\vec r(t)=(x(t),y(t))$ for the curve?
+  parametric equations $\vec r(t)=(x(t),y(t))$ for the curve?</p>
 
   <div class="problem">
     \label{parameterizing plane curves}
@@ -621,7 +603,6 @@ If someone gives us parametric equations for a curve in the
     -x+1)}{\sqrt{(x+y)^2+(1-x)^2}}.$$
   </div>
 
-  </section>
   </section>
 <section>
 
