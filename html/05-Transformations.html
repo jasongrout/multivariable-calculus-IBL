@@ -49,11 +49,12 @@ TeX: {
   prior to the exam.
 </div>
 
-Coordinate transformations let us view or discuss the plane
+            <section><h1>Transformations of $\RR^2$</h1>
+<p>Coordinate transformations let us view or discuss the plane
   or space in a different way. A 2d transformation $\vec
   T(u,v)=(x,y)$ tells us how to transform a $(u,v)$ axes into an
   $(x,y)$ axes&mdash;the two outputs of $\vec T$ are considered the $x$
-  and $y$ coordinates corresponding to the inputs $u$ and $v$.
+  and $y$ coordinates corresponding to the inputs $u$ and $v$.</p>
 
   <div class="problem" id="polar-coordinate-transformation-graph">
     <div class="marginpar">
@@ -206,7 +207,12 @@ Coordinate transformations let us view or discuss the plane
       </li>
     </ol>[Hint: when you're done, you should have a bunch of
     parabolas and ellipses.]
-  </div>In 3 dimensions, the most common coordinate systems are
+  </div>
+            
+</section><section>
+    <h1>Transformations of $\RR^3$</h1>
+            
+            In 3 dimensions, the most common coordinate systems are
   cylindrical and spherical. The equations for these coordinate
   systems are:
             
@@ -224,9 +230,6 @@ Coordinate transformations let us view or discuss the plane
         <span class="bmw">\marginparbmw{See page 893.}</span>
       <span class="larsonfive">See Larson 11.7.</span>
     </div>
-    <div class="marginpar">
-      <img src="images/cylindricalcoords.svg" width="150px"/>
-    </div>
 
     Let $P=(x,y,z)$ be a point in space. This point lies on a
     cylinder of radius $r$, where the cylinder has the $z$ axis as
@@ -235,7 +238,8 @@ Coordinate transformations let us view or discuss the plane
     at $Q=(x,y,0)$. The angle between the ray $\vec{OQ}$ and the
     $x$-axis is $\theta$.
 
-    <ol>
+<p><img src="images/cylindricalcoords.svg" width="300px"/></p>
+      <ol>
       <li>Explain why $x=r\cos\theta$, $y=r\sin\theta$, and
       $z=z$.</li>
 
@@ -257,10 +261,6 @@ Coordinate transformations let us view or discuss the plane
     <div class="marginpar">
       <span class="larsonfive">See Larson 11.7.</span>
     </div>
-    <div class="marginpar">
-      <img src="images/sphericalcoords.svg" width="150px"/>
-    </div>
-
     Let $P=(x,y,z)$ be
     a point in space. This point lies on a sphere of radius $\rho$
     (&ldquo;rho&rdquo;), where the sphere's center is at the
@@ -270,6 +270,8 @@ Coordinate transformations let us view or discuss the plane
     angle between the ray $\vec{OP}$ and the $z$ axis is $\phi$
     ("phi"), and is called the inclination angle,
     polar angle, or zenith angle.
+
+      <p><img src="images/sphericalcoords.svg" width="300px"/></p>
 
     <ol>
       <li>Explain why $x=\rho\sin\phi\cos\theta$,
@@ -359,107 +361,26 @@ Coordinate transformations let us view or discuss the plane
   </div>
 
 </section><section>
-  <h1>Using Transformations</h1>
-<p>In many of the problems above, we were If someone gives us parametric equations for a curve in the
-  plane, we know how to draw the curve. How do we obtain parametric
-  equations of a given curve? In problem <a href=
-  "#parametric-curve-in-plane-example">TODO</a>, we were
-  given the parametric equation for the path of a horse, namely
-  $x=2\cos t, y=3 \sin t$ or $\vec r(t)=(2\cos t,3\sin t)$. From
-  those equations, we drew the path of the horse, and could have
-  written a Cartesian equation for the path. How do we work this in
-  reverse, namely if we had only been given the ellipse
-  $\ds\frac{x^2}{4}+\frac{y^2}{9}=1$, could we have obtained
-  parametric equations $\vec r(t)=(x(t),y(t))$ for the curve?</p>
-
-  <div class="problem">
-    \label{parameterizing plane curves}
-
-    <div class="marginpar">
-      Use <a href=
-      "https://sagecell.sagemath.org/?z=eJwrsS1LLNJQL1HX5CpILErMTS0pykyOL8jJL9GINtJKzi_WKNHUUTDWKs7MA7JidRQ0SnQMdIy0CjI1NQFWdRJT">
-      Sage</a> or <a href="http://wolfr.am/wAkR8l">Wolfram
-      Alpha</a>
-      %http://www.wolframalpha.com/input/?i=parametric+plot+%282+cos+t,+3+sin+t%29
-      to visualize your parameterizations.
-    </div>% Give a parametrization of the top half of the ellipse
-    $\ds\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$, so $y\geq 0$. You can
-    write your parametrization in the vector form $\vec
-    r(t)=(?,?)$, or in the parametric form $x=?,\ y=?$. Include
-    bounds for $t$. [Hint: Review <a href=
-    "#parametric-curve-in-plane-example">TODO</a>.]
-  </div>
-
-  <div class="problem">
-    Give a parametrization of the straight line from $(a,0)$ to
-    $(0,b)$. You can write your parametrization in the vector form
-    $\vec r(t)=(?,?)$, or in the parametric form $x=?,\ y=?$.
-    Remember to include bounds for $t$. [Hint: Review <a href=
-    "#first-line-between-two-points">TODO</a> and <a href=
-    "#line-equation-to-refer-to">TODO</a>.]
-  </div>
-
-  <div class="problem">
-    Give a parametrization of the parabola $y=x^2$ from $(-1,1)$ to
-    $(2,4)$. Remember the bounds for $t$.
-  </div>
-
-  <div class="problem">
-    Give a parametrization of the function $y=f(x)$ for
-    $x\in[a,b]$. You can write your parametrization in the vector
-    form $\vec r(t)=(?,?)$, or in the parametric form $x=?,\ y=?$.
-    Include bounds for $t$.
-  </div>
-
-
-  <div class="note">
-    Idea. They did the problem below already when drawing spherical
-    coordinates. They already practiced removing a variable. I
-    somehow need to make that connect to this part. How to do it,
-      I'm not sure. Think about it, and try something different next
-    time.
-  </div>
-
-  <p>If someone gives us parametric equations for a surface, we
-  can draw the surface. This is what we did in problems <a href=
-  "#parametric-surface-example">TODO</a> and <a href=
-  "#second-parametric-surface-example">TODO</a>. How do we
-  work backwards and obtain parametric equations for a given
-  surface? This requires that we write an equation for $x$, $y$,
-  and $z$ in terms of two input variables (see <a href=
-  "#parametric-surface-example">TODO</a> and <a href=
-  "#second-parametric-surface-example">TODO</a> for
-  examples). In vector form, we need a function $\vec r\colon
-  \mathbb{R}^2\to\mathbb{R}^3$. We can often use a coordinate
-  transformation $\vec T\colon \mathbb{R}^3\to\mathbb{R}^3$ to
-  obtain a parametrization of a surface. The next three problems
-  show how to do this.</p>
-
-  <div class="problem">
-    \label{3d parametric plot}
-
+  <h1>Transformation Functions and Parametric Surfaces</h1>
+  <p>We saw in <a href="#graphing-spherical-coordinates">this problem</a> that if we make one of the input variables a constant in a transformation function, we get a surface.  We can use this idea to find parametric equations for a given surface.</p>
+      <p>For example, in a problem above, $T$ was the spherical coordinate transformation, and we set $\rho=2$: $T(2, \theta, \phi)=(2\sin\phi\cos\theta,\,2\sin\phi\sin\theta,\,2\cos\phi)$ to get a sphere of radius 2.  Since we were eliminating one of the input variables by setting it to be a number, we could have written this same function as $\vec q(\theta,\phi)=(2\sin\phi\cos\theta,\,2\sin\phi\sin\theta,\,2\cos\phi)$.  This function $\vec q\colon \RR^2\to\RR^3$ is then a parametric equation for a sphere of radius 2.</p>
+  <div class="hidden problem" id="parametric-plot-3d">
     <div class="marginpar">
       Use <a href=
       "https://sagecell.sagemath.org/?z=eJwL0ajQqdSp0lSwVYCyuAqKMvNKFJRCNKpsK7QrNRUyi5V0FGA8roLEosTc1JKizOT4gpz8Eg2YhA5Iv66xjjGIVQlhaQIALhka5w">
-      Sage</a> or <a href="http://wolfr.am/zk2KTu">Wolfram
+      Sage</a> or <a href="http://www.wolframalpha.com/input/?i=parametric+plot+3d+%28x%2Cy%2Cx%2By%29">Wolfram
       Alpha</a>
-      %http://www.wolframalpha.com/input/?i=parametric+plot+3d+%28x%2Cy%2Cx%2By%29
       to plot your parametrization. <span class="bmw">See 16.5:
       1-16 for more practice.</span>
-    </div>%
-
-    <div class="marginpar">
       <span class="larsonfive">See Larson 15.5:21&ndash;30 and 15.5,
       Example 3.</span>
-    </div>% Consider the surface $z=9-x^2-y^2$ plotted in problem
+    </div>
+Consider the surface $z=9-x^2-y^2$ plotted in
     <a href=
-    "#surface-graph-for-a-function-of-two-variables">TODO</a>.
+    "#surface-graph-for-a-function-of-two-variables">this problem</a>.  We'll use the rectangular coordinate transformation $\vec T(x,y,z)=(x,y,z)$ (this transformation does nothing to 3d space).
 
-    <ol>
-      <li>Using the rectangular coordinate transformation $\vec
-      T(x,y,z)=(x,y,z)$, give a parametrization $\vec r\colon
-      \mathbb{R}^2\to\mathbb{R}^3$ of the surface. This is the same
-      as saying $$x=x, y=y, z=?.$$ [Hint: Use the surface equation
+    <ol><li>We're trying to find a parametric equation $\vec r(x,y)=(?,?,?)$ for this surface.  If we set the input variable $z$ in $\vec T$, we can  give a parametrization $\vec r\colon
+      \mathbb{R}^2\to\mathbb{R}^3$ of the surface. In other words, $\vec r(x,y)=(x,y,?)$ so that the parametric surface $\vec r$ is the surface $z=9-x^2-y^2$? [Hint: Use the surface equation
       to eliminate the input variable $z$ in $T$.]</li>
 
       <li>What bounds must you place on $x$ and $y$ to obtain the
@@ -471,115 +392,97 @@ Coordinate transformations let us view or discuss the plane
     </ol>
   </div>
 
-  <div class="problem">
-    %
 
+  <div class="problem">
+    <div class="marginpar">
+      We did very similar things in <a href=
+      "#graphing-spherical-coordinates">this problem</a>.
+    </div>
+
+    <div class="marginpar">
+      <span class="bmw">See 16.5: 1-16 for more practice.</span>
+      <span class="larsonfive">See Larson 15.5:1&ndash;10</span>
+    </div>
+
+Recall the spherical coordinate transformation
+    <span class="bmw">$$\vec T(\rho,\phi,\theta) =
+    (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos
+    \phi).$$</span>
+      <span class="larsonfive">$$\vec
+    T(\rho,\theta, \phi) = (\rho\sin\phi\cos \theta,
+    \rho\sin\phi\sin \theta,\rho \cos \phi).$$</span>
+    This is a
+    function of the form $\vec T\colon
+    \mathbb{R}^3\to\mathbb{R}^3$. If we eliminate one of the inputs (for example, if we hold it constant), then we have a function of the form $\vec
+    q\colon \mathbb{R}^2\to\mathbb{R}^3$, which is a parametric
+    surface.
+    <ol>
+      <li>
+        <div class="marginpar">
+          Use <a href="https://sagecell.sagemath.org/?z=eJxVjsEKhDAMRO9-xeCpKTmId__C-1JEaEBtaPP_bLMirLe8ecOQNdRcGJqFYXm3RFjgWWxyhR5T3EoLt2K8hB__wosuaNAql2FcfWiZCdJGxkODpprO3apsHz2KhUcw7jnGxJijiie_zzp3oi_jZjWn">Sage</a> or
+          <a href="http://www.wolframalpha.com/">Wolfram Alpha</a>
+          to plot each parametrization.
+        </div>Give a parametrization of the sphere of radius 4, $\vec q(\theta,\phi)=(?,?,?)$.  Make sure your bounds on $\phi$ and $\theta$ hit
+      every point on the sphere.
+      </li>
+      <li>Give a parameterization of the part of the sphere of radius 4 that is above the plane $z=2$.  [Hint: the only thing that changes from the previous part is the bounds on $\phi$ and $\theta$.]</li>
+    </ol>
+  </div>
+  <div class="problem">
     <div class="marginpar">
       Use <a href="https://sagecell.sagemath.org">Sage</a> or
       <a href="http://wolframalpha.com">Wolfram Alpha</a> to plot
-      your parametrization with your bounds (see <a href=
-      "#3d-parametric-plot">TODO</a> for examples).
+      your parametrization with your bounds.
       <span class="bmw">See 16.5: 1-16 for more practice.</span>
-    </div>%
-
-    <div class="marginpar">
-      <span class="larsonfive">See Larson 15.5:1&ndash;10</span>
-    </div>% Again consider the surface $z=9-x^2-y^2$.
+        <span class="larsonfive">See Larson 15.5:1&ndash;10</span>
+    </div>
+Consider the surface $z=9-x^2-y^2$.
 
     <ol>
       <li>Using cylindrical coordinates, $\vec T(r,\theta,z) =
       (r\cos \theta, r\sin\theta, z)$, obtain a parametrization
-      $\vec r(r,\theta)=(?,?,?)$ of the surface using the input
-      variables $r$ and $\theta$. In other words, if we let
-      $x=r\cos \theta, y=r\sin\theta, z=z$, write $z=9-x^2-y^2$ in
-      terms of $r$ and $\theta$.</li>
+      $\vec q(r,\theta)=(?,?,?)$ of the surface using the input
+      variables $r$ and $\theta$.  [Hint: we already know $x=r\cos\theta$ and $y=r\sin\theta$; just write $z=9-x^2-y^2$ in
+      terms of $r$ and $\theta$.]</li>
 
       <li>What bounds must you place on $r$ and $\theta$ to obtain
       the portion of the surface above the plane $z=0$?</li>
     </ol>
   </div>
 
-  <div class="note">
-    probably just delete this next problem, since we did similar
-    things above
-  </div>
-
-  <div class="problem">
-    %
-
-    <div class="marginpar">
-      We did very similar things in problem <a href=
-      "#graphing-spherical-coordinates">TODO</a>.
-    </div>%
-
-    <div class="marginpar">
-      <span class="bmw">See 16.5: 1-16 for more practice.</span>
-    </div>%
-
-    <div class="marginpar">
-      <span class="larsonfive">See Larson 15.5:1&ndash;10</span>
-    </div>% Recall the spherical coordinate transformation
-    <span class="bmw">$$\vec T(\rho,\phi,\theta) =
-    (\rho\sin\phi\cos \theta, \rho\sin\phi\sin \theta,\rho \cos
-    \phi).$$</span> % <span class="larsonfive">$$\vec
-    T(\rho,\theta, \phi) = (\rho\sin\phi\cos \theta,
-    \rho\sin\phi\sin \theta,\rho \cos \phi).$$</span>% This is a
-    function of the form $\vec T\colon
-    \mathbb{R}^3\to\mathbb{R}^3$. If we hold one of the three
-    inputs constant, then we have a function of the form $\vec
-    r\colon \mathbb{R}^2\to\mathbb{R}^3$, which is a parametric
-    surface.
-
-    <ol>
-      <li>
-        <div class="marginpar">
-          Use <a href="https://sagecell.sagemath.org">Sage</a> or
-          <a href="http://www.wolframalpha.com/">Wolfram Alpha</a>
-          to plot each parametrization (see <a href=
-          "#3d-parametric-plot">TODO</a> for examples).
-        </div>% Give a parametrization of the sphere of radius 2,
-        using $\phi$ and $\theta$ as your input variables.
-      </li>
-
-      <li>Give a set of bounds on $\phi$ and $\theta$ that will hit
-      every point on the sphere.</li>
-
-      <li>What bounds should you place on $\phi$ and $\theta$ if
-      you only want the portion of the sphere above the plane
-      $z=1$?</li>
-    </ol>
-  </div>
-        <p>Sometimes you'll have to invent your own coordinate system
+    
+    <p>Sometimes you'll have to invent your own coordinate system
   when constructing parametric equations for a surface. If you
   notice that there are lots of circles parallel to one of the
   coordinate planes, try using a modified version of cylindrical
-  coordinates. Instead of circles in the $xy$ plane
+  coordinates. For example, instead of circles in the $xy$ plane
   ($x=r\cos\theta,y=r\sin\theta,z=z$), maybe you need circles in
-  the $yz$-plane ($x=x,y=r\cos\theta,z=r\sin\theta$) or the $xz$
-  plane. Just look for lots of circles, and then construct your
-  parametrization accordingly.</p>
+  the $yz$-plane ($x=x,y=r\cos\theta,z=r\sin\theta$).</p>
 
   <div class="problem">
     <div class="marginpar">
       <span class="larsonfive">See Larson 15.5:21&ndash;30.</span>
-    </div>% Find parametric equations for the surface $x^2+z^2=9$.
+    </div> 
+    Find a parametric equation $\vec q(?,?)=(?,?,?)$ for the surface $x^2+z^2=9$.
     [Hint: read the paragraph above.]
 
     <ol>
       <li>
         <div class="marginpar">
-          Use <a href="https://sagecell.sagemath.org">Sage</a> or
-          <a href="http://www.wolframalpha.com/">Wolfram Alpha</a>
-          to plot each parametrization (see <a href=
-          "#3d-parametric-plot">TODO</a> for examples).
-        </div>% What bounds should you use to obtain the portion of
+            Use <a href=
+      "https://sagecell.sagemath.org/?z=eJwL0ajQqdSp0lSwVYCyuAqKMvNKFJRCNKpsK7QrNRUyi5V0FGA8roLEosTc1JKizOT4gpz8Eg2YhA5Iv66xjjGIVQlhaQIALhka5w">
+      Sage</a> or <a href="http://www.wolframalpha.com/input/?i=parametric+plot+3d+%28x%2Cy%2Cx%2By%29">Wolfram
+      Alpha</a>
+      to plot your parametrization.
+        </div>
+          What bounds on the inputs should you use to obtain the portion of
         the surface between $y=-2$ and $y=3$?
       </li>
 
-      <li>What bounds should you use to obtain the portion of the
+      <li>What bounds on the inputs should you use to obtain the portion of the
       surface above $z=0$?</li>
 
-      <li>What bounds should you use to obtain the portion of the
+      <li>What bounds on the inputs should you use to obtain the portion of the
       surface with $x\geq 0$ and $y\in[2,5]$?</li>
     </ol>
   </div>
@@ -609,63 +512,73 @@ Coordinate transformations let us view or discuss the plane
   <h1>Polar Coordinates</h1>
 
   <div class="marginpar">
-    <span class="larsonfive">See Larson section 10.4 for more
+    <span class="larsonfive">See Larson section 10.4 and 10.5 for more
     reference material on the things we cover in this
-    chapter.</span>
-  </div>% In the last section, we studied various plane and space
-  transformations. These were viewed as either transforming the
-  plane (stretching, shrinking, folding, etc.), or as a way of
-  giving different labels to the same physical location. In this
-  chapter, we look at the polar coordinate transformation more
-  deeply. Up to now, we most often give the location of a point (or
-  coordiantes of a vector) by stating the $(x,y)$ coordinates.
-  These are called the Cartesian (or rectangular) coordinates. Some
-  problems are much easier to work with if we know how far a point
-  is from the origin, together with the angle between the $x$-axis
-  and a ray from the origin to the point.
+    section.</span>
+  </div>
+    
+      <p>In this section, we'll explore polar coordinates a bit more.  One of the things to take away from this section is that using a natural coordinate system for your problem can make the problem much simpler.</p>
+
+    <p>To construct a graph of a
+  polar curve, just create an $r,\theta$ table. Choose values for
+  $\theta$ that will make it easy to compute any trig functions
+  involved. Then connect the points in a smooth manner, making sure
+  that your radius grows or shrinks appropriately as your angle
+  increases.</p>
 
   <div class="problem">
     <div class="marginpar">
-      <span class="bmw">See 11.3:5-10.</span>
-    </div>There are two parts to this problem.
-
-    <ol>
-      <li>Consider the point $P$ with Cartesian (rectangular)
-      coordinates $(2,1)$. Find the distance $r$ from $P$ to the
-      origin. Consider the ray $\vec {OP}$ from the origin through
-      $P$. Find an angle between $\vec{OP}$ and the $x$-axis.</li>
-
-      <li>Suppose that a point $Q=(a,b)$ is 6 units from the
-      origin, and the angle the ray $\vec {OP}$ makes with the
-      $x$-axis is $\pi/4$ radians. Find the Cartesian (rectangular)
-      coordinates $(a,b)$ of $Q$.</li>
-    </ol>
-  </div>
-
-  <div class="definition">
-    Let $Q$ be be a point in the plane with Cartesian coordinates
-    $(x,y)$. Let $O=(0,0)$ be the origin. We define the polar
-    coordinates of $Q$ to be the ordered pair $(r,\theta)$ where
-    $r$ is the displacement from the origin to $Q$, and $\theta$ is
-    an angle of rotation (counter-clockwise) from the $x$-axis to
-    the ray $\vec {OP}$.
+      See <a href=
+      "http://sagecell.sagemath.org/?z=eJwr0ijJSC1J1FSwVTDSNtJKzi-GCnAV5OckFsUX5OSXaBTpKEBEdQx0jLQKMjU1uQD67RE_&amp;lang=sage">
+      Sage</a>.  Use Sage to check your answers in the other graphing problems too.
+      <span class="bmw">See 11.4: 1-20.</span>
+       
+    </div>
+      Graph the polar curve $r=2+2\cos\theta$.  This curve is called a <a href="http://en.wikipedia.org/wiki/Cardioid">cardiod</a> (see also <a href="http://mathworld.wolfram.com/Cardioid.html">here</a>).  The Cartesian equation for this curve is $(x^2+y^2-2x)^2=4(x^2+y^2)$.  Which is simpler, the polar equation or the Cartesian equation?
   </div>
 
   <div class="problem">
+    Graph the polar curve $r=3\sin 2\theta$ and identify which points on the curve came from negative $r$ values and which came from positive $r$ values.  This curve is called a <a href="http://en.wikipedia.org/wiki/Rose_(mathematics)">rose</a> (see also <a href="http://mathworld.wolfram.com/Rose.html">here</a>).  The Cartesian equation for this curve is $(x^2+y^2)^3=36x^2y^2$.  Which equation is simpler?
+  </div>
+
+  <div class="problem">
+    Graph the polar curve $r=2\cos 3\theta$ and identify which points on the curve came from negative $r$ values and which came from positive $r$ values.  This curve is also called a rose.  The Cartesian equation for this curve is $(x^2+y^2)^2=2(x^3-3xy^2)$.  Which equation is simpler?
+  </div>
+  <div class="problem">
+      <div class="marginpar larsonfive">See Larson 10.5:17&ndash;26</div>
+    Find the points of intersection of $r=3-3\cos\theta$ and
+    $r=3\cos\theta$. (If you don't graph the curves, you'll
+    probably miss a few points of intersection.)
+  </div>
+
+  <div class="hidden">Here's another intersection problem.
+    <div class="problem">
+      Find the points of intersection of $r=2\cos 2\theta $ and
+      $r=\sqrt 3$. (If you don't graph the curves, you'll probably
+      miss a few points of intersection.)
+    </div>
+  </div>
+
+
+
+    
+    
+<div class="hidden">
+  <div class="problem">
     <div class="marginpar">
       <span class="bmw">See 11.3:5-10.</span>
-    </div>The following points are given using their polar
+    </div>
+    The following points are given using their polar
     coordinates. Plot the points in the Cartesian plane, and give
     the Cartesian (rectangular) coordinates of each point. The
     points are $$ (1,\pi), \ds \left( 3,\frac{5\pi}{4}\right), \ds
     \left( -3,\frac{\pi}{4}\right),\text{ and } \ds \left(
     -2,-\frac{\pi}{6}\right).$$
-  </div>The next problem provides general formulas for converting
-  between the Cartesian (rectangular) and polar coordinate systems.
+  </div>
+    <p>The next problem provides general formulas for converting
+  between the Cartesian (rectangular) and polar coordinate systems.</p>
 
   <div class="problem">
-    \label{polar coordinate equations}
-
     <div class="marginpar">
       <span class="bmw">See page 647.</span>
     </div>Suppose that $Q$ is a point in the plane with Cartesian
@@ -683,37 +596,16 @@ Coordinate transformations let us view or discuss the plane
       $x$ and $y$: $\theta = ?$. [Hint: A picture of a triangle
       will help here.]</li>
     </ol>
-  </div>In problem <a href=
-  "#polar%20coordinate%20equations">TODO</a>, you should have
-  obtained the polar coordinate transformation:
-  $T(r,\theta)=(r\cos\theta, r\sin\theta)$ (or $x=r\cos\theta$,
-  $y=r\sin\theta$).
-
-  <div class="comment">
-    % The following problem will show you how to graph a coordinate
-    transformation. When you're done, you should essentially have
-    polar graph paper.
   </div>
-
-  <div class="note">
-    Delete the next problem
-  </div>
-
-  <div class="problem" label="Ignore">
-    In the plane, graph the curve $y=\sin x$ for $x\in[0,2\pi]$
-    (make an $x,y$ table) and then graph the curve $r=\sin\theta$
-    for $\theta\in[0,2\pi]$ (an $r,\theta$ table). The graph should
-    look very different. If one looks like a circle, you're on the
-    right track.
-  </div>
-
+</div>
   <div class="problem">
-    <div class="marginpar">
+    <div class="marginpar bmw">
       <span class="bmw">See 11.3: 53-66.</span>
-    </div>Each of the following equations is written in the
+    </div>
+    Each of the following equations is written in the
     Cartesian (rectangular) coordinate system. Convert each to an
     equation in polar coordinates, and then solve for $r$ so that
-    the equation is in the form $r=f(\theta)$.
+    the equation is in the form $r=f(\theta)$.  Judge which equation is simpler, Cartesian or polar.
 
     <ol>
       <li>$x^2+y^2=7$</li>
@@ -725,15 +617,15 @@ Coordinate transformations let us view or discuss the plane
   </div>
 
   <div class="problem">
-    <div class="marginpar">
+    <div class="marginpar bmw">
       <span class="bmw">See 11.3: 27-52. I strongly suggest that
       you do many of these as practice.</span>
     </div>Each of the following equations is written in the polar
     coordinate system. Convert each to an equation in the Cartesian
-    coordinates.
+    coordinates.  Judge which equation is simpler, Cartesian or polar.
 
     <ol>
-      <li>$r=9\cos\theta$</li>
+      <li>$r=9\cos\theta$ [Hint: multiply both sides by $r$.]</li>
 
       <li>$\ds r=\frac{4}{2\cos\theta+3\sin\theta}$</li>
 
@@ -741,69 +633,23 @@ Coordinate transformations let us view or discuss the plane
     </ol>
   </div>
 
-  <h2>Graphing and Intersections</h2>To construct a graph of a
-  polar curve, just create an $r,\theta$ table. Choose values for
-  $\theta$ that will make it easy to compute any trig functions
-  involved. Then connect the points in a smooth manner, making sure
-  that your radius grows or shrinks appropriately as your angle
-  increases.
-
-  <div class="problem">
-    <div class="marginpar">
-      <span class="bmw">See 11.4: 1-20.</span>
-    </div>
-
-    <div class="marginpar">
-      See <a href=
-      "http://sagecell.sagemath.org/?z=eJwr0ijJSC1J1FSwVTDSNtJKzi-GCnAV5OckFsUX5OSXaBTpKEBEdQx0jLQKMjU1uQD67RE_&amp;lang=sage">
-      Sage</a>.
-    </div>% Graph the polar curve $r=2+2\cos\theta$.
-  </div>
-
-  <div class="problem">
-    <div class="marginpar">
-      Use Sage to check your answer.
-    </div>Graph the polar curve $r=2\sin 3\theta$.
-  </div>
-
-  <div class="problem">
-    <div class="marginpar">
-      Use Sage to check your answer.
-    </div>Graph the polar curve $r=3\cos 2\theta$.
-  </div>
-
-  <div class="problem">
-    Find the points of intersection of $r=3-3\cos\theta$ and
-    $r=3\cos\theta$. (If you don't graph the curves, you'll
-    probably miss a few points of intersection.)
-  </div>
-
-  <div class="comment">
-    %
-
-    <div class="problem">
-      % Find the points of intersection of $r=2\cos 2\theta $ and
-      $r=\sqrt 3$. (If you don't graph the curves, you'll probably
-      miss a few points of intersection.) %
-    </div>
-  </div>
-
-  <h2>Calculus with Polar Coordinates</h2>Recall that for
-  parametric curves $\vec r(t) = (x(t),y(t))$, to find the slope of
+    Recall that for
+  parametric curves $\vec q(t) = (x(t),y(t))$, to find the slope of
   the curve we just compute $$\frac{dy}{dx}=\frac{dy/dt}{dx/dt}.$$
   A polar curve of the form $r=f(\theta)$ can be thought of as just
-  the parametric curve $(x,y) =
+  the parametric curve $\vec q(\theta) =
   (f(\theta)\cos\theta,f(\theta)\sin\theta)$. So you can find the
   slope by computing
   $$\frac{dy}{dx}=\frac{dy/d\theta}{dx/d\theta}.$$
 
   <div class="problem">
-    <div class="marginpar">
+    <div class="marginpar bmw">
       <span class="bmw">See 11.2: 1-14.</span>
-    </div>Consider the polar curve $r=1+2\cos \theta$. (It wouldn't
-    hurt to provide a quick sketch of the curve.)
+    </div>
+      Consider the polar curve $r=1+2\cos \theta$.
 
     <ol>
+        <li>Sketch the curve.</li>
       <li>Compute both $dx/d\theta$ and $dy/d\theta$.</li>
 
       <li>Find the slope $dy/dx$ of the curve at
@@ -815,10 +661,8 @@ Coordinate transformations let us view or discuss the plane
     </ol>
   </div>
 
-  <div class="comment">
-    %%% Local Variables: %%% mode: latex %%% TeX-master:
-    "215-problems" %%% End:
-  </div>
-</section>
-  </body>
+</section></section>
+
+    
+    </body>
 </html>
