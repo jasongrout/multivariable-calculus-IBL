@@ -31,33 +31,6 @@ TeX: {
 <body>
             <section style="counter-reset: section 6;">
         <h1>Derivatives</h1>
-
-  <div class="note">
-    Having them come up with how to generalize differential
-    notation to higher dimensions, and then use differential
-    notation as well, was too much. Perhaps I need one more problem
-    right shortly after <a href=
-    "#derive%20matrix%20derivative">TODO</a>. In <a href=
-    "#derive%20matrix%20derivative">TODO</a>, the students are
-    taking differential notation and from it writing a matrix (it's
-    how they discover the derivative). What I need is to have the
-    students write differential notation in terms of a matrix.
-    Perhaps this would be best after the next problem. We're
-    already finished with derivatives, so I'll put a note to myself
-    to polish this up next semester. See my notes at the end as
-    well.\\(From Jason) I added a pretty extensive problem having
-    them practice differential notation. We'll see if that helps
-    them to get familiar with the ideas before moving to matrix
-    multiplication. This is a completely new take on the material.
-    The key, have them discover the derivative as a matrix first,
-    and then talk about partial derivatives. They can already do
-    it. Just ask them to compute the derivative implicitly of
-    something like $z=x^2y+\sin(4y)$. Have them take derivatives
-    with respect to $t$. They'll kick out the right idea instantly.
-    Have them write it as ( ) dx/dt + () dy/dt = [ () () ] [dx dy].
-    Out pops the whole chapter with one fell swoop. I'm rewriting
-    the chapter to reflect this.
-  </div>
                 <p>This unit covers the following ideas. In
   preparation for the quiz and exam, make sure you have a lesson
   plan containing examples that explain and illustrate the
@@ -118,13 +91,6 @@ TeX: {
   vectors $\vec x$ and $\vec y$.</p>
 
   <div class="problem">
-    For the function $f(x,y)=z$, we can write $f$ in the vector
-    notation $\vec y=\vec f(\vec x)$ if we let $\vec x=(x,y)$ and
-    $\vec y=(z)$. Notice that $\vec x$ is a vector of inputs, and
-    $\vec y$ is a vector of outputs. For each of the functions
-    below, state what $\vec x$ and $\vec y$ should be so that the
-    function can be written in the form $\vec y = \vec f (\vec x)$.
-
     <div class="marginpar">
       The point to this problem is to help you learn to recognize
       the dimensions of the domain and codomain of the function. If
@@ -132,6 +98,13 @@ TeX: {
       $\RR^n$ with $n$ components, and $\vec y$ is a vector in
       $\RR^m$ with $m$ components.
     </div>
+
+    For the function $f(x,y)=z$, we can write $f$ in the vector
+    notation $\vec y=\vec f(\vec x)$ if we let $\vec x=(x,y)$ and
+    $\vec y=(z)$. Notice that $\vec x$ is a vector of inputs, and
+    $\vec y$ is a vector of outputs. For each of the functions
+    below, state what $\vec x$ and $\vec y$ should be so that the
+    function can be written in the form $\vec y = \vec f (\vec x)$.
 
     <ol>
       <li>$f(x,y,z)=w$</li>
@@ -195,9 +168,10 @@ TeX: {
     =\frac{-3}{5}.$$ This means that if we approach the origin
     along the line $y=2x$, we will have a height of $-3/5$ when we
     arrive at the origin.
-  </div>If the function $\ds f(x,y)=\frac{x^2-y^2}{x^2+y^2}$ has a
+  </div>
+    <p>If the function $\ds f(x,y)=\frac{x^2-y^2}{x^2+y^2}$ has a
   limit at the origin, the previous problem suggests that limit
-  will be $-3/5$.
+  will be $-3/5$.</p>
 
   <div class="problem">
     Please read the previous example. Recall that we are looking
@@ -235,7 +209,7 @@ TeX: {
           <span class="bmw">See 14.2: 41-50 for more
           practice.</span><span class="larsonfive">See Larson
           13.2:23&ndash;36 and example 4 for more practice.</span>
-        </div>%
+        </div>
       </li>
     </ol>
   </div>
@@ -253,10 +227,7 @@ TeX: {
   check if a limit exists. Once the domain is 2-dimensional or
   higher, there are infinitely many ways to approach a point. There
   is no longer just a left and right side. To prove a limit exists,
-  you must check infinitely many cases&mdash;that takes a \emph{really}
-  long time. The real power to this theorem is it allows to show
-  that a limit does not exist. All we have to do is find two
-  approaches with different limits.</p>
+  you must check infinitely many cases&mdash;that usually takes a <em>really</em> long time. The real power to this theorem is it allows us to show that a limit does not exist. All we have to do is find two approaches with different limits.</p>
 
   <div class="problem">
     <div class="marginpar">
@@ -332,14 +303,13 @@ TeX: {
   calculus, and we'll see how the derivative $f'$ in $dy=f'(x) dx$
   naturally generalizes to a matrix.</p>
 
-  <div class="problem">
-    \label{differential for volume of a cylinder}%
-
+  <div class="problem" id="differential-for-volume-of-a-cylinder}">
     <div class="marginpar">
       <span class="bmw">See 3.10 for more
       practice.</span><span class="larsonfive">See Larson 3.7 and
       4.8.</span>
-    </div>% The volume of a right circular cylinder is $V(r,h)= \pi
+    </div>
+      The volume of a right circular cylinder is $V(r,h)= \pi
     r^2 h$. Imagine that each of $V$, $r$, and $h$ depends on $t$
     (we might be collecting rain water in a can, or crushing a
     cylindrical concentrated juice can, etc.).
@@ -356,26 +326,25 @@ TeX: {
       <li>If both the radius and height change, what is $dV/dt$ in
       terms of $dh/dt$ and $dr/dt$? Solve for $dV$.</li>
 
-      <li>%
-
-        <div class="marginpar">
-          The matrix $\begin{bmatrix}2\pi rh&amp; \pi
-          r^2\end{bmatrix}$ is the derivative of $V$. The columns
-          of this matrix are the \emph{partial derivatives} of $V$.
-          The partial derivatives make up the whole.
-        </div>% Show that we can write $dV$ as the matrix product
+      <li>       <div class="marginpar">
+          Make sure you ask me in class to show you physically
+          exactly how you can see these differential formulas.
+        </div>
+          Show that we can write $dV$ as the matrix product
         of a 1-row by 2-column matrix with a 2-row by 1-column
         matrix: $$dV = \begin{bmatrix}2\pi rh&amp; \pi
         r^2\end{bmatrix}\begin{bmatrix}dr\\dh\end{bmatrix}.$$ How
         do the columns of the first matrix relate to the
         calculations you did above?
-      </li>
 
+        <p>The matrix $\begin{bmatrix}2\pi rh&amp; \pi
+          r^2\end{bmatrix}$ is the <em>derivative</em> of $V$. The columns
+          of this matrix are the <em>partial derivatives</em> of $V$.
+          The partial derivatives make up the whole.</p>
+        
+        </li>
       <li>
-        <div class="marginpar">
-          Make sure you ask me in class to show you physically
-          exactly how you can see these differential formulas.
-        </div>% If we know that $r=3$ and $h=4$, and we know that
+          If we know that $r=3$ and $h=4$, and we know that
         $r$ increases by about $.1$ and $h$ increases by about
         $.2$, then approximate how much $V$ will increase. Use your
         formula for $dV$ to approximate this.
@@ -399,20 +368,23 @@ TeX: {
       <li>What is $dV/dt$ in terms of $dx/dt$, $dy/dt$, and $dz/dt$
       when all three variables are changing? Solve for $dV$.</li>
 
-      <li>%
-
-        <div class="marginpar">
-          The matrix $\begin{bmatrix}yz&amp; ?&amp;?\end{bmatrix}$
-          is the derivative of $V$. The columns of this matrix are
-          the \emph{partial derivatives} of $V$. The partial
-          derivatives make up the whole.
-        </div>% Show that we can write $dV$ as the matrix product
+      <li>
+        
+          Show that we can write $dV$ as the matrix product
         of a 1-row by 3-column matrix with a 3-row by 1-column
         matrix: $$dV = \begin{bmatrix}yz&amp;
         ?&amp;?\end{bmatrix}\begin{bmatrix}dx\\dy\\dz\end{bmatrix}.$$
         How do the columns of the first matrix relate to the
         previous portions of the problem.
-      </li>
+<p>          The matrix $\begin{bmatrix}yz&amp; ?&amp;?\end{bmatrix}$
+          is the <em>derivative</em> of $V$. The columns of this matrix are
+          the <em>partial derivatives</em> of $V$. The partial
+          derivatives make up the whole.
+        
+          
+</p>
+        
+        </li>
 
       <li>If the current measurements of a box are $x=2$, $y=3$,
       and $z=5$, and we know that $x$ increases by .01, $y$
@@ -422,20 +394,19 @@ TeX: {
     </ol>
   </div>
 
-  <div class="marginpar">
-    Using differentials to analyze how outputs of a function change
-    when the inputs change comes up in many applications, such as
-    analyzing numerical roundoff error in calculations or analyzing
-    manufacturing tolerances.
-  </div>% Part 4 in each problem above, expressing relationships
+
+                    <p>Part 4 in each problem above, expressing relationships
   between changes in terms of differentials, is the KEY idea, let
   me repeat, THE KEY IDEA, to the rest of this course. The
   essential thing is that we can use differentials to understand
   and approximate how small changes in the inputs of a function
   will change the outputs of the function. For example, we can
   approximate the change in a function $f(x,y)$ if we know how much
-  $x$ and $y$ will change.
-
+  $x$ and $y$ will change.</p>
+    <p>Using differentials to analyze how outputs of a function change
+    when the inputs change comes up in many applications, such as
+    analyzing numerical roundoff error in calculations or analyzing
+    manufacturing tolerances.</p>
   <div class="problem">
     Consider the function $f(x,y) = x^2y +3x+4\sin(5y)$.
 
@@ -449,27 +420,20 @@ TeX: {
       x^2+20\cos(5y)\end{bmatrix}\begin{bmatrix}dx\\dy\end{bmatrix}.$$</li>
 
       <li>If you hold $y$ constant (so $dy=0$), then what is
-      $df/dx$? %If you are at $(x,y)=(1,2)$, and if $x$ changes by
+      $df/dx$? If you are at $(x,y)=(1,2)$, and if $x$ changes by
       $.2$, then about how much does $z=f(x,y)$ change?</li>
 
       <li>If you hold $x$ constant (so $dx=0$), then what is
-      $df/dy$? %If you are at $(x,y)=(1,2)$, and if $y$ changes by
+      $df/dy$? If you are at $(x,y)=(1,2)$, and if $y$ changes by
       $-.3$, then about how much does $z=f(x,y)$ change?
 
-        <div class="comment">
-          %
-
-          <ul>
             <li>If you are at the point $(x,y)=(1,2)$, and you move
             to $(1.2, 1.7)$, then what is $dx$ and $dy$?
-            Approximate how much $z=f(x,y)$ changes. %</li>
+            Approximate how much $z=f(x,y)$ changes.</li>
 
             <li>(Challenge) In the last part, why was our
             calculation an approximation, rather than an exact
             calculation of how much $f(x,y)$ changed?</li>
-          </ul>
-        </div>
-      </li>
     </ol>
   </div>
 
@@ -545,19 +509,19 @@ TeX: {
   <ul>
     <li>The derivative of $f$ in the previous problem is the matrix
     $$Df(x,y) = \begin{bmatrix} 2xy+3&amp; x^2+20\cos(5y)
-    \end{bmatrix}.$$ Some people call $Df$ the \emph{total
-    derivative} or the \emph{matrix derivative} of $f$.</li>
+    \end{bmatrix}.$$ Some people call $Df$ the <em>total
+    derivative</em> or the <em>matrix derivative</em> of $f$.</li>
 
     <li>The first column of this matrix is just part of the whole
     derivative&mdash;the part that deals with how changes in $x$ affect
     the output. We can get the first column by holding $y$
     constant, and then differentiating with respect to $x$. We call
-    this the \emph{partial derivative} of $f$ with respect to $x$.
+    this the <em>partial derivative</em> of $f$ with respect to $x$.
     We'll write this as $\frac{\partial f}{\partial x} = 2xy+3$ or
     $f_x = 2xy+3$.</li>
 
-    <li>The second column of the derivative is the \emph{partial
-    derivative} of $f$ with respect to $y$&mdash;it tells us how
+    <li>The second column of the derivative is the <em>partial
+    derivative</em> of $f$ with respect to $y$&mdash;it tells us how
     changes in $y$ affect the output. We can get the second column
     by holding $x$ constant and differentiating with respect to
     $y$. We'll write this as $\frac{\partial f}{\partial y} =
@@ -904,8 +868,8 @@ TeX: {
       </li>
 
       <li>In the previous part, we said that $z=9-x^2-y^2$
-      increased by \emph{about} a certain amount each time. Why did
-      we not say that $z=9-x^2-y^2$ increases by \emph{exactly}
+      increased by <em>about</em> a certain amount each time. Why did
+      we not say that $z=9-x^2-y^2$ increases by <em>exactly</em>
       that amount?</li>
     </ol>
   </div>We'll conclude this section with a note about taking
