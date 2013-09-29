@@ -13,7 +13,7 @@ button.click(function() {
 sagecell.templates.minimal})
 
     var toc=$('<ol></ol>')
-    $('body section section:visible').each(function(i,e) {
+    $('body > section > section:visible').each(function(i,e) {
         var sect = $(e)
         var title = sect.children('h1')
         var id = 'section-'+i;
