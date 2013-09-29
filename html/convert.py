@@ -28,7 +28,7 @@ regexps = [
     (r'&', r'&amp;'),
     (r'<', r'&lt;'),
     (r'``', r'&ldquo;'),
-    (r"''", r'&rdqou;'),
+    (r"''", r'&rdquo;'),
     (r'\\item', r'<li>'),
     (r"((?:^%.*$\n)+)", r'<div class="comment">\1</div>'),
     (r'\\href %(braceargs)s \{(?<text>[^}]*)\}'%sub, r'<a href="\g<braceargs>">\g<text></a>'),
