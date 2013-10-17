@@ -24,4 +24,11 @@ sagecell.templates.minimal})
     body.prepend(toc);
     body.prepend(button);
     body.prepend('<a href="index.html">Return to Table of Contents</a><br/>');
+    
+    $('div.review-answer').each(function(i,e) {
+        var elt = $(e);
+        var button = $('<button>Show answer</button>')
+        elt.before(button);
+        button.click(function() {elt.toggle()});
+    })
 })
