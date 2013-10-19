@@ -1191,8 +1191,485 @@ Let's apply the
     $(3,-1)$. [Hint: Use either differential notation or a
     parametrization, or try both ways.]
   </div>
-</section></section><section>
+</section>
+    <section>
+    
+  <h1>The Chain Rule</h1>We'll now see how the chain rule
+  generalizes to all dimensions. Just as before, we'll find that
+  the first semester calculus rule will generalize to all
+  dimensions if we replace $f'$ with the matrix $Df$. Let's recall
+  the chain rule from first-semester calculus.
 
+  <div class="theorem" label="The Chain Rule">
+    Let $x$ be a real number and $f$ and $g$ be functions of a
+    single real variable. Suppose $f$ is differentiable at $g(x)$
+    and $g$ is differentiable at $x$. The derivative of $f\circ g$
+    at $x$ is $$(f\circ g)'(x) = \frac{d}{dx}(f\circ g)(x) =
+    f'(g(x))\cdot g'(x).$$
+  </div>Some people remember the theorem above as &ldquo;the
+  derivative of a composition is the derivative of the outside
+  (evaluated at the inside) multiplied by the derivative of the
+  inside.&rdquo; If $u=g(x)$, we sometimes write $\ds
+  \frac{df}{dx}=\frac{df}{du}\frac{du}{dx}$. The following problem
+  should help us master this notation.
+
+  <div class="problem" id="chain-rule-review-problem">
+    Suppose we know that $\ds
+    f'(x) = \frac{\sin(x)}{2x^2+3}$ and $g(x)=\sqrt{x^2+1}$. Notice
+    we don't know $f(x)$.
+
+    <div class="marginpar">
+      Not knowing a function $f$ is actually quite common in real
+      life. We can often measure how something changes (a
+      derivative) without knowing the function itself.
+    </div>
+
+    <ol>
+      <li>State $f'(x)$ and $g'(x)$.</li>
+
+      <li>State $f'(g(x))$, and explain the difference between
+      $f'(x)$ and $f'(g(x))$.</li>
+
+      <li>Use the chain rule to compute $(f\circ g)'(x)$.</li>
+    </ol>
+  </div>We now generalize to higher dimensions. If I want to write
+  $\vec f(\vec g(\vec x))$, then $\vec x$ must be a vector in the
+  domain of $g$. After computing $\vec g(\vec x)$, we must get a
+  vector that is in the domain of $f$. Since the chain rule in
+  first semester calculus states $(f(g(x))'=f'(g(x))g'(x)$, then in
+  high dimension it should state $D(f(g(x)) = Df(g(x))Dg(x)$, the
+  product of two matrices.
+
+  <div class="problem">
+    In <a href=
+    "#differential-for-volume-of-a-cylinder">this problem</a>, we
+    showed that for a circular cylinder with volume $V=\pi r^2 h$,
+    the derivative is $$DV(r,h)=\begin{bmatrix} 2\pi rh &amp; \pi
+    r^2 \end{bmatrix}.$$ Suppose that the radius and height are
+    both changing with respect to time, where $r=3t$ and $h=t^2$.
+    We'll write this parametrically as $\vec g(t) =(3t, t^2)$
+    (i.e., $\vec g(t)=(r,h)$).
+
+    <ol>
+      <li>In $V=\pi r^2 h$, replace $r$ and $h$ with what they are
+      in terms of $t$. Then compute $\dfrac{dV}{dt}$. This is a
+      first-semester calculus derivative; we'll use it to check our
+      work below.</li>
+
+      <li>We know $DV(r,h)=\begin{bmatrix} 2\pi rh &amp; \pi r^2
+      \end{bmatrix}$ and $Dg(t)= \begin{bmatrix} 3\\ 2t
+      \end{bmatrix}.$ In first semester calculus, the chain rule
+      was the product of derivatives. Multiply these matrices
+      together to get $$\dfrac{dV}{dt}=DV(g(t))\, D(r,h)(t).$$ Did
+      you get the same answer as the first part?</li>
+
+      <li>To get the correct answer to the previous part, you had
+      to replace $r$ and $h$ with what they equaled in terms of
+      $t$. What part of the notation $\dfrac{dV}{dt}=DV(g(t))\,
+      Dg(t)$ tells you to replace $r$ and $h$ with what they equal
+      in terms of $t$?</li>
+    </ol>
+  </div>Let's look at some physical examples involving motion and
+  temperature, and try to connect what we know should happen to
+  what the chain rule states.
+
+  <div class="problem" id="horse-track-chain-rule-introduction">
+    Consider
+    $f(x,y)=9-x^2-y^2$ and $\vec r(t)=(2\cos t, 3\sin t)$. Imagine
+    the following scenario: a horse runs around outside in the
+    cold. The horse's position at time $t$ is given parametrically
+    by the elliptical path $\vec r(t)$. The function $T=f(x,y)$
+    gives the temperature of the air at any point $(x,y)$.
+
+    <ol>
+      <li id="horse-track-item-1">At time $t=0$, what is the horse's
+      position $\vec r(0)$, and what is the temperature $f(\vec
+      r(0))$ at that position? Find the temperatures at $t=\pi/2$,
+      $t=\pi$, and $t=3\pi/2$ as well.</li>
+
+      <li>
+        <div class="marginpar">
+          If you end up with an ellipse and several concentric
+          circles, then you've done this right.
+        </div>
+          In the plane, draw the path of the horse for $t\in
+        [0,2\pi]$. Then, on the same 2D graph, include a contour
+        plot of the temperature function $f$. Make sure you include
+        the level curves that pass through the points in
+        <a href="#horse-track-item-1">this part</a>, and write the temperature
+        on each level curve you draw.
+      </li>
+
+      <li>
+        <div class="marginpar">
+          This idea leads to an optimization technique, Lagrange
+          multipliers, later in the semester.
+        </div>
+          As the horse runs around, the temperature of the
+        air around the horse is constantly changing. At which $t$
+        does the temperature around the horse reach a maximum? A
+        minimum? Explain, using your graph.
+      </li>
+
+      <li>As the horse moves past the point at
+      $t=\pi/4$, is the temperature of the surrounding air
+      increasing or decreasing? In other words, is $\dfrac{df}{dt}$
+      positive or negative? Use your graph to explain.</li>
+
+      <li>We'll complete this part in class, but you're welcome to
+      give it a try yourself. <div class="instructor">See <a href=
+      "https://sagecell.sagemath.org/?z=eJyFj0FuwjAQRfc-RXaMk0kV2WLBwrforoLKGEdYmNgaOyK5fU3oIqCq7N5i_pv_e5hw5mrXTgfRzgfBCDJXIGoTUiGsZJ3cUIgzFlX0IcsT9FhSrUTJEeZfqELUxuVZdR9bzmKjoiZ9tZmc-b7HwLuU4W7nzVcP9UJ7rCBjh6KOrihM8IHUhuxpg_nszGWwKSn5Vtf946meRCydww1iAROGHEZ6yP4atEiOmtQnjRa9PlqfFubNaxfC1Xc92cfdaoLAVSX-A1SMc_Q">
+      Sage</a>.</div>
+          Draw the 3D surface plot of $f$. In the
+      $xy$-plane of your 3D plot (so $z=0$) add the path of the
+      horse. In class, we'll project the path of the horse up into
+      the 3D surface.</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    Consider again $f(x,y)=9-x^2-y^2$ and $\vec r(t)=(2\cos t,
+    3\sin t)$, which means $x=2\cos t$ and $y=3\sin t$.
+
+    <ol>
+      <li>At the point $\vec r(t)$, we'd like a formula for the
+      temperature $f(\vec r(t))$. What is the temperature of the
+      horse at any time $t$? [In $f(x,y)$, replace $x$ and $y$ with
+      what they are in terms of $t$.]</li>
+
+      <li>Compute $df/dt$ (the derivative as you did in
+      first-semester calculus).</li>
+
+      <li>Construct a graph of $f(t)$ (use software to draw this if
+      you like). From your graph, at what time values do the maxima
+      and minima occur?</li>
+
+      <li>What is $df/dt$ at $t=\pi/4$?</li>
+
+      <li>Compare your work with the previous problem.</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    Consider again $f(x,y)=9-x^2-y^2$ and $\vec r(t)=(2\cos t,
+    3\sin t)$.
+
+    <ol>
+      <li>Compute both $Df(x,y)$ and $D\vec r(t)$ as matrices. One
+      should have two columns. The other should have one column
+      (but two rows).</li>
+
+      <li>The temperature at any time $t$ we can write symbolically
+      as $f(r(t))$. First semester calculus suggests the derivative
+      should be the produce $(f(\vec r(t))) ' = f'(\vec r(t))\vec
+      r'(t)$. Write this using $D$ notation instead of prime
+      notation.</li>
+
+      <li>Compute the matrix product $DfD\vec r$, and then
+      substitute $x=2\cos t$ and $y=3\sin t$.</li>
+
+      <li>What is the change in temperature with respect to time at
+      $t=\pi/4$? Is it positive or negative? Compare with the
+      previous problem.</li>
+    </ol>
+  </div>The previous three problems all focused on exactly the same
+  concept. The first looked at the concept graphically, showing
+  what it means to write $(f\circ \vec r)(t)=f(\vec r(t))$. The
+  second reduced the problem to first-semester calculus. The third
+  tackled the problem by considering matrix derivatives. In all
+  three cases, we wanted to understand the following problem.
+
+  <div class="quote">
+    If $z=f(x,y)$ is a function of $x$ and $y$, and both $x$ and
+    $y$ are functions of $t$ (i.e., $\vec r(t)=(x(t),y(t))$), then
+    how do we discover how do changes in $t$ affect $f$? In other
+    words, what is the derivative of $f$ with respect to $t$?
+    Notationally, we seek $\ds \frac{df}{dt}$ which we formally
+    write as $\ds \frac{d}{dt}[f(x(t),y(t))]$ or $\ds \frac{d}{dt}
+    [f(\vec r(t))].$
+  </div>To answer this problem, we use the chain rule, which is
+  just matrix multiplication.
+
+  <div class="theorem" id="chain-rule-def"><b>The Chain Rule</b>
+     Let $\vec x$ be a vector and $\vec f$
+    and $\vec g$ be functions so that the composition $\vec f(\vec
+    g(\vec x))$ makes sense (we can use the output of $g$ as an
+    input to $f$). Suppose $\vec f$ is differentiable at $\vec
+    g(\vec x)$ and that $\vec g$ is differentiable at $\vec x$.
+    Then the derivative of $\vec f\circ \vec g$ at $\vec x$ is
+    $$D(\vec f\circ \vec g)(\vec x) = D\vec f(\vec g(\vec x))\cdot
+    D\vec g(\vec x).$$ The derivative of a composition is equal to
+    the derivative of the outside (evaluated at the inside),
+    multiplied by the derivative of the inside.
+  </div>This is exactly the same as the chain rule in
+  first-semester calculus. The only difference is that now we have
+  vectors above every variable and function, and we replaced the
+  one-by-one matrices $f'$ and $g'$ with potentially larger
+  matrices $Df$ and $Dg$. If we write everything in vector
+  notation, the chain rule in all dimensions is the EXACT same as
+  the chain rule in one dimension.
+
+  <div class="problem">
+    <div class="marginpar">
+      <span class="bmw">See 14.4: 1-6 for more practice. Don't use
+      the formulas in the chapter, rather practice using matrix
+      multiplication. The formulas are just a way of writing matrix
+      multiplication without writing down the matrices, and only
+      work for functions from $\RR^n\to\RR$. Our matrix
+      multiplication method works for any function from
+      $\RR^n\to\RR^m$.</span><span class="larsonfive">See Larson
+      13.5:1&ndash;6 for more practice (you can check answers in the
+      back of the book). Don't use the formulas on pages 925&ndash;930.
+      Instead, use matrix multiplication. The formulas are just a
+      way of writing matrix multiplication without writing down the
+      matrices, and only work for functions from $\RR^n\to\RR$. Our
+      matrix multiplication method works for any function from
+      $\RR^n\to\RR^m$.</span>
+    </div><div class="hidden">In class, I also replace $x$ and $y$ in
+    $f=x^2+xy$ with what they are in terms of $t$, and then use
+    first-semester calculus to find $df/dt$.</div>
+      Suppose that $f(x,y)
+    = x^2+xy$ and that $x=2t+3$ and $y=3t^2+4$.
+
+    <ol>
+      <li>Rewrite the parametric equations $x=2t+3$ and $y=3t^2+4$
+      in vector form, so we can apply the chain rule. This means
+      you need to create a function $\vec r(t) = (\blank{1in},
+      \blank{1in})$.</li>
+
+      <li>Compute the derivatives $Df(x,y)$ and $D\vec r(t)$, and
+      then multiply the matrices together to obtain
+      $\dfrac{df}{dt}$. How can you make your answer only depend on
+      $t$ (not $x$ or $y$)?</li>
+
+      <li>The chain rule states that $D(f\circ \vec r)(t) = Df(\vec
+      r(t))D\vec r(t)$. Explain why we write $Df(\vec r(t))$
+      instead of $Df(x,y)$.</li>
+    </ol>If you'd like to make sure you are correct, try the
+    following: replace $x$ and $y$ in $f=x^2+xy$ with what they are
+    in terms of $t$, and then just use first-semester calculus to
+    find $df/dt$. Is it the same?
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      <span class="bmw">See 14.4: 7-12 for more
+      practice.</span><span class="larsonfive">See Larson
+      13.5:7&ndash;10 for more practice (remember to use matrix
+      multiplication, not the formulas from the book).</span>
+    </div>
+      Suppose $f(x,y,z) = x+2y+3z^2$ and $x=u+v$, $y=2u-3v$,
+    and $z=uv$. Our goal is to find how much $f$ changes if we were
+    to change $u$ (so $\partial f/\partial u$) or if we were to
+    change $v$ (so $\partial f/\partial v$). Try doing this problem
+    without looking at the steps below, but instead try to follow
+    the patterns in the previous problem on your own.
+
+    <ol>
+      <li>Rewrite the equations for $x$, $y$, and $z$ in vector form
+      $\vec r(u,v)=(x,y,z)$. If you were to graph $\vec r$, what
+      kind of graph would you make?</li>
+
+      <li>Compute the derivatives $Df(x,y,z)$ and $D\vec r(u,v)$,
+      and then multiply them together. Notice that since this
+      composite function has 2 inputs, namely $u$ and $v$, we
+      should expect to get two columns when we are done.</li>
+
+      <li>What are $\partial f/\partial u$ and $\partial f/\partial
+      v$? [Hint: remember, each input variable gets a column.]</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    Let $\vec F(s,t) = (2s+t,3s-4t,t)$ and $s=3pq$ and $t=2p+q^2$.
+    This means that changing $p$ and/or $q$ should cause $\vec F$
+    to change. Our goal is to find $\partial \vec F/\partial p$ and
+    $\partial \vec F/\partial q$. Note that since $\vec F$ is a
+    vector-valued function, the two partial derivatives should be
+    vectors. Try doing this problem without looking at the steps
+    below, but instead try to follow the patterns in the previous
+    problems.
+
+    <ol>
+      <li>Rewrite the parametric equations for $s$
+      and $t$ in vector form.</li>
+
+      <li>Compute $D\vec F(s,t)$ and the derivative of your vector
+      function from the previous part, and then
+      multiply them together to find the derivative of $\vec F$
+      with respect to $p$ and $q$. How many columns should we
+      expect to have when we are done multiplying matrices?</li>
+
+      <li>What are $\partial \vec F/\partial p$ and $\partial \vec
+      F/\partial q$?</li>
+    </ol>
+  </div>
+
+  <div class="problem-nonum" label="Challenge">(Optional challenge)
+    Suppose $\vec F(u,v) = (3u-v,u+2v,3v)$, $\vec G(x,y,z)=(x^2+z,
+    4y-x)$, and $\vec r(t) = (t^3, 2t+1, 1-t)$. We want to examine
+    $\vec F(\vec G(\vec r(t))$. This means that $\vec F\circ \vec
+    G\circ \vec r$ is a function from $\RR^n\to\RR^m$ for what $n$
+    and $m$? Similar to first-semester calculus, since we have two
+    functions nested inside of each other, we'll just need to apply
+    the chain rule twice. Our goal is to find $d\vec F/dt$. Try to
+    do this problem without looking at the steps below.
+
+    <ol>
+      <li>Compute $D\vec F(u,v)$, $D\vec G(x,y,z)$, and $D\vec
+      r(t)$.</li>
+
+      <li>Use the chain rule (matrix multiplication) to find the
+      derivative of $\vec F$ with respect to $t$. What size of
+      matrix should we expect for the derivative?</li>
+    </ol>
+  </div>
+
+  <div class="review">
+    Suppose $f(x,y)=x^2+3xy$ and $(x,y) = \vec r(t) = (3t,t^2)$.
+    Compute both $Df(x,y)$ and $D\vec r(t)$. Then explain how you
+    got your answer by writing what you did in terms of partial
+    derivatives and regular derivatives.
+      <div class="review-answer">Answer: We have
+    $Df(x,y) = \begin{bmatrix}2x+3y&amp;3y\end{bmatrix}$ and $D\vec
+    r(t) = \begin{bmatrix}3\\2t\end{bmatrix}$. We just computed
+    $f_x$ and $f_y$, and $dx/dt$ and $dy/dt$, which gave us
+    $Df(x,y) = \begin{bmatrix}\partial f/\partial x&amp;\partial
+    f/\partial y\end{bmatrix}$ and $D\vec r(t) =
+    \begin{bmatrix}dx/dt\\dy/dt\end{bmatrix}$.</div>
+  </div>
+
+  <div class="problem" label="General Chain Rule Formulas">
+    <div class="marginpar">
+      <span class="bmw">See 14.4: 13-24 for more practice. Practice
+      these problems by using matrix multiplication. The examples
+      problems in the text use a &ldquo;branch diagram,&rdquo;
+      which is just a way to express matrix multiplication without
+      having to introduce matrices.</span><span class=
+      "larsonfive">See Larson 13.5:7&ndash;10 for more practice.</span>
+    </div>
+      
+      Complete the following:
+
+    <ol>
+      <li>Suppose that $w=f(x,y,z)$ and that $x,y,z$ are all
+      function of one variable $t$ (so $x=g(t), y=h(t), z=k(t)$).
+      Use the chain rule with matrix multiplication to explain why
+      $$\frac{dw}{dt} = \frac{\partial f}{\partial
+      x}\frac{dg}{dt}+\frac{\partial f}{\partial
+      y}\frac{dh}{dt}+\frac{\partial f}{\partial z}\frac{dk}{dt}
+      .$$ which is equivalent to writing $$\frac{dw}{dt} =
+      \frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial
+      f}{\partial y}\frac{dy}{dt}+\frac{\partial f}{\partial
+      z}\frac{dz}{dt} .$$ [Hint: Rewrite the parametric equations
+      for $x$, $y$, and $z$ in vector form $\vec r(t) = (x,y,z)$
+      and compute $Dw(x,y,z)$ and $D\vec r(t)$.]</li>
+
+      <li>Suppose that $R=f(V,T,n,P)$, and that $V,T,n,P$ are all
+      functions of $x$. Give a formula (similar to the above) for
+      $\dfrac{dR}{dx}.$</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      <span class="larsonfive">See Larson 13.5:19&ndash;26 for more
+      practice.</span>
+    </div>
+
+    <div class="marginpar">
+      <span class="bmw">Make sure you practice problems 14.4:
+      13-24. Use matrix multiplication, rather than the
+      &ldquo;branch diagram&rdquo; referenced in the
+      text.</span><span class="larsonfive">See Larson 13.5:7&ndash;10
+      for more practice.</span>
+    </div>
+      Suppose $z=f(s,t)$ and $s$ and $t$ are functions of
+    $u$, $v$ and $w$. Use the chain rule to give a general formula
+    for $\partial z/\partial u$, $\partial z/\partial v$, and
+    $\partial z/\partial w$.
+  </div>
+
+  <div class="review">
+    If $w=f(x,y,z)$ and $x,y,z$ are functions of $u$ and $v$,
+    obtain formulas for $\dfrac{\partial f}{\partial u}$ and
+    $\dfrac{\partial f}{\partial v}$. 
+      <div class="review-answer">We have
+    $Df(x,y,z) =\begin{bmatrix}\dfrac{\partial f}{\partial
+    x}&amp;\dfrac{\partial f}{\partial y}&amp;\dfrac{\partial
+    f}{\partial z}\end{bmatrix}$. The parametrization $\vec
+    r(u,v)=(x,y,z)$ has derivative $D\vec r =\begin{bmatrix}
+    \dfrac{\partial x}{\partial u}&amp;\dfrac{\partial x}{\partial
+    v}\\ \dfrac{\partial y}{\partial u}&amp;\dfrac{\partial
+    y}{\partial v}\\ \dfrac{\partial z}{\partial
+    u}&amp;\dfrac{\partial z}{\partial v} \end{bmatrix}$. The
+    product is $D(f(\vec r(u,v))) =\begin{bmatrix} \dfrac{\partial
+    f}{\partial x}\dfrac{\partial x}{\partial u}+ \dfrac{\partial
+    f}{\partial y}\dfrac{\partial y}{\partial u}+ \dfrac{\partial
+    f}{\partial z}\dfrac{\partial z}{\partial u}&amp;
+    \dfrac{\partial f}{\partial x}\dfrac{\partial x}{\partial v}+
+    \dfrac{\partial f}{\partial y}\dfrac{\partial y}{\partial v}+
+    \dfrac{\partial f}{\partial z}\dfrac{\partial z}{\partial v}
+    \end{bmatrix} $. The first column is $\dfrac{\partial
+    f}{\partial u}$, and the second column is $\dfrac{\partial
+    f}{\partial v}$.</div>
+  </div>
+        
+        <p>You've now got the key ideas needed to use the chain rule
+  in all dimensions. You'll find this shows up many places in
+  upper-level math, physics, and engineering courses. The following
+  problem will show you how you can use the general chain rule to
+  get an extremely quick way to perform implicit differentiation
+  from first-semester calculus.</p>
+
+  <div class="problem">
+    <div class="marginpar">
+      <span class="bmw">See 14.4: 25-32 to practice using the
+      formula you developed.</span> To practice the idea developed
+      in this problem, show that if $w=F(x,y,z)$ is held constant
+      at $w=c$ and we assume that $z=f(x,y)$ depends on $x$ and
+      $y$, then $\frac{\partial z}{\partial x} = -\frac{F_x}{F_z}$
+      and $\frac{\partial z}{\partial y} = -\frac{F_y}{F_z}$.
+      <span class="bmw">This is done on page 798 at the
+      bottom.</span>
+    </div>
+
+    <div class="marginpar">
+      <span class="larsonfive">See Larson 13.5:27&ndash;30 for more
+      practice, and see pages 929&ndash;930 for how the book derives
+      these formulas.</span>
+    </div>
+      Suppose $z=f(x,y)$. If $z$ is held constant, this
+    produces a level curve. As an example, if $f(x,y) =
+    x^2+3xy-y^3$ then $5=x^2+3xy-y^3$ is a level curve. Our goal in
+    this problem is to find $dy/dx$ in terms of partial derivatives
+    of $f$.
+
+    <ol>
+      <li>Suppose $x=x$ and $y=y(x)$, so $y$ is a function of $x$.
+      We can write this in parametric form as $\vec r(x) =
+      (x,y(x))$. We now have $z=f(x,y)$ and $\vec r(x)=(x,y(x))$.
+      Compute both $Df(x,y)$ and $D\vec r(x)$ symbolically. Don't
+      use the function $f(x,y)=x^2+3xy-y^3$ until the last
+      step.</li>
+
+      <li>Use the chain rule to compute $D(f(\vec
+      r(x)))$. What is $dz/dx$ (i.e., $df/dx$)?</li>
+
+      <li>Since $z$ is held constant, we know that $dz/dx=0$. Use
+      this fact, together with previous part, to
+      explain why $\ds \frac{dy}{dx} = -\frac{f_x}{f_y} =
+      -\frac{\partial f/ \partial x}{\partial f/ \partial y}$.</li>
+
+      <li>For the curve $5=x^2+3xy-y^3$, use this formula to
+      compute $dy/dx$.</li>
+    </ol>
+  </div>
+
+
+    </section>
+    </section>
+    
 
     
     

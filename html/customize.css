@@ -7,10 +7,10 @@ display: none;
 }
 
 .instructor {
-color: gray;
-border: 4px solid lightblue;
+/*color: gray;*/
+border: 5px solid lightblue;
 
-display: none;
+/*display: none;*/
 }
 
 .hidden {display: none;}
