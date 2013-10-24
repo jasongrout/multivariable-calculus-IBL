@@ -10,7 +10,10 @@ margin-right: -25%;
 
 clear:both;
 padding: .3em;
-text-indent: 0;}
+text-indent: 0;
+
+border: 1px solid #7777FF;;
+}
 
 body {
 padding-right: 20%;
@@ -171,6 +174,13 @@ body>section > h1:before  {
 content: counter(section) ". ";
 }
 
+table {
+    border: 1px solid;
+}
+
+table.inline-border td {
+    border-bottom: 1px solid; 
+}
 
 
 /* This works in Firefox, but it doesn't work in Chrome
