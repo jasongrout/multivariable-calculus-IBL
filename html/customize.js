@@ -8,9 +8,11 @@ button.click(function() {
 })
     $("body a[href^='http://']").attr("target","_blank");
     $("body a[href^='https://']").attr("target","_blank");
+    if(typeof sagecell !== 'undefined') {
     sagecell.makeSagecell({"inputLocation": ".sage"});
     sagecell.makeSagecell({"inputLocation": ".sageminimal", template:
 sagecell.templates.minimal})
+    }
 
     var toc=$('<ol></ol>')
     $('body > section > section:visible').each(function(i,e) {
