@@ -1,0 +1,1858 @@
+<html>
+<head>
+
+
+  <title>Line Integrals</title>
+</head>
+
+<!-- boilerplate -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+    Macros: {
+      proj: "\\mathrm{proj}",
+      ii: "\\vec \\imath",
+      jj: "\\vec \\jmath",
+      kk: "\\vec k",
+      ds: "\\displaystyle",
+      cl: ["\\begin{matrix} #1 \\end{matrix}",1],
+      RR: "\\mathbb{R}",
+      abs: ["\\left|#1\\right|",1],
+}
+  },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>sagecell.loadMathJax=false;</script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="customize.css"/>
+<script src="customize.js"></script>
+<!-- /boilerplate -->
+</head>
+
+<body>
+    <section style="counter-reset: section 8;">
+
+                    This unit covers the following ideas. In preparation
+  for the quiz and exam, make sure you have a lesson plan
+  containing examples that explain and illustrate the following
+  concepts.
+
+  <ol>
+    <li>Describe how to integrate a function along a curve. Use
+    line integrals to find the area of a sheet of metal with height
+    $z=f(x,y)$ above a curve $\vec r(t)=\left(x,y\right)$ and the
+    average value of a function along a curve.</li>
+
+    <li>Find the following geometric properties of a curve:
+    centroid, mass, center of mass, inertia, and radii of
+    gyration.</li>
+
+    <li>Compute the work (flow, circulation) and flux of a vector
+    field along and across piecewise smooth curves.</li>
+
+    <li>Determine if a field is a gradient field (hence
+    conservative), and use the fundamental theorem of line
+    integrals to simplify work calculations.</li>
+  </ol>
+        <p>You'll have a chance to teach your examples to your peers
+  prior to the exam. <a href=
+  "#line-integral-summary">This table</a> contains a summary of the
+  key ideas for this chapter. <span class="bmw">Here are some extra
+  homework problems which line up with the text. {\noindent
+  %\footnotesize</span></p>
+
+  <div class="tabular bmw">
+    <span class="bmw">{|l|c|l|l|l|l|}\hline Topic (11th ed.)
+    &amp;Sec &amp;Basic Practice &amp;Good Problems &amp;Thy/App
+    &amp;Comp \\\hline Line integrals &amp; 16.1&amp;1-8, 9-22,
+    23-32 &amp; &amp; &amp;33-36 \\\hline Work, Flow, Circulation,
+    Flux &amp; 16.2&amp;7-16, 25-28, 37-40 &amp;17-24, 29-30, 41-44
+    &amp;45-46 &amp;47-52 \\\hline Gradient Fields &amp;
+    16.2&amp;1-6 &amp; &amp; &amp; \\\hline Gradient Fields &amp;
+    14.5&amp;1-8 &amp; &amp; &amp; \\\hline Potentials &amp;
+    16.3&amp;1-12,13-24 &amp; 25-33 &amp; 34-38&amp;
+    \\\hline</span>
+  </div><span class="bmw">} {\noindent %\footnotesize</span>
+
+  <div class="tabular bmw">
+    <span class="bmw">{|l|c|l|l|l|l|}\hline Topic (12th ed.)
+    &amp;Sec &amp;Basic Practice &amp;Good Problems &amp;Thy/App
+    &amp;Comp \\\hline Line integrals &amp; 16.1&amp;1-8, 9-26,
+    33-42 &amp;27-32 &amp; &amp;43-46 \\\hline Work, Flow,
+    Circulation, Flux &amp; 16.2&amp;7-12, 19-24, 31-36, 47-50
+    &amp;13-18, 25-30, 37-38, &amp; 51-54 &amp;55-60 \\\hline
+    Gradient Fields &amp; 16.2&amp;1-6 &amp; &amp; &amp; \\\hline
+    Gradient Fields &amp; 14.5&amp;1-10 &amp; &amp; &amp; \\\hline
+    Potentials &amp; 16.3&amp;1-12,13-24 &amp; 25-33 &amp;
+    34-38&amp; \\\hline</span>
+  </div><span class="bmw">}</span>
+
+      <table id="line-integral-summary" class="inline-border">
+<tr><td>Arclength</td><td> $s = \int_C ds= \int_a^b
+        \left|\frac{d\vec r}{dt}\right|dt$</td></tr>
+<tr><td>  Surface
+        Area</td><td> $\sigma = \int_C d\sigma=\int_C f ds = \int_a^b f
+        \left|\frac{d\vec r}{dt}\right|dt$</td></tr>
+<tr><td>  Average
+        Value</td><td> $\bar f = \frac{\int f ds}{\int ds}$</td></tr>
+<tr><td> 
+        Work, Flow, Circulation </td><td> $W=\int_C d\text{Work} =
+        \int_C (\vec F\cdot \vec T) ds = \int_C \vec F\cdot d\vec r
+        = \int_C Mdx+Ndy$</td></tr>
+<tr><td>  Flux </td><td> $\text{Flux} = \int_C
+        d\text{Flux} = \int_C \vec F\cdot \vec n ds = \oint_C
+        Mdy-Ndx$</td></tr>
+<tr><td>  Mass</td><td> $m=\int_C dm = \int_C \delta ds
+        $</td></tr>
+<tr><td>  Centroid</td><td> $\left(\bar x,\bar y,\bar z\right)
+        =\left(\frac{\int x ds}{\int_C ds},\frac{\int y ds}{\int_C
+        ds},\frac{\int z ds}{\int_C ds}\right)$</td></tr>
+<tr><td>  Center of
+        Mass </td><td> $\left(\bar x,\bar y,\bar z\right)
+        =\left(\frac{\int x dm}{\int_C dm},\frac{\int y dm}{\int_C
+        dm},\frac{\int z dm}{\int_C dm}\right)$</td></tr>
+<tr><td>First moment of mass </td><td>$M_{yz}=\int x dm$,
+          $M_{xz} = \int x dm$, $M_{xy}=\int x dm$</td></tr>
+<tr><td>(Second) Moment of Inertia </td><td>$I_x = \int (y^2+z^2)
+          dm$, $I_y = \int (x^2+z^2) dm$, $I_z = \int (x^2+y^2) dm$
+          </td></tr>
+<tr><td>Radius of Gyration </td><td> $R =
+          \sqrt{I/m}$</td></tr>
+<tr><td>Fund. Thm. Calculus </td><td>
+          $f(b)-f(a)=\int df = \int \frac{df}{dx}dx = \int_a^b
+          f^\prime(x)dx$</td></tr>
+<tr><td>Fund. Thm of Line Int. </td><td> $f(B)-f(A)=\int_C
+        \vec \nabla f \cdot d\vec r$ 
+    <span class="bmw">Outline of proof: $\int_C df = \int_C
+        \frac{df}{ds}ds = \int_a^b \frac{df/dt}{ds/dt}ds =
+        \int_a^b \vec \nabla f \cdot \frac{d\vec r}{dt}dt =
+        \int_C \vec F \cdot d \vec r$</span> </td></tr>
+</table>
+
+        <p>There is a YouTube playlist to go along with this
+  chapter. Each video is about 4-6 minutes long.</p>
+
+  <ul>
+    <li><a href=
+    "http://www.youtube.com/playlist?list=PL04DF68E73B7ECD54">YouTube
+    playlist for 08 - Line Integrals</a>.</li>
+
+    <li><a href="http://db.tt/dAFBcMB7">A PDF copy of the finished
+    product</a> (so you can follow along on paper).</li>
+  </ul>
+        
+<p>You'll also find the following links to Sage can help you
+  speed up your time spent on homework.</p>
+
+    <ul>
+                <li><a id="lineintegralcalculator" href="https://sagecell.sagemath.org/?z=eJx1VE1v2zAMvRvwfyCSApFdN2vS0wr4EOw0YKd2wA5pGqgy7Qi1JUOSm-Tfj5LsrC26XEKTj9-Pms9_HxCErhBesNVHOMq2hVqqChwZ7GBqLhC4QQ66Bn7RuAN30Eq0o1_NTsU5A06O_EW_YXAXgyHJMJeBVEFzOkPfcoVLgDSJPuX3m9Pz-ub8vE4TDy3ZOhfaklTAXW6lIilLE2e4arBkrrgt1nkvSZUmlS3NspJ1TZil0qZjpK42Zc1yHyrLKx_HI-fwC93CQsdfqR2oByWc1AqMbA6OWqvBacA33g7cEUBRwQ4bw1ugZgzVLm1sJ1Q-_4MLmtNgfSw1dGikIOjkU9BQBPdWqzt0sqMxHRG6kEtpR2aaUos-Z4POp8MTF-4SYEldYE3zVbifdGwUVJXdpwnQz6AbjIKHB3Yp4Qt0AXF029XuIq532fZ2FwazgfJTnmoTDGlycF27dL5Qtk2TrZldxY1dzYoo7IqofnpDEdZMFv836auL4VvlvG3aFXPlO5QlU1hUQR-E--duZdPxsoYI2Xy0P45U3HhyXpUQ0VA-USf7HzB6bTx6N3YUmPDb79Ji3L_ngw3U7FvtIsffMZ8WYVbEuYFo6fugqRWhoTDNIZ-IRvEDO_a692FtWUnhmNCtNuXCYLUoiEHiVaG15d0EtmXPDSeC0Or2Pj0LuW6zaU9Fnn-Iml1_6bDKiv_g08QeEN0XeSYPNtA9rbKA1EcW67oOXvFuftZhHpdzoNlV2nOi8HoVLyO8Go0cz_7CYrqU3tAXzPwrEynuTwz9nD9HZUcuHdTa0AZepMvuZ_7ozyPXQ3Uj3CFxdJqRLx1PAns3IseMj7zxD9vQVuHihO76wX2sL1bUnpezv9Dcmfg=&amp;lang=sage">Line Integral calculator</a></li>
+        <li><a href="https://sagecell.sagemath.org/?z=eJylU8FuozAQvSPxDyNChGncqK165dQVe0ouuxKHJI3c2CRWAbNmILBfv7ahpN09LlIU8Lx5bzxvpmOaRBjRqDe_IYrBPYtvIpeVgEG1GjqmJXsrRON7mmAMCRCkz_f4-vSB_oEMJ3DNNCsFavmboVQVgO-9qbbizZh2_0inrMV32QmYYrnSgBfxd7bvpaSng5N8uutXA73v45ugzejECU1yLkXBfa-_afU3rcXPi2hmLaYFtI3I2wJkbouGK6sQUEHJ3gUwOCvFoS4Urn1vuBEO9IE-_y-f723oNkntC9eGVa-5zHPb1elZvKiybqfLcaFlZzrRCQPPkpTcWQNiuAPunFiksuJGoZCIhSlIIqgcrkq_rwFMkXBSXIDePRzgbEgaR5pL3aCJlLWqRIUUmOHQu8fPmEacVMXXxrwskRWKszb9Jjyj451jW_8Fy4IEQWB1rCRwwwdvA4RpsmxCYIWqzo7t1GpjtU5Ce-x77p6qE6PlUxddTI7_hnSJbV0IUrKaFEa6p7AbR4GCvTmd0ihkhziOx2LWaKeU7Hxvp4NwbybDYcOAQhC6ZPtqjw50xPARNCF4T_mI4TMoCNM586OADxsmwMbGNlNs8zW2tbHtFNt-jll14-j-xBXClzo2vF9t-TB-LJs95RgGS9cF48CcnSV748zxBf7hyGh28L0DhYtgZoIg2UW_WjOSEgez47ICFLps7KSEprAwovD1EMPI5DuP62TeyNPRjjBx3Z-noF4l9vQ4buHRbSFJ6bSGdJiBzUVdSR3_AagoUJM=&amp;lang=sage">Work Calculator</a></li>
+        <li><a href="https://sagecell.sagemath.org/?z=eJytVE2P2jAQvUfKfxhBEA71rqqudm-ctsqqB7i0Ug-AkDd2wGqIU9thk_76jj8CXfZapAjbM_Pmzbyxz0yTuZ3TeY_fMM_h5jf9KirZCBhUp-HMtGSvtTBpoonNYQnkcVEqg2v6uDCywUVEmH63zMawlml2ElbLP8xK1QCkyavqGm4cgKWf6ZdFK99nnr7Is4DoVSkN9ihucdKkID0dPI2HRU8fFsMN_UjCxZ5FaRGmkqLmadJf8_f07ok-3Qb-OApzyc-0gM6IqqtBVq4keGONBavgxH4JYHBQikNbK3ufJsMVevjP0GnCNeJyWVVEU_tBKwR_Vqe2iyVzoeUZO3UWaUJ4T7lvFddpEviFlhDCkSfvg3DTF2F9cKP0idVj214HMG-sbWVz8FalERxYw6E8suYwHht5aDzPFV1jgsJTLuquXxZkof1wLACTu9mZFhLDGdTS2hr7IS2oCpzzPfxE8spC4TM4sii1Q5GNFQeNkhKPSkMTA_Fvo-0DZuUwHZWjPdVETyYTlMCfOmtWLGcmA1ZqZYyvouw0zl62xdpBe2Oa-O6qswiDGMXLnE2Gf0Sd2a6tBTmxltTIo6ewCQNKwdVOYxj1Re7yPA-M7q27UmSTJhs9iVnRPZtQmGQ-3i3d0Y4GHx6cokdQ1m34v07NlnIzugSF3S50f3QK_JYE9fLWke8o1-i3csZVNK5ujGtnXEfj-sYY5d-WTlDPG4nBhdnM5MhzuIuLPpvMQvNIyJbTsAvwuL0GWfQNRp_jWpNLuMVR2T_DTV6f1k-OlyBNdhSOgrlZXm7mvzu8etIO-BDKBqzQJ-MHBDNncwrvD202x_jcjVW7vDxM5d5dVeLljsOJ9k9Ld7oPd2nvnyBS0PgG0eHiaI7qjbT5X0yTnwg=&amp;lang=sage">Flux Calculator</a></li>
+        <li><a href="https://sagecell.sagemath.org/?z=eJy1VFFv2jAQfvevOFEkHGrYuqnVNMnSNmk8td1UVeKBIpTGDlgNdnR2KPn3O8dpC6x7XB6wuXzf3Xff2dnlyEd70YowythM7nQRHPLFpBX7ZcbwNXA5LpznIRNwOfbG0o5eBx9yDPIjC9oq-WlcG8YSYVUaXanVo2us8iCB872YXIkr4vM27TLG2Blc6zDysM2fNORQNrYIxllAs94EcGUJwYHe5VWTBwJYMDboNeYVuJ1GCBvjoWhwp6dM6RIqY_XqBcL7jVXZVwb0oA4NWri747bZajRFXr2BD9BT3zx6vpe4-LgU0NJ6sSTdqVlaqdeMXpF-hVKZsuQoQsbUXM5OWWOFcAY3TRVMXbXGriE8O0gWeeptrcOG-libnaa_Gw3KBajRqaYIbC6P-1FzKkl2kvfRURUrCJgo7MSoWdXs31FABNa9OkkWY2kE999_XP9km7CtpiF_rDRfsAUOhg8kEyifaLPhQMBsKd7CSBpiEPtgGAJZt9YU4uHEqh6iEjGyFB7mmvHXlKnQaQsvCeYy4eGhiDYdJpz3GIJQh6D69V_4-WF9C8rHYHL2pVhyMzEjghy_AdXCBG5B7buiEfLK6PDDVL3bd9vjBF3oRrWT25Qh4pYsHqQz-H396559i-PBnGYfT_OKk41By8WgrNzzQNDS7AfL_jTXsq5cWB1eNz4TMH7n_mWJcC6hzjHf6kBnfxXZdHD_npegW1U8We29_JyYpoSkRCYlSUB8Sodg6FKC78bPDxPF1LRMUiz7cPEleyN2goAU5YjumdPwpYnfBjyH6SXdmiwFClc5lCPUapSk6OpIDPnx38VEA4_UrFFr2-vpfvyGWLWA3Ndk_gpz-obJi-wPG3Sl-A">Work and Flux Calculator</a></li>
+
+        <li><a href="https://sagecell.sagemath.org/?z=eJyFVU1z2jAQvetXaDLMIBORONBeMqNTe-GQi69APMIW4Kllu5KgVhn-e1eybD6atFxs6e2-fX7aFUeuyLillppxhHJR6cJYAuuIte-zR4sUO4rM1Ios55Os1sREFM8nuqjgbR0how1XhsXIiCpnTYFMqni1E4wY2mHUIRFCSKWNKqTADOfFdksUNVBQs2HxVNVKkghpVlRG7BQvSa7pJBBGKBOVUXWRpy2rSHWQQhUZL9MhmLSTXEekZWoZr0FlKI99fdh61lcc9hMO6zkscLx8xpFLRq6NuqpKcchEkgqlasU-qJHLO17Ej7s0MII78lkjOIktLotKXNLCC8S_Igw_JcxBVThJPvyOS_STPmz0vb6_vwxO6K1ltyXBUBmhN3u3bf22s1KoVHKt0xZkk7f2WcIhklvIesj20KKlC0sXMewuP_s-vK0VHpbwhol9n02cb233JL4332eRU7JGiauvfypDFk4DSuywtn4dD-vYrdHeyPLJ8E0pyBIt1cP3YP5olYvScH-soweKr495TV3kt4M6CoiDocAKRgCiVIeMzAj7ToW80LMBWG0Vz055l3M-5ebsuMM4hJhcjyjmcOTGlAJvCoPrLeYqK0W1M3snRYdIPcLTGyQA30Jrg7hSbA3pqr6cT_q8AjNxu6IwTve71u2uVLHb-2_B5DJl9DIsUa9Sss4hkONl3Al2J-60yhAP4a7ITU6ICSH8KBTfid5pPBoEyk4gJD1gsOYyIq6Pemf9h0E9J_2tvd61_a692CNUL_LGpBeJOyLXYTc7Npf33gwtT_FNm_eSFn4Yuuz3WRCxAGkdaDtH2gtkeyjuoKG3Ax4H4gTuvZVr4hOUeJa-h5LAmzjegEHHnx1keygeoNhDSbxGbtzrxmh2Grsp1MaWYvw6zrnei3x8Rg1ruOJSGLhX0qasDdzQfVfDy77IfkCWZl8i1Dyypgbh5N_20Kwu4T4cK-CnPkEXvwX7GlNcih1cQmnJN6Jkdwf1cF8g9Ca-ak5YdNw7JUQ1pvh_9C6vI84KN0iExDSOwBg6mThXPOR8IcvldE69y_6x7gMeL-g0wNNr_IogsXQ6hwh4zj8g6OHpLY70vv5FGmh83cD_Lzhvipq9RH8Ah12GVw">Physical properties</a></li>
+        <li><a href="https://sagecell.sagemath.org/?z=eJx9Vk2PqzYU3ftXWNNIMRNPJslrN5VYTTcjtRvUXZKHPOAk6GGgtpNij-a_99p8BcJrNsH3Hh_fD58LkiuuSYBuTJJlTQ3VywClvFCZNsStbRDWK7OySIY3nuhSkv3uOSkV0QHFu2eVFf5JHwOEfpEh6UAbuqObY_DSrbd0S78dg-BZryYmpJVmUocbpHmRht-eqwzpWLLizEOiaeOlzueOwH9yvVRYsB8cM3y6FonOygLL7HzRuDydsC4xv7H8yjQACpwVmp8ly3F54xLrS6ZwcpU3voYsTzjPCh53ENI-wEG_Iww_yfVVFjiKSHEVXGYJywfwHXqtrh-K1KHcb44UG_jfHqmFv93RlaZJAPsMAAFZyLiSmeA4xGl2OhFJNRRdhf1iXZRSQFdUOA4wVQFKeKFlmaVxPXHWz-B-VQPATABmCrATgG0BqQjHVwDsSExjEQFit3PcIiEXAVuRKAXQx-yjvOrY2LjKWcEfI4XNI2Q9jzQzSDOLtB7pUuMyFkypuHYhzUXzKkY4M8XV8zj7gDM9Dr1Pu0HM993Kft8FPq73aS9IPXJPO-HdpnNHLhX1j9TkvX51a9OvjV_bfm3dGp1kKbBiZ74WmUrWFy1ynImqlBqEoy9xxaQCdYCMKoScd63ZR87JHu1FReTTH21PF4eU55q5WxAsnuAut80-0hb45qQEMJA0ljAIHEj23oVeYK9jt7WV9OBsNi3bXbjVxOBP1YKCxPNM65zjj8zJGzOZ5Lw464uPRg1otcAvY-_gfGsvPCZJWYAaC90lEkDsOT9pcjhJlnxuvz7F1wG6gOsDTRWdWo234qnZOvPBj6AmFzKIlA5yHB5tcJemCJsqQzo-h0nG7u75ZMWwB7a4c0f7OtwAYzDx4A50uUKqk7hh41OAociDjNcFuYvtr_jT2K_msBoi8Od4CWAvAbwwdoG9CPzRc2obsdUdm5llq3_KVs-ymZbNzrOZn7KZCdub13lX7tGl2Arc5J-KtvOdxTxYXBwP96CfRxSPxs54eX8l3v3s8oz9GHEZOsr3-kh7mGnS74dJDzJ3IHsHciOlw9jhwAheJgc3QD7h6Ffx5QHRcFLkTmr9MHG-vNvcuW3vto07skfk3nSoCmHYMME1vD6h6KWGF1w3C6h7Hyc_Cq5U-GuAqlVYlRAq-f-yjatGkzIvZbiUPF1Sv11lloe_baZ8rRzxvB7B3vCcJefFkuIHKjegyR6-azb0xc_ayBU0chWFQjjz1HqkkqXZVYWRpWXFEpBXuFlv79laJtfkyDUQWOATYj9nHdjqezY6insc6X2cDY-P9NE6cJs5bldb6KW6lP-SCsaFquALDloIX17hlrKaq_BveeUB-g_6R3nE&amp;lang=sage">Physical properties (3D)</a></li>
+                    </ul>
+
+        
+        
+  <ul>
+    <li><a href=
+    "http://bmw.byuimath.com/dokuwiki/doku.php?id=sage_links">Sage
+    Links</a></li>
+
+    <li><a href=
+    "https://content.byui.edu/file/3e8d885f-db47-4e74-9e04-c3d72627c835/1/_zips/215-Tech-Introduction.zip">
+    Mathematica Notebook</a> (If you have installed
+    Mathematica)</li>
+  </ul><span class="bmw">If you would like homework problems from
+  the text that line up with the ideas we are studying, please use
+  the following tables. {\noindent \footnotesize</span>
+
+  <div class="bmw tabular">
+    <span class="bmw">{|l|c|l|l|l|l|}\hline Topic (11th ed.)
+    &amp;Sec &amp;Basic Practice &amp;Good Problems &amp;Thy/App
+    &amp;Comp \\\hline Line integrals &amp; 16.1&amp;1-8, 9-22,
+    23-32 &amp; &amp; &amp;33-36 \\\hline Work, Flow, Circulation,
+    Flux &amp; 16.2&amp;7-16, 25-28, 37-40 &amp;17-24, 29-30, 41-44
+    &amp;45-46 &amp;47-52 \\\hline Gradient Fields &amp;
+    16.2&amp;1-6 &amp; &amp; &amp; \\\hline Gradient Fields &amp;
+    14.5&amp;1-8 &amp; &amp; &amp; \\\hline Potentials &amp;
+    16.3&amp;1-12,13-24 &amp; 25-33 &amp; 34-38&amp;
+    \\\hline</span>
+  </div><span class="bmw">} {\noindent \footnotesize</span>
+
+  <div class="tabular bmw">
+    <span class="bmw">{|l|c|l|l|l|l|}\hline Topic (12th ed.)
+    &amp;Sec &amp;Basic Practice &amp;Good Problems &amp;Thy/App
+    &amp;Comp \\\hline Line integrals &amp; 16.1&amp;1-8, 9-26,
+    33-42 &amp;27-32 &amp; &amp;43-46 \\\hline Work, Flow,
+    Circulation, Flux &amp; 16.2&amp;7-12, 19-24, 31-36, 47-50
+    &amp;13-18, 25-30, 37-38, &amp; 51-54 &amp;55-60 \\\hline
+    Gradient Fields &amp; 16.2&amp;1-6 &amp; &amp; &amp; \\\hline
+    Gradient Fields &amp; 14.5&amp;1-10 &amp; &amp; &amp; \\\hline
+    Potentials &amp; 16.3&amp;1-12,13-24 &amp; 25-33 &amp;
+    34-38&amp; \\\hline</span>
+  </div><span class="bmw">}</span>
+
+  <div class="comment">
+      After 3 semesters of trying this, I need to rewrite the
+      section again. I put lots of notes in my notebook for this
+      semester. I'll rewrite the section soon. Some problems need
+      to be combined. Some need to be dropped. Other sections need
+      more simpler problems (work/flux). Get rid of many of the
+      &#8220;use a computer to integrate&#8221; problems. Just have
+      them focus on what I'll ask them to do anyway. Do I need to
+      focus on summation notation? I think it could be valuable to
+      do so. Do I need to start with area, or would it be better to
+      start with work. I'm thinking work might be a better way to
+      start. Then I can put random work problems in the middle
+      (just to beef up our abilities). Add flux midway through.
+      Start with work. Then talk about area. Then talk about flux.
+      Then talk about average value and center of mass. Leave out
+      inertia for now (add it in later - this removes 5 problems,
+      an entire day. They just have to be added later on, and the
+      quizzes and exams have to be updated.) Then come back to
+      work, and get to potentials. End with potentials and the
+      fundamental theorem. Motivate everything with discussing the
+      airflow along a wing. Does this cover it all? Problems 8.1
+      and 8.2 have to be shrunk. They cannot be that long. They
+      really are short, so make them short. Get rid of all the
+      extra fluff, and put it later.
+  </div>
+<section>
+  <h1>Area</h1><div class="instructor">I draw and cut out the area between a
+  curve and the axis on a sheet of paper and draw a representative
+  rectangle on it. We talk about the single-variable way to find
+  area and label the rectangle and label it with $f(x)$ and $dx$
+  and $dA=f(x)dx$. Then I draw a curve on the whiteboard and put
+  the $x$-axis of my sheet on the curve to show how we now are
+  computing an area above a curve. Students see how the $dx$
+  becomes $ds$, and how $d\sigma=f(x,y)ds$. Then we do the problem
+  below and show the Sage graph.</div>
+        <p>In first-semester calculus, we
+  learned that the area under a function $f(x)$ above the $x$-axis
+  is given by $A = \int_a^b f(x) dx$. The quantity $dA= f(x) dx$
+  represents a small bit of area whose length is $dx$ and whose
+  height is $f(x)$. To get the total area, we just added up the
+  little bits of area, which is why $$A=\int dA = \int_a^b f(x)
+  dx.$$ Now we want to generalize this</p>
+
+  <div class="problem">
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=sYsMcqtXBrc&amp;list=PL04DF68E73B7ECD54&amp;index=1&amp;feature=plpp_video">
+      Watch a YouTube video.</a>
+    </div>
+
+    <div class="marginpar">
+      See <a href=
+      "https://sagecell.sagemath.org/?z=eJx1j8EOgyAQRO98hTeBroniqQe-pFFjECupFQJro39ftPXQxN5mknk7sz1dYGXymi21yNZaEE-RSSq4siEqSEoezBQVI-jb6a4lRchBcGcY8UU0c4xv0C2vINlFUcHMe8o3Ezk1-5durENjpyA7o5AqO1ovU6-7FHAw6jHpEGT5zQbpWt8-NXqjGjdapHtRHtd8NgDnP0fZ5RQoGPzJkzBojSc1B0Dn-GRxjA-XPf8GnQ5jSA">
+      Sage</a> for a picture of this sheet.
+    </div>Consider the surface in space that is below the
+    function $f(x,y)=9-x^2-y^2$ and above the curve $C$
+    parametrized by $\vec r(t)=(2\cos t, 3\sin t)$ for
+    $t\in[0,2\pi]$. Think of this region as a metal plate that has
+    been stood up with its base on $C$ where the height above each
+    spot is given by $z=f(x,y)$.
+
+    <ol>
+      <li>
+        <div class="marginpar">
+          See <a href=
+          "#horse-track-chain-rule-introduction">this problem</a>.
+        </div>
+          
+          Draw the curve $C$ in the $xy$-plane. If we cut the
+        curve up into lots of tiny segments, each having length
+        $ds$. Explain why the length of each segment is
+        approximately $$ds=\sqrt{(-2\sin t)^2+(3\cos t)^2}dt.$$
+        [Hint: think of the particle moving around the curve, and a
+        tiny segment being the path of the particle over a small
+        time interval $dt$. Distance traveled in a small segment is
+        rate (i.e., speed) multiplied by time.]
+
+        <div class="comment">
+The height of the surface above each little arc is
+            given by $f(x,y)$. Explain why the surface area of a
+            little part of the surface is $$d\sigma =
+            (9-4\cos^2t-9\sin^2t)\sqrt{(-2\sin t)^2+(3\cos
+            t)^2}dt.$$
+        </div>
+      </li>
+
+      <li>
+        <div class="marginpar">
+          We'll use $\sigma$ (a lower-case Greek letter
+          &#8220;sigma&#8221;) to stand for surface area.
+        </div>
+          
+          We let $\sigma$ be the area of the metal sheet that
+        lies above $C$ and under $f$. Explain why $\sigma$ is given
+        by the integral $$\sigma = \int_C f ds =
+        \int_0^{2\pi}(9-(2\cos t)^2-(3\sin t)^2)\sqrt{(-2\sin
+        t)^2+(3\cos t)^2}dt.$$ You'll need to explain why a little
+        bit of surface area $d\sigma$ is $d\sigma =fds$.
+      </li>
+
+      <li>
+        <div class="marginpar">
+          See the <a href="#lineintegralcalculator">Line Integral Calculator</a>.
+        </div>
+          
+          Find the surface area $\sigma$ of the metal sheet.
+        [Use technology to do this integral.]
+      </li>
+    </ol>
+  </div>
+    
+    Our results from the problem above suggest the following
+  definition.
+
+  <div class="definition" label="Line Integral">
+    <div class="marginpar">
+      The line integral is also called the path integral, contour
+      integral, or curve integral.
+    </div>
+      Let $f$ be a function and let $C$ be a piecewise smooth
+    curve whose parametrization is $\vec r(t)$ for $t\in[a,b]$.
+    We'll require that the composition $f(\vec r(t))$ be continuous
+    for all $t\in [a,b]$. Then we define the line integral of $f$
+    over $C$ to be the integral $$\int_C f ds = \int_a^b f(\vec
+    r(t))\frac{ds}{dt}dt = \int_a^b f(\vec r(t))\left|\frac{d\vec
+    r}{dt}\right|dt.$$
+  </div>
+        
+  <div class="marginpar">
+    When we ask you to set up a line integral, it means that you
+    should do steps 1&dash;3, so that you get an integral with a single
+    variable and with bounds that you could plug into a computer or
+    complete by hand.
+  </div>        <p>Notice that this definition suggests the following four
+  steps. These four steps are the key to computing any line
+  integral.</p>
+
+
+
+  <ol>
+    <li>Start by getting a parametrization $\vec r(t)$ for $a\leq
+    t\leq b$ of the curve $C$.</li>
+
+    <li>Find the speed by computing the velocity $\dfrac{d\vec
+    r}{dt}$ and then the speed $\left|\dfrac{d\vec
+    r}{dt}\right|$.</li>
+
+    <li>Multiply $f$ by the speed, and replace each $x$, $y$,
+    and/or $z$ with what it equals in terms of $t$.</li>
+
+    <li>
+      <div class="marginpar">
+        You should use the <a href="#sagelineintegral">Sage line
+        integral calculator</a> to check all your answers.
+      </div>
+        
+        Integrate the product from the previous step.
+      Practice doing this by hand on every problem, unless it
+      specifically says to use technology. Some of the integrals
+      are impossible to do by hand.
+    </li>
+  </ol>
+
+        <div class="instructor">These quick problems help the students get
+    the hang of line integrals and practice parametrizing curves.</div>
+  <div class="problem">
+    <div class="marginpar bmw">\marginparbmw{See 16.1: 9-32. Some problems give you a
+    parametrization, some expect you to come up with one on your
+    own.}</div>
+
+
+<div class="marginpar bmw">To practice matching parameterizations to
+      curves, try 16.1:1-8.}</div>
+          Consider the function $f(x,y)=3xy+2$.
+      Let $C$ be a circle of radius 4 centered at the origin.
+      Compute $\int_C fds$. [You'll have to come up with your own
+      parameterization.]
+  </div>
+        The big idea behind integrals is that we are adding up a
+  bunch of small quantities (above, it was $d\sigma=fds$) to get a
+  total quantity (surface area). In line integrals, we add up the
+  value of $f$ weighted by a length $ds=\abs{\frac{d\vec
+  r}{dt}}dt$. This concept can be extended to curves that are more
+  than just plane curves.
+
+  <div class="problem">
+        <div class="marginpar">
+          If you've forgotten how to parametrize line segments, see
+          <a href=
+          "#first-line-between-two-points">this problem</a>.
+        </div>         <div class="marginpar">See Larson 15.2, especially examples 1&ndash;5.</div>
+      
+      Do the following integrals
+
+    <ol>
+      <li>The principles of line integrals apply even if the curve
+      is not a 2d curve. Let $f(x,y,z)=x^2+y^2-2z$ and let $C$ be
+      two coils of the helix $\vec r(t)=(3\cos t, 3\sin t, 4t)$,
+      starting at $t=0$. Remember that the parameterization means
+      $x=3\cos t$, $y=3\sin t$, and $z=4t$. Compute $\int_Cf ds$.
+      [You will have to find the end bound yourself. How much time
+      passes to go around two coils?]</li>
+
+      <li>
+Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
+        line segment from $(1,0,0)$ to $(0,4,5)$. Compute $\int_C f
+        ds$.
+      </li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      See <a href="#parameterizing-plane-curves">this problem</a> if
+      you forgot how to parametrize plane curves.
+    </div>
+
+    <div class="marginpar larsonfive">
+      See Larson 15.2: 1&dash;20, 63&dash;70.
+    </div>
+
+    <div class="marginpar">Check your answer with 
+      <a href="#sagelineintegral">Sage</a>.
+    </div>Let $f(x,y)=x^2+y^2-25$. Let $C$ be the portion of the
+    parabola $y^2=x$ between $(1,-1)$ and $(4,2)$. We want to
+    compute $\int_C fds$.
+
+    <ol>
+      <li>Draw the curve $C$ and the function $f(x,y)$ on the same
+      3D $xyz$ axes.</li>
+
+      <li>Without computing the line integral $\int_C fds$,
+      determine if the integral should be positive or negative.
+      Explain why this is so by looking at the values of $f(x,y)$
+      at points along the curve $C$. Is $f(x,y)$ positive,
+      negative, or zero, at points along $C$?</li>
+
+      <li>Parametrize the curve and set up the line integral
+      $\int_C f ds$. [Hint: if you let $y=t$, then $x=$? What
+      bounds do you put on $t$?]</li>
+
+      <li>Use technology to compute $\int_C fds$ to get a numeric
+      answer. Was your answer the sign that you determined
+      above?</li>
+    </ol>
+  </div>
+
+  <div class="problem" id="arclength">
+      <div class="marginpar larsonfive">See Larson 12.5.</div>
+    Compute $\int_C 1 ds$ for the following curves $C$ and
+    interpret your answers.
+
+    <ol>
+      <li>$C$ is the curve $\vec r(t)=(2\cos t, 2\sin t)$, $t\in
+      [0,2\pi]$.</li>
+
+      <li>$C$ is the curve $\vec r(t)=(\cos t, t, \sin t)$,
+      $t\in[0,\pi]$.</li>
+    </ol>
+  </div>
+
+  <div class="problem-nonum" label="Challenge">
+    <div class="marginpar bmw">
+      <span class="bmw">See 11.5: 21-28.</span>
+    </div>
+      <div class="marginpar">See <a href="http://sagecell.sagemath.org/?z=eJwr0ijJSC1J1LQ10krOL9Yw1oJwebkK8nMSi-ILcvJLNIp0FCCqdAx0jLQKMjU1AeKxEQI=&lang=sage">Sage</a> for a plot.</div>(Challenge) Set up (do not evaluate) an integral formula to compute
+    the length of the polar coordinate rose $r=2\cos 3\theta$. [Hint: how can you use the ideas from <a href="#arclength">the previous problem</a> along with the parametric equation for the polar curve?]
+  </div>
+</section>
+    
+    <section class="hidden">
+  <h1>Work, Flow, Circulation, and Flux</h1>Let's turn our
+  attention to the work done by a vector field representing a force
+  as we move through the field. Work is a transfer of energy.
+
+  <ul>
+    <li>A tornado picks up a couch and applies forces to the couch
+    as the couch swirls around the center. Work measures the
+    transfer of energy from the tornado to the couch, giving the
+    cough its kinetic energy.</li>
+
+    <li>When an object falls, gravity does work on the object. The
+    work done by gravity converts potential energy to kinetic
+    energy.</li>
+
+    <li>If we consider the flow of water down a river, it's gravity
+    that gives the water its kinetic energy. We can place a
+    hydroelectric dam next to river to capture a lot of this
+    kinetic energy. Work transfers the kinetic energy of the river
+    to rotational energy of the turbine, which eventually ends up
+    as electrical energy available in our homes.</li>
+  </ul>When we study work, we are really studying how energy is
+  transferred. This is one of the key components of modern life.
+  Let's start with simple review. Recall from Section~<a href=
+  "#work-section">TODO</a> that the work done by a vector field
+  $\vec F$ through a displacement $\vec d$ is the dot product $\vec
+  F\cdot \vec d$.
+
+  <div class="review*">
+    An object moves from $A=(6,0)$ to $B=(0,3)$. Along the way, it
+    encounters the constant force $\vec F = (2,5)$. How much work
+    is done by $\vec F$ as the object moves from $A$ to $B$? See
+    \footnote{The displacement is $B-A=(-6,3)$. The work is $\vec
+    F\cdot \vec d = (2,5)\cdot(-6,3) = -12+15=3$.}.
+  </div>
+
+  <div class="problem">
+    An object moves from $A=(6,0)$ to $B=(0,3)$. A parametrization
+    of the objects path is $\vec r(t) = (-6,3)t+(6,0)$ for $0\leq
+    t\leq 1$.
+
+    <ol>
+      <li>For $0\leq t\leq .5$, the force encountered is $\vec F =
+      (2,5)$. For $.5\leq t\leq 1$, the force encountered is
+      $(2,6)$. How much work is done in the first half second? How
+      much work is done in the last half second? How much total
+      work is done?</li>
+
+      <li>If we encounter a constant force $\vec F$ over a small
+      displacement $d\vec r$, explain why the work done is \ $\ds
+      dW = \vec F\cdot d\vec r =F\cdot \frac{d\vec r}{dt}dt $.</li>
+
+      <li>
+        <div class="marginpar">
+          You can visualize what's happening in this problem as
+          follows. A sailboat sails in a straight line between two
+          points. As the sailboat moves through the water and the
+          wind, the wind blows at the sailboat from different
+          directions.
+        </div>%
+
+        <div class="marginpar">
+          See <a href=
+          "https://sagecell.sagemath.org/?z=eJytU01vm0AQvSPxH0aYiCXeWnGr5sYplXtKLq3EwbGsDbvYqwBLl4FAf31nAeOkvRbJAs-8N28-O2FZhBGPevoNUQzjs_qmcl0pGExroRNWi5dCNb5nGcaQAPt0f4vrew5fbvHC-IECZ0ItrCgVWv1boDYVgO-9mLaSjaMiv-PbibT6rjsFsys3FvCs_ib73o71fBhVP_Ov6yG-ijl4pzIkZq5VIX2vv-r0pHM_6qx-nlWz6AiroG1U3hagc5cvvIkKAQ2U4lWBgJMxEurC4Mb3hmu84X_E8z1pKZjdSJ3n7NI7CvlgyrqdS5LK6o6K7xTB02THbl3b4400eKytkW2GTI4mWO10JUmj0IgFpaQRTA5vxr5uAChNyIxUYPd3BzhRvGaMn2vbIHnK2lSqQg6CYtj99j2mUZmp5IYmlya6QnWy1HAmUz5VHbtSzlgWLAgCp-MkQVI8eBkg3CU3TQiiMNVpjJa1lgZtk9CZfW8s2XRqGvjcx9GnpzcFvcG2LhQrRc0Kku457KdF4OBK5zONQ3qI43hKZoNuTdne9_Y2CJ9pNUZsGHAIwpHsPp3pwCeMnEAzQvZcThi5gIJwtzAvCVwmMgMerz5q9NVNf2bE0zvE9j1ie1gyoUE_ZzRi-JDTo-zXT3IYc0ov2DR5ppkcH-AfRsrTg--RwlkJWiNI9tGvltZR40DnrStAZcvG7UhIyYQRh49GDCPij9Otk-USs6NbXzb2fZl_vU6c9Tgd4HE8QLbj8wXyYQE2Z_PG6vgPS3NRVA==&amp;lang=sage">
+          Sage</a>
+        </div>% Suppose that the force constantly changes as we
+        move along the curve. At time $t$, we encounter the force
+        $F(t) = (2,5+3t)$, which we could think of as the wind
+        blowing stronger and stronger to the north. Explain why the
+        total work done by this force along the path is $$\ds
+        W=\int \vec F\cdot d\vec r = \int_0^1 (2,5+3t)\cdot
+        (-6,3)dt.$$ Then compute this integral. It should be
+        slightly larger than the first part.
+      </li>
+
+      <li>(Optional) If you are familiar with the units of energy,
+      complete the following. What are the units of $\vec F$,
+      $d\vec r$, and $dW$.</li>
+    </ol>
+  </div>We know how to compute work when we move along a straight
+  line. Prior to problem <a href="#first-work-problem">TODO</a>
+  on page \pageref{first work problem}, we made the following
+  statements.
+
+  <div class="quote">
+    If a force $F$ acts through a displacement $d$, then the most
+    basic definition of work is $W=Fd$, the product of the force
+    and the displacement. This basic definition has a few
+    assumptions.
+
+    <ul>
+      <li>The force $F$ must act in the same direction as the
+      displacement.</li>
+
+      <li>The force $F$ must be constant throughout the
+      displacement.</li>
+
+      <li>The displacement must be in a straight line.</li>
+    </ul>
+  </div>We used the dot product to remove the first assumption, and
+  we showed in problem <a href="#first-work-problem">TODO</a>
+  that the work is simply the dot product $$W=\vec F\cdot \vec r,$$
+  where $\vec F$ is a force acting through a displacement $\vec r$.
+  The previous problem showed that we can remove the assumption
+  that $\vec F$ is constant, by integrating to obtain $$W=\int \vec
+  F \cdot d\vec r = \int_a^b F\cdot \frac{d\vec r}{dt}dt, $$
+  provided we have a parametrization of $\vec r$ with $a\leq t\leq
+  b$. The next problem gets rid of the assumption that $\vec r$ is
+  a straight line.
+
+  <div class="problem">
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=9TGZIIpEaHw&amp;list=PL04DF68E73B7ECD54&amp;index=2&amp;feature=plpp_video">
+      Watch a YouTube video</a> about work.
+    </div>%
+
+    <div class="marginpar">
+      Please use this <a href=
+      "https://sagecell.sagemath.org/?z=eJytU8FuozAQvSPxDyNChUndqGnOnLrKntrLrsQhjSIHm8QqYNYYAvv1OzaEpLvXRUKYmfdmxvNmOqZJZCIa9fgOUQzuWXwTuawEDKrV0DEt2bEQje9pYmJIgGyWmWrwTGGzbGSFpyvxh2Fm4tVMs1IYLX8zI1UF4HtH1Va8sREMfaYvy1qOvMV32QmYvLnSYM7ib77vbUlPB5f_6WU5IL2PbyktoxOZQXIuRcF9r79l6-nThm5crsXPs2jmXEwLaBuRtwXI3JYNF1YZMApK9imAwUkpDnWhzMr3hlvA4b8E9D2uMZpecZnntrXTs3hVZd1Ol-JCyw470AmEp8mWLK0K8Yorc6i14m1mCHcmWGxlxTFHIY0psCRpQOVwUfpzBYBlQqa4AL173sMJ4zUufi51Y9BT1qoSlaHAMIbere8xjchUxVeoYJrIyoiTxpYTntLx1rG9ytmUBQmCwOaxKYFjPDgOEG6ThyYEVqjq5KJlrUa1dRJas--5K6tOjKpPfXQ-OX4x6INp60KQktWkwNQ9hd04DRS0m8ORRiHdx3E8FrMydmrJzvd2Ogg_cDgcNgwoBKEj26M17emI4SNoQvCe8hHDZ1AQbmfmtYCrIhPg7ebDRt_c-DMh3u8Q63vEej9XgkJ_ZCgxfKnpjfeP73xwNaVXbJp8oCaHV_iHkdJ073uY4SwYjhEku-hXi-MozYDbLiswQpeNnZEQiwkjCl-NJoyQ79Stk3kds4MdX-L6PutfPybWehhX8OBWkGzptIN0mIHNWV1IHf8BpfhWHQ==&amp;lang=sage">
+      Sage link</a> to check your work.
+    </div>% Suppose that we move along the circle $\vec r(t) =
+    (3\cos t,3\sin t)$. As we move along this circle, we encounter
+    a rotation force $\vec F(x,y) = (-2y,2x)$.
+
+    <ol>
+      <li>Draw the curve $\vec r(t)$. Then at several points on the
+      curve, draw the vector field $\vec F(x,y)$. For example, at
+      the point $(3,0)$ you should have the vector $\vec
+      F(3,0)=(-2(0),2(3))=(0,6)$, a vector sticking straight up 6
+      units. Are we moving with the vector field, or against the
+      vector field?</li>
+
+      <li>Explain why we can state that a little bit of work done
+      over a small displacement is $dW = \vec F\cdot d\vec r$. Why
+      does it not matter that $\vec r$ moves in a straight
+      line?</li>
+
+      <li>Explain why the work done by $\vec F$ along the circle
+      $C$
+
+        <div class="marginpar">
+          We put the $C$ under the integral $\int_C$ to remind us
+          that we are integrating along the curve $C$. This means
+          we need to get a parametrization of the curve $C$, and
+          give bounds before we can integrate with respect to $t$.
+        </div>is $$W = \int_C\left(-2y,2x\right)\cdot d\vec r =
+        \int_0^{2\pi}\left(-2(3\sin t),2(3\cos
+        t)\right)\cdot(-3\sin t, 3\cos t)dt.$$\ Then integrate to
+        show that the work done by $\vec F$ along this circle is
+        $36\pi$.
+      </li>
+    </ol>
+  </div>It's time for a definition.
+
+  <div class="definition">
+    The work done by a vector field $\vec F$, along a curve $C$
+    with parametrization $\vec r(t)$ for $a\leq t\leq b$ is $$W =
+    \int_C \vec F\cdot d\vec r= \int_a^b \vec F\cdot \frac{d\vec
+    r}{dt}dt.$$ If we let $\vec F = (M,N)$ and we let $\vec
+    r(t)=(x,y)$, so that $d\vec r = (dx,dy)$, then we can write
+    work in the differential form $$W = \int_C \vec F\cdot d\vec r=
+    \int_C (M,N)\cdot (dx,dy) = \int_C Mdx+Ndy.$$
+  </div>
+
+  <div class="review*">
+    Consider the curve $y=3x^2-5x$ for $-2\leq x\leq 1$. Give a
+    parametrization of this curve. See \footnote{Whenever you have
+    a function of the form $y=f(x)$, you can always use $x=t$ and
+    $y=f(t)$ to parametrize the curve. So we can use $\vec r(t) =
+    (t, 3t^2-5t)$ for $-2\leq t\leq 1$ as a parametrization.}.
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      Please use this <a href="/sageworkurl">Sage link</a> to check
+      your work.
+    </div>% Consider the parabolic curve $y=4-x^2$ for $-1\leq
+    x\leq 2$, and the vector field $\vec F(x,y) = (2x+y,-x)$.
+
+    <ol>
+      <li>Give a parametrization $\vec r(t)$ of the parabolic curve
+      that starts at $(-1,3)$ and ends at $(2,0)$. See the review
+      problem above if you need a hint.</li>
+
+      <li>Compute $d\vec r$ and state $dx$ and $dy$. What are $M$
+      and $N$ in terms of $t$?</li>
+
+      <li>Compute the work done by $\vec F$ to move an object along
+      the parabola from $(-1,3)$ to $(2,0)$ (i.e. compute $\int _C
+      Mdx+Ndy$). Check your answer with <a href=
+      "/sageworkurl">Sage</a>.</li>
+
+      <li>How much work is done by $\vec F$ to move an object along
+      the parabola from $(2,0)$ to $(-1,3)$. In general, if you
+      traverse along a path backwards, how much work is done?</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    Again consider the vector field $\vec F(x,y) = (2x+y,-x)$. In
+    the previous problem we considered how much work was done by
+    $\vec F$ as an object moved along the the parabolic curve
+    $y=4-x^2$ for $-1\leq x\leq 2$. We now want to know how much
+    work is done to move an object along a straight line from
+    $(-1,3)$ to $(2,0)$.
+
+    <ol>
+      <li>Give a parametrization $\vec r(t)$ of the straight line
+      segment that starts at $(-1,3)$ and ends at $(2,0)$. Make
+      sure you give bounds for $t$.</li>
+
+      <li>Compute $d\vec r$ and state $dx$ and $dy$. What are $M$
+      and $N$ in terms of $t$?</li>
+
+      <li>Compute the work done by $\vec F$ to move an object along
+      the straight line path from $(-1,3)$ to $(2,0)$. Check your
+      answer with <a href="/sageworkurl">Sage</a>.
+
+        <div class="marginpar">
+          When you enter your curve in Sage, remember to type the
+          times symbol in &#8220;(3*t-1, ...)&#8221;. Otherwise,
+          you'll get an error.
+        </div>
+      </li>
+
+      <li>Optional (we'll discuss this in class if you don't have
+      it). How much work does it take to go along the closed path
+      that starts at $(2,0)$, follows the parabola $y=4-x^2$ to
+      $(-3,1)$, and then returns to $(2,0)$ along a straight line.
+      Show that this total work is $W=-9$.</li>
+    </ol>
+  </div>The examples above showed us that we can compute work along
+  any closed curve. All we have to do is parametrize the curve,
+  take a derivative, and then compute $dW = \vec F \cdot d\vec r$.
+  This gives us a little bit of work along a curve, and we sum up
+  the little bits of work (integrate) to find the total work. In
+  the examples above, the vector fields represented forces.
+  However, vector fields can represent much more than just forces.
+  The vector field might represent the flow of water down a river,
+  or the flow of air across an airplane wing. When we think of the
+  vector field as a velocity field, a natural question is: how much
+  of the fluid flows along our curve (the \emph{flow})?
+  Alternately, we might ask how much of the fluid goes across our
+  curve (the \emph{flux}). Flow along a curve is directly related
+  to the lift of an airplane wing (which occurs when the flow along
+  the top of the wing is different than the flow below the wing).
+  The flux across a curve will quickly take us to powering a wind
+  mill as wind flows across the surface of a blade (once we hit 3D
+  integrals). Flux is also extremely important in studying electric
+  and magnetic fields.
+
+  <div class="review*">
+    If the unit tangent vector is $\vec T = \dfrac{(3,4)}{5}$, give
+    two unit vectors that are orthogonal to $\vec T$. See
+    \footnote{We just reverse the order and change a sign to get
+    $\vec N_1 = \dfrac{(-4,3)}{5}$ and $\vec N_1 =
+    \dfrac{(4,-3)}{5}$ as the orthogonal vectors.}.
+  </div>
+
+  <div class="problem">
+    We used the formulas $$W = \int_C \vec F\cdot d\vec r = \int_C
+    (M,N)\cdot(dx,dy)$$ to compute the work done by $\vec F$ along
+    a curve $C$ parametrized by $\vec r = (x,y)$.
+
+    <ol>
+      <li>Explain why $W = \int_C \vec F\cdot \vec T ds$. [Why does
+      $\vec T ds = d\vec r$? Look up $\vec T$ in the last chapter.]
+
+        <div class="marginpar">
+          <a href=
+          "http://www.youtube.com/watch?v=6WcN36FbeWc&amp;list=PL04DF68E73B7ECD54">
+          Watch a YouTube video about flow and circulation.</a>
+        </div>%
+      </li>
+
+      <li>Show that $\vec F\cdot \vec T$ is the projection of $\vec
+      F$ onto the vector $T$ (the amount of work in the tangential
+      direction). [Just write down the formula for a projection.
+      How long is $\vec T$? This should be really fast.]</li>
+
+      <li>
+        <div class="marginpar">
+          <a href=
+          "http://www.youtube.com/watch?v=5DNdI72XEYY&amp;list=PL04DF68E73B7ECD54&amp;index=4&amp;feature=plpp_video">
+          Watch a YouTube video about flux</a>.
+        </div>% We know that $\vec T = \dfrac{(dx,
+        dy)}{\sqrt{(dx)^2+(dy)^2}}$. Suppose $\vec n$ is a unit
+        normal vector to the curve. Give two options for $\vec n$.
+        [Hint: Look at the review problem.]
+      </li>
+
+      <li>We know $\vec T ds = (dx,dy)$. Why does $\vec n ds$ equal
+      $(dy,-dx)$ or $(-dy,dx)$?</li>
+
+      <li>The integral $W = \int_C \vec F\cdot \vec T ds$ measures
+      how much of the vector field flows along the curve. What does
+      the integral $\Phi = \int_C \vec F\cdot \vec n ds$
+      measure?</li>
+    </ol>
+  </div>
+
+  <div class="problem" label="Intro to Flux">
+    Consider the curve $\vec r(t) = (5\cos t, 5\sin t)$, and the
+    vector field $\vec F(x,y) = (3x, 3y)$. This is a radial field
+    that pushes things straight outwards (away from the origin).
+
+    <ol>
+      <li>Compute the work $\ds W= \int_C (M,N)\cdot (dx,dy)$ and
+      show that is equals zero. (Can you give a reason why it
+      should be zero?)
+
+        <div class="marginpar">
+          See <a href="/sageworkurl">Sage</a> for the work
+          calculation.
+        </div>
+      </li>
+
+      <li>To get a normal vector, we could change $(dx,dy)$ to
+      $(dy,-dx)$ or to $(-dy,dx)$. Compute both $\ds \int_C
+      (M,N)\cdot (dy,-dx)$ and $\ds \int_C (M,N)\cdot (-dy,dx)$.
+      (They should differ by a sign.) Both integrals measure the
+      flow of the field across the curve, instead of along the
+      curve.</li>
+
+      <li>If we want flux to measure the flow of a vector field
+      outwards across a curve, then the flux of this vector field
+      should be positive. Which vector, $(dy,-dx)$ or $(-dy,dx)$,
+      should we choose above for $n$.
+
+        <div class="marginpar">
+          See <a href="/sagefluxurl">Sage</a> for the flux
+          computation
+        </div>
+      </li>
+
+      <li>(Challenge, we'll discuss in class.) Suppose $\vec r$ is
+      a counterclockwise parametrization of a closed curve. The
+      outward normal vector would always point to the right as you
+      move along the curve. Prove that $(dy,-dx)$ always points to
+      the right of the curve. [Hint: If you want a right pointing
+      vector, what should $\vec B=\vec T\times \vec n$ always equal
+      (either $(0,0,1)$ or $(0,0,-1)$). Use the fact that $\vec
+      B\times \vec T = \vec n$ to get $\vec n$.]</li>
+    </ol>
+  </div>
+
+  <div class="definition" label="Flow, Circulation, and Flux">
+    <div class="marginpar">
+      <ul>
+        <li><a href=
+        "http://www.youtube.com/watch?v=6WcN36FbeWc&amp;list=PL04DF68E73B7ECD54">
+        Watch a YouTube video about flow and circulation.</a></li>
+
+        <li><a href=
+        "http://www.youtube.com/watch?v=5DNdI72XEYY&amp;list=PL04DF68E73B7ECD54&amp;index=4&amp;feature=plpp_video">
+        Watch a YouTube video about flux</a>.</li>
+      </ul>
+    </div>% Suppose $C$ is a smooth curve with parametrization
+    $\vec r(t)=(x,y)$. Suppose that $\vec F(x,y)$ is a vector field
+    that represents the velocity of some fluid (like water or air).
+
+    <ul>
+      <li>We say that $C$ is closed curve if $C$ begins and ends at
+      the same point.</li>
+
+      <li>We say that $C$ is a simple curve if $C$ does not cross
+      itself.</li>
+
+      <li>The flow of $\vec F$ along $C$ is the integral
+      $$\text{Flow} = \int_C (M,N)\cdot (dx,dy) = \int_C
+      Mdx+Ndy.$$</li>
+
+      <li>If $C$ is a simple closed curve parametrized counter
+      clockwise, then the flow of $\vec F$ along $C$ is called
+      circulation, and we write $\text{Circulation} = \oint_C
+      Mdx+Ndy$</li>
+
+      <li>The flux of $\vec F$ across $C$ is the flow of the fluid
+      across the curve (an area/second). If $C$ is a simple closed
+      curve parametrized counter clockwise, then the outward flux
+      is the integral $$\text{Flux} = \Phi = \int_C(M,N)\cdot
+      (dy,-dx) =\int_C Mdy-Ndx .$$</li>
+    </ul>
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      If you haven't yet, please watch the YouTube videos for
+
+      <ul>
+        <li><a href=
+        "http://www.youtube.com/watch?v=9TGZIIpEaHw&amp;list=PL04DF68E73B7ECD54&amp;index=2&amp;feature=plpp_video">
+        work</a>,</li>
+
+        <li><a href=
+        "http://www.youtube.com/watch?v=6WcN36FbeWc&amp;list=PL04DF68E73B7ECD54">
+        flow and circulation</a>, and</li>
+
+        <li><a href=
+        "http://www.youtube.com/watch?v=5DNdI72XEYY&amp;list=PL04DF68E73B7ECD54&amp;index=4&amp;feature=plpp_video">
+        flux</a>.</li>
+      </ul>
+    </div>% Consider the vector field $\vec F(x,y) = (2x+y,-x+2y)$.
+    When you construct a plot of this vector field, you'll notice
+    that it causes objects to spin outwards in the clockwise
+    direction. Suppose an object moves counterclockwise around a
+    circle $C$ of radius 3 that is centered at the origin. (You'll
+    need to parameterize the curve.)
+
+    <ol>
+      <li>Should the circulation of $\vec F$ along $C$ be positive
+      or negative? Make a guess, and then compute the circulation
+      $\oint_C Mdx+Ndy$. Whether your guess was right or wrong,
+      explain why you made the guess.</li>
+
+      <li>Should the flux of $\vec F$ across $C$ be positive or
+      negative? Make a guess, and then actually compute the flux
+      $\oint_C Mdy-Ndx$. Whether your guess was right or wrong,
+      explain why you made the guess.</li>
+
+      <li>Please use this <a href="/sageworkfluxurl">Sage link</a>
+      to check both computations.</li>
+    </ol>
+  </div>We'll tackle more work, flow, circulation, and flux
+  problems, as we proceed through this chapter. Work, flow,
+  circulation, and flux are all examples of line integrals.
+  Remember that work, flow, and circulation are $$W=\int_C (\vec
+  F\cdot \vec T)ds =\int_C (M,N)\cdot(dx,dy) = \int_C Mdx+Ndy,$$
+  while the formula for flux is $$\Phi=\int_C (\vec F\cdot \vec
+  n)ds =\int_C (M,N)\cdot(dy,-dx) = \int_C Mdy+Ndx.$$ Do you see
+  how these are both the line integral of a function $f = \vec
+  F\cdot \vec T$ or $f=\vec F\cdot \vec n$ along a curve $C$. The
+  function $f$ inside the integrand does not have to represent the
+  height of a sheet. We'll use it to represent lots of things.
+  Let's practice two more work/flux problems, to sharpen our skills
+  with these concepts.
+
+  <div class="problem">
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=6WcN36FbeWc&amp;list=PL04DF68E73B7ECD54&amp;index=3&amp;feature=plpp_video">
+      Watch a YouTube video</a>. Also, see <a href=
+      "https://sagecell.sagemath.org/?z=eJw9yjEKhDAQRuF-TzKDvxLTp80lgohodMMORjZBnNtvqm0-XvE8PVB21CueTvl1Sa7zHdeav_Oeomzk0ZZ-GGGHkUH6b-6uLHrkk0IwsBOChWma5oQ9iTi_SImo77R-zliKs_wDRwwhgQ">
+      Sage</a> for a picture.
+    </div>% \instructor{Answers&mdash;<a href=
+    "https://sagecell.sagemath.org/?z=eJy9Vd9r2zAQfs9fcaSByK2c1S2DURBsK8tT241SyIMbghvJiakjh7Ps2P_9TlKa2GnL3paHSLof3313J53rBNm44S0342AwFbVamgJZHLa8uWjnwaA6iC75JZ3rw_nKnXcd_RWdB2dg1qgUyCxNFSptIM-0glKtNnQoBxiJmNVhFZybi4oDM_ySR8F8gFck34W1lddd-TXJq3Bn5buOfODjLtJM5XLxUlRaliCAsYaHEb8OyLT1OyKFeVYaEWPE8YrjNXl_z7RRmCzNQKoUFuxWOJvgZgD0Q05xTGkSNByM0jIQt05xBnfKjEvYJK8KEkgrvTRZoQGz1dpAkaZgClB1kleJIQMNNswKkxyKWiGVJithWWGtJg7OxrblWbyZsf2GInomjo0yFWp4fGS62ijMlkl-dOh4TMrqpWSNwPhyzqGlNZpTHXp5xLZpFtTHR2H7xJAbL5UzMT1FOJdIed9Xucm2eZvpFZhdAb78JeW7UmZNua2yWtFxTa0vDGyxkBVV14LORD9HOetQoLYxE9jOSRuNQyjxQFJO86r5gBE5Ob1Tn4BbWQd_37anHz_vfrn92mzyiUlecsViJ4hxOHqmdIDi8DYYDTlM57yvQuJoFdhRmBFQ2Vdq6G5lv8wdM-kBrLfEU9wpO8D7wKepdoFmwvvA89KWuAs869iRGVXDttKtn_nMTrlokKVV-I50A_sueARrRd26B9lCCA8gG0fAmvS8nM_IM3F7t-2DONG9bMMHj2Lt5g7AThIaJX_ufj-9e6pUZ6NEPNSFptoP07zYuaVqhvP9q9mKbV6YRXdEsCmH8w9mhr8qaYH2MdNzBTcHOo_PdXffXD8KyPCgfveC_nmnHb8LAdsEk40y9JwXlizDD64Rp4GxfNWqLMX10TtLwddA-OSPZN9SyWwipbudrAtoQ9ASelnwJfoW9J0dOSB2CWKxY3QvRWZHKV7A5CsNgsALlkVeoBijkuMjLZX3iFE7_hsx28cesxV9gvSeW7PJNG82SSM-aD-1JY5u_KVrrWH7mWF0NCzXRGHLISm3ZLjAhL4BIuI2kDhGs3_cYoojsP0L_gLPyDNp">Sage</a>.
+    }% Let $\vec F=(-y,x+y)$ and $C$ be the triangle with vertices
+    $(2,0)$, $(0,2)$, and $(0,0)$.
+
+    <ol>
+      <li>Look at a drawing of $C$ and the vector field (see margin
+      for the Sage link). We'll move along the triangle in a
+      counter clockwise manner. Without doing any computations, for
+      each side of the triangle make a guess to determine if the
+      flow along that edge is positive, negative, or zero.
+      Similarly, guess the sign of the flux along each edge.
+      Explain.</li>
+
+      <li>Obtain three parameterizations for the edges of the
+      triangle. One of the parameterizations is $\vec r(t) =
+      (0,-2)t+(0,2)$.</li>
+
+      <li>Now find the counterclockwise circulation (work) done by
+      $\vec F$ along $C$. You'll have three separate calculations,
+      one for each side. We'll do the flux computation in class.
+      Check your work on each piece with the <a href=
+      "/sageworkfluxurl">Sage calculator</a>.</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      See <a href=
+      "https://sagecell.sagemath.org/?z=eJxNjEEOQDAUBfdO8j-vSZWtrUs0ZUFFo0FopL09VmwnM9NSROKGVB5FQuRs91voLzuE7egnZ_1ILR5HKJQMSpComQvvVktaP1Qa6BKVMQizG5bVnmejuHg3VIvYqa_-CzduCCO3">
+      Sage</a>. Think of an airplane wing as you solve this
+      problem.
+    </div>% \instructor{Answers&mdash;<a href=
+    "https://sagecell.sagemath.org/?z=eJy9VUuP2zYQvutXDJwFTO5Sm5XdAEUAAm2D-rSbFkEAHxTX4JqULUQWjRHllf59h6RjS84GucUHkZzHN988SB8VsmkneuGmPFnIo9k4iyyf3XZpL7oVT9qzLJ2JBxIcz4JMzP05nNZFaSq9frZtrRuQwFgn0rmYcQGsF2km3nGeJJjJnB3Tlt-6u5Y0TjyIjK-SN9BJ93YOjQWHqt4aKBtgXpfgTOZnBnPyy8RvKYs7_t9sxQcwCVZl42SOmcAZHf8oa2dQbVyiTQFr9kEGA_4-AfqhIEfXOIVOgDO15vJDULyBR-OmDezVVwMKirbeuNLWgOV258AWBTgL5qiqVjkyqMGH2aKqwB4NgtsR-U2LR3Mf4HzsqqzN-psZO20oYmQS2BjXYg2fPrG63RssN6q6OAw87pv2uWGdxPxhJaCnNfM1GOWR-z550BgfpS6LgqFwUaqXcnGNcKuR8n5qK1ceqr6st-BeLMTCN5Tv1rgd5bYtj4aOOwPaOjig1S1V14Mu5ThHvRxQoJlgjvux0D6agFTjmaReVG33CiNyCvqgvgL3sgH-qW2f__zr8e-w37l9de_Uc2VYHgQ5Tm6-UDpAcUTPbyYCFisxViFx9AocKNwNhIGchDEbl3lgpiOA99Z4jbtgZ_gY-DrVIdBSRh_4svElHgIvB3ZkRtXwrQzrj3yW11xq0I1XxI4MA8cuRARvRd16At1DCh9Bd4GANxl5BZ-byCTsw3YMEkRPuk8_RhRvtwoA1P-Erv6_j_98_u6qUp2dkfmktjXVflJU9iUsbTdZnW7NQR4q69bD94ctBNy-8iDFUSks-stM1xXCOzC4fKG7p-bGp4AMz-rvbtBPZzrwu5NwUKj2xtF1XnuyDF8ZI0EPxuZrbZpGzi_eZQGxBjImfyH7LZXSJ9KE6WRDQB-CljTK-Nvsdz52DuSA2ClE-8JoLmXpn1G8g_t39BDwKNjYyqKcotHTCy1TjYhRO34ZMd_HEbMtGlOfuHX7shbdXnXylfZTW_LsfRy63hv2PzLMLobNjigcBKjmQIZrVPQfIDPhA8lLNP8RHlNegP2H_w9xpCjx">Sage</a>.
+    Again, we'll discuss why some are positive, and some are
+    negative. I want to emphasize flow in, and flow out. One is
+    clearly positive, the other clearly negative. The overall sum
+    is positive. It should be obvious with a picture.}% Consider
+    the vector field $\vec F=(2x-y,x)$. Let $C$ be the curve that
+    starts at $(-2,0)$, follows a straight line to $(1,3)$, and
+    then back to $(-2,0)$ along the parabola $y=4-x^2$.
+
+    <ol>
+      <li>Look at a drawing of $C$ and the vector field (see margin
+      for the Sage link). If we go counterclockwise around $C$, for
+      each part of $C$, guess the signs of the counterclockwise
+      circulation and the flux (positive, negative, zero).</li>
+
+      <li>Find the flux of $\vec F$ across $C$. There are two
+      curves to parametrize. Make sure you traverse along the
+      curves in the correct direction. [Hint: You should get
+      integer values along both parts. Check your work with
+      <a href="/sageworkfluxurl">Sage</a>, but make sure you show
+      us how to do the integrals by hand.]</li>
+    </ol>
+  </div>Ask me in class to change the vector fields above, and
+  examine what happens with different vectors fields. In
+  particular, it's possible to have any combination of values for
+  circulation and flux. We'll be able to use technology to rapidly
+  compute many values.
+
+  <div class="note">
+    In both of the preceding problems, both the circulation and
+    flux are positive. Everything is always positive. This would
+    give a student a false impression that work and flux are always
+    positive. We need to change some computations. Make sure to
+    look into this. It needs to change.
+  </div>
+
+  <h1>Average Value</h1>The concept of averaging values together
+  has many applications. In first-semester calculus, we saw how to
+  generalize the concept of averaging numbers together to get an
+  average value of a function. We'll review both of these concepts.
+  Later, we'll generalize average value to calculate centroids and
+  center of mass.
+
+  <div class="problem">
+    \label{average value methods} \instructor{Throughout the
+    section, I point out how each formula is a variation on one of
+    the patterns below.} Suppose a class takes a test and there are
+    three scores of 70, five scores of 85, one score of 90, and two
+    scores of 95. We will calculate the average class score, $\bar
+    s$, four different ways to emphasize four ways of thinking
+    about the averages. We are emphasizing the pattern of the
+    calculations in this problem, rather than the final answer, so
+    it is important to write out each calculation completely in the
+    form $\bar s = \blank{1cm}$ before calculating the number $\bar
+    s$.
+
+    <ol>
+      <li>
+        <div class="marginpar">
+          $\bar s=\frac{\sum \text{values}}{\text{number of
+          values}}$
+        </div>% Compute the average by adding 11 numbers together
+        and dividing by the number of scores. Write down the whole
+        computation before doing any arithmetic.
+      </li>
+
+      <li>
+        <div class="marginpar">
+          $\bar s=\frac{\sum (\text{value}\cdot\text{weight})}{\sum
+          \text{weight}}$
+        </div>% Compute the numerator of the fraction in the
+        previous part by multiplying each score by how many times
+        it occurs, rather than adding it in the sum that many
+        times. Again, write down the calculation for $\bar s$
+        before doing any arithmetic.
+      </li>
+
+      <li>
+        <div class="marginpar">
+          $\bar s=\sum (\text{value}\cdot\text{(\% of stuff)})$
+        </div>% Compute $\bar s$ by splitting up the fraction in
+        the previous part into the sum of four numbers. This is
+        called a &#8220;weighted average&#8221; because we are
+        multiplying each score value by a weight.
+      </li>
+
+      <li>
+        <div class="marginpar">
+          $\text{(number of values)}\bar s = \sum \text{values}$\\
+          $(\sum \text{weight})\bar s = \sum
+          (\text{value}\cdot\text{weight})$
+        </div>% Another way of thinking about the average $\bar s$
+        is that $\bar s$ is the number so that if all 11 scores
+        were the same value $\bar s$, you'd have the same sum of
+        scores. Write this way of thinking about these computations
+        by taking the formulas for $\bar s$ in the first two parts
+        and multiplying both sides by the denominator.
+      </li>
+    </ol>
+  </div>In the next problem, we generalize the above ways of
+  thinking about averages from a discrete situation to a continuous
+  situation. You did this in first-semester calculus when you did
+  average value using integrals.
+
+  <div class="problem">
+    Suppose the price of a stock is \$10 for one day. Then the
+    price of the stock jumps to \$20 for two days. Our goal is to
+    determine the average price of the stock over the three days.
+
+    <ol>
+      <li>Why is the average stock price not \$15?
+
+        <div class="comment">
+          %
+
+          <ul>
+            <li>Find the average price of the stock using all of
+            the methods from Problem~<a href=
+            "#average-value-methods">TODO</a>.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li>Let $f(t) = \begin{cases}10
+      &amp;0&lt;t&lt;1\\20&amp;1&lt;t&lt;3\end{cases}$, the price
+      of the stock for the three-day period. Draw the function $f$,
+      and find the area under $f$ where $t\in[0,3]$.</li>
+
+      <li>Now let $y=\bar f$. The area under $\bar f$ over $[0,3]$
+      is simply width times height, or $(b-a)\bar f$. What should
+      $\bar f$ equal so that the area under $\bar f$ over $[0,3]$
+      matches the area under $f$ over $[0,3]$.</li>
+
+      <li>We found a constant $\bar f$ so that the area under $\bar
+      f$ matched the area under $f$. In other words, we solved the
+      equation below for $\bar f$: $$\int_a^b \bar f dx = \int_a^b
+      f dx$$ Solve for $\bar f$ symbolically (without doing any of
+      the integrals). This quantity is called the average value of
+      $f$ over $[a,b]$.%, and was crucial to proving the
+      Fundamental Theorem of Calculus from first-semester
+      calculus.</li>
+
+      <li>\instructor{I also write $\bar f=\int_a^b f
+      \frac{dx}{\int_a^b dx}$ to emphasize the weighted average
+      approach}% The formula for $\bar f$ in the previous part
+      resembles at least one of the ways of calculating averages
+      from Problem~<a href="#average-value-methods">TODO</a>.
+      Which ones and why?</li>
+    </ol>
+  </div>\instructor{I talk about ants building a mound. Then after
+  removing the ants, so none get hurt, you shake their tank. The
+  average value is the height of the dirt. The mountains filled in
+  the valleys.}% Ask me in class about the &#8220;ant farm&#8221;
+  approach to average value.
+
+  <div class="problem">
+    \label{Average Value intro}%
+
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=t7T0MzfgV0Q&amp;list=PL04DF68E73B7ECD54&amp;index=5&amp;feature=plpp_video">
+      Watch a YouTube video.</a>
+    </div>% Consider the elliptical curve $C$ given by the
+    parametrization $\vec r(t) = (2\cos t, 3\sin t)$. Let $f$ be
+    the function $f(x,y)=9-x^2-y^2$.
+
+    <ol>
+      <li>Draw the surface $f$ in 3D. Add to your drawing the curve
+      $C$ in the $xy$ plane. Then draw the sheet whose area is
+      given by the integral $\int_C f ds$.</li>
+
+      <li>What's the maximum height and minimum height of the
+      sheet?
+
+        <div class="marginpar">
+          See problem <a href=
+          "#horse-track-chain-rule-introduction">TODO</a>.
+        </div>
+      </li>
+
+      <li>We'd like to find a constant height $\bar f$ so that the
+      area under $f$, above $C$, is the same as area under $\bar
+      f$, above $C$. This height $\bar f$ is called the average
+      value of $f$ along $C$.
+
+        <div class="comment">
+          %
+        </div>\marginparbmw{Please read <a href=
+        "https://www.lds.org/scriptures/ot/isa/40.4?lang=eng/#3">Isaiah
+        40:4</a> and <a href=
+        "https://www.lds.org/scriptures/nt/luke/3.5?lang=eng/#4">Luke
+        3:5</a>. These scriptures should help you remember how to
+        find average value. }% \instructor{Again, I emphasize how
+        this relates to the ways of computing averages from
+        Problem~<a href="#average-value-methods">TODO</a>.}
+        Explain why the average value of $f$ along $C$ is $$\bar f
+        = \frac{\int_C f ds}{\int_C ds}.$$ Connect this formula
+        with the ways of thinking about averages from
+        Problem~<a href="#average-value-methods">TODO</a>.
+        [Hint: The area under $\bar f$ above $C$ is $\int_C \bar f
+        ds$. The area under $f$ above $C$ is $\int_C f ds$. Set
+        them equal and solve for $\bar f$. ]
+      </li>
+
+      <li>
+        <div class="marginpar">
+          You can use the <a href="#sagelineintegral">Sage line
+          integral calculator</a>.
+        </div>% Use a computer to evaluate the integrals $\int_C f
+        ds$ and $\int_C ds$, and then give an approximation to the
+        average value of $f$ along $C$. Is your average value
+        between the maximum and minimum of $f$ along $C$? Why
+        should it be?
+      </li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    \instructor{After this problem, I like to emphasize that they
+    should have noticed a linear growth rate, and then I show them
+    how I would have guessed the answer.}% The temperature
+    $T(x,y,z)$ at points on a wire helix $C$ given by $\vec r(t) =
+    (\sin t, 2t, \cos t)$ is known to be $T(x,y,z)=x^2+y+z^2$. What
+    are the temperatures at $t=0$, $t=\pi/2$, $t=\pi$, $t=3\pi/2$
+    and $t=2\pi$? You should notice the temperature is constantly
+    changing. Make a guess as to what the average temperature is
+    (share with the class why you made the guess you made&mdash;it's OK
+    if you're wrong). Then compute the average temperature of the
+    wire using the integral formula from the previous problem. You
+    can do all these computations by hand.
+  </div>
+
+  <h1>Physical Properties</h1>
+
+  <div class="note">
+    It feels like this section has too many problems&mdash;some of them
+    seem redundant. I should go back through and trim down these
+    problems, or trim down parts of problems.
+  </div>% A number of physical properties of real-world objects can
+  be calculated using the concepts of averages and line integrals.
+  We explore some of these in this section. Additionally, many of
+  these concepts and calculations are used in statistics.
+
+  <h2>Centroids</h2>%
+
+  <div class="definition" label="Centroid">
+    Let $C$ be a curve. If we look at all of the $x$-coordinates of
+    the points on $C$, the &#8220;center&#8221; $x$-coordinate,
+    $\bar x$, is the average of all these $x$-coordinates.
+    Likewise, we can talk about the averages of all of the $y$
+    coordinates or $z$ coordinates of points on the function ($\bar
+    y$ or $\bar z$, respectively). The \emph{centroid} of an object
+    is the geometric center $(\bar x, \bar y, \bar z)$, the point
+    with coordinates that are the average $x$, $y$, and $z$
+    coordinates.
+  </div>
+
+  <div class="problem" label="Centroid">
+    \label{centroid of curve}
+
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=t7T0MzfgV0Q&amp;list=PL04DF68E73B7ECD54&amp;index=5&amp;feature=plpp_video">
+      Watch a YouTube video.</a>
+    </div>% Notice the word &#8220;average&#8221; in the definition
+    of the centroid. Use the concept of average value to explain
+    why the coordinates of the centroid are %the formulas below.
+    [Hint: If we have a curve $C$ with parametrization $\vec r(t)$
+    and function $f$ so that $f(\vec r(t))$ is continuous, then
+    we've developed in Problem~<a href=
+    "#Average-Value-intro">TODO</a> a formula for the average
+    value of $f$ along $C$. What function $f(x,y,z)$ gives the
+    $x$-coordinate of a point?] $$ \bar x = \frac{\int_C x
+    ds}{\int_C ds},\quad \bar y = \frac{\int_C y ds}{\int_C
+    ds},\quad \text{and}\quad \bar z = \frac{\int_C z ds}{\int_C
+    ds}. $$ Notice that the denominator in each case is just the
+    arc length $s=\int_C ds$.
+  </div>
+
+  <div class="problem">
+    \label{semicircle centroid} Let $C$ be the semicircular arc
+    $\vec r(t)=(a\cos t, a\sin t)$ for $t\in[0,\pi]$. Without doing
+    any computations, make an educated guess for the centroid
+    $(\bar x, \bar y)$ of this arc. Then compute the integrals
+    given in problem <a href="#centroid-of-curve">TODO</a> to
+    find the actual centroid. Share with the class your guess, even
+    if it was incorrect.
+  </div>
+
+  <h2>Mass and Center of Mass</h2>
+
+  <div class="note">
+    Jason made a comment that aluminum and copper won't combine. So
+    this should be changed eventually.
+  </div>Density is generally a mass per unit volume. However, when
+  talking about a curve or wire, as in this chapter, it's simpler
+  to let density be the mass per unit length. Sometimes an object
+  is made out of a composite material, and the density of the
+  object is different at different places in the object. For
+  example, we might have a straight wire where one end is aluminum
+  and the other end is copper. In the middle, the wire slowly
+  transitions from being all aluminum to all copper. The centroid
+  is the midpoint of the wire. However, since copper has a higher
+  density than aluminum, the balance point (the center of mass)
+  would not be at the midpoint of the wire, but would be closer to
+  the denser and heavier copper end. In this section, we'll develop
+  formulas for the mass and center of mass of such a wire. Such
+  composite materials are engineered all the time (though probably
+  not our example wire). <span class="bmw">In future mechanical
+  engineering courses, you would learn how to determine the density
+  $\delta$ (mass per unit length) at each point on such a composite
+  wire.</span>
+
+  <div class="problem" label="Mass">
+    \label{mass of curve}%
+
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=mz-Udq5TeS4&amp;list=PL04DF68E73B7ECD54&amp;index=6&amp;feature=plpp_video">
+      Watch a YouTube video.</a>
+    </div>% Suppose a wire $C$ has the parameterization $\vec r(t)$
+    for $t\in[a,b]$. Suppose the wire's density at a point
+    $(x,y,z)$ on the wire is given by the function $\delta(x,y,z)$.
+    <span class="bmw">You'll learn to calculate this function in a
+    future class. For the purposes of our class, we'll just assume
+    we know what $\delta(x,y,z)$ is.</span>
+
+    <ol>
+      <li>Consider a small portion of the curve at $t=t_0$ of
+      length $ds$. Explain why the mass of the small portion of the
+      curve is $dm=\delta(\vec r(t_0)) ds$.</li>
+
+      <li>Explain why the mass $m$ of an object is given by the
+      formulas below (explain why each equals sign is true):
+      $$m=\int_C dm = \int_C \delta ds = \int_a^b \delta(\vec r(t))
+      \left|\frac{d\vec r}{dt}\right|dt.$$</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      <span class="larsonfive">See Larson 15.2:23&dash;26 for more
+      practice.</span>
+    </div>% A wire lies along the straight segment from $(0,2,0)$
+    to $(1,1,3)$. The wire's density (mass per unit length) at a
+    point $(x,y,z)$ is $\delta(x,y,z)=x+y+z$.
+
+    <ol>
+      <li>Is the wire heavier at $(0,2,0)$ or at $(1,1,3)$?</li>
+
+      <li>What is the total mass of the wire? [You'll need to
+      parameterize the line as your first step&mdash;see
+      Problem~<a href=
+      "#first-line-between-two-points">TODO</a> if you need
+      a refresher.]</li>
+    </ol>
+  </div>\instructor{Here I introduce the center of mass of an
+  object, talk about moments, and talk about how the center of mass
+  formula is also an averaging of the coordinates, where the weight
+  is the amount of mass at a particular coordinate value (i.e.,
+  $xdm$).}
+
+  <div class="marginpar">
+    <a href=
+    "http://en.wikipedia.org/wiki/Center_of_mass">Wikipedia</a> has
+    some interesting applications of center of mass.
+  </div>% The center of mass of an object is the point where the
+  object balances. In order to calculate the $x$-coordinate of the
+  center of mass, we average the $x$-coordinates, but we weight
+  each $x$-coordinate with its mass. Similarly, we can calculate
+  the $y$ and $z$ coordinates of the center of mass. The next
+  problem helps us reason about the center of mass of a collection
+  of objects. Calculating the center of mass of a collection of
+  objects is important, for example, in astronomy when you want to
+  calculate how two bodies orbit each other.
+
+  <div class="problem">
+    \label{center of mass with two points}\instructor{After a
+    student presents, this is a great time to connect the averages
+    back to Problem~<a href="#average-value-methods">TODO</a>.
+    I point out that we can think about the object as 2 points of
+    the same mass at $P_1$ and 3 points of the same mass at $P_2$.
+    This suggests averaging 5 things with method 1. Alternately, I
+    suggest the approach $\frac{2}{5}P_1+\frac{3}{5}P_2$,
+    suggesting a weighted average.}% Suppose two objects are
+    positioned at the points $P_1=(x_1,y_1,z_1)$ and
+    $P_2=(x_2,y_2,z_2)$. Our goal in this problem is to understand
+    the difference between the centroid and the center of mass.
+
+    <ol>
+      <li>Find the centroid of two objects.</li>
+
+      <li>\instructor{I found many students struggled with setting
+      up a really simple sum. In class, after they present this
+      one, I would suggest actually taking time to show them how to
+      write the problem in summation notation with 2 points. It
+      will prepare them for the proof of center of mass coming
+      up.}% Suppose both objects have the same mass of 2 kg. Find
+      the center of mass.% by averaging the $x$, $y$, and $z$
+      coordinates, weighted by how much mass is at each
+      coordinate.</li>
+
+      <li>If the mass of the object at point $P_1$ is 2 kg, and the
+      mass of the object at point $P_2$ is 5 kg, will the center of
+      mass be closer to $P_1$ or $P_2$? Give a physical reason for
+      your answer before doing any computations. Then find the
+      center of mass $(\bar x, \bar y, \bar z)$ of the two points.
+      [Hint: You should get $\bar x= \frac{2x_1+5x_2}{2+5}$.]</li>
+    </ol>
+  </div>
+
+  <div class="problem">
+    This problem reinforces what you just did with two points in
+    the previous problem. However, it now involves two people on a
+    seesaw.
+
+    <div class="marginpar">
+      See <a href=
+      "http://en.wikipedia.org/wiki/Seesaw">Wikipedia</a> for a
+      seesaw picture.
+    </div>% Ignore the mass of the seesaw in your work below
+    (pretend it's an extremely light seesaw, so its mass is
+    negligible compared to the masses of the people).
+
+    <ol>
+      <li>My daughter and her friend are sitting on a seesaw. Both
+      girls have the same mass of 30 kg. My wife stands about 1 m
+      behind my daughter. We'll measure distance in this problem
+      from my wife's perspective. We can think of my daughter as a
+      point mass located at $(1\text{m},0)$ whose mass is $30$ kg.
+      Suppose her friend is located at $(5\text{m},0)$. Suppose the
+      kids are sitting just right so that the seesaw is perfectly
+      balanced. That means the the center of mass of the girls is
+      precisely at the pivot point of the seesaw. Find the distance
+      from my wife to the pivot point by finding the center of mass
+      of the two girls.</li>
+
+      <li>My daughter's friend has to leave, so I plan to take her
+      place on the seesaw. My mass is 100 kg. Her friend was
+      sitting at the point $(5,0)$. I would like to sit at the
+      point $(a,0)$ so that the seesaw is perfectly balanced.
+      Without doing any computations, is $a&gt;5$ or $a&lt;5$?
+      Explain.</li>
+
+      <li>Suppose I sit at the spot $(x,0)$ (perhaps causing my
+      daughter or I to have a highly unbalanced ride). Find the
+      center of mass of the two points $(1,0)$ and $(x,0)$ whose
+      masses are $30$ and $100$, respectively (units are meters and
+      kilograms).</li>
+
+      <li>Where should I sit so that the seesaw is perfectly
+      balanced (what is $a$)?</li>
+    </ol>
+  </div>
+
+  <div class="problem" label="Center of mass">
+    \label{center of mass of curve}%
+
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=mz-Udq5TeS4&amp;list=PL04DF68E73B7ECD54&amp;index=6&amp;feature=plpp_video">
+      Watch a YouTube video.</a>
+    </div>% In problem <a href=
+    "#center-of-mass-with-two-points">TODO</a>, we
+    focused on a system with two points $(x_1,y_1)$ and $(x_2,y_2)$
+    with masses $m_1$ and $m_2$. The center of mass in the $x$
+    direction is given by $$ \bar x = \frac{x_1m_1+x_2m_2}{m_1+m_2}
+    = \frac{\sum_{i=1}^2x_i m_i}{\sum_{i=1}^2m_i}$$
+
+    <ol>
+      <li>If we consider a system with 3 points, what formula gives
+      the center of mass in the $x$ direction? What if there are 4
+      points, 5 points, or $n$ points?
+
+        <div class="comment">
+          %
+
+          <ul>
+            <li>Consider a system with $n$ points labeled $(x_1,
+            y_1,z_1)$, $(x_2, y_2,z_2)$, \ldots, $(x_n, y_n,z_n)$,
+            having masses $m_1$, $m_2$, \ldots, $m_n$ respectively.
+            Give a formula for the center of mass in the $y$
+            direction (the $x$ and $z$ directions are
+            similar).</li>
+          </ul>
+        </div>
+      </li>
+
+      <li>Suppose now that we have a wire located along a curve
+      $C$. The density of the wire is known to be $\delta(x,y,z)$
+      (which could be different at different points on the curve).
+      Imagine cutting the wire into a thousand or more tiny chunks.
+      Each chunk would be centered at some point $(x_i,y_i,z_i)$
+      and have length $ds_i$. Explain why the mass of each little
+      chunk is $dm_i\approx\delta ds_i$.</li>
+
+      <li>Give a formula for the center of mass in the $y$
+      direction of the thousands of points $(x_i,y_i,z_i)$, each
+      with mass $dm_i$. [This should almost be an exact copy of the
+      first part.] Then explain why $$\bar y = \frac{\int_C y
+      dm}{\int_C dm}=\frac{\int_C y \delta ds}{\int_C \delta
+      ds}.$$</li>
+    </ol>
+  </div>Ask me in class to show you another way to obtain the
+  formula for center of mass. It involves looking at masses
+  weighted by their distance (called a moment of mass). You may
+  have already seen an idea similar to this in other classes, like
+  statics (using moments of force) or statistics (in computing
+  expected values). For quick reference, the formulas for the
+  centroid of a wire along $C$ are $$ \bar x = \frac{\int_C x
+  ds}{\int_C ds},\quad \bar y = \frac{\int_C y ds}{\int_C ds},\quad
+  \text{and}\quad \bar z = \frac{\int_C z ds}{\int_C ds}.
+  \quad\text{(Centroid)} $$ If the wire has density $\delta$, then
+  the formulas for the center of mass are
+
+  <div class="marginpar">
+    The quantity $\int_C x dm$ is sometimes called the first moment
+    of mass about the $yz$-plane (so $x=0$). Notationally, some
+    people write $M_{yz} =\int_C x ds$. Similarly, we could write
+    $M_{xz}=\int_C y dm$ and $M_{xy}=\int_C zdm$. With this
+    notation, we could write the center of mass formulas as $$(\bar
+    x,\bar y,\bar z) = \left( \frac{M_{yz}}{m}, \frac{M_{xz}}{m},
+    \frac{M_{xy}}{m} \right) . $$
+  </div>% $$ \bar x = \frac{\int_C x dm}{\int_C dm},\quad \bar y =
+  \frac{\int_C y dm}{\int_C dm},\quad \text{and}\quad \bar z =
+  \frac{\int_C z dm}{\int_C dm}, \quad\text{(Center of mass)} $$
+  where $dm=\delta ds$. Notice that the denominator in each case is
+  just the mass $m=\int_C dm$. We'll often use the notation $(\bar
+  x, \bar y,\bar z)$ to talk about both the centroid and the center
+  of mass. If no density is given in a problem, then $(\bar x, \bar
+  y,\bar z)$ is the centroid. If a density is provided, then $(\bar
+  x, \bar y,\bar z)$ refers to the center of mass. If the density
+  is constant, it doesn't matter (the centroid and center of mass
+  are the same, which is what the seesaw problem showed).
+
+  <div class="problem">
+    \instructor{I purposefully put this problem in to show students
+    how to generalize a formula from prime numbers to any number. I
+    mention how I use primes (5, 7, 11, 13) when I'm looking for a
+    pattern. I want to help them develop this skill a little.
+    However, if you are pressed for time, then skip 5.}%
+
+    <div class="marginpar">
+      Check your work with <a href=
+      "http://sagecell.sagemath.org/?z=eJyFVk1v6jgU3SPxH6wWCYcaGtr3VGkkrzobFiON2AKN3MRANHGSuTZM_Kr-97l2DISvGVjE8T333A_fYwCppaFRv7cXQIcNs8wM8S2Tpc6NpbgR8ebj5cn2e8D3MjUV0MXbKK00NREjbyOdl7haoY_RRoDhMa5kmfE6x0UCotxITg1rrcyZEOu-kNSQK0k4yfL1mgIzLrDmx7dJWYFyuWmel0ZuQBQ002wUWNGQytJAlWdJw0ta7pSEPBVFckTTZpTpiDYcFvEK0w1JEJ8Fbj3rLom9Q2I9iUWS6V2STHHabVonLiPBtd9TTAJUwG9EydQFc78n9pskcGKT1LNu-5bJNSnyUp58wwKdfuv3CH5Amh2UZD6_Wc8JPtG7T32Z5nWF_sBUpbBRifisdiaxiWhyzc_TwGar6ALY3ALaFugaLyFRQuukwQrpjRDPCseAXoDtFbg5B7vv46xhM8tmMYIX9_pF1hWQ4yuuCLUfLyN3GE37pH76P14il_MKaecuVf03GDprnl0Zj3N73LFhJz7uxH6n31tDpYgWGzlRuU4nW6MKkqu6AkOUMNukFqAlEZqo2sGdfWLEZyHpot9bqJrCw-9hFgbLTBZG-DkbPOB5hSFZsQPyfQd7iTgULAGUp0PByTwwA-Il5JyDmjrW1m0Y_EjQaQeQ6QEjAofQmEKSz9yQak0EpIUsN2brM9IduB6Q8bm5Y30P6iM0rUqcu9IcyomwgEKuDV2uQaRf0-8v9b3EsyLNkuE1cLlr3e4S8s025E1PtwM7aTzq1qF420rM1-d4UZIbNl-N6jihjwt35ngAdnBiLwFP-1AM1nKRL3o-RAT7eFK5G95OpD_wRmoLxgx8GD_yxI88GdgBcUPv414L54ynaXnsTZ7mDk9zwfPuFXjoy9nhTBVpE3XCOduxmbo6k6PmGTlTta_9MSQ981dCy_Hx4hJ3_rNmxY6AQ3c6Ztsxx635KOADJu6GmbveOKV-YcBn9e0h81OUuYsS7Cjub2-2HXN8NMeteR7jLdFemTVHVQslDd7ASV1UBn_WDnrDxTZP_yql1vwHousnXleYL_3vFrG0KvAHZAgyGzLvoPNfkv-M2a8KMgl8Gl-RBQ2QjgjwpeXZgJTlkJG7VI_IleZOvJTGLHb1MXebamMLyYeZ0FtMJQCdgS4W41fmW-gfq1vwpxNyHKDje9gz6rll41fE4_P1f6gP0PF9rO9UEF97QOEFr302fmNvEaOWxe6ZKlHz4Z87qAupnafeVv_QGvWra_xbhIdq8opP0fAvvO4FyQ==&amp;lang=sage">
+      Sage</a>
+    </div>Suppose a wire with density $\delta(x,y)=x^2+y$ lies
+    along the curve $C$ which is the upper half of a circle around
+    the origin with radius $7$.
+
+    <ol>
+      <li>Parametrize $C$ (find $\vec r(t)$ and the domain for
+      $t$).</li>
+
+      <li>Where is the wire heavier, at $(7,0)$ or $(0,7)$?
+      [Compute $\delta$ at both.]</li>
+
+      <li>In problem <a href="#semicircle-centroid">TODO</a>, we
+      showed that the centroid of the wire is $(\bar x, \bar y) =
+      \left(0,\frac{2(7)}{\pi}\right)$. We now seek the center of
+      mass. Before computing, will $\bar x$ change? Will $\bar y$
+      change? How will each change? Explain.</li>
+
+      <li>Set up the integrals needed to find the center of mass.
+      Then use technology to compute the integrals. Give an exact
+      answer (involving fractions), rather than a numerical
+      approximation.</li>
+
+      <li>Change the radius from 7 to $a$, and guess what the
+      center of mass will be. (This is why you need the exact
+      answer above, not a numerical answer).</li>
+    </ol>
+  </div>
+
+  <h1>The Fundamental Theorem of Line Integrals</h1>In this final
+  section, we'll return to the concept of work. Many vector fields
+  are actually the derivative of a function, called the
+  \emph{potential} function of the vector field. In this section,
+  we'll first discuss finding the potential of such a vector field.
+  Then we'll show that the work done by such a vector field is the
+  difference in the potential at the end points. This is much
+  simpler than calculating a line integral.
+
+  <div class="definition" label="Gradients and Potentials">
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=8Tk2pEIOnwg&amp;list=PL04DF68E73B7ECD54&amp;index=9&amp;feature=plpp_video">
+      Watch a YouTube Video</a>.
+    </div>% Let $\vec F$ be a vector field. A potential for the
+    vector field is a function $f$ whose derivative equals $\vec
+    F$. So if $Df=\vec F$, then we say that $f$ is a potential for
+    $\vec F$. When we want to emphasize that the derivative of $f$
+    is a vector field, we call $Df$ the gradient of $f$ and write
+    $Df = \vec \nabla f$.
+
+    <div class="marginpar">
+      The symbol $\vec \nabla f$ is read &#8220;the gradient of
+      $f$&#8221; or &#8220;del f.&#8221;
+    </div>If $\vec F$ has a potential, then we say that $\vec F$ is
+    a gradient field.
+  </div>We'll quickly see that if a vector field has a potential,
+  then the work done by the vector field is the difference in the
+  potential. If you've ever dealt with kinetic and potential
+  energy, then you hopefully recall that the change in kinetic
+  energy is precisely the difference in potential energy. This is
+  the reason we use the word &#8220;potential.&#8221;
+
+  <div class="problem">
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=8Tk2pEIOnwg&amp;list=PL04DF68E73B7ECD54&amp;index=9&amp;feature=plpp_video">
+      Watch a YouTube Video</a>.
+    </div>% Let's practice finding gradients and potentials.
+
+    <ol>
+      <li>Let $f(x,y) = x^2+3xy+2y^2$. Find the gradient of $f$,
+      i.e., find $Df(x,y)$. Then compute $D^2f(x,y)$ (you should
+      get a square matrix). What are $f_{xy}$ and $f_{yx}$?</li>
+
+      <li>Consider the vector field $\vec F(x,y)=(2x+y,x+4y)$. Find
+      the derivative of $\vec F(x,y)$ (it should be a square
+      matrix). Then find a function $f(x,y)$ whose gradient is
+      $\vec F$ (i.e., $Df=\vec F$). What are $f_{xy}$ and
+      $f_{yx}$?</li>
+
+      <li>
+        <div class="marginpar">
+          See problem <a href=
+          "#second-partials-agree">TODO</a>.
+        </div>% Consider the vector field $\vec
+        F(x,y)=(2x+y,3x+4y)$. Find the derivative of $\vec F$. Why
+        is there no function $f(x,y)$ so that $Df(x,y)=\vec
+        F(x,y)$? [Hint: what would $f_{xy}$ and $f_{yx}$ have to
+        equal?]
+      </li>
+    </ol>
+  </div>Based on your observations in the previous problem, we have
+  the following key theorem.
+
+  <div class="theorem">
+    Let $\vec F$ be a vector field that is everywhere continuously
+    differentiable. Then $\vec F$ has a potential if and only if
+    the derivative $D\vec F$ is a symmetric matrix. We say that a
+    matrix is symmetric if interchanging the rows and columns
+    results in the same matrix (so if you replace row 1 with column
+    1, and row 2 with column 2, etc., then you obtain the same
+    matrix).
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      If you haven't yet, please watch this <a href=
+      "http://www.youtube.com/watch?v=8Tk2pEIOnwg&amp;list=PL04DF68E73B7ECD54&amp;index=9&amp;feature=plpp_video">
+      YouTube video</a>.
+    </div>% For each of the following vector fields, find a
+    potential, or explain why none exists.
+
+    <ol>
+      <li>$\vec F(x,y)=(2x-y, 3x+2y)$</li>
+
+      <li>$\vec F(x,y)=(2x+4y, 4x+3y)$</li>
+
+      <li>$\vec F(x,y)=(2x+4xy, 2x^2+y)$</li>
+
+      <li>$\vec F(x,y,z)=(x+2y+3z,2x+3y+4z,2x+3y+4z)$</li>
+
+      <li>$\vec F(x,y,z)=(x+2y+3z,2x+3y+4z,3x+4y+5z)$</li>
+
+      <li>$\vec F(x,y,z)=(x+yz,xz+z,xy+y)$</li>
+
+      <li>$\ds \vec F(x,y) = \left(\frac{x}{1+x^2}+\arctan
+      (y),\frac{x}{1+y^2}\right)$</li>
+    </ol>
+  </div>If a vector field has a potential, then there is an
+  extremely simple way to compute work. To see this, we must first
+  review the fundamental theorem of calculus. The second half of
+  the fundamental theorem of calculus states
+
+  <div class="quote">
+    If $f$ is continuous on $[a,b]$ and $F$ is an anti-derivative
+    of $f$, then $F(b)-F(a) = \int_a^b f(x) dx$.
+  </div>If we replace $f$ with $f'$, then an anti-derivative of
+  $f'$ is $f$, and we can write,
+
+  <div class="quote">
+    If $f$ is continuously differentiable on $[a,b]$, then
+    $$f(b)-f(a)=\int_a^b f'(x) dx.$$
+  </div>This last version is the version we now generalize.
+
+  <div class="theorem" label=
+  "The Fundamental Theorem of Line Integrals">
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=5ZsCN6NN3yg&amp;list=PL04DF68E73B7ECD54&amp;index=11&amp;feature=plpp_video">
+      Watch a YouTube video</a>.
+    </div>% Suppose $f$ is a continuously differentiable function,
+    defined along some open region containing the smooth curve $C$.
+    Let $\vec r(t)$ be a parametrization of the curve $C$ for
+    $t\in[a,b]$. Then we have $$f(\vec r(b))-f(\vec r(a))=\int_a^b
+    Df(\vec r(t))D\vec r(t)\ dt.$$
+  </div>Notice that if $\vec F$ is a vector field, and has a
+  potential $f$, which means $\vec F = Df$, then we could rephrase
+  this theorem as follows.
+
+  <div class="quote">
+    Suppose $\vec F$ is a vector field that is continuous along
+    some open region containing the curve $C$. Suppose $\vec F$ has
+    a potential $f$. Let $A$ and $B$ be the start and end points of
+    the smooth curve $C$. Then the work done by $\vec F$ along $C$
+    depends only on the start and end points, and is precisely
+    $$f(B)-f(A)=\int_C \vec F\cdot d\vec r = \int_C Mdx+Ndy.$$ The
+    work done by $\vec F$ is the difference in a potential,
+    $f(B)-f(A)$.
+  </div>If you are familiar with kinetic energy, then you should
+  notice a key idea here. Work is a transfer of energy. As an
+  object falls, energy is transferred from potential energy to
+  kinetic energy. The total kinetic energy at the end of a fall is
+  precisely equal to the difference between the potential energy at
+  the top of the fall and the potential energy at the bottom of the
+  fall (neglecting air resistance). So work (the transfer of
+  energy) is exactly the difference in potential energy.
+
+  <div class="problem" label="Proof of Fundamental Theorem">
+    <div class="marginpar">
+      The proof of the fundamental theorem of line integrals is
+      quite short. All you need is the fundamental theorem of
+      calculus, together with the chain rule (<a href=
+      "#chain-rule-def">TODO</a>).
+    </div>Suppose $f(x,y)$ is continuously differentiable, and
+    suppose that $\vec r(t)$ for $t\in[a,b]$ is a parametrization
+    of a smooth curve $C$. Prove that $f(\vec r(b))-f(\vec r(a)) =
+    \int_a^b Df(\vec r(t))D\vec r(t)\ dt$. [Let $g(t) = f(\vec
+    r(t))$. Why does $g(b)-g(a) = \int_a^b g'(t)dt$? Use the chain
+    rule (matrix form) to compute $g'(t)$. Then just substitute
+    things back in.]
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      <a href=
+      "http://www.youtube.com/watch?v=5ZsCN6NN3yg&amp;list=PL04DF68E73B7ECD54&amp;index=11&amp;feature=plpp_video">
+      Watch a YouTube video</a>.
+    </div>% For each vector field and curve below, find the work
+    done by $\vec F$ along $C$. In other words, compute the
+    integral $\int_C Mdx+Ndy$ or $\int_C Mdx+Ndy+Pdz$.
+
+    <ol>
+      <li>
+        <div class="marginpar">
+          See <a href=
+          "https://sagecell.sagemath.org/?z=eJxz06jQqdS01TDSqtCu1KnQNtGq1OQqyMkviS9LTS7JL4pPy0zNSdFw01EAKtQ11jHSBLIqdQx0LDU1tUHqNCx1K-KMdGCymgDJPhZ0">
+          Sage</a> for a picture.
+        </div>% Let $\vec F(x,y) = (2x+y,x+4y)$ and $C$ be the
+        parabolic path $y=9-x^2$ for $x$ from $-3$ to $2$.
+      </li>
+
+      <li>
+        <div class="marginpar">
+          See <a href=
+          "https://sagecell.sagemath.org/?z=eJwVi7EKgDAMRPd-hWPSRtCIo6s_IdJBKwhFRYo0_XrT6R5372bIJFRwArbZiS3Etris2bAVBUHzxDv5L2zpfv1xhrgPO8zU6LMnRgWhdqwEhToaEF08rwALcO27aqiow4rmBwN1HWM">
+          Sage</a> for a picture.
+        </div>% Let $\vec F(x,y,z) = (2x+yz,2z+xz,2y+xy)$ and $C$
+        be the straight segment from $(2,-5,0)$ to $(1,2,3)$.
+      </li>
+    </ol>[Hint: If you parametrize the curve, then you've done the
+    problem the HARD way. Did you try to find a potential function
+    for the vector field?]
+  </div>
+
+  <div class="problem">
+    <div class="marginpar">
+      See <a href=
+      "https://sagecell.sagemath.org/?z=eJytkM1uhCAUhfc-hTsueMmMYNOV23mJydQYpR1SK0TItPr0hVFbm5kumnQBl597zvngUg9APKHJAT5wxImWoU440sRY78pWNx78WTevvXKulDSxpe2Mry6q8WaonrXqWtnCAdOg4zkKGlYj8gILijAhl_hIgyorbT3Ub8oPuqmiA0BjHPjQ7nR_rXGAxz0KZjVFxiLBVdrpXsER8q-7FAQWKOkJ07UtzkfSmM4M5FSSQbVkI53bgy567Le6e2SCr0wFmykZ5Dzu5bJfUa3eiR-ov3oxwfzO6tVSsm-7B_YPhuFgLllnXiDPIrPns92SEzPnhzyJP-RlMe-qvX3CbWa-4G0-a3N4P9adzTtYmnwCd8u7lQ">
+      Sage</a>&mdash;$C_1$ and $C_2$ are in blue, and several possible
+      $C_3$ are shown in red.
+    </div>% Let $\vec F = (x,z,y)$. Let $C_1$ be the curve which
+    starts at $(1,0,0)$ and follows a helical path $(\cos t, \sin
+    t, t)$ to $(1,0,2\pi)$. Let $C_2$ be the curve which starts at
+    $(1,0, 2\pi)$ and follows a straight line path to $(2,4,3)$.
+    Let $C_3$ be any smooth curve that starts at $(2,4,3)$ and ends
+    at $(0,1,2)$.
+
+    <ul>
+      <li>Find the work done by $\vec F$ along each path $C_1$,
+      $C_2$, $C_3$.
+
+        <div class="marginpar">
+          If you are parameterizing the curves, you're doing this
+          the really hard way. Are you using the potential of the
+          vector field?
+        </div>
+      </li>
+
+      <li>Find the work done by $\vec F$ along the path $C$ which
+      follows $C_1$, then $C_2$, then $C_3$.</li>
+
+      <li>If $C$ is any path that can be broken up into finitely
+      many smooth sub-paths, and $C$ starts at $(1,0,0)$ and ends
+      at $(0,1,2)$, what is the work done by $\vec F$ along
+      $C$?</li>
+    </ul>
+  </div>In the problem above, the path we took to get from one
+  point to another did not matter. The vector field had a
+  potential, which meant that the work done did not depend on the
+  path traveled.
+
+  <div class="definition" label="Conservative Vector Field">
+    We say that a vector field is \emph{conservative} if the
+    integral $\int_C \vec F\cdot d\vec r$ does not depend on the
+    path $C$. We say that a curve $C$ is piecewise smooth if it can
+    be broken up into finitely many smooth curves.
+  </div>
+
+  <div class="review*">
+    Compute $\ds \int \frac{x}{\sqrt{x^2+4}}dx$. See \footnote{ Let
+    $u=x^2+4$, which means $du=2xdx$ or $dx=\frac{du}{2x}$. This
+    means $$\ds \int \frac{x}{\sqrt{x^2+4}}dx = \int
+    \frac{x}{\sqrt{u}}\frac{du}{2x} = \frac{1}{2}\int u^{-1/2}du =
+    \frac{1}{2}\frac{u^{1/2}}{1/2} = \sqrt{u} = \sqrt{x^2+4}. $$ }.
+  </div>
+
+  <div class="problem">
+    \instructor{While $\vec F$ is not continuously differentiable
+    everywhere (it's not at the origin), we can still use the
+    fundamental theorem of line integrals if we stay away from the
+    origin. This shows that $\vec F$ is a conservative vector
+    field, provided we dodge the origin.}% The gravitational vector
+    field is directly related to the radial field $\ds\vec F =
+    \frac{\left(-x,-y,-z\right)}{(x^2+y^2+z^2)^{3/2}}$. Show that
+    this vector field is conservative by finding a potential for
+    $\vec F$. Then compute the work done by an object that moves
+    from $(1,2,-2)$ to $(0,-3,4)$ along ANY path that avoids the
+    origin. [See the review problem just before this if you're
+    struggling with the integral.]
+  </div>
+
+  <div class="comment">
+    %If a vector field is everywhere continuously differentiable,
+    then the last problem shows that conservative vector fields and
+    gradient fields are exactly the same.
+  </div>
+
+  <div class="problem">
+    Suppose $\vec F$ is a gradient field. Let $C$ be a piecewise
+    smooth closed curve (closed means the starting and ending
+    points are the same). Compute $\int_C \vec F\cdot d\vec r$ (you
+    should get a number). Explain how you know your answer is
+    correct.
+  </div>
+
+  <h2>&#8220;Nice&#8221; sets (Optional)</h2>\label{sec:nice-sets}
+  The above results connecting path independence and gradient
+  fields assume that the function is defined on a
+  &#8220;nice&#8221; domain set. Here we will discuss in (brief)
+  technical detail what a &#8220;nice&#8221; set is and what goes
+  wrong when you have a set that is not so nice. This would all be
+  explored in much more detail in an advanced calculus, real
+  analysis, or algebraic topology class.
+
+  <div class="figure" label="h">
+    \centering
+
+    <div class="tikzpicture" label=
+    "description/.style={fill=white,inner sep=2pt}">
+      \matrix (m) [matrix of math nodes, row sep=8em, column
+      sep=16em, text centered] { F=\nabla f &amp;
+      \node{\parbox{2.5cm}{\centering $\displaystyle\int_C\vec
+      F\cdot d\vec r$ is \\ independent of path $C$}}; \\
+      \parbox{1.5cm}{\centering $M_y=N_x$\\ $M_z=P_x$\\ $N_z=P_y$}
+      &amp; \node{\parbox{2.5cm}{\centering $\displaystyle\oint_C
+      \vec F\cdot d\vec r=0$ \\(closed path $C$)}};\\ };
+      \path[&gt;=latex,-&gt;,line width=1pt] (m-1-1) edge [bend
+      left=5] (m-1-2) (m-1-1) edge node[auto] {$\vec F$ has
+      continous partials} (m-2-1) (m-1-2) edge [bend left=5]
+      node[auto] {$D$ connected} (m-1-1) (m-1-2) edge [bend
+      left=10] (m-2-2) (m-2-1) edge node[above] {$\vec F$ has
+      continous partials} node[below] { $D$ connected and simply
+      connected} (m-2-2) (m-2-2) edge [bend left=10] (m-1-2);
+    </div>\caption{Equivalences for nice sets}
+    \label{fig:equivalences}
+  </div>Let $\vec F=\langle M,N,P\rangle$ be continuous on an open
+  set $D$. In the diagram in Figure~<a href=
+  "#fig:equivalences">TODO</a>, the arrows represent implications
+  (i.e., if there is an arrow from one statement pointing to
+  another, then the first statement being true implies that the
+  second statement is true). A label on the arrow means that the
+  condition has to be satisfied for the implication to be hold. The
+  definitions of the terms are in the book (or you can ask me).
+  Using terms from the book, a &#8220;nice&#8221; set is a set that
+  is open, connected, and simply connected. Roughly, this means
+  that $D$ does not include its boundary and is a single region
+  without any holes going through it. For such a &#8220;nice&#8221;
+  set, all four statements in Figure~<a href=
+  "#fig:equivalences">TODO</a> are equivalent (i.e., either they
+  are all true or they are all false for a given vector field $\vec
+  F$). If the set $D$ is not connected, then path-independence does
+  not imply the vector field is a gradient field. In this case,
+  discrepancies can occur between the two definitions for
+  &#8220;conservative vector field&#8221;. There is a homework
+  problem that shows that the bottom arrow does not hold when $D$
+  is not simply connected. When $D$ is not connected and simply
+  connected, we lose the nice, easy test in the lower left of the
+  figure for determining exactly when a vector field is a gradient
+  field.
+</section>
+</section>
+
+</body>
+</html>
