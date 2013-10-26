@@ -17,10 +17,11 @@ TeX: {
       ds: "\\displaystyle",
       cl: ["\\begin{matrix} #1 \\end{matrix}",1],
       RR: "\\mathbb{R}",
+            blank: ["\\Rule{#1}{0pt}{1pt}",1],
       abs: ["\\left|#1\\right|",1],
 }
   },
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}
 });
 </script>
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -51,10 +52,10 @@ TeX: {
     centroid, mass, center of mass, inertia, and radii of
     gyration.</li>
 
-    <li>Compute the work (flow, circulation) and flux of a vector
+    <li class="vectorintegral">Compute the work (flow, circulation) and flux of a vector
     field along and across piecewise smooth curves.</li>
 
-    <li>Determine if a field is a gradient field (hence
+    <li class="vectorintegral">Determine if a field is a gradient field (hence
     conservative), and use the fundamental theorem of line
     integrals to simplify work calculations.</li>
   </ol>
@@ -99,11 +100,11 @@ TeX: {
         \left|\frac{d\vec r}{dt}\right|dt$</td></tr>
 <tr><td>  Average
         Value</td><td> $\bar f = \frac{\int f ds}{\int ds}$</td></tr>
-<tr><td> 
+<tr class="vectorintegral"><td> 
         Work, Flow, Circulation </td><td> $W=\int_C d\text{Work} =
         \int_C (\vec F\cdot \vec T) ds = \int_C \vec F\cdot d\vec r
         = \int_C Mdx+Ndy$</td></tr>
-<tr><td>  Flux </td><td> $\text{Flux} = \int_C
+<tr class="vectorintegral"><td>  Flux </td><td> $\text{Flux} = \int_C
         d\text{Flux} = \int_C \vec F\cdot \vec n ds = \oint_C
         Mdy-Ndx$</td></tr>
 <tr><td>  Mass</td><td> $m=\int_C dm = \int_C \delta ds
@@ -117,15 +118,15 @@ TeX: {
         dm},\frac{\int z dm}{\int_C dm}\right)$</td></tr>
 <tr><td>First moment of mass </td><td>$M_{yz}=\int x dm$,
           $M_{xz} = \int x dm$, $M_{xy}=\int x dm$</td></tr>
-<tr><td>(Second) Moment of Inertia </td><td>$I_x = \int (y^2+z^2)
+<tr class="vectorintegral"><td>(Second) Moment of Inertia </td><td>$I_x = \int (y^2+z^2)
           dm$, $I_y = \int (x^2+z^2) dm$, $I_z = \int (x^2+y^2) dm$
           </td></tr>
-<tr><td>Radius of Gyration </td><td> $R =
+<tr class="vectorintegral"><td>Radius of Gyration </td><td> $R =
           \sqrt{I/m}$</td></tr>
-<tr><td>Fund. Thm. Calculus </td><td>
+<tr class="vectorintegral"><td>Fund. Thm. Calculus </td><td>
           $f(b)-f(a)=\int df = \int \frac{df}{dx}dx = \int_a^b
           f^\prime(x)dx$</td></tr>
-<tr><td>Fund. Thm of Line Int. </td><td> $f(B)-f(A)=\int_C
+<tr class="vectorintegral"><td>Fund. Thm of Line Int. </td><td> $f(B)-f(A)=\int_C
         \vec \nabla f \cdot d\vec r$ 
     <span class="bmw">Outline of proof: $\int_C df = \int_C
         \frac{df}{ds}ds = \int_a^b \frac{df/dt}{ds/dt}ds =
@@ -150,9 +151,9 @@ TeX: {
 
     <ul>
                 <li><a id="lineintegralcalculator" href="https://sagecell.sagemath.org/?z=eJx1VE1v2zAMvRvwfyCSApFdN2vS0wr4EOw0YKd2wA5pGqgy7Qi1JUOSm-Tfj5LsrC26XEKTj9-Pms9_HxCErhBesNVHOMq2hVqqChwZ7GBqLhC4QQ66Bn7RuAN30Eq0o1_NTsU5A06O_EW_YXAXgyHJMJeBVEFzOkPfcoVLgDSJPuX3m9Pz-ub8vE4TDy3ZOhfaklTAXW6lIilLE2e4arBkrrgt1nkvSZUmlS3NspJ1TZil0qZjpK42Zc1yHyrLKx_HI-fwC93CQsdfqR2oByWc1AqMbA6OWqvBacA33g7cEUBRwQ4bw1ugZgzVLm1sJ1Q-_4MLmtNgfSw1dGikIOjkU9BQBPdWqzt0sqMxHRG6kEtpR2aaUos-Z4POp8MTF-4SYEldYE3zVbifdGwUVJXdpwnQz6AbjIKHB3Yp4Qt0AXF029XuIq532fZ2FwazgfJTnmoTDGlycF27dL5Qtk2TrZldxY1dzYoo7IqofnpDEdZMFv836auL4VvlvG3aFXPlO5QlU1hUQR-E--duZdPxsoYI2Xy0P45U3HhyXpUQ0VA-USf7HzB6bTx6N3YUmPDb79Ji3L_ngw3U7FvtIsffMZ8WYVbEuYFo6fugqRWhoTDNIZ-IRvEDO_a692FtWUnhmNCtNuXCYLUoiEHiVaG15d0EtmXPDSeC0Or2Pj0LuW6zaU9Fnn-Iml1_6bDKiv_g08QeEN0XeSYPNtA9rbKA1EcW67oOXvFuftZhHpdzoNlV2nOi8HoVLyO8Go0cz_7CYrqU3tAXzPwrEynuTwz9nD9HZUcuHdTa0AZepMvuZ_7ozyPXQ3Uj3CFxdJqRLx1PAns3IseMj7zxD9vQVuHihO76wX2sL1bUnpezv9Dcmfg=&amp;lang=sage">Line Integral calculator</a></li>
-        <li><a href="https://sagecell.sagemath.org/?z=eJylU8FuozAQvSPxDyNChGncqK165dQVe0ouuxKHJI3c2CRWAbNmILBfv7ahpN09LlIU8Lx5bzxvpmOaRBjRqDe_IYrBPYtvIpeVgEG1GjqmJXsrRON7mmAMCRCkz_f4-vSB_oEMJ3DNNCsFavmboVQVgO-9qbbizZh2_0inrMV32QmYYrnSgBfxd7bvpaSng5N8uutXA73v45ugzejECU1yLkXBfa-_afU3rcXPi2hmLaYFtI3I2wJkbouGK6sQUEHJ3gUwOCvFoS4Urn1vuBEO9IE-_y-f723oNkntC9eGVa-5zHPb1elZvKiybqfLcaFlZzrRCQPPkpTcWQNiuAPunFiksuJGoZCIhSlIIqgcrkq_rwFMkXBSXIDePRzgbEgaR5pL3aCJlLWqRIUUmOHQu8fPmEacVMXXxrwskRWKszb9Jjyj451jW_8Fy4IEQWB1rCRwwwdvA4RpsmxCYIWqzo7t1GpjtU5Ce-x77p6qE6PlUxddTI7_hnSJbV0IUrKaFEa6p7AbR4GCvTmd0ihkhziOx2LWaKeU7Hxvp4NwbybDYcOAQhC6ZPtqjw50xPARNCF4T_mI4TMoCNM586OADxsmwMbGNlNs8zW2tbHtFNt-jll14-j-xBXClzo2vF9t-TB-LJs95RgGS9cF48CcnSV748zxBf7hyGh28L0DhYtgZoIg2UW_WjOSEgez47ICFLps7KSEprAwovD1EMPI5DuP62TeyNPRjjBx3Z-noF4l9vQ4buHRbSFJ6bSGdJiBzUVdSR3_AagoUJM=&amp;lang=sage">Work Calculator</a></li>
-        <li><a href="https://sagecell.sagemath.org/?z=eJytVE2P2jAQvUfKfxhBEA71rqqudm-ctsqqB7i0Ug-AkDd2wGqIU9thk_76jj8CXfZapAjbM_Pmzbyxz0yTuZ3TeY_fMM_h5jf9KirZCBhUp-HMtGSvtTBpoonNYQnkcVEqg2v6uDCywUVEmH63zMawlml2ElbLP8xK1QCkyavqGm4cgKWf6ZdFK99nnr7Is4DoVSkN9ihucdKkID0dPI2HRU8fFsMN_UjCxZ5FaRGmkqLmadJf8_f07ok-3Qb-OApzyc-0gM6IqqtBVq4keGONBavgxH4JYHBQikNbK3ufJsMVevjP0GnCNeJyWVVEU_tBKwR_Vqe2iyVzoeUZO3UWaUJ4T7lvFddpEviFlhDCkSfvg3DTF2F9cKP0idVj214HMG-sbWVz8FalERxYw6E8suYwHht5aDzPFV1jgsJTLuquXxZkof1wLACTu9mZFhLDGdTS2hr7IS2oCpzzPfxE8spC4TM4sii1Q5GNFQeNkhKPSkMTA_Fvo-0DZuUwHZWjPdVETyYTlMCfOmtWLGcmA1ZqZYyvouw0zl62xdpBe2Oa-O6qswiDGMXLnE2Gf0Sd2a6tBTmxltTIo6ewCQNKwdVOYxj1Re7yPA-M7q27UmSTJhs9iVnRPZtQmGQ-3i3d0Y4GHx6cokdQ1m34v07NlnIzugSF3S50f3QK_JYE9fLWke8o1-i3csZVNK5ujGtnXEfj-sYY5d-WTlDPG4nBhdnM5MhzuIuLPpvMQvNIyJbTsAvwuL0GWfQNRp_jWpNLuMVR2T_DTV6f1k-OlyBNdhSOgrlZXm7mvzu8etIO-BDKBqzQJ-MHBDNncwrvD202x_jcjVW7vDxM5d5dVeLljsOJ9k9Ld7oPd2nvnyBS0PgG0eHiaI7qjbT5X0yTnwg=&amp;lang=sage">Flux Calculator</a></li>
-        <li><a href="https://sagecell.sagemath.org/?z=eJy1VFFv2jAQfvevOFEkHGrYuqnVNMnSNmk8td1UVeKBIpTGDlgNdnR2KPn3O8dpC6x7XB6wuXzf3Xff2dnlyEd70YowythM7nQRHPLFpBX7ZcbwNXA5LpznIRNwOfbG0o5eBx9yDPIjC9oq-WlcG8YSYVUaXanVo2us8iCB872YXIkr4vM27TLG2Blc6zDysM2fNORQNrYIxllAs94EcGUJwYHe5VWTBwJYMDboNeYVuJ1GCBvjoWhwp6dM6RIqY_XqBcL7jVXZVwb0oA4NWri747bZajRFXr2BD9BT3zx6vpe4-LgU0NJ6sSTdqVlaqdeMXpF-hVKZsuQoQsbUXM5OWWOFcAY3TRVMXbXGriE8O0gWeeptrcOG-libnaa_Gw3KBajRqaYIbC6P-1FzKkl2kvfRURUrCJgo7MSoWdXs31FABNa9OkkWY2kE999_XP9km7CtpiF_rDRfsAUOhg8kEyifaLPhQMBsKd7CSBpiEPtgGAJZt9YU4uHEqh6iEjGyFB7mmvHXlKnQaQsvCeYy4eGhiDYdJpz3GIJQh6D69V_4-WF9C8rHYHL2pVhyMzEjghy_AdXCBG5B7buiEfLK6PDDVL3bd9vjBF3oRrWT25Qh4pYsHqQz-H396559i-PBnGYfT_OKk41By8WgrNzzQNDS7AfL_jTXsq5cWB1eNz4TMH7n_mWJcC6hzjHf6kBnfxXZdHD_npegW1U8We29_JyYpoSkRCYlSUB8Sodg6FKC78bPDxPF1LRMUiz7cPEleyN2goAU5YjumdPwpYnfBjyH6SXdmiwFClc5lCPUapSk6OpIDPnx38VEA4_UrFFr2-vpfvyGWLWA3Ndk_gpz-obJi-wPG3Sl-A">Work and Flux Calculator</a></li>
+        <li class="vectorintegral"><a href="https://sagecell.sagemath.org/?z=eJylU8FuozAQvSPxDyNChGncqK165dQVe0ouuxKHJI3c2CRWAbNmILBfv7ahpN09LlIU8Lx5bzxvpmOaRBjRqDe_IYrBPYtvIpeVgEG1GjqmJXsrRON7mmAMCRCkz_f4-vSB_oEMJ3DNNCsFavmboVQVgO-9qbbizZh2_0inrMV32QmYYrnSgBfxd7bvpaSng5N8uutXA73v45ugzejECU1yLkXBfa-_afU3rcXPi2hmLaYFtI3I2wJkbouGK6sQUEHJ3gUwOCvFoS4Urn1vuBEO9IE-_y-f723oNkntC9eGVa-5zHPb1elZvKiybqfLcaFlZzrRCQPPkpTcWQNiuAPunFiksuJGoZCIhSlIIqgcrkq_rwFMkXBSXIDePRzgbEgaR5pL3aCJlLWqRIUUmOHQu8fPmEacVMXXxrwskRWKszb9Jjyj451jW_8Fy4IEQWB1rCRwwwdvA4RpsmxCYIWqzo7t1GpjtU5Ce-x77p6qE6PlUxddTI7_hnSJbV0IUrKaFEa6p7AbR4GCvTmd0ihkhziOx2LWaKeU7Hxvp4NwbybDYcOAQhC6ZPtqjw50xPARNCF4T_mI4TMoCNM586OADxsmwMbGNlNs8zW2tbHtFNt-jll14-j-xBXClzo2vF9t-TB-LJs95RgGS9cF48CcnSV748zxBf7hyGh28L0DhYtgZoIg2UW_WjOSEgez47ICFLps7KSEprAwovD1EMPI5DuP62TeyNPRjjBx3Z-noF4l9vQ4buHRbSFJ6bSGdJiBzUVdSR3_AagoUJM=&amp;lang=sage">Work Calculator</a></li>
+        <li class="vectorintegral"><a href="https://sagecell.sagemath.org/?z=eJytVE2P2jAQvUfKfxhBEA71rqqudm-ctsqqB7i0Ug-AkDd2wGqIU9thk_76jj8CXfZapAjbM_Pmzbyxz0yTuZ3TeY_fMM_h5jf9KirZCBhUp-HMtGSvtTBpoonNYQnkcVEqg2v6uDCywUVEmH63zMawlml2ElbLP8xK1QCkyavqGm4cgKWf6ZdFK99nnr7Is4DoVSkN9ihucdKkID0dPI2HRU8fFsMN_UjCxZ5FaRGmkqLmadJf8_f07ok-3Qb-OApzyc-0gM6IqqtBVq4keGONBavgxH4JYHBQikNbK3ufJsMVevjP0GnCNeJyWVVEU_tBKwR_Vqe2iyVzoeUZO3UWaUJ4T7lvFddpEviFlhDCkSfvg3DTF2F9cKP0idVj214HMG-sbWVz8FalERxYw6E8suYwHht5aDzPFV1jgsJTLuquXxZkof1wLACTu9mZFhLDGdTS2hr7IS2oCpzzPfxE8spC4TM4sii1Q5GNFQeNkhKPSkMTA_Fvo-0DZuUwHZWjPdVETyYTlMCfOmtWLGcmA1ZqZYyvouw0zl62xdpBe2Oa-O6qswiDGMXLnE2Gf0Sd2a6tBTmxltTIo6ewCQNKwdVOYxj1Re7yPA-M7q27UmSTJhs9iVnRPZtQmGQ-3i3d0Y4GHx6cokdQ1m34v07NlnIzugSF3S50f3QK_JYE9fLWke8o1-i3csZVNK5ujGtnXEfj-sYY5d-WTlDPG4nBhdnM5MhzuIuLPpvMQvNIyJbTsAvwuL0GWfQNRp_jWpNLuMVR2T_DTV6f1k-OlyBNdhSOgrlZXm7mvzu8etIO-BDKBqzQJ-MHBDNncwrvD202x_jcjVW7vDxM5d5dVeLljsOJ9k9Ld7oPd2nvnyBS0PgG0eHiaI7qjbT5X0yTnwg=&amp;lang=sage">Flux Calculator</a></li>
+        <li class="vectorintegral"><a href="https://sagecell.sagemath.org/?z=eJy1VFFv2jAQfvevOFEkHGrYuqnVNMnSNmk8td1UVeKBIpTGDlgNdnR2KPn3O8dpC6x7XB6wuXzf3Xff2dnlyEd70YowythM7nQRHPLFpBX7ZcbwNXA5LpznIRNwOfbG0o5eBx9yDPIjC9oq-WlcG8YSYVUaXanVo2us8iCB872YXIkr4vM27TLG2Blc6zDysM2fNORQNrYIxllAs94EcGUJwYHe5VWTBwJYMDboNeYVuJ1GCBvjoWhwp6dM6RIqY_XqBcL7jVXZVwb0oA4NWri747bZajRFXr2BD9BT3zx6vpe4-LgU0NJ6sSTdqVlaqdeMXpF-hVKZsuQoQsbUXM5OWWOFcAY3TRVMXbXGriE8O0gWeeptrcOG-libnaa_Gw3KBajRqaYIbC6P-1FzKkl2kvfRURUrCJgo7MSoWdXs31FABNa9OkkWY2kE999_XP9km7CtpiF_rDRfsAUOhg8kEyifaLPhQMBsKd7CSBpiEPtgGAJZt9YU4uHEqh6iEjGyFB7mmvHXlKnQaQsvCeYy4eGhiDYdJpz3GIJQh6D69V_4-WF9C8rHYHL2pVhyMzEjghy_AdXCBG5B7buiEfLK6PDDVL3bd9vjBF3oRrWT25Qh4pYsHqQz-H396559i-PBnGYfT_OKk41By8WgrNzzQNDS7AfL_jTXsq5cWB1eNz4TMH7n_mWJcC6hzjHf6kBnfxXZdHD_npegW1U8We29_JyYpoSkRCYlSUB8Sodg6FKC78bPDxPF1LRMUiz7cPEleyN2goAU5YjumdPwpYnfBjyH6SXdmiwFClc5lCPUapSk6OpIDPnx38VEA4_UrFFr2-vpfvyGWLWA3Ndk_gpz-obJi-wPG3Sl-A">Work and Flux Calculator</a></li>
 
         <li><a href="https://sagecell.sagemath.org/?z=eJyFVU1z2jAQvetXaDLMIBORONBeMqNTe-GQi69APMIW4Kllu5KgVhn-e1eybD6atFxs6e2-fX7aFUeuyLillppxhHJR6cJYAuuIte-zR4sUO4rM1Ios55Os1sREFM8nuqjgbR0how1XhsXIiCpnTYFMqni1E4wY2mHUIRFCSKWNKqTADOfFdksUNVBQs2HxVNVKkghpVlRG7BQvSa7pJBBGKBOVUXWRpy2rSHWQQhUZL9MhmLSTXEekZWoZr0FlKI99fdh61lcc9hMO6zkscLx8xpFLRq6NuqpKcchEkgqlasU-qJHLO17Ej7s0MII78lkjOIktLotKXNLCC8S_Igw_JcxBVThJPvyOS_STPmz0vb6_vwxO6K1ltyXBUBmhN3u3bf22s1KoVHKt0xZkk7f2WcIhklvIesj20KKlC0sXMewuP_s-vK0VHpbwhol9n02cb233JL4332eRU7JGiauvfypDFk4DSuywtn4dD-vYrdHeyPLJ8E0pyBIt1cP3YP5olYvScH-soweKr495TV3kt4M6CoiDocAKRgCiVIeMzAj7ToW80LMBWG0Vz055l3M-5ebsuMM4hJhcjyjmcOTGlAJvCoPrLeYqK0W1M3snRYdIPcLTGyQA30Jrg7hSbA3pqr6cT_q8AjNxu6IwTve71u2uVLHb-2_B5DJl9DIsUa9Sss4hkONl3Al2J-60yhAP4a7ITU6ICSH8KBTfid5pPBoEyk4gJD1gsOYyIq6Pemf9h0E9J_2tvd61_a692CNUL_LGpBeJOyLXYTc7Npf33gwtT_FNm_eSFn4Yuuz3WRCxAGkdaDtH2gtkeyjuoKG3Ax4H4gTuvZVr4hOUeJa-h5LAmzjegEHHnx1keygeoNhDSbxGbtzrxmh2Grsp1MaWYvw6zrnei3x8Rg1ruOJSGLhX0qasDdzQfVfDy77IfkCWZl8i1Dyypgbh5N_20Kwu4T4cK-CnPkEXvwX7GlNcih1cQmnJN6Jkdwf1cF8g9Ca-ak5YdNw7JUQ1pvh_9C6vI84KN0iExDSOwBg6mThXPOR8IcvldE69y_6x7gMeL-g0wNNr_IogsXQ6hwh4zj8g6OHpLY70vv5FGmh83cD_Lzhvipq9RH8Ah12GVw">Physical properties</a></li>
         <li><a href="https://sagecell.sagemath.org/?z=eJx9Vk2PqzYU3ftXWNNIMRNPJslrN5VYTTcjtRvUXZKHPOAk6GGgtpNij-a_99p8BcJrNsH3Hh_fD58LkiuuSYBuTJJlTQ3VywClvFCZNsStbRDWK7OySIY3nuhSkv3uOSkV0QHFu2eVFf5JHwOEfpEh6UAbuqObY_DSrbd0S78dg-BZryYmpJVmUocbpHmRht-eqwzpWLLizEOiaeOlzueOwH9yvVRYsB8cM3y6FonOygLL7HzRuDydsC4xv7H8yjQACpwVmp8ly3F54xLrS6ZwcpU3voYsTzjPCh53ENI-wEG_Iww_yfVVFjiKSHEVXGYJywfwHXqtrh-K1KHcb44UG_jfHqmFv93RlaZJAPsMAAFZyLiSmeA4xGl2OhFJNRRdhf1iXZRSQFdUOA4wVQFKeKFlmaVxPXHWz-B-VQPATABmCrATgG0BqQjHVwDsSExjEQFit3PcIiEXAVuRKAXQx-yjvOrY2LjKWcEfI4XNI2Q9jzQzSDOLtB7pUuMyFkypuHYhzUXzKkY4M8XV8zj7gDM9Dr1Pu0HM993Kft8FPq73aS9IPXJPO-HdpnNHLhX1j9TkvX51a9OvjV_bfm3dGp1kKbBiZ74WmUrWFy1ynImqlBqEoy9xxaQCdYCMKoScd63ZR87JHu1FReTTH21PF4eU55q5WxAsnuAut80-0hb45qQEMJA0ljAIHEj23oVeYK9jt7WV9OBsNi3bXbjVxOBP1YKCxPNM65zjj8zJGzOZ5Lw464uPRg1otcAvY-_gfGsvPCZJWYAaC90lEkDsOT9pcjhJlnxuvz7F1wG6gOsDTRWdWo234qnZOvPBj6AmFzKIlA5yHB5tcJemCJsqQzo-h0nG7u75ZMWwB7a4c0f7OtwAYzDx4A50uUKqk7hh41OAociDjNcFuYvtr_jT2K_msBoi8Od4CWAvAbwwdoG9CPzRc2obsdUdm5llq3_KVs-ymZbNzrOZn7KZCdub13lX7tGl2Arc5J-KtvOdxTxYXBwP96CfRxSPxs54eX8l3v3s8oz9GHEZOsr3-kh7mGnS74dJDzJ3IHsHciOlw9jhwAheJgc3QD7h6Ffx5QHRcFLkTmr9MHG-vNvcuW3vto07skfk3nSoCmHYMME1vD6h6KWGF1w3C6h7Hyc_Cq5U-GuAqlVYlRAq-f-yjatGkzIvZbiUPF1Sv11lloe_baZ8rRzxvB7B3vCcJefFkuIHKjegyR6-azb0xc_ayBU0chWFQjjz1HqkkqXZVYWRpWXFEpBXuFlv79laJtfkyDUQWOATYj9nHdjqezY6insc6X2cDY-P9NE6cJs5bldb6KW6lP-SCsaFquALDloIX17hlrKaq_BveeUB-g_6R3nE&amp;lang=sage">Physical properties (3D)</a></li>
@@ -469,10 +470,11 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
   </div>
 </section>
     
-    <section class="hidden">
-  <h1>Work, Flow, Circulation, and Flux</h1>Let's turn our
+    <section class="bmw">
+  <h1>Work, Flow, Circulation, and Flux</h1>
+        <p>Let's turn our
   attention to the work done by a vector field representing a force
-  as we move through the field. Work is a transfer of energy.
+  as we move through the field. Work is a transfer of energy.</p>
 
   <ul>
     <li>A tornado picks up a couch and applies forces to the couch
@@ -982,18 +984,24 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
     positive. We need to change some computations. Make sure to
     look into this. It needs to change.
   </div>
+        </section>
+        <section>
 
-  <h1>Average Value</h1>The concept of averaging values together
+  <h1>Average Value</h1>
+            
+            <p>The concept of averaging values together
   has many applications. In first-semester calculus, we saw how to
   generalize the concept of averaging numbers together to get an
   average value of a function. We'll review both of these concepts.
   Later, we'll generalize average value to calculate centroids and
-  center of mass.
+  center of mass.</p>
 
-  <div class="problem">
-    \label{average value methods} \instructor{Throughout the
+  <div class="problem" id="average-value-methods">
+    <div class="instructor">Throughout the
     section, I point out how each formula is a variation on one of
-    the patterns below.} Suppose a class takes a test and there are
+    the patterns below.</div> 
+      
+      Suppose a class takes a test and there are
     three scores of 70, five scores of 85, one score of 90, and two
     scores of 95. We will calculate the average class score, $\bar
     s$, four different ways to emphasize four ways of thinking
@@ -1008,7 +1016,7 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
         <div class="marginpar">
           $\bar s=\frac{\sum \text{values}}{\text{number of
           values}}$
-        </div>% Compute the average by adding 11 numbers together
+        </div>Compute the average by adding 11 numbers together
         and dividing by the number of scores. Write down the whole
         computation before doing any arithmetic.
       </li>
@@ -1017,7 +1025,7 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
         <div class="marginpar">
           $\bar s=\frac{\sum (\text{value}\cdot\text{weight})}{\sum
           \text{weight}}$
-        </div>% Compute the numerator of the fraction in the
+        </div>Compute the numerator of the fraction in the
         previous part by multiplying each score by how many times
         it occurs, rather than adding it in the sum that many
         times. Again, write down the calculation for $\bar s$
@@ -1026,8 +1034,8 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
 
       <li>
         <div class="marginpar">
-          $\bar s=\sum (\text{value}\cdot\text{(\% of stuff)})$
-        </div>% Compute $\bar s$ by splitting up the fraction in
+          $\bar s=\sum (\text{value}\cdot\text{(% of stuff)})$
+        </div>Compute $\bar s$ by splitting up the fraction in
         the previous part into the sum of four numbers. This is
         called a &#8220;weighted average&#8221; because we are
         multiplying each score value by a weight.
@@ -1035,10 +1043,10 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
 
       <li>
         <div class="marginpar">
-          $\text{(number of values)}\bar s = \sum \text{values}$\\
+          $\text{(number of values)}\bar s = \sum \text{values}$<br/>
           $(\sum \text{weight})\bar s = \sum
           (\text{value}\cdot\text{weight})$
-        </div>% Another way of thinking about the average $\bar s$
+        </div>Another way of thinking about the average $\bar s$
         is that $\bar s$ is the number so that if all 11 scores
         were the same value $\bar s$, you'd have the same sum of
         scores. Write this way of thinking about these computations
@@ -1046,29 +1054,19 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
         and multiplying both sides by the denominator.
       </li>
     </ol>
-  </div>In the next problem, we generalize the above ways of
+  </div>
+            <p>In the next problem, we generalize the above ways of
   thinking about averages from a discrete situation to a continuous
   situation. You did this in first-semester calculus when you did
-  average value using integrals.
+  average value using integrals.</p>
 
   <div class="problem">
     Suppose the price of a stock is \$10 for one day. Then the
-    price of the stock jumps to \$20 for two days. Our goal is to
+    price of the stock jumps to $20 for two days. Our goal is to
     determine the average price of the stock over the three days.
 
     <ol>
-      <li>Why is the average stock price not \$15?
-
-        <div class="comment">
-          %
-
-          <ul>
-            <li>Find the average price of the stock using all of
-            the methods from Problem~<a href=
-            "#average-value-methods">TODO</a>.</li>
-          </ul>
-        </div>
-      </li>
+      <li>Why is the average stock price not \$15?</li>
 
       <li>Let $f(t) = \begin{cases}10
       &amp;0&lt;t&lt;1\\20&amp;1&lt;t&lt;3\end{cases}$, the price
@@ -1085,31 +1083,32 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       equation below for $\bar f$: $$\int_a^b \bar f dx = \int_a^b
       f dx$$ Solve for $\bar f$ symbolically (without doing any of
       the integrals). This quantity is called the average value of
-      $f$ over $[a,b]$.%, and was crucial to proving the
-      Fundamental Theorem of Calculus from first-semester
-      calculus.</li>
+      $f$ over $[a,b]$.</li>
 
-      <li>\instructor{I also write $\bar f=\int_a^b f
+      <li><div class="instructor">I also write $\bar f=\int_a^b f
       \frac{dx}{\int_a^b dx}$ to emphasize the weighted average
-      approach}% The formula for $\bar f$ in the previous part
+      approach</div>
+          
+          The formula for $\bar f$ in the previous part
       resembles at least one of the ways of calculating averages
-      from Problem~<a href="#average-value-methods">TODO</a>.
+      from <a href="#average-value-methods">the previous problem</a>.
       Which ones and why?</li>
     </ol>
-  </div>\instructor{I talk about ants building a mound. Then after
+  </div>
+            <div class="instructor">I talk about ants building a mound. Then after
   removing the ants, so none get hurt, you shake their tank. The
   average value is the height of the dirt. The mountains filled in
-  the valleys.}% Ask me in class about the &#8220;ant farm&#8221;
-  approach to average value.
+  the valleys.</div> 
+            <p>Ask me in class about the &#8220;ant farm&#8221;
+  approach to average value.</p>
 
-  <div class="problem">
-    \label{Average Value intro}%
+  <div class="problem" id="average-value-intro">
 
     <div class="marginpar">
       <a href=
       "http://www.youtube.com/watch?v=t7T0MzfgV0Q&amp;list=PL04DF68E73B7ECD54&amp;index=5&amp;feature=plpp_video">
       Watch a YouTube video.</a>
-    </div>% Consider the elliptical curve $C$ given by the
+    </div>Consider the elliptical curve $C$ given by the
     parametrization $\vec r(t) = (2\cos t, 3\sin t)$. Let $f$ be
     the function $f(x,y)=9-x^2-y^2$.
 
@@ -1122,8 +1121,8 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       sheet?
 
         <div class="marginpar">
-          See problem <a href=
-          "#horse-track-chain-rule-introduction">TODO</a>.
+          See <a href=
+          "./06-Derivatives.html#horse-track-chain-rule-introduction">this problem</a>.
         </div>
       </li>
 
@@ -1132,20 +1131,24 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       f$, above $C$. This height $\bar f$ is called the average
       value of $f$ along $C$.
 
-        <div class="comment">
+        <div class="marginpar bmw">
           %
-        </div>\marginparbmw{Please read <a href=
+        \marginparbmw{Please read <a href=
         "https://www.lds.org/scriptures/ot/isa/40.4?lang=eng/#3">Isaiah
         40:4</a> and <a href=
         "https://www.lds.org/scriptures/nt/luke/3.5?lang=eng/#4">Luke
         3:5</a>. These scriptures should help you remember how to
-        find average value. }% \instructor{Again, I emphasize how
+        find average value. }%
+            </div>
+          
+          <div class="instructor">Again, I emphasize how
         this relates to the ways of computing averages from
-        Problem~<a href="#average-value-methods">TODO</a>.}
+        <a href="#average-value-methods">this problem</a>.</div>
+          
         Explain why the average value of $f$ along $C$ is $$\bar f
         = \frac{\int_C f ds}{\int_C ds}.$$ Connect this formula
         with the ways of thinking about averages from
-        Problem~<a href="#average-value-methods">TODO</a>.
+        <a href="#average-value-methods">this problem</a>.
         [Hint: The area under $\bar f$ above $C$ is $\int_C \bar f
         ds$. The area under $f$ above $C$ is $\int_C f ds$. Set
         them equal and solve for $\bar f$. ]
@@ -1155,7 +1158,7 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
         <div class="marginpar">
           You can use the <a href="#sagelineintegral">Sage line
           integral calculator</a>.
-        </div>% Use a computer to evaluate the integrals $\int_C f
+        </div>Use a computer to evaluate the integrals $\int_C f
         ds$ and $\int_C ds$, and then give an approximation to the
         average value of $f$ along $C$. Is your average value
         between the maximum and minimum of $f$ along $C$? Why
@@ -1165,9 +1168,12 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
   </div>
 
   <div class="problem">
-    \instructor{After this problem, I like to emphasize that they
+    <div class="instructor">After this problem, I like to emphasize that they
     should have noticed a linear growth rate, and then I show them
-    how I would have guessed the answer.}% The temperature
+    how I would have guessed the answer.</div>
+      
+      
+      The temperature
     $T(x,y,z)$ at points on a wire helix $C$ given by $\vec r(t) =
     (\sin t, 2t, \cos t)$ is known to be $T(x,y,z)=x^2+y+z^2$. What
     are the temperatures at $t=0$, $t=\pi/2$, $t=\pi$, $t=3\pi/2$
@@ -1178,19 +1184,21 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
     wire using the integral formula from the previous problem. You
     can do all these computations by hand.
   </div>
-
+</section><section>
   <h1>Physical Properties</h1>
 
   <div class="note">
     It feels like this section has too many problems&mdash;some of them
     seem redundant. I should go back through and trim down these
     problems, or trim down parts of problems.
-  </div>% A number of physical properties of real-world objects can
+  </div>
+        
+        <p>A number of physical properties of real-world objects can
   be calculated using the concepts of averages and line integrals.
   We explore some of these in this section. Additionally, many of
-  these concepts and calculations are used in statistics.
-
-  <h2>Centroids</h2>%
+  these concepts and calculations are used in statistics.</p>
+<section>
+  <h1>Centroids</h1>
 
   <div class="definition" label="Centroid">
     Let $C$ be a curve. If we look at all of the $x$-coordinates of
@@ -1198,26 +1206,26 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
     $\bar x$, is the average of all these $x$-coordinates.
     Likewise, we can talk about the averages of all of the $y$
     coordinates or $z$ coordinates of points on the function ($\bar
-    y$ or $\bar z$, respectively). The \emph{centroid} of an object
+    y$ or $\bar z$, respectively). The <em>centroid</em> of an object
     is the geometric center $(\bar x, \bar y, \bar z)$, the point
     with coordinates that are the average $x$, $y$, and $z$
     coordinates.
   </div>
 
-  <div class="problem" label="Centroid">
-    \label{centroid of curve}
-
+  <div class="problem" id="centroid-of-curve">
     <div class="marginpar">
       <a href=
       "http://www.youtube.com/watch?v=t7T0MzfgV0Q&amp;list=PL04DF68E73B7ECD54&amp;index=5&amp;feature=plpp_video">
       Watch a YouTube video.</a>
-    </div>% Notice the word &#8220;average&#8221; in the definition
+    </div>
+      
+      Notice the word &#8220;average&#8221; in the definition
     of the centroid. Use the concept of average value to explain
-    why the coordinates of the centroid are %the formulas below.
+    why the coordinates of the centroid are the formulas below.
     [Hint: If we have a curve $C$ with parametrization $\vec r(t)$
     and function $f$ so that $f(\vec r(t))$ is continuous, then
-    we've developed in Problem~<a href=
-    "#Average-Value-intro">TODO</a> a formula for the average
+    we've developed in <a href=
+    "#average-value-intro">this problem</a> a formula for the average
     value of $f$ along $C$. What function $f(x,y,z)$ gives the
     $x$-coordinate of a point?] $$ \bar x = \frac{\int_C x
     ds}{\int_C ds},\quad \bar y = \frac{\int_C y ds}{\int_C
@@ -1226,17 +1234,17 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
     arc length $s=\int_C ds$.
   </div>
 
-  <div class="problem">
-    \label{semicircle centroid} Let $C$ be the semicircular arc
+  <div class="problem" id="semicircle-centroid">
+    Let $C$ be the semicircular arc
     $\vec r(t)=(a\cos t, a\sin t)$ for $t\in[0,\pi]$. Without doing
     any computations, make an educated guess for the centroid
     $(\bar x, \bar y)$ of this arc. Then compute the integrals
-    given in problem <a href="#centroid-of-curve">TODO</a> to
+    given in <a href="#centroid-of-curve">the centroid problem above</a> to
     find the actual centroid. Share with the class your guess, even
     if it was incorrect.
   </div>
-
-  <h2>Mass and Center of Mass</h2>
+</section><section>
+  <h1>Mass</h1>
 
   <div class="note">
     Jason made a comment that aluminum and copper won't combine. So
@@ -1253,21 +1261,19 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
   density than aluminum, the balance point (the center of mass)
   would not be at the midpoint of the wire, but would be closer to
   the denser and heavier copper end. In this section, we'll develop
-  formulas for the mass and center of mass of such a wire. Such
-  composite materials are engineered all the time (though probably
-  not our example wire). <span class="bmw">In future mechanical
+  formulas for the mass and center of mass of such a wire.  <span class="bmw">In future mechanical
   engineering courses, you would learn how to determine the density
   $\delta$ (mass per unit length) at each point on such a composite
   wire.</span>
 
-  <div class="problem" label="Mass">
-    \label{mass of curve}%
-
+  <div class="problem" id="mass-of-curve">
     <div class="marginpar">
       <a href=
       "http://www.youtube.com/watch?v=mz-Udq5TeS4&amp;list=PL04DF68E73B7ECD54&amp;index=6&amp;feature=plpp_video">
       Watch a YouTube video.</a>
-    </div>% Suppose a wire $C$ has the parameterization $\vec r(t)$
+    </div> 
+      
+      Suppose a wire $C$ has the parameterization $\vec r(t)$
     for $t\in[a,b]$. Suppose the wire's density at a point
     $(x,y,z)$ on the wire is given by the function $\delta(x,y,z)$.
     <span class="bmw">You'll learn to calculate this function in a
@@ -1290,7 +1296,7 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
     <div class="marginpar">
       <span class="larsonfive">See Larson 15.2:23&dash;26 for more
       practice.</span>
-    </div>% A wire lies along the straight segment from $(0,2,0)$
+    </div>A wire lies along the straight segment from $(0,2,0)$
     to $(1,1,3)$. The wire's density (mass per unit length) at a
     point $(x,y,z)$ is $\delta(x,y,z)=x+y+z$.
 
@@ -1299,21 +1305,28 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
 
       <li>What is the total mass of the wire? [You'll need to
       parameterize the line as your first step&mdash;see
-      Problem~<a href=
-      "#first-line-between-two-points">TODO</a> if you need
+      <a href=
+      "02-Vector.html#first-line-between-two-points">this problem</a> if you need
       a refresher.]</li>
     </ol>
-  </div>\instructor{Here I introduce the center of mass of an
+  </div>
+        </section>
+        <section>
+        <h1>Center of mass</h1>
+        
+<div class="instructor">Here I introduce the center of mass of an
   object, talk about moments, and talk about how the center of mass
   formula is also an averaging of the coordinates, where the weight
   is the amount of mass at a particular coordinate value (i.e.,
-  $xdm$).}
+  $xdm$).</div>
 
   <div class="marginpar">
-    <a href=
-    "http://en.wikipedia.org/wiki/Center_of_mass">Wikipedia</a> has
-    some interesting applications of center of mass.
-  </div>% The center of mass of an object is the point where the
+    Wikipedia has
+    some interesting <a href=
+    "http://en.wikipedia.org/wiki/Center_of_mass">applications of center of mass</a>.
+  </div>
+        
+        The center of mass of an object is the point where the
   object balances. In order to calculate the $x$-coordinate of the
   center of mass, we average the $x$-coordinates, but we weight
   each $x$-coordinate with its mass. Similarly, we can calculate
@@ -1323,15 +1336,18 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
   objects is important, for example, in astronomy when you want to
   calculate how two bodies orbit each other.
 
-  <div class="problem">
-    \label{center of mass with two points}\instructor{After a
+  <div class="problem" id="center-of-mass-with-two-points">
+<div class="instructor">After a
     student presents, this is a great time to connect the averages
-    back to Problem~<a href="#average-value-methods">TODO</a>.
+    back to <a href="#average-value-methods">this problem</a>.
     I point out that we can think about the object as 2 points of
     the same mass at $P_1$ and 3 points of the same mass at $P_2$.
     This suggests averaging 5 things with method 1. Alternately, I
     suggest the approach $\frac{2}{5}P_1+\frac{3}{5}P_2$,
-    suggesting a weighted average.}% Suppose two objects are
+    suggesting a weighted average.</div>
+      
+      
+    Suppose two objects are
     positioned at the points $P_1=(x_1,y_1,z_1)$ and
     $P_2=(x_2,y_2,z_2)$. Our goal in this problem is to understand
     the difference between the centroid and the center of mass.
@@ -1339,15 +1355,14 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
     <ol>
       <li>Find the centroid of two objects.</li>
 
-      <li>\instructor{I found many students struggled with setting
+      <li><div class="instructor">I found many students struggled with setting
       up a really simple sum. In class, after they present this
       one, I would suggest actually taking time to show them how to
       write the problem in summation notation with 2 points. It
       will prepare them for the proof of center of mass coming
-      up.}% Suppose both objects have the same mass of 2 kg. Find
-      the center of mass.% by averaging the $x$, $y$, and $z$
-      coordinates, weighted by how much mass is at each
-      coordinate.</li>
+      up.</div>
+          Suppose both objects have the same mass of 2 kg. Find
+      the center of mass.</li>
 
       <li>If the mass of the object at point $P_1$ is 2 kg, and the
       mass of the object at point $P_2$ is 5 kg, will the center of
@@ -1355,21 +1370,22 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       your answer before doing any computations. Then find the
       center of mass $(\bar x, \bar y, \bar z)$ of the two points.
       [Hint: You should get $\bar x= \frac{2x_1+5x_2}{2+5}$.]</li>
+        <li>If we consider a system with 3 points, what formula gives
+      the center of mass in the $x$ direction? What if there are 4
+      points, 5 points, or $n$ points?      </li>
     </ol>
   </div>
 
-  <div class="problem">
+<div class="instructor">
+  <div class="problem-nonum">
     This problem reinforces what you just did with two points in
     the previous problem. However, it now involves two people on a
     seesaw.
 
     <div class="marginpar">
-      See <a href=
-      "http://en.wikipedia.org/wiki/Seesaw">Wikipedia</a> for a
-      seesaw picture.
-    </div>% Ignore the mass of the seesaw in your work below
-    (pretend it's an extremely light seesaw, so its mass is
-    negligible compared to the masses of the people).
+      Here's a picture of a <a href=
+      "http://en.wikipedia.org/wiki/Seesaw">seesaw</a>.
+    </div>
 
     <ol>
       <li>My daughter and her friend are sitting on a seesaw. Both
@@ -1401,39 +1417,21 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       balanced (what is $a$)?</li>
     </ol>
   </div>
-
-  <div class="problem" label="Center of mass">
-    \label{center of mass of curve}%
+</div>
+  <div class="problem" label="center-of-mass-of-curve">
 
     <div class="marginpar">
       <a href=
       "http://www.youtube.com/watch?v=mz-Udq5TeS4&amp;list=PL04DF68E73B7ECD54&amp;index=6&amp;feature=plpp_video">
       Watch a YouTube video.</a>
-    </div>% In problem <a href=
-    "#center-of-mass-with-two-points">TODO</a>, we
-    focused on a system with two points $(x_1,y_1)$ and $(x_2,y_2)$
-    with masses $m_1$ and $m_2$. The center of mass in the $x$
-    direction is given by $$ \bar x = \frac{x_1m_1+x_2m_2}{m_1+m_2}
-    = \frac{\sum_{i=1}^2x_i m_i}{\sum_{i=1}^2m_i}$$
+    </div>
+      
+      In <a href=
+    "#center-of-mass-with-two-points">this problem</a>, we
+    focused on a system of points with mass.  In this problem, we look at a continuous wire.
 
     <ol>
-      <li>If we consider a system with 3 points, what formula gives
-      the center of mass in the $x$ direction? What if there are 4
-      points, 5 points, or $n$ points?
-
-        <div class="comment">
-          %
-
-          <ul>
-            <li>Consider a system with $n$ points labeled $(x_1,
-            y_1,z_1)$, $(x_2, y_2,z_2)$, \ldots, $(x_n, y_n,z_n)$,
-            having masses $m_1$, $m_2$, \ldots, $m_n$ respectively.
-            Give a formula for the center of mass in the $y$
-            direction (the $x$ and $z$ directions are
-            similar).</li>
-          </ul>
-        </div>
-      </li>
+      
 
       <li>Suppose now that we have a wire located along a curve
       $C$. The density of the wire is known to be $\delta(x,y,z)$
@@ -1450,7 +1448,9 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       dm}{\int_C dm}=\frac{\int_C y \delta ds}{\int_C \delta
       ds}.$$</li>
     </ol>
-  </div>Ask me in class to show you another way to obtain the
+  </div>
+        
+        <p>Ask me in class to show you another way to obtain the
   formula for center of mass. It involves looking at masses
   weighted by their distance (called a moment of mass). You may
   have already seen an idea similar to this in other classes, like
@@ -1460,7 +1460,7 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
   ds}{\int_C ds},\quad \bar y = \frac{\int_C y ds}{\int_C ds},\quad
   \text{and}\quad \bar z = \frac{\int_C z ds}{\int_C ds}.
   \quad\text{(Centroid)} $$ If the wire has density $\delta$, then
-  the formulas for the center of mass are
+  the formulas for the center of mass are</p>
 
   <div class="marginpar">
     The quantity $\int_C x dm$ is sometimes called the first moment
@@ -1470,7 +1470,8 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
     notation, we could write the center of mass formulas as $$(\bar
     x,\bar y,\bar z) = \left( \frac{M_{yz}}{m}, \frac{M_{xz}}{m},
     \frac{M_{xy}}{m} \right) . $$
-  </div>% $$ \bar x = \frac{\int_C x dm}{\int_C dm},\quad \bar y =
+  </div>
+        <p>$$ \bar x = \frac{\int_C x dm}{\int_C dm},\quad \bar y =
   \frac{\int_C y dm}{\int_C dm},\quad \text{and}\quad \bar z =
   \frac{\int_C z dm}{\int_C dm}, \quad\text{(Center of mass)} $$
   where $dm=\delta ds$. Notice that the denominator in each case is
@@ -1480,14 +1481,14 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
   y,\bar z)$ is the centroid. If a density is provided, then $(\bar
   x, \bar y,\bar z)$ refers to the center of mass. If the density
   is constant, it doesn't matter (the centroid and center of mass
-  are the same, which is what the seesaw problem showed).
+  are the same, which is what the seesaw problem showed).</p>
 
   <div class="problem">
-    \instructor{I purposefully put this problem in to show students
+    <div class="instructor">I purposefully put this problem in to show students
     how to generalize a formula from prime numbers to any number. I
     mention how I use primes (5, 7, 11, 13) when I'm looking for a
     pattern. I want to help them develop this skill a little.
-    However, if you are pressed for time, then skip 5.}%
+    However, if you are pressed for time, then skip 5.</div>
 
     <div class="marginpar">
       Check your work with <a href=
@@ -1504,7 +1505,7 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       <li>Where is the wire heavier, at $(7,0)$ or $(0,7)$?
       [Compute $\delta$ at both.]</li>
 
-      <li>In problem <a href="#semicircle-centroid">TODO</a>, we
+      <li>In <a href="#semicircle-centroid">this problem</a>, we
       showed that the centroid of the wire is $(\bar x, \bar y) =
       \left(0,\frac{2(7)}{\pi}\right)$. We now seek the center of
       mass. Before computing, will $\bar x$ change? Will $\bar y$
@@ -1520,15 +1521,18 @@ Let $f(x,y,z)=x^2+3yz$. Let $C$ be the straight
       answer above, not a numerical answer).</li>
     </ol>
   </div>
-
-  <h1>The Fundamental Theorem of Line Integrals</h1>In this final
+    </section>
+</section>
+        <section class="bmw">
+  <h1>The Fundamental Theorem of Line Integrals</h1>
+            <p>In this final
   section, we'll return to the concept of work. Many vector fields
   are actually the derivative of a function, called the
   \emph{potential} function of the vector field. In this section,
   we'll first discuss finding the potential of such a vector field.
   Then we'll show that the work done by such a vector field is the
   difference in the potential at the end points. This is much
-  simpler than calculating a line integral.
+  simpler than calculating a line integral.</p>
 
   <div class="definition" label="Gradients and Potentials">
     <div class="marginpar">

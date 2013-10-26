@@ -10,7 +10,15 @@ display: none;
 /*color: gray;*/
 border: 5px solid lightblue;
 
-/*display: none;*/
+display: none;
+}
+
+.comment {
+   display: none;
+}
+.note {
+  display:none;
 }
 
 .hidden {display: none;}
+.vectorintegral {display:none;}
