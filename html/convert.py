@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+"""
+Usage: ./convert.py ../file.tex | tidy -i > file.html
+
+"""
 import regex
 import fileinput
 
